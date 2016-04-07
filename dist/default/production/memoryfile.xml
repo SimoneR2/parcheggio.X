@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+  <executable name="dist/default/production\parcheggio.X.production.hex">
+    <memory name="program">
+      <units>bytes</units>
+      <length>65536</length>
+      <used>7977</used>
+      <free>57559</free>
+    </memory>
+    <memory name="data">
+      <units>bytes</units>
+      <length>3328</length>
+      <used>91</used>
+      <free>3237</free>
+    </memory>
+  </executable>
+</project>

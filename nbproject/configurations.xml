@@ -30,7 +30,7 @@
         <targetDevice>PIC18F2680</targetDevice>
         <targetHeader></targetHeader>
         <targetPluginBoard></targetPluginBoard>
-        <platformTool>PICkit3PlatformTool</platformTool>
+        <platformTool>Simulator</platformTool>
         <languageToolchain>XC8</languageToolchain>
         <languageToolchainVersion>1.35</languageToolchainVersion>
         <platform>3</platform>
@@ -61,7 +61,7 @@
         <property key="asmlist" value="true"/>
         <property key="define-macros" value=""/>
         <property key="extra-include-directories"
-                  value="..\..\Drive\librerie\LaurTec_PIC_libraries_v_3.3.0\inc;..\..\Drive\librerie\LaurTec_PIC_libraries_v_3.3.0\src"/>
+                  value="..\..\LaurTec_PIC_libraries_v_3.3.0\inc;..\..\LaurTec_PIC_libraries_v_3.3.0\src"/>
         <property key="identifier-length" value="255"/>
         <property key="operation-mode" value="free"/>
         <property key="opt-xc8-compiler-strict_ansi" value="false"/>

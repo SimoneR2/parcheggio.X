@@ -18,6 +18,7 @@ void park_search(void);
 
 CANmessage msg;
 bit activation = 0;
+bit distance_error = 0; //usato per rilevare se l'oggetto era troppo distante
 bit request_sent = 0;
 unsigned int distance_dx = 0; //distanza percorsa (da abs)
 unsigned int distance_sx = 0; //distanza percorsa (da abs)
@@ -45,7 +46,6 @@ __interrupt(high_priority) void ISR_Alta(void) {
         TMR3L = 0;
 
     } else {
-
         gianni = TMR3H;
         asus = TMR3L;
         timerValue2 = gianni;
@@ -53,7 +53,7 @@ __interrupt(high_priority) void ISR_Alta(void) {
         pulse_time = timerValue2 / 2; //500nani->uS
         sensor_distance[MUX_index] = pulse_time / 58; //cm
         INTCON2bits.INTEDG0 = 1;
-
+        distance_error = 0;
     }
     INTCONbits.INT0IF = 0;
 }
@@ -85,6 +85,9 @@ __interrupt(low_priority) void ISR_Bassa(void) {
 
     if (INTCONbits.TMR0IF == 1) {
         INTCONbits.INT0IE = 0;
+        if ((INTCON2bits.INTEDG0 == 1) || (distance_error == 1)) { //se il fronte non è cambiato o distance error non è stato azzerato, significa che l'ogetto era troppo distante
+            sensor_distance[MUX_index] = 5000;
+        }
         TMR0H = 0x34; //26mS
         TMR0L = 0xE0;
         MUX_index++;
@@ -94,6 +97,7 @@ __interrupt(low_priority) void ISR_Bassa(void) {
         unsigned char gigi = 0;
         gigi = MUX_select[MUX_index];
         PORTA = gigi;
+        distance_error = 1;
         //        PORTAbits.RA0 = (MUX_select[MUX_index])&(0b00000001);
         //        PORTAbits.RA1 = ((MUX_select[MUX_index])&(0b00000010)) >> 1;
         //        PORTAbits.RA2 = ((MUX_select[MUX_index])&(0b00000100)) >> 2;

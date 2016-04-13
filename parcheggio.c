@@ -1,6 +1,10 @@
 //RB0 output multiplexer
 //RA0-1-2-3 canali multiplexer
 //TEMPO TRA INVIO E RICEZIONE(fronte di salita): 800uS
+// ======PARK_ASSIST_STATE=====
+// ===1: found park space======
+// ==2: starting the movement==
+// ============================
 #include <xc.h>
 #include "pic_config.h"
 #include "CANlib.h"
@@ -8,14 +12,17 @@
 #include "delay.h"
 #include "idCan.h"
 #define _XTAL_FREQ 16000000
+#define spazio_parcheggio 1
+void configurazione(void);
+void park_search(void);
 
 CANmessage msg;
 bit activation = 0;
 bit request_sent = 0;
-unsigned int distance_dx = 0;
-unsigned int distance_sx = 0;
+unsigned int distance_dx = 0; //distanza percorsa (da abs)
+unsigned int distance_sx = 0; //distanza percorsa (da abs)
+unsigned int distance_average = 0; //media distanza
 volatile unsigned int sensor_distance[8] = 0;
-void configurazione(void);
 BYTE data [8] = 0;
 volatile unsigned char MUX_index = 0;
 unsigned char MUX_select[8] = 0;
@@ -28,17 +35,17 @@ volatile unsigned char asus = 0;
 
 __interrupt(high_priority) void ISR_Alta(void) {
     if (INTCON2bits.INTEDG0 == 1) {
-        
-//        gianni = TMR0H;
-//        asus = TMR0L;
-//        timerValue = gianni;
-//        timerValue = ((timerValue << 8) | (asus));
+
+        //        gianni = TMR0H;
+        //        asus = TMR0L;
+        //        timerValue = gianni;
+        //        timerValue = ((timerValue << 8) | (asus));
         INTCON2bits.INTEDG0 = 0; //interrupt sul fronte di discesa
         TMR3H = 0;
         TMR3L = 0;
 
     } else {
-        
+
         gianni = TMR3H;
         asus = TMR3L;
         timerValue2 = gianni;
@@ -46,7 +53,7 @@ __interrupt(high_priority) void ISR_Alta(void) {
         pulse_time = timerValue2 / 2; //500nani->uS
         sensor_distance[MUX_index] = pulse_time / 58; //cm
         INTCON2bits.INTEDG0 = 1;
-        
+
     }
     INTCONbits.INT0IF = 0;
 }
@@ -68,6 +75,7 @@ __interrupt(low_priority) void ISR_Bassa(void) {
                 distance_dx = ((distance_dx << 8) | msg.data[0]);
                 distance_sx = msg.data[3];
                 distance_sx = ((distance_dx << 8) | msg.data[2]);
+                distance_average = (distance_dx + distance_sx) / 2;
             }
 
         }
@@ -80,7 +88,7 @@ __interrupt(low_priority) void ISR_Bassa(void) {
         TMR0H = 0x34; //26mS
         TMR0L = 0xE0;
         MUX_index++;
-        if (MUX_index ==8){
+        if (MUX_index == 8) {
             MUX_index = 0;
         }
         unsigned char gigi = 0;
@@ -117,38 +125,34 @@ void main(void) {
     PORTBbits.RB6 = 0;
 
     request_sent = 0;
-//    while(1){
-//        if (sensor_distance[0] >10){
-//            PORTBbits.RB4 = 1;
-//        }
-//        
-//        if (sensor_distance[0] >20){
-//            PORTBbits.RB5 = 1;
-//        }
-//        
-//        if (sensor_distance[0] >30){
-//            PORTBbits.RB6 = 1;
-//        }
-//    }
+
     while (1) {
-        activation = 1;
-        while (activation == 1) {
-            if (sensor_distance[0] > 50) { //VALORE RANDOM!!!!
-                PORTBbits.RB4 = 1;
-                if (request_sent == 0) { //DA AZZERARE A FINE ROUTINE
-                    while (!CANisTxReady());
-                    CANsendMessage(COUNT_START, data, 8, CAN_CONFIG_STD_MSG & CAN_REMOTE_TX_FRAME & CAN_TX_PRIORITY_0);
-                    request_sent = 1;
-                    LATBbits.LATB4 = 1;
-                }
-            }
-            if ((sensor_distance[0] < 50)&&(request_sent == 1)) { //VALORE RANDOM!!!!
-                request_sent = 0;
+        activation = 1; //DEBUG
+        park_search();
+    }
+}
+
+void park_search(void) {
+    while ((PORTBbits.RB6 == 1)&&(activation == 1)) {
+        if (sensor_distance[0] > 50) { //VALORE RANDOM!!!!
+            PORTBbits.RB4 = 1;
+            if (request_sent == 0) {
                 while (!CANisTxReady());
-                CANsendMessage(COUNT_STOP, data, 8, CAN_CONFIG_STD_MSG & CAN_REMOTE_TX_FRAME & CAN_TX_PRIORITY_0);
-                LATBbits.LATB5 = 1;
-                PORTBbits.RB6 = 1;
+                CANsendMessage(COUNT_START, data, 8, CAN_CONFIG_STD_MSG & CAN_REMOTE_TX_FRAME & CAN_TX_PRIORITY_0);
+                request_sent = 1;
+                LATBbits.LATB4 = 1;
             }
+        }
+        if ((sensor_distance[0] < 50)&&(request_sent == 1)) { //VALORE RANDOM!!!!
+            request_sent = 0;
+            while (!CANisTxReady());
+            CANsendMessage(COUNT_STOP, data, 8, CAN_CONFIG_STD_MSG & CAN_REMOTE_TX_FRAME & CAN_TX_PRIORITY_0);
+        }
+        if (distance_average > spazio_parcheggio) {
+            PORTBbits.RB6 = 1;
+            while (!CANisTxReady());
+            data[0] = 1;
+            CANsendMessage(PARK_ASSIST_STATE, data, 1, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
         }
     }
 }

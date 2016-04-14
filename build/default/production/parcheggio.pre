@@ -18774,7 +18774,7 @@ extern __nonreentrant void _delay3(unsigned char);
 
 #pragma config EBTRB = OFF
 
-# 50 "../../LaurTec_PIC_libraries_v_3.3.0/inc\CANlib.h"
+# 49 "C:/Users/Simone/Desktop/LaurTec_PIC_libraries_v_3.3.1/inc\CANlib.h"
 typedef unsigned char BYTE;
 
 
@@ -18788,7 +18788,7 @@ BYTE RTR;
 
 } CANmessage;
 
-# 68
+# 67
 enum CAN_OP_MODE
 {
 CAN_OP_MODE_NORMAL = 0b00000000,
@@ -18798,7 +18798,7 @@ CAN_OP_MODE_LISTEN = 0b01100000,
 CAN_OP_MODE_CONFIG = 0b10000000
 };
 
-# 81
+# 80
 enum CAN_CONFIG_FLAGS
 {
 CAN_CONFIG_DEFAULT = 0b11111111,
@@ -18830,7 +18830,7 @@ CAN_CONFIG_VALID_STD_MSG = 0b10111111,
 CAN_CONFIG_ALL_VALID_MSG = 0b10011111
 };
 
-# 117
+# 116
 enum CAN_TX_MSG_FLAGS
 {
 CAN_TX_PRIORITY_MASK= 0b00000011,
@@ -18849,14 +18849,14 @@ CAN_NORMAL_TX_FRAME = 0b10111111
 
 };
 
-# 139
+# 138
 enum CAN_MASK
 {
 CAN_MASK_B1 = 1,
 CAN_MASK_B2 = 2,
 };
 
-# 149
+# 148
 enum CAN_FILTER
 {
 CAN_FILTER_B1_F1,
@@ -18867,14 +18867,14 @@ CAN_FILTER_B2_F3,
 CAN_FILTER_B2_F4
 };
 
-# 163
+# 162
 enum CAN_RX_ERRORS
 {
 CAN_RX_BUFFER_1_OVFL = 0b00000001,
 CAN_RX_BUFFER_2_OVFL = 0b00000010
 };
 
-# 174
+# 173
 void CANOperationMode (enum CAN_OP_MODE mode);
 void CANInitialize (BYTE propSeg, BYTE phaseSeg1, BYTE phaseSeg2,BYTE SJW, BYTE BRP, enum CAN_CONFIG_FLAGS flags);
 
@@ -18897,7 +18897,7 @@ BYTE CANgetRXerrorCount (void);
 BYTE CANisBusOFF (void);
 void CANAbortMessages (void);
 
-# 207
+# 206
 void CANOperationMode (enum CAN_OP_MODE mode)
 {
 CANCON = mode;
@@ -18905,7 +18905,7 @@ CANCON = mode;
 while((CANSTAT & 0b11100000) != mode );
 }
 
-# 219
+# 218
 void CANInitialize (BYTE propSeg, BYTE phaseSeg1, BYTE phaseSeg2,BYTE SJW, BYTE BRP, enum CAN_CONFIG_FLAGS flags)
 {
 BYTE FilterConfig1;
@@ -19212,7 +19212,7 @@ return;
 }
 }
 
-# 529
+# 528
 BYTE CANreceiveMessage (CANmessage *msg)
 {
 BYTE tamp;
@@ -19321,7 +19321,7 @@ return (error);
 }
 }
 
-# 641
+# 640
 void CANSetMask(enum CAN_MASK numBuffer, unsigned long mask, enum CAN_CONFIG_FLAGS type)
 { unsigned long tamp;
 
@@ -19426,7 +19426,7 @@ RXM1SIDH = (unsigned char) tamp;
 }
 }
 
-# 749
+# 748
 void CANSetFilter(enum CAN_FILTER numBuffer, unsigned long filter, enum CAN_CONFIG_FLAGS type)
 {
 unsigned long tamp;
@@ -19759,13 +19759,13 @@ RXF5SIDH = (unsigned char) tamp;
 
 }
 
-# 1086
+# 1085
 void CANAbortMessages (void)
 {
 CANCONbits.ABAT = 1;
 }
 
-# 1095
+# 1094
 BYTE CANisBusOFF (void)
 {
 return (COMSTATbits.TXBO);
@@ -19779,7 +19779,7 @@ BYTE CANisTXpassive (void)
 return (COMSTATbits.TXBP);
 }
 
-# 1112
+# 1111
 BYTE CANisRXpassive (void)
 {
 return (COMSTATbits.RXBP);
@@ -19801,31 +19801,31 @@ BYTE CANisRXwarningON (void)
 return (COMSTATbits.RXWARN);
 }
 
-# 1137
+# 1136
 BYTE CANgetTXerrorCount (void)
 {
 return (TXERRCNT);
 }
 
-# 1146
+# 1145
 BYTE CANgetRXerrorCount (void)
 {
 return (RXERRCNT);
 }
 
-# 1155
+# 1154
 BYTE CANisTxReady (void)
 {
 return (!TXB0CONbits.TXREQ || !TXB1CONbits.TXREQ || !TXB2CONbits.TXREQ);
 }
 
-# 1164
+# 1163
 BYTE CANisRxReady (void)
 {
 return (RXB0CONbits.RXFUL || RXB1CONbits.RXFUL);
 }
 
-# 74 "../../LaurTec_PIC_libraries_v_3.3.0/inc\delay.h"
+# 74 "C:/Users/Simone/Desktop/LaurTec_PIC_libraries_v_3.3.1/inc\delay.h"
 void delay_ms (unsigned int value_ms);
 
 # 88
@@ -19834,7 +19834,7 @@ void delay_s (unsigned char value_s);
 # 102
 void delay_set_quartz (unsigned char frequency);
 
-# 49 "../../LaurTec_PIC_libraries_v_3.3.0/src\delay.c"
+# 49 "C:/Users/Simone/Desktop/LaurTec_PIC_libraries_v_3.3.1/src\delay.c"
 volatile unsigned char delay_quartz_frequency_value = 16;
 volatile unsigned int clock_counter_reference = 0;
 
@@ -19872,14 +19872,18 @@ delay_quartz_frequency_value = frequency;
 
 }
 
-# 12 "parcheggio.c"
+# 16 "parcheggio.c"
+void configurazione(void);
+void park_search(void);
+
 CANmessage msg;
 bit activation = 0;
+bit distance_error = 0;
 bit request_sent = 0;
 unsigned int distance_dx = 0;
 unsigned int distance_sx = 0;
+unsigned int distance_average = 0;
 volatile unsigned int sensor_distance[8] = 0;
-void configurazione(void);
 BYTE data [8] = 0;
 volatile unsigned char MUX_index = 0;
 unsigned char MUX_select[8] = 0;
@@ -19893,13 +19897,12 @@ volatile unsigned char asus = 0;
 __attribute__((interrupt("__high_priority"))) void ISR_Alta(void) {
 if (INTCON2bits.INTEDG0 == 1) {
 
-# 36
+# 44
 INTCON2bits.INTEDG0 = 0;
 TMR3H = 0;
 TMR3L = 0;
 
 } else {
-
 gianni = TMR3H;
 asus = TMR3L;
 timerValue2 = gianni;
@@ -19907,7 +19910,7 @@ timerValue2 = ((timerValue2 << 8) | (asus));
 pulse_time = timerValue2 / 2;
 sensor_distance[MUX_index] = pulse_time / 58;
 INTCON2bits.INTEDG0 = 1;
-
+distance_error = 0;
 }
 INTCONbits.INT0IF = 0;
 }
@@ -19920,8 +19923,10 @@ CANreceiveMessage(&msg);
 if (msg.identifier == 0b00000001010) {
 if (msg.data[0] == 1) {
 activation = 1;
+PORTBbits.RB6 = 1;
 } else {
 activation = 0;
+PORTBbits.RB6 = 0;
 }
 }
 if (msg.identifier == 0b00000000111) {
@@ -19929,6 +19934,7 @@ distance_dx = msg.data[1];
 distance_dx = ((distance_dx << 8) | msg.data[0]);
 distance_sx = msg.data[3];
 distance_sx = ((distance_dx << 8) | msg.data[2]);
+distance_average = (distance_dx + distance_sx) / 2;
 }
 
 }
@@ -19938,15 +19944,19 @@ PIR3bits.RXB1IF == 0;
 
 if (INTCONbits.TMR0IF == 1) {
 INTCONbits.INT0IE = 0;
+if ((INTCON2bits.INTEDG0 == 1) || (distance_error == 1)) {
+sensor_distance[MUX_index] = 5000;
+}
 TMR0H = 0x34;
 TMR0L = 0xE0;
 MUX_index++;
-if (MUX_index ==8){
+if (MUX_index == 8) {
 MUX_index = 0;
 }
 unsigned char gigi = 0;
 gigi = MUX_select[MUX_index];
 PORTA = gigi;
+distance_error = 1;
 
 
 
@@ -19979,10 +19989,14 @@ PORTBbits.RB6 = 0;
 
 request_sent = 0;
 
-# 133
 while (1) {
 activation = 1;
-while (activation == 1) {
+park_search();
+}
+}
+
+void park_search(void) {
+while ((PORTBbits.RB6 == 1)&&(activation == 1)) {
 if (sensor_distance[0] > 50) {
 PORTBbits.RB4 = 1;
 if (request_sent == 0) {
@@ -19996,9 +20010,12 @@ if ((sensor_distance[0] < 50)&&(request_sent == 1)) {
 request_sent = 0;
 while (!CANisTxReady());
 CANsendMessage(0b00000000111, data, 8, CAN_CONFIG_STD_MSG & CAN_REMOTE_TX_FRAME & CAN_TX_PRIORITY_0);
-LATBbits.LATB5 = 1;
-PORTBbits.RB6 = 1;
 }
+if (distance_average > 50) {
+PORTBbits.RB5 = 1;
+while (!CANisTxReady());
+data[0] = 1;
+CANsendMessage(0b00000001011, data, 1, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
 }
 }
 }

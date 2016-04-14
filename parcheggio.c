@@ -12,7 +12,7 @@
 #include "delay.h"
 #include "idCan.h"
 #define _XTAL_FREQ 16000000
-#define spazio_parcheggio 1
+#define spazio_parcheggio 50
 void configurazione(void);
 void park_search(void);
 
@@ -66,8 +66,10 @@ __interrupt(low_priority) void ISR_Bassa(void) {
             if (msg.identifier == PARK_ASSIST_ENABLE) {
                 if (msg.data[0] == 1) {
                     activation = 1;
+                    PORTBbits.RB6 = 1;
                 } else {
                     activation = 0;
+                    PORTBbits.RB6 = 0;
                 }
             }
             if (msg.identifier == COUNT_STOP) {
@@ -153,7 +155,7 @@ void park_search(void) {
             CANsendMessage(COUNT_STOP, data, 8, CAN_CONFIG_STD_MSG & CAN_REMOTE_TX_FRAME & CAN_TX_PRIORITY_0);
         }
         if (distance_average > spazio_parcheggio) {
-            PORTBbits.RB6 = 1;
+            PORTBbits.RB5 = 1;
             while (!CANisTxReady());
             data[0] = 1;
             CANsendMessage(PARK_ASSIST_STATE, data, 1, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);

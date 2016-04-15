@@ -27,7 +27,7 @@
     <conf name="default" type="2">
       <toolsSet>
         <developmentServer>localhost</developmentServer>
-        <targetDevice>PIC18F2680</targetDevice>
+        <targetDevice>PIC18F2685</targetDevice>
         <targetHeader></targetHeader>
         <targetPluginBoard></targetPluginBoard>
         <platformTool>Simulator</platformTool>

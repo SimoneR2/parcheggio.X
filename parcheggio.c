@@ -17,8 +17,8 @@ void configurazione(void);
 void park_search(void);
 
 CANmessage msg;
-bit activation = 0;
-bit distance_error = 0; //usato per rilevare se l'oggetto era troppo distante
+volatile bit distance_error = 0;
+volatile bit activation = 0;
 bit request_sent = 0;
 unsigned int distance_dx = 0; //distanza percorsa (da abs)
 unsigned int distance_sx = 0; //distanza percorsa (da abs)
@@ -35,6 +35,7 @@ volatile unsigned char gianni = 0;
 volatile unsigned char asus = 0;
 
 __interrupt(high_priority) void ISR_Alta(void) {
+
     if (INTCON2bits.INTEDG0 == 1) {
 
         //        gianni = TMR0H;
@@ -44,6 +45,7 @@ __interrupt(high_priority) void ISR_Alta(void) {
         INTCON2bits.INTEDG0 = 0; //interrupt sul fronte di discesa
         TMR3H = 0;
         TMR3L = 0;
+        distance_error = 0;
 
     } else {
         gianni = TMR3H;
@@ -53,16 +55,23 @@ __interrupt(high_priority) void ISR_Alta(void) {
         pulse_time = timerValue2 / 2; //500nani->uS
         sensor_distance[MUX_index] = pulse_time / 58; //cm
         INTCON2bits.INTEDG0 = 1;
-        distance_error = 0;
     }
     INTCONbits.INT0IF = 0;
 }
 
 __interrupt(low_priority) void ISR_Bassa(void) {
     //INTERRUPT CANBUS
+
     if ((PIR3bits.RXB0IF == 1) || (PIR3bits.RXB1IF == 1)) {
         if (CANisRxReady()) {
             CANreceiveMessage(&msg);
+            if (msg.identifier == COUNT_STOP) {
+                distance_dx = msg.data[1];
+                distance_dx = ((distance_dx << 8) | msg.data[0]);
+                distance_sx = msg.data[3];
+                distance_sx = ((distance_dx << 8) | msg.data[2]);
+                distance_average = (distance_dx + distance_sx) / 2;
+            }
             if (msg.identifier == PARK_ASSIST_ENABLE) {
                 if (msg.data[0] == 1) {
                     activation = 1;
@@ -72,24 +81,12 @@ __interrupt(low_priority) void ISR_Bassa(void) {
                     PORTBbits.RB6 = 0;
                 }
             }
-            if (msg.identifier == COUNT_STOP) {
-                distance_dx = msg.data[1];
-                distance_dx = ((distance_dx << 8) | msg.data[0]);
-                distance_sx = msg.data[3];
-                distance_sx = ((distance_dx << 8) | msg.data[2]);
-                distance_average = (distance_dx + distance_sx) / 2;
-            }
-
         }
         PIR3bits.RXB0IF == 0;
         PIR3bits.RXB1IF == 0;
     }
-
     if (INTCONbits.TMR0IF == 1) {
         INTCONbits.INT0IE = 0;
-        if ((INTCON2bits.INTEDG0 == 1) || (distance_error == 1)) { //se il fronte non è cambiato o distance error non è stato azzerato, significa che l'ogetto era troppo distante
-            sensor_distance[MUX_index] = 5000;
-        }
         TMR0H = 0x34; //26mS
         TMR0L = 0xE0;
         MUX_index++;
@@ -99,14 +96,10 @@ __interrupt(low_priority) void ISR_Bassa(void) {
         unsigned char gigi = 0;
         gigi = MUX_select[MUX_index];
         PORTA = gigi;
-        distance_error = 1;
-        //        PORTAbits.RA0 = (MUX_select[MUX_index])&(0b00000001);
-        //        PORTAbits.RA1 = ((MUX_select[MUX_index])&(0b00000010)) >> 1;
-        //        PORTAbits.RA2 = ((MUX_select[MUX_index])&(0b00000100)) >> 2;
-        //        PORTAbits.RA3 = ((MUX_select[MUX_index])&(0b00001000)) >> 3;
         TRISBbits.RB0 = 0;
         LATBbits.LATB0 = 1; //attiva sensore
         __delay_us(15);
+        distance_error = 1;
         LATBbits.LATB0 = 0; //azzera LATB
         TRISBbits.RB0 = 1;
         INTCONbits.INT0IF = 0;
@@ -129,11 +122,8 @@ void main(void) {
     PORTBbits.RB4 = 0;
     PORTBbits.RB5 = 0;
     PORTBbits.RB6 = 0;
-
     request_sent = 0;
-
     while (1) {
-        activation = 1; //DEBUG
         park_search();
     }
 }
@@ -141,7 +131,6 @@ void main(void) {
 void park_search(void) {
     while ((PORTBbits.RB6 == 1)&&(activation == 1)) {
         if (sensor_distance[0] > 50) { //VALORE RANDOM!!!!
-            PORTBbits.RB4 = 1;
             if (request_sent == 0) {
                 while (!CANisTxReady());
                 CANsendMessage(COUNT_START, data, 8, CAN_CONFIG_STD_MSG & CAN_REMOTE_TX_FRAME & CAN_TX_PRIORITY_0);
@@ -181,8 +170,8 @@ void configurazione(void) {
     PIR3bits.RXB0IF = 0; //azzera flag interrupt can bus buffer0
     IPR3bits.RXB1IP = 0; //interrupt bassa priorità per can
     IPR3bits.RXB0IP = 0; //interrupt bassa priorità per can
-    //PIE3bits.RXB1IE = 1; //abilita interrupt ricezione can bus buffer1
-    //PIE3bits.RXB0IE = 1; //abilita interrupt ricezione can bus buffer0
+    PIE3bits.RXB1IE = 1; //abilita interrupt ricezione can bus buffer1
+    PIE3bits.RXB0IE = 1; //abilita interrupt ricezione can bus buffer0
     INTCON2bits.TMR0IP = 0; //interrupt bassa priorità timer0
     T0CON = 0x80; //configurazione timer0
     T3CON = 0x11;
@@ -193,7 +182,6 @@ void configurazione(void) {
     INTCON2bits.INTEDG0 = 1;
     INTCONbits.INT0IF = 0;
     INTCONbits.INT0IE = 0;
-
     INTCONbits.GIEL = 1; //abilita interrupt alta priorità
     INTCONbits.GIEH = 1; //abilita interrupt bassa priorità periferiche
 }

@@ -11,7 +11,7 @@ extern double __fpnormalize(double);
 #pragma intrinsic(__builtin_software_breakpoint)
 extern void __builtin_software_breakpoint(void);
 
-# 49 "C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18f2680.h"
+# 49 "C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18f2685.h"
 extern volatile unsigned char RXF6SIDH @ 0xD60;
 
 asm("RXF6SIDH equ 0D60h");
@@ -11946,7 +11946,7 @@ typedef union {
 struct {
 unsigned T2CKPS :2;
 unsigned TMR2ON :1;
-unsigned T2OUTPS :4;
+unsigned TOUTPS :4;
 };
 struct {
 unsigned T2CKPS0 :1;
@@ -11957,21 +11957,10 @@ unsigned T2OUTPS1 :1;
 unsigned T2OUTPS2 :1;
 unsigned T2OUTPS3 :1;
 };
-struct {
-unsigned :3;
-unsigned TOUTPS :4;
-};
-struct {
-unsigned :3;
-unsigned TOUTPS0 :1;
-unsigned TOUTPS1 :1;
-unsigned TOUTPS2 :1;
-unsigned TOUTPS3 :1;
-};
 } T2CONbits_t;
 extern volatile T2CONbits_t T2CONbits @ 0xFCA;
 
-# 32538
+# 32502
 extern volatile unsigned char PR2 @ 0xFCB;
 
 asm("PR2 equ 0FCBh");
@@ -12005,7 +11994,7 @@ unsigned WM1 :1;
 } PR2bits_t;
 extern volatile PR2bits_t PR2bits @ 0xFCB;
 
-# 32597
+# 32561
 typedef union {
 struct {
 unsigned :7;
@@ -12029,7 +12018,7 @@ unsigned WM1 :1;
 } MEMCONbits_t;
 extern volatile MEMCONbits_t MEMCONbits @ 0xFCB;
 
-# 32647
+# 32611
 extern volatile unsigned char TMR2 @ 0xFCC;
 
 asm("TMR2 equ 0FCCh");
@@ -12077,7 +12066,7 @@ unsigned T1RD16 :1;
 } T1CONbits_t;
 extern volatile T1CONbits_t T1CONbits @ 0xFCD;
 
-# 32766
+# 32730
 extern volatile unsigned short TMR1 @ 0xFCE;
 
 asm("TMR1 equ 0FCEh");
@@ -12141,7 +12130,7 @@ unsigned RI :1;
 } RCONbits_t;
 extern volatile RCONbits_t RCONbits @ 0xFD0;
 
-# 32916
+# 32880
 extern volatile unsigned char WDTCON @ 0xFD1;
 
 asm("WDTCON equ 0FD1h");
@@ -12157,7 +12146,7 @@ unsigned SWDTE :1;
 } WDTCONbits_t;
 extern volatile WDTCONbits_t WDTCONbits @ 0xFD1;
 
-# 32943
+# 32907
 extern volatile unsigned char HLVDCON @ 0xFD2;
 
 asm("HLVDCON equ 0FD2h");
@@ -12201,7 +12190,7 @@ unsigned BGST :1;
 } HLVDCONbits_t;
 extern volatile HLVDCONbits_t HLVDCONbits @ 0xFD2;
 
-# 33082
+# 33046
 typedef union {
 struct {
 unsigned HLVDL :4;
@@ -12235,7 +12224,7 @@ unsigned BGST :1;
 } LVDCONbits_t;
 extern volatile LVDCONbits_t LVDCONbits @ 0xFD2;
 
-# 33212
+# 33176
 extern volatile unsigned char OSCCON @ 0xFD3;
 
 asm("OSCCON equ 0FD3h");
@@ -12260,7 +12249,7 @@ unsigned IRCF2 :1;
 } OSCCONbits_t;
 extern volatile OSCCONbits_t OSCCONbits @ 0xFD3;
 
-# 33288
+# 33252
 extern volatile unsigned char T0CON @ 0xFD5;
 
 asm("T0CON equ 0FD5h");
@@ -12284,7 +12273,7 @@ unsigned T0PS3 :1;
 } T0CONbits_t;
 extern volatile T0CONbits_t T0CONbits @ 0xFD5;
 
-# 33363
+# 33327
 extern volatile unsigned short TMR0 @ 0xFD6;
 
 asm("TMR0 equ 0FD6h");
@@ -12334,7 +12323,7 @@ unsigned ZERO :1;
 } STATUSbits_t;
 extern volatile STATUSbits_t STATUSbits @ 0xFD8;
 
-# 33459
+# 33423
 extern volatile unsigned short FSR2 @ 0xFD9;
 
 asm("FSR2 equ 0FD9h");
@@ -12520,7 +12509,7 @@ unsigned INT2P :1;
 } INTCON3bits_t;
 extern volatile INTCON3bits_t INTCON3bits @ 0xFF0;
 
-# 33706
+# 33670
 extern volatile unsigned char INTCON2 @ 0xFF1;
 
 asm("INTCON2 equ 0FF1h");
@@ -12550,7 +12539,7 @@ unsigned RBPU :1;
 } INTCON2bits_t;
 extern volatile INTCON2bits_t INTCON2bits @ 0xFF1;
 
-# 33782
+# 33746
 extern volatile unsigned char INTCON @ 0xFF2;
 
 asm("INTCON equ 0FF2h");
@@ -12605,7 +12594,7 @@ unsigned GIEH :1;
 } INTCONbits_t;
 extern volatile INTCONbits_t INTCONbits @ 0xFF2;
 
-# 33918
+# 33882
 extern volatile unsigned short PROD @ 0xFF3;
 
 asm("PROD equ 0FF3h");
@@ -12628,7 +12617,7 @@ extern volatile unsigned char TABLAT @ 0xFF5;
 
 asm("TABLAT equ 0FF5h");
 
-# 33946
+# 33910
 asm("TBLPTR equ 0FF6h");
 
 
@@ -12649,10 +12638,10 @@ extern volatile unsigned char TBLPTRU @ 0xFF8;
 
 asm("TBLPTRU equ 0FF8h");
 
-# 33972
+# 33936
 asm("PCLAT equ 0FF9h");
 
-# 33979
+# 33943
 asm("PC equ 0FF9h");
 
 
@@ -12696,10 +12685,17 @@ unsigned STKPTR4 :1;
 unsigned :2;
 unsigned STKOVF :1;
 };
+struct {
+unsigned SP0 :1;
+unsigned SP1 :1;
+unsigned SP2 :1;
+unsigned SP3 :1;
+unsigned SP4 :1;
+};
 } STKPTRbits_t;
 extern volatile STKPTRbits_t STKPTRbits @ 0xFFC;
 
-# 34076
+# 34072
 asm("TOS equ 0FFDh");
 
 
@@ -12720,7 +12716,7 @@ extern volatile unsigned char TOSU @ 0xFFF;
 
 asm("TOSU equ 0FFFh");
 
-# 34104
+# 34100
 extern volatile __bit ABDEN @ (((unsigned) &BAUDCON)*8) + 0;
 
 extern volatile __bit ABDOVF @ (((unsigned) &BAUDCON)*8) + 7;
@@ -16821,6 +16817,16 @@ extern volatile __bit SOSCEN @ (((unsigned) &T1CON)*8) + 3;
 
 extern volatile __bit SOSCEN3 @ (((unsigned) &T3CON)*8) + 3;
 
+extern volatile __bit SP0 @ (((unsigned) &STKPTR)*8) + 0;
+
+extern volatile __bit SP1 @ (((unsigned) &STKPTR)*8) + 1;
+
+extern volatile __bit SP2 @ (((unsigned) &STKPTR)*8) + 2;
+
+extern volatile __bit SP3 @ (((unsigned) &STKPTR)*8) + 3;
+
+extern volatile __bit SP4 @ (((unsigned) &STKPTR)*8) + 4;
+
 extern volatile __bit SPEN @ (((unsigned) &RCSTA)*8) + 7;
 
 extern volatile __bit SREN @ (((unsigned) &RCSTA)*8) + 5;
@@ -16998,14 +17004,6 @@ extern volatile __bit TMR3IP @ (((unsigned) &IPR2)*8) + 1;
 extern volatile __bit TMR3ON @ (((unsigned) &T3CON)*8) + 0;
 
 extern volatile __bit TO @ (((unsigned) &RCON)*8) + 3;
-
-extern volatile __bit TOUTPS0 @ (((unsigned) &T2CON)*8) + 3;
-
-extern volatile __bit TOUTPS1 @ (((unsigned) &T2CON)*8) + 4;
-
-extern volatile __bit TOUTPS2 @ (((unsigned) &T2CON)*8) + 5;
-
-extern volatile __bit TOUTPS3 @ (((unsigned) &T2CON)*8) + 6;
 
 extern volatile __bit TRISA0 @ (((unsigned) &TRISA)*8) + 0;
 
@@ -19877,8 +19875,8 @@ void configurazione(void);
 void park_search(void);
 
 CANmessage msg;
-bit activation = 0;
-bit distance_error = 0;
+volatile bit distance_error = 0;
+volatile bit activation = 0;
 bit request_sent = 0;
 unsigned int distance_dx = 0;
 unsigned int distance_sx = 0;
@@ -19895,12 +19893,14 @@ volatile unsigned char gianni = 0;
 volatile unsigned char asus = 0;
 
 __attribute__((interrupt("__high_priority"))) void ISR_Alta(void) {
+
 if (INTCON2bits.INTEDG0 == 1) {
 
-# 44
+# 45
 INTCON2bits.INTEDG0 = 0;
 TMR3H = 0;
 TMR3L = 0;
+distance_error = 0;
 
 } else {
 gianni = TMR3H;
@@ -19910,16 +19910,23 @@ timerValue2 = ((timerValue2 << 8) | (asus));
 pulse_time = timerValue2 / 2;
 sensor_distance[MUX_index] = pulse_time / 58;
 INTCON2bits.INTEDG0 = 1;
-distance_error = 0;
 }
 INTCONbits.INT0IF = 0;
 }
 
 __attribute__((interrupt("__low_priority"))) void ISR_Bassa(void) {
 
+
 if ((PIR3bits.RXB0IF == 1) || (PIR3bits.RXB1IF == 1)) {
 if (CANisRxReady()) {
 CANreceiveMessage(&msg);
+if (msg.identifier == 0b00000000111) {
+distance_dx = msg.data[1];
+distance_dx = ((distance_dx << 8) | msg.data[0]);
+distance_sx = msg.data[3];
+distance_sx = ((distance_dx << 8) | msg.data[2]);
+distance_average = (distance_dx + distance_sx) / 2;
+}
 if (msg.identifier == 0b00000001010) {
 if (msg.data[0] == 1) {
 activation = 1;
@@ -19929,24 +19936,12 @@ activation = 0;
 PORTBbits.RB6 = 0;
 }
 }
-if (msg.identifier == 0b00000000111) {
-distance_dx = msg.data[1];
-distance_dx = ((distance_dx << 8) | msg.data[0]);
-distance_sx = msg.data[3];
-distance_sx = ((distance_dx << 8) | msg.data[2]);
-distance_average = (distance_dx + distance_sx) / 2;
-}
-
 }
 PIR3bits.RXB0IF == 0;
 PIR3bits.RXB1IF == 0;
 }
-
 if (INTCONbits.TMR0IF == 1) {
 INTCONbits.INT0IE = 0;
-if ((INTCON2bits.INTEDG0 == 1) || (distance_error == 1)) {
-sensor_distance[MUX_index] = 5000;
-}
 TMR0H = 0x34;
 TMR0L = 0xE0;
 MUX_index++;
@@ -19956,14 +19951,10 @@ MUX_index = 0;
 unsigned char gigi = 0;
 gigi = MUX_select[MUX_index];
 PORTA = gigi;
-distance_error = 1;
-
-
-
-
 TRISBbits.RB0 = 0;
 LATBbits.LATB0 = 1;
 _delay((unsigned long)((15)*(16000000/4000000.0)));
+distance_error = 1;
 LATBbits.LATB0 = 0;
 TRISBbits.RB0 = 1;
 INTCONbits.INT0IF = 0;
@@ -19986,11 +19977,8 @@ MUX_select[7] = 0b00000111;
 PORTBbits.RB4 = 0;
 PORTBbits.RB5 = 0;
 PORTBbits.RB6 = 0;
-
 request_sent = 0;
-
 while (1) {
-activation = 1;
 park_search();
 }
 }
@@ -19998,7 +19986,6 @@ park_search();
 void park_search(void) {
 while ((PORTBbits.RB6 == 1)&&(activation == 1)) {
 if (sensor_distance[0] > 50) {
-PORTBbits.RB4 = 1;
 if (request_sent == 0) {
 while (!CANisTxReady());
 CANsendMessage(0b00000001000, data, 8, CAN_CONFIG_STD_MSG & CAN_REMOTE_TX_FRAME & CAN_TX_PRIORITY_0);
@@ -20038,8 +20025,8 @@ PIR3bits.RXB1IF = 0;
 PIR3bits.RXB0IF = 0;
 IPR3bits.RXB1IP = 0;
 IPR3bits.RXB0IP = 0;
-
-
+PIE3bits.RXB1IE = 1;
+PIE3bits.RXB0IE = 1;
 INTCON2bits.TMR0IP = 0;
 T0CON = 0x80;
 T3CON = 0x11;
@@ -20050,7 +20037,6 @@ INTCONbits.TMR0IE = 1;
 INTCON2bits.INTEDG0 = 1;
 INTCONbits.INT0IF = 0;
 INTCONbits.INT0IE = 0;
-
 INTCONbits.GIEL = 1;
 INTCONbits.GIEH = 1;
 }

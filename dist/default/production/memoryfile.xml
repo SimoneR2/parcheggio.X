@@ -3,9 +3,9 @@
   <executable name="dist/default/production\parcheggio.X.production.hex">
     <memory name="program">
       <units>bytes</units>
-      <length>65536</length>
-      <used>8755</used>
-      <free>56781</free>
+      <length>98304</length>
+      <used>8717</used>
+      <free>89587</free>
     </memory>
     <memory name="data">
       <units>bytes</units>

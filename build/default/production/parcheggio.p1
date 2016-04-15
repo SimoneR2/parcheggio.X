@@ -18803,365 +18803,376 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;parcheggio.c: 77: activation = 1;
 "77
 [e = _activation -> -> 1 `i `b ]
-[; ;parcheggio.c: 78: PORTBbits.RB6 = 1;
 "78
-[e = . . _PORTBbits 0 6 -> -> 1 `i `uc ]
-"79
 }
-[; ;parcheggio.c: 79: } else {
+[; ;parcheggio.c: 78: } else {
 [e $U 2311  ]
 [e :U 2310 ]
 {
-[; ;parcheggio.c: 80: activation = 0;
-"80
+[; ;parcheggio.c: 79: activation = 0;
+"79
 [e = _activation -> -> 0 `i `b ]
-[; ;parcheggio.c: 81: PORTBbits.RB6 = 0;
-"81
+[; ;parcheggio.c: 80: PORTBbits.RB6 = 0;
+"80
 [e = . . _PORTBbits 0 6 -> -> 0 `i `uc ]
-"82
+"81
 }
 [e :U 2311 ]
-"83
+"82
 }
 [e :U 2309 ]
-"84
+"83
 }
 [e :U 2307 ]
+[; ;parcheggio.c: 81: }
 [; ;parcheggio.c: 82: }
 [; ;parcheggio.c: 83: }
-[; ;parcheggio.c: 84: }
-[; ;parcheggio.c: 85: PIR3bits.RXB0IF == 0;
-"85
+[; ;parcheggio.c: 84: PIR3bits.RXB0IF == 0;
+"84
 [e == -> . . _PIR3bits 0 0 `i -> 0 `i ]
-[; ;parcheggio.c: 86: PIR3bits.RXB1IF == 0;
-"86
+[; ;parcheggio.c: 85: PIR3bits.RXB1IF == 0;
+"85
 [e == -> . . _PIR3bits 0 1 `i -> 0 `i ]
-"87
+"86
 }
 [e :U 2306 ]
-[; ;parcheggio.c: 87: }
-[; ;parcheggio.c: 88: if (INTCONbits.TMR0IF == 1) {
-"88
+[; ;parcheggio.c: 86: }
+[; ;parcheggio.c: 87: if (INTCONbits.TMR0IF == 1) {
+"87
 [e $ ! == -> . . _INTCONbits 0 2 `i -> 1 `i 2312  ]
 {
-[; ;parcheggio.c: 89: INTCONbits.INT0IE = 0;
-"89
+[; ;parcheggio.c: 88: INTCONbits.INT0IE = 0;
+"88
 [e = . . _INTCONbits 0 4 -> -> 0 `i `uc ]
-[; ;parcheggio.c: 90: TMR0H = 0x34;
-"90
+[; ;parcheggio.c: 89: TMR0H = 0x34;
+"89
 [e = _TMR0H -> -> 52 `i `uc ]
-[; ;parcheggio.c: 91: TMR0L = 0xE0;
-"91
+[; ;parcheggio.c: 90: TMR0L = 0xE0;
+"90
 [e = _TMR0L -> -> 224 `i `uc ]
-[; ;parcheggio.c: 92: MUX_index++;
-"92
+[; ;parcheggio.c: 91: MUX_index++;
+"91
 [e ++ _MUX_index -> -> 1 `i `uc ]
-[; ;parcheggio.c: 93: if (MUX_index == 8) {
-"93
+[; ;parcheggio.c: 92: if (MUX_index == 8) {
+"92
 [e $ ! == -> _MUX_index `i -> 8 `i 2313  ]
 {
-[; ;parcheggio.c: 94: MUX_index = 0;
-"94
+[; ;parcheggio.c: 93: MUX_index = 0;
+"93
 [e = _MUX_index -> -> 0 `i `uc ]
-"95
+"94
 }
 [e :U 2313 ]
+[; ;parcheggio.c: 94: }
+[; ;parcheggio.c: 95: if (distance_error == 1){
+"95
+[e $ ! == -> _distance_error `i -> 1 `i 2314  ]
+{
+[; ;parcheggio.c: 96: sensor_distance[MUX_index] = 5000;
 "96
-[v _gigi `uc ~T0 @X0 1 a ]
-[; ;parcheggio.c: 95: }
-[; ;parcheggio.c: 96: unsigned char gigi = 0;
-[e = _gigi -> -> 0 `i `uc ]
-[; ;parcheggio.c: 97: gigi = MUX_select[MUX_index];
+[e = *U + &U _sensor_distance * -> _MUX_index `ux -> -> # *U &U _sensor_distance `ui `ux -> -> 5000 `i `ui ]
 "97
-[e = _gigi *U + &U _MUX_select * -> _MUX_index `ux -> -> # *U &U _MUX_select `ui `ux ]
-[; ;parcheggio.c: 98: PORTA = gigi;
+}
+[e :U 2314 ]
 "98
-[e = _PORTA _gigi ]
-[; ;parcheggio.c: 99: TRISBbits.RB0 = 0;
+[v _gigi `uc ~T0 @X0 1 a ]
+[; ;parcheggio.c: 97: }
+[; ;parcheggio.c: 98: unsigned char gigi = 0;
+[e = _gigi -> -> 0 `i `uc ]
+[; ;parcheggio.c: 99: gigi = MUX_select[MUX_index];
 "99
-[e = . . _TRISBbits 1 0 -> -> 0 `i `uc ]
-[; ;parcheggio.c: 100: LATBbits.LATB0 = 1;
+[e = _gigi *U + &U _MUX_select * -> _MUX_index `ux -> -> # *U &U _MUX_select `ui `ux ]
+[; ;parcheggio.c: 100: PORTA = gigi;
 "100
-[e = . . _LATBbits 0 0 -> -> 1 `i `uc ]
-[; ;parcheggio.c: 101: _delay((unsigned long)((15)*(16000000/4000000.0)));
+[e = _PORTA _gigi ]
+[; ;parcheggio.c: 101: TRISBbits.RB0 = 0;
 "101
-[e ( __delay (1 -> * -> -> 15 `i `d / -> -> 16000000 `l `d .4000000.0 `ul ]
-[; ;parcheggio.c: 102: distance_error = 1;
+[e = . . _TRISBbits 1 0 -> -> 0 `i `uc ]
+[; ;parcheggio.c: 102: LATBbits.LATB0 = 1;
 "102
-[e = _distance_error -> -> 1 `i `b ]
-[; ;parcheggio.c: 103: LATBbits.LATB0 = 0;
+[e = . . _LATBbits 0 0 -> -> 1 `i `uc ]
+[; ;parcheggio.c: 103: _delay((unsigned long)((15)*(16000000/4000000.0)));
 "103
-[e = . . _LATBbits 0 0 -> -> 0 `i `uc ]
-[; ;parcheggio.c: 104: TRISBbits.RB0 = 1;
+[e ( __delay (1 -> * -> -> 15 `i `d / -> -> 16000000 `l `d .4000000.0 `ul ]
+[; ;parcheggio.c: 104: distance_error = 1;
 "104
-[e = . . _TRISBbits 1 0 -> -> 1 `i `uc ]
-[; ;parcheggio.c: 105: INTCONbits.INT0IF = 0;
+[e = _distance_error -> -> 1 `i `b ]
+[; ;parcheggio.c: 105: LATBbits.LATB0 = 0;
 "105
-[e = . . _INTCONbits 0 1 -> -> 0 `i `uc ]
-[; ;parcheggio.c: 106: INTCONbits.INT0IE = 1;
+[e = . . _LATBbits 0 0 -> -> 0 `i `uc ]
+[; ;parcheggio.c: 106: TRISBbits.RB0 = 1;
 "106
-[e = . . _INTCONbits 0 4 -> -> 1 `i `uc ]
-[; ;parcheggio.c: 107: INTCONbits.TMR0IF = 0;
+[e = . . _TRISBbits 1 0 -> -> 1 `i `uc ]
+[; ;parcheggio.c: 107: INTCONbits.INT0IF = 0;
 "107
-[e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
+[e = . . _INTCONbits 0 1 -> -> 0 `i `uc ]
+[; ;parcheggio.c: 108: INTCONbits.INT0IE = 1;
 "108
+[e = . . _INTCONbits 0 4 -> -> 1 `i `uc ]
+[; ;parcheggio.c: 109: INTCONbits.TMR0IF = 0;
+"109
+[e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
+"110
 }
 [e :U 2312 ]
-[; ;parcheggio.c: 108: }
-[; ;parcheggio.c: 109: }
-"109
+[; ;parcheggio.c: 110: }
+[; ;parcheggio.c: 111: }
+"111
 [e :UE 2305 ]
 }
-"111
+"113
 [v _main `(v ~T0 @X0 1 ef ]
 {
-[; ;parcheggio.c: 111: void main(void) {
+[; ;parcheggio.c: 113: void main(void) {
 [e :U _main ]
 [f ]
-[; ;parcheggio.c: 112: configurazione();
-"112
-[e ( _configurazione ..  ]
-[; ;parcheggio.c: 113: MUX_select[0] = 0b00000000;
-"113
-[e = *U + &U _MUX_select * -> -> -> 0 `i `ui `ux -> -> # *U &U _MUX_select `ui `ux -> -> 0 `i `uc ]
-[; ;parcheggio.c: 114: MUX_select[1] = 0b00000001;
+[; ;parcheggio.c: 114: configurazione();
 "114
-[e = *U + &U _MUX_select * -> -> -> 1 `i `ui `ux -> -> # *U &U _MUX_select `ui `ux -> -> 1 `i `uc ]
-[; ;parcheggio.c: 115: MUX_select[2] = 0b00000010;
+[e ( _configurazione ..  ]
+[; ;parcheggio.c: 115: MUX_select[0] = 0b00000000;
 "115
-[e = *U + &U _MUX_select * -> -> -> 2 `i `ui `ux -> -> # *U &U _MUX_select `ui `ux -> -> 2 `i `uc ]
-[; ;parcheggio.c: 116: MUX_select[3] = 0b00000011;
+[e = *U + &U _MUX_select * -> -> -> 0 `i `ui `ux -> -> # *U &U _MUX_select `ui `ux -> -> 0 `i `uc ]
+[; ;parcheggio.c: 116: MUX_select[1] = 0b00000001;
 "116
-[e = *U + &U _MUX_select * -> -> -> 3 `i `ui `ux -> -> # *U &U _MUX_select `ui `ux -> -> 3 `i `uc ]
-[; ;parcheggio.c: 117: MUX_select[4] = 0b00000100;
+[e = *U + &U _MUX_select * -> -> -> 1 `i `ui `ux -> -> # *U &U _MUX_select `ui `ux -> -> 1 `i `uc ]
+[; ;parcheggio.c: 117: MUX_select[2] = 0b00000010;
 "117
-[e = *U + &U _MUX_select * -> -> -> 4 `i `ui `ux -> -> # *U &U _MUX_select `ui `ux -> -> 4 `i `uc ]
-[; ;parcheggio.c: 118: MUX_select[5] = 0b00000101;
+[e = *U + &U _MUX_select * -> -> -> 2 `i `ui `ux -> -> # *U &U _MUX_select `ui `ux -> -> 2 `i `uc ]
+[; ;parcheggio.c: 118: MUX_select[3] = 0b00000011;
 "118
-[e = *U + &U _MUX_select * -> -> -> 5 `i `ui `ux -> -> # *U &U _MUX_select `ui `ux -> -> 5 `i `uc ]
-[; ;parcheggio.c: 119: MUX_select[6] = 0b00000110;
+[e = *U + &U _MUX_select * -> -> -> 3 `i `ui `ux -> -> # *U &U _MUX_select `ui `ux -> -> 3 `i `uc ]
+[; ;parcheggio.c: 119: MUX_select[4] = 0b00000100;
 "119
-[e = *U + &U _MUX_select * -> -> -> 6 `i `ui `ux -> -> # *U &U _MUX_select `ui `ux -> -> 6 `i `uc ]
-[; ;parcheggio.c: 120: MUX_select[7] = 0b00000111;
+[e = *U + &U _MUX_select * -> -> -> 4 `i `ui `ux -> -> # *U &U _MUX_select `ui `ux -> -> 4 `i `uc ]
+[; ;parcheggio.c: 120: MUX_select[5] = 0b00000101;
 "120
-[e = *U + &U _MUX_select * -> -> -> 7 `i `ui `ux -> -> # *U &U _MUX_select `ui `ux -> -> 7 `i `uc ]
-[; ;parcheggio.c: 122: PORTBbits.RB4 = 0;
+[e = *U + &U _MUX_select * -> -> -> 5 `i `ui `ux -> -> # *U &U _MUX_select `ui `ux -> -> 5 `i `uc ]
+[; ;parcheggio.c: 121: MUX_select[6] = 0b00000110;
+"121
+[e = *U + &U _MUX_select * -> -> -> 6 `i `ui `ux -> -> # *U &U _MUX_select `ui `ux -> -> 6 `i `uc ]
+[; ;parcheggio.c: 122: MUX_select[7] = 0b00000111;
 "122
-[e = . . _PORTBbits 0 4 -> -> 0 `i `uc ]
-[; ;parcheggio.c: 123: PORTBbits.RB5 = 0;
-"123
-[e = . . _PORTBbits 0 5 -> -> 0 `i `uc ]
-[; ;parcheggio.c: 124: PORTBbits.RB6 = 0;
+[e = *U + &U _MUX_select * -> -> -> 7 `i `ui `ux -> -> # *U &U _MUX_select `ui `ux -> -> 7 `i `uc ]
+[; ;parcheggio.c: 124: PORTBbits.RB4 = 0;
 "124
-[e = . . _PORTBbits 0 6 -> -> 0 `i `uc ]
-[; ;parcheggio.c: 125: request_sent = 0;
+[e = . . _PORTBbits 0 4 -> -> 0 `i `uc ]
+[; ;parcheggio.c: 125: PORTBbits.RB5 = 0;
 "125
-[e = _request_sent -> -> 0 `i `b ]
-[; ;parcheggio.c: 126: while (1) {
+[e = . . _PORTBbits 0 5 -> -> 0 `i `uc ]
+[; ;parcheggio.c: 126: PORTBbits.RB6 = 0;
 "126
-[e :U 2316 ]
-{
-[; ;parcheggio.c: 127: park_search();
+[e = . . _PORTBbits 0 6 -> -> 0 `i `uc ]
+[; ;parcheggio.c: 127: request_sent = 0;
 "127
-[e ( _park_search ..  ]
+[e = _request_sent -> -> 0 `i `b ]
+[; ;parcheggio.c: 128: while (1) {
 "128
-}
-[e :U 2315 ]
-"126
-[e $U 2316  ]
 [e :U 2317 ]
-[; ;parcheggio.c: 128: }
-[; ;parcheggio.c: 129: }
+{
+[; ;parcheggio.c: 129: park_search();
 "129
-[e :UE 2314 ]
+[e ( _park_search ..  ]
+"130
 }
+[e :U 2316 ]
+"128
+[e $U 2317  ]
+[e :U 2318 ]
+[; ;parcheggio.c: 130: }
+[; ;parcheggio.c: 131: }
 "131
+[e :UE 2315 ]
+}
+"133
 [v _park_search `(v ~T0 @X0 1 ef ]
 {
-[; ;parcheggio.c: 131: void park_search(void) {
+[; ;parcheggio.c: 133: void park_search(void) {
 [e :U _park_search ]
 [f ]
-[; ;parcheggio.c: 132: while ((PORTBbits.RB6 == 1)&&(activation == 1)) {
-"132
-[e $U 2319  ]
-[e :U 2320 ]
-{
-[; ;parcheggio.c: 133: if (sensor_distance[0] > 50) {
-"133
-[e $ ! > *U + &U _sensor_distance * -> -> -> 0 `i `ui `ux -> -> # *U &U _sensor_distance `ui `ux -> -> 50 `i `ui 2322  ]
-{
-[; ;parcheggio.c: 134: if (request_sent == 0) {
+[; ;parcheggio.c: 134: while (activation == 1) {
 "134
-[e $ ! == -> _request_sent `i -> 0 `i 2323  ]
+[e $U 2320  ]
+[e :U 2321 ]
 {
-[; ;parcheggio.c: 135: while (!CANisTxReady());
+[; ;parcheggio.c: 135: PORTBbits.RB6 = 1;
 "135
-[e $U 2324  ]
-[e :U 2325 ]
-[e :U 2324 ]
-[e $ ! != -> ( _CANisTxReady ..  `i -> -> -> 0 `i `uc `i 2325  ]
-[e :U 2326 ]
-[; ;parcheggio.c: 136: CANsendMessage(0b00000001000, data, 8, CAN_CONFIG_STD_MSG & CAN_REMOTE_TX_FRAME & CAN_TX_PRIORITY_0);
+[e = . . _PORTBbits 0 6 -> -> 1 `i `uc ]
+[; ;parcheggio.c: 136: if (sensor_distance[0] > 50) {
 "136
-[e ( _CANsendMessage (4 , , , -> -> -> 8 `i `l `ul &U _data -> -> 8 `i `uc -> & & -> . `E16313 11 `i -> . `E16335 9 `i -> . `E16335 1 `i `E16335 ]
-[; ;parcheggio.c: 137: request_sent = 1;
+[e $ ! > *U + &U _sensor_distance * -> -> -> 0 `i `ui `ux -> -> # *U &U _sensor_distance `ui `ux -> -> 50 `i `ui 2323  ]
+{
+[; ;parcheggio.c: 137: if (request_sent == 0) {
 "137
-[e = _request_sent -> -> 1 `i `b ]
-[; ;parcheggio.c: 138: LATBbits.LATB4 = 1;
+[e $ ! == -> _request_sent `i -> 0 `i 2324  ]
+{
+[; ;parcheggio.c: 138: while (!CANisTxReady());
 "138
-[e = . . _LATBbits 0 4 -> -> 1 `i `uc ]
+[e $U 2325  ]
+[e :U 2326 ]
+[e :U 2325 ]
+[e $ ! != -> ( _CANisTxReady ..  `i -> -> -> 0 `i `uc `i 2326  ]
+[e :U 2327 ]
+[; ;parcheggio.c: 139: CANsendMessage(0b00000001000, data, 8, CAN_CONFIG_STD_MSG & CAN_REMOTE_TX_FRAME & CAN_TX_PRIORITY_0);
 "139
+[e ( _CANsendMessage (4 , , , -> -> -> 8 `i `l `ul &U _data -> -> 8 `i `uc -> & & -> . `E16313 11 `i -> . `E16335 9 `i -> . `E16335 1 `i `E16335 ]
+[; ;parcheggio.c: 140: request_sent = 1;
+"140
+[e = _request_sent -> -> 1 `i `b ]
+[; ;parcheggio.c: 141: LATBbits.LATB4 = 1;
+"141
+[e = . . _LATBbits 0 4 -> -> 1 `i `uc ]
+"142
+}
+[e :U 2324 ]
+"143
 }
 [e :U 2323 ]
-"140
-}
-[e :U 2322 ]
-[; ;parcheggio.c: 139: }
-[; ;parcheggio.c: 140: }
-[; ;parcheggio.c: 141: if ((sensor_distance[0] < 50)&&(request_sent == 1)) {
-"141
-[e $ ! && < *U + &U _sensor_distance * -> -> -> 0 `i `ui `ux -> -> # *U &U _sensor_distance `ui `ux -> -> 50 `i `ui == -> _request_sent `i -> 1 `i 2327  ]
-{
-[; ;parcheggio.c: 142: request_sent = 0;
-"142
-[e = _request_sent -> -> 0 `i `b ]
-[; ;parcheggio.c: 143: while (!CANisTxReady());
-"143
-[e $U 2328  ]
-[e :U 2329 ]
-[e :U 2328 ]
-[e $ ! != -> ( _CANisTxReady ..  `i -> -> -> 0 `i `uc `i 2329  ]
-[e :U 2330 ]
-[; ;parcheggio.c: 144: CANsendMessage(0b00000000111, data, 8, CAN_CONFIG_STD_MSG & CAN_REMOTE_TX_FRAME & CAN_TX_PRIORITY_0);
+[; ;parcheggio.c: 142: }
+[; ;parcheggio.c: 143: }
+[; ;parcheggio.c: 144: if ((sensor_distance[0] < 50)&&(request_sent == 1)) {
 "144
-[e ( _CANsendMessage (4 , , , -> -> -> 7 `i `l `ul &U _data -> -> 8 `i `uc -> & & -> . `E16313 11 `i -> . `E16335 9 `i -> . `E16335 1 `i `E16335 ]
-"145
-}
-[e :U 2327 ]
-[; ;parcheggio.c: 145: }
-[; ;parcheggio.c: 146: if (distance_average > 50) {
-"146
-[e $ ! > _distance_average -> -> 50 `i `ui 2331  ]
+[e $ ! && < *U + &U _sensor_distance * -> -> -> 0 `i `ui `ux -> -> # *U &U _sensor_distance `ui `ux -> -> 50 `i `ui == -> _request_sent `i -> 1 `i 2328  ]
 {
-[; ;parcheggio.c: 147: PORTBbits.RB5 = 1;
-"147
-[e = . . _PORTBbits 0 5 -> -> 1 `i `uc ]
-[; ;parcheggio.c: 148: while (!CANisTxReady());
-"148
-[e $U 2332  ]
-[e :U 2333 ]
-[e :U 2332 ]
-[e $ ! != -> ( _CANisTxReady ..  `i -> -> -> 0 `i `uc `i 2333  ]
-[e :U 2334 ]
-[; ;parcheggio.c: 149: data[0] = 1;
-"149
-[e = *U + &U _data * -> -> -> 0 `i `ui `ux -> -> # *U &U _data `ui `ux -> -> 1 `i `uc ]
-[; ;parcheggio.c: 150: CANsendMessage(0b00000001011, data, 1, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
-"150
-[e ( _CANsendMessage (4 , , , -> -> -> 11 `i `l `ul &U _data -> -> 1 `i `uc -> & & -> . `E16313 11 `i -> . `E16335 10 `i -> . `E16335 1 `i `E16335 ]
-"151
-}
+[; ;parcheggio.c: 145: request_sent = 0;
+"145
+[e = _request_sent -> -> 0 `i `b ]
+[; ;parcheggio.c: 146: while (!CANisTxReady());
+"146
+[e $U 2329  ]
+[e :U 2330 ]
+[e :U 2329 ]
+[e $ ! != -> ( _CANisTxReady ..  `i -> -> -> 0 `i `uc `i 2330  ]
 [e :U 2331 ]
+[; ;parcheggio.c: 147: CANsendMessage(0b00000000111, data, 8, CAN_CONFIG_STD_MSG & CAN_REMOTE_TX_FRAME & CAN_TX_PRIORITY_0);
+"147
+[e ( _CANsendMessage (4 , , , -> -> -> 7 `i `l `ul &U _data -> -> 8 `i `uc -> & & -> . `E16313 11 `i -> . `E16335 9 `i -> . `E16335 1 `i `E16335 ]
+"148
+}
+[e :U 2328 ]
+[; ;parcheggio.c: 148: }
+[; ;parcheggio.c: 149: if (distance_average > 50) {
+"149
+[e $ ! > _distance_average -> -> 50 `i `ui 2332  ]
+{
+[; ;parcheggio.c: 150: PORTBbits.RB5 = 1;
+"150
+[e = . . _PORTBbits 0 5 -> -> 1 `i `uc ]
+[; ;parcheggio.c: 151: while (!CANisTxReady());
+"151
+[e $U 2333  ]
+[e :U 2334 ]
+[e :U 2333 ]
+[e $ ! != -> ( _CANisTxReady ..  `i -> -> -> 0 `i `uc `i 2334  ]
+[e :U 2335 ]
+[; ;parcheggio.c: 152: data[0] = 1;
 "152
-}
-[e :U 2319 ]
-"132
-[e $ && == -> . . _PORTBbits 0 6 `i -> 1 `i == -> _activation `i -> 1 `i 2320  ]
-[e :U 2321 ]
-[; ;parcheggio.c: 151: }
-[; ;parcheggio.c: 152: }
-[; ;parcheggio.c: 153: }
+[e = *U + &U _data * -> -> -> 0 `i `ui `ux -> -> # *U &U _data `ui `ux -> -> 1 `i `uc ]
+[; ;parcheggio.c: 153: CANsendMessage(0b00000001011, data, 1, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
 "153
-[e :UE 2318 ]
+[e ( _CANsendMessage (4 , , , -> -> -> 11 `i `l `ul &U _data -> -> 1 `i `uc -> & & -> . `E16313 11 `i -> . `E16335 10 `i -> . `E16335 1 `i `E16335 ]
+"154
 }
+[e :U 2332 ]
 "155
+}
+[e :U 2320 ]
+"134
+[e $ == -> _activation `i -> 1 `i 2321  ]
+[e :U 2322 ]
+[; ;parcheggio.c: 154: }
+[; ;parcheggio.c: 155: }
+[; ;parcheggio.c: 156: }
+"156
+[e :UE 2319 ]
+}
+"158
 [v _configurazione `(v ~T0 @X0 1 ef ]
 {
-[; ;parcheggio.c: 155: void configurazione(void) {
+[; ;parcheggio.c: 158: void configurazione(void) {
 [e :U _configurazione ]
 [f ]
-[; ;parcheggio.c: 156: LATA = 0x00;
-"156
-[e = _LATA -> -> 0 `i `uc ]
-[; ;parcheggio.c: 157: TRISA = 0b11110000;
-"157
-[e = _TRISA -> -> 240 `i `uc ]
-[; ;parcheggio.c: 159: LATB = 0x00;
+[; ;parcheggio.c: 159: LATA = 0x00;
 "159
-[e = _LATB -> -> 0 `i `uc ]
-[; ;parcheggio.c: 160: TRISB = 0b10001010;
+[e = _LATA -> -> 0 `i `uc ]
+[; ;parcheggio.c: 160: TRISA = 0b11110000;
 "160
-[e = _TRISB -> -> 138 `i `uc ]
-[; ;parcheggio.c: 162: LATC = 0x00;
+[e = _TRISA -> -> 240 `i `uc ]
+[; ;parcheggio.c: 162: LATB = 0x00;
 "162
-[e = _LATC -> -> 0 `i `uc ]
-[; ;parcheggio.c: 163: TRISC = 0b11111111;
+[e = _LATB -> -> 0 `i `uc ]
+[; ;parcheggio.c: 163: TRISB = 0b10001010;
 "163
-[e = _TRISC -> -> 255 `i `uc ]
-[; ;parcheggio.c: 165: ADCON1 = 0xFF;
+[e = _TRISB -> -> 138 `i `uc ]
+[; ;parcheggio.c: 165: LATC = 0x00;
 "165
-[e = _ADCON1 -> -> 255 `i `uc ]
-[; ;parcheggio.c: 166: CANInitialize(4, 6, 5, 1, 3, CAN_CONFIG_LINE_FILTER_OFF & CAN_CONFIG_SAMPLE_ONCE & CAN_CONFIG_ALL_VALID_MSG & CAN_CONFIG_DBL_BUFFER_ON);
+[e = _LATC -> -> 0 `i `uc ]
+[; ;parcheggio.c: 166: TRISC = 0b11111111;
 "166
-[e ( _CANInitialize (4 , , , , , -> -> 4 `i `uc -> -> 6 `i `uc -> -> 5 `i `uc -> -> 1 `i `uc -> -> 3 `i `uc -> & & & -> . `E16313 6 `i -> . `E16313 8 `i -> . `E16313 20 `i -> . `E16313 14 `i `E16313 ]
-[; ;parcheggio.c: 168: RCONbits.IPEN = 1;
+[e = _TRISC -> -> 255 `i `uc ]
+[; ;parcheggio.c: 168: ADCON1 = 0xFF;
 "168
-[e = . . _RCONbits 5 7 -> -> 1 `i `uc ]
-[; ;parcheggio.c: 169: PIR3bits.RXB1IF = 0;
+[e = _ADCON1 -> -> 255 `i `uc ]
+[; ;parcheggio.c: 169: CANInitialize(4, 6, 5, 1, 3, CAN_CONFIG_LINE_FILTER_OFF & CAN_CONFIG_SAMPLE_ONCE & CAN_CONFIG_ALL_VALID_MSG & CAN_CONFIG_DBL_BUFFER_ON);
 "169
-[e = . . _PIR3bits 0 1 -> -> 0 `i `uc ]
-[; ;parcheggio.c: 170: PIR3bits.RXB0IF = 0;
-"170
-[e = . . _PIR3bits 0 0 -> -> 0 `i `uc ]
-[; ;parcheggio.c: 171: IPR3bits.RXB1IP = 0;
+[e ( _CANInitialize (4 , , , , , -> -> 4 `i `uc -> -> 6 `i `uc -> -> 5 `i `uc -> -> 1 `i `uc -> -> 3 `i `uc -> & & & -> . `E16313 6 `i -> . `E16313 8 `i -> . `E16313 20 `i -> . `E16313 14 `i `E16313 ]
+[; ;parcheggio.c: 171: RCONbits.IPEN = 1;
 "171
-[e = . . _IPR3bits 0 1 -> -> 0 `i `uc ]
-[; ;parcheggio.c: 172: IPR3bits.RXB0IP = 0;
+[e = . . _RCONbits 5 7 -> -> 1 `i `uc ]
+[; ;parcheggio.c: 172: PIR3bits.RXB1IF = 0;
 "172
-[e = . . _IPR3bits 0 0 -> -> 0 `i `uc ]
-[; ;parcheggio.c: 173: PIE3bits.RXB1IE = 1;
+[e = . . _PIR3bits 0 1 -> -> 0 `i `uc ]
+[; ;parcheggio.c: 173: PIR3bits.RXB0IF = 0;
 "173
-[e = . . _PIE3bits 0 1 -> -> 1 `i `uc ]
-[; ;parcheggio.c: 174: PIE3bits.RXB0IE = 1;
+[e = . . _PIR3bits 0 0 -> -> 0 `i `uc ]
+[; ;parcheggio.c: 174: IPR3bits.RXB1IP = 0;
 "174
-[e = . . _PIE3bits 0 0 -> -> 1 `i `uc ]
-[; ;parcheggio.c: 175: INTCON2bits.TMR0IP = 0;
+[e = . . _IPR3bits 0 1 -> -> 0 `i `uc ]
+[; ;parcheggio.c: 175: IPR3bits.RXB0IP = 0;
 "175
-[e = . . _INTCON2bits 1 2 -> -> 0 `i `uc ]
-[; ;parcheggio.c: 176: T0CON = 0x80;
+[e = . . _IPR3bits 0 0 -> -> 0 `i `uc ]
+[; ;parcheggio.c: 176: PIE3bits.RXB1IE = 1;
 "176
-[e = _T0CON -> -> 128 `i `uc ]
-[; ;parcheggio.c: 177: T3CON = 0x11;
+[e = . . _PIE3bits 0 1 -> -> 1 `i `uc ]
+[; ;parcheggio.c: 177: PIE3bits.RXB0IE = 1;
 "177
-[e = _T3CON -> -> 17 `i `uc ]
-[; ;parcheggio.c: 178: TMR0H = 0x34;
+[e = . . _PIE3bits 0 0 -> -> 1 `i `uc ]
+[; ;parcheggio.c: 178: INTCON2bits.TMR0IP = 0;
 "178
-[e = _TMR0H -> -> 52 `i `uc ]
-[; ;parcheggio.c: 179: TMR0L = 0xE0;
+[e = . . _INTCON2bits 1 2 -> -> 0 `i `uc ]
+[; ;parcheggio.c: 179: T0CON = 0x80;
 "179
-[e = _TMR0L -> -> 224 `i `uc ]
-[; ;parcheggio.c: 180: INTCONbits.TMR0IF = 0;
+[e = _T0CON -> -> 128 `i `uc ]
+[; ;parcheggio.c: 180: T3CON = 0x11;
 "180
-[e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
-[; ;parcheggio.c: 181: INTCONbits.TMR0IE = 1;
+[e = _T3CON -> -> 17 `i `uc ]
+[; ;parcheggio.c: 181: TMR0H = 0x34;
 "181
-[e = . . _INTCONbits 0 5 -> -> 1 `i `uc ]
-[; ;parcheggio.c: 182: INTCON2bits.INTEDG0 = 1;
+[e = _TMR0H -> -> 52 `i `uc ]
+[; ;parcheggio.c: 182: TMR0L = 0xE0;
 "182
-[e = . . _INTCON2bits 1 6 -> -> 1 `i `uc ]
-[; ;parcheggio.c: 183: INTCONbits.INT0IF = 0;
+[e = _TMR0L -> -> 224 `i `uc ]
+[; ;parcheggio.c: 183: INTCONbits.TMR0IF = 0;
 "183
-[e = . . _INTCONbits 0 1 -> -> 0 `i `uc ]
-[; ;parcheggio.c: 184: INTCONbits.INT0IE = 0;
+[e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
+[; ;parcheggio.c: 184: INTCONbits.TMR0IE = 1;
 "184
-[e = . . _INTCONbits 0 4 -> -> 0 `i `uc ]
-[; ;parcheggio.c: 185: INTCONbits.GIEL = 1;
+[e = . . _INTCONbits 0 5 -> -> 1 `i `uc ]
+[; ;parcheggio.c: 185: INTCON2bits.INTEDG0 = 1;
 "185
-[e = . . _INTCONbits 2 6 -> -> 1 `i `uc ]
-[; ;parcheggio.c: 186: INTCONbits.GIEH = 1;
+[e = . . _INTCON2bits 1 6 -> -> 1 `i `uc ]
+[; ;parcheggio.c: 186: INTCONbits.INT0IF = 0;
 "186
-[e = . . _INTCONbits 2 7 -> -> 1 `i `uc ]
-[; ;parcheggio.c: 187: }
+[e = . . _INTCONbits 0 1 -> -> 0 `i `uc ]
+[; ;parcheggio.c: 187: INTCONbits.INT0IE = 0;
 "187
-[e :UE 2335 ]
+[e = . . _INTCONbits 0 4 -> -> 0 `i `uc ]
+[; ;parcheggio.c: 188: INTCONbits.GIEL = 1;
+"188
+[e = . . _INTCONbits 2 6 -> -> 1 `i `uc ]
+[; ;parcheggio.c: 189: INTCONbits.GIEH = 1;
+"189
+[e = . . _INTCONbits 2 7 -> -> 1 `i `uc ]
+[; ;parcheggio.c: 190: }
+"190
+[e :UE 2336 ]
 }

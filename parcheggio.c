@@ -75,7 +75,6 @@ __interrupt(low_priority) void ISR_Bassa(void) {
             if (msg.identifier == PARK_ASSIST_ENABLE) {
                 if (msg.data[0] == 1) {
                     activation = 1;
-                    PORTBbits.RB6 = 1;
                 } else {
                     activation = 0;
                     PORTBbits.RB6 = 0;
@@ -92,6 +91,9 @@ __interrupt(low_priority) void ISR_Bassa(void) {
         MUX_index++;
         if (MUX_index == 8) {
             MUX_index = 0;
+        }
+        if (distance_error == 1){
+            sensor_distance[MUX_index] = 5000;
         }
         unsigned char gigi = 0;
         gigi = MUX_select[MUX_index];
@@ -129,7 +131,8 @@ void main(void) {
 }
 
 void park_search(void) {
-    while ((PORTBbits.RB6 == 1)&&(activation == 1)) {
+    while (activation == 1) {
+        PORTBbits.RB6 = 1;
         if (sensor_distance[0] > 50) { //VALORE RANDOM!!!!
             if (request_sent == 0) {
                 while (!CANisTxReady());

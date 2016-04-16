@@ -82,8 +82,6 @@ CAN_RX_BUFFER_2_OVFL 2
 [v _CANSetFilter CANSetFilter `(v  1 e 0 0 ]
 "1154
 [v _CANisTxReady CANisTxReady `(uc  1 e 1 0 ]
-"1163
-[v _CANisRxReady CANisRxReady `(uc  1 e 1 0 ]
 "61 C:/Users/Simone/Desktop/LaurTec_PIC_libraries_v_3.3.1/src\delay.c
 [v _delay_ms delay_ms `(v  1 e 0 0 ]
 "62 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\float.c
@@ -110,15 +108,15 @@ CAN_RX_BUFFER_2_OVFL 2
 [v ___wmul __wmul `(ui  1 e 2 0 ]
 "15 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\Umul32.c
 [v ___lmul __lmul `(ul  1 e 4 0 ]
-"37 D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+"43 D:\Documenti\GitHub\parcheggio.X\parcheggio.c
 [v _ISR_Alta ISR_Alta `IIH(v  1 e 0 0 ]
-"62
+"68
 [v _ISR_Bassa ISR_Bassa `IIL(v  1 e 0 0 ]
-"113
+"122
 [v _main main `(v  1 e 0 0 ]
-"133
+"142
 [v _park_search park_search `(v  1 e 0 0 ]
-"158
+"175
 [v _configurazione configurazione `(v  1 e 0 0 ]
 "49 C:/Users/Simone/Desktop/LaurTec_PIC_libraries_v_3.3.1/src\delay.c
 [v _delay_quartz_frequency_value delay_quartz_frequency_value `VEuc  1 e 1 0 ]
@@ -1314,47 +1312,51 @@ CAN_RX_BUFFER_2_OVFL 2
 "33798
 [v _INTCONbits INTCONbits `VES2051  1 e 1 @4082 ]
 [s S853 . 15 `ul 1 identifier 4 0 `[8]uc 1 data 8 4 `uc 1 type 1 12 `uc 1 length 1 13 `uc 1 RTR 1 14 ]
-"19 D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+"21 D:\Documenti\GitHub\parcheggio.X\parcheggio.c
 [v _msg msg `S853  1 e 15 0 ]
-"20
-[v _distance_error distance_error `VEb  1 e 0 0 ]
-"21
-[v _activation activation `VEb  1 e 0 0 ]
 "22
-[v _request_sent request_sent `b  1 e 0 0 ]
+[v _distance_error distance_error `VEb  1 e 0 0 ]
 "23
-[v _distance_dx distance_dx `ui  1 e 2 0 ]
+[v _activation activation `VEb  1 e 0 0 ]
 "24
-[v _distance_sx distance_sx `ui  1 e 2 0 ]
+[v _request_sent request_sent `VEb  1 e 0 0 ]
 "25
-[v _distance_average distance_average `ui  1 e 2 0 ]
+[v _distance_recived distance_recived `VEb  1 e 0 0 ]
 "26
-[v _sensor_distance sensor_distance `VE[8]ui  1 e 16 0 ]
+[v _distance_dx distance_dx `VEui  1 e 2 0 ]
 "27
-[v _data data `[8]uc  1 e 8 0 ]
+[v _distance_sx distance_sx `VEui  1 e 2 0 ]
 "28
-[v _MUX_index MUX_index `VEuc  1 e 1 0 ]
-"29
-[v _MUX_select MUX_select `[8]uc  1 e 8 0 ]
-"30
-[v _timerValue timerValue `VEui  1 e 2 0 ]
+[v _distance_average distance_average `VEui  1 e 2 0 ]
 "31
-[v _timerValue2 timerValue2 `VEui  1 e 2 0 ]
+[v _sensor_distance sensor_distance `VE[8]ui  1 e 16 0 ]
 "32
-[v _pulse_time pulse_time `ui  1 e 2 0 ]
+[v _data data `[8]uc  1 e 8 0 ]
+"33
+[v _MUX_index MUX_index `VEuc  1 e 1 0 ]
 "34
-[v _gianni gianni `VEuc  1 e 1 0 ]
+[v _MUX_select MUX_select `[8]uc  1 e 8 0 ]
 "35
+[v _timerValue timerValue `VEui  1 e 2 0 ]
+"36
+[v _timerValue2 timerValue2 `VEui  1 e 2 0 ]
+"37
+[v _pulse_time pulse_time `VEui  1 e 2 0 ]
+"38
+[v _distance distance `VEui  1 e 2 0 ]
+"39
+[v _gianni gianni `VEuc  1 e 1 0 ]
+"40
 [v _asus asus `VEuc  1 e 1 0 ]
-"113
+"122
 [v _main main `(v  1 e 0 0 ]
 {
-"131
+"140
 } 0
-"133
+"142
 [v _park_search park_search `(v  1 e 0 0 ]
 {
-"156
+"173
 } 0
 "294 C:/Users/Simone/Desktop/LaurTec_PIC_libraries_v_3.3.1/inc\CANlib.h
 [v _CANsendMessage CANsendMessage `(v  1 e 0 0 ]
@@ -1373,10 +1375,10 @@ CAN_RX_BUFFER_2_OVFL 2
 {
 "1157
 } 0
-"158 D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+"175 D:\Documenti\GitHub\parcheggio.X\parcheggio.c
 [v _configurazione configurazione `(v  1 e 0 0 ]
 {
-"190
+"207
 } 0
 "218 C:/Users/Simone/Desktop/LaurTec_PIC_libraries_v_3.3.1/inc\CANlib.h
 [v _CANInitialize CANInitialize `(v  1 e 0 0 ]
@@ -1434,12 +1436,12 @@ CAN_RX_BUFFER_2_OVFL 2
 [v CANOperationMode@mode mode `E16307  1 a 1 23 ]
 "211
 } 0
-"62 D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+"68 D:\Documenti\GitHub\parcheggio.X\parcheggio.c
 [v _ISR_Bassa ISR_Bassa `IIL(v  1 e 0 0 ]
 {
-"98
+"107
 [v ISR_Bassa@gigi gigi `uc  1 a 1 33 ]
-"111
+"120
 } 0
 "528 C:/Users/Simone/Desktop/LaurTec_PIC_libraries_v_3.3.1/inc\CANlib.h
 [v _CANreceiveMessage CANreceiveMessage `(uc  1 e 1 0 ]
@@ -1453,15 +1455,10 @@ CAN_RX_BUFFER_2_OVFL 2
 [v CANreceiveMessage@msg msg `*.39S853  1 p 2 0 ]
 "634
 } 0
-"1163
-[v _CANisRxReady CANisRxReady `(uc  1 e 1 0 ]
-{
-"1166
-} 0
-"37 D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+"43 D:\Documenti\GitHub\parcheggio.X\parcheggio.c
 [v _ISR_Alta ISR_Alta `IIH(v  1 e 0 0 ]
 {
-"60
+"66
 } 0
 "8 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwdiv.c
 [v ___lwdiv __lwdiv `(ui  1 e 2 0 ]

@@ -11,28 +11,34 @@
 #include "delay.c"
 #include "delay.h"
 #include "idCan.h"
+#include <stdio.h>
+#include <math.h>
 #define _XTAL_FREQ 16000000
-#define spazio_parcheggio 50
+
 void configurazione(void);
 void park_search(void);
 
 CANmessage msg;
 volatile bit distance_error = 0;
 volatile bit activation = 0;
-bit request_sent = 0;
-unsigned int distance_dx = 0; //distanza percorsa (da abs)
-unsigned int distance_sx = 0; //distanza percorsa (da abs)
-unsigned int distance_average = 0; //media distanza
+volatile bit request_sent = 0;
+volatile bit distance_recived = 0;
+volatile unsigned int distance_dx = 0; //distanza percorsa (da abs)
+volatile unsigned int distance_sx = 0; //distanza percorsa (da abs)
+volatile unsigned int distance_average = 0; //media distanza
+unsigned int ciao = 0;
+ int spazio_parcheggio = 100;
 volatile unsigned int sensor_distance[8] = 0;
 BYTE data [8] = 0;
 volatile unsigned char MUX_index = 0;
 unsigned char MUX_select[8] = 0;
 volatile unsigned int timerValue = 0;
 volatile unsigned int timerValue2 = 0;
-unsigned int pulse_time = 0;
-unsigned int distance = 0;
+volatile unsigned int pulse_time = 0;
+volatile unsigned int distance = 0;
 volatile unsigned char gianni = 0;
 volatile unsigned char asus = 0;
+
 
 __interrupt(high_priority) void ISR_Alta(void) {
 
@@ -63,38 +69,41 @@ __interrupt(low_priority) void ISR_Bassa(void) {
     //INTERRUPT CANBUS
 
     if ((PIR3bits.RXB0IF == 1) || (PIR3bits.RXB1IF == 1)) {
-        if (CANisRxReady()) {
-            CANreceiveMessage(&msg);
-            if (msg.identifier == COUNT_STOP) {
-                distance_dx = msg.data[1];
-                distance_dx = ((distance_dx << 8) | msg.data[0]);
-                distance_sx = msg.data[3];
-                distance_sx = ((distance_dx << 8) | msg.data[2]);
-                distance_average = (distance_dx + distance_sx) / 2;
-            }
-            if (msg.identifier == PARK_ASSIST_ENABLE) {
-                if (msg.data[0] == 1) {
-                    activation = 1;
-                } else {
-                    activation = 0;
-                    PORTBbits.RB6 = 0;
-                }
+        CANreceiveMessage(&msg);
+        if ((msg.identifier == COUNT_STOP)&&(msg.RTR != 1)) {
+            distance_dx = msg.data[1];
+            distance_dx = ((distance_dx << 8) | msg.data[0]);
+            distance_sx = msg.data[3];
+            distance_sx = ((distance_sx << 8) | msg.data[2]);
+            distance_average = (distance_sx+distance_dx)/2;
+            distance_recived = 1;
+        }
+        if (msg.identifier == PARK_ASSIST_ENABLE) {
+            if (msg.data[0] == 1) {
+                activation = 1;
+                PORTBbits.RB6 = 1;
+            } else {
+                activation = 0;
+                PORTBbits.RB4 = 0;
+                PORTBbits.RB5 = 0;
+                PORTBbits.RB6 = 0;
             }
         }
-        PIR3bits.RXB0IF == 0;
-        PIR3bits.RXB1IF == 0;
+        PIR3bits.RXB0IF = 0;
+        PIR3bits.RXB1IF = 0;
     }
     if (INTCONbits.TMR0IF == 1) {
         INTCONbits.INT0IE = 0;
         TMR0H = 0x34; //26mS
         TMR0L = 0xE0;
+        if (distance_error == 1) {
+            sensor_distance[MUX_index] = 5000;
+        }
         MUX_index++;
         if (MUX_index == 8) {
             MUX_index = 0;
         }
-        if (distance_error == 1){
-            sensor_distance[MUX_index] = 5000;
-        }
+
         unsigned char gigi = 0;
         gigi = MUX_select[MUX_index];
         PORTA = gigi;
@@ -131,8 +140,7 @@ void main(void) {
 }
 
 void park_search(void) {
-    while (activation == 1) {
-        PORTBbits.RB6 = 1;
+    while ((activation == 1)&&(PORTBbits.RB5 == 0)) {
         if (sensor_distance[0] > 50) { //VALORE RANDOM!!!!
             if (request_sent == 0) {
                 while (!CANisTxReady());
@@ -146,11 +154,20 @@ void park_search(void) {
             while (!CANisTxReady());
             CANsendMessage(COUNT_STOP, data, 8, CAN_CONFIG_STD_MSG & CAN_REMOTE_TX_FRAME & CAN_TX_PRIORITY_0);
         }
-        if (distance_average > spazio_parcheggio) {
-            PORTBbits.RB5 = 1;
-            while (!CANisTxReady());
-            data[0] = 1;
-            CANsendMessage(PARK_ASSIST_STATE, data, 1, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
+        if (distance_recived == 1) {
+            if (distance_average > 100) {
+                PORTBbits.RB5 = 1;
+                while (!CANisTxReady());
+                data[0] = distance_sx;
+                data[1] = distance_sx >> 8;
+                CANsendMessage(0xAA, data, 1, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
+                data[0] = 1;
+                CANsendMessage(PARK_ASSIST_STATE, data, 1, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
+                distance_recived = 0;
+            } else {
+                distance_recived = 0;
+                PORTBbits.RB5 = 0;
+            }
         }
     }
 }

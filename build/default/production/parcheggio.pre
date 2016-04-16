@@ -19870,33 +19870,125 @@ delay_quartz_frequency_value = frequency;
 
 }
 
-# 16 "parcheggio.c"
+# 7 "C:\Program Files (x86)\Microchip\xc8\v1.35\include\stdarg.h"
+typedef void * va_list[1];
+
+#pragma intrinsic(__va_start)
+extern void * __va_start(void);
+
+#pragma intrinsic(__va_arg)
+extern void * __va_arg(void *, ...);
+
+# 43 "C:\Program Files (x86)\Microchip\xc8\v1.35\include\stdio.h"
+struct __prbuf
+{
+char * ptr;
+void (* func)(char);
+};
+
+# 25 "C:\Program Files (x86)\Microchip\xc8\v1.35\include\errno.h"
+extern int errno;
+
+# 12 "C:\Program Files (x86)\Microchip\xc8\v1.35\include\conio.h"
+extern void init_uart(void);
+
+extern char getch(void);
+extern char getche(void);
+extern void putch(char);
+extern void ungetch(char);
+
+extern __bit kbhit(void);
+
+# 23
+extern char * cgets(char *);
+extern void cputs(const char *);
+
+# 88 "C:\Program Files (x86)\Microchip\xc8\v1.35\include\stdio.h"
+extern int cprintf(char *, ...);
+#pragma printf_check(cprintf)
+
+
+
+extern int _doprnt(struct __prbuf *, const register char *, register va_list);
+
+
+# 180
+#pragma printf_check(vprintf) const
+#pragma printf_check(vsprintf) const
+
+extern char * gets(char *);
+extern int puts(const char *);
+extern int scanf(const char *, ...) __attribute__((unsupported("scanf() is not supported by this compiler")));
+extern int sscanf(const char *, const char *, ...) __attribute__((unsupported("sscanf() is not supported by this compiler")));
+extern int vprintf(const char *, va_list) __attribute__((unsupported("vprintf() is not supported by this compiler")));
+extern int vsprintf(char *, const char *, va_list) __attribute__((unsupported("vsprintf() is not supported by this compiler")));
+extern int vscanf(const char *, va_list ap) __attribute__((unsupported("vscanf() is not supported by this compiler")));
+extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupported("vsscanf() is not supported by this compiler")));
+
+#pragma printf_check(printf) const
+#pragma printf_check(sprintf) const
+extern int sprintf(char *, const char *, ...);
+extern int printf(const char *, ...);
+
+# 30 "C:\Program Files (x86)\Microchip\xc8\v1.35\include\math.h"
+extern double fabs(double);
+extern double floor(double);
+extern double ceil(double);
+extern double modf(double, double *);
+extern double sqrt(double);
+extern double atof(const char *);
+extern double sin(double) ;
+extern double cos(double) ;
+extern double tan(double) ;
+extern double asin(double) ;
+extern double acos(double) ;
+extern double atan(double);
+extern double atan2(double, double) ;
+extern double log(double);
+extern double log10(double);
+extern double pow(double, double) ;
+extern double exp(double) ;
+extern double sinh(double) ;
+extern double cosh(double) ;
+extern double tanh(double);
+extern double eval_poly(double, const double *, int);
+extern double frexp(double, int *);
+extern double ldexp(double, int);
+extern double fmod(double, double);
+extern double trunc(double);
+extern double round(double);
+
+# 18 "parcheggio.c"
 void configurazione(void);
 void park_search(void);
 
 CANmessage msg;
 volatile bit distance_error = 0;
 volatile bit activation = 0;
-bit request_sent = 0;
-unsigned int distance_dx = 0;
-unsigned int distance_sx = 0;
-unsigned int distance_average = 0;
+volatile bit request_sent = 0;
+volatile bit distance_recived = 0;
+volatile unsigned int distance_dx = 0;
+volatile unsigned int distance_sx = 0;
+volatile unsigned int distance_average = 0;
+unsigned int ciao = 0;
+int spazio_parcheggio = 100;
 volatile unsigned int sensor_distance[8] = 0;
 BYTE data [8] = 0;
 volatile unsigned char MUX_index = 0;
 unsigned char MUX_select[8] = 0;
 volatile unsigned int timerValue = 0;
 volatile unsigned int timerValue2 = 0;
-unsigned int pulse_time = 0;
-unsigned int distance = 0;
+volatile unsigned int pulse_time = 0;
+volatile unsigned int distance = 0;
 volatile unsigned char gianni = 0;
 volatile unsigned char asus = 0;
+
 
 __attribute__((interrupt("__high_priority"))) void ISR_Alta(void) {
 
 if (INTCON2bits.INTEDG0 == 1) {
 
-# 45
+# 51
 INTCON2bits.INTEDG0 = 0;
 TMR3H = 0;
 TMR3L = 0;
@@ -19918,38 +20010,41 @@ __attribute__((interrupt("__low_priority"))) void ISR_Bassa(void) {
 
 
 if ((PIR3bits.RXB0IF == 1) || (PIR3bits.RXB1IF == 1)) {
-if (CANisRxReady()) {
 CANreceiveMessage(&msg);
-if (msg.identifier == 0b00000000111) {
+if ((msg.identifier == 0b00000000111)&&(msg.RTR != 1)) {
 distance_dx = msg.data[1];
 distance_dx = ((distance_dx << 8) | msg.data[0]);
 distance_sx = msg.data[3];
-distance_sx = ((distance_dx << 8) | msg.data[2]);
-distance_average = (distance_dx + distance_sx) / 2;
+distance_sx = ((distance_sx << 8) | msg.data[2]);
+distance_average = (distance_sx+distance_dx)/2;
+distance_recived = 1;
 }
 if (msg.identifier == 0b00000001010) {
 if (msg.data[0] == 1) {
 activation = 1;
+PORTBbits.RB6 = 1;
 } else {
 activation = 0;
+PORTBbits.RB4 = 0;
+PORTBbits.RB5 = 0;
 PORTBbits.RB6 = 0;
 }
 }
-}
-PIR3bits.RXB0IF == 0;
-PIR3bits.RXB1IF == 0;
+PIR3bits.RXB0IF = 0;
+PIR3bits.RXB1IF = 0;
 }
 if (INTCONbits.TMR0IF == 1) {
 INTCONbits.INT0IE = 0;
 TMR0H = 0x34;
 TMR0L = 0xE0;
+if (distance_error == 1) {
+sensor_distance[MUX_index] = 5000;
+}
 MUX_index++;
 if (MUX_index == 8) {
 MUX_index = 0;
 }
-if (distance_error == 1){
-sensor_distance[MUX_index] = 5000;
-}
+
 unsigned char gigi = 0;
 gigi = MUX_select[MUX_index];
 PORTA = gigi;
@@ -19986,8 +20081,7 @@ park_search();
 }
 
 void park_search(void) {
-while (activation == 1) {
-PORTBbits.RB6 = 1;
+while ((activation == 1)&&(PORTBbits.RB5 == 0)) {
 if (sensor_distance[0] > 50) {
 if (request_sent == 0) {
 while (!CANisTxReady());
@@ -20001,11 +20095,20 @@ request_sent = 0;
 while (!CANisTxReady());
 CANsendMessage(0b00000000111, data, 8, CAN_CONFIG_STD_MSG & CAN_REMOTE_TX_FRAME & CAN_TX_PRIORITY_0);
 }
-if (distance_average > 50) {
+if (distance_recived == 1) {
+if (distance_average > 100) {
 PORTBbits.RB5 = 1;
 while (!CANisTxReady());
+data[0] = distance_sx;
+data[1] = distance_sx >> 8;
+CANsendMessage(0xAA, data, 1, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
 data[0] = 1;
 CANsendMessage(0b00000001011, data, 1, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
+distance_recived = 0;
+} else {
+distance_recived = 0;
+PORTBbits.RB5 = 0;
+}
 }
 }
 }

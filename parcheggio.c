@@ -17,42 +17,53 @@
 
 void configurazione(void);
 void park_search(void);
+void park_routine(void);
+void can_send(void);
+void can_interpreter(void);
 
+int spazio_parcheggio = 100;
+
+//variabili per il can
 CANmessage msg;
+BYTE data [8] = 0;
+BYTE data_steering [8] = 0;
+BYTE data_speed [8] = 0;
+BYTE data_brake [8] = 0;
+BYTE data_speed_rx[8] = 0;
+BYTE distance_set [8] = 0;
 volatile bit distance_error = 0;
 volatile bit activation = 0;
 volatile bit request_sent = 0;
 volatile bit distance_recived = 0;
+volatile bit start_operation = 0;
+unsigned int set_speed = 0;
+bit dir = 0;
+//variabili da abs
 volatile unsigned int distance_dx = 0; //distanza percorsa (da abs)
 volatile unsigned int distance_sx = 0; //distanza percorsa (da abs)
 volatile unsigned int distance_average = 0; //media distanza
-unsigned int ciao = 0;
- int spazio_parcheggio = 100;
+unsigned int right_speed = 0;
+unsigned int left_speed = 0;
+unsigned int actual_speed = 0;
+
 volatile unsigned int sensor_distance[8] = 0;
-BYTE data [8] = 0;
+
+//variabili per ultrasuoni
 volatile unsigned char MUX_index = 0;
 unsigned char MUX_select[8] = 0;
-volatile unsigned int timerValue = 0;
-volatile unsigned int timerValue2 = 0;
 volatile unsigned int pulse_time = 0;
 volatile unsigned int distance = 0;
 volatile unsigned char gianni = 0;
 volatile unsigned char asus = 0;
-
+volatile unsigned int timerValue2 = 0;
 
 __interrupt(high_priority) void ISR_Alta(void) {
 
     if (INTCON2bits.INTEDG0 == 1) {
-
-        //        gianni = TMR0H;
-        //        asus = TMR0L;
-        //        timerValue = gianni;
-        //        timerValue = ((timerValue << 8) | (asus));
         INTCON2bits.INTEDG0 = 0; //interrupt sul fronte di discesa
         TMR3H = 0;
         TMR3L = 0;
         distance_error = 0;
-
     } else {
         gianni = TMR3H;
         asus = TMR3L;
@@ -60,22 +71,23 @@ __interrupt(high_priority) void ISR_Alta(void) {
         timerValue2 = ((timerValue2 << 8) | (asus));
         pulse_time = timerValue2 / 2; //500nani->uS
         sensor_distance[MUX_index] = pulse_time / 58; //cm
-        INTCON2bits.INTEDG0 = 1;
+        INTCON2bits.INTEDG0 = 1; //interrupt fronte di discesa
     }
     INTCONbits.INT0IF = 0;
 }
 
 __interrupt(low_priority) void ISR_Bassa(void) {
     //INTERRUPT CANBUS
-
     if ((PIR3bits.RXB0IF == 1) || (PIR3bits.RXB1IF == 1)) {
         CANreceiveMessage(&msg);
+
         if ((msg.identifier == COUNT_STOP)&&(msg.RTR != 1)) {
+            distance_average = 0;
             distance_dx = msg.data[1];
             distance_dx = ((distance_dx << 8) | msg.data[0]);
             distance_sx = msg.data[3];
             distance_sx = ((distance_sx << 8) | msg.data[2]);
-            distance_average = (distance_sx+distance_dx)/2;
+            distance_average = (distance_sx + distance_dx) / 2;
             distance_recived = 1;
         }
         if (msg.identifier == PARK_ASSIST_ENABLE) {
@@ -89,9 +101,23 @@ __interrupt(low_priority) void ISR_Bassa(void) {
                 PORTBbits.RB6 = 0;
             }
         }
+        if (msg.identifier == PARK_ASSIST_BEGIN) {
+            start_operation = 1;
+        }
+        if (msg.identifier == ACTUAL_SPEED) {
+            for (unsigned char i = 0; i < 8; i++) {
+                data_speed_rx[i] = msg.data[i];
+            }
+            if ((msg.identifier == DISTANCE_SET)&&(msg.RTR == 1)){
+                distance_wait = 0;
+            }
+
+        }
+
         PIR3bits.RXB0IF = 0;
         PIR3bits.RXB1IF = 0;
     }
+
     if (INTCONbits.TMR0IF == 1) {
         INTCONbits.INT0IE = 0;
         TMR0H = 0x34; //26mS
@@ -136,6 +162,22 @@ void main(void) {
     request_sent = 0;
     while (1) {
         park_search();
+        can_interpreter();
+        if (actual_speed > 0) {
+            while (!CANisTxReady());
+            CANsendMessage(COUNT_START, data, 8, CAN_CONFIG_STD_MSG & CAN_REMOTE_TX_FRAME & CAN_TX_PRIORITY_0);
+            distance_recived = 0;
+            while (actual_speed > 10) {
+                can_interpreter();
+            }
+            while (!CANisTxReady());
+            CANsendMessage(COUNT_STOP, data, 8, CAN_CONFIG_STD_MSG & CAN_REMOTE_TX_FRAME & CAN_TX_PRIORITY_0);
+        while (distance_recived == 0); //aspetta di ricevere il dato
+        }
+        else {
+            distance_average = 0;
+        }
+        park_routine();
     }
 }
 
@@ -170,6 +212,49 @@ void park_search(void) {
             }
         }
     }
+}
+
+void park_routine(void) {
+    if (distance_average >0){
+        data_steering[0] = 90; //ruote in posizione centrale
+        set_speed = 200; //mm/s 
+        dir = 0; //retromarcia
+        
+        distance_set [0] = distance_average;
+        while(!CANisTxReady());
+        CANsendMessage(DISTANCE_SET, distance_set, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
+        distance_wait = 1;
+        CAN_Send();
+        while (distance_wait == 1);
+        set_speed = 0;
+        CAN_Send();
+    }
+    while ((PORTBbits.RB5 == 1)&&(start_operation == 1)) {
+        data_steering[0] = 90;
+        set_speed = 200; //mm/s
+        dir = 0; //retromarcia
+    }
+}
+
+void CAN_Send(void) {
+    while (CANisTxReady() != HIGH);
+    CANsendMessage(STEERING_CHANGE, data_steering, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
+    data_speed[0] = set_speed;
+    data_speed[1] = (set_speed >> 8);
+    data_speed[2] = dir;
+    while (CANisTxReady() != HIGH);
+    CANsendMessage(SPEED_CHANGE, data_speed, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
+    while (CANisTxReady() != HIGH);
+    CANsendMessage(BRAKE_SIGNAL, data_brake, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_1);
+
+}
+
+void can_interpreter(void) {
+    left_speed = data_speed_rx[1];
+    left_speed = ((left_speed << 8) | (data_speed_rx[0]));
+    right_speed = data_speed_rx[3];
+    right_speed = ((right_speed << 8) | (data_speed_rx[2]));
+    actual_speed = (right_speed + left_speed) / 2;
 }
 
 void configurazione(void) {

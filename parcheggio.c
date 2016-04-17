@@ -32,6 +32,7 @@ BYTE data_brake [8] = 0;
 BYTE data_speed_rx[8] = 0;
 BYTE distance_set [8] = 0;
 volatile bit distance_error = 0;
+volatile bit distance_wait = 0;
 volatile bit activation = 0;
 volatile bit request_sent = 0;
 volatile bit distance_recived = 0;
@@ -108,7 +109,7 @@ __interrupt(low_priority) void ISR_Bassa(void) {
             for (unsigned char i = 0; i < 8; i++) {
                 data_speed_rx[i] = msg.data[i];
             }
-            if ((msg.identifier == DISTANCE_SET)&&(msg.RTR == 1)){
+            if (msg.identifier == DISTANCE_SET) {
                 distance_wait = 0;
             }
 
@@ -160,10 +161,10 @@ void main(void) {
     PORTBbits.RB5 = 0;
     PORTBbits.RB6 = 0;
     request_sent = 0;
-    while (1) {
+    while(1){
         park_search();
         can_interpreter();
-        if (actual_speed > 0) {
+        if ((actual_speed > 0)&&(activation == 1)){
             while (!CANisTxReady());
             CANsendMessage(COUNT_START, data, 8, CAN_CONFIG_STD_MSG & CAN_REMOTE_TX_FRAME & CAN_TX_PRIORITY_0);
             distance_recived = 0;
@@ -172,9 +173,8 @@ void main(void) {
             }
             while (!CANisTxReady());
             CANsendMessage(COUNT_STOP, data, 8, CAN_CONFIG_STD_MSG & CAN_REMOTE_TX_FRAME & CAN_TX_PRIORITY_0);
-        while (distance_recived == 0); //aspetta di ricevere il dato
-        }
-        else {
+            while (distance_recived == 0); //aspetta di ricevere il dato
+        } else {
             distance_average = 0;
         }
         park_routine();
@@ -199,10 +199,7 @@ void park_search(void) {
         if (distance_recived == 1) {
             if (distance_average > 100) {
                 PORTBbits.RB5 = 1;
-                while (!CANisTxReady());
-                data[0] = distance_sx;
-                data[1] = distance_sx >> 8;
-                CANsendMessage(0xAA, data, 1, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
+
                 data[0] = 1;
                 CANsendMessage(PARK_ASSIST_STATE, data, 1, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
                 distance_recived = 0;
@@ -215,19 +212,25 @@ void park_search(void) {
 }
 
 void park_routine(void) {
-    if (distance_average >0){
+    if ((distance_average > 0)&&(activation ==1)) {
+        while (!CANisTxReady());
+        data[0] = distance_average;
+        data[1] = distance_average >> 8;
+        //CANsendMessage(0xAA, data, 1, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
         data_steering[0] = 90; //ruote in posizione centrale
-        set_speed = 200; //mm/s 
+        set_speed = 100; //mm/s 
         dir = 0; //retromarcia
-        
         distance_set [0] = distance_average;
-        while(!CANisTxReady());
+        while (!CANisTxReady());
         CANsendMessage(DISTANCE_SET, distance_set, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
         distance_wait = 1;
-        CAN_Send();
-        while (distance_wait == 1);
+        can_send();
+        while (distance_wait == 1) {
+            can_send();
+            __delay_ms(10);
+        }
         set_speed = 0;
-        CAN_Send();
+        can_send();
     }
     while ((PORTBbits.RB5 == 1)&&(start_operation == 1)) {
         data_steering[0] = 90;
@@ -236,15 +239,15 @@ void park_routine(void) {
     }
 }
 
-void CAN_Send(void) {
-    while (CANisTxReady() != HIGH);
+void can_send(void) {
+    while (CANisTxReady() != 1);
     CANsendMessage(STEERING_CHANGE, data_steering, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
     data_speed[0] = set_speed;
     data_speed[1] = (set_speed >> 8);
     data_speed[2] = dir;
-    while (CANisTxReady() != HIGH);
+    while (CANisTxReady() != 1);
     CANsendMessage(SPEED_CHANGE, data_speed, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
-    while (CANisTxReady() != HIGH);
+    while (CANisTxReady() != 1);
     CANsendMessage(BRAKE_SIGNAL, data_brake, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_1);
 
 }

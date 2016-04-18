@@ -26,6 +26,7 @@ void parallelo(void);
 //variabili programma
 int spazio_parcheggio = 100;
 float alignment_gap = 0;
+float old_alignment_gap = 0;
 
 
 float x = 0; //DEBUG
@@ -38,6 +39,7 @@ BYTE data_speed [8] = 0;
 BYTE data_brake [8] = 0;
 BYTE data_speed_rx[8] = 0;
 BYTE distance_set [8] = 0;
+BYTE data_correction [8] = 0;
 volatile bit distance_error = 0;
 volatile bit distance_wait = 0;
 volatile bit activation = 0;
@@ -174,13 +176,13 @@ void main(void) {
     while (1) {
         park_search();
         can_interpreter();
-        parallelo(); //HEY DUDE HAVE A LOOK HERE!
         park_routine();
     }
 }
 
 void park_search(void) {
     while ((activation == 1) && (PORTBbits.RB5 == 0)) {
+        parallelo(); //HEY DUDE HAVE A LOOK HERE!
         if (sensor_distance[0] > 50) { //VALORE RANDOM!!!!
             if (request_sent == 0) {
                 while (!CANisTxReady());
@@ -221,15 +223,19 @@ void park_routine(void) {
 }
 
 void can_send(void) {
-    while (CANisTxReady() != 1);
-    CANsendMessage(STEERING_CHANGE, data_steering, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
-    data_speed[0] = set_speed;
-    data_speed[1] = (set_speed >> 8);
-    data_speed[2] = dir;
-    while (CANisTxReady() != 1);
-    CANsendMessage(SPEED_CHANGE, data_speed, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
-    while (CANisTxReady() != 1);
-    CANsendMessage(BRAKE_SIGNAL, data_brake, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_1);
+    if (PORTBbits.RB5 == 1) {
+        while (CANisTxReady() != 1);
+        CANsendMessage(STEERING_CHANGE, data_steering, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
+        data_speed[0] = set_speed;
+        data_speed[1] = (set_speed >> 8);
+        data_speed[2] = dir;
+        while (CANisTxReady() != 1);
+        CANsendMessage(SPEED_CHANGE, data_speed, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
+        while (CANisTxReady() != 1);
+        CANsendMessage(BRAKE_SIGNAL, data_brake, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
+    } else {
+        CANsendMessage(STEERING_CORRECTION, data_correction, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
+    }
 }
 
 void parallelo(void) {
@@ -237,7 +243,7 @@ void parallelo(void) {
 
     if (alignment_gap < 30) {
         if ((sensor_distance[0] < 30) && (sensor_distance[1] < 30)) {
-            steering_correction = alignment_gap / 120389719028371984721; //MACINARE GIAN
+            //steering_correction = alignment_gap / 120389719028371984721; //INUTILE
             //alignment_gap =10; //debug qua c'è il problema che anche aligment gap deve essere con valore float, che è diverso da quello int o simili.
             //se scrivo 8 infatti il simulatore mi da un valore tipo 10^-44.....devo scrivere 8.0 e allora lo prende.
             //bisogna vedere cosa fa il programma nelle altre parti e che non faccia casini con il float che gira (oppure bisogna fare una conversione...ma non so come...).
@@ -246,16 +252,22 @@ void parallelo(void) {
             z = ((alignment_gap) / x);
             z = asin(z);
             z = z / M_PI * 180; //trasformazione da radianti a gradi
-            if (sensor_distance[0] > sensor_distance[1]) {
-                steering_correction_dir = 0;
+            data_correction[0] = z;
 
+            if (sensor_distance[0] > sensor_distance[1]) {
+                data_correction[1] = 0;
             } else {
-                steering_correction_dir = 1;
+                data_correction[0] = 1;
+            }
+            if (abs(old_alignment_gap - alignment_gap) > 5) {
+                old_alignment_gap = alignment_gap;
+                can_send();
             }
         }
     } else {
 
     }
+
 }
 
 void can_interpreter(void) {

@@ -12,6 +12,7 @@
 #include "delay.h"
 #include "idCan.h"
 #include <stdio.h>
+#include <stdlib.h>
 #include <math.h>
 #define _XTAL_FREQ 16000000
 
@@ -20,9 +21,15 @@ void park_search(void);
 void park_routine(void);
 void can_send(void);
 void can_interpreter(void);
+void parallelo(void);
 
+//variabili programma
 int spazio_parcheggio = 100;
+unsigned char alignment_gap = 0;
 
+
+int x = 0; //DEBUG
+float z = 0; //DEBUG
 //variabili per il can
 CANmessage msg;
 BYTE data [8] = 0;
@@ -35,10 +42,13 @@ volatile bit distance_error = 0;
 volatile bit distance_wait = 0;
 volatile bit activation = 0;
 volatile bit request_sent = 0;
-volatile bit distance_recived = 0;
+volatile bit distance_received = 0;
 volatile bit start_operation = 0;
+volatile bit steering_correction_dir = 0;
+unsigned char steering_correction = 0;
 unsigned int set_speed = 0;
 bit dir = 0;
+
 //variabili da abs
 volatile unsigned int distance_dx = 0; //distanza percorsa (da abs)
 volatile unsigned int distance_sx = 0; //distanza percorsa (da abs)
@@ -82,14 +92,14 @@ __interrupt(low_priority) void ISR_Bassa(void) {
     if ((PIR3bits.RXB0IF == 1) || (PIR3bits.RXB1IF == 1)) {
         CANreceiveMessage(&msg);
 
-        if ((msg.identifier == COUNT_STOP)&&(msg.RTR != 1)) {
+        if ((msg.identifier == COUNT_STOP) && (msg.RTR != 1)) {
             distance_average = 0;
             distance_dx = msg.data[1];
             distance_dx = ((distance_dx << 8) | msg.data[0]);
             distance_sx = msg.data[3];
             distance_sx = ((distance_sx << 8) | msg.data[2]);
             distance_average = (distance_sx + distance_dx) / 2;
-            distance_recived = 1;
+            distance_received = 1;
         }
         if (msg.identifier == PARK_ASSIST_ENABLE) {
             if (msg.data[0] == 1) {
@@ -161,50 +171,40 @@ void main(void) {
     PORTBbits.RB5 = 0;
     PORTBbits.RB6 = 0;
     request_sent = 0;
-    while(1){
+    while (1) {
         park_search();
         can_interpreter();
-        if ((actual_speed > 0)&&(activation == 1)){
-            while (!CANisTxReady());
-            CANsendMessage(COUNT_START, data, 8, CAN_CONFIG_STD_MSG & CAN_REMOTE_TX_FRAME & CAN_TX_PRIORITY_0);
-            distance_recived = 0;
-            while (actual_speed > 10) {
-                can_interpreter();
-            }
-            while (!CANisTxReady());
-            CANsendMessage(COUNT_STOP, data, 8, CAN_CONFIG_STD_MSG & CAN_REMOTE_TX_FRAME & CAN_TX_PRIORITY_0);
-            while (distance_recived == 0); //aspetta di ricevere il dato
-        } else {
-            distance_average = 0;
-        }
+        parallelo(); //HEY DUDE HAVE A LOOK HERE!
         park_routine();
     }
 }
 
 void park_search(void) {
-    while ((activation == 1)&&(PORTBbits.RB5 == 0)) {
+    while ((activation == 1) && (PORTBbits.RB5 == 0)) {
         if (sensor_distance[0] > 50) { //VALORE RANDOM!!!!
             if (request_sent == 0) {
                 while (!CANisTxReady());
                 CANsendMessage(COUNT_START, data, 8, CAN_CONFIG_STD_MSG & CAN_REMOTE_TX_FRAME & CAN_TX_PRIORITY_0);
                 request_sent = 1;
+                alignment_gap = 0; //<==
                 LATBbits.LATB4 = 1;
             }
+        } else {
+            alignment_gap = abs(sensor_distance[0] - sensor_distance[1]);
         }
-        if ((sensor_distance[0] < 50)&&(request_sent == 1)) { //VALORE RANDOM!!!!
+        if ((sensor_distance[0] < 50) && (request_sent == 1)) { //VALORE RANDOM!!!!
             request_sent = 0;
             while (!CANisTxReady());
             CANsendMessage(COUNT_STOP, data, 8, CAN_CONFIG_STD_MSG & CAN_REMOTE_TX_FRAME & CAN_TX_PRIORITY_0);
         }
-        if (distance_recived == 1) {
+        if (distance_received == 1) {
             if (distance_average > 100) {
                 PORTBbits.RB5 = 1;
-
                 data[0] = 1;
                 CANsendMessage(PARK_ASSIST_STATE, data, 1, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
-                distance_recived = 0;
+                distance_received = 0;
             } else {
-                distance_recived = 0;
+                distance_received = 0;
                 PORTBbits.RB5 = 0;
             }
         }
@@ -212,30 +212,11 @@ void park_search(void) {
 }
 
 void park_routine(void) {
-    if ((distance_average > 0)&&(activation ==1)) {
-        while (!CANisTxReady());
-        data[0] = distance_average;
-        data[1] = distance_average >> 8;
-        //CANsendMessage(0xAA, data, 1, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
-        data_steering[0] = 90; //ruote in posizione centrale
-        set_speed = 100; //mm/s 
-        dir = 0; //retromarcia
-        distance_set [0] = distance_average;
-        while (!CANisTxReady());
-        CANsendMessage(DISTANCE_SET, distance_set, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
-        distance_wait = 1;
-        can_send();
-        while (distance_wait == 1) {
-            can_send();
-            __delay_ms(10);
-        }
+    while ((PORTBbits.RB5 == 1) && (activation == 1)) {
         set_speed = 0;
+        data_brake[0] = 0;
         can_send();
-    }
-    while ((PORTBbits.RB5 == 1)&&(start_operation == 1)) {
-        data_steering[0] = 90;
-        set_speed = 200; //mm/s
-        dir = 0; //retromarcia
+
     }
 }
 
@@ -249,7 +230,29 @@ void can_send(void) {
     CANsendMessage(SPEED_CHANGE, data_speed, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
     while (CANisTxReady() != 1);
     CANsendMessage(BRAKE_SIGNAL, data_brake, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_1);
+}
 
+void parallelo(void) {
+    alignment_gap = abs(sensor_distance[0] - sensor_distance[1]);
+
+    if (alignment_gap < 30) {
+        if ((sensor_distance[0] < 30) && (sensor_distance[1] < 30)) {
+            steering_correction = alignment_gap / 120389719028371984721; //MACINARE GIAN
+
+            x = ((1024) + (alignment_gap * alignment_gap));
+            x = sqrt(x);
+            z = ((float)(alignment_gap) / x);
+            z = asin(z);
+            if (sensor_distance[0] > sensor_distance[1]) {
+                steering_correction_dir = 0;
+
+            } else {
+                steering_correction_dir = 1;
+            }
+        }
+    } else {
+
+    }
 }
 
 void can_interpreter(void) {

@@ -25,10 +25,10 @@ void parallelo(void);
 
 //variabili programma
 int spazio_parcheggio = 100;
-unsigned char alignment_gap = 0;
+float alignment_gap = 0;
 
 
-int x = 0; //DEBUG
+float x = 0; //DEBUG
 float z = 0; //DEBUG
 //variabili per il can
 CANmessage msg;
@@ -238,11 +238,14 @@ void parallelo(void) {
     if (alignment_gap < 30) {
         if ((sensor_distance[0] < 30) && (sensor_distance[1] < 30)) {
             steering_correction = alignment_gap / 120389719028371984721; //MACINARE GIAN
-
+            //alignment_gap =10; //debug qua c'è il problema che anche aligment gap deve essere con valore float, che è diverso da quello int o simili.
+            //se scrivo 8 infatti il simulatore mi da un valore tipo 10^-44.....devo scrivere 8.0 e allora lo prende.
+            //bisogna vedere cosa fa il programma nelle altre parti e che non faccia casini con il float che gira (oppure bisogna fare una conversione...ma non so come...).
             x = ((1024) + (alignment_gap * alignment_gap));
             x = sqrt(x);
-            z = ((float)(alignment_gap) / x);
+            z = ((alignment_gap) / x);
             z = asin(z);
+            z = z / M_PI * 180; //trasformazione da radianti a gradi
             if (sensor_distance[0] > sensor_distance[1]) {
                 steering_correction_dir = 0;
 

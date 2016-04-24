@@ -3,7 +3,7 @@
 [d edition pro ]
 [d chip 18F2685 ]
 [d frameptr 4065 ]
-"207 D:\DOCUMENTI LUIGINO/Drive/librerie/LaurTec_PIC_libraries_v_3.3.0/inc\CANlib.h
+"208 D:\Documenti/LaurTec_PIC_libraries_v_3.3.0/inc\CANlib.h
 [e E16307 CAN_OP_MODE `uc
 CAN_OP_MODE_NORMAL 0
 CAN_OP_MODE_SLEEP 32
@@ -11,7 +11,7 @@ CAN_OP_MODE_LOOP 64
 CAN_OP_MODE_LISTEN 96
 CAN_OP_MODE_CONFIG 128
 ]
-"219
+"220
 [e E16313 CAN_CONFIG_FLAGS `uc
 CAN_CONFIG_DEFAULT 255
 CAN_CONFIG_PHSEG2_PRG_BIT 1
@@ -35,12 +35,12 @@ CAN_CONFIG_VALID_XTD_MSG 223
 CAN_CONFIG_VALID_STD_MSG 191
 CAN_CONFIG_ALL_VALID_MSG 159
 ]
-"258
+"260
 [e E16347 CAN_MASK `uc
 CAN_MASK_B1 1
 CAN_MASK_B2 2
 ]
-"279
+"281
 [e E16350 CAN_FILTER `uc
 CAN_FILTER_B1_F1 0
 CAN_FILTER_B1_F2 1
@@ -49,7 +49,7 @@ CAN_FILTER_B2_F2 3
 CAN_FILTER_B2_F3 4
 CAN_FILTER_B2_F4 5
 ]
-"294
+"296
 [e E16335 CAN_TX_MSG_FLAGS `uc
 CAN_TX_PRIORITY_MASK 3
 CAN_TX_PRIORITY_0 252
@@ -63,26 +63,26 @@ CAN_TX_RTR_MASK 64
 CAN_REMOTE_TX_FRAME 255
 CAN_NORMAL_TX_FRAME 191
 ]
-"533
+"535
 [e E16357 CAN_RX_ERRORS `uc
 CAN_RX_BUFFER_1_OVFL 1
 CAN_RX_BUFFER_2_OVFL 2
 ]
-"206
+"207
 [v _CANOperationMode CANOperationMode `(v  1 e 0 0 ]
-"218
+"219
 [v _CANInitialize CANInitialize `(v  1 e 0 0 ]
-"293
+"295
 [v _CANsendMessage CANsendMessage `(v  1 e 0 0 ]
-"527
+"529
 [v _CANreceiveMessage CANreceiveMessage `(uc  1 e 1 0 ]
-"639
+"641
 [v _CANSetMask CANSetMask `(v  1 e 0 0 ]
-"747
+"749
 [v _CANSetFilter CANSetFilter `(v  1 e 0 0 ]
-"1153
+"1155
 [v _CANisTxReady CANisTxReady `(uc  1 e 1 0 ]
-"61 D:\DOCUMENTI LUIGINO/Drive/librerie/LaurTec_PIC_libraries_v_3.3.0/src\delay.c
+"61 D:\Documenti/LaurTec_PIC_libraries_v_3.3.0/src\delay.c
 [v _delay_ms delay_ms `(v  1 e 0 0 ]
 "4 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\abs.c
 [v _abs abs `(i  1 e 2 0 ]
@@ -128,25 +128,25 @@ CAN_RX_BUFFER_2_OVFL 2
 [v ___lmul __lmul `(ul  1 e 4 0 ]
 "10 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\xxtofl.c
 [v ___xxtofl __xxtofl `(d  1 e 4 0 ]
-"73 D:\DOCUMENTI LUIGINO\GitHub\parcheggio.X\parcheggio.c
+"73 D:\Documenti\GitHub\parcheggio.X\parcheggio.c
 [v _ISR_Alta ISR_Alta `IIH(v  1 e 0 0 ]
 "92
 [v _ISR_Bassa ISR_Bassa `IIL(v  1 e 0 0 ]
 "161
 [v _main main `(v  1 e 0 0 ]
-"183
+"191
 [v _park_search park_search `(v  1 e 0 0 ]
-"216
+"224
 [v _park_routine park_routine `(v  1 e 0 0 ]
-"225
+"233
 [v _can_send can_send `(v  1 e 0 0 ]
-"241
+"251
 [v _parallelo parallelo `(v  1 e 0 0 ]
-"273
+"283
 [v _can_interpreter can_interpreter `(v  1 e 0 0 ]
-"281
+"291
 [v _configurazione configurazione `(v  1 e 0 0 ]
-"49 D:\DOCUMENTI LUIGINO/Drive/librerie/LaurTec_PIC_libraries_v_3.3.0/src\delay.c
+"49 D:\Documenti/LaurTec_PIC_libraries_v_3.3.0/src\delay.c
 [v _delay_quartz_frequency_value delay_quartz_frequency_value `VEuc  1 e 1 0 ]
 "50
 [v _clock_counter_reference clock_counter_reference `VEui  1 e 2 0 ]
@@ -1341,7 +1341,7 @@ CAN_RX_BUFFER_2_OVFL 2
 [v _INTCONbits INTCONbits `VES2051  1 e 1 @4082 ]
 "3 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\errno.c
 [v _errno errno `i  1 e 2 0 ]
-"28 D:\DOCUMENTI LUIGINO\GitHub\parcheggio.X\parcheggio.c
+"28 D:\Documenti\GitHub\parcheggio.X\parcheggio.c
 [v _alignment_gap alignment_gap `f  1 e 4 0 ]
 "29
 [v _old_alignment_gap old_alignment_gap `f  1 e 4 0 ]
@@ -1413,17 +1413,17 @@ CAN_RX_BUFFER_2_OVFL 2
 "161
 [v _main main `(v  1 e 0 0 ]
 {
-"181
+"189
 } 0
-"183
+"191
 [v _park_search park_search `(v  1 e 0 0 ]
 {
-"214
+"222
 } 0
-"241
+"251
 [v _parallelo parallelo `(v  1 e 0 0 ]
 {
-"271
+"281
 } 0
 "9 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\asin.c
 [v _asin asin `(d  1 e 4 0 ]
@@ -1600,98 +1600,98 @@ CAN_RX_BUFFER_2_OVFL 2
 [v ___fltol@f1 f1 `d  1 p 4 97 ]
 "70
 } 0
-"216 D:\DOCUMENTI LUIGINO\GitHub\parcheggio.X\parcheggio.c
+"224 D:\Documenti\GitHub\parcheggio.X\parcheggio.c
 [v _park_routine park_routine `(v  1 e 0 0 ]
 {
-"223
+"231
 } 0
-"225
+"233
 [v _can_send can_send `(v  1 e 0 0 ]
 {
-"239
+"249
 } 0
-"293 D:\DOCUMENTI LUIGINO/Drive/librerie/LaurTec_PIC_libraries_v_3.3.0/inc\CANlib.h
+"295 D:\Documenti/LaurTec_PIC_libraries_v_3.3.0/inc\CANlib.h
 [v _CANsendMessage CANsendMessage `(v  1 e 0 0 ]
 {
-"295
+"297
 [v CANsendMessage@tamp tamp `ul  1 a 4 35 ]
-"293
+"295
 [v CANsendMessage@identifier identifier `ul  1 p 4 23 ]
 [v CANsendMessage@data data `*.39uc  1 p 2 27 ]
 [v CANsendMessage@dataLength dataLength `uc  1 p 1 29 ]
 [v CANsendMessage@flags flags `E16335  1 p 1 30 ]
-"521
+"523
 } 0
-"1153
+"1155
 [v _CANisTxReady CANisTxReady `(uc  1 e 1 0 ]
 {
-"1156
+"1158
 } 0
-"281 D:\DOCUMENTI LUIGINO\GitHub\parcheggio.X\parcheggio.c
+"291 D:\Documenti\GitHub\parcheggio.X\parcheggio.c
 [v _configurazione configurazione `(v  1 e 0 0 ]
 {
-"313
+"323
 } 0
-"218 D:\DOCUMENTI LUIGINO/Drive/librerie/LaurTec_PIC_libraries_v_3.3.0/inc\CANlib.h
+"219 D:\Documenti/LaurTec_PIC_libraries_v_3.3.0/inc\CANlib.h
 [v _CANInitialize CANInitialize `(v  1 e 0 0 ]
 {
 [v CANInitialize@propSeg propSeg `uc  1 a 1 wreg ]
-"221
+"222
 [v CANInitialize@FilterConfig2 FilterConfig2 `uc  1 a 1 48 ]
-"220
+"221
 [v CANInitialize@FilterConfig1 FilterConfig1 `uc  1 a 1 47 ]
-"218
+"219
 [v CANInitialize@propSeg propSeg `uc  1 a 1 wreg ]
 [v CANInitialize@phaseSeg1 phaseSeg1 `uc  1 p 1 37 ]
 [v CANInitialize@phaseSeg2 phaseSeg2 `uc  1 p 1 38 ]
 [v CANInitialize@SJW SJW `uc  1 p 1 39 ]
 [v CANInitialize@BRP BRP `uc  1 p 1 40 ]
 [v CANInitialize@flags flags `E16313  1 p 1 41 ]
-"223
+"224
 [v CANInitialize@propSeg propSeg `uc  1 a 1 46 ]
-"288
+"290
 } 0
-"639
+"641
 [v _CANSetMask CANSetMask `(v  1 e 0 0 ]
 {
 [v CANSetMask@numBuffer numBuffer `E16347  1 a 1 wreg ]
-"640
+"642
 [v CANSetMask@tamp tamp `ul  1 a 4 33 ]
-"639
+"641
 [v CANSetMask@numBuffer numBuffer `E16347  1 a 1 wreg ]
 [v CANSetMask@mask mask `ul  1 p 4 23 ]
 [v CANSetMask@type type `E16313  1 p 1 27 ]
-"642
+"644
 [v CANSetMask@numBuffer numBuffer `E16347  1 a 1 32 ]
-"741
+"743
 } 0
-"747
+"749
 [v _CANSetFilter CANSetFilter `(v  1 e 0 0 ]
 {
 [v CANSetFilter@numBuffer numBuffer `E16350  1 a 1 wreg ]
-"749
+"751
 [v CANSetFilter@tamp tamp `ul  1 a 4 33 ]
-"747
+"749
 [v CANSetFilter@numBuffer numBuffer `E16350  1 a 1 wreg ]
 [v CANSetFilter@filter filter `ul  1 p 4 23 ]
 [v CANSetFilter@type type `E16313  1 p 1 27 ]
-"751
+"753
 [v CANSetFilter@numBuffer numBuffer `E16350  1 a 1 32 ]
-"1077
+"1079
 } 0
-"206
+"207
 [v _CANOperationMode CANOperationMode `(v  1 e 0 0 ]
 {
 [v CANOperationMode@mode mode `E16307  1 a 1 wreg ]
 [v CANOperationMode@mode mode `E16307  1 a 1 wreg ]
-"208
+"209
 [v CANOperationMode@mode mode `E16307  1 a 1 23 ]
-"211
+"212
 } 0
-"273 D:\DOCUMENTI LUIGINO\GitHub\parcheggio.X\parcheggio.c
+"283 D:\Documenti\GitHub\parcheggio.X\parcheggio.c
 [v _can_interpreter can_interpreter `(v  1 e 0 0 ]
 {
-"279
+"289
 } 0
 "92
 [v _ISR_Bassa ISR_Bassa `IIL(v  1 e 0 0 ]
@@ -1702,19 +1702,19 @@ CAN_RX_BUFFER_2_OVFL 2
 [v ISR_Bassa@gigi gigi `uc  1 a 1 33 ]
 "159
 } 0
-"527 D:\DOCUMENTI LUIGINO/Drive/librerie/LaurTec_PIC_libraries_v_3.3.0/inc\CANlib.h
+"529 D:\Documenti/LaurTec_PIC_libraries_v_3.3.0/inc\CANlib.h
 [v _CANreceiveMessage CANreceiveMessage `(uc  1 e 1 0 ]
 {
-"529
+"531
 [v CANreceiveMessage@tamp tamp `uc  1 a 1 11 ]
-"530
+"532
 [v CANreceiveMessage@error error `uc  1 a 1 10 ]
 [s S853 . 15 `ul 1 identifier 4 0 `[8]uc 1 data 8 4 `uc 1 type 1 12 `uc 1 length 1 13 `uc 1 RTR 1 14 ]
-"527
+"529
 [v CANreceiveMessage@msg msg `*.39S853  1 p 2 0 ]
-"633
+"635
 } 0
-"73 D:\DOCUMENTI LUIGINO\GitHub\parcheggio.X\parcheggio.c
+"73 D:\Documenti\GitHub\parcheggio.X\parcheggio.c
 [v _ISR_Alta ISR_Alta `IIH(v  1 e 0 0 ]
 {
 "90

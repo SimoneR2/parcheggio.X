@@ -18772,7 +18772,7 @@ extern __nonreentrant void _delay3(unsigned char);
 
 #pragma config EBTRB = OFF
 
-# 49 "../../Drive/librerie/LaurTec_PIC_libraries_v_3.3.0/inc\CANlib.h"
+# 50 "../../LaurTec_PIC_libraries_v_3.3.0/inc\CANlib.h"
 typedef unsigned char BYTE;
 
 
@@ -18786,7 +18786,7 @@ BYTE RTR;
 
 } CANmessage;
 
-# 67
+# 68
 enum CAN_OP_MODE
 {
 CAN_OP_MODE_NORMAL = 0b00000000,
@@ -18796,7 +18796,7 @@ CAN_OP_MODE_LISTEN = 0b01100000,
 CAN_OP_MODE_CONFIG = 0b10000000
 };
 
-# 80
+# 81
 enum CAN_CONFIG_FLAGS
 {
 CAN_CONFIG_DEFAULT = 0b11111111,
@@ -18828,7 +18828,7 @@ CAN_CONFIG_VALID_STD_MSG = 0b10111111,
 CAN_CONFIG_ALL_VALID_MSG = 0b10011111
 };
 
-# 116
+# 117
 enum CAN_TX_MSG_FLAGS
 {
 CAN_TX_PRIORITY_MASK= 0b00000011,
@@ -18847,14 +18847,14 @@ CAN_NORMAL_TX_FRAME = 0b10111111
 
 };
 
-# 138
+# 139
 enum CAN_MASK
 {
 CAN_MASK_B1 = 1,
 CAN_MASK_B2 = 2,
 };
 
-# 148
+# 149
 enum CAN_FILTER
 {
 CAN_FILTER_B1_F1,
@@ -18865,14 +18865,14 @@ CAN_FILTER_B2_F3,
 CAN_FILTER_B2_F4
 };
 
-# 162
+# 163
 enum CAN_RX_ERRORS
 {
 CAN_RX_BUFFER_1_OVFL = 0b00000001,
 CAN_RX_BUFFER_2_OVFL = 0b00000010
 };
 
-# 173
+# 174
 void CANOperationMode (enum CAN_OP_MODE mode);
 void CANInitialize (BYTE propSeg, BYTE phaseSeg1, BYTE phaseSeg2,BYTE SJW, BYTE BRP, enum CAN_CONFIG_FLAGS flags);
 
@@ -18895,7 +18895,7 @@ BYTE CANgetRXerrorCount (void);
 BYTE CANisBusOFF (void);
 void CANAbortMessages (void);
 
-# 206
+# 207
 void CANOperationMode (enum CAN_OP_MODE mode)
 {
 CANCON = mode;
@@ -18903,7 +18903,7 @@ CANCON = mode;
 while((CANSTAT & 0b11100000) != mode );
 }
 
-# 218
+# 219
 void CANInitialize (BYTE propSeg, BYTE phaseSeg1, BYTE phaseSeg2,BYTE SJW, BYTE BRP, enum CAN_CONFIG_FLAGS flags)
 {
 BYTE FilterConfig1;
@@ -18940,6 +18940,7 @@ BRGCON3bits.WAKFIL = 1;
 RXB0CON = flags & CAN_CONFIG_MSG_BITS;
 if ( (flags & CAN_CONFIG_DBL_BUFFER_BIT)== CAN_CONFIG_DBL_BUFFER_ON )
 RXB0CONbits.RXB0DBEN = 1;
+
 RXB1CON = RXB0CON;
 
 
@@ -19209,7 +19210,7 @@ return;
 }
 }
 
-# 527
+# 529
 BYTE CANreceiveMessage (CANmessage *msg)
 {
 BYTE tamp;
@@ -19318,7 +19319,7 @@ return (error);
 }
 }
 
-# 639
+# 641
 void CANSetMask(enum CAN_MASK numBuffer, unsigned long mask, enum CAN_CONFIG_FLAGS type)
 { unsigned long tamp;
 
@@ -19423,7 +19424,7 @@ RXM1SIDH = (unsigned char) tamp;
 }
 }
 
-# 747
+# 749
 void CANSetFilter(enum CAN_FILTER numBuffer, unsigned long filter, enum CAN_CONFIG_FLAGS type)
 {
 unsigned long tamp;
@@ -19756,13 +19757,13 @@ RXF5SIDH = (unsigned char) tamp;
 
 }
 
-# 1084
+# 1086
 void CANAbortMessages (void)
 {
 CANCONbits.ABAT = 1;
 }
 
-# 1093
+# 1095
 BYTE CANisBusOFF (void)
 {
 return (COMSTATbits.TXBO);
@@ -19776,7 +19777,7 @@ BYTE CANisTXpassive (void)
 return (COMSTATbits.TXBP);
 }
 
-# 1110
+# 1112
 BYTE CANisRXpassive (void)
 {
 return (COMSTATbits.RXBP);
@@ -19798,31 +19799,31 @@ BYTE CANisRXwarningON (void)
 return (COMSTATbits.RXWARN);
 }
 
-# 1135
+# 1137
 BYTE CANgetTXerrorCount (void)
 {
 return (TXERRCNT);
 }
 
-# 1144
+# 1146
 BYTE CANgetRXerrorCount (void)
 {
 return (RXERRCNT);
 }
 
-# 1153
+# 1155
 BYTE CANisTxReady (void)
 {
 return (!TXB0CONbits.TXREQ || !TXB1CONbits.TXREQ || !TXB2CONbits.TXREQ);
 }
 
-# 1162
+# 1164
 BYTE CANisRxReady (void)
 {
 return (RXB0CONbits.RXFUL || RXB1CONbits.RXFUL);
 }
 
-# 74 "../../Drive/librerie/LaurTec_PIC_libraries_v_3.3.0/inc\delay.h"
+# 74 "../../LaurTec_PIC_libraries_v_3.3.0/inc\delay.h"
 void delay_ms (unsigned int value_ms);
 
 # 88
@@ -19831,8 +19832,8 @@ void delay_s (unsigned char value_s);
 # 102
 void delay_set_quartz (unsigned char frequency);
 
-# 49 "../../Drive/librerie/LaurTec_PIC_libraries_v_3.3.0/src\delay.c"
-volatile unsigned char delay_quartz_frequency_value = 20;
+# 49 "../../LaurTec_PIC_libraries_v_3.3.0/src\delay.c"
+volatile unsigned char delay_quartz_frequency_value = 16;
 volatile unsigned int clock_counter_reference = 0;
 
 # 61
@@ -20183,6 +20184,14 @@ MUX_select[7] = 0b00000111;
 PORTBbits.RB4 = 0;
 PORTBbits.RB5 = 0;
 PORTBbits.RB6 = 0;
+while(1){
+if (sensor_distance[1]>10){
+PORTBbits.RB4 = 1;
+}
+if (sensor_distance[1]>30){
+PORTBbits.RB5 = 1;
+}
+}
 request_sent = 0;
 while (1) {
 park_search();
@@ -20245,7 +20254,9 @@ CANsendMessage(0b00000000011, data_speed, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_
 while (CANisTxReady() != 1);
 CANsendMessage(0b00000000100, data_brake, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
 } else {
-CANsendMessage(0b00000001110, data_correction, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
+
+data_correction[1] = 0;
+CANsendMessage(0xAA, data_correction, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
 }
 }
 
@@ -20260,7 +20271,7 @@ if ((sensor_distance[0] < 30) && (sensor_distance[1] < 30)) {
 
 x = ((1024) + (alignment_gap * alignment_gap));
 x = sqrt(x);
-z = ((alignment_gap) / x);
+z = alignment_gap / x;
 z = asin(z);
 z = z / 3.14159265358979323846 * 180;
 data_correction[0] = z;
@@ -20268,9 +20279,9 @@ data_correction[0] = z;
 if (sensor_distance[0] > sensor_distance[1]) {
 data_correction[1] = 0;
 } else {
-data_correction[0] = 1;
+data_correction[1] = 1;
 }
-if (abs(old_alignment_gap - alignment_gap) > 5) {
+if (abs(old_alignment_gap - alignment_gap) > 1) {
 old_alignment_gap = alignment_gap;
 can_send();
 }

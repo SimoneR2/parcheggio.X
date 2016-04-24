@@ -234,7 +234,9 @@ void can_send(void) {
         while (CANisTxReady() != 1);
         CANsendMessage(BRAKE_SIGNAL, data_brake, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
     } else {
-        CANsendMessage(STEERING_CORRECTION, data_correction, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
+        //CANsendMessage(STEERING_CORRECTION, data_correction, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
+        data_correction[1] = 0;
+        CANsendMessage(0xAA, data_correction, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);//debug
     }
 }
 
@@ -249,7 +251,7 @@ void parallelo(void) {
             //bisogna vedere cosa fa il programma nelle altre parti e che non faccia casini con il float che gira (oppure bisogna fare una conversione...ma non so come...).
             x = ((1024) + (alignment_gap * alignment_gap));
             x = sqrt(x);
-            z = ((alignment_gap) / x);
+            z = alignment_gap / x;
             z = asin(z);
             z = z / M_PI * 180; //trasformazione da radianti a gradi
             data_correction[0] = z;
@@ -257,9 +259,9 @@ void parallelo(void) {
             if (sensor_distance[0] > sensor_distance[1]) {
                 data_correction[1] = 0;
             } else {
-                data_correction[0] = 1;
+                data_correction[1] = 1;
             }
-            if (abs(old_alignment_gap - alignment_gap) > 5) {
+            if (abs(old_alignment_gap - alignment_gap) > 1) {
                 old_alignment_gap = alignment_gap;
                 can_send();
             }

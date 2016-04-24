@@ -20039,7 +20039,8 @@ void parallelo(void);
 int spazio_parcheggio = 100;
 float alignment_gap = 0;
 float old_alignment_gap = 0;
-
+volatile bit old_data_correction = 0;
+volatile bit asd = 0;
 
 float x = 0;
 float z = 0;
@@ -20059,6 +20060,7 @@ volatile bit request_sent = 0;
 volatile bit distance_received = 0;
 volatile bit start_operation = 0;
 volatile bit steering_correction_dir = 0;
+
 unsigned char steering_correction = 0;
 unsigned int set_speed = 0;
 bit dir = 0;
@@ -20105,7 +20107,9 @@ __attribute__((interrupt("__low_priority"))) void ISR_Bassa(void) {
 
 if ((PIR3bits.RXB0IF == 1) || (PIR3bits.RXB1IF == 1)) {
 CANreceiveMessage(&msg);
-
+if (msg.identifier == 0b00000001101){
+asd = 0;
+}
 if ((msg.identifier == 0b00000000111) && (msg.RTR != 1)) {
 distance_average = 0;
 distance_dx = msg.data[1];
@@ -20124,6 +20128,7 @@ activation = 0;
 PORTBbits.RB4 = 0;
 PORTBbits.RB5 = 0;
 PORTBbits.RB6 = 0;
+request_sent = 0;
 }
 }
 if (msg.identifier == 0b00000001100) {
@@ -20151,7 +20156,7 @@ if (distance_error == 1) {
 sensor_distance[MUX_index] = 5000;
 }
 MUX_index++;
-if (MUX_index == 8) {
+if (MUX_index == 9) {
 MUX_index = 0;
 }
 
@@ -20184,15 +20189,8 @@ MUX_select[7] = 0b00000111;
 PORTBbits.RB4 = 0;
 PORTBbits.RB5 = 0;
 PORTBbits.RB6 = 0;
-while(1){
-if (sensor_distance[1]>10){
-PORTBbits.RB4 = 1;
-}
-if (sensor_distance[1]>30){
-PORTBbits.RB5 = 1;
-}
-}
 request_sent = 0;
+start_operation = 0;
 while (1) {
 park_search();
 can_interpreter();
@@ -20220,7 +20218,7 @@ while (!CANisTxReady());
 CANsendMessage(0b00000000111, data, 8, CAN_CONFIG_STD_MSG & CAN_REMOTE_TX_FRAME & CAN_TX_PRIORITY_0);
 }
 if (distance_received == 1) {
-if (distance_average > 100) {
+if (distance_average > 90) {
 PORTBbits.RB5 = 1;
 data[0] = 1;
 CANsendMessage(0b00000001011, data, 1, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
@@ -20234,11 +20232,36 @@ PORTBbits.RB5 = 0;
 }
 
 void park_routine(void) {
-while ((PORTBbits.RB5 == 1) && (activation == 1)) {
+while ((PORTBbits.RB5 == 1) && (activation == 1)&&(start_operation ==1)) {
 set_speed = 0;
 data_brake[0] = 0;
+data_steering[0] = 90;
 can_send();
+delay_s(1);
+set_speed = 50;
+dir = 0;
+data_steering[0] = 90;
+unsigned char data_test[8];
+data_test[0] = 50;
 
+
+can_send();
+while (sensor_distance[1] < 30);
+set_speed = 0;
+data_steering[0] = 90;
+can_send();
+delay_s(1);
+set_speed = 50;
+dir = 0;
+data_steering[0] = 180;
+data_test[0] = 70;
+asd = 1;
+CANsendMessage(0b00000001101, data_test, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
+can_send();
+while (asd == 1);
+set_speed = 0;
+can_send();
+while(1);
 }
 }
 
@@ -20254,9 +20277,11 @@ CANsendMessage(0b00000000011, data_speed, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_
 while (CANisTxReady() != 1);
 CANsendMessage(0b00000000100, data_brake, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
 } else {
-
-data_correction[1] = 0;
-CANsendMessage(0xAA, data_correction, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
+CANsendMessage(0b00000001110, data_correction, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
+unsigned char data_correction1[];
+data_correction1[0] = data_correction[0];
+data_correction1[1] = 0;
+CANsendMessage(0xAA, data_correction1, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
 }
 }
 
@@ -20264,12 +20289,12 @@ void parallelo(void) {
 alignment_gap = abs(sensor_distance[0] - sensor_distance[1]);
 
 if (alignment_gap < 30) {
-if ((sensor_distance[0] < 30) && (sensor_distance[1] < 30)) {
+if ((sensor_distance[0] < 40) && (sensor_distance[1] < 40)) {
 
 
 
 
-x = ((1024) + (alignment_gap * alignment_gap));
+x = ((100) + (alignment_gap * alignment_gap));
 x = sqrt(x);
 z = alignment_gap / x;
 z = asin(z);
@@ -20281,13 +20306,17 @@ data_correction[1] = 0;
 } else {
 data_correction[1] = 1;
 }
-if (abs(old_alignment_gap - alignment_gap) > 1) {
+if ((old_alignment_gap != alignment_gap) || (old_data_correction != data_correction[1])) {
 old_alignment_gap = alignment_gap;
+old_data_correction = data_correction[1];
 can_send();
 }
 }
 } else {
-
+if (data_correction[0] != 0) {
+data_correction[0] = 0;
+can_send();
+}
 }
 
 }

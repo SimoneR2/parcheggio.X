@@ -27,7 +27,8 @@ void parallelo(void);
 int spazio_parcheggio = 100;
 float alignment_gap = 0;
 float old_alignment_gap = 0;
-
+volatile bit old_data_correction = 0;
+volatile bit asd = 0;
 
 float x = 0; //DEBUG
 float z = 0; //DEBUG
@@ -47,6 +48,7 @@ volatile bit request_sent = 0;
 volatile bit distance_received = 0;
 volatile bit start_operation = 0;
 volatile bit steering_correction_dir = 0;
+
 unsigned char steering_correction = 0;
 unsigned int set_speed = 0;
 bit dir = 0;
@@ -93,7 +95,9 @@ __interrupt(low_priority) void ISR_Bassa(void) {
     //INTERRUPT CANBUS
     if ((PIR3bits.RXB0IF == 1) || (PIR3bits.RXB1IF == 1)) {
         CANreceiveMessage(&msg);
-
+        if (msg.identifier == DISTANCE_SET){
+            asd = 0;
+        }
         if ((msg.identifier == COUNT_STOP) && (msg.RTR != 1)) {
             distance_average = 0;
             distance_dx = msg.data[1];
@@ -112,6 +116,7 @@ __interrupt(low_priority) void ISR_Bassa(void) {
                 PORTBbits.RB4 = 0;
                 PORTBbits.RB5 = 0;
                 PORTBbits.RB6 = 0;
+                request_sent = 0;
             }
         }
         if (msg.identifier == PARK_ASSIST_BEGIN) {
@@ -139,7 +144,7 @@ __interrupt(low_priority) void ISR_Bassa(void) {
             sensor_distance[MUX_index] = 5000;
         }
         MUX_index++;
-        if (MUX_index == 8) {
+        if (MUX_index == 9) {
             MUX_index = 0;
         }
 
@@ -173,6 +178,7 @@ void main(void) {
     PORTBbits.RB5 = 0;
     PORTBbits.RB6 = 0;
     request_sent = 0;
+    start_operation = 0;
     while (1) {
         park_search();
         can_interpreter();
@@ -200,7 +206,7 @@ void park_search(void) {
             CANsendMessage(COUNT_STOP, data, 8, CAN_CONFIG_STD_MSG & CAN_REMOTE_TX_FRAME & CAN_TX_PRIORITY_0);
         }
         if (distance_received == 1) {
-            if (distance_average > 100) {
+            if (distance_average > 90) {
                 PORTBbits.RB5 = 1;
                 data[0] = 1;
                 CANsendMessage(PARK_ASSIST_STATE, data, 1, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
@@ -214,11 +220,36 @@ void park_search(void) {
 }
 
 void park_routine(void) {
-    while ((PORTBbits.RB5 == 1) && (activation == 1)) {
+    while ((PORTBbits.RB5 == 1) && (activation == 1)&&(start_operation ==1)) {
         set_speed = 0;
         data_brake[0] = 0;
+        data_steering[0] = 90;
         can_send();
-
+        delay_s(1);
+        set_speed = 50;
+        dir = 0;
+        data_steering[0] = 90;
+        unsigned char data_test[8];
+        data_test[0] = 50;
+        //asd = 1;
+        //CANsendMessage(DISTANCE_SET, data_test, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
+        can_send();
+        while (sensor_distance[1] < 30); //dato random!
+        set_speed = 0;
+        data_steering[0] = 90;
+        can_send();
+        delay_s(1);
+        set_speed = 50;
+        dir = 0;
+        data_steering[0] = 180;
+        data_test[0] = 70;
+        asd = 1;
+        CANsendMessage(DISTANCE_SET, data_test, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
+        can_send();
+        while (asd == 1);
+        set_speed = 0;
+        can_send();
+        while(1);
     }
 }
 
@@ -234,9 +265,11 @@ void can_send(void) {
         while (CANisTxReady() != 1);
         CANsendMessage(BRAKE_SIGNAL, data_brake, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
     } else {
-        //CANsendMessage(STEERING_CORRECTION, data_correction, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
-        data_correction[1] = 0;
-        CANsendMessage(0xAA, data_correction, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);//debug
+        CANsendMessage(STEERING_CORRECTION, data_correction, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
+        unsigned char data_correction1[];
+        data_correction1[0] = data_correction[0];
+        data_correction1[1] = 0;
+        CANsendMessage(0xAA, data_correction1, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
     }
 }
 
@@ -244,12 +277,12 @@ void parallelo(void) {
     alignment_gap = abs(sensor_distance[0] - sensor_distance[1]);
 
     if (alignment_gap < 30) {
-        if ((sensor_distance[0] < 30) && (sensor_distance[1] < 30)) {
+        if ((sensor_distance[0] < 40) && (sensor_distance[1] < 40)) {
             //steering_correction = alignment_gap / 120389719028371984721; //INUTILE
             //alignment_gap =10; //debug qua c'è il problema che anche aligment gap deve essere con valore float, che è diverso da quello int o simili.
             //se scrivo 8 infatti il simulatore mi da un valore tipo 10^-44.....devo scrivere 8.0 e allora lo prende.
             //bisogna vedere cosa fa il programma nelle altre parti e che non faccia casini con il float che gira (oppure bisogna fare una conversione...ma non so come...).
-            x = ((1024) + (alignment_gap * alignment_gap));
+            x = ((100) + (alignment_gap * alignment_gap));
             x = sqrt(x);
             z = alignment_gap / x;
             z = asin(z);
@@ -261,13 +294,17 @@ void parallelo(void) {
             } else {
                 data_correction[1] = 1;
             }
-            if (abs(old_alignment_gap - alignment_gap) > 1) {
+            if ((old_alignment_gap != alignment_gap) || (old_data_correction != data_correction[1])) {
                 old_alignment_gap = alignment_gap;
+                old_data_correction = data_correction[1];
                 can_send();
             }
         }
     } else {
-
+        if (data_correction[0] != 0) {
+            data_correction[0] = 0;
+            can_send();
+        }
     }
 
 }

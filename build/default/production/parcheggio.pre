@@ -18772,7 +18772,7 @@ extern __nonreentrant void _delay3(unsigned char);
 
 #pragma config EBTRB = OFF
 
-# 50 "../../LaurTec_PIC_libraries_v_3.3.0/inc\CANlib.h"
+# 49 "C:/Users/Simone/Desktop/LaurTec_PIC_libraries_v_3.3.1/inc\CANlib.h"
 typedef unsigned char BYTE;
 
 
@@ -18786,7 +18786,7 @@ BYTE RTR;
 
 } CANmessage;
 
-# 68
+# 67
 enum CAN_OP_MODE
 {
 CAN_OP_MODE_NORMAL = 0b00000000,
@@ -18796,7 +18796,7 @@ CAN_OP_MODE_LISTEN = 0b01100000,
 CAN_OP_MODE_CONFIG = 0b10000000
 };
 
-# 81
+# 80
 enum CAN_CONFIG_FLAGS
 {
 CAN_CONFIG_DEFAULT = 0b11111111,
@@ -18828,7 +18828,7 @@ CAN_CONFIG_VALID_STD_MSG = 0b10111111,
 CAN_CONFIG_ALL_VALID_MSG = 0b10011111
 };
 
-# 117
+# 116
 enum CAN_TX_MSG_FLAGS
 {
 CAN_TX_PRIORITY_MASK= 0b00000011,
@@ -18847,14 +18847,14 @@ CAN_NORMAL_TX_FRAME = 0b10111111
 
 };
 
-# 139
+# 138
 enum CAN_MASK
 {
 CAN_MASK_B1 = 1,
 CAN_MASK_B2 = 2,
 };
 
-# 149
+# 148
 enum CAN_FILTER
 {
 CAN_FILTER_B1_F1,
@@ -18865,14 +18865,14 @@ CAN_FILTER_B2_F3,
 CAN_FILTER_B2_F4
 };
 
-# 163
+# 162
 enum CAN_RX_ERRORS
 {
 CAN_RX_BUFFER_1_OVFL = 0b00000001,
 CAN_RX_BUFFER_2_OVFL = 0b00000010
 };
 
-# 174
+# 173
 void CANOperationMode (enum CAN_OP_MODE mode);
 void CANInitialize (BYTE propSeg, BYTE phaseSeg1, BYTE phaseSeg2,BYTE SJW, BYTE BRP, enum CAN_CONFIG_FLAGS flags);
 
@@ -18895,7 +18895,7 @@ BYTE CANgetRXerrorCount (void);
 BYTE CANisBusOFF (void);
 void CANAbortMessages (void);
 
-# 207
+# 206
 void CANOperationMode (enum CAN_OP_MODE mode)
 {
 CANCON = mode;
@@ -18903,7 +18903,7 @@ CANCON = mode;
 while((CANSTAT & 0b11100000) != mode );
 }
 
-# 219
+# 218
 void CANInitialize (BYTE propSeg, BYTE phaseSeg1, BYTE phaseSeg2,BYTE SJW, BYTE BRP, enum CAN_CONFIG_FLAGS flags)
 {
 BYTE FilterConfig1;
@@ -19210,7 +19210,7 @@ return;
 }
 }
 
-# 529
+# 528
 BYTE CANreceiveMessage (CANmessage *msg)
 {
 BYTE tamp;
@@ -19319,7 +19319,7 @@ return (error);
 }
 }
 
-# 641
+# 640
 void CANSetMask(enum CAN_MASK numBuffer, unsigned long mask, enum CAN_CONFIG_FLAGS type)
 { unsigned long tamp;
 
@@ -19424,7 +19424,7 @@ RXM1SIDH = (unsigned char) tamp;
 }
 }
 
-# 749
+# 748
 void CANSetFilter(enum CAN_FILTER numBuffer, unsigned long filter, enum CAN_CONFIG_FLAGS type)
 {
 unsigned long tamp;
@@ -19757,13 +19757,13 @@ RXF5SIDH = (unsigned char) tamp;
 
 }
 
-# 1086
+# 1085
 void CANAbortMessages (void)
 {
 CANCONbits.ABAT = 1;
 }
 
-# 1095
+# 1094
 BYTE CANisBusOFF (void)
 {
 return (COMSTATbits.TXBO);
@@ -19777,7 +19777,7 @@ BYTE CANisTXpassive (void)
 return (COMSTATbits.TXBP);
 }
 
-# 1112
+# 1111
 BYTE CANisRXpassive (void)
 {
 return (COMSTATbits.RXBP);
@@ -19799,31 +19799,31 @@ BYTE CANisRXwarningON (void)
 return (COMSTATbits.RXWARN);
 }
 
-# 1137
+# 1136
 BYTE CANgetTXerrorCount (void)
 {
 return (TXERRCNT);
 }
 
-# 1146
+# 1145
 BYTE CANgetRXerrorCount (void)
 {
 return (RXERRCNT);
 }
 
-# 1155
+# 1154
 BYTE CANisTxReady (void)
 {
 return (!TXB0CONbits.TXREQ || !TXB1CONbits.TXREQ || !TXB2CONbits.TXREQ);
 }
 
-# 1164
+# 1163
 BYTE CANisRxReady (void)
 {
 return (RXB0CONbits.RXFUL || RXB1CONbits.RXFUL);
 }
 
-# 74 "../../LaurTec_PIC_libraries_v_3.3.0/inc\delay.h"
+# 74 "C:/Users/Simone/Desktop/LaurTec_PIC_libraries_v_3.3.1/inc\delay.h"
 void delay_ms (unsigned int value_ms);
 
 # 88
@@ -19832,7 +19832,7 @@ void delay_s (unsigned char value_s);
 # 102
 void delay_set_quartz (unsigned char frequency);
 
-# 49 "../../LaurTec_PIC_libraries_v_3.3.0/src\delay.c"
+# 49 "C:/Users/Simone/Desktop/LaurTec_PIC_libraries_v_3.3.1/src\delay.c"
 volatile unsigned char delay_quartz_frequency_value = 16;
 volatile unsigned int clock_counter_reference = 0;
 
@@ -20034,6 +20034,7 @@ void park_routine(void);
 void can_send(void);
 void can_interpreter(void);
 void parallelo(void);
+void matematica(void);
 
 
 int spazio_parcheggio = 100;
@@ -20057,9 +20058,12 @@ volatile bit distance_error = 0;
 volatile bit distance_wait = 0;
 volatile bit activation = 0;
 volatile bit request_sent = 0;
+volatile bit request_sent1 = 0;
 volatile bit distance_received = 0;
+volatile bit distance_received1 = 0;
 volatile bit start_operation = 0;
 volatile bit steering_correction_dir = 0;
+unsigned char data_test[8];
 
 unsigned char steering_correction = 0;
 unsigned int set_speed = 0;
@@ -20084,8 +20088,19 @@ volatile unsigned char gianni = 0;
 volatile unsigned char asus = 0;
 volatile unsigned int timerValue2 = 0;
 
-__attribute__((interrupt("__high_priority"))) void ISR_Alta(void) {
 
+float raggio = 40;
+float larghezza = 32;
+float bordo = 30;
+float alfa = 0;
+float beta = 0;
+float n = 0;
+float prima_sterzata = 0;
+float kkk = 0;
+float jjj = 0;
+float Pminimo = 0;
+
+__attribute__((interrupt("__high_priority"))) void ISR_Alta(void) {
 if (INTCON2bits.INTEDG0 == 1) {
 INTCON2bits.INTEDG0 = 0;
 TMR3H = 0;
@@ -20105,9 +20120,38 @@ INTCONbits.INT0IF = 0;
 
 __attribute__((interrupt("__low_priority"))) void ISR_Bassa(void) {
 
+if (INTCONbits.TMR0IF == 1) {
+INTCONbits.INT0IE = 0;
+T0CONbits.TMR0ON = 0;
+TMR0H = 0x34;
+TMR0L = 0xE0;
+T0CONbits.TMR0ON = 1;
+if (distance_error == 1) {
+sensor_distance[MUX_index] = 5000;
+}
+MUX_index++;
+if (MUX_index == 8) {
+MUX_index = 0;
+}
+
+unsigned char gigi = 0;
+gigi = MUX_select[MUX_index];
+PORTA = gigi;
+TRISBbits.RB0 = 0;
+LATBbits.LATB0 = 1;
+_delay((unsigned long)((15)*(16000000/4000000.0)));
+distance_error = 1;
+LATBbits.LATB0 = 0;
+TRISBbits.RB0 = 1;
+INTCONbits.INT0IF = 0;
+INTCONbits.INT0IE = 1;
+INTCONbits.TMR0IF = 0;
+INTCON2bits.INTEDG0 = 1;
+}
+
 if ((PIR3bits.RXB0IF == 1) || (PIR3bits.RXB1IF == 1)) {
 CANreceiveMessage(&msg);
-if (msg.identifier == 0b00000001101){
+if (msg.identifier == 0b00000001101) {
 asd = 0;
 }
 if ((msg.identifier == 0b00000000111) && (msg.RTR != 1)) {
@@ -20118,6 +20162,7 @@ distance_sx = msg.data[3];
 distance_sx = ((distance_sx << 8) | msg.data[2]);
 distance_average = (distance_sx + distance_dx) / 2;
 distance_received = 1;
+distance_received1 = 1;
 }
 if (msg.identifier == 0b00000001010) {
 if (msg.data[0] == 1) {
@@ -20148,35 +20193,9 @@ PIR3bits.RXB0IF = 0;
 PIR3bits.RXB1IF = 0;
 }
 
-if (INTCONbits.TMR0IF == 1) {
-INTCONbits.INT0IE = 0;
-TMR0H = 0x34;
-TMR0L = 0xE0;
-if (distance_error == 1) {
-sensor_distance[MUX_index] = 5000;
-}
-MUX_index++;
-if (MUX_index == 9) {
-MUX_index = 0;
-}
-
-unsigned char gigi = 0;
-gigi = MUX_select[MUX_index];
-PORTA = gigi;
-TRISBbits.RB0 = 0;
-LATBbits.LATB0 = 1;
-_delay((unsigned long)((15)*(16000000/4000000.0)));
-distance_error = 1;
-LATBbits.LATB0 = 0;
-TRISBbits.RB0 = 1;
-INTCONbits.INT0IF = 0;
-INTCONbits.INT0IE = 1;
-INTCONbits.TMR0IF = 0;
-}
 }
 
 void main(void) {
-configurazione();
 MUX_select[0] = 0b00000000;
 MUX_select[1] = 0b00000001;
 MUX_select[2] = 0b00000010;
@@ -20185,12 +20204,14 @@ MUX_select[4] = 0b00000100;
 MUX_select[5] = 0b00000101;
 MUX_select[6] = 0b00000110;
 MUX_select[7] = 0b00000111;
-
+configurazione();
 PORTBbits.RB4 = 0;
 PORTBbits.RB5 = 0;
 PORTBbits.RB6 = 0;
 request_sent = 0;
 start_operation = 0;
+
+# 214
 while (1) {
 park_search();
 can_interpreter();
@@ -20210,6 +20231,7 @@ alignment_gap = 0;
 LATBbits.LATB4 = 1;
 }
 } else {
+LATBbits.LATB4 = 0;
 alignment_gap = abs(sensor_distance[0] - sensor_distance[1]);
 }
 if ((sensor_distance[0] < 50) && (request_sent == 1)) {
@@ -20218,11 +20240,15 @@ while (!CANisTxReady());
 CANsendMessage(0b00000000111, data, 8, CAN_CONFIG_STD_MSG & CAN_REMOTE_TX_FRAME & CAN_TX_PRIORITY_0);
 }
 if (distance_received == 1) {
-if (distance_average > 90) {
+if (distance_average > 55) {
 PORTBbits.RB5 = 1;
 data[0] = 1;
 CANsendMessage(0b00000001011, data, 1, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
-distance_received = 0;
+if ((request_sent1 == 0)&&(sensor_distance[0] < 40)) {
+CANsendMessage(0b00000001000, data, 8, CAN_CONFIG_STD_MSG & CAN_REMOTE_TX_FRAME & CAN_TX_PRIORITY_0);
+distance_received1 = 0;
+request_sent1 = 1;
+}
 } else {
 distance_received = 0;
 PORTBbits.RB5 = 0;
@@ -20232,21 +20258,25 @@ PORTBbits.RB5 = 0;
 }
 
 void park_routine(void) {
-while ((PORTBbits.RB5 == 1) && (activation == 1)&&(start_operation ==1)) {
+while ((PORTBbits.RB5 == 1) && (activation == 1)&&(start_operation == 1)) {
+CANsendMessage(0b00000000111, data, 8, CAN_CONFIG_STD_MSG & CAN_REMOTE_TX_FRAME & CAN_TX_PRIORITY_0);
+matematica();
 set_speed = 0;
 data_brake[0] = 0;
 data_steering[0] = 90;
 can_send();
 delay_s(1);
+while (distance_received1 == 0);
+if (distance_average > 31) {
 set_speed = 50;
 dir = 0;
 data_steering[0] = 90;
-unsigned char data_test[8];
-data_test[0] = 50;
-
-
+data_test[0] = (distance_average - 30);
+asd = 1;
+CANsendMessage(0b00000001101, data_test, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
 can_send();
-while (sensor_distance[1] < 30);
+while (asd == 1);
+}
 set_speed = 0;
 data_steering[0] = 90;
 can_send();
@@ -20254,14 +20284,21 @@ delay_s(1);
 set_speed = 50;
 dir = 0;
 data_steering[0] = 180;
-data_test[0] = 70;
+data_test[0] = prima_sterzata;
+asd = 1;
+CANsendMessage(0b00000001101, data_test, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
+can_send();
+while (asd == 1);
+set_speed = 50;
+data_steering[0] = 0;
 asd = 1;
 CANsendMessage(0b00000001101, data_test, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
 can_send();
 while (asd == 1);
 set_speed = 0;
 can_send();
-while(1);
+while (1);
+
 }
 }
 
@@ -20301,7 +20338,7 @@ z = asin(z);
 z = z / 3.14159265358979323846 * 180;
 data_correction[0] = z;
 
-if (sensor_distance[0] > sensor_distance[1]) {
+if (sensor_distance[0] < sensor_distance[1]) {
 data_correction[1] = 0;
 } else {
 data_correction[1] = 1;
@@ -20311,14 +20348,31 @@ old_alignment_gap = alignment_gap;
 old_data_correction = data_correction[1];
 can_send();
 }
+} else if (data_correction[0] != old_data_correction) {
+data_correction[0] = 0;
+old_data_correction = 0;
+can_send();
 }
 } else {
-if (data_correction[0] != 0) {
+if (old_data_correction != 0) {
 data_correction[0] = 0;
+old_data_correction = 0;
 can_send();
 }
 }
 
+}
+
+void matematica(void) {
+
+alfa = asin(((2 * raggio)-(larghezza / 2) - bordo) / (2 * raggio));
+alfa = alfa / 3.14159265358979323846 * 180;
+beta = 90 - alfa;
+n = 2 * raggio * cos(alfa);
+prima_sterzata = 2 * 3.14159265358979323846 * raggio * beta / 360;
+kkk = raggio + (2 * larghezza / 3);
+jjj = raggio - (2 * larghezza / 3);
+Pminimo = kkk * cos(asin((jjj / kkk)));
 }
 
 void can_interpreter(void) {

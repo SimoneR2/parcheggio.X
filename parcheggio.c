@@ -22,6 +22,7 @@ void park_routine(void);
 void can_send(void);
 void can_interpreter(void);
 void parallelo(void);
+void matematica(void);
 
 //variabili programma
 int spazio_parcheggio = 100;
@@ -45,9 +46,12 @@ volatile bit distance_error = 0;
 volatile bit distance_wait = 0;
 volatile bit activation = 0;
 volatile bit request_sent = 0;
+volatile bit request_sent1 = 0;
 volatile bit distance_received = 0;
+volatile bit distance_received1 = 0;
 volatile bit start_operation = 0;
 volatile bit steering_correction_dir = 0;
+unsigned char data_test[8];
 
 unsigned char steering_correction = 0;
 unsigned int set_speed = 0;
@@ -72,8 +76,19 @@ volatile unsigned char gianni = 0;
 volatile unsigned char asus = 0;
 volatile unsigned int timerValue2 = 0;
 
-__interrupt(high_priority) void ISR_Alta(void) {
+//VARIABILI PARCHEGGIO?
+float raggio = 40;
+float larghezza = 32;
+float bordo = 30;
+float alfa = 0;
+float beta = 0;
+float n = 0;
+float prima_sterzata = 0;
+float kkk = 0;
+float jjj = 0;
+float Pminimo = 0;
 
+__interrupt(high_priority) void ISR_Alta(void) {
     if (INTCON2bits.INTEDG0 == 1) {
         INTCON2bits.INTEDG0 = 0; //interrupt sul fronte di discesa
         TMR3H = 0;
@@ -92,10 +107,39 @@ __interrupt(high_priority) void ISR_Alta(void) {
 }
 
 __interrupt(low_priority) void ISR_Bassa(void) {
+
+    if (INTCONbits.TMR0IF == 1) {
+        INTCONbits.INT0IE = 0;
+        T0CONbits.TMR0ON = 0;
+        TMR0H = 0x34; //26mS
+        TMR0L = 0xE0;
+        T0CONbits.TMR0ON = 1;
+        if (distance_error == 1) {
+            sensor_distance[MUX_index] = 5000;
+        }
+        MUX_index++;
+        if (MUX_index == 8) {
+            MUX_index = 0;
+        }
+
+        unsigned char gigi = 0;
+        gigi = MUX_select[MUX_index];
+        PORTA = gigi;
+        TRISBbits.RB0 = 0;
+        LATBbits.LATB0 = 1; //attiva sensore
+        __delay_us(15);
+        distance_error = 1;
+        LATBbits.LATB0 = 0; //azzera LATB
+        TRISBbits.RB0 = 1;
+        INTCONbits.INT0IF = 0;
+        INTCONbits.INT0IE = 1;
+        INTCONbits.TMR0IF = 0;
+        INTCON2bits.INTEDG0 = 1; //interrupt fronte di salita
+    }
     //INTERRUPT CANBUS
     if ((PIR3bits.RXB0IF == 1) || (PIR3bits.RXB1IF == 1)) {
         CANreceiveMessage(&msg);
-        if (msg.identifier == DISTANCE_SET){
+        if (msg.identifier == DISTANCE_SET) {
             asd = 0;
         }
         if ((msg.identifier == COUNT_STOP) && (msg.RTR != 1)) {
@@ -106,6 +150,7 @@ __interrupt(low_priority) void ISR_Bassa(void) {
             distance_sx = ((distance_sx << 8) | msg.data[2]);
             distance_average = (distance_sx + distance_dx) / 2;
             distance_received = 1;
+            distance_received1 = 1;
         }
         if (msg.identifier == PARK_ASSIST_ENABLE) {
             if (msg.data[0] == 1) {
@@ -136,35 +181,9 @@ __interrupt(low_priority) void ISR_Bassa(void) {
         PIR3bits.RXB1IF = 0;
     }
 
-    if (INTCONbits.TMR0IF == 1) {
-        INTCONbits.INT0IE = 0;
-        TMR0H = 0x34; //26mS
-        TMR0L = 0xE0;
-        if (distance_error == 1) {
-            sensor_distance[MUX_index] = 5000;
-        }
-        MUX_index++;
-        if (MUX_index == 9) {
-            MUX_index = 0;
-        }
-
-        unsigned char gigi = 0;
-        gigi = MUX_select[MUX_index];
-        PORTA = gigi;
-        TRISBbits.RB0 = 0;
-        LATBbits.LATB0 = 1; //attiva sensore
-        __delay_us(15);
-        distance_error = 1;
-        LATBbits.LATB0 = 0; //azzera LATB
-        TRISBbits.RB0 = 1;
-        INTCONbits.INT0IF = 0;
-        INTCONbits.INT0IE = 1;
-        INTCONbits.TMR0IF = 0;
-    }
 }
 
 void main(void) {
-    configurazione();
     MUX_select[0] = 0b00000000;
     MUX_select[1] = 0b00000001;
     MUX_select[2] = 0b00000010;
@@ -173,12 +192,25 @@ void main(void) {
     MUX_select[5] = 0b00000101;
     MUX_select[6] = 0b00000110;
     MUX_select[7] = 0b00000111;
-
+    configurazione();
     PORTBbits.RB4 = 0;
     PORTBbits.RB5 = 0;
     PORTBbits.RB6 = 0;
     request_sent = 0;
     start_operation = 0;
+    //    while (1) {
+    //        if (sensor_distance[0] > 20) {
+    //            PORTBbits.RB4 = 1;
+    //        }
+    //        if (sensor_distance[0] > 50) {
+    //            PORTBbits.RB5 = 1;
+    //        }
+    //                unsigned char data_correction1[];
+    //        data_correction1[0] = sensor_distance[0];
+    //        data_correction1[1] = (sensor_distance[0]>>8);
+    //        CANsendMessage(0xAA, data_correction1, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
+    //        delay_s(1);
+    //    }
     while (1) {
         park_search();
         can_interpreter();
@@ -198,6 +230,7 @@ void park_search(void) {
                 LATBbits.LATB4 = 1;
             }
         } else {
+            LATBbits.LATB4 = 0;
             alignment_gap = abs(sensor_distance[0] - sensor_distance[1]);
         }
         if ((sensor_distance[0] < 50) && (request_sent == 1)) { //VALORE RANDOM!!!!
@@ -206,11 +239,15 @@ void park_search(void) {
             CANsendMessage(COUNT_STOP, data, 8, CAN_CONFIG_STD_MSG & CAN_REMOTE_TX_FRAME & CAN_TX_PRIORITY_0);
         }
         if (distance_received == 1) {
-            if (distance_average > 90) {
+            if (distance_average > 55) {
                 PORTBbits.RB5 = 1;
                 data[0] = 1;
                 CANsendMessage(PARK_ASSIST_STATE, data, 1, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
-                distance_received = 0;
+                if ((request_sent1 == 0)&&(sensor_distance[0] < 40)) {
+                    CANsendMessage(COUNT_START, data, 8, CAN_CONFIG_STD_MSG & CAN_REMOTE_TX_FRAME & CAN_TX_PRIORITY_0);
+                    distance_received1 = 0;
+                    request_sent1 = 1;
+                }
             } else {
                 distance_received = 0;
                 PORTBbits.RB5 = 0;
@@ -220,21 +257,25 @@ void park_search(void) {
 }
 
 void park_routine(void) {
-    while ((PORTBbits.RB5 == 1) && (activation == 1)&&(start_operation ==1)) {
+    while ((PORTBbits.RB5 == 1) && (activation == 1)&&(start_operation == 1)) {
+        CANsendMessage(COUNT_STOP, data, 8, CAN_CONFIG_STD_MSG & CAN_REMOTE_TX_FRAME & CAN_TX_PRIORITY_0);
+        matematica();
         set_speed = 0;
         data_brake[0] = 0;
         data_steering[0] = 90;
         can_send();
         delay_s(1);
-        set_speed = 50;
-        dir = 0;
-        data_steering[0] = 90;
-        unsigned char data_test[8];
-        data_test[0] = 50;
-        //asd = 1;
-        //CANsendMessage(DISTANCE_SET, data_test, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
-        can_send();
-        while (sensor_distance[1] < 30); //dato random!
+        while (distance_received1 == 0);
+        if (distance_average > 31) {
+            set_speed = 50;
+            dir = 0;
+            data_steering[0] = 90;
+            data_test[0] = (distance_average - 30);
+            asd = 1;
+            CANsendMessage(DISTANCE_SET, data_test, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
+            can_send();
+            while (asd == 1);
+        }
         set_speed = 0;
         data_steering[0] = 90;
         can_send();
@@ -242,14 +283,21 @@ void park_routine(void) {
         set_speed = 50;
         dir = 0;
         data_steering[0] = 180;
-        data_test[0] = 70;
+        data_test[0] = prima_sterzata;
+        asd = 1;
+        CANsendMessage(DISTANCE_SET, data_test, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
+        can_send();
+        while (asd == 1);
+        set_speed = 50;
+        data_steering[0] = 0;
         asd = 1;
         CANsendMessage(DISTANCE_SET, data_test, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
         can_send();
         while (asd == 1);
         set_speed = 0;
         can_send();
-        while(1);
+        while (1);
+
     }
 }
 
@@ -289,7 +337,7 @@ void parallelo(void) {
             z = z / M_PI * 180; //trasformazione da radianti a gradi
             data_correction[0] = z;
 
-            if (sensor_distance[0] > sensor_distance[1]) {
+            if (sensor_distance[0] < sensor_distance[1]) {
                 data_correction[1] = 0;
             } else {
                 data_correction[1] = 1;
@@ -299,14 +347,31 @@ void parallelo(void) {
                 old_data_correction = data_correction[1];
                 can_send();
             }
+        } else if (data_correction[0] != old_data_correction) {
+            data_correction[0] = 0;
+            old_data_correction = 0;
+            can_send();
         }
     } else {
-        if (data_correction[0] != 0) {
+        if (old_data_correction != 0) {
             data_correction[0] = 0;
+            old_data_correction = 0;
             can_send();
         }
     }
 
+}
+
+void matematica(void) {
+
+    alfa = asin(((2 * raggio)-(larghezza / 2) - bordo) / (2 * raggio));
+    alfa = alfa / M_PI * 180;
+    beta = 90 - alfa;
+    n = 2 * raggio * cos(alfa);
+    prima_sterzata = 2 * M_PI * raggio * beta / 360;
+    kkk = raggio + (2 * larghezza / 3);
+    jjj = raggio - (2 * larghezza / 3);
+    Pminimo = kkk * cos(asin((jjj / kkk)));
 }
 
 void can_interpreter(void) {

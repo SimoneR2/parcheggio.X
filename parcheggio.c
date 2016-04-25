@@ -77,9 +77,9 @@ volatile unsigned char asus = 0;
 volatile unsigned int timerValue2 = 0;
 
 //VARIABILI PARCHEGGIO?
-float raggio = 40;
+float raggio = 60;
 float larghezza = 32;
-float bordo = 30;
+volatile float bordo = 0;
 float alfa = 0;
 float beta = 0;
 float n = 0;
@@ -259,6 +259,7 @@ void park_search(void) {
 void park_routine(void) {
     while ((PORTBbits.RB5 == 1) && (activation == 1)&&(start_operation == 1)) {
         CANsendMessage(COUNT_STOP, data, 8, CAN_CONFIG_STD_MSG & CAN_REMOTE_TX_FRAME & CAN_TX_PRIORITY_0);
+        bordo = sensor_distance[0];
         matematica();
         set_speed = 0;
         data_brake[0] = 0;
@@ -266,11 +267,11 @@ void park_routine(void) {
         can_send();
         delay_s(1);
         while (distance_received1 == 0);
-        if (distance_average > 31) {
+        if (distance_average > 46) {
             set_speed = 50;
             dir = 0;
             data_steering[0] = 90;
-            data_test[0] = (distance_average - 30);
+            data_test[0] = (distance_average - 45);
             asd = 1;
             CANsendMessage(DISTANCE_SET, data_test, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
             can_send();
@@ -291,12 +292,16 @@ void park_routine(void) {
         set_speed = 50;
         data_steering[0] = 0;
         asd = 1;
+        data_test[0] = prima_sterzata + 10;
         CANsendMessage(DISTANCE_SET, data_test, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
         can_send();
         while (asd == 1);
         set_speed = 0;
+        data_steering[0] = 90;
         can_send();
-        while (1);
+        activation = 0;
+        PORTBbits.RB5 = 0;
+        start_operation = 0;
 
     }
 }

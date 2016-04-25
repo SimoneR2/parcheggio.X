@@ -148,15 +148,15 @@ CAN_RX_BUFFER_2_OVFL 2
 [v _park_search park_search `(v  1 e 0 0 ]
 "259
 [v _park_routine park_routine `(v  1 e 0 0 ]
-"304
+"309
 [v _can_send can_send `(v  1 e 0 0 ]
-"324
+"329
 [v _parallelo parallelo `(v  1 e 0 0 ]
-"365
+"370
 [v _matematica matematica `(v  1 e 0 0 ]
-"377
+"382
 [v _can_interpreter can_interpreter `(v  1 e 0 0 ]
-"385
+"390
 [v _configurazione configurazione `(v  1 e 0 0 ]
 "49 C:/Users/Simone/Desktop/LaurTec_PIC_libraries_v_3.3.1/src\delay.c
 [v _delay_quartz_frequency_value delay_quartz_frequency_value `VEuc  1 e 1 0 ]
@@ -1455,7 +1455,7 @@ CAN_RX_BUFFER_2_OVFL 2
 "81
 [v _larghezza larghezza `f  1 e 4 0 ]
 "82
-[v _bordo bordo `f  1 e 4 0 ]
+[v _bordo bordo `VEf  1 e 4 0 ]
 "83
 [v _alfa alfa `f  1 e 4 0 ]
 "84
@@ -1480,10 +1480,10 @@ CAN_RX_BUFFER_2_OVFL 2
 {
 "257
 } 0
-"324
+"329
 [v _parallelo parallelo `(v  1 e 0 0 ]
 {
-"363
+"368
 } 0
 "4 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\abs.c
 [v _abs abs `(i  1 e 2 0 ]
@@ -1494,12 +1494,12 @@ CAN_RX_BUFFER_2_OVFL 2
 "259 D:\Documenti\GitHub\parcheggio.X\parcheggio.c
 [v _park_routine park_routine `(v  1 e 0 0 ]
 {
-"302
+"307
 } 0
-"365
+"370
 [v _matematica matematica `(v  1 e 0 0 ]
 {
-"375
+"380
 } 0
 "13 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\cos.c
 [v _cos cos `(d  1 e 4 0 ]
@@ -1511,12 +1511,12 @@ CAN_RX_BUFFER_2_OVFL 2
 [v _sin sin `(d  1 e 4 0 ]
 {
 "30
-[v sin@x2 x2 `d  1 a 4 8 ]
-[v sin@y y `d  1 a 4 0 ]
+[v sin@x2 x2 `d  1 a 4 32 ]
+[v sin@y y `d  1 a 4 24 ]
 "31
-[v sin@sgn sgn `uc  1 a 1 12 ]
+[v sin@sgn sgn `uc  1 a 1 36 ]
 "13
-[v sin@f f `d  1 p 4 115 ]
+[v sin@f f `d  1 p 4 20 ]
 "15
 [v sin@coeff_a coeff_a `C[5]d  1 s 20 coeff_a ]
 "23
@@ -1527,11 +1527,11 @@ CAN_RX_BUFFER_2_OVFL 2
 [v _floor floor `(d  1 e 4 0 ]
 {
 "15
-[v floor@i i `d  1 a 4 101 ]
+[v floor@i i `d  1 a 4 6 ]
 "16
-[v floor@expon expon `i  1 a 2 105 ]
+[v floor@expon expon `i  1 a 2 10 ]
 "13
-[v floor@x x `d  1 p 4 97 ]
+[v floor@x x `d  1 p 4 115 ]
 "30
 } 0
 "254 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\frexp.c
@@ -1546,31 +1546,31 @@ CAN_RX_BUFFER_2_OVFL 2
 {
 [v ___xxtofl@sign sign `uc  1 a 1 wreg ]
 "13
-[v ___xxtofl@arg arg `ul  1 a 4 43 ]
+[v ___xxtofl@arg arg `ul  1 a 4 2 ]
 "12
-[v ___xxtofl@exp exp `uc  1 a 1 42 ]
+[v ___xxtofl@exp exp `uc  1 a 1 1 ]
 "10
 [v ___xxtofl@sign sign `uc  1 a 1 wreg ]
-[v ___xxtofl@val val `l  1 p 4 33 ]
+[v ___xxtofl@val val `l  1 p 4 107 ]
 "15
-[v ___xxtofl@sign sign `uc  1 a 1 41 ]
+[v ___xxtofl@sign sign `uc  1 a 1 0 ]
 "44
 } 0
 "43 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\fltol.c
 [v ___fltol __fltol `(l  1 e 4 0 ]
 {
 "45
-[v ___fltol@exp1 exp1 `uc  1 a 1 32 ]
-[v ___fltol@sign1 sign1 `uc  1 a 1 31 ]
+[v ___fltol@exp1 exp1 `uc  1 a 1 106 ]
+[v ___fltol@sign1 sign1 `uc  1 a 1 105 ]
 "43
-[v ___fltol@f1 f1 `d  1 p 4 23 ]
+[v ___fltol@f1 f1 `d  1 p 4 97 ]
 "70
 } 0
 "245 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcadd.c
 [v ___flsub __flsub `(d  1 e 4 0 ]
 {
-[v ___flsub@b b `d  1 p 4 107 ]
-[v ___flsub@a a `d  1 p 4 111 ]
+[v ___flsub@b b `d  1 p 4 12 ]
+[v ___flsub@a a `d  1 p 4 16 ]
 "250
 } 0
 "9 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\asin.c
@@ -1745,12 +1745,12 @@ CAN_RX_BUFFER_2_OVFL 2
 [v ___wmul@multiplicand multiplicand `ui  1 p 2 25 ]
 "53
 } 0
-"304 D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+"309 D:\Documenti\GitHub\parcheggio.X\parcheggio.c
 [v _can_send can_send `(v  1 e 0 0 ]
 {
-"317
-[v can_send@data_correction1 data_correction1 `[0]uc  1 a 0 39 ]
 "322
+[v can_send@data_correction1 data_correction1 `[0]uc  1 a 0 39 ]
+"327
 } 0
 "294 C:/Users/Simone/Desktop/LaurTec_PIC_libraries_v_3.3.1/inc\CANlib.h
 [v _CANsendMessage CANsendMessage `(v  1 e 0 0 ]
@@ -1769,10 +1769,10 @@ CAN_RX_BUFFER_2_OVFL 2
 {
 "1157
 } 0
-"385 D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+"390 D:\Documenti\GitHub\parcheggio.X\parcheggio.c
 [v _configurazione configurazione `(v  1 e 0 0 ]
 {
-"417
+"422
 } 0
 "218 C:/Users/Simone/Desktop/LaurTec_PIC_libraries_v_3.3.1/inc\CANlib.h
 [v _CANInitialize CANInitialize `(v  1 e 0 0 ]
@@ -1830,10 +1830,10 @@ CAN_RX_BUFFER_2_OVFL 2
 [v CANOperationMode@mode mode `E16307  1 a 1 23 ]
 "211
 } 0
-"377 D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+"382 D:\Documenti\GitHub\parcheggio.X\parcheggio.c
 [v _can_interpreter can_interpreter `(v  1 e 0 0 ]
 {
-"383
+"388
 } 0
 "109
 [v _ISR_Bassa ISR_Bassa `IIL(v  1 e 0 0 ]

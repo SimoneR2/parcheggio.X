@@ -271,11 +271,11 @@ void park_routine(void) {
         data_brake [0] = 3;
         data_brake [1] = 1;
         while (distance_received1 == 0);
-        if (distance_average > 55) {
+        if (distance_average > 50) {
             set_speed = 1000;
             dir = 0;
             data_steering[0] = 90;
-            data_test[0] = (distance_average - 54);
+            data_test[0] = (distance_average - 46);
             asd = 1;
             CANsendMessage(DISTANCE_SET, data_test, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
             can_send();
@@ -300,7 +300,7 @@ void park_routine(void) {
         set_speed = 1000;
         data_steering[0] = 0;
         asd = 1;
-        data_test[0] = prima_sterzata + 15;
+        data_test[0] = prima_sterzata + 10;
         CANsendMessage(DISTANCE_SET, data_test, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
         can_send();
         while (asd == 1);
@@ -324,8 +324,9 @@ void park_routine(void) {
         set_speed = 0;
         data_steering[0] = 90;
         dir = 0;
-        activation = 0;
+        
         can_send();
+        activation = 0;
         PORTBbits.RB5 = 0;
         start_operation = 0;
         data[0] = 3;

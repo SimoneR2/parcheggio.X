@@ -11,6 +11,11 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
+$C:\Users\Simone\AppData\Local\Temp\s26g.obj
+idloc IDLOC 0 200000 200000 8 1
+reset_vec CODE 0 0 0 4 1
+end_init CODE 0 258 258 4 1
+config CONFIG 0 300000 300000 E 1
 $dist/default/production\parcheggio.X.production.obj
 intcodelo CODE 0 18 18 240 1
 cinit CODE 0 59C2 59C2 7C 1
@@ -68,11 +73,6 @@ dataBANK0 BANK0 1 E7 E7 1 1
 dataBANK1 BANK1 1 1D8 1D8 8 1
 dataCOMRAM COMRAM 1 46 46 2 1
 bssCOMRAM COMRAM 1 24 24 20 1
-$C:\Users\Simone\AppData\Local\Temp\s2no.obj
-idloc IDLOC 0 200000 200000 8 1
-reset_vec CODE 0 0 0 4 1
-end_init CODE 0 258 258 4 1
-config CONFIG 0 300000 300000 E 1
 # %UNUSED Section
 # This section enumerates the unused ranges of each CLASS. Each entry
 # is described on a single line as follows:
@@ -127,7 +127,7 @@ MEDIUMCONST 10D00-17FFF 1
 %LINETAB
 $dist/default/production\parcheggio.X.production.obj
 18 intcodelo CODE >109:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-18 intcodelo CODE >416:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+18 intcodelo CODE >417:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
 5E intcodelo CODE >111:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
 62 intcodelo CODE >112:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
 64 intcodelo CODE >113:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
@@ -296,13 +296,13 @@ F8 intcodelo CODE >145:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
 24BA text36 CODE >627:C:/Users/Simone/Desktop/LaurTec_PIC_libraries_v_3.3.1/inc\CANlib.h
 24EC text36 CODE >630:C:/Users/Simone/Desktop/LaurTec_PIC_libraries_v_3.3.1/inc\CANlib.h
 24EE text36 CODE >632:C:/Users/Simone/Desktop/LaurTec_PIC_libraries_v_3.3.1/inc\CANlib.h
-5B22 text34 CODE >410:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
 5B22 text34 CODE >411:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5B28 text34 CODE >412:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5B38 text34 CODE >413:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5B3E text34 CODE >414:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5B4E text34 CODE >415:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5B74 text34 CODE >416:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5B22 text34 CODE >412:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5B28 text34 CODE >413:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5B38 text34 CODE >414:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5B3E text34 CODE >415:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5B4E text34 CODE >416:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5B74 text34 CODE >417:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
 5D6C text33 CODE >206:C:/Users/Simone/Desktop/LaurTec_PIC_libraries_v_3.3.1/inc\CANlib.h
 5D70 text33 CODE >208:C:/Users/Simone/Desktop/LaurTec_PIC_libraries_v_3.3.1/inc\CANlib.h
 5D74 text33 CODE >210:C:/Users/Simone/Desktop/LaurTec_PIC_libraries_v_3.3.1/inc\CANlib.h
@@ -651,35 +651,35 @@ FDE text32 CODE >799:C:/Users/Simone/Desktop/LaurTec_PIC_libraries_v_3.3.1/inc\C
 4F90 text30 CODE >285:C:/Users/Simone/Desktop/LaurTec_PIC_libraries_v_3.3.1/inc\CANlib.h
 4FAC text30 CODE >287:C:/Users/Simone/Desktop/LaurTec_PIC_libraries_v_3.3.1/inc\CANlib.h
 4FB2 text30 CODE >289:C:/Users/Simone/Desktop/LaurTec_PIC_libraries_v_3.3.1/inc\CANlib.h
-5AB6 text29 CODE >418:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
 5AB6 text29 CODE >419:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5ABA text29 CODE >420:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5ABE text29 CODE >422:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5AC2 text29 CODE >423:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5AC6 text29 CODE >425:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5ACA text29 CODE >426:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5ACC text29 CODE >428:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5ACE text29 CODE >429:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5AF2 text29 CODE >431:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5AF4 text29 CODE >432:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5AF6 text29 CODE >433:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5AF8 text29 CODE >434:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5AFA text29 CODE >435:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5AFC text29 CODE >436:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5AFE text29 CODE >437:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5B00 text29 CODE >438:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5B02 text29 CODE >439:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5B06 text29 CODE >440:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5B0A text29 CODE >441:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5B0E text29 CODE >442:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5B12 text29 CODE >443:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5B14 text29 CODE >444:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5B16 text29 CODE >445:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5B18 text29 CODE >446:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5B1A text29 CODE >447:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5B1C text29 CODE >448:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5B1E text29 CODE >449:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5B20 text29 CODE >450:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5AB6 text29 CODE >420:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5ABA text29 CODE >421:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5ABE text29 CODE >423:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5AC2 text29 CODE >424:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5AC6 text29 CODE >426:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5ACA text29 CODE >427:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5ACC text29 CODE >429:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5ACE text29 CODE >430:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5AF2 text29 CODE >432:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5AF4 text29 CODE >433:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5AF6 text29 CODE >434:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5AF8 text29 CODE >435:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5AFA text29 CODE >436:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5AFC text29 CODE >437:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5AFE text29 CODE >438:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5B00 text29 CODE >439:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5B02 text29 CODE >440:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5B06 text29 CODE >441:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5B0A text29 CODE >442:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5B0E text29 CODE >443:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5B12 text29 CODE >444:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5B14 text29 CODE >445:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5B16 text29 CODE >446:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5B18 text29 CODE >447:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5B1A text29 CODE >448:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5B1C text29 CODE >449:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5B1E text29 CODE >450:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5B20 text29 CODE >451:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
 5D48 text28 CODE >1154:C:/Users/Simone/Desktop/LaurTec_PIC_libraries_v_3.3.1/inc\CANlib.h
 5D48 text28 CODE >1156:C:/Users/Simone/Desktop/LaurTec_PIC_libraries_v_3.3.1/inc\CANlib.h
 1858 text27 CODE >294:C:/Users/Simone/Desktop/LaurTec_PIC_libraries_v_3.3.1/inc\CANlib.h
@@ -850,23 +850,23 @@ FDE text32 CODE >799:C:/Users/Simone/Desktop/LaurTec_PIC_libraries_v_3.3.1/inc\C
 1FCA text27 CODE >516:C:/Users/Simone/Desktop/LaurTec_PIC_libraries_v_3.3.1/inc\CANlib.h
 1FDE text27 CODE >518:C:/Users/Simone/Desktop/LaurTec_PIC_libraries_v_3.3.1/inc\CANlib.h
 1FE2 text27 CODE >520:C:/Users/Simone/Desktop/LaurTec_PIC_libraries_v_3.3.1/inc\CANlib.h
-52EC text26 CODE >337:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
 52EC text26 CODE >338:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-52F0 text26 CODE >339:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-52FA text26 CODE >340:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5328 text26 CODE >341:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-532C text26 CODE >342:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5334 text26 CODE >343:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-533E text26 CODE >344:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5348 text26 CODE >345:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5376 text26 CODE >346:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5380 text26 CODE >347:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5386 text26 CODE >348:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-53B4 text26 CODE >349:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-53B6 text26 CODE >350:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-53E4 text26 CODE >352:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-53EC text26 CODE >353:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-53F2 text26 CODE >354:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+52EC text26 CODE >339:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+52F0 text26 CODE >340:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+52FA text26 CODE >341:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5328 text26 CODE >342:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+532C text26 CODE >343:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5334 text26 CODE >344:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+533E text26 CODE >345:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5348 text26 CODE >346:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5376 text26 CODE >347:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5380 text26 CODE >348:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5386 text26 CODE >349:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+53B4 text26 CODE >350:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+53B6 text26 CODE >351:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+53E4 text26 CODE >353:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+53EC text26 CODE >354:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+53F2 text26 CODE >355:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
 5CBA text25 CODE >15:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\Umul16.c
 5CBA text25 CODE >37:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\Umul16.c
 5CCA text25 CODE >38:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\Umul16.c
@@ -1374,16 +1374,16 @@ FDE text32 CODE >799:C:/Users/Simone/Desktop/LaurTec_PIC_libraries_v_3.3.1/inc\C
 576A text6 CODE >21:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\cos.c
 5796 text6 CODE >22:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\cos.c
 57F2 text6 CODE >23:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\cos.c
-24F0 text5 CODE >398:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-24F0 text5 CODE >400:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-264A text5 CODE >401:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-26A6 text5 CODE >402:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-26F0 text5 CODE >403:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-277E text5 CODE >404:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-280E text5 CODE >405:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-288E text5 CODE >406:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-2922 text5 CODE >407:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-29C2 text5 CODE >408:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+24F0 text5 CODE >399:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+24F0 text5 CODE >401:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+264A text5 CODE >402:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+26A6 text5 CODE >403:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+26F0 text5 CODE >404:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+277E text5 CODE >405:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+280E text5 CODE >406:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+288E text5 CODE >407:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+2922 text5 CODE >408:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+29C2 text5 CODE >409:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
 4464 text4 CODE >260:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
 4464 text4 CODE >261:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
 4466 text4 CODE >262:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
@@ -1449,45 +1449,45 @@ FDE text32 CODE >799:C:/Users/Simone/Desktop/LaurTec_PIC_libraries_v_3.3.1/inc\C
 46E4 text4 CODE >324:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
 46EE text4 CODE >325:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
 46F4 text4 CODE >326:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-46F6 text4 CODE >327:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-46F8 text4 CODE >328:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-46FC text4 CODE >329:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-46FE text4 CODE >330:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-4700 text4 CODE >331:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-4706 text4 CODE >332:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+46F6 text4 CODE >328:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+46FA text4 CODE >329:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+46FC text4 CODE >330:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+46FE text4 CODE >331:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+4700 text4 CODE >332:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+4706 text4 CODE >333:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
 4734 text4 CODE >261:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
 5CF0 text3 CODE >4:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\abs.c
 5CF0 text3 CODE >6:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\abs.c
 5CF6 text3 CODE >7:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\abs.c
 5D12 text3 CODE >8:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\abs.c
 5D1A text3 CODE >9:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\abs.c
-4742 text2 CODE >358:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
 4742 text2 CODE >359:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-479E text2 CODE >361:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-47CA text2 CODE >362:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-47E2 text2 CODE >366:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-483C text2 CODE >367:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-4860 text2 CODE >368:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-4894 text2 CODE >369:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-48B8 text2 CODE >370:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-4914 text2 CODE >371:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-4930 text2 CODE >373:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-493C text2 CODE >374:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-4940 text2 CODE >376:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-4946 text2 CODE >378:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-497E text2 CODE >379:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-498E text2 CODE >380:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-499A text2 CODE >381:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-499E text2 CODE >383:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-49AE text2 CODE >384:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-49B4 text2 CODE >385:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-49B6 text2 CODE >386:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-49BA text2 CODE >388:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-49BC text2 CODE >389:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-49C0 text2 CODE >390:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-49C6 text2 CODE >391:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-49C8 text2 CODE >392:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-49CC text2 CODE >393:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+4742 text2 CODE >360:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+479E text2 CODE >362:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+47CA text2 CODE >363:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+47E2 text2 CODE >367:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+483C text2 CODE >368:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+4860 text2 CODE >369:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+4894 text2 CODE >370:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+48B8 text2 CODE >371:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+4914 text2 CODE >372:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+4930 text2 CODE >374:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+493C text2 CODE >375:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+4940 text2 CODE >377:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+4946 text2 CODE >379:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+497E text2 CODE >380:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+498E text2 CODE >381:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+499A text2 CODE >382:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+499E text2 CODE >384:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+49AE text2 CODE >385:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+49B4 text2 CODE >386:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+49B6 text2 CODE >387:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+49BA text2 CODE >389:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+49BC text2 CODE >390:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+49C0 text2 CODE >391:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+49C6 text2 CODE >392:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+49C8 text2 CODE >393:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+49CC text2 CODE >394:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
 4FB4 text1 CODE >222:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
 4FB4 text1 CODE >223:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
 4FB6 text1 CODE >224:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
@@ -1538,66 +1538,66 @@ FDE text32 CODE >799:C:/Users/Simone/Desktop/LaurTec_PIC_libraries_v_3.3.1/inc\C
 5BB8 text0 CODE >217:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
 5BBC text0 CODE >218:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
 5BC0 text0 CODE >215:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-59C2 cinit CODE >1575:C:\Users\Simone\AppData\Local\Temp\s2no.
-59C2 cinit CODE >1577:C:\Users\Simone\AppData\Local\Temp\s2no.
-59C2 cinit CODE >1580:C:\Users\Simone\AppData\Local\Temp\s2no.
-59C2 cinit CODE >1786:C:\Users\Simone\AppData\Local\Temp\s2no.
-59C6 cinit CODE >1787:C:\Users\Simone\AppData\Local\Temp\s2no.
-59C8 cinit CODE >1788:C:\Users\Simone\AppData\Local\Temp\s2no.
-59C8 cinit CODE >1789:C:\Users\Simone\AppData\Local\Temp\s2no.
-59CA cinit CODE >1790:C:\Users\Simone\AppData\Local\Temp\s2no.
-59CC cinit CODE >1791:C:\Users\Simone\AppData\Local\Temp\s2no.
-59CE cinit CODE >1794:C:\Users\Simone\AppData\Local\Temp\s2no.
-59D2 cinit CODE >1795:C:\Users\Simone\AppData\Local\Temp\s2no.
-59D4 cinit CODE >1796:C:\Users\Simone\AppData\Local\Temp\s2no.
-59D4 cinit CODE >1797:C:\Users\Simone\AppData\Local\Temp\s2no.
-59D6 cinit CODE >1798:C:\Users\Simone\AppData\Local\Temp\s2no.
-59D8 cinit CODE >1799:C:\Users\Simone\AppData\Local\Temp\s2no.
-59DA cinit CODE >1802:C:\Users\Simone\AppData\Local\Temp\s2no.
-59DC cinit CODE >1803:C:\Users\Simone\AppData\Local\Temp\s2no.
-59DE cinit CODE >1806:C:\Users\Simone\AppData\Local\Temp\s2no.
-59E2 cinit CODE >1807:C:\Users\Simone\AppData\Local\Temp\s2no.
-59E4 cinit CODE >1808:C:\Users\Simone\AppData\Local\Temp\s2no.
-59E4 cinit CODE >1809:C:\Users\Simone\AppData\Local\Temp\s2no.
-59E6 cinit CODE >1810:C:\Users\Simone\AppData\Local\Temp\s2no.
-59E8 cinit CODE >1811:C:\Users\Simone\AppData\Local\Temp\s2no.
-59EA cinit CODE >1816:C:\Users\Simone\AppData\Local\Temp\s2no.
-59EC cinit CODE >1817:C:\Users\Simone\AppData\Local\Temp\s2no.
-59EE cinit CODE >1818:C:\Users\Simone\AppData\Local\Temp\s2no.
-59F0 cinit CODE >1819:C:\Users\Simone\AppData\Local\Temp\s2no.
-59F2 cinit CODE >1820:C:\Users\Simone\AppData\Local\Temp\s2no.
-59F4 cinit CODE >1821:C:\Users\Simone\AppData\Local\Temp\s2no.
-59F6 cinit CODE >1822:C:\Users\Simone\AppData\Local\Temp\s2no.
-59FA cinit CODE >1823:C:\Users\Simone\AppData\Local\Temp\s2no.
-59FE cinit CODE >1824:C:\Users\Simone\AppData\Local\Temp\s2no.
-59FE cinit CODE >1825:C:\Users\Simone\AppData\Local\Temp\s2no.
-5A00 cinit CODE >1826:C:\Users\Simone\AppData\Local\Temp\s2no.
-5A04 cinit CODE >1827:C:\Users\Simone\AppData\Local\Temp\s2no.
-5A06 cinit CODE >1828:C:\Users\Simone\AppData\Local\Temp\s2no.
-5A08 cinit CODE >1829:C:\Users\Simone\AppData\Local\Temp\s2no.
-5A0A cinit CODE >1833:C:\Users\Simone\AppData\Local\Temp\s2no.
-5A0C cinit CODE >1834:C:\Users\Simone\AppData\Local\Temp\s2no.
-5A0E cinit CODE >1835:C:\Users\Simone\AppData\Local\Temp\s2no.
-5A10 cinit CODE >1836:C:\Users\Simone\AppData\Local\Temp\s2no.
-5A12 cinit CODE >1837:C:\Users\Simone\AppData\Local\Temp\s2no.
-5A14 cinit CODE >1838:C:\Users\Simone\AppData\Local\Temp\s2no.
-5A16 cinit CODE >1839:C:\Users\Simone\AppData\Local\Temp\s2no.
-5A18 cinit CODE >1840:C:\Users\Simone\AppData\Local\Temp\s2no.
-5A1C cinit CODE >1844:C:\Users\Simone\AppData\Local\Temp\s2no.
-5A1E cinit CODE >1845:C:\Users\Simone\AppData\Local\Temp\s2no.
-5A20 cinit CODE >1846:C:\Users\Simone\AppData\Local\Temp\s2no.
-5A22 cinit CODE >1847:C:\Users\Simone\AppData\Local\Temp\s2no.
-5A24 cinit CODE >1848:C:\Users\Simone\AppData\Local\Temp\s2no.
-5A26 cinit CODE >1849:C:\Users\Simone\AppData\Local\Temp\s2no.
-5A28 cinit CODE >1850:C:\Users\Simone\AppData\Local\Temp\s2no.
-5A2A cinit CODE >1851:C:\Users\Simone\AppData\Local\Temp\s2no.
-5A2E cinit CODE >1852:C:\Users\Simone\AppData\Local\Temp\s2no.
-5A30 cinit CODE >1853:C:\Users\Simone\AppData\Local\Temp\s2no.
-5A34 cinit CODE >1859:C:\Users\Simone\AppData\Local\Temp\s2no.
-5A34 cinit CODE >1861:C:\Users\Simone\AppData\Local\Temp\s2no.
-5A36 cinit CODE >1862:C:\Users\Simone\AppData\Local\Temp\s2no.
-5A38 cinit CODE >1863:C:\Users\Simone\AppData\Local\Temp\s2no.
-5A3A cinit CODE >1864:C:\Users\Simone\AppData\Local\Temp\s2no.
+59C2 cinit CODE >1575:C:\Users\Simone\AppData\Local\Temp\s26g.
+59C2 cinit CODE >1577:C:\Users\Simone\AppData\Local\Temp\s26g.
+59C2 cinit CODE >1580:C:\Users\Simone\AppData\Local\Temp\s26g.
+59C2 cinit CODE >1786:C:\Users\Simone\AppData\Local\Temp\s26g.
+59C6 cinit CODE >1787:C:\Users\Simone\AppData\Local\Temp\s26g.
+59C8 cinit CODE >1788:C:\Users\Simone\AppData\Local\Temp\s26g.
+59C8 cinit CODE >1789:C:\Users\Simone\AppData\Local\Temp\s26g.
+59CA cinit CODE >1790:C:\Users\Simone\AppData\Local\Temp\s26g.
+59CC cinit CODE >1791:C:\Users\Simone\AppData\Local\Temp\s26g.
+59CE cinit CODE >1794:C:\Users\Simone\AppData\Local\Temp\s26g.
+59D2 cinit CODE >1795:C:\Users\Simone\AppData\Local\Temp\s26g.
+59D4 cinit CODE >1796:C:\Users\Simone\AppData\Local\Temp\s26g.
+59D4 cinit CODE >1797:C:\Users\Simone\AppData\Local\Temp\s26g.
+59D6 cinit CODE >1798:C:\Users\Simone\AppData\Local\Temp\s26g.
+59D8 cinit CODE >1799:C:\Users\Simone\AppData\Local\Temp\s26g.
+59DA cinit CODE >1802:C:\Users\Simone\AppData\Local\Temp\s26g.
+59DC cinit CODE >1803:C:\Users\Simone\AppData\Local\Temp\s26g.
+59DE cinit CODE >1806:C:\Users\Simone\AppData\Local\Temp\s26g.
+59E2 cinit CODE >1807:C:\Users\Simone\AppData\Local\Temp\s26g.
+59E4 cinit CODE >1808:C:\Users\Simone\AppData\Local\Temp\s26g.
+59E4 cinit CODE >1809:C:\Users\Simone\AppData\Local\Temp\s26g.
+59E6 cinit CODE >1810:C:\Users\Simone\AppData\Local\Temp\s26g.
+59E8 cinit CODE >1811:C:\Users\Simone\AppData\Local\Temp\s26g.
+59EA cinit CODE >1816:C:\Users\Simone\AppData\Local\Temp\s26g.
+59EC cinit CODE >1817:C:\Users\Simone\AppData\Local\Temp\s26g.
+59EE cinit CODE >1818:C:\Users\Simone\AppData\Local\Temp\s26g.
+59F0 cinit CODE >1819:C:\Users\Simone\AppData\Local\Temp\s26g.
+59F2 cinit CODE >1820:C:\Users\Simone\AppData\Local\Temp\s26g.
+59F4 cinit CODE >1821:C:\Users\Simone\AppData\Local\Temp\s26g.
+59F6 cinit CODE >1822:C:\Users\Simone\AppData\Local\Temp\s26g.
+59FA cinit CODE >1823:C:\Users\Simone\AppData\Local\Temp\s26g.
+59FE cinit CODE >1824:C:\Users\Simone\AppData\Local\Temp\s26g.
+59FE cinit CODE >1825:C:\Users\Simone\AppData\Local\Temp\s26g.
+5A00 cinit CODE >1826:C:\Users\Simone\AppData\Local\Temp\s26g.
+5A04 cinit CODE >1827:C:\Users\Simone\AppData\Local\Temp\s26g.
+5A06 cinit CODE >1828:C:\Users\Simone\AppData\Local\Temp\s26g.
+5A08 cinit CODE >1829:C:\Users\Simone\AppData\Local\Temp\s26g.
+5A0A cinit CODE >1833:C:\Users\Simone\AppData\Local\Temp\s26g.
+5A0C cinit CODE >1834:C:\Users\Simone\AppData\Local\Temp\s26g.
+5A0E cinit CODE >1835:C:\Users\Simone\AppData\Local\Temp\s26g.
+5A10 cinit CODE >1836:C:\Users\Simone\AppData\Local\Temp\s26g.
+5A12 cinit CODE >1837:C:\Users\Simone\AppData\Local\Temp\s26g.
+5A14 cinit CODE >1838:C:\Users\Simone\AppData\Local\Temp\s26g.
+5A16 cinit CODE >1839:C:\Users\Simone\AppData\Local\Temp\s26g.
+5A18 cinit CODE >1840:C:\Users\Simone\AppData\Local\Temp\s26g.
+5A1C cinit CODE >1844:C:\Users\Simone\AppData\Local\Temp\s26g.
+5A1E cinit CODE >1845:C:\Users\Simone\AppData\Local\Temp\s26g.
+5A20 cinit CODE >1846:C:\Users\Simone\AppData\Local\Temp\s26g.
+5A22 cinit CODE >1847:C:\Users\Simone\AppData\Local\Temp\s26g.
+5A24 cinit CODE >1848:C:\Users\Simone\AppData\Local\Temp\s26g.
+5A26 cinit CODE >1849:C:\Users\Simone\AppData\Local\Temp\s26g.
+5A28 cinit CODE >1850:C:\Users\Simone\AppData\Local\Temp\s26g.
+5A2A cinit CODE >1851:C:\Users\Simone\AppData\Local\Temp\s26g.
+5A2E cinit CODE >1852:C:\Users\Simone\AppData\Local\Temp\s26g.
+5A30 cinit CODE >1853:C:\Users\Simone\AppData\Local\Temp\s26g.
+5A34 cinit CODE >1859:C:\Users\Simone\AppData\Local\Temp\s26g.
+5A34 cinit CODE >1861:C:\Users\Simone\AppData\Local\Temp\s26g.
+5A36 cinit CODE >1862:C:\Users\Simone\AppData\Local\Temp\s26g.
+5A38 cinit CODE >1863:C:\Users\Simone\AppData\Local\Temp\s26g.
+5A3A cinit CODE >1864:C:\Users\Simone\AppData\Local\Temp\s26g.
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -1642,7 +1642,7 @@ _RXM1SIDL F1D 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
 _set_speed E5 0 BANK0 1 bssBANK0 dist/default/production\parcheggio.X.production.obj
 __Hibigdata 0 0 CODE 0 ibigdata dist/default/production\parcheggio.X.production.obj
 _RXB1DLCbits F55 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\Simone\AppData\Local\Temp\s2no.obj
+__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\Simone\AppData\Local\Temp\s26g.obj
 __Heeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production\parcheggio.X.production.obj
 __CFG_MCLRE$ON 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
 _prima_sterzata 138 0 BANK1 1 bssBANK1 dist/default/production\parcheggio.X.production.obj
@@ -1655,7 +1655,7 @@ __Lsmallconst D00 0 SMALLCONST 0 smallconst dist/default/production\parcheggio.X
 _LATA F89 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
 _LATB F8A 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
 _LATC F8B 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-___sp 0 0 STACK 2 stack C:\Users\Simone\AppData\Local\Temp\s2no.obj
+___sp 0 0 STACK 2 stack C:\Users\Simone\AppData\Local\Temp\s26g.obj
 _alfa 11C 0 BANK1 1 bssBANK1 dist/default/production\parcheggio.X.production.obj
 _asin 4152 0 CODE 0 text13 dist/default/production\parcheggio.X.production.obj
 _asus 41 0 COMRAM 1 bssCOMRAM dist/default/production\parcheggio.X.production.obj
@@ -1670,7 +1670,7 @@ btemp 48 0 COMRAM 1 temp dist/default/production\parcheggio.X.production.obj
 cos@f 1B0 0 BANK1 1 cstackBANK1 dist/default/production\parcheggio.X.production.obj
 sin@f 197 0 BANK1 1 cstackBANK1 dist/default/production\parcheggio.X.production.obj
 sin@y 19B 0 BANK1 1 cstackBANK1 dist/default/production\parcheggio.X.production.obj
-start 258 0 CODE 0 init C:\Users\Simone\AppData\Local\Temp\s2no.obj
+start 258 0 CODE 0 init C:\Users\Simone\AppData\Local\Temp\s26g.obj
 ___flmul@aexp 9D 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
 ___flmul@bexp A2 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
 ___flmul@prod A3 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
@@ -1711,11 +1711,11 @@ _distance 140 0 BANK1 1 bssBANK1 dist/default/production\parcheggio.X.production
 _T0CONbits FD5 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
 __end_of_CANInitialize 4FB4 0 CODE 0 text30 dist/default/production\parcheggio.X.production.obj
 __HdataCOMRAM 0 0 ABS 0 dataCOMRAM dist/default/production\parcheggio.X.production.obj
-__accesstop 60 0 ABS 0 - C:\Users\Simone\AppData\Local\Temp\s2no.obj
-intlevel0 0 0 CODE 0 text C:\Users\Simone\AppData\Local\Temp\s2no.obj
-intlevel1 0 0 CODE 0 text C:\Users\Simone\AppData\Local\Temp\s2no.obj
-intlevel2 0 0 CODE 0 text C:\Users\Simone\AppData\Local\Temp\s2no.obj
-intlevel3 0 0 CODE 0 text C:\Users\Simone\AppData\Local\Temp\s2no.obj
+__accesstop 60 0 ABS 0 - C:\Users\Simone\AppData\Local\Temp\s26g.obj
+intlevel0 0 0 CODE 0 text C:\Users\Simone\AppData\Local\Temp\s26g.obj
+intlevel1 0 0 CODE 0 text C:\Users\Simone\AppData\Local\Temp\s26g.obj
+intlevel2 0 0 CODE 0 text C:\Users\Simone\AppData\Local\Temp\s26g.obj
+intlevel3 0 0 CODE 0 text C:\Users\Simone\AppData\Local\Temp\s26g.obj
 __LbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/production\parcheggio.X.production.obj
 _alignment_gap D7 0 BANK0 1 bssBANK0 dist/default/production\parcheggio.X.production.obj
 __LnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/production\parcheggio.X.production.obj
@@ -1753,8 +1753,8 @@ _request_sent 228 -1DC COMRAM 1 bitbssCOMRAM dist/default/production\parcheggio.
 _ADCON1 FC1 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
 CANSetFilter@tamp 81 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
 CANSetFilter@type 7B 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
-___inthi_sp 0 0 STACK 2 stack C:\Users\Simone\AppData\Local\Temp\s2no.obj
-___intlo_sp 0 0 STACK 2 stack C:\Users\Simone\AppData\Local\Temp\s2no.obj
+___inthi_sp 0 0 STACK 2 stack C:\Users\Simone\AppData\Local\Temp\s26g.obj
+___intlo_sp 0 0 STACK 2 stack C:\Users\Simone\AppData\Local\Temp\s26g.obj
 __LdataCOMRAM 0 0 ABS 0 dataCOMRAM dist/default/production\parcheggio.X.production.obj
 _CANCON F6F 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
 __Hintcode_body 0 0 ABS 0 intcode_body dist/default/production\parcheggio.X.production.obj
@@ -1913,7 +1913,7 @@ __Hbank12 0 0 ABS 0 bank12 dist/default/production\parcheggio.X.production.obj
 __size_of___xxtofl 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
 __Hbigbss 0 0 BIGRAM 1 bigbss dist/default/production\parcheggio.X.production.obj
 __Hbigram 0 0 ABS 0 bigram dist/default/production\parcheggio.X.production.obj
-__smallconst D00 0 SMALLCONST 0 smallconst C:\Users\Simone\AppData\Local\Temp\s2no.obj
+__smallconst D00 0 SMALLCONST 0 smallconst C:\Users\Simone\AppData\Local\Temp\s26g.obj
 ___xxtofl@arg 185 0 BANK1 1 cstackBANK1 dist/default/production\parcheggio.X.production.obj
 ___xxtofl@exp 184 0 BANK1 1 cstackBANK1 dist/default/production\parcheggio.X.production.obj
 ___xxtofl@val CB 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
@@ -2137,8 +2137,8 @@ __Lfardata 0 0 FARRAM 0 fardata dist/default/production\parcheggio.X.production.
 sqrt@exp 18E 0 BANK1 1 cstackBANK1 dist/default/production\parcheggio.X.production.obj
 sqrt@grs 18A 0 BANK1 1 cstackBANK1 dist/default/production\parcheggio.X.production.obj
 ___fldiv@new_exp 88 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
-stackhi CFF 0 ABS 0 - C:\Users\Simone\AppData\Local\Temp\s2no.obj
-stacklo 1E0 0 ABS 0 - C:\Users\Simone\AppData\Local\Temp\s2no.obj
+stackhi CFF 0 ABS 0 - C:\Users\Simone\AppData\Local\Temp\s26g.obj
+stacklo 1E0 0 ABS 0 - C:\Users\Simone\AppData\Local\Temp\s26g.obj
 __Lintcode 8 0 CODE 0 intcode dist/default/production\parcheggio.X.production.obj
 __Lintret 0 0 ABS 0 intret dist/default/production\parcheggio.X.production.obj
 __Lirdata 0 0 CODE 0 irdata dist/default/production\parcheggio.X.production.obj
@@ -2255,7 +2255,7 @@ __Ltext33 0 0 ABS 0 text33 dist/default/production\parcheggio.X.production.obj
 __Ltext34 0 0 ABS 0 text34 dist/default/production\parcheggio.X.production.obj
 __Ltext36 0 0 ABS 0 text36 dist/default/production\parcheggio.X.production.obj
 __Ltext38 0 0 ABS 0 text38 dist/default/production\parcheggio.X.production.obj
-__ramtop D00 0 RAM 0 ramtop C:\Users\Simone\AppData\Local\Temp\s2no.obj
+__ramtop D00 0 RAM 0 ramtop C:\Users\Simone\AppData\Local\Temp\s26g.obj
 atan@val 190 0 BANK1 1 cstackBANK1 dist/default/production\parcheggio.X.production.obj
 _CANOperationMode 5D6C 0 CODE 0 text33 dist/default/production\parcheggio.X.production.obj
 __Lpowerup 258 0 CODE 0 powerup dist/default/production\parcheggio.X.production.obj

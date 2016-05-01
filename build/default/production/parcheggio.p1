@@ -19632,9 +19632,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e :U 2352 ]
 [e $ == -> _distance_received1 `i -> 0 `i 2353  ]
 [e :U 2354 ]
-[; ;parcheggio.c: 274: if (distance_average > 55) {
+[; ;parcheggio.c: 274: if (distance_average > 50) {
 "274
-[e $ ! > _distance_average -> -> 55 `i `ui 2355  ]
+[e $ ! > _distance_average -> -> 50 `i `ui 2355  ]
 {
 [; ;parcheggio.c: 275: set_speed = 1000;
 "275
@@ -19645,9 +19645,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;parcheggio.c: 277: data_steering[0] = 90;
 "277
 [e = *U + &U _data_steering * -> -> -> 0 `i `ui `ux -> -> # *U &U _data_steering `ui `ux -> -> 90 `i `uc ]
-[; ;parcheggio.c: 278: data_test[0] = (distance_average - 54);
+[; ;parcheggio.c: 278: data_test[0] = (distance_average - 46);
 "278
-[e = *U + &U _data_test * -> -> -> 0 `i `ui `ux -> -> # *U &U _data_test `ui `ux -> - _distance_average -> -> 54 `i `ui `uc ]
+[e = *U + &U _data_test * -> -> -> 0 `i `ui `ux -> -> # *U &U _data_test `ui `ux -> - _distance_average -> -> 46 `i `ui `uc ]
 [; ;parcheggio.c: 279: asd = 1;
 "279
 [e = _asd -> -> 1 `i `b ]
@@ -19729,9 +19729,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;parcheggio.c: 302: asd = 1;
 "302
 [e = _asd -> -> 1 `i `b ]
-[; ;parcheggio.c: 303: data_test[0] = prima_sterzata + 15;
+[; ;parcheggio.c: 303: data_test[0] = prima_sterzata + 10;
 "303
-[e = *U + &U _data_test * -> -> -> 0 `i `ui `ux -> -> # *U &U _data_test `ui `ux -> + _prima_sterzata -> -> 15 `i `f `uc ]
+[e = *U + &U _data_test * -> -> -> 0 `i `ui `ux -> -> # *U &U _data_test `ui `ux -> + _prima_sterzata -> -> 10 `i `f `uc ]
 [; ;parcheggio.c: 304: CANsendMessage(0b00000001101, data_test, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
 "304
 [e ( _CANsendMessage (4 , , , -> -> -> 13 `i `l `ul &U _data_test -> -> 8 `i `uc -> & & -> . `E16313 11 `i -> . `E16335 10 `i -> . `E16335 1 `i `E16335 ]
@@ -19811,387 +19811,387 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;parcheggio.c: 326: dir = 0;
 "326
 [e = _dir -> -> 0 `i `b ]
-[; ;parcheggio.c: 327: activation = 0;
-"327
-[e = _activation -> -> 0 `i `b ]
 [; ;parcheggio.c: 328: can_send();
 "328
 [e ( _can_send ..  ]
-[; ;parcheggio.c: 329: PORTBbits.RB5 = 0;
+[; ;parcheggio.c: 329: activation = 0;
 "329
-[e = . . _PORTBbits 0 5 -> -> 0 `i `uc ]
-[; ;parcheggio.c: 330: start_operation = 0;
+[e = _activation -> -> 0 `i `b ]
+[; ;parcheggio.c: 330: PORTBbits.RB5 = 0;
 "330
-[e = _start_operation -> -> 0 `i `b ]
-[; ;parcheggio.c: 331: data[0] = 3;
+[e = . . _PORTBbits 0 5 -> -> 0 `i `uc ]
+[; ;parcheggio.c: 331: start_operation = 0;
 "331
-[e = *U + &U _data * -> -> -> 0 `i `ui `ux -> -> # *U &U _data `ui `ux -> -> 3 `i `uc ]
-[; ;parcheggio.c: 332: CANsendMessage(0b00000001011, data, 1, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
+[e = _start_operation -> -> 0 `i `b ]
+[; ;parcheggio.c: 332: data[0] = 3;
 "332
+[e = *U + &U _data * -> -> -> 0 `i `ui `ux -> -> # *U &U _data `ui `ux -> -> 3 `i `uc ]
+[; ;parcheggio.c: 333: CANsendMessage(0b00000001011, data, 1, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
+"333
 [e ( _CANsendMessage (4 , , , -> -> -> 11 `i `l `ul &U _data -> -> 1 `i `uc -> & & -> . `E16313 11 `i -> . `E16335 10 `i -> . `E16335 1 `i `E16335 ]
-"334
+"335
 }
 [e :U 2349 ]
 "261
 [e $ && && == -> . . _PORTBbits 0 5 `i -> 1 `i == -> _activation `i -> 1 `i == -> _start_operation `i -> 1 `i 2350  ]
 [e :U 2351 ]
-[; ;parcheggio.c: 334: }
 [; ;parcheggio.c: 335: }
-"335
+[; ;parcheggio.c: 336: }
+"336
 [e :UE 2348 ]
 }
-"337
+"338
 [v _can_send `(v ~T0 @X0 1 ef ]
 {
-[; ;parcheggio.c: 337: void can_send(void) {
+[; ;parcheggio.c: 338: void can_send(void) {
 [e :U _can_send ]
 [f ]
-[; ;parcheggio.c: 338: if (PORTBbits.RB5 == 1) {
-"338
+[; ;parcheggio.c: 339: if (PORTBbits.RB5 == 1) {
+"339
 [e $ ! == -> . . _PORTBbits 0 5 `i -> 1 `i 2370  ]
 {
-[; ;parcheggio.c: 339: while (CANisTxReady() != 1);
-"339
+[; ;parcheggio.c: 340: while (CANisTxReady() != 1);
+"340
 [e $U 2371  ]
 [e :U 2372 ]
 [e :U 2371 ]
 [e $ != -> ( _CANisTxReady ..  `i -> 1 `i 2372  ]
 [e :U 2373 ]
-[; ;parcheggio.c: 340: CANsendMessage(0b00000000101, data_steering, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
-"340
-[e ( _CANsendMessage (4 , , , -> -> -> 5 `i `l `ul &U _data_steering -> -> 8 `i `uc -> & & -> . `E16313 11 `i -> . `E16335 10 `i -> . `E16335 1 `i `E16335 ]
-[; ;parcheggio.c: 341: data_speed[0] = set_speed;
+[; ;parcheggio.c: 341: CANsendMessage(0b00000000101, data_steering, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
 "341
-[e = *U + &U _data_speed * -> -> -> 0 `i `ui `ux -> -> # *U &U _data_speed `ui `ux -> _set_speed `uc ]
-[; ;parcheggio.c: 342: data_speed[1] = (set_speed >> 8);
+[e ( _CANsendMessage (4 , , , -> -> -> 5 `i `l `ul &U _data_steering -> -> 8 `i `uc -> & & -> . `E16313 11 `i -> . `E16335 10 `i -> . `E16335 1 `i `E16335 ]
+[; ;parcheggio.c: 342: data_speed[0] = set_speed;
 "342
-[e = *U + &U _data_speed * -> -> -> 1 `i `ui `ux -> -> # *U &U _data_speed `ui `ux -> >> _set_speed -> 8 `i `uc ]
-[; ;parcheggio.c: 343: data_speed[2] = dir;
+[e = *U + &U _data_speed * -> -> -> 0 `i `ui `ux -> -> # *U &U _data_speed `ui `ux -> _set_speed `uc ]
+[; ;parcheggio.c: 343: data_speed[1] = (set_speed >> 8);
 "343
-[e = *U + &U _data_speed * -> -> -> 2 `i `ui `ux -> -> # *U &U _data_speed `ui `ux -> -> _dir `i `uc ]
-[; ;parcheggio.c: 344: while (CANisTxReady() != 1);
+[e = *U + &U _data_speed * -> -> -> 1 `i `ui `ux -> -> # *U &U _data_speed `ui `ux -> >> _set_speed -> 8 `i `uc ]
+[; ;parcheggio.c: 344: data_speed[2] = dir;
 "344
+[e = *U + &U _data_speed * -> -> -> 2 `i `ui `ux -> -> # *U &U _data_speed `ui `ux -> -> _dir `i `uc ]
+[; ;parcheggio.c: 345: while (CANisTxReady() != 1);
+"345
 [e $U 2374  ]
 [e :U 2375 ]
 [e :U 2374 ]
 [e $ != -> ( _CANisTxReady ..  `i -> 1 `i 2375  ]
 [e :U 2376 ]
-[; ;parcheggio.c: 345: CANsendMessage(0b00000000011, data_speed, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
-"345
-[e ( _CANsendMessage (4 , , , -> -> -> 3 `i `l `ul &U _data_speed -> -> 8 `i `uc -> & & -> . `E16313 11 `i -> . `E16335 10 `i -> . `E16335 1 `i `E16335 ]
-[; ;parcheggio.c: 346: while (CANisTxReady() != 1);
+[; ;parcheggio.c: 346: CANsendMessage(0b00000000011, data_speed, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
 "346
+[e ( _CANsendMessage (4 , , , -> -> -> 3 `i `l `ul &U _data_speed -> -> 8 `i `uc -> & & -> . `E16313 11 `i -> . `E16335 10 `i -> . `E16335 1 `i `E16335 ]
+[; ;parcheggio.c: 347: while (CANisTxReady() != 1);
+"347
 [e $U 2377  ]
 [e :U 2378 ]
 [e :U 2377 ]
 [e $ != -> ( _CANisTxReady ..  `i -> 1 `i 2378  ]
 [e :U 2379 ]
-[; ;parcheggio.c: 347: data_brake[1] = 0;
-"347
-[e = *U + &U _data_brake * -> -> -> 1 `i `ui `ux -> -> # *U &U _data_brake `ui `ux -> -> 0 `i `uc ]
-[; ;parcheggio.c: 348: CANsendMessage(0b00000000100, data_brake, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
+[; ;parcheggio.c: 348: data_brake[1] = 0;
 "348
-[e ( _CANsendMessage (4 , , , -> -> -> 4 `i `l `ul &U _data_brake -> -> 8 `i `uc -> & & -> . `E16313 11 `i -> . `E16335 10 `i -> . `E16335 1 `i `E16335 ]
+[e = *U + &U _data_brake * -> -> -> 1 `i `ui `ux -> -> # *U &U _data_brake `ui `ux -> -> 0 `i `uc ]
+[; ;parcheggio.c: 349: CANsendMessage(0b00000000100, data_brake, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
 "349
+[e ( _CANsendMessage (4 , , , -> -> -> 4 `i `l `ul &U _data_brake -> -> 8 `i `uc -> & & -> . `E16313 11 `i -> . `E16335 10 `i -> . `E16335 1 `i `E16335 ]
+"350
 }
-[; ;parcheggio.c: 349: } else {
+[; ;parcheggio.c: 350: } else {
 [e $U 2380  ]
 [e :U 2370 ]
 {
-[; ;parcheggio.c: 350: CANsendMessage(0b00000001110, data_correction, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
-"350
-[e ( _CANsendMessage (4 , , , -> -> -> 14 `i `l `ul &U _data_correction -> -> 8 `i `uc -> & & -> . `E16313 11 `i -> . `E16335 10 `i -> . `E16335 1 `i `E16335 ]
+[; ;parcheggio.c: 351: CANsendMessage(0b00000001110, data_correction, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
 "351
-[v _data_correction1 `uc ~T0 @X0 -> 0 `x a ]
-[; ;parcheggio.c: 351: unsigned char data_correction1[];
-[; ;parcheggio.c: 352: data_correction1[0] = data_correction[0];
+[e ( _CANsendMessage (4 , , , -> -> -> 14 `i `l `ul &U _data_correction -> -> 8 `i `uc -> & & -> . `E16313 11 `i -> . `E16335 10 `i -> . `E16335 1 `i `E16335 ]
 "352
-[e = *U + &U _data_correction1 * -> -> -> 0 `i `ui `ux -> -> # *U &U _data_correction1 `ui `ux *U + &U _data_correction * -> -> -> 0 `i `ui `ux -> -> # *U &U _data_correction `ui `ux ]
-[; ;parcheggio.c: 353: data_correction1[1] = 0;
+[v _data_correction1 `uc ~T0 @X0 -> 0 `x a ]
+[; ;parcheggio.c: 352: unsigned char data_correction1[];
+[; ;parcheggio.c: 353: data_correction1[0] = data_correction[0];
 "353
-[e = *U + &U _data_correction1 * -> -> -> 1 `i `ui `ux -> -> # *U &U _data_correction1 `ui `ux -> -> 0 `i `uc ]
-[; ;parcheggio.c: 354: CANsendMessage(0xAA, data_correction1, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
+[e = *U + &U _data_correction1 * -> -> -> 0 `i `ui `ux -> -> # *U &U _data_correction1 `ui `ux *U + &U _data_correction * -> -> -> 0 `i `ui `ux -> -> # *U &U _data_correction `ui `ux ]
+[; ;parcheggio.c: 354: data_correction1[1] = 0;
 "354
-[e ( _CANsendMessage (4 , , , -> -> -> 170 `i `l `ul &U _data_correction1 -> -> 8 `i `uc -> & & -> . `E16313 11 `i -> . `E16335 10 `i -> . `E16335 1 `i `E16335 ]
+[e = *U + &U _data_correction1 * -> -> -> 1 `i `ui `ux -> -> # *U &U _data_correction1 `ui `ux -> -> 0 `i `uc ]
+[; ;parcheggio.c: 355: CANsendMessage(0xAA, data_correction1, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
 "355
+[e ( _CANsendMessage (4 , , , -> -> -> 170 `i `l `ul &U _data_correction1 -> -> 8 `i `uc -> & & -> . `E16313 11 `i -> . `E16335 10 `i -> . `E16335 1 `i `E16335 ]
+"356
 }
 [e :U 2380 ]
-[; ;parcheggio.c: 355: }
 [; ;parcheggio.c: 356: }
-"356
+[; ;parcheggio.c: 357: }
+"357
 [e :UE 2369 ]
 }
-"358
+"359
 [v _parallelo `(v ~T0 @X0 1 ef ]
 {
-[; ;parcheggio.c: 358: void parallelo(void) {
+[; ;parcheggio.c: 359: void parallelo(void) {
 [e :U _parallelo ]
 [f ]
-[; ;parcheggio.c: 359: alignment_gap = abs(sensor_distance[0] - sensor_distance[1]);
-"359
+[; ;parcheggio.c: 360: alignment_gap = abs(sensor_distance[0] - sensor_distance[1]);
+"360
 [e = _alignment_gap -> ( _abs (1 -> - *U + &U _sensor_distance * -> -> -> 0 `i `ui `ux -> -> # *U &U _sensor_distance `ui `ux *U + &U _sensor_distance * -> -> -> 1 `i `ui `ux -> -> # *U &U _sensor_distance `ui `ux `i `f ]
-[; ;parcheggio.c: 361: if (alignment_gap < 30) {
-"361
+[; ;parcheggio.c: 362: if (alignment_gap < 30) {
+"362
 [e $ ! < _alignment_gap -> -> 30 `i `f 2382  ]
 {
-[; ;parcheggio.c: 362: if ((sensor_distance[0] < 40) && (sensor_distance[1] < 40)) {
-"362
+[; ;parcheggio.c: 363: if ((sensor_distance[0] < 40) && (sensor_distance[1] < 40)) {
+"363
 [e $ ! && < *U + &U _sensor_distance * -> -> -> 0 `i `ui `ux -> -> # *U &U _sensor_distance `ui `ux -> -> 40 `i `ui < *U + &U _sensor_distance * -> -> -> 1 `i `ui `ux -> -> # *U &U _sensor_distance `ui `ux -> -> 40 `i `ui 2383  ]
 {
-[; ;parcheggio.c: 366: x = ((100) + (alignment_gap * alignment_gap));
-"366
-[e = _x + -> -> 100 `i `f * _alignment_gap _alignment_gap ]
-[; ;parcheggio.c: 367: x = sqrt(x);
+[; ;parcheggio.c: 367: x = ((100) + (alignment_gap * alignment_gap));
 "367
-[e = _x -> ( _sqrt (1 -> _x `d `f ]
-[; ;parcheggio.c: 368: z = alignment_gap / x;
+[e = _x + -> -> 100 `i `f * _alignment_gap _alignment_gap ]
+[; ;parcheggio.c: 368: x = sqrt(x);
 "368
-[e = _z / _alignment_gap _x ]
-[; ;parcheggio.c: 369: z = asin(z);
+[e = _x -> ( _sqrt (1 -> _x `d `f ]
+[; ;parcheggio.c: 369: z = alignment_gap / x;
 "369
-[e = _z -> ( _asin (1 -> _z `d `f ]
-[; ;parcheggio.c: 370: z = z / 3.14159265358979323846 * 180;
+[e = _z / _alignment_gap _x ]
+[; ;parcheggio.c: 370: z = asin(z);
 "370
-[e = _z -> * / -> _z `d .3.14159265358979323846 -> -> 180 `i `d `f ]
-[; ;parcheggio.c: 371: data_correction[0] = z;
+[e = _z -> ( _asin (1 -> _z `d `f ]
+[; ;parcheggio.c: 371: z = z / 3.14159265358979323846 * 180;
 "371
+[e = _z -> * / -> _z `d .3.14159265358979323846 -> -> 180 `i `d `f ]
+[; ;parcheggio.c: 372: data_correction[0] = z;
+"372
 [e = *U + &U _data_correction * -> -> -> 0 `i `ui `ux -> -> # *U &U _data_correction `ui `ux -> _z `uc ]
-[; ;parcheggio.c: 373: if (sensor_distance[0] < sensor_distance[1]) {
-"373
+[; ;parcheggio.c: 374: if (sensor_distance[0] < sensor_distance[1]) {
+"374
 [e $ ! < *U + &U _sensor_distance * -> -> -> 0 `i `ui `ux -> -> # *U &U _sensor_distance `ui `ux *U + &U _sensor_distance * -> -> -> 1 `i `ui `ux -> -> # *U &U _sensor_distance `ui `ux 2384  ]
 {
-[; ;parcheggio.c: 374: data_correction[1] = 0;
-"374
-[e = *U + &U _data_correction * -> -> -> 1 `i `ui `ux -> -> # *U &U _data_correction `ui `ux -> -> 0 `i `uc ]
+[; ;parcheggio.c: 375: data_correction[1] = 0;
 "375
+[e = *U + &U _data_correction * -> -> -> 1 `i `ui `ux -> -> # *U &U _data_correction `ui `ux -> -> 0 `i `uc ]
+"376
 }
-[; ;parcheggio.c: 375: } else {
+[; ;parcheggio.c: 376: } else {
 [e $U 2385  ]
 [e :U 2384 ]
 {
-[; ;parcheggio.c: 376: data_correction[1] = 1;
-"376
-[e = *U + &U _data_correction * -> -> -> 1 `i `ui `ux -> -> # *U &U _data_correction `ui `ux -> -> 1 `i `uc ]
+[; ;parcheggio.c: 377: data_correction[1] = 1;
 "377
+[e = *U + &U _data_correction * -> -> -> 1 `i `ui `ux -> -> # *U &U _data_correction `ui `ux -> -> 1 `i `uc ]
+"378
 }
 [e :U 2385 ]
-[; ;parcheggio.c: 377: }
-[; ;parcheggio.c: 378: if ((old_alignment_gap != alignment_gap) || (old_data_correction != data_correction[1])) {
-"378
+[; ;parcheggio.c: 378: }
+[; ;parcheggio.c: 379: if ((old_alignment_gap != alignment_gap) || (old_data_correction != data_correction[1])) {
+"379
 [e $ ! || != _old_alignment_gap _alignment_gap != -> _old_data_correction `i -> *U + &U _data_correction * -> -> -> 1 `i `ui `ux -> -> # *U &U _data_correction `ui `ux `i 2386  ]
 {
-[; ;parcheggio.c: 379: old_alignment_gap = alignment_gap;
-"379
-[e = _old_alignment_gap _alignment_gap ]
-[; ;parcheggio.c: 380: old_data_correction = data_correction[1];
+[; ;parcheggio.c: 380: old_alignment_gap = alignment_gap;
 "380
-[e = _old_data_correction -> *U + &U _data_correction * -> -> -> 1 `i `ui `ux -> -> # *U &U _data_correction `ui `ux `b ]
-[; ;parcheggio.c: 381: can_send();
+[e = _old_alignment_gap _alignment_gap ]
+[; ;parcheggio.c: 381: old_data_correction = data_correction[1];
 "381
-[e ( _can_send ..  ]
+[e = _old_data_correction -> *U + &U _data_correction * -> -> -> 1 `i `ui `ux -> -> # *U &U _data_correction `ui `ux `b ]
+[; ;parcheggio.c: 382: can_send();
 "382
-}
-[e :U 2386 ]
+[e ( _can_send ..  ]
 "383
 }
-[; ;parcheggio.c: 382: }
-[; ;parcheggio.c: 383: } else if (data_correction[0] != old_data_correction) {
+[e :U 2386 ]
+"384
+}
+[; ;parcheggio.c: 383: }
+[; ;parcheggio.c: 384: } else if (data_correction[0] != old_data_correction) {
 [e $U 2387  ]
 [e :U 2383 ]
 [e $ ! != -> *U + &U _data_correction * -> -> -> 0 `i `ui `ux -> -> # *U &U _data_correction `ui `ux `i -> _old_data_correction `i 2388  ]
 {
-[; ;parcheggio.c: 384: data_correction[0] = 0;
-"384
-[e = *U + &U _data_correction * -> -> -> 0 `i `ui `ux -> -> # *U &U _data_correction `ui `ux -> -> 0 `i `uc ]
-[; ;parcheggio.c: 385: old_data_correction = 0;
+[; ;parcheggio.c: 385: data_correction[0] = 0;
 "385
-[e = _old_data_correction -> -> 0 `i `b ]
-[; ;parcheggio.c: 386: can_send();
+[e = *U + &U _data_correction * -> -> -> 0 `i `ui `ux -> -> # *U &U _data_correction `ui `ux -> -> 0 `i `uc ]
+[; ;parcheggio.c: 386: old_data_correction = 0;
 "386
-[e ( _can_send ..  ]
+[e = _old_data_correction -> -> 0 `i `b ]
+[; ;parcheggio.c: 387: can_send();
 "387
+[e ( _can_send ..  ]
+"388
 }
 [e :U 2388 ]
-"388
+"389
 [e :U 2387 ]
 }
-[; ;parcheggio.c: 387: }
-[; ;parcheggio.c: 388: } else {
+[; ;parcheggio.c: 388: }
+[; ;parcheggio.c: 389: } else {
 [e $U 2389  ]
 [e :U 2382 ]
 {
-[; ;parcheggio.c: 389: if (old_data_correction != 0) {
-"389
+[; ;parcheggio.c: 390: if (old_data_correction != 0) {
+"390
 [e $ ! != -> _old_data_correction `i -> 0 `i 2390  ]
 {
-[; ;parcheggio.c: 390: data_correction[0] = 0;
-"390
-[e = *U + &U _data_correction * -> -> -> 0 `i `ui `ux -> -> # *U &U _data_correction `ui `ux -> -> 0 `i `uc ]
-[; ;parcheggio.c: 391: old_data_correction = 0;
+[; ;parcheggio.c: 391: data_correction[0] = 0;
 "391
-[e = _old_data_correction -> -> 0 `i `b ]
-[; ;parcheggio.c: 392: can_send();
+[e = *U + &U _data_correction * -> -> -> 0 `i `ui `ux -> -> # *U &U _data_correction `ui `ux -> -> 0 `i `uc ]
+[; ;parcheggio.c: 392: old_data_correction = 0;
 "392
-[e ( _can_send ..  ]
+[e = _old_data_correction -> -> 0 `i `b ]
+[; ;parcheggio.c: 393: can_send();
 "393
-}
-[e :U 2390 ]
+[e ( _can_send ..  ]
 "394
 }
+[e :U 2390 ]
+"395
+}
 [e :U 2389 ]
-[; ;parcheggio.c: 393: }
 [; ;parcheggio.c: 394: }
-[; ;parcheggio.c: 396: }
-"396
+[; ;parcheggio.c: 395: }
+[; ;parcheggio.c: 397: }
+"397
 [e :UE 2381 ]
 }
-"398
+"399
 [v _matematica `(v ~T0 @X0 1 ef ]
 {
-[; ;parcheggio.c: 398: void matematica(void) {
+[; ;parcheggio.c: 399: void matematica(void) {
 [e :U _matematica ]
 [f ]
-[; ;parcheggio.c: 400: alfa = asin(((2 * raggio)-(larghezza / 2) - bordo) / (2 * raggio));
-"400
-[e = _alfa -> ( _asin (1 -> / - - * -> -> 2 `i `f _raggio / _larghezza -> -> 2 `i `f _bordo * -> -> 2 `i `f _raggio `d `f ]
-[; ;parcheggio.c: 401: alfa = alfa / 3.14159265358979323846 * 180;
+[; ;parcheggio.c: 401: alfa = asin(((2 * raggio)-(larghezza / 2) - bordo) / (2 * raggio));
 "401
-[e = _alfa -> * / -> _alfa `d .3.14159265358979323846 -> -> 180 `i `d `f ]
-[; ;parcheggio.c: 402: beta = 90 - alfa;
+[e = _alfa -> ( _asin (1 -> / - - * -> -> 2 `i `f _raggio / _larghezza -> -> 2 `i `f _bordo * -> -> 2 `i `f _raggio `d `f ]
+[; ;parcheggio.c: 402: alfa = alfa / 3.14159265358979323846 * 180;
 "402
-[e = _beta - -> -> 90 `i `f _alfa ]
-[; ;parcheggio.c: 403: n = 2 * raggio * cos(alfa);
+[e = _alfa -> * / -> _alfa `d .3.14159265358979323846 -> -> 180 `i `d `f ]
+[; ;parcheggio.c: 403: beta = 90 - alfa;
 "403
-[e = _n -> * -> * -> -> 2 `i `f _raggio `d ( _cos (1 -> _alfa `d `f ]
-[; ;parcheggio.c: 404: prima_sterzata = 2 * 3.14159265358979323846 * raggio * beta / 360;
+[e = _beta - -> -> 90 `i `f _alfa ]
+[; ;parcheggio.c: 404: n = 2 * raggio * cos(alfa);
 "404
-[e = _prima_sterzata -> / * * * -> -> 2 `i `d .3.14159265358979323846 -> _raggio `d -> _beta `d -> -> 360 `i `d `f ]
-[; ;parcheggio.c: 405: kkk = raggio + (2 * larghezza / 3);
+[e = _n -> * -> * -> -> 2 `i `f _raggio `d ( _cos (1 -> _alfa `d `f ]
+[; ;parcheggio.c: 405: prima_sterzata = 2 * 3.14159265358979323846 * raggio * beta / 360;
 "405
-[e = _kkk + _raggio / * -> -> 2 `i `f _larghezza -> -> 3 `i `f ]
-[; ;parcheggio.c: 406: jjj = raggio - (2 * larghezza / 3);
+[e = _prima_sterzata -> / * * * -> -> 2 `i `d .3.14159265358979323846 -> _raggio `d -> _beta `d -> -> 360 `i `d `f ]
+[; ;parcheggio.c: 406: kkk = raggio + (2 * larghezza / 3);
 "406
-[e = _jjj - _raggio / * -> -> 2 `i `f _larghezza -> -> 3 `i `f ]
-[; ;parcheggio.c: 407: Pminimo = kkk * cos(asin((jjj / kkk)));
+[e = _kkk + _raggio / * -> -> 2 `i `f _larghezza -> -> 3 `i `f ]
+[; ;parcheggio.c: 407: jjj = raggio - (2 * larghezza / 3);
 "407
-[e = _Pminimo -> * -> _kkk `d ( _cos (1 ( _asin (1 -> / _jjj _kkk `d `f ]
-[; ;parcheggio.c: 408: }
+[e = _jjj - _raggio / * -> -> 2 `i `f _larghezza -> -> 3 `i `f ]
+[; ;parcheggio.c: 408: Pminimo = kkk * cos(asin((jjj / kkk)));
 "408
+[e = _Pminimo -> * -> _kkk `d ( _cos (1 ( _asin (1 -> / _jjj _kkk `d `f ]
+[; ;parcheggio.c: 409: }
+"409
 [e :UE 2391 ]
 }
-"410
+"411
 [v _can_interpreter `(v ~T0 @X0 1 ef ]
 {
-[; ;parcheggio.c: 410: void can_interpreter(void) {
+[; ;parcheggio.c: 411: void can_interpreter(void) {
 [e :U _can_interpreter ]
 [f ]
-[; ;parcheggio.c: 411: left_speed = data_speed_rx[1];
-"411
-[e = _left_speed -> *U + &U _data_speed_rx * -> -> -> 1 `i `ui `ux -> -> # *U &U _data_speed_rx `ui `ux `ui ]
-[; ;parcheggio.c: 412: left_speed = ((left_speed << 8) | (data_speed_rx[0]));
+[; ;parcheggio.c: 412: left_speed = data_speed_rx[1];
 "412
-[e = _left_speed | << _left_speed -> 8 `i -> *U + &U _data_speed_rx * -> -> -> 0 `i `ui `ux -> -> # *U &U _data_speed_rx `ui `ux `ui ]
-[; ;parcheggio.c: 413: right_speed = data_speed_rx[3];
+[e = _left_speed -> *U + &U _data_speed_rx * -> -> -> 1 `i `ui `ux -> -> # *U &U _data_speed_rx `ui `ux `ui ]
+[; ;parcheggio.c: 413: left_speed = ((left_speed << 8) | (data_speed_rx[0]));
 "413
-[e = _right_speed -> *U + &U _data_speed_rx * -> -> -> 3 `i `ui `ux -> -> # *U &U _data_speed_rx `ui `ux `ui ]
-[; ;parcheggio.c: 414: right_speed = ((right_speed << 8) | (data_speed_rx[2]));
+[e = _left_speed | << _left_speed -> 8 `i -> *U + &U _data_speed_rx * -> -> -> 0 `i `ui `ux -> -> # *U &U _data_speed_rx `ui `ux `ui ]
+[; ;parcheggio.c: 414: right_speed = data_speed_rx[3];
 "414
-[e = _right_speed | << _right_speed -> 8 `i -> *U + &U _data_speed_rx * -> -> -> 2 `i `ui `ux -> -> # *U &U _data_speed_rx `ui `ux `ui ]
-[; ;parcheggio.c: 415: actual_speed = (right_speed + left_speed) / 2;
+[e = _right_speed -> *U + &U _data_speed_rx * -> -> -> 3 `i `ui `ux -> -> # *U &U _data_speed_rx `ui `ux `ui ]
+[; ;parcheggio.c: 415: right_speed = ((right_speed << 8) | (data_speed_rx[2]));
 "415
-[e = _actual_speed / + _right_speed _left_speed -> -> 2 `i `ui ]
-[; ;parcheggio.c: 416: }
+[e = _right_speed | << _right_speed -> 8 `i -> *U + &U _data_speed_rx * -> -> -> 2 `i `ui `ux -> -> # *U &U _data_speed_rx `ui `ux `ui ]
+[; ;parcheggio.c: 416: actual_speed = (right_speed + left_speed) / 2;
 "416
+[e = _actual_speed / + _right_speed _left_speed -> -> 2 `i `ui ]
+[; ;parcheggio.c: 417: }
+"417
 [e :UE 2392 ]
 }
-"418
+"419
 [v _configurazione `(v ~T0 @X0 1 ef ]
 {
-[; ;parcheggio.c: 418: void configurazione(void) {
+[; ;parcheggio.c: 419: void configurazione(void) {
 [e :U _configurazione ]
 [f ]
-[; ;parcheggio.c: 419: LATA = 0x00;
-"419
-[e = _LATA -> -> 0 `i `uc ]
-[; ;parcheggio.c: 420: TRISA = 0b11110000;
+[; ;parcheggio.c: 420: LATA = 0x00;
 "420
+[e = _LATA -> -> 0 `i `uc ]
+[; ;parcheggio.c: 421: TRISA = 0b11110000;
+"421
 [e = _TRISA -> -> 240 `i `uc ]
-[; ;parcheggio.c: 422: LATB = 0x00;
-"422
-[e = _LATB -> -> 0 `i `uc ]
-[; ;parcheggio.c: 423: TRISB = 0b10001010;
+[; ;parcheggio.c: 423: LATB = 0x00;
 "423
+[e = _LATB -> -> 0 `i `uc ]
+[; ;parcheggio.c: 424: TRISB = 0b10001010;
+"424
 [e = _TRISB -> -> 138 `i `uc ]
-[; ;parcheggio.c: 425: LATC = 0x00;
-"425
-[e = _LATC -> -> 0 `i `uc ]
-[; ;parcheggio.c: 426: TRISC = 0b11111111;
+[; ;parcheggio.c: 426: LATC = 0x00;
 "426
+[e = _LATC -> -> 0 `i `uc ]
+[; ;parcheggio.c: 427: TRISC = 0b11111111;
+"427
 [e = _TRISC -> -> 255 `i `uc ]
-[; ;parcheggio.c: 428: ADCON1 = 0xFF;
-"428
-[e = _ADCON1 -> -> 255 `i `uc ]
-[; ;parcheggio.c: 429: CANInitialize(4, 6, 5, 1, 3, CAN_CONFIG_LINE_FILTER_OFF & CAN_CONFIG_SAMPLE_ONCE & CAN_CONFIG_ALL_VALID_MSG & CAN_CONFIG_DBL_BUFFER_ON);
+[; ;parcheggio.c: 429: ADCON1 = 0xFF;
 "429
+[e = _ADCON1 -> -> 255 `i `uc ]
+[; ;parcheggio.c: 430: CANInitialize(4, 6, 5, 1, 3, CAN_CONFIG_LINE_FILTER_OFF & CAN_CONFIG_SAMPLE_ONCE & CAN_CONFIG_ALL_VALID_MSG & CAN_CONFIG_DBL_BUFFER_ON);
+"430
 [e ( _CANInitialize (4 , , , , , -> -> 4 `i `uc -> -> 6 `i `uc -> -> 5 `i `uc -> -> 1 `i `uc -> -> 3 `i `uc -> & & & -> . `E16313 6 `i -> . `E16313 8 `i -> . `E16313 20 `i -> . `E16313 14 `i `E16313 ]
-[; ;parcheggio.c: 431: RCONbits.IPEN = 1;
-"431
-[e = . . _RCONbits 5 7 -> -> 1 `i `uc ]
-[; ;parcheggio.c: 432: PIR3bits.RXB1IF = 0;
+[; ;parcheggio.c: 432: RCONbits.IPEN = 1;
 "432
-[e = . . _PIR3bits 0 1 -> -> 0 `i `uc ]
-[; ;parcheggio.c: 433: PIR3bits.RXB0IF = 0;
+[e = . . _RCONbits 5 7 -> -> 1 `i `uc ]
+[; ;parcheggio.c: 433: PIR3bits.RXB1IF = 0;
 "433
-[e = . . _PIR3bits 0 0 -> -> 0 `i `uc ]
-[; ;parcheggio.c: 434: IPR3bits.RXB1IP = 0;
+[e = . . _PIR3bits 0 1 -> -> 0 `i `uc ]
+[; ;parcheggio.c: 434: PIR3bits.RXB0IF = 0;
 "434
-[e = . . _IPR3bits 0 1 -> -> 0 `i `uc ]
-[; ;parcheggio.c: 435: IPR3bits.RXB0IP = 0;
+[e = . . _PIR3bits 0 0 -> -> 0 `i `uc ]
+[; ;parcheggio.c: 435: IPR3bits.RXB1IP = 0;
 "435
-[e = . . _IPR3bits 0 0 -> -> 0 `i `uc ]
-[; ;parcheggio.c: 436: PIE3bits.RXB1IE = 1;
+[e = . . _IPR3bits 0 1 -> -> 0 `i `uc ]
+[; ;parcheggio.c: 436: IPR3bits.RXB0IP = 0;
 "436
-[e = . . _PIE3bits 0 1 -> -> 1 `i `uc ]
-[; ;parcheggio.c: 437: PIE3bits.RXB0IE = 1;
+[e = . . _IPR3bits 0 0 -> -> 0 `i `uc ]
+[; ;parcheggio.c: 437: PIE3bits.RXB1IE = 1;
 "437
-[e = . . _PIE3bits 0 0 -> -> 1 `i `uc ]
-[; ;parcheggio.c: 438: INTCON2bits.TMR0IP = 0;
+[e = . . _PIE3bits 0 1 -> -> 1 `i `uc ]
+[; ;parcheggio.c: 438: PIE3bits.RXB0IE = 1;
 "438
-[e = . . _INTCON2bits 1 2 -> -> 0 `i `uc ]
-[; ;parcheggio.c: 439: T0CON = 0x80;
+[e = . . _PIE3bits 0 0 -> -> 1 `i `uc ]
+[; ;parcheggio.c: 439: INTCON2bits.TMR0IP = 0;
 "439
-[e = _T0CON -> -> 128 `i `uc ]
-[; ;parcheggio.c: 440: T3CON = 0x11;
+[e = . . _INTCON2bits 1 2 -> -> 0 `i `uc ]
+[; ;parcheggio.c: 440: T0CON = 0x80;
 "440
-[e = _T3CON -> -> 17 `i `uc ]
-[; ;parcheggio.c: 441: TMR0H = 0x34;
+[e = _T0CON -> -> 128 `i `uc ]
+[; ;parcheggio.c: 441: T3CON = 0x11;
 "441
-[e = _TMR0H -> -> 52 `i `uc ]
-[; ;parcheggio.c: 442: TMR0L = 0xE0;
+[e = _T3CON -> -> 17 `i `uc ]
+[; ;parcheggio.c: 442: TMR0H = 0x34;
 "442
-[e = _TMR0L -> -> 224 `i `uc ]
-[; ;parcheggio.c: 443: INTCONbits.TMR0IF = 0;
+[e = _TMR0H -> -> 52 `i `uc ]
+[; ;parcheggio.c: 443: TMR0L = 0xE0;
 "443
-[e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
-[; ;parcheggio.c: 444: INTCONbits.TMR0IE = 1;
+[e = _TMR0L -> -> 224 `i `uc ]
+[; ;parcheggio.c: 444: INTCONbits.TMR0IF = 0;
 "444
-[e = . . _INTCONbits 0 5 -> -> 1 `i `uc ]
-[; ;parcheggio.c: 445: INTCON2bits.INTEDG0 = 1;
+[e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
+[; ;parcheggio.c: 445: INTCONbits.TMR0IE = 1;
 "445
-[e = . . _INTCON2bits 1 6 -> -> 1 `i `uc ]
-[; ;parcheggio.c: 446: INTCONbits.INT0IF = 0;
+[e = . . _INTCONbits 0 5 -> -> 1 `i `uc ]
+[; ;parcheggio.c: 446: INTCON2bits.INTEDG0 = 1;
 "446
-[e = . . _INTCONbits 0 1 -> -> 0 `i `uc ]
-[; ;parcheggio.c: 447: INTCONbits.INT0IE = 0;
+[e = . . _INTCON2bits 1 6 -> -> 1 `i `uc ]
+[; ;parcheggio.c: 447: INTCONbits.INT0IF = 0;
 "447
-[e = . . _INTCONbits 0 4 -> -> 0 `i `uc ]
-[; ;parcheggio.c: 448: INTCONbits.GIEL = 1;
+[e = . . _INTCONbits 0 1 -> -> 0 `i `uc ]
+[; ;parcheggio.c: 448: INTCONbits.INT0IE = 0;
 "448
-[e = . . _INTCONbits 2 6 -> -> 1 `i `uc ]
-[; ;parcheggio.c: 449: INTCONbits.GIEH = 1;
+[e = . . _INTCONbits 0 4 -> -> 0 `i `uc ]
+[; ;parcheggio.c: 449: INTCONbits.GIEL = 1;
 "449
-[e = . . _INTCONbits 2 7 -> -> 1 `i `uc ]
-[; ;parcheggio.c: 450: }
+[e = . . _INTCONbits 2 6 -> -> 1 `i `uc ]
+[; ;parcheggio.c: 450: INTCONbits.GIEH = 1;
 "450
+[e = . . _INTCONbits 2 7 -> -> 1 `i `uc ]
+[; ;parcheggio.c: 451: }
+"451
 [e :UE 2393 ]
 }

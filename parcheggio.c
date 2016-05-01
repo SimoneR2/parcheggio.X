@@ -271,11 +271,11 @@ void park_routine(void) {
         data_brake [0] = 3;
         data_brake [1] = 1;
         while (distance_received1 == 0);
-        if (distance_average > 46) {
-            set_speed = 50;
+        if (distance_average > 55) {
+            set_speed = 1000;
             dir = 0;
             data_steering[0] = 90;
-            data_test[0] = (distance_average - 45);
+            data_test[0] = (distance_average - 54);
             asd = 1;
             CANsendMessage(DISTANCE_SET, data_test, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
             can_send();
@@ -289,7 +289,7 @@ void park_routine(void) {
         delay_s(1);
         data_brake [0] = 3;
         data_brake [1] = 1;
-        set_speed = 50;
+        set_speed = 1000;
         dir = 0;
         data_steering[0] = 180;
         data_test[0] = prima_sterzata;
@@ -297,10 +297,10 @@ void park_routine(void) {
         CANsendMessage(DISTANCE_SET, data_test, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
         can_send();
         while (asd == 1);
-        set_speed = 50;
+        set_speed = 1000;
         data_steering[0] = 0;
         asd = 1;
-        data_test[0] = prima_sterzata + 10;
+        data_test[0] = prima_sterzata + 15;
         CANsendMessage(DISTANCE_SET, data_test, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
         can_send();
         while (asd == 1);
@@ -312,8 +312,8 @@ void park_routine(void) {
         delay_s(1);
         if (sensor_distance [2] > 20) {
             data_brake [0] = 3;
-        data_brake [1] = 1;
-            set_speed = 50;
+            data_brake [1] = 1;
+            set_speed = 1000;
             data_steering[0] = 90;
             dir = 1;
             can_send();
@@ -328,6 +328,8 @@ void park_routine(void) {
         can_send();
         PORTBbits.RB5 = 0;
         start_operation = 0;
+        data[0] = 3;
+        CANsendMessage(PARK_ASSIST_STATE, data, 1, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
 
     }
 }

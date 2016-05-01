@@ -77,7 +77,7 @@ volatile unsigned char asus = 0;
 volatile unsigned int timerValue2 = 0;
 
 //VARIABILI PARCHEGGIO?
-float raggio = 60;
+float raggio = 75;
 float larghezza = 32;
 volatile float bordo = 0;
 float alfa = 0;
@@ -198,19 +198,20 @@ void main(void) {
     PORTBbits.RB6 = 0;
     request_sent = 0;
     start_operation = 0;
-    //    while (1) {
-    //        if (sensor_distance[0] > 20) {
-    //            PORTBbits.RB4 = 1;
+
+    //        while (1) {
+    //            if (sensor_distance[2] > 20) {
+    //                PORTBbits.RB4 = 1;
+    //            }
+    //            if (sensor_distance[2] > 50) {
+    //                PORTBbits.RB5 = 1;
+    //            }
+    //                    unsigned char data_correction1[];
+    //            data_correction1[0] = sensor_distance[2];
+    //            data_correction1[1] = (sensor_distance[2]>>8);
+    //            CANsendMessage(0xAA, data_correction1, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
+    //            delay_s(1);
     //        }
-    //        if (sensor_distance[0] > 50) {
-    //            PORTBbits.RB5 = 1;
-    //        }
-    //                unsigned char data_correction1[];
-    //        data_correction1[0] = sensor_distance[0];
-    //        data_correction1[1] = (sensor_distance[0]>>8);
-    //        CANsendMessage(0xAA, data_correction1, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
-    //        delay_s(1);
-    //    }
     while (1) {
         park_search();
         can_interpreter();
@@ -262,10 +263,13 @@ void park_routine(void) {
         bordo = sensor_distance[0];
         matematica();
         set_speed = 0;
-        data_brake[0] = 0;
         data_steering[0] = 90;
+        data_brake [0] = 0;
+        data_brake [1] = 1;
         can_send();
         delay_s(1);
+        data_brake [0] = 3;
+        data_brake [1] = 1;
         while (distance_received1 == 0);
         if (distance_average > 46) {
             set_speed = 50;
@@ -279,8 +283,12 @@ void park_routine(void) {
         }
         set_speed = 0;
         data_steering[0] = 90;
+        data_brake [0] = 0;
+        data_brake [1] = 1;
         can_send();
         delay_s(1);
+        data_brake [0] = 3;
+        data_brake [1] = 1;
         set_speed = 50;
         dir = 0;
         data_steering[0] = 180;
@@ -296,10 +304,28 @@ void park_routine(void) {
         CANsendMessage(DISTANCE_SET, data_test, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
         can_send();
         while (asd == 1);
+        data_brake [0] = 0;
+        data_brake [1] = 1;
         set_speed = 0;
         data_steering[0] = 90;
         can_send();
+        delay_s(1);
+        if (sensor_distance [2] > 20) {
+            data_brake [0] = 3;
+        data_brake [1] = 1;
+            set_speed = 50;
+            data_steering[0] = 90;
+            dir = 1;
+            can_send();
+            while (sensor_distance [2] > 20);
+        }
+        data_brake [0] = 0;
+        data_brake [1] = 1;
+        set_speed = 0;
+        data_steering[0] = 90;
+        dir = 0;
         activation = 0;
+        can_send();
         PORTBbits.RB5 = 0;
         start_operation = 0;
 
@@ -316,6 +342,7 @@ void can_send(void) {
         while (CANisTxReady() != 1);
         CANsendMessage(SPEED_CHANGE, data_speed, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
         while (CANisTxReady() != 1);
+        data_brake[1] = 0;
         CANsendMessage(BRAKE_SIGNAL, data_brake, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
     } else {
         CANsendMessage(STEERING_CORRECTION, data_correction, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
@@ -331,7 +358,6 @@ void parallelo(void) {
 
     if (alignment_gap < 30) {
         if ((sensor_distance[0] < 40) && (sensor_distance[1] < 40)) {
-            //steering_correction = alignment_gap / 120389719028371984721; //INUTILE
             //alignment_gap =10; //debug qua c'è il problema che anche aligment gap deve essere con valore float, che è diverso da quello int o simili.
             //se scrivo 8 infatti il simulatore mi da un valore tipo 10^-44.....devo scrivere 8.0 e allora lo prende.
             //bisogna vedere cosa fa il programma nelle altre parti e che non faccia casini con il float che gira (oppure bisogna fare una conversione...ma non so come...).

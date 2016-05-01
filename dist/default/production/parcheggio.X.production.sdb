@@ -144,19 +144,19 @@ CAN_RX_BUFFER_2_OVFL 2
 [v _ISR_Bassa ISR_Bassa `IIL(v  1 e 0 0 ]
 "186
 [v _main main `(v  1 e 0 0 ]
-"221
+"222
 [v _park_search park_search `(v  1 e 0 0 ]
-"259
+"260
 [v _park_routine park_routine `(v  1 e 0 0 ]
-"309
+"335
 [v _can_send can_send `(v  1 e 0 0 ]
-"329
+"356
 [v _parallelo parallelo `(v  1 e 0 0 ]
-"370
+"396
 [v _matematica matematica `(v  1 e 0 0 ]
-"382
+"408
 [v _can_interpreter can_interpreter `(v  1 e 0 0 ]
-"390
+"416
 [v _configurazione configurazione `(v  1 e 0 0 ]
 "49 C:/Users/Simone/Desktop/LaurTec_PIC_libraries_v_3.3.1/src\delay.c
 [v _delay_quartz_frequency_value delay_quartz_frequency_value `VEuc  1 e 1 0 ]
@@ -1473,17 +1473,17 @@ CAN_RX_BUFFER_2_OVFL 2
 "186
 [v _main main `(v  1 e 0 0 ]
 {
-"219
+"220
 } 0
-"221
+"222
 [v _park_search park_search `(v  1 e 0 0 ]
 {
-"257
+"258
 } 0
-"329
+"356
 [v _parallelo parallelo `(v  1 e 0 0 ]
 {
-"368
+"394
 } 0
 "4 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\abs.c
 [v _abs abs `(i  1 e 2 0 ]
@@ -1491,15 +1491,15 @@ CAN_RX_BUFFER_2_OVFL 2
 [v abs@a a `i  1 p 2 23 ]
 "9
 } 0
-"259 D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+"260 D:\Documenti\GitHub\parcheggio.X\parcheggio.c
 [v _park_routine park_routine `(v  1 e 0 0 ]
 {
-"307
+"333
 } 0
-"370
+"396
 [v _matematica matematica `(v  1 e 0 0 ]
 {
-"380
+"406
 } 0
 "13 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\cos.c
 [v _cos cos `(d  1 e 4 0 ]
@@ -1745,12 +1745,12 @@ CAN_RX_BUFFER_2_OVFL 2
 [v ___wmul@multiplicand multiplicand `ui  1 p 2 25 ]
 "53
 } 0
-"309 D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+"335 D:\Documenti\GitHub\parcheggio.X\parcheggio.c
 [v _can_send can_send `(v  1 e 0 0 ]
 {
-"322
+"349
 [v can_send@data_correction1 data_correction1 `[0]uc  1 a 0 39 ]
-"327
+"354
 } 0
 "294 C:/Users/Simone/Desktop/LaurTec_PIC_libraries_v_3.3.1/inc\CANlib.h
 [v _CANsendMessage CANsendMessage `(v  1 e 0 0 ]
@@ -1769,10 +1769,10 @@ CAN_RX_BUFFER_2_OVFL 2
 {
 "1157
 } 0
-"390 D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+"416 D:\Documenti\GitHub\parcheggio.X\parcheggio.c
 [v _configurazione configurazione `(v  1 e 0 0 ]
 {
-"422
+"448
 } 0
 "218 C:/Users/Simone/Desktop/LaurTec_PIC_libraries_v_3.3.1/inc\CANlib.h
 [v _CANInitialize CANInitialize `(v  1 e 0 0 ]
@@ -1830,10 +1830,10 @@ CAN_RX_BUFFER_2_OVFL 2
 [v CANOperationMode@mode mode `E16307  1 a 1 23 ]
 "211
 } 0
-"382 D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+"408 D:\Documenti\GitHub\parcheggio.X\parcheggio.c
 [v _can_interpreter can_interpreter `(v  1 e 0 0 ]
 {
-"388
+"414
 } 0
 "109
 [v _ISR_Bassa ISR_Bassa `IIL(v  1 e 0 0 ]

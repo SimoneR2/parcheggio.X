@@ -16,6 +16,7 @@
 #include <math.h>
 #define _XTAL_FREQ 16000000
 
+#define tolleranza 10
 void configurazione(void);
 void park_search(void);
 void park_routine(void);
@@ -77,7 +78,7 @@ volatile unsigned char asus = 0;
 volatile unsigned int timerValue2 = 0;
 
 //VARIABILI PARCHEGGIO?
-float raggio = 75;
+float raggio = 56;
 float larghezza = 32;
 volatile float bordo = 0;
 float alfa = 0;
@@ -245,7 +246,10 @@ void park_search(void) {
                 data[0] = 1;
                 CANsendMessage(PARK_ASSIST_STATE, data, 1, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
                 if ((request_sent1 == 0)&&(sensor_distance[0] < 40)) {
-                    CANsendMessage(COUNT_START, data, 8, CAN_CONFIG_STD_MSG & CAN_REMOTE_TX_FRAME & CAN_TX_PRIORITY_0);
+                    data_test[0] = 130;
+                    asd = 1;
+                    CANsendMessage(DISTANCE_SET, data_test, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
+                    //CANsendMessage(COUNT_START, data, 8, CAN_CONFIG_STD_MSG & CAN_REMOTE_TX_FRAME & CAN_TX_PRIORITY_0);
                     distance_received1 = 0;
                     request_sent1 = 1;
                 }
@@ -258,9 +262,24 @@ void park_search(void) {
 }
 
 void park_routine(void) {
+    while ((asd == 1)&&(PORTBbits.RB5 == 1) && (activation == 1)&&(start_operation == 1)) {
+        data_brake [0] = 3;
+        data_brake [1] = 1;
+        parallelo();
+        if (data_correction[1] == 1)
+            data_steering[0] = (90 + data_correction[0]);
+        else {
+            data_steering[0] = (90 + data_correction[0]);
+        }
+        set_speed = 1000;
+        dir = 1;
+        can_send();
+        delay_ms(50);
+    }
     while ((PORTBbits.RB5 == 1) && (activation == 1)&&(start_operation == 1)) {
-        CANsendMessage(COUNT_STOP, data, 8, CAN_CONFIG_STD_MSG & CAN_REMOTE_TX_FRAME & CAN_TX_PRIORITY_0);
-        bordo = sensor_distance[0];
+
+        //CANsendMessage(COUNT_STOP, data, 8, CAN_CONFIG_STD_MSG & CAN_REMOTE_TX_FRAME & CAN_TX_PRIORITY_0);
+        bordo = (sensor_distance[0]+sensor_distance[1])/2;
         matematica();
         set_speed = 0;
         data_steering[0] = 90;
@@ -268,25 +287,26 @@ void park_routine(void) {
         data_brake [1] = 1;
         can_send();
         delay_s(1);
+
         data_brake [0] = 3;
         data_brake [1] = 1;
-        while (distance_received1 == 0);
-        if (distance_average > 50) {
-            set_speed = 1000;
-            dir = 0;
-            data_steering[0] = 90;
-            data_test[0] = (distance_average - 46);
-            asd = 1;
-            CANsendMessage(DISTANCE_SET, data_test, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
-            can_send();
-            while (asd == 1);
-        }
+        //while (distance_received1 == 0);
+        set_speed = 1000;
+        dir = 0; //indietro
+        data_steering[0] = 90;
+        data_test[0] = ((130 + Pminimo)-(abs(n) + tolleranza + 45));
+        asd = 1;
+        CANsendMessage(DISTANCE_SET, data_test, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
+        can_send();
+        while (asd == 1);
+
         set_speed = 0;
         data_steering[0] = 90;
         data_brake [0] = 0;
         data_brake [1] = 1;
         can_send();
         delay_s(1);
+
         data_brake [0] = 3;
         data_brake [1] = 1;
         set_speed = 1000;
@@ -324,7 +344,7 @@ void park_routine(void) {
         set_speed = 0;
         data_steering[0] = 90;
         dir = 0;
-        
+
         can_send();
         activation = 0;
         PORTBbits.RB5 = 0;
@@ -398,7 +418,7 @@ void parallelo(void) {
 
 void matematica(void) {
 
-    alfa = asin(((2 * raggio)-(larghezza / 2) - bordo) / (2 * raggio));
+    alfa = asin(((2 * raggio)-(larghezza / 2) - (bordo + (larghezza / 2))) / (2 * raggio));
     alfa = alfa / M_PI * 180;
     beta = 90 - alfa;
     n = 2 * raggio * cos(alfa);

@@ -378,8 +378,7 @@ void can_send(void) {
 
 void parallelo(void) {
     alignment_gap = abs(sensor_distance[0] - sensor_distance[1]);
-
-    if (alignment_gap < 30) {
+ if (alignment_gap < 30) {
         if ((sensor_distance[0] < 40) && (sensor_distance[1] < 40)) {
             //alignment_gap =10; //debug qua c'è il problema che anche aligment gap deve essere con valore float, che è diverso da quello int o simili.
             //se scrivo 8 infatti il simulatore mi da un valore tipo 10^-44.....devo scrivere 8.0 e allora lo prende.
@@ -417,11 +416,12 @@ void parallelo(void) {
 }
 
 void matematica(void) {
-
     alfa = asin(((2 * raggio)-(larghezza / 2) - (bordo + (larghezza / 2))) / (2 * raggio));
     alfa = alfa / M_PI * 180;
     beta = 90 - alfa;
-    n = 2 * raggio * cos(alfa);
+    alfa = (alfa*M_PI)/180;
+    n = cos(alfa);
+    n = 2 * raggio *n;
     prima_sterzata = 2 * M_PI * raggio * beta / 360;
     kkk = raggio + (2 * larghezza / 3);
     jjj = raggio - (2 * larghezza / 3);

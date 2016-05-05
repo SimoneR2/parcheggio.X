@@ -16,7 +16,7 @@
 #include <math.h>
 #define _XTAL_FREQ 16000000
 
-#define tolleranza 10
+#define tolleranza 0
 void configurazione(void);
 void park_search(void);
 void park_routine(void);
@@ -78,7 +78,7 @@ volatile unsigned char asus = 0;
 volatile unsigned int timerValue2 = 0;
 
 //VARIABILI PARCHEGGIO?
-float raggio = 56;
+float raggio = 55;
 float larghezza = 32;
 volatile float bordo = 0;
 float alfa = 0;
@@ -266,7 +266,8 @@ void park_routine(void) {
         data_brake [0] = 3;
         data_brake [1] = 1;
         parallelo();
-        if (data_correction[1] == 1)
+        data_correction[0] = data_correction[0]/2;
+        if (data_correction[1] == 0)
             data_steering[0] = (90 + data_correction[0]);
         else {
             data_steering[0] = (90 + data_correction[0]);
@@ -294,7 +295,7 @@ void park_routine(void) {
         set_speed = 1000;
         dir = 0; //indietro
         data_steering[0] = 90;
-        data_test[0] = ((130 + Pminimo)-(abs(n) + tolleranza + 45));
+        data_test[0] = ((130 + Pminimo)-(n + tolleranza + 50));
         asd = 1;
         CANsendMessage(DISTANCE_SET, data_test, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
         can_send();

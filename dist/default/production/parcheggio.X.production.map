@@ -5,9 +5,9 @@ Linker command line:
 --edf=C:\Program Files (x86)\Microchip\xc8\v1.35\dat\en_msgs.txt -cs \
   -h+dist/default/production\parcheggio.X.production.sym \
   --cmf=dist/default/production\parcheggio.X.production.cmf -z -Q18F2685 \
-  -oC:\Users\Simone\AppData\Local\Temp\s2qg.2 \
+  -oC:\Users\Simone\AppData\Local\Temp\sqo.2 \
   -Mdist/default/production/parcheggio.X.production.map -E1 -ver=XC8 \
-  --acfsm=1493 -ASTACK=01F0h-0cffh -pstack=STACK -ACODE=00h-017FFFh \
+  --acfsm=1493 -ASTACK=01ECh-0cffh -pstack=STACK -ACODE=00h-017FFFh \
   -ACONST=00h-017FFFh -ASMALLCONST=0D00h-0DFFhx371 \
   -AMEDIUMCONST=0D00h-0FFFFh,010D00h-017FFFh -ACOMRAM=01h-05Fh \
   -AABS1=00h-0CFFh -ABIGRAM=01h-0CFFh -ARAM=060h-0FFh,0100h-01FFhx12 \
@@ -25,7 +25,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -pparam0=BANK0 \
-  C:\Users\Simone\AppData\Local\Temp\s2qg.obj \
+  C:\Users\Simone\AppData\Local\Temp\sqo.obj \
   dist/default/production\parcheggio.X.production.obj 
 
 Object code version is 3.11
@@ -38,7 +38,7 @@ Call graph: (short form)
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\Simone\AppData\Local\Temp\s2qg.obj
+C:\Users\Simone\AppData\Local\Temp\sqo.obj
                 end_init                            254      254        4        C       0
                 reset_vec                             0        0        4        0       0
                 idloc                            200000   200000        8   200000       0
@@ -48,56 +48,57 @@ dist/default/production\parcheggio.X.production.obj
                 intcode                               8        8        E        4       0
                 temp                                 48       48        1        1       1
                 smallconst                          D00      D00       52      680       0
-                text38                             5B14     5B14       78      6A9       0
-                intcode_body                       59A0     59A0       E0      6A9       0
-                text36                             2512     2512      50C      6A9       0
-                text34                             5C5C     5C5C       54      6A9       0
-                text33                             5EA6     5EA6       16      6A9       0
-                text32                              D52      D52      B06      6A9       0
-                text31                             3EC8     3EC8      39E      6A9       0
-                text30                             4F3C     4F3C      1C6      6A9       0
-                text29                             5B8C     5B8C       6C      6A9       0
-                text28                             5DF4     5DF4       36      6A9       0
-                text27                             5D82     5D82       3A      6A9       0
-                text26                             5E56     5E56       2C      6A9       0
-                text25                             3B08     3B08      3C0      6A9       0
-                text24                             52AE     52AE      190      6A9       0
-                text23                             2A1E     2A1E      4A8      6A9       0
-                text22                             2EC6     2EC6      4A6      6A9       0
-                text21                             5698     5698      118      6A9       0
-                text20                             5DBC     5DBC       38      6A9       0
-                text19                             5D44     5D44       3E      6A9       0
-                text18                             4B1C     4B1C      252      6A9       0
-                text17                             373E     373E      3CA      6A9       0
-                text16                             457E     457E      312      6A9       0
-                text15                             5CFC     5CFC       48      6A9       0
-                text14                             57B0     57B0      10C      6A9       0
-                text13                             4D6E     4D6E      1CE      6A9       0
-                text12                             5A80     5A80       94      6A9       0
-                text11                             5574     5574      124      6A9       0
-                text10                             4266     4266      318      6A9       0
-                text9                              58BC     58BC       E4      6A9       0
-                text8                              1FE4     1FE4      52E      6A9       0
-                text7                              5E2A     5E2A       2C      6A9       0
-                text6                              5E82     5E82       24      6A9       0
+                text39                             5C3A     5C3A       78      6A9       0
+                intcode_body                       5A06     5A06       E2      6A9       0
+                text37                             256E     256E      50C      6A9       0
+                text35                             5D80     5D80       54      6A9       0
+                text34                             5FC4     5FC4       16      6A9       0
+                text33                              D52      D52      B06      6A9       0
+                text32                             3F2E     3F2E      39E      6A9       0
+                text31                             4FA2     4FA2      1C6      6A9       0
+                text30                             5CB2     5CB2       6C      6A9       0
+                text29                             5AE8     5AE8       BE      6A9       0
+                text28                             5EDE     5EDE       36      6A9       0
+                text27                             5F14     5F14       34      6A9       0
+                text26                             5F74     5F74       2C      6A9       0
+                text25                             3B6E     3B6E      3C0      6A9       0
+                text24                             5314     5314      190      6A9       0
+                text23                             2A7A     2A7A      4A8      6A9       0
+                text22                             2F22     2F22      4A6      6A9       0
+                text21                             56FE     56FE      118      6A9       0
+                text20                             5EA6     5EA6       38      6A9       0
+                text19                             5E68     5E68       3E      6A9       0
+                text18                             4B82     4B82      252      6A9       0
+                text17                             37A4     37A4      3CA      6A9       0
+                text16                             45E4     45E4      312      6A9       0
+                text15                             5E20     5E20       48      6A9       0
+                text14                             5816     5816      10C      6A9       0
+                text13                             4DD4     4DD4      1CE      6A9       0
+                text12                             5BA6     5BA6       94      6A9       0
+                text11                             55DA     55DA      124      6A9       0
+                text10                             42CC     42CC      318      6A9       0
+                text9                              5922     5922       E4      6A9       0
+                text8                              1FE4     1FE4      58A      6A9       0
+                text7                              5F48     5F48       2C      6A9       0
+                text6                              5FA0     5FA0       24      6A9       0
                 text5                              1858     1858      78C      6A9       0
-                text4                              543E     543E      136      6A9       0
-                text3                              4890     4890      28C      6A9       0
-                text2                              336C     336C      3D2      6A9       0
-                text1                              5102     5102      1AC      6A9       0
-                text0                              5CB0     5CB0       4C      6A9       0
+                text4                              54A4     54A4      136      6A9       0
+                text3                              48F6     48F6      28C      6A9       0
+                text2                              33C8     33C8      3DC      6A9       0
+                text1                              5168     5168      1AC      6A9       0
+                text0                              5DD4     5DD4       4C      6A9       0
                 cstackCOMRAM                          1        1       23        1       1
-                cstackBANK0                          60       60       80       60       1
-                cstackBANK1                         189      189       5D      100       1
-                dataBANK1                           1E6      1E6        A      100       1
-                bssBANK1                            100      100       89      100       1
+                cstackBANK0                          60       60       84       60       1
+                cstackBANK1                         18D      18D       55      100       1
+                dataBANK1                           1E2      1E2        A      100       1
+                bssBANK1                            100      100       8D      100       1
                 dataBANK0                            E8       E8        1       60       1
-                bssBANK0                             E0       E0        8       60       1
+                bssBANK0                             E4       E4        4       60       1
                 bssCOMRAM                            24       24       22        1       1
                 bitbssCOMRAM                        230       46        C        1       1     8
-                cinit                              5BF8     5BF8       64      6A9       0
-                idataBANK1                         5EBC     5EBC        A      6A9       0
-                idataBANK0                         5EC6     5EC6        1      6A9       0
+                cinit                              5D1E     5D1E       62      6A9       0
+                idataBANK1                         5FDA     5FDA        A      6A9       0
+                idataBANK0                         5FE4     5FE4        1      6A9       0
 
 TOTAL           Name                               Link     Load   Length     Space
         CLASS   STACK          
@@ -107,47 +108,48 @@ TOTAL           Name                               Link     Load   Length     Sp
                 intcodelo                            18       18      23C         0
                 intcode                               8        8        E         0
                 reset_vec                             0        0        4         0
-                text38                             5B14     5B14       78         0
-                intcode_body                       59A0     59A0       E0         0
-                text36                             2512     2512      50C         0
-                text34                             5C5C     5C5C       54         0
-                text33                             5EA6     5EA6       16         0
-                text32                              D52      D52      B06         0
-                text31                             3EC8     3EC8      39E         0
-                text30                             4F3C     4F3C      1C6         0
-                text29                             5B8C     5B8C       6C         0
-                text28                             5DF4     5DF4       36         0
-                text27                             5D82     5D82       3A         0
-                text26                             5E56     5E56       2C         0
-                text25                             3B08     3B08      3C0         0
-                text24                             52AE     52AE      190         0
-                text23                             2A1E     2A1E      4A8         0
-                text22                             2EC6     2EC6      4A6         0
-                text21                             5698     5698      118         0
-                text20                             5DBC     5DBC       38         0
-                text19                             5D44     5D44       3E         0
-                text18                             4B1C     4B1C      252         0
-                text17                             373E     373E      3CA         0
-                text16                             457E     457E      312         0
-                text15                             5CFC     5CFC       48         0
-                text14                             57B0     57B0      10C         0
-                text13                             4D6E     4D6E      1CE         0
-                text12                             5A80     5A80       94         0
-                text11                             5574     5574      124         0
-                text10                             4266     4266      318         0
-                text9                              58BC     58BC       E4         0
-                text8                              1FE4     1FE4      52E         0
-                text7                              5E2A     5E2A       2C         0
-                text6                              5E82     5E82       24         0
+                text39                             5C3A     5C3A       78         0
+                intcode_body                       5A06     5A06       E2         0
+                text37                             256E     256E      50C         0
+                text35                             5D80     5D80       54         0
+                text34                             5FC4     5FC4       16         0
+                text33                              D52      D52      B06         0
+                text32                             3F2E     3F2E      39E         0
+                text31                             4FA2     4FA2      1C6         0
+                text30                             5CB2     5CB2       6C         0
+                text29                             5AE8     5AE8       BE         0
+                text28                             5EDE     5EDE       36         0
+                text27                             5F14     5F14       34         0
+                text26                             5F74     5F74       2C         0
+                text25                             3B6E     3B6E      3C0         0
+                text24                             5314     5314      190         0
+                text23                             2A7A     2A7A      4A8         0
+                text22                             2F22     2F22      4A6         0
+                text21                             56FE     56FE      118         0
+                text20                             5EA6     5EA6       38         0
+                text19                             5E68     5E68       3E         0
+                text18                             4B82     4B82      252         0
+                text17                             37A4     37A4      3CA         0
+                text16                             45E4     45E4      312         0
+                text15                             5E20     5E20       48         0
+                text14                             5816     5816      10C         0
+                text13                             4DD4     4DD4      1CE         0
+                text12                             5BA6     5BA6       94         0
+                text11                             55DA     55DA      124         0
+                text10                             42CC     42CC      318         0
+                text9                              5922     5922       E4         0
+                text8                              1FE4     1FE4      58A         0
+                text7                              5F48     5F48       2C         0
+                text6                              5FA0     5FA0       24         0
                 text5                              1858     1858      78C         0
-                text4                              543E     543E      136         0
-                text3                              4890     4890      28C         0
-                text2                              336C     336C      3D2         0
-                text1                              5102     5102      1AC         0
-                text0                              5CB0     5CB0       4C         0
-                cinit                              5BF8     5BF8       64         0
-                idataBANK1                         5EBC     5EBC        A         0
-                idataBANK0                         5EC6     5EC6        1         0
+                text4                              54A4     54A4      136         0
+                text3                              48F6     48F6      28C         0
+                text2                              33C8     33C8      3DC         0
+                text1                              5168     5168      1AC         0
+                text0                              5DD4     5DD4       4C         0
+                cinit                              5D1E     5D1E       62         0
+                idataBANK1                         5FDA     5FDA        A         0
+                idataBANK0                         5FE4     5FE4        1         0
 
         CLASS   CONST          
 
@@ -169,14 +171,14 @@ TOTAL           Name                               Link     Load   Length     Sp
         CLASS   RAM            
 
         CLASS   BANK0          
-                cstackBANK0                          60       60       80         1
+                cstackBANK0                          60       60       84         1
                 dataBANK0                            E8       E8        1         1
-                bssBANK0                             E0       E0        8         1
+                bssBANK0                             E4       E4        4         1
 
         CLASS   BANK1          
-                cstackBANK1                         189      189       5D         1
-                dataBANK1                           1E6      1E6        A         1
-                bssBANK1                            100      100       89         1
+                cstackBANK1                         18D      18D       55         1
+                dataBANK1                           1E2      1E2        A         1
+                bssBANK1                            100      100       8D         1
 
         CLASS   BANK2          
 
@@ -221,9 +223,9 @@ SEGMENTS        Name                           Load    Length   Top    Selector 
                 intcode                        000008  00000E  000016         4       0  CODE    
                 intcodelo                      000018  000240  000258         C       0  CODE    
                 cstackBANK0                    000060  000089  0000E9        60       1  BANK0   
-                bssBANK1                       000100  0000F0  0001F0       100       1  BANK1   
+                bssBANK1                       000100  0000EC  0001EC       100       1  BANK1   
                 smallconst                     000D00  000052  000D52       680       0  SMALLCON
-                text32                         000D52  005175  005EC7       6A9       0  CODE    
+                text33                         000D52  005293  005FE5       6A9       0  CODE    
                 idloc                          200000  000008  200008    200000       0  IDLOC   
                 config                         300000  00000E  30000E    300000       0  CONFIG  
 
@@ -232,7 +234,7 @@ UNUSED ADDRESS RANGES
 
         Name                Unused          Largest block    Delta
         BANK0            0000E9-0000FF               17
-        BANK1            0001F0-0001FF               10
+        BANK1            0001EC-0001FF               14
         BANK10           000A00-000AFF              100
         BANK11           000B00-000BFF              100
         BANK12           000C00-000CFF              100
@@ -246,44 +248,45 @@ UNUSED ADDRESS RANGES
         BANK9            000900-0009FF              100
         BIGRAM           000049-00005F               17
                          0000E9-0000FF               17
-                         0001F0-000CFF              B10
+                         0001EC-000CFF              B14
         CODE             000004-000007                4
                          000016-000017                2
                          000258-000CFF              AA8
-                         005EC7-017FFF            12139
+                         005FE5-017FFF            1201B
         COMRAM           000049-00005F               17
         CONST            000004-000007                4
                          000016-000017                2
                          000258-000CFF              AA8
-                         005EC7-017FFF            12139
+                         005FE5-017FFF            1201B
         EEDATA           F00000-F003FF              400
-        MEDIUMCONST      005EC7-00FFFF             A139
+        MEDIUMCONST      005FE5-00FFFF             A01B
                          010D00-017FFF             7300
         RAM              0000E9-0000FF               17
-                         0001F0-000CFF              100
+                         0001EC-000CFF              100
         SFR              000D00-000FFF              100
-        SMALLCONST       005EC7-017FFF              100
-        STACK            0001F0-000CFF              B10
+        SMALLCONST       005FE5-017FFF              100
+        STACK            0001EC-000CFF              B14
 
                                   Symbol Table
 
-?___fladd                     cstackBANK0  0000AD
+?___awdiv                     cstackBANK0  000077
+?___fladd                     cstackBANK0  0000A9
 ?___fldiv                     cstackBANK0  000077
 ?___flmul                     cstackBANK0  000090
-?___flneg                     cstackBANK0  0000A9
-?___flsub                     cstackBANK0  0000CB
-?___fltol                     cstackBANK0  000077
+?___flneg                     cstackBANK0  0000BD
+?___flsub                     cstackBANK1  00018D
+?___fltol                     cstackBANK0  0000C1
 ?___lwdiv                     cstackBANK0  000060
 ?___wmul                      cstackBANK0  000077
-?___xxtofl                    cstackBANK0  000085
-?_abs                         cstackBANK0  000081
-?_asin                        cstackBANK1  00019A
+?___xxtofl                    cstackBANK0  0000CB
+?_abs                         cstackBANK0  000077
+?_asin                        cstackBANK0  0000DE
 ?_atan                        cstackBANK0  0000D1
 ?_cos                         cstackBANK1  0001B2
-?_eval_poly                   cstackBANK0  0000C1
-?_fabs                        cstackBANK0  0000AD
-?_floor                       cstackBANK0  0000C1
-?_sin                         cstackBANK0  0000D3
+?_eval_poly                   cstackBANK0  0000BD
+?_fabs                        cstackBANK0  0000C1
+?_floor                       cstackBANK0  0000D9
+?_sin                         cstackBANK1  000195
 ?_sqrt                        cstackBANK0  0000C1
 CANInitialize@BRP             cstackBANK0  000088
 CANInitialize@FilterConfig1   cstackBANK0  00008F
@@ -320,14 +323,14 @@ _BRGCON3                      (abs)        000F72
 _BRGCON3bits                  (abs)        000F72
 _CANCON                       (abs)        000F6F
 _CANCONbits                   (abs)        000F6F
-_CANInitialize                text30       004F3C
-_CANOperationMode             text33       005EA6
+_CANInitialize                text31       004FA2
+_CANOperationMode             text34       005FC4
 _CANSTAT                      (abs)        000F6E
-_CANSetFilter                 text32       000D52
-_CANSetMask                   text31       003EC8
-_CANisTxReady                 text6        005E82
+_CANSetFilter                 text33       000D52
+_CANSetMask                   text32       003F2E
+_CANisTxReady                 text6        005FA0
 _CANisTxReady$2845            cstackBANK0  000077
-_CANreceiveMessage            text36       002512
+_CANreceiveMessage            text37       00256E
 _CANsendMessage               text5        001858
 _COMSTATbits                  (abs)        000F74
 _INTCON2bits                  (abs)        000FF1
@@ -618,8 +621,9 @@ __Htext31                     text31       000000
 __Htext32                     text32       000000
 __Htext33                     text33       000000
 __Htext34                     text34       000000
-__Htext36                     text36       000000
-__Htext38                     text38       000000
+__Htext35                     text35       000000
+__Htext37                     text37       000000
+__Htext39                     text39       000000
 __Htext4                      text4        000000
 __Htext5                      text5        000000
 __Htext6                      text6        000000
@@ -729,8 +733,9 @@ __Ltext31                     text31       000000
 __Ltext32                     text32       000000
 __Ltext33                     text33       000000
 __Ltext34                     text34       000000
-__Ltext36                     text36       000000
-__Ltext38                     text38       000000
+__Ltext35                     text35       000000
+__Ltext37                     text37       000000
+__Ltext39                     text39       000000
 __Ltext4                      text4        000000
 __Ltext5                      text5        000000
 __Ltext6                      text6        000000
@@ -738,16 +743,22 @@ __Ltext7                      text7        000000
 __Ltext8                      text8        000000
 __Ltext9                      text9        000000
 __S0                          (abs)        30000E
-__S1                          (abs)        0001F0
+__S1                          (abs)        0001EC
 __S2                          (abs)        000000
-___fladd                      text23       002A1E
-___fladd@a                    cstackBANK0  0000B1
-___fladd@aexp                 cstackBANK0  0000BE
-___fladd@b                    cstackBANK0  0000AD
-___fladd@bexp                 cstackBANK0  0000BF
-___fladd@grs                  cstackBANK0  0000C0
-___fladd@signs                cstackBANK0  0000BD
-___fldiv                      text25       003B08
+___awdiv                      text29       005AE8
+___awdiv@counter              cstackBANK0  00007B
+___awdiv@dividend             cstackBANK0  000077
+___awdiv@divisor              cstackBANK0  000079
+___awdiv@quotient             cstackBANK0  00007D
+___awdiv@sign                 cstackBANK0  00007C
+___fladd                      text23       002A7A
+___fladd@a                    cstackBANK0  0000AD
+___fladd@aexp                 cstackBANK0  0000BA
+___fladd@b                    cstackBANK0  0000A9
+___fladd@bexp                 cstackBANK0  0000BB
+___fladd@grs                  cstackBANK0  0000BC
+___fladd@signs                cstackBANK0  0000B9
+___fldiv                      text25       003B6E
 ___fldiv@a                    cstackBANK0  00007B
 ___fldiv@aexp                 cstackBANK0  00008F
 ___fldiv@b                    cstackBANK0  000077
@@ -756,10 +767,10 @@ ___fldiv@grs                  cstackBANK0  00008A
 ___fldiv@new_exp              cstackBANK0  000088
 ___fldiv@rem                  cstackBANK0  000084
 ___fldiv@sign                 cstackBANK0  000083
-___flge                       text24       0052AE
-___flge@ff1                   cstackBANK0  0000B1
-___flge@ff2                   cstackBANK0  0000B5
-___flmul                      text22       002EC6
+___flge                       text24       005314
+___flge@ff1                   cstackBANK0  0000C5
+___flge@ff2                   cstackBANK0  0000C9
+___flmul                      text22       002F22
 ___flmul@a                    cstackBANK0  000094
 ___flmul@aexp                 cstackBANK0  00009D
 ___flmul@b                    cstackBANK0  000090
@@ -768,18 +779,18 @@ ___flmul@grs                  cstackBANK0  00009E
 ___flmul@prod                 cstackBANK0  0000A3
 ___flmul@sign                 cstackBANK0  00009C
 ___flmul@temp                 cstackBANK0  0000A7
-___flneg                      text20       005DBC
-___flneg@f1                   cstackBANK0  0000A9
-___flsub                      text15       005CFC
-___flsub@a                    cstackBANK0  0000CF
-___flsub@b                    cstackBANK0  0000CB
-___fltol                      text14       0057B0
-___fltol@exp1                 cstackBANK0  000080
-___fltol@f1                   cstackBANK0  000077
-___fltol@sign1                cstackBANK0  00007F
+___flneg                      text20       005EA6
+___flneg@f1                   cstackBANK0  0000BD
+___flsub                      text15       005E20
+___flsub@a                    cstackBANK1  000191
+___flsub@b                    cstackBANK1  00018D
+___fltol                      text14       005816
+___fltol@exp1                 cstackBANK0  0000CA
+___fltol@f1                   cstackBANK0  0000C1
+___fltol@sign1                cstackBANK0  0000C9
 ___inthi_sp                   stack        000000
 ___intlo_sp                   stack        000000
-___lwdiv                      text38       005B14
+___lwdiv                      text39       005C3A
 ___lwdiv@counter              cstackBANK0  000064
 ___lwdiv@dividend             cstackBANK0  000060
 ___lwdiv@divisor              cstackBANK0  000062
@@ -787,116 +798,118 @@ ___lwdiv@quotient             cstackBANK0  000065
 ___param_bank                 (abs)        000000
 ___rparam_used                (abs)        000000
 ___sp                         stack        000000
-___wmul                       text28       005DF4
+___wmul                       text28       005EDE
 ___wmul@multiplicand          cstackBANK0  000079
 ___wmul@multiplier            cstackBANK0  000077
 ___wmul@product               cstackBANK0  00007B
-___xxtofl                     text13       004D6E
-___xxtofl@arg                 cstackBANK0  00008F
-___xxtofl@exp                 cstackBANK0  00008E
-___xxtofl@sign                cstackBANK0  00008D
-___xxtofl@val                 cstackBANK0  000085
+___xxtofl                     text13       004DD4
+___xxtofl@arg                 cstackBANK0  0000D5
+___xxtofl@exp                 cstackBANK0  0000D4
+___xxtofl@sign                cstackBANK0  0000D3
+___xxtofl@val                 cstackBANK0  0000CB
 __accesstop                   (abs)        000060
 __activetblptr                (abs)        000003
-__end_of_CANInitialize        text30       005102
-__end_of_CANOperationMode     text33       005EBC
-__end_of_CANSetFilter         text32       001858
-__end_of_CANSetMask           text31       004266
-__end_of_CANisTxReady         text6        005EA6
-__end_of_CANreceiveMessage    text36       002A1E
+__end_of_CANInitialize        text31       005168
+__end_of_CANOperationMode     text34       005FDA
+__end_of_CANSetFilter         text33       001858
+__end_of_CANSetMask           text32       0042CC
+__end_of_CANisTxReady         text6        005FC4
+__end_of_CANreceiveMessage    text37       002A7A
 __end_of_CANsendMessage       text5        001FE4
-__end_of_ISR_Alta             intcode_body 005A80
+__end_of_ISR_Alta             intcode_body 005AE8
 __end_of_ISR_Bassa            intcodelo    000254
-__end_of___fladd              text23       002EC6
-__end_of___fldiv              text25       003EC8
-__end_of___flge               text24       00543E
-__end_of___flmul              text22       00336C
-__end_of___flneg              text20       005DF4
-__end_of___flsub              text15       005D44
-__end_of___fltol              text14       0058BC
-__end_of___lwdiv              text38       005B8C
-__end_of___wmul               text28       005E2A
-__end_of___xxtofl             text13       004F3C
-__end_of__initialization      cinit        005C52
-__end_of_abs                  text7        005E56
-__end_of_asin                 text16       004890
-__end_of_atan                 text18       004D6E
-__end_of_can_interpreter      text34       005CB0
-__end_of_can_send             text4        005574
-__end_of_configurazione       text29       005BF8
-__end_of_cos                  text9        0059A0
-__end_of_delay_ms             text27       005DBC
-__end_of_delay_s              text26       005E82
-__end_of_eval_poly            text21       0057B0
-__end_of_fabs                 text19       005D82
-__end_of_floor                text11       005698
-__end_of_frexp                text12       005B14
-__end_of_main                 text0        005CFC
-__end_of_matematica           text8        002512
-__end_of_parallelo            text3        004B1C
-__end_of_park_routine         text2        00373E
-__end_of_park_search          text1        0052AE
-__end_of_sin                  text10       00457E
-__end_of_sqrt                 text17       003B08
+__end_of___awdiv              text29       005BA6
+__end_of___fladd              text23       002F22
+__end_of___fldiv              text25       003F2E
+__end_of___flge               text24       0054A4
+__end_of___flmul              text22       0033C8
+__end_of___flneg              text20       005EDE
+__end_of___flsub              text15       005E68
+__end_of___fltol              text14       005922
+__end_of___lwdiv              text39       005CB2
+__end_of___wmul               text28       005F14
+__end_of___xxtofl             text13       004FA2
+__end_of__initialization      cinit        005D76
+__end_of_abs                  text7        005F74
+__end_of_asin                 text16       0048F6
+__end_of_atan                 text18       004DD4
+__end_of_can_interpreter      text35       005DD4
+__end_of_can_send             text4        0055DA
+__end_of_configurazione       text30       005D1E
+__end_of_cos                  text9        005A06
+__end_of_delay_ms             text27       005F48
+__end_of_delay_s              text26       005FA0
+__end_of_eval_poly            text21       005816
+__end_of_fabs                 text19       005EA6
+__end_of_floor                text11       0056FE
+__end_of_frexp                text12       005C3A
+__end_of_main                 text0        005E20
+__end_of_matematica           text8        00256E
+__end_of_parallelo            text3        004B82
+__end_of_park_routine         text2        0037A4
+__end_of_park_search          text1        005314
+__end_of_sin                  text10       0045E4
+__end_of_sqrt                 text17       003B6E
 __end_ofatan@coeff_a          smallconst   000D19
 __end_ofatan@coeff_b          smallconst   000D2D
 __end_ofsin@coeff_a           smallconst   000D41
 __end_ofsin@coeff_b           smallconst   000D51
-__initialization              cinit        005BF8
+__initialization              cinit        005D1E
 __mediumconst                 mediumconst  000000
 __pbitbssCOMRAM               bitbssCOMRAM 000230
-__pbssBANK0                   bssBANK0     0000E0
+__pbssBANK0                   bssBANK0     0000E4
 __pbssBANK1                   bssBANK1     000100
 __pbssCOMRAM                  bssCOMRAM    000024
-__pcinit                      cinit        005BF8
+__pcinit                      cinit        005D1E
 __pcstackBANK0                cstackBANK0  000060
-__pcstackBANK1                cstackBANK1  000189
+__pcstackBANK1                cstackBANK1  00018D
 __pcstackCOMRAM               cstackCOMRAM 000001
 __pdataBANK0                  dataBANK0    0000E8
-__pdataBANK1                  dataBANK1    0001E6
-__pidataBANK0                 idataBANK0   005EC6
-__pidataBANK1                 idataBANK1   005EBC
+__pdataBANK1                  dataBANK1    0001E2
+__pidataBANK0                 idataBANK0   005FE4
+__pidataBANK1                 idataBANK1   005FDA
 __pintcode                    intcode      000008
-__pintcode_body               intcode_body 0059A0
+__pintcode_body               intcode_body 005A06
 __pintcodelo                  intcodelo    000018
 __psmallconst                 smallconst   000D00
-__ptext0                      text0        005CB0
-__ptext1                      text1        005102
-__ptext10                     text10       004266
-__ptext11                     text11       005574
-__ptext12                     text12       005A80
-__ptext13                     text13       004D6E
-__ptext14                     text14       0057B0
-__ptext15                     text15       005CFC
-__ptext16                     text16       00457E
-__ptext17                     text17       00373E
-__ptext18                     text18       004B1C
-__ptext19                     text19       005D44
-__ptext2                      text2        00336C
-__ptext20                     text20       005DBC
-__ptext21                     text21       005698
-__ptext22                     text22       002EC6
-__ptext23                     text23       002A1E
-__ptext24                     text24       0052AE
-__ptext25                     text25       003B08
-__ptext26                     text26       005E56
-__ptext27                     text27       005D82
-__ptext28                     text28       005DF4
-__ptext29                     text29       005B8C
-__ptext3                      text3        004890
-__ptext30                     text30       004F3C
-__ptext31                     text31       003EC8
-__ptext32                     text32       000D52
-__ptext33                     text33       005EA6
-__ptext34                     text34       005C5C
-__ptext36                     text36       002512
-__ptext38                     text38       005B14
-__ptext4                      text4        00543E
+__ptext0                      text0        005DD4
+__ptext1                      text1        005168
+__ptext10                     text10       0042CC
+__ptext11                     text11       0055DA
+__ptext12                     text12       005BA6
+__ptext13                     text13       004DD4
+__ptext14                     text14       005816
+__ptext15                     text15       005E20
+__ptext16                     text16       0045E4
+__ptext17                     text17       0037A4
+__ptext18                     text18       004B82
+__ptext19                     text19       005E68
+__ptext2                      text2        0033C8
+__ptext20                     text20       005EA6
+__ptext21                     text21       0056FE
+__ptext22                     text22       002F22
+__ptext23                     text23       002A7A
+__ptext24                     text24       005314
+__ptext25                     text25       003B6E
+__ptext26                     text26       005F74
+__ptext27                     text27       005F14
+__ptext28                     text28       005EDE
+__ptext29                     text29       005AE8
+__ptext3                      text3        0048F6
+__ptext30                     text30       005CB2
+__ptext31                     text31       004FA2
+__ptext32                     text32       003F2E
+__ptext33                     text33       000D52
+__ptext34                     text34       005FC4
+__ptext35                     text35       005D80
+__ptext37                     text37       00256E
+__ptext39                     text39       005C3A
+__ptext4                      text4        0054A4
 __ptext5                      text5        001858
-__ptext6                      text6        005E82
-__ptext7                      text7        005E2A
+__ptext6                      text6        005FA0
+__ptext7                      text7        005F48
 __ptext8                      text8        001FE4
-__ptext9                      text9        0058BC
+__ptext9                      text9        005922
 __ramtop                      ramtop       000D00
 __size_of_CANInitialize       (abs)        000000
 __size_of_CANOperationMode    (abs)        000000
@@ -907,6 +920,7 @@ __size_of_CANreceiveMessage   (abs)        000000
 __size_of_CANsendMessage      (abs)        000000
 __size_of_ISR_Alta            (abs)        000000
 __size_of_ISR_Bassa           (abs)        000000
+__size_of___awdiv             (abs)        000000
 __size_of___fladd             (abs)        000000
 __size_of___fldiv             (abs)        000000
 __size_of___flge              (abs)        000000
@@ -938,134 +952,133 @@ __size_of_park_search         (abs)        000000
 __size_of_sin                 (abs)        000000
 __size_of_sqrt                (abs)        000000
 __smallconst                  smallconst   000D00
-_abs                          text7        005E2A
+_abs                          text7        005F48
 _activation                   bitbssCOMRAM 000230
 _actual_speed                 bssBANK1     000144
 _alfa                         bssBANK1     00011C
-_alignment_gap                bssBANK0     0000E0
+_alignment_gap                bssBANK0     0000E4
 _asd                          bitbssCOMRAM 000231
-_asin                         text16       00457E
-_asin$3748                    cstackBANK1  0001AE
-_asin$3749                    cstackBANK1  0001A6
-_asin$3750                    cstackBANK1  0001A2
+_asin                         text16       0045E4
+_asin$3747                    cstackBANK1  0001AE
+_asin$3748                    cstackBANK1  0001A6
+_asin$3749                    cstackBANK1  0001A2
 _asus                         bssCOMRAM    000043
-_atan                         text18       004B1C
+_atan                         text18       004B82
 _beta                         bssBANK1     000120
 _bordo                        bssBANK1     000124
-_can_interpreter              text34       005C5C
-_can_send                     text4        00543E
-_clock_counter_reference      bssBANK0     0000E4
-_configurazione               text29       005B8C
-_cos                          text9        0058BC
-_cos$3751                     cstackBANK1  0001B6
-_data                         bssBANK1     000159
-_data_brake                   bssBANK1     000161
-_data_correction              bssBANK1     000169
-_data_speed                   bssBANK1     000171
+_can_interpreter              text35       005D80
+_can_send                     text4        0054A4
+_clock_counter_reference      bssCOMRAM    000034
+_configurazione               text30       005CB2
+_cos                          text9        005922
+_cos$3750                     cstackBANK1  0001B6
+_data                         bssBANK1     00015D
+_data_brake                   bssBANK1     000165
+_data_correction              bssBANK1     00016D
+_data_speed                   bssBANK1     000175
 _data_speed_rx                bssBANK1     000108
-_data_steering                bssBANK1     000179
-_data_test                    bssBANK1     000181
-_delay_ms                     text27       005D82
+_data_steering                bssBANK1     00017D
+_data_test                    bssBANK1     000185
+_delay_ms                     text27       005F14
 _delay_quartz_frequency_value dataBANK0    0000E8
-_delay_s                      text26       005E56
+_delay_s                      text26       005F74
 _dir                          bitbssCOMRAM 000232
 _distance                     bssBANK1     000146
-_distance_average             bssCOMRAM    000034
-_distance_dx                  bssCOMRAM    000036
+_distance_average             bssCOMRAM    000036
+_distance_dx                  bssCOMRAM    000038
 _distance_error               bitbssCOMRAM 000233
 _distance_received            bitbssCOMRAM 000234
 _distance_received1           bitbssCOMRAM 000235
 _distance_set                 bssBANK1     000110
-_distance_sx                  bssCOMRAM    000038
+_distance_sx                  bssCOMRAM    00003A
 _distance_wait                bitbssCOMRAM 000236
 _errno                        bssBANK1     000148
-_eval_poly                    text21       005698
-_fabs                         text19       005D44
-_floor                        text11       005574
-_frexp                        text12       005A80
+_eval_poly                    text21       0056FE
+_fabs                         text19       005E68
+_floor                        text11       0055DA
+_frexp                        text12       005BA6
 _gianni                       bssCOMRAM    000044
 _jjj                          bssBANK1     000128
 _kkk                          bssBANK1     00012C
-_larghezza                    dataBANK1    0001E6
-_left_speed                   bssCOMRAM    00003A
-_main                         text0        005CB0
+_larghezza                    dataBANK1    0001E2
+_left_speed                   bssCOMRAM    00003C
+_main                         text0        005DD4
 _matematica                   text8        001FE4
-_matematica$3739              cstackBANK1  0001BA
-_matematica$3740              cstackBANK1  0001BE
-_matematica$3741              cstackBANK1  0001C2
-_matematica$3742              cstackBANK1  0001C6
-_matematica$3743              cstackBANK1  0001CA
-_matematica$3744              cstackBANK1  0001CE
-_matematica$3745              cstackBANK1  0001D2
-_matematica$3746              cstackBANK1  0001D6
-_matematica$3747              cstackBANK1  0001DA
-_msg                          bssBANK1     00014A
+_matematica$3740              cstackBANK1  0001BA
+_matematica$3741              cstackBANK1  0001BE
+_matematica$3742              cstackBANK1  0001C2
+_matematica$3743              cstackBANK1  0001C6
+_matematica$3744              cstackBANK1  0001D2
+_matematica$3745              cstackBANK1  0001CA
+_matematica$3746              cstackBANK1  0001CE
+_msg                          bssBANK1     00014E
 _n                            bssBANK1     000130
 _old_alignment_gap            bssBANK1     000134
 _old_data_correction          bitbssCOMRAM 000237
-_parallelo                    text3        004890
-_park_routine                 text2        00336C
-_park_routine$3738            cstackBANK1  0001E2
-_park_search                  text1        005102
+_parallelo                    text3        0048F6
+_park_routine                 text2        0033C8
+_park_routine$3738            cstackBANK1  0001DA
+_park_routine$3739            cstackBANK1  0001DE
+_park_search                  text1        005168
 _prima_sterzata               bssBANK1     000138
-_pulse_time                   bssCOMRAM    00003C
-_raggio                       dataBANK1    0001EC
+_pulse_time                   bssBANK1     00014A
+_raggio                       dataBANK1    0001E8
 _request_sent                 bitbssCOMRAM 000238
 _request_sent1                bitbssCOMRAM 000239
 _right_speed                  bssCOMRAM    00003E
 _sensor_distance              bssCOMRAM    000024
-_set_speed                    bssBANK0     0000E6
-_sin                          text10       004266
-_sin$3752                     cstackBANK1  00018D
-_spazio_parcheggio            dataBANK1    0001EA
-_sqrt                         text17       00373E
+_set_speed                    bssBANK1     00014C
+_sin                          text10       0042CC
+_sin$3751                     cstackBANK1  00019D
+_spazio_parcheggio            dataBANK1    0001E6
+_sqrt                         text17       0037A4
 _start_operation              bitbssCOMRAM 00023A
 _steering_correction          bssCOMRAM    000045
 _steering_correction_dir      bitbssCOMRAM 00023B
 _timerValue2                  bssCOMRAM    000040
 _x                            bssBANK1     00013C
 _z                            bssBANK1     000140
-abs@a                         cstackBANK0  000081
+abs@a                         cstackBANK0  000077
 asin@sgn                      cstackBANK1  00019E
-asin@x                        cstackBANK1  00019A
+asin@x                        cstackBANK0  0000DE
 asin@y                        cstackBANK1  0001AA
 atan@coeff_a                  smallconst   000D01
 atan@coeff_b                  smallconst   000D19
 atan@f                        cstackBANK0  0000D1
-atan@recip                    cstackBANK1  000191
-atan@val                      cstackBANK1  000196
-atan@val_squared              cstackBANK1  000192
-atan@x                        cstackBANK1  00018D
-atan@y                        cstackBANK1  000189
+atan@recip                    cstackBANK1  000195
+atan@val                      cstackBANK1  00019A
+atan@val_squared              cstackBANK1  000196
+atan@x                        cstackBANK1  000191
+atan@y                        cstackBANK1  00018D
 btemp                         temp         000048
 can_send@data_correction1     cstackBANK0  000087
 cos@f                         cstackBANK1  0001B2
 delay_ms@value_ms             cstackBANK0  00007D
 delay_s@repeat_loop           cstackBANK0  000080
 delay_s@value_s               cstackBANK0  00007F
-end_of_initialization         cinit        005C52
-eval_poly@d                   cstackBANK0  0000C5
-eval_poly@n                   cstackBANK0  0000C7
-eval_poly@res                 cstackBANK0  0000CD
-eval_poly@x                   cstackBANK0  0000C1
-fabs@d                        cstackBANK0  0000AD
-floor@expon                   cstackBANK0  0000C9
-floor@i                       cstackBANK0  0000C5
-floor@x                       cstackBANK0  0000C1
+end_of_initialization         cinit        005D76
+eval_poly@d                   cstackBANK0  0000C1
+eval_poly@n                   cstackBANK0  0000C3
+eval_poly@res                 cstackBANK0  0000C9
+eval_poly@x                   cstackBANK0  0000BD
+fabs@d                        cstackBANK0  0000C1
+floor@expon                   cstackBANK0  0000E1
+floor@i                       cstackBANK0  0000DD
+floor@x                       cstackBANK0  0000D9
 frexp@eptr                    cstackBANK0  00007B
 frexp@value                   cstackBANK0  000077
 int$flags                     temp         000048
-int_func                      intcode_body 0059A0
+int_func                      intcode_body 005A06
 intlevel0                     text         000000
 intlevel1                     text         000000
 intlevel2                     text         000000
 intlevel3                     text         000000
 sin@coeff_a                   smallconst   000D2D
 sin@coeff_b                   smallconst   000D41
-sin@f                         cstackBANK0  0000D3
-sin@sgn                       cstackBANK1  000195
-sin@x2                        cstackBANK1  000191
-sin@y                         cstackBANK1  000189
+sin@f                         cstackBANK1  000195
+sin@sgn                       cstackBANK1  0001A5
+sin@x2                        cstackBANK1  0001A1
+sin@y                         cstackBANK1  000199
 sqrt@a                        cstackBANK0  0000C1
 sqrt@exp                      cstackBANK0  0000D4
 sqrt@frac                     cstackBANK0  0000DA
@@ -1076,9 +1089,9 @@ sqrt@root                     cstackBANK0  0000D6
 sqrt@sign                     cstackBANK0  0000C9
 sqrt@tfrac                    cstackBANK0  0000CB
 stackhi                       (abs)        000CFF
-stacklo                       (abs)        0001F0
+stacklo                       (abs)        0001EC
 start                         init         000254
-start_initialization          cinit        005BF8
+start_initialization          cinit        005D1E
 
 
 FUNCTION INFORMATION:
@@ -1166,19 +1179,19 @@ Total ram usage:        2 bytes
 		Unchanged: 
  Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12
       Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         0       0       4       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         0       0       8       0       0       0       0       0       0       0       0       0       0       0
       Temps:          0       0       4       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         0       0       8       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        8 bytes
+      Totals:         0       0      12       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:       12 bytes
  Hardware stack levels used:    1
  Hardware stack levels required when called:    9
  This function calls:
 		_CANsendMessage
+		___awdiv
 		___fladd
 		___flneg
 		___fltol
 		___xxtofl
-		_abs
 		_can_send
 		_delay_ms
 		_delay_s
@@ -1191,7 +1204,7 @@ Total ram usage:        8 bytes
 
  *************** function _parallelo *****************
  Defined at:
-		line 379 in file "parcheggio.c"
+		line 380 in file "parcheggio.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1231,7 +1244,7 @@ Total ram usage:        2 bytes
 
  *************** function _can_send *****************
  Defined at:
-		line 358 in file "parcheggio.c"
+		line 359 in file "parcheggio.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1263,7 +1276,7 @@ Total ram usage:        0 bytes
 
  *************** function _CANsendMessage *****************
  Defined at:
-		line 294 in file "C:/Users/Simone/Desktop/LaurTec_PIC_libraries_v_3.3.1/inc\CANlib.h"
+		line 295 in file "../../LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h"
  Parameters:    Size  Location     Type
   identifier      4   23[BANK0 ] unsigned long 
   data            2   27[BANK0 ] PTR unsigned char 
@@ -1300,7 +1313,7 @@ Total ram usage:       16 bytes
 
  *************** function _CANisTxReady *****************
  Defined at:
-		line 1154 in file "C:/Users/Simone/Desktop/LaurTec_PIC_libraries_v_3.3.1/inc\CANlib.h"
+		line 1155 in file "../../LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1333,11 +1346,11 @@ Total ram usage:        1 bytes
  Defined at:
 		line 4 in file "C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\abs.c"
  Parameters:    Size  Location     Type
-  a               2   33[BANK0 ] int 
+  a               2   23[BANK0 ] int 
  Auto vars:     Size  Location     Type
 		None
  Return value:  Size  Location     Type
-                  2   33[BANK0 ] int 
+                  2   23[BANK0 ] int 
  Registers used:
 		wreg, status,2, status,0
  Tracked objects:
@@ -1356,7 +1369,6 @@ Total ram usage:        4 bytes
 		Nothing
  This function is called by:
 		_park_search
-		_park_routine
 		_parallelo
  This function uses a non-reentrant model
 
@@ -1378,10 +1390,10 @@ Total ram usage:        4 bytes
 		Unchanged: 
  Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12
       Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         0       0      36       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         0       0      28       0       0       0       0       0       0       0       0       0       0       0
       Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         0       0      36       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:       36 bytes
+      Totals:         0       0      28       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:       28 bytes
  Hardware stack levels used:    1
  Hardware stack levels required when called:    8
  This function calls:
@@ -1400,11 +1412,11 @@ Total ram usage:       36 bytes
  Defined at:
 		line 13 in file "C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\cos.c"
  Parameters:    Size  Location     Type
-  f               4   41[BANK1 ] int 
+  f               4   37[BANK1 ] int 
  Auto vars:     Size  Location     Type
 		None
  Return value:  Size  Location     Type
-                  4   41[BANK1 ] int 
+                  4   37[BANK1 ] int 
  Registers used:
 		wreg, fsr2l, fsr2h, status,2, status,0, tblptrl, tblptrh, tblptru, prodl, prodh, cstack
  Tracked objects:
@@ -1432,13 +1444,13 @@ Total ram usage:        8 bytes
  Defined at:
 		line 13 in file "C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sin.c"
  Parameters:    Size  Location     Type
-  f               4  115[BANK0 ] int 
+  f               4    8[BANK1 ] int 
  Auto vars:     Size  Location     Type
-  x2              4    8[BANK1 ] int 
-  y               4    0[BANK1 ] int 
-  sgn             1   12[BANK1 ] unsigned char 
+  x2              4   20[BANK1 ] int 
+  y               4   12[BANK1 ] int 
+  sgn             1   24[BANK1 ] unsigned char 
  Return value:  Size  Location     Type
-                  4  115[BANK0 ] unsigned char 
+                  4    8[BANK1 ] unsigned char 
  Registers used:
 		wreg, fsr2l, fsr2h, status,2, status,0, tblptrl, tblptrh, tblptru, prodl, prodh, cstack
  Tracked objects:
@@ -1446,10 +1458,10 @@ Total ram usage:        8 bytes
 		On exit  : 
 		Unchanged: 
  Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12
-      Params:         0       4       0       0       0       0       0       0       0       0       0       0       0       0
+      Params:         0       0       4       0       0       0       0       0       0       0       0       0       0       0
       Locals:         0       0      13       0       0       0       0       0       0       0       0       0       0       0
       Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         0       4      13       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         0       0      17       0       0       0       0       0       0       0       0       0       0       0
 Total ram usage:       17 bytes
  Hardware stack levels used:    1
  Hardware stack levels required when called:    6
@@ -1471,12 +1483,12 @@ Total ram usage:       17 bytes
  Defined at:
 		line 13 in file "C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\floor.c"
  Parameters:    Size  Location     Type
-  x               4   97[BANK0 ] unsigned char 
+  x               4  121[BANK0 ] unsigned char 
  Auto vars:     Size  Location     Type
-  i               4  101[BANK0 ] unsigned char 
-  expon           2  105[BANK0 ] int 
+  i               4  125[BANK0 ] unsigned char 
+  expon           2  129[BANK0 ] int 
  Return value:  Size  Location     Type
-                  4   97[BANK0 ] int 
+                  4  121[BANK0 ] int 
  Registers used:
 		wreg, fsr2l, fsr2h, status,2, status,0, cstack
  Tracked objects:
@@ -1539,13 +1551,13 @@ Total ram usage:        8 bytes
 		line 10 in file "C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\xxtofl.c"
  Parameters:    Size  Location     Type
   sign            1    wreg     unsigned char 
-  val             4   37[BANK0 ] long 
+  val             4  107[BANK0 ] long 
  Auto vars:     Size  Location     Type
-  sign            1   45[BANK0 ] unsigned char 
-  arg             4   47[BANK0 ] unsigned long 
-  exp             1   46[BANK0 ] unsigned char 
+  sign            1  115[BANK0 ] unsigned char 
+  arg             4  117[BANK0 ] unsigned long 
+  exp             1  116[BANK0 ] unsigned char 
  Return value:  Size  Location     Type
-                  4   37[BANK0 ] unsigned char 
+                  4  107[BANK0 ] unsigned char 
  Registers used:
 		wreg, status,2, status,0
  Tracked objects:
@@ -1574,12 +1586,12 @@ Total ram usage:       14 bytes
  Defined at:
 		line 43 in file "C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\fltol.c"
  Parameters:    Size  Location     Type
-  f1              4   23[BANK0 ] unsigned char 
+  f1              4   97[BANK0 ] unsigned char 
  Auto vars:     Size  Location     Type
-  exp1            1   32[BANK0 ] unsigned char 
-  sign1           1   31[BANK0 ] unsigned char 
+  exp1            1  106[BANK0 ] unsigned char 
+  sign1           1  105[BANK0 ] unsigned char 
  Return value:  Size  Location     Type
-                  4   23[BANK0 ] long 
+                  4   97[BANK0 ] long 
  Registers used:
 		wreg, status,2, status,0
  Tracked objects:
@@ -1607,12 +1619,12 @@ Total ram usage:       10 bytes
  Defined at:
 		line 245 in file "C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcadd.c"
  Parameters:    Size  Location     Type
-  b               4  107[BANK0 ] long 
-  a               4  111[BANK0 ] long 
+  b               4    0[BANK1 ] long 
+  a               4    4[BANK1 ] long 
  Auto vars:     Size  Location     Type
 		None
  Return value:  Size  Location     Type
-                  4  107[BANK0 ] long 
+                  4    0[BANK1 ] long 
  Registers used:
 		wreg, status,2, status,0, cstack
  Tracked objects:
@@ -1620,10 +1632,10 @@ Total ram usage:       10 bytes
 		On exit  : 
 		Unchanged: 
  Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12
-      Params:         0       8       0       0       0       0       0       0       0       0       0       0       0       0
+      Params:         0       0       8       0       0       0       0       0       0       0       0       0       0       0
       Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0
       Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         0       8       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         0       0       8       0       0       0       0       0       0       0       0       0       0       0
 Total ram usage:        8 bytes
  Hardware stack levels used:    1
  Hardware stack levels required when called:    5
@@ -1638,12 +1650,12 @@ Total ram usage:        8 bytes
  Defined at:
 		line 9 in file "C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\asin.c"
  Parameters:    Size  Location     Type
-  x               4   17[BANK1 ] long 
+  x               4  126[BANK0 ] long 
  Auto vars:     Size  Location     Type
-  y               4   33[BANK1 ] long 
-  sgn             4   21[BANK1 ] long 
+  y               4   29[BANK1 ] long 
+  sgn             4   17[BANK1 ] long 
  Return value:  Size  Location     Type
-                  4   17[BANK1 ] long 
+                  4  126[BANK0 ] long 
  Registers used:
 		wreg, status,2, status,0, tblptrl, tblptrh, tblptru, prodl, prodh, cstack
  Tracked objects:
@@ -1651,10 +1663,10 @@ Total ram usage:        8 bytes
 		On exit  : 
 		Unchanged: 
  Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12
-      Params:         0       0       4       0       0       0       0       0       0       0       0       0       0       0
+      Params:         0       4       0       0       0       0       0       0       0       0       0       0       0       0
       Locals:         0       0      20       0       0       0       0       0       0       0       0       0       0       0
       Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         0       0      24       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         0       4      20       0       0       0       0       0       0       0       0       0       0       0
 Total ram usage:       24 bytes
  Hardware stack levels used:    1
  Hardware stack levels required when called:    7
@@ -1755,11 +1767,11 @@ Total ram usage:       21 bytes
  Defined at:
 		line 4 in file "C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\fabs.c"
  Parameters:    Size  Location     Type
-  d               4   77[BANK0 ] unsigned char 
+  d               4   97[BANK0 ] unsigned char 
  Auto vars:     Size  Location     Type
 		None
  Return value:  Size  Location     Type
-                  4   77[BANK0 ] unsigned char 
+                  4   97[BANK0 ] unsigned char 
  Registers used:
 		wreg, status,2, status,0, cstack
  Tracked objects:
@@ -1786,11 +1798,11 @@ Total ram usage:        4 bytes
  Defined at:
 		line 15 in file "C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\flneg.c"
  Parameters:    Size  Location     Type
-  f1              4   73[BANK0 ] unsigned char 
+  f1              4   93[BANK0 ] unsigned char 
  Auto vars:     Size  Location     Type
 		None
  Return value:  Size  Location     Type
-                  4   73[BANK0 ] unsigned char 
+                  4   93[BANK0 ] unsigned char 
  Registers used:
 		wreg, status,2, status,0
  Tracked objects:
@@ -1821,14 +1833,14 @@ Total ram usage:        4 bytes
  Defined at:
 		line 4 in file "C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\evalpoly.c"
  Parameters:    Size  Location     Type
-  x               4   97[BANK0 ] unsigned char 
-  d               2  101[BANK0 ] PTR const 
+  x               4   93[BANK0 ] unsigned char 
+  d               2   97[BANK0 ] PTR const 
 		 -> sin@coeff_a(20), sin@coeff_b(16), atan@coeff_a(24), atan@coeff_b(20), 
-  n               2  103[BANK0 ] int 
+  n               2   99[BANK0 ] int 
  Auto vars:     Size  Location     Type
-  res             4  109[BANK0 ] int 
+  res             4  105[BANK0 ] int 
  Return value:  Size  Location     Type
-                  4   97[BANK0 ] int 
+                  4   93[BANK0 ] int 
  Registers used:
 		wreg, status,2, status,0, tblptrl, tblptrh, tblptru, prodl, prodh, cstack
  Tracked objects:
@@ -1897,15 +1909,15 @@ Total ram usage:       25 bytes
  Defined at:
 		line 10 in file "C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcadd.c"
  Parameters:    Size  Location     Type
-  b               4   77[BANK0 ] unsigned char 
-  a               4   81[BANK0 ] unsigned char 
+  b               4   73[BANK0 ] unsigned char 
+  a               4   77[BANK0 ] unsigned char 
  Auto vars:     Size  Location     Type
-  grs             1   96[BANK0 ] unsigned char 
-  bexp            1   95[BANK0 ] unsigned char 
-  aexp            1   94[BANK0 ] unsigned char 
-  signs           1   93[BANK0 ] unsigned char 
+  grs             1   92[BANK0 ] unsigned char 
+  bexp            1   91[BANK0 ] unsigned char 
+  aexp            1   90[BANK0 ] unsigned char 
+  signs           1   89[BANK0 ] unsigned char 
  Return value:  Size  Location     Type
-                  4   77[BANK0 ] unsigned char 
+                  4   73[BANK0 ] unsigned char 
  Registers used:
 		wreg, status,2, status,0
  Tracked objects:
@@ -1940,8 +1952,8 @@ Total ram usage:       20 bytes
  Defined at:
 		line 4 in file "C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\flge.c"
  Parameters:    Size  Location     Type
-  ff1             4   81[BANK0 ] unsigned char 
-  ff2             4   85[BANK0 ] unsigned char 
+  ff1             4  101[BANK0 ] unsigned char 
+  ff2             4  105[BANK0 ] unsigned char 
  Auto vars:     Size  Location     Type
 		None
  Return value:  Size  Location     Type
@@ -2014,7 +2026,7 @@ Total ram usage:       25 bytes
 
  *************** function _delay_s *****************
  Defined at:
-		line 102 in file "C:/Users/Simone/Desktop/LaurTec_PIC_libraries_v_3.3.1/src\delay.c"
+		line 102 in file "../../LaurTec_PIC_libraries_v_3.3.0 - Copia/src\delay.c"
  Parameters:    Size  Location     Type
   value_s         1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -2045,7 +2057,7 @@ Total ram usage:        2 bytes
 
  *************** function _delay_ms *****************
  Defined at:
-		line 61 in file "C:/Users/Simone/Desktop/LaurTec_PIC_libraries_v_3.3.1/src\delay.c"
+		line 61 in file "../../LaurTec_PIC_libraries_v_3.3.0 - Copia/src\delay.c"
  Parameters:    Size  Location     Type
   value_ms        2   29[BANK0 ] unsigned int 
  Auto vars:     Size  Location     Type
@@ -2105,9 +2117,42 @@ Total ram usage:        6 bytes
  This function uses a non-reentrant model
 
 
+ *************** function ___awdiv *****************
+ Defined at:
+		line 8 in file "C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\awdiv.c"
+ Parameters:    Size  Location     Type
+  dividend        2   23[BANK0 ] int 
+  divisor         2   25[BANK0 ] int 
+ Auto vars:     Size  Location     Type
+  quotient        2   29[BANK0 ] int 
+  sign            1   28[BANK0 ] unsigned char 
+  counter         1   27[BANK0 ] unsigned char 
+ Return value:  Size  Location     Type
+                  2   23[BANK0 ] int 
+ Registers used:
+		wreg, status,2, status,0
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12
+      Params:         0       4       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         0       4       0       0       0       0       0       0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         0       8       0       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:        8 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    4
+ This function calls:
+		Nothing
+ This function is called by:
+		_park_routine
+ This function uses a non-reentrant model
+
+
  *************** function _configurazione *****************
  Defined at:
-		line 439 in file "parcheggio.c"
+		line 440 in file "parcheggio.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -2137,7 +2182,7 @@ Total ram usage:        0 bytes
 
  *************** function _CANInitialize *****************
  Defined at:
-		line 218 in file "C:/Users/Simone/Desktop/LaurTec_PIC_libraries_v_3.3.1/inc\CANlib.h"
+		line 219 in file "../../LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h"
  Parameters:    Size  Location     Type
   propSeg         1    wreg     unsigned char 
   phaseSeg1       1   37[BANK0 ] unsigned char 
@@ -2176,7 +2221,7 @@ Total ram usage:       12 bytes
 
  *************** function _CANSetMask *****************
  Defined at:
-		line 640 in file "C:/Users/Simone/Desktop/LaurTec_PIC_libraries_v_3.3.1/inc\CANlib.h"
+		line 641 in file "../../LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h"
  Parameters:    Size  Location     Type
   numBuffer       1    wreg     enum E16347
   mask            4   23[BANK0 ] unsigned long 
@@ -2209,7 +2254,7 @@ Total ram usage:       14 bytes
 
  *************** function _CANSetFilter *****************
  Defined at:
-		line 748 in file "C:/Users/Simone/Desktop/LaurTec_PIC_libraries_v_3.3.1/inc\CANlib.h"
+		line 749 in file "../../LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h"
  Parameters:    Size  Location     Type
   numBuffer       1    wreg     enum E16350
   filter          4   23[BANK0 ] unsigned long 
@@ -2242,7 +2287,7 @@ Total ram usage:       14 bytes
 
  *************** function _CANOperationMode *****************
  Defined at:
-		line 206 in file "C:/Users/Simone/Desktop/LaurTec_PIC_libraries_v_3.3.1/inc\CANlib.h"
+		line 207 in file "../../LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h"
  Parameters:    Size  Location     Type
   mode            1    wreg     enum E16307
  Auto vars:     Size  Location     Type
@@ -2272,7 +2317,7 @@ Total ram usage:        1 bytes
 
  *************** function _can_interpreter *****************
  Defined at:
-		line 431 in file "parcheggio.c"
+		line 432 in file "parcheggio.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -2333,7 +2378,7 @@ Total ram usage:       23 bytes
 
  *************** function _CANreceiveMessage *****************
  Defined at:
-		line 528 in file "C:/Users/Simone/Desktop/LaurTec_PIC_libraries_v_3.3.1/inc\CANlib.h"
+		line 529 in file "../../LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h"
  Parameters:    Size  Location     Type
   msg             2    0[COMRAM] PTR struct .
 		 -> msg(15), 
@@ -2428,139 +2473,144 @@ Total ram usage:        7 bytes
 MODULE INFORMATION
 
 Module		Function		Class		Link	Load	Size
-C:/Users/Simone/Desktop/LaurTec_PIC_libraries_v_3.3.1/inc\CANlib.h
-		_CANSetFilter  		CODE           	0D52	0000	2823
-		_CANreceiveMessage		CODE           	2512	0000	1293
-		_CANsendMessage		CODE           	1858	0000	1933
-		_CANInitialize 		CODE           	4F3C	0000	455
-		_CANOperationMode		CODE           	5EA6	0000	23
-		_CANisTxReady  		CODE           	5E82	0000	37
-		_CANSetMask    		CODE           	3EC8	0000	927
+C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\awdiv.c
+		___awdiv       		CODE           	5AE8	0000	191
 
-C:/Users/Simone/Desktop/LaurTec_PIC_libraries_v_3.3.1/inc\CANlib.h estimated size: 7491
+C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\awdiv.c estimated size: 191
 
 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcadd.c
-		___flsub       		CODE           	5CFC	0000	73
-		___fladd       		CODE           	2A1E	0000	1193
+		___flsub       		CODE           	5E20	0000	73
+		___fladd       		CODE           	2A7A	0000	1193
 
 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcadd.c estimated size: 1266
 
+../../LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+		_CANSetFilter  		CODE           	0D52	0000	2823
+		_CANreceiveMessage		CODE           	256E	0000	1293
+		_CANsendMessage		CODE           	1858	0000	1933
+		_CANInitialize 		CODE           	4FA2	0000	455
+		_CANOperationMode		CODE           	5FC4	0000	23
+		_CANisTxReady  		CODE           	5FA0	0000	37
+		_CANSetMask    		CODE           	3F2E	0000	927
+
+../../LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h estimated size: 7491
+
 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\flneg.c
-		___flneg       		CODE           	5DBC	0000	57
+		___flneg       		CODE           	5EA6	0000	57
 
 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\flneg.c estimated size: 57
 
 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\fabs.c
-		_fabs          		CODE           	5D44	0000	63
+		_fabs          		CODE           	5E68	0000	63
 
 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\fabs.c estimated size: 63
 
 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\xxtofl.c
-		___xxtofl      		CODE           	4D6E	0000	463
+		___xxtofl      		CODE           	4DD4	0000	463
 
 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\xxtofl.c estimated size: 463
 
 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\cos.c
-		_cos           		CODE           	58BC	0000	229
+		_cos           		CODE           	5922	0000	229
 
 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\cos.c estimated size: 229
 
 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\evalpoly.c
-		_eval_poly     		CODE           	5698	0000	281
+		_eval_poly     		CODE           	56FE	0000	281
 
 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\evalpoly.c estimated size: 281
 
 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcsqrt.c
-		_sqrt          		CODE           	373E	0000	971
+		_sqrt          		CODE           	37A4	0000	971
 
 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcsqrt.c estimated size: 971
 
 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\atan.c
-		_atan          		CODE           	4B1C	0000	595
+		_atan          		CODE           	4B82	0000	595
 
 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\atan.c estimated size: 595
 
 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\frexp.c
-		_frexp         		CODE           	5A80	0000	149
+		_frexp         		CODE           	5BA6	0000	149
 
 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\frexp.c estimated size: 149
-
-C:/Users/Simone/Desktop/LaurTec_PIC_libraries_v_3.3.1/src\delay.c
-		_delay_ms      		CODE           	5D82	0000	59
-		_delay_s       		CODE           	5E56	0000	45
-
-C:/Users/Simone/Desktop/LaurTec_PIC_libraries_v_3.3.1/src\delay.c estimated size: 104
 
 shared
 		atan@coeff_a   		SMALLCONST     	0D01	0000	25
 		atan@coeff_b   		SMALLCONST     	0D19	0000	21
-		__initialization		CODE           	5BF8	0000	91
+		__initialization		CODE           	5D1E	0000	89
 		sin@coeff_a    		SMALLCONST     	0D2D	0000	21
 		sin@coeff_b    		SMALLCONST     	0D41	0000	17
 
-shared estimated size: 175
+shared estimated size: 173
 
 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\floor.c
-		_floor         		CODE           	5574	0000	293
+		_floor         		CODE           	55DA	0000	293
 
 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\floor.c estimated size: 293
 
 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcmul.c
-		___flmul       		CODE           	2EC6	0000	1191
+		___flmul       		CODE           	2F22	0000	1191
 
 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcmul.c estimated size: 1191
 
 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwdiv.c
-		___lwdiv       		CODE           	5B14	0000	121
+		___lwdiv       		CODE           	5C3A	0000	121
 
 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwdiv.c estimated size: 121
 
 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
-		___fldiv       		CODE           	3B08	0000	961
+		___fldiv       		CODE           	3B6E	0000	961
 
 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c estimated size: 961
 
 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\fltol.c
-		___fltol       		CODE           	57B0	0000	269
+		___fltol       		CODE           	5816	0000	269
 
 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\fltol.c estimated size: 269
 
 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\Umul16.c
-		___wmul        		CODE           	5DF4	0000	55
+		___wmul        		CODE           	5EDE	0000	55
 
 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\Umul16.c estimated size: 55
 
+../../LaurTec_PIC_libraries_v_3.3.0 - Copia/src\delay.c
+		_delay_ms      		CODE           	5F14	0000	53
+		_delay_s       		CODE           	5F74	0000	45
+
+../../LaurTec_PIC_libraries_v_3.3.0 - Copia/src\delay.c estimated size: 98
+
 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\asin.c
-		_asin          		CODE           	457E	0000	787
+		_asin          		CODE           	45E4	0000	787
 
 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\asin.c estimated size: 787
 
 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sin.c
-		_sin           		CODE           	4266	0000	793
+		_sin           		CODE           	42CC	0000	793
 
 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sin.c estimated size: 793
 
 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\abs.c
-		_abs           		CODE           	5E2A	0000	45
+		_abs           		CODE           	5F48	0000	45
 
 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\abs.c estimated size: 45
 
 parcheggio.c
 		_ISR_Bassa     		CODE           	0018	0000	573
-		_configurazione		CODE           	5B8C	0000	109
-		_main          		CODE           	5CB0	0000	77
-		_can_send      		CODE           	543E	0000	311
-		_can_interpreter		CODE           	5C5C	0000	85
-		_park_routine  		CODE           	336C	0000	979
-		_ISR_Alta      		CODE           	0008	0000	239
-		_parallelo     		CODE           	4890	0000	653
-		_park_search   		CODE           	5102	0000	429
-		_matematica    		CODE           	1FE4	0000	1327
+		_configurazione		CODE           	5CB2	0000	109
+		_main          		CODE           	5DD4	0000	77
+		_can_send      		CODE           	54A4	0000	311
+		_can_interpreter		CODE           	5D80	0000	85
+		_park_routine  		CODE           	33C8	0000	989
+		_ISR_Alta      		CODE           	0008	0000	241
+		_parallelo     		CODE           	48F6	0000	653
+		_park_search   		CODE           	5168	0000	429
+		_matematica    		CODE           	1FE4	0000	1419
 
-parcheggio.c estimated size: 4782
+parcheggio.c estimated size: 4886
 
 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\flge.c
-		___flge        		CODE           	52AE	0000	401
+		___flge        		CODE           	5314	0000	401
 
 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\flge.c estimated size: 401
 

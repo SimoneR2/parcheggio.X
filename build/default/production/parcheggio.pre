@@ -18772,7 +18772,7 @@ extern __nonreentrant void _delay3(unsigned char);
 
 #pragma config EBTRB = OFF
 
-# 49 "C:/Users/Simone/Desktop/LaurTec_PIC_libraries_v_3.3.1/inc\CANlib.h"
+# 50 "../../LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h"
 typedef unsigned char BYTE;
 
 
@@ -18786,7 +18786,7 @@ BYTE RTR;
 
 } CANmessage;
 
-# 67
+# 68
 enum CAN_OP_MODE
 {
 CAN_OP_MODE_NORMAL = 0b00000000,
@@ -18796,7 +18796,7 @@ CAN_OP_MODE_LISTEN = 0b01100000,
 CAN_OP_MODE_CONFIG = 0b10000000
 };
 
-# 80
+# 81
 enum CAN_CONFIG_FLAGS
 {
 CAN_CONFIG_DEFAULT = 0b11111111,
@@ -18828,7 +18828,7 @@ CAN_CONFIG_VALID_STD_MSG = 0b10111111,
 CAN_CONFIG_ALL_VALID_MSG = 0b10011111
 };
 
-# 116
+# 117
 enum CAN_TX_MSG_FLAGS
 {
 CAN_TX_PRIORITY_MASK= 0b00000011,
@@ -18847,14 +18847,14 @@ CAN_NORMAL_TX_FRAME = 0b10111111
 
 };
 
-# 138
+# 139
 enum CAN_MASK
 {
 CAN_MASK_B1 = 1,
 CAN_MASK_B2 = 2,
 };
 
-# 148
+# 149
 enum CAN_FILTER
 {
 CAN_FILTER_B1_F1,
@@ -18865,14 +18865,14 @@ CAN_FILTER_B2_F3,
 CAN_FILTER_B2_F4
 };
 
-# 162
+# 163
 enum CAN_RX_ERRORS
 {
 CAN_RX_BUFFER_1_OVFL = 0b00000001,
 CAN_RX_BUFFER_2_OVFL = 0b00000010
 };
 
-# 173
+# 174
 void CANOperationMode (enum CAN_OP_MODE mode);
 void CANInitialize (BYTE propSeg, BYTE phaseSeg1, BYTE phaseSeg2,BYTE SJW, BYTE BRP, enum CAN_CONFIG_FLAGS flags);
 
@@ -18895,7 +18895,7 @@ BYTE CANgetRXerrorCount (void);
 BYTE CANisBusOFF (void);
 void CANAbortMessages (void);
 
-# 206
+# 207
 void CANOperationMode (enum CAN_OP_MODE mode)
 {
 CANCON = mode;
@@ -18903,7 +18903,7 @@ CANCON = mode;
 while((CANSTAT & 0b11100000) != mode );
 }
 
-# 218
+# 219
 void CANInitialize (BYTE propSeg, BYTE phaseSeg1, BYTE phaseSeg2,BYTE SJW, BYTE BRP, enum CAN_CONFIG_FLAGS flags)
 {
 BYTE FilterConfig1;
@@ -19210,7 +19210,7 @@ return;
 }
 }
 
-# 528
+# 529
 BYTE CANreceiveMessage (CANmessage *msg)
 {
 BYTE tamp;
@@ -19319,7 +19319,7 @@ return (error);
 }
 }
 
-# 640
+# 641
 void CANSetMask(enum CAN_MASK numBuffer, unsigned long mask, enum CAN_CONFIG_FLAGS type)
 { unsigned long tamp;
 
@@ -19424,7 +19424,7 @@ RXM1SIDH = (unsigned char) tamp;
 }
 }
 
-# 748
+# 749
 void CANSetFilter(enum CAN_FILTER numBuffer, unsigned long filter, enum CAN_CONFIG_FLAGS type)
 {
 unsigned long tamp;
@@ -19757,13 +19757,13 @@ RXF5SIDH = (unsigned char) tamp;
 
 }
 
-# 1085
+# 1086
 void CANAbortMessages (void)
 {
 CANCONbits.ABAT = 1;
 }
 
-# 1094
+# 1095
 BYTE CANisBusOFF (void)
 {
 return (COMSTATbits.TXBO);
@@ -19777,7 +19777,7 @@ BYTE CANisTXpassive (void)
 return (COMSTATbits.TXBP);
 }
 
-# 1111
+# 1112
 BYTE CANisRXpassive (void)
 {
 return (COMSTATbits.RXBP);
@@ -19799,31 +19799,31 @@ BYTE CANisRXwarningON (void)
 return (COMSTATbits.RXWARN);
 }
 
-# 1136
+# 1137
 BYTE CANgetTXerrorCount (void)
 {
 return (TXERRCNT);
 }
 
-# 1145
+# 1146
 BYTE CANgetRXerrorCount (void)
 {
 return (RXERRCNT);
 }
 
-# 1154
+# 1155
 BYTE CANisTxReady (void)
 {
 return (!TXB0CONbits.TXREQ || !TXB1CONbits.TXREQ || !TXB2CONbits.TXREQ);
 }
 
-# 1163
+# 1164
 BYTE CANisRxReady (void)
 {
 return (RXB0CONbits.RXFUL || RXB1CONbits.RXFUL);
 }
 
-# 74 "C:/Users/Simone/Desktop/LaurTec_PIC_libraries_v_3.3.1/inc\delay.h"
+# 74 "../../LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\delay.h"
 void delay_ms (unsigned int value_ms);
 
 # 88
@@ -19832,7 +19832,7 @@ void delay_s (unsigned char value_s);
 # 102
 void delay_set_quartz (unsigned char frequency);
 
-# 49 "C:/Users/Simone/Desktop/LaurTec_PIC_libraries_v_3.3.1/src\delay.c"
+# 49 "../../LaurTec_PIC_libraries_v_3.3.0 - Copia/src\delay.c"
 volatile unsigned char delay_quartz_frequency_value = 16;
 volatile unsigned int clock_counter_reference = 0;
 
@@ -20089,7 +20089,7 @@ volatile unsigned char asus = 0;
 volatile unsigned int timerValue2 = 0;
 
 
-float raggio = 56;
+float raggio = 55;
 float larghezza = 32;
 volatile float bordo = 0;
 float alfa = 0;
@@ -20265,7 +20265,8 @@ while ((asd == 1)&&(PORTBbits.RB5 == 1) && (activation == 1)&&(start_operation =
 data_brake [0] = 3;
 data_brake [1] = 1;
 parallelo();
-if (data_correction[1] == 1)
+data_correction[0] = data_correction[0]/2;
+if (data_correction[1] == 0)
 data_steering[0] = (90 + data_correction[0]);
 else {
 data_steering[0] = (90 + data_correction[0]);
@@ -20293,7 +20294,7 @@ data_brake [1] = 1;
 set_speed = 1000;
 dir = 0;
 data_steering[0] = 90;
-data_test[0] = ((130 + Pminimo)-(abs(n) + 10 + 45));
+data_test[0] = ((130 + Pminimo)-(n + 0 + 50));
 asd = 1;
 CANsendMessage(0b00000001101, data_test, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
 can_send();
@@ -20377,7 +20378,6 @@ CANsendMessage(0xAA, data_correction1, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRA
 
 void parallelo(void) {
 alignment_gap = abs(sensor_distance[0] - sensor_distance[1]);
-
 if (alignment_gap < 30) {
 if ((sensor_distance[0] < 40) && (sensor_distance[1] < 40)) {
 
@@ -20416,11 +20416,12 @@ can_send();
 }
 
 void matematica(void) {
-
 alfa = asin(((2 * raggio)-(larghezza / 2) - (bordo + (larghezza / 2))) / (2 * raggio));
 alfa = alfa / 3.14159265358979323846 * 180;
 beta = 90 - alfa;
-n = 2 * raggio * cos(alfa);
+alfa = (alfa*3.14159265358979323846)/180;
+n = cos(alfa);
+n = 2 * raggio *n;
 prima_sterzata = 2 * 3.14159265358979323846 * raggio * beta / 360;
 kkk = raggio + (2 * larghezza / 3);
 jjj = raggio - (2 * larghezza / 3);

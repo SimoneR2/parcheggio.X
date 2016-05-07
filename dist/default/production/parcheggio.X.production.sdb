@@ -148,15 +148,15 @@ CAN_RX_BUFFER_2_OVFL 2
 [v _park_search park_search `(v  1 e 0 0 ]
 "267
 [v _park_routine park_routine `(v  1 e 0 0 ]
-"371
+"370
 [v _can_send can_send `(v  1 e 0 0 ]
-"392
+"391
 [v _parallelo parallelo `(v  1 e 0 0 ]
-"431
+"430
 [v _matematica matematica `(v  1 e 0 0 ]
-"444
+"443
 [v _can_interpreter can_interpreter `(v  1 e 0 0 ]
-"452
+"451
 [v _configurazione configurazione `(v  1 e 0 0 ]
 "49 D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/src\delay.c
 [v _delay_quartz_frequency_value delay_quartz_frequency_value `VEuc  1 e 1 0 ]
@@ -1485,19 +1485,19 @@ CAN_RX_BUFFER_2_OVFL 2
 "267
 [v _park_routine park_routine `(v  1 e 0 0 ]
 {
-"369
+"368
 } 0
-"392
+"391
 [v _parallelo parallelo `(v  1 e 0 0 ]
 {
-"429
+"428
 } 0
-"371
+"370
 [v _can_send can_send `(v  1 e 0 0 ]
 {
-"385
+"384
 [v can_send@data_correction1 data_correction1 `[0]uc  1 a 0 39 ]
-"390
+"389
 } 0
 "295 D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
 [v _CANsendMessage CANsendMessage `(v  1 e 0 0 ]
@@ -1522,10 +1522,10 @@ CAN_RX_BUFFER_2_OVFL 2
 [v abs@a a `i  1 p 2 23 ]
 "9
 } 0
-"431 D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+"430 D:\Documenti\GitHub\parcheggio.X\parcheggio.c
 [v _matematica matematica `(v  1 e 0 0 ]
 {
-"442
+"441
 } 0
 "13 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\cos.c
 [v _cos cos `(d  1 e 4 0 ]
@@ -1771,10 +1771,10 @@ CAN_RX_BUFFER_2_OVFL 2
 [v ___wmul@multiplicand multiplicand `ui  1 p 2 25 ]
 "53
 } 0
-"452 D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+"451 D:\Documenti\GitHub\parcheggio.X\parcheggio.c
 [v _configurazione configurazione `(v  1 e 0 0 ]
 {
-"484
+"483
 } 0
 "219 D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
 [v _CANInitialize CANInitialize `(v  1 e 0 0 ]
@@ -1832,10 +1832,10 @@ CAN_RX_BUFFER_2_OVFL 2
 [v CANOperationMode@mode mode `E16307  1 a 1 23 ]
 "212
 } 0
-"444 D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+"443 D:\Documenti\GitHub\parcheggio.X\parcheggio.c
 [v _can_interpreter can_interpreter `(v  1 e 0 0 ]
 {
-"450
+"449
 } 0
 "111
 [v _ISR_Bassa ISR_Bassa `IIL(v  1 e 0 0 ]

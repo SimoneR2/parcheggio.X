@@ -16,7 +16,7 @@
 #include <math.h>
 #define _XTAL_FREQ 16000000
 
-#define tolleranza 0
+#define tolleranza 5
 void configurazione(void);
 void park_search(void);
 void park_routine(void);
@@ -79,7 +79,7 @@ volatile unsigned char asus = 0;
 volatile unsigned int timerValue2 = 0;
 
 //VARIABILI PARCHEGGIO?
-float raggio = 53;
+float raggio = 51; //52
 float larghezza = 32;
 volatile float bordo = 0;
 float alfa = 0;
@@ -215,7 +215,7 @@ void main(void) {
     //            delay_s(1);
     //        }
     while (1) {
-        while(activation != 1);
+        while (activation != 1);
         park_search();
         can_interpreter();
         park_routine();
@@ -243,12 +243,12 @@ void park_search(void) {
             CANsendMessage(COUNT_STOP, data, 8, CAN_CONFIG_STD_MSG & CAN_REMOTE_TX_FRAME & CAN_TX_PRIORITY_0);
         }
         if (distance_received == 1) {
-            if (distance_average > 55) {
+            if (distance_average > 65) {
                 PORTBbits.RB5 = 1;
                 data[0] = 1;
                 CANsendMessage(PARK_ASSIST_STATE, data, 1, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
                 if ((request_sent1 == 0)&&(sensor_distance[0] < 40)) {
-                    data_test[0] = 100;
+                    data_test[0] = 80;
                     asd = 1;
                     while (!CANisTxReady());
                     CANsendMessage(DISTANCE_SET, data_test, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
@@ -277,13 +277,12 @@ void park_routine(void) {
         data[0] = 2;
         CANsendMessage(PARK_ASSIST_STATE, data, 1, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
     }
-    while ((start_operation != 1)&&(activation == 1)){
-      
-        if (first == 0){
+    while ((start_operation != 1)&&(activation == 1)) {
+        if (first == 0) {
             set_speed = 0;
             data_steering[0] = 90;
-        data_brake [0] = 0;
-        data_brake [1] = 1;
+            data_brake [0] = 0;
+            data_brake [1] = 1;
             can_send();
             first = 1;
         }
@@ -294,7 +293,7 @@ void park_routine(void) {
         bordo = (sensor_distance[0] + sensor_distance[1]) / 2;
         matematica();
         set_speed = 0;
-        data_steering[0] = 89;
+        data_steering[0] = 90;
         data_brake [0] = 0;
         data_brake [1] = 1;
         can_send();
@@ -305,15 +304,15 @@ void park_routine(void) {
         //while (distance_received1 == 0);
         set_speed = 1000;
         dir = 0; //indietro
-        data_steering[0] = 89;
-        data_test[0] = ((100 + Pminimo)-(n + tolleranza + 43));
+        data_steering[0] = 90;
+        data_test[0] = ((80 + Pminimo + tolleranza)-(n + 41));
         asd = 1;
         CANsendMessage(DISTANCE_SET, data_test, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
         can_send();
         while (asd == 1);
 
         set_speed = 0;
-        data_steering[0] = 89;
+        data_steering[0] = 90;
         data_brake [0] = 0;
         data_brake [1] = 1;
         can_send();
@@ -332,21 +331,21 @@ void park_routine(void) {
         set_speed = 1000;
         data_steering[0] = 0;
         asd = 1;
-        data_test[0] = prima_sterzata+10;
+        data_test[0] = prima_sterzata + 13;
         CANsendMessage(DISTANCE_SET, data_test, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
         can_send();
         while (asd == 1);
         data_brake [0] = 0;
         data_brake [1] = 1;
         set_speed = 0;
-        data_steering[0] = 89;
+        data_steering[0] = 90;
         can_send();
         delay_s(1);
         if (sensor_distance [2] > 20) {
             data_brake [0] = 3;
             data_brake [1] = 1;
-            set_speed = 1000;
-            data_steering[0] = 89;
+            set_speed = 500;
+            data_steering[0] = 90;
             dir = 1;
             can_send();
             while (sensor_distance [2] > 20);
@@ -354,17 +353,17 @@ void park_routine(void) {
         data_brake [0] = 0;
         data_brake [1] = 1;
         set_speed = 0;
-        data_steering[0] = 89;
+        data_steering[0] = 90;
         dir = 0;
-
         can_send();
+        delay_s(1);
         activation = 0;
         PORTBbits.RB5 = 0;
         start_operation = 0;
         data[0] = 3;
-        while(!CANisTxReady());
+        while (!CANisTxReady());
         CANsendMessage(PARK_ASSIST_STATE, data, 1, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
-
+        RESET();
     }
 }
 

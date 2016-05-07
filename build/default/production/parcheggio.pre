@@ -20090,7 +20090,7 @@ volatile unsigned char asus = 0;
 volatile unsigned int timerValue2 = 0;
 
 
-float raggio = 53;
+float raggio = 51;
 float larghezza = 32;
 volatile float bordo = 0;
 float alfa = 0;
@@ -20214,7 +20214,7 @@ start_operation = 0;
 
 # 217
 while (1) {
-while(activation != 1);
+while (activation != 1);
 park_search();
 can_interpreter();
 park_routine();
@@ -20242,12 +20242,12 @@ while (!CANisTxReady());
 CANsendMessage(0b00000000111, data, 8, CAN_CONFIG_STD_MSG & CAN_REMOTE_TX_FRAME & CAN_TX_PRIORITY_0);
 }
 if (distance_received == 1) {
-if (distance_average > 55) {
+if (distance_average > 65) {
 PORTBbits.RB5 = 1;
 data[0] = 1;
 CANsendMessage(0b00000001011, data, 1, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
 if ((request_sent1 == 0)&&(sensor_distance[0] < 40)) {
-data_test[0] = 100;
+data_test[0] = 80;
 asd = 1;
 while (!CANisTxReady());
 CANsendMessage(0b00000001101, data_test, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
@@ -20276,9 +20276,8 @@ PORTBbits.RB6 = 0;
 data[0] = 2;
 CANsendMessage(0b00000001011, data, 1, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
 }
-while ((start_operation != 1)&&(activation == 1)){
-
-if (first == 0){
+while ((start_operation != 1)&&(activation == 1)) {
+if (first == 0) {
 set_speed = 0;
 data_steering[0] = 90;
 data_brake [0] = 0;
@@ -20293,7 +20292,7 @@ LATBbits.LATB4 = 1;
 bordo = (sensor_distance[0] + sensor_distance[1]) / 2;
 matematica();
 set_speed = 0;
-data_steering[0] = 89;
+data_steering[0] = 90;
 data_brake [0] = 0;
 data_brake [1] = 1;
 can_send();
@@ -20304,15 +20303,15 @@ data_brake [1] = 1;
 
 set_speed = 1000;
 dir = 0;
-data_steering[0] = 89;
-data_test[0] = ((100 + Pminimo)-(n + 0 + 43));
+data_steering[0] = 90;
+data_test[0] = ((80 + Pminimo + 5)-(n + 41));
 asd = 1;
 CANsendMessage(0b00000001101, data_test, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
 can_send();
 while (asd == 1);
 
 set_speed = 0;
-data_steering[0] = 89;
+data_steering[0] = 90;
 data_brake [0] = 0;
 data_brake [1] = 1;
 can_send();
@@ -20331,21 +20330,21 @@ while (asd == 1);
 set_speed = 1000;
 data_steering[0] = 0;
 asd = 1;
-data_test[0] = prima_sterzata+10;
+data_test[0] = prima_sterzata + 13;
 CANsendMessage(0b00000001101, data_test, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
 can_send();
 while (asd == 1);
 data_brake [0] = 0;
 data_brake [1] = 1;
 set_speed = 0;
-data_steering[0] = 89;
+data_steering[0] = 90;
 can_send();
 delay_s(1);
 if (sensor_distance [2] > 20) {
 data_brake [0] = 3;
 data_brake [1] = 1;
-set_speed = 1000;
-data_steering[0] = 89;
+set_speed = 500;
+data_steering[0] = 90;
 dir = 1;
 can_send();
 while (sensor_distance [2] > 20);
@@ -20353,17 +20352,17 @@ while (sensor_distance [2] > 20);
 data_brake [0] = 0;
 data_brake [1] = 1;
 set_speed = 0;
-data_steering[0] = 89;
+data_steering[0] = 90;
 dir = 0;
-
 can_send();
+delay_s(1);
 activation = 0;
 PORTBbits.RB5 = 0;
 start_operation = 0;
 data[0] = 3;
-while(!CANisTxReady());
+while (!CANisTxReady());
 CANsendMessage(0b00000001011, data, 1, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
-
+asm("reset");
 }
 }
 

@@ -53,6 +53,7 @@ volatile bit distance_received1 = 0;
 volatile bit start_operation = 0;
 volatile bit steering_correction_dir = 0;
 unsigned char data_test[8];
+volatile bit first = 0; //invia solo una volta il dato
 
 unsigned char steering_correction = 0;
 unsigned int set_speed = 0;
@@ -78,7 +79,7 @@ volatile unsigned char asus = 0;
 volatile unsigned int timerValue2 = 0;
 
 //VARIABILI PARCHEGGIO?
-float raggio = 55;
+float raggio = 53;
 float larghezza = 32;
 volatile float bordo = 0;
 float alfa = 0;
@@ -214,6 +215,7 @@ void main(void) {
     //            delay_s(1);
     //        }
     while (1) {
+        while(activation != 1);
         park_search();
         can_interpreter();
         park_routine();
@@ -246,8 +248,9 @@ void park_search(void) {
                 data[0] = 1;
                 CANsendMessage(PARK_ASSIST_STATE, data, 1, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
                 if ((request_sent1 == 0)&&(sensor_distance[0] < 40)) {
-                    data_test[0] = 130;
+                    data_test[0] = 100;
                     asd = 1;
+                    while (!CANisTxReady());
                     CANsendMessage(DISTANCE_SET, data_test, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
                     //CANsendMessage(COUNT_START, data, 8, CAN_CONFIG_STD_MSG & CAN_REMOTE_TX_FRAME & CAN_TX_PRIORITY_0);
                     distance_received1 = 0;
@@ -262,28 +265,36 @@ void park_search(void) {
 }
 
 void park_routine(void) {
-    while ((asd == 1)&&(PORTBbits.RB5 == 1) && (activation == 1)&&(start_operation == 1)) {
-        data_brake [0] = 3;
-        data_brake [1] = 1;
+    while ((asd == 1)&&(PORTBbits.RB5 == 1) && (activation == 1)) {
+        PORTBbits.RB6 = ~PORTBbits.RB6;
         parallelo();
-        data_correction[0] = data_correction[0]/2;
-        if (data_correction[1] == 0)
-            data_steering[0] = (90 + data_correction[0]);
-        else {
-            data_steering[0] = (90 + data_correction[0]);
+        while (!CANisTxReady());
+        CANsendMessage(STEERING_CORRECTION, data_correction, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
+        delay_ms(100);
+    }
+    if ((PORTBbits.RB5 == 1) && (activation == 1)) {
+        PORTBbits.RB6 = 0;
+        data[0] = 2;
+        CANsendMessage(PARK_ASSIST_STATE, data, 1, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
+    }
+    while ((start_operation != 1)&&(activation == 1)){
+      
+        if (first == 0){
+            set_speed = 0;
+            data_steering[0] = 90;
+        data_brake [0] = 0;
+        data_brake [1] = 1;
+            can_send();
+            first = 1;
         }
-        set_speed = 1000;
-        dir = 1;
-        can_send();
-        delay_ms(50);
     }
     while ((PORTBbits.RB5 == 1) && (activation == 1)&&(start_operation == 1)) {
-
+        LATBbits.LATB4 = 1;
         //CANsendMessage(COUNT_STOP, data, 8, CAN_CONFIG_STD_MSG & CAN_REMOTE_TX_FRAME & CAN_TX_PRIORITY_0);
-        bordo = (sensor_distance[0]+sensor_distance[1])/2;
+        bordo = (sensor_distance[0] + sensor_distance[1]) / 2;
         matematica();
         set_speed = 0;
-        data_steering[0] = 90;
+        data_steering[0] = 89;
         data_brake [0] = 0;
         data_brake [1] = 1;
         can_send();
@@ -294,15 +305,15 @@ void park_routine(void) {
         //while (distance_received1 == 0);
         set_speed = 1000;
         dir = 0; //indietro
-        data_steering[0] = 90;
-        data_test[0] = ((130 + Pminimo)-(n + tolleranza + 50));
+        data_steering[0] = 89;
+        data_test[0] = ((100 + Pminimo)-(n + tolleranza + 43));
         asd = 1;
         CANsendMessage(DISTANCE_SET, data_test, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
         can_send();
         while (asd == 1);
 
         set_speed = 0;
-        data_steering[0] = 90;
+        data_steering[0] = 89;
         data_brake [0] = 0;
         data_brake [1] = 1;
         can_send();
@@ -321,21 +332,21 @@ void park_routine(void) {
         set_speed = 1000;
         data_steering[0] = 0;
         asd = 1;
-        data_test[0] = prima_sterzata + 10;
+        data_test[0] = prima_sterzata+10;
         CANsendMessage(DISTANCE_SET, data_test, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
         can_send();
         while (asd == 1);
         data_brake [0] = 0;
         data_brake [1] = 1;
         set_speed = 0;
-        data_steering[0] = 90;
+        data_steering[0] = 89;
         can_send();
         delay_s(1);
         if (sensor_distance [2] > 20) {
             data_brake [0] = 3;
             data_brake [1] = 1;
             set_speed = 1000;
-            data_steering[0] = 90;
+            data_steering[0] = 89;
             dir = 1;
             can_send();
             while (sensor_distance [2] > 20);
@@ -343,7 +354,7 @@ void park_routine(void) {
         data_brake [0] = 0;
         data_brake [1] = 1;
         set_speed = 0;
-        data_steering[0] = 90;
+        data_steering[0] = 89;
         dir = 0;
 
         can_send();
@@ -351,6 +362,7 @@ void park_routine(void) {
         PORTBbits.RB5 = 0;
         start_operation = 0;
         data[0] = 3;
+        while(!CANisTxReady());
         CANsendMessage(PARK_ASSIST_STATE, data, 1, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
 
     }
@@ -379,7 +391,7 @@ void can_send(void) {
 
 void parallelo(void) {
     alignment_gap = abs(sensor_distance[0] - sensor_distance[1]);
- if (alignment_gap < 30) {
+    if (alignment_gap < 30) {
         if ((sensor_distance[0] < 40) && (sensor_distance[1] < 40)) {
             //alignment_gap =10; //debug qua c'è il problema che anche aligment gap deve essere con valore float, che è diverso da quello int o simili.
             //se scrivo 8 infatti il simulatore mi da un valore tipo 10^-44.....devo scrivere 8.0 e allora lo prende.
@@ -420,7 +432,7 @@ void matematica(void) {
     alfa = asin(((2 * raggio)-(larghezza / 2) - (bordo + (larghezza / 2))) / (2 * raggio));
     alfa = alfa / M_PI * 180;
     beta = 90 - alfa;
-    alfa = (alfa*M_PI)/180;
+    alfa = (alfa * M_PI) / 180;
     n = cos(alfa);
     n = 2 * raggio *n;
     prima_sterzata = 2 * M_PI * raggio * beta / 360;

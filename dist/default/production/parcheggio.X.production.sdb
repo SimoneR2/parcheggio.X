@@ -92,8 +92,6 @@ CAN_RX_BUFFER_2_OVFL 2
 [v _asin asin `(d  1 e 4 0 ]
 "8 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\atan.c
 [v _atan atan `(d  1 e 4 0 ]
-"8 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\awdiv.c
-[v ___awdiv __awdiv `(i  1 e 2 0 ]
 "13 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\cos.c
 [v _cos cos `(d  1 e 4 0 ]
 "4 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\evalpoly.c
@@ -140,25 +138,25 @@ CAN_RX_BUFFER_2_OVFL 2
 [v ___lmul __lmul `(ul  1 e 4 0 ]
 "10 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\xxtofl.c
 [v ___xxtofl __xxtofl `(d  1 e 4 0 ]
-"92 D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+"93 D:\Documenti\GitHub\parcheggio.X\parcheggio.c
 [v _ISR_Alta ISR_Alta `IIH(v  1 e 0 0 ]
-"110
+"111
 [v _ISR_Bassa ISR_Bassa `IIL(v  1 e 0 0 ]
-"187
+"188
 [v _main main `(v  1 e 0 0 ]
-"223
+"225
 [v _park_search park_search `(v  1 e 0 0 ]
-"264
+"267
 [v _park_routine park_routine `(v  1 e 0 0 ]
-"359
+"371
 [v _can_send can_send `(v  1 e 0 0 ]
-"380
+"392
 [v _parallelo parallelo `(v  1 e 0 0 ]
-"419
+"431
 [v _matematica matematica `(v  1 e 0 0 ]
-"432
+"444
 [v _can_interpreter can_interpreter `(v  1 e 0 0 ]
-"440
+"452
 [v _configurazione configurazione `(v  1 e 0 0 ]
 "49 D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/src\delay.c
 [v _delay_quartz_frequency_value delay_quartz_frequency_value `VEuc  1 e 1 0 ]
@@ -1420,84 +1418,86 @@ CAN_RX_BUFFER_2_OVFL 2
 [v _steering_correction_dir steering_correction_dir `VEb  1 e 0 0 ]
 "55
 [v _data_test data_test `[8]uc  1 e 8 0 ]
-"58
-[v _set_speed set_speed `ui  1 e 2 0 ]
+"56
+[v _first first `VEb  1 e 0 0 ]
 "59
+[v _set_speed set_speed `ui  1 e 2 0 ]
+"60
 [v _dir dir `b  1 e 0 0 ]
-"62
-[v _distance_dx distance_dx `VEui  1 e 2 0 ]
 "63
-[v _distance_sx distance_sx `VEui  1 e 2 0 ]
+[v _distance_dx distance_dx `VEui  1 e 2 0 ]
 "64
-[v _distance_average distance_average `VEui  1 e 2 0 ]
+[v _distance_sx distance_sx `VEui  1 e 2 0 ]
 "65
-[v _right_speed right_speed `ui  1 e 2 0 ]
+[v _distance_average distance_average `VEui  1 e 2 0 ]
 "66
-[v _left_speed left_speed `ui  1 e 2 0 ]
+[v _right_speed right_speed `ui  1 e 2 0 ]
 "67
+[v _left_speed left_speed `ui  1 e 2 0 ]
+"68
 [v _actual_speed actual_speed `ui  1 e 2 0 ]
-"69
+"70
 [v _sensor_distance sensor_distance `VE[8]ui  1 e 16 0 ]
-"72
-[v _MUX_index MUX_index `VEuc  1 e 1 0 ]
 "73
-[v _MUX_select MUX_select `[8]uc  1 e 8 0 ]
+[v _MUX_index MUX_index `VEuc  1 e 1 0 ]
 "74
-[v _pulse_time pulse_time `VEui  1 e 2 0 ]
+[v _MUX_select MUX_select `[8]uc  1 e 8 0 ]
 "75
-[v _distance distance `VEui  1 e 2 0 ]
+[v _pulse_time pulse_time `VEui  1 e 2 0 ]
 "76
-[v _gianni gianni `VEuc  1 e 1 0 ]
+[v _distance distance `VEui  1 e 2 0 ]
 "77
-[v _asus asus `VEuc  1 e 1 0 ]
+[v _gianni gianni `VEuc  1 e 1 0 ]
 "78
+[v _asus asus `VEuc  1 e 1 0 ]
+"79
 [v _timerValue2 timerValue2 `VEui  1 e 2 0 ]
-"81
-[v _raggio raggio `f  1 e 4 0 ]
 "82
-[v _larghezza larghezza `f  1 e 4 0 ]
+[v _raggio raggio `f  1 e 4 0 ]
 "83
-[v _bordo bordo `VEf  1 e 4 0 ]
+[v _larghezza larghezza `f  1 e 4 0 ]
 "84
-[v _alfa alfa `f  1 e 4 0 ]
+[v _bordo bordo `VEf  1 e 4 0 ]
 "85
-[v _beta beta `f  1 e 4 0 ]
+[v _alfa alfa `f  1 e 4 0 ]
 "86
-[v _n n `f  1 e 4 0 ]
+[v _beta beta `f  1 e 4 0 ]
 "87
-[v _prima_sterzata prima_sterzata `f  1 e 4 0 ]
+[v _n n `f  1 e 4 0 ]
 "88
-[v _kkk kkk `f  1 e 4 0 ]
+[v _prima_sterzata prima_sterzata `f  1 e 4 0 ]
 "89
-[v _jjj jjj `f  1 e 4 0 ]
+[v _kkk kkk `f  1 e 4 0 ]
 "90
+[v _jjj jjj `f  1 e 4 0 ]
+"91
 [v _Pminimo Pminimo `f  1 e 4 0 ]
-"187
+"188
 [v _main main `(v  1 e 0 0 ]
 {
-"221
-} 0
 "223
+} 0
+"225
 [v _park_search park_search `(v  1 e 0 0 ]
 {
-"262
+"265
 } 0
-"264
+"267
 [v _park_routine park_routine `(v  1 e 0 0 ]
 {
-"357
+"369
 } 0
-"380
+"392
 [v _parallelo parallelo `(v  1 e 0 0 ]
 {
-"417
+"429
 } 0
-"359
+"371
 [v _can_send can_send `(v  1 e 0 0 ]
 {
-"373
+"385
 [v can_send@data_correction1 data_correction1 `[0]uc  1 a 0 39 ]
-"378
+"390
 } 0
 "295 D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
 [v _CANsendMessage CANsendMessage `(v  1 e 0 0 ]
@@ -1522,10 +1522,10 @@ CAN_RX_BUFFER_2_OVFL 2
 [v abs@a a `i  1 p 2 23 ]
 "9
 } 0
-"419 D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+"431 D:\Documenti\GitHub\parcheggio.X\parcheggio.c
 [v _matematica matematica `(v  1 e 0 0 ]
 {
-"430
+"442
 } 0
 "13 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\cos.c
 [v _cos cos `(d  1 e 4 0 ]
@@ -1615,11 +1615,11 @@ CAN_RX_BUFFER_2_OVFL 2
 {
 "14
 [v sqrt@frac frac `ul  1 a 4 122 ]
-[s S3345 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
+[s S3346 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
 "11
-[s S3350 . 4 `i 1 wordA 2 0 `i 1 wordB 2 2 ]
-[u S3353 . 4 `l 1 i 4 0 `d 1 f 4 0 `S3345 1 fAsBytes 4 0 `S3350 1 fAsWords 4 0 ]
-[v sqrt@root root `S3353  1 a 4 118 ]
+[s S3351 . 4 `i 1 wordA 2 0 `i 1 wordB 2 2 ]
+[u S3354 . 4 `l 1 i 4 0 `d 1 f 4 0 `S3346 1 fAsBytes 4 0 `S3351 1 fAsWords 4 0 ]
+[v sqrt@root root `S3354  1 a 4 118 ]
 "16
 [v sqrt@grs grs `ul  1 a 4 112 ]
 "15
@@ -1678,17 +1678,17 @@ CAN_RX_BUFFER_2_OVFL 2
 "8 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcmul.c
 [v ___flmul __flmul `(d  1 e 4 0 ]
 {
-[s S3345 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
+[s S3346 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
 "13
-[s S3350 . 4 `i 1 wordA 2 0 `i 1 wordB 2 2 ]
-[u S3353 . 4 `l 1 i 4 0 `d 1 f 4 0 `S3345 1 fAsBytes 4 0 `S3350 1 fAsWords 4 0 ]
-[v ___flmul@prod prod `S3353  1 a 4 67 ]
+[s S3351 . 4 `i 1 wordA 2 0 `i 1 wordB 2 2 ]
+[u S3354 . 4 `l 1 i 4 0 `d 1 f 4 0 `S3346 1 fAsBytes 4 0 `S3351 1 fAsWords 4 0 ]
+[v ___flmul@prod prod `S3354  1 a 4 67 ]
 "12
 [v ___flmul@grs grs `ul  1 a 4 62 ]
-[s S3421 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
+[s S3422 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
 "14
-[u S3424 . 2 `i 1 i 2 0 `ui 1 n 2 0 `S3421 1 nAsBytes 2 0 ]
-[v ___flmul@temp temp `S3424  1 a 2 71 ]
+[u S3425 . 2 `i 1 i 2 0 `ui 1 n 2 0 `S3422 1 nAsBytes 2 0 ]
+[v ___flmul@temp temp `S3425  1 a 2 71 ]
 "10
 [v ___flmul@bexp bexp `uc  1 a 1 66 ]
 "11
@@ -1771,23 +1771,10 @@ CAN_RX_BUFFER_2_OVFL 2
 [v ___wmul@multiplicand multiplicand `ui  1 p 2 25 ]
 "53
 } 0
-"8 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\awdiv.c
-[v ___awdiv __awdiv `(i  1 e 2 0 ]
-{
-"11
-[v ___awdiv@quotient quotient `i  1 a 2 29 ]
-"12
-[v ___awdiv@sign sign `uc  1 a 1 28 ]
-[v ___awdiv@counter counter `uc  1 a 1 27 ]
-"8
-[v ___awdiv@dividend dividend `i  1 p 2 23 ]
-[v ___awdiv@divisor divisor `i  1 p 2 25 ]
-"42
-} 0
-"440 D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+"452 D:\Documenti\GitHub\parcheggio.X\parcheggio.c
 [v _configurazione configurazione `(v  1 e 0 0 ]
 {
-"472
+"484
 } 0
 "219 D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
 [v _CANInitialize CANInitialize `(v  1 e 0 0 ]
@@ -1845,19 +1832,19 @@ CAN_RX_BUFFER_2_OVFL 2
 [v CANOperationMode@mode mode `E16307  1 a 1 23 ]
 "212
 } 0
-"432 D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+"444 D:\Documenti\GitHub\parcheggio.X\parcheggio.c
 [v _can_interpreter can_interpreter `(v  1 e 0 0 ]
 {
-"438
+"450
 } 0
-"110
+"111
 [v _ISR_Bassa ISR_Bassa `IIL(v  1 e 0 0 ]
 {
-"172
+"173
 [v ISR_Bassa@i i `uc  1 a 1 34 ]
-"126
+"127
 [v ISR_Bassa@gigi gigi `uc  1 a 1 33 ]
-"185
+"186
 } 0
 "529 D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
 [v _CANreceiveMessage CANreceiveMessage `(uc  1 e 1 0 ]
@@ -1871,10 +1858,10 @@ CAN_RX_BUFFER_2_OVFL 2
 [v CANreceiveMessage@msg msg `*.39S853  1 p 2 0 ]
 "635
 } 0
-"92 D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+"93 D:\Documenti\GitHub\parcheggio.X\parcheggio.c
 [v _ISR_Alta ISR_Alta `IIH(v  1 e 0 0 ]
 {
-"108
+"109
 } 0
 "8 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwdiv.c
 [v ___lwdiv __lwdiv `(ui  1 e 2 0 ]

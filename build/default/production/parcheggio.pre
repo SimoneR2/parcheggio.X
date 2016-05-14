@@ -20090,8 +20090,8 @@ volatile unsigned char asus = 0;
 volatile unsigned int timerValue2 = 0;
 
 
-float raggio = 51;
-float larghezza = 32;
+float raggio = 52;
+float larghezza = 35;
 volatile float bordo = 0;
 float alfa = 0;
 float beta = 0;
@@ -20236,7 +20236,7 @@ LATBbits.LATB4 = 1;
 LATBbits.LATB4 = 0;
 alignment_gap = abs(sensor_distance[0] - sensor_distance[1]);
 }
-if ((sensor_distance[0] < 50) && (request_sent == 1)) {
+if ((sensor_distance[0] < 50) && (request_sent == 1)&&(sensor_distance[1]<50)) {
 request_sent = 0;
 while (!CANisTxReady());
 CANsendMessage(0b00000000111, data, 8, CAN_CONFIG_STD_MSG & CAN_REMOTE_TX_FRAME & CAN_TX_PRIORITY_0);
@@ -20247,7 +20247,7 @@ PORTBbits.RB5 = 1;
 data[0] = 1;
 CANsendMessage(0b00000001011, data, 1, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
 if ((request_sent1 == 0)&&(sensor_distance[0] < 40)) {
-data_test[0] = 80;
+data_test[0] = 50;
 asd = 1;
 while (!CANisTxReady());
 CANsendMessage(0b00000001101, data_test, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
@@ -20304,7 +20304,7 @@ data_brake [1] = 1;
 set_speed = 1000;
 dir = 0;
 data_steering[0] = 90;
-data_test[0] = ((80 + Pminimo + 5)-(n + 41));
+data_test[0] = ((50 + Pminimo + 5)-(n + 15));
 asd = 1;
 CANsendMessage(0b00000001101, data_test, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
 can_send();
@@ -20356,12 +20356,10 @@ data_steering[0] = 90;
 dir = 0;
 can_send();
 delay_s(1);
-activation = 0;
-PORTBbits.RB5 = 0;
-start_operation = 0;
 data[0] = 3;
 while (!CANisTxReady());
-CANsendMessage(0b00000001011, data, 1, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
+CANsendMessage(0b00000001011, data, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
+delay_ms(100);
 asm("reset");
 }
 }

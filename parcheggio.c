@@ -79,8 +79,8 @@ volatile unsigned char asus = 0;
 volatile unsigned int timerValue2 = 0;
 
 //VARIABILI PARCHEGGIO?
-float raggio = 51; //52
-float larghezza = 32;
+float raggio = 52; //52
+float larghezza = 35;
 volatile float bordo = 0;
 float alfa = 0;
 float beta = 0;
@@ -237,7 +237,7 @@ void park_search(void) {
             LATBbits.LATB4 = 0;
             alignment_gap = abs(sensor_distance[0] - sensor_distance[1]);
         }
-        if ((sensor_distance[0] < 50) && (request_sent == 1)) { //VALORE RANDOM!!!!
+        if ((sensor_distance[0] < 50) && (request_sent == 1)&&(sensor_distance[1]<50)) { //VALORE RANDOM!!!!
             request_sent = 0;
             while (!CANisTxReady());
             CANsendMessage(COUNT_STOP, data, 8, CAN_CONFIG_STD_MSG & CAN_REMOTE_TX_FRAME & CAN_TX_PRIORITY_0);
@@ -248,7 +248,7 @@ void park_search(void) {
                 data[0] = 1;
                 CANsendMessage(PARK_ASSIST_STATE, data, 1, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
                 if ((request_sent1 == 0)&&(sensor_distance[0] < 40)) {
-                    data_test[0] = 80;
+                    data_test[0] = 50;
                     asd = 1;
                     while (!CANisTxReady());
                     CANsendMessage(DISTANCE_SET, data_test, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
@@ -305,7 +305,7 @@ void park_routine(void) {
         set_speed = 1000;
         dir = 0; //indietro
         data_steering[0] = 90;
-        data_test[0] = ((80 + Pminimo + tolleranza)-(n + 41));
+        data_test[0] = ((50 + Pminimo + tolleranza)-(n + 15));
         asd = 1;
         CANsendMessage(DISTANCE_SET, data_test, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
         can_send();
@@ -357,12 +357,10 @@ void park_routine(void) {
         dir = 0;
         can_send();
         delay_s(1);
-        activation = 0;
-        PORTBbits.RB5 = 0;
-        start_operation = 0;
         data[0] = 3;
         while (!CANisTxReady());
-        CANsendMessage(PARK_ASSIST_STATE, data, 1, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
+        CANsendMessage(PARK_ASSIST_STATE, data, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
+        delay_ms(100);
         RESET();
     }
 }

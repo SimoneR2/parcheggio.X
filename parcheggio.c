@@ -15,8 +15,9 @@
 #include <stdlib.h>
 #include <math.h>
 #define _XTAL_FREQ 16000000
-
 #define tolleranza 5
+#define soglia1 2
+#define soglia2 10
 void configurazione(void);
 void park_search(void);
 void park_routine(void);
@@ -24,7 +25,6 @@ void can_send(void);
 void can_interpreter(void);
 void parallelo(void);
 void matematica(void);
-
 //variabili programma
 int spazio_parcheggio = 100;
 float alignment_gap = 0;
@@ -68,7 +68,8 @@ unsigned int left_speed = 0;
 unsigned int actual_speed = 0;
 
 volatile unsigned int sensor_distance[8] = 0;
-
+volatile unsigned char sensor_distance_short[8] = 0;
+volatile bit emergency = 0;
 //variabili per ultrasuoni
 volatile unsigned char MUX_index = 0;
 unsigned char MUX_select[8] = 0;
@@ -119,11 +120,20 @@ __interrupt(low_priority) void ISR_Bassa(void) {
         if (distance_error == 1) {
             sensor_distance[MUX_index] = 5000;
         }
+        if (sensor_distance[MUX_index] > soglia2) {
+            sensor_distance_short[MUX_index] = 1;
+        } else if (sensor_distance[MUX_index] > soglia1) {
+            data[0] = 4;
+            while (!CANisTxReady());
+            CANsendMessage(PARK_ASSIST_STATE, data, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
+            RESET();
+        } else {
+            sensor_distance_short[MUX_index] = 0;
+        }
         MUX_index++;
         if (MUX_index == 8) {
             MUX_index = 0;
         }
-
         unsigned char gigi = 0;
         gigi = MUX_select[MUX_index];
         PORTA = gigi;
@@ -194,6 +204,7 @@ void main(void) {
     MUX_select[5] = 0b00000101;
     MUX_select[6] = 0b00000110;
     MUX_select[7] = 0b00000111;
+    emergency = 0;
     configurazione();
     PORTBbits.RB4 = 0;
     PORTBbits.RB5 = 0;
@@ -201,21 +212,25 @@ void main(void) {
     request_sent = 0;
     start_operation = 0;
 
-    //        while (1) {
-    //            if (sensor_distance[2] > 20) {
-    //                PORTBbits.RB4 = 1;
-    //            }
-    //            if (sensor_distance[2] > 50) {
-    //                PORTBbits.RB5 = 1;
-    //            }
-    //                    unsigned char data_correction1[];
-    //            data_correction1[0] = sensor_distance[2];
-    //            data_correction1[1] = (sensor_distance[2]>>8);
-    //            CANsendMessage(0xAA, data_correction1, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
-    //            delay_s(1);
-    //        }
     while (1) {
-        while (activation != 1);
+        while (activation != 1) {
+            unsigned char sensor_distance_old[8] = 0;
+            bit new_distance = 0;
+            for (unsigned char i = 0; i < 8; i++) {
+                if (sensor_distance_old[i] == sensor_distance_short[i]) {
+                    new_distance = 0;
+                } else {
+                    new_distance = 1;
+                }
+            }
+            if (new_distance == 1) {
+                while (!CANisTxReady());
+                CANsendMessage(SENSOR_DISTANCE, sensor_distance_short, 8, CAN_CONFIG_STD_MSG & CAN_REMOTE_TX_FRAME & CAN_TX_PRIORITY_0);
+            }
+            for (unsigned char i = 0; i < 8; i++) {
+                sensor_distance_old[i] = sensor_distance_short[i];
+            }
+        }
         park_search();
         can_interpreter();
         park_routine();
@@ -237,7 +252,7 @@ void park_search(void) {
             LATBbits.LATB4 = 0;
             alignment_gap = abs(sensor_distance[0] - sensor_distance[1]);
         }
-        if ((sensor_distance[0] < 50) && (request_sent == 1)&&(sensor_distance[1]<50)) { //VALORE RANDOM!!!!
+        if ((sensor_distance[0] < 50) && (request_sent == 1)&&(sensor_distance[1] < 50)) { //VALORE RANDOM!!!!
             request_sent = 0;
             while (!CANisTxReady());
             CANsendMessage(COUNT_STOP, data, 8, CAN_CONFIG_STD_MSG & CAN_REMOTE_TX_FRAME & CAN_TX_PRIORITY_0);

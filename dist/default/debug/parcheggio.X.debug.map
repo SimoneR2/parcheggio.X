@@ -3,19 +3,19 @@ Microchip MPLAB XC8 Compiler V1.35 ()
 Linker command line:
 
 --edf=C:\Program Files (x86)\Microchip\xc8\v1.35\dat\en_msgs.txt -cs \
-  -h+dist/default/production\parcheggio.X.production.sym \
-  --cmf=dist/default/production\parcheggio.X.production.cmf -z -Q18F2685 \
-  -oC:\Users\Simone\AppData\Local\Temp\s6ec.2 \
-  -Mdist/default/production/parcheggio.X.production.map -E1 -ver=XC8 \
-  --acfsm=1493 -ASTACK=01ECh-0cffh -pstack=STACK -ACODE=00h-017FFFh \
-  -ACONST=00h-017FFFh -ASMALLCONST=0D00h-0DFFhx371 \
-  -AMEDIUMCONST=0D00h-0FFFFh,010D00h-017FFFh -ACOMRAM=01h-05Fh \
-  -AABS1=00h-0CFFh -ABIGRAM=01h-0CFFh -ARAM=060h-0FFh,0100h-01FFhx12 \
-  -ABANK0=060h-0FFh -ABANK1=0100h-01FFh -ABANK2=0200h-02FFh \
-  -ABANK3=0300h-03FFh -ABANK4=0400h-04FFh -ABANK5=0500h-05FFh \
-  -ABANK6=0600h-06FFh -ABANK7=0700h-07FFh -ABANK8=0800h-08FFh \
-  -ABANK9=0900h-09FFh -ABANK10=0A00h-0AFFh -ABANK11=0B00h-0BFFh \
-  -ABANK12=0C00h-0CFFh -ASFR=0D00h-0DFFhx2,0F00h-0F5Fh,0F60h-0FFFh \
+  -h+dist/default/debug\parcheggio.X.debug.sym \
+  --cmf=dist/default/debug\parcheggio.X.debug.cmf -z -Q18F2685 \
+  -oC:\Users\Simone\AppData\Local\Temp\s2cs.2 \
+  -Mdist/default/debug/parcheggio.X.debug.map -E1 -ver=XC8 --acfsm=1493 \
+  -ASTACK=01ECh-0cffh -pstack=STACK -ACODE=00h-017FFFh -ACONST=00h-017FFFh \
+  -ASMALLCONST=0D00h-0DFFhx371 -AMEDIUMCONST=0D00h-0FFFFh,010D00h-017FFFh \
+  -ACOMRAM=01h-05Fh -AABS1=00h-0CFFh -ABIGRAM=01h-0CFFh \
+  -ARAM=060h-0FFh,0100h-01FFhx12 -ABANK0=060h-0FFh -ABANK1=0100h-01FFh \
+  -ABANK2=0200h-02FFh -ABANK3=0300h-03FFh -ABANK4=0400h-04FFh \
+  -ABANK5=0500h-05FFh -ABANK6=0600h-06FFh -ABANK7=0700h-07FFh \
+  -ABANK8=0800h-08FFh -ABANK9=0900h-09FFh -ABANK10=0A00h-0AFFh \
+  -ABANK11=0B00h-0BFFh -ABANK12=0C00h-0CFFh \
+  -ASFR=0D00h-0DFFhx2,0F00h-0F5Fh,0F60h-0FFFh \
   -preset_vec=00h,intcode=08h,intcodelo=018h,powerup,init,end_init \
   -pramtop=0D00h -psmallconst=SMALLCONST -pmediumconst=MEDIUMCONST \
   -pconst=CONST -AFARRAM=00h-00h -ACONFIG=0300000h-030000Dh -pconfig=CONFIG \
@@ -25,8 +25,8 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -pparam0=BANK0 \
-  C:\Users\Simone\AppData\Local\Temp\s6ec.obj \
-  dist/default/production\parcheggio.X.production.obj 
+  C:\Users\Simone\AppData\Local\Temp\s2cs.obj \
+  dist/default/debug\parcheggio.X.debug.obj 
 
 Object code version is 3.11
 
@@ -38,12 +38,12 @@ Call graph: (short form)
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\Simone\AppData\Local\Temp\s6ec.obj
+C:\Users\Simone\AppData\Local\Temp\s2cs.obj
                 end_init                            308      308        4        C       0
                 reset_vec                             0        0        4        0       0
                 idloc                            200000   200000        8   200000       0
                 config                           300000   300000        E   300000       0
-dist/default/production\parcheggio.X.production.obj
+dist/default/debug\parcheggio.X.debug.obj
                 intcodelo                            18       18      2F0        C       0
                 intcode                               8        8        E        4       0
                 temp                                 56       56        1        1       1
@@ -1112,7 +1112,7 @@ FUNCTION INFORMATION:
 
  *************** function _main *****************
  Defined at:
-		line 206 in file "parcheggio.c"
+		line 207 in file "parcheggio.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1147,7 +1147,7 @@ Total ram usage:        1 bytes
 
  *************** function _park_search *****************
  Defined at:
-		line 250 in file "parcheggio.c"
+		line 252 in file "parcheggio.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1181,7 +1181,7 @@ Total ram usage:        2 bytes
 
  *************** function _park_routine *****************
  Defined at:
-		line 292 in file "parcheggio.c"
+		line 294 in file "parcheggio.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1221,7 +1221,7 @@ Total ram usage:       12 bytes
 
  *************** function _parallelo *****************
  Defined at:
-		line 419 in file "parcheggio.c"
+		line 421 in file "parcheggio.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1261,7 +1261,7 @@ Total ram usage:        2 bytes
 
  *************** function _can_send *****************
  Defined at:
-		line 398 in file "parcheggio.c"
+		line 400 in file "parcheggio.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1395,7 +1395,7 @@ Total ram usage:        4 bytes
 
  *************** function _matematica *****************
  Defined at:
-		line 458 in file "parcheggio.c"
+		line 460 in file "parcheggio.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -2140,7 +2140,7 @@ Total ram usage:        6 bytes
 
  *************** function _configurazione *****************
  Defined at:
-		line 479 in file "parcheggio.c"
+		line 481 in file "parcheggio.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -2305,7 +2305,7 @@ Total ram usage:        1 bytes
 
  *************** function _can_interpreter *****************
  Defined at:
-		line 471 in file "parcheggio.c"
+		line 473 in file "parcheggio.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type

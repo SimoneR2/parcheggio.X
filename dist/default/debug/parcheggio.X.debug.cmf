@@ -11,12 +11,7 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\Simone\AppData\Local\Temp\s6ec.obj
-idloc IDLOC 0 200000 200000 8 1
-reset_vec CODE 0 0 0 4 1
-end_init CODE 0 308 308 4 1
-config CONFIG 0 300000 300000 E 1
-$dist/default/production\parcheggio.X.production.obj
+$dist/default/debug\parcheggio.X.debug.obj
 intcodelo CODE 0 18 18 2F0 1
 cinit CODE 0 63E2 63E2 70 1
 intcode_body CODE 0 613C 613C E0 1
@@ -73,6 +68,11 @@ idataBANK1 CODE 0 66F0 66F0 8 1
 dataBANK0 BANK0 1 E6 E6 3 1
 dataBANK1 BANK1 1 1E4 1E4 8 1
 bssCOMRAM COMRAM 1 1 1 2C 1
+$C:\Users\Simone\AppData\Local\Temp\s2cs.obj
+idloc IDLOC 0 200000 200000 8 1
+reset_vec CODE 0 0 0 4 1
+end_init CODE 0 308 308 4 1
+config CONFIG 0 300000 300000 E 1
 # %UNUSED Section
 # This section enumerates the unused ranges of each CLASS. Each entry
 # is described on a single line as follows:
@@ -125,9 +125,9 @@ MEDIUMCONST 10D00-17FFF 1
 # are in ascending order of addresses.
 # All other numeric values are in decimal.
 %LINETAB
-$dist/default/production\parcheggio.X.production.obj
+$dist/default/debug\parcheggio.X.debug.obj
 18 intcodelo CODE >115:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-18 intcodelo CODE >477:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+18 intcodelo CODE >479:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
 5E intcodelo CODE >117:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
 62 intcodelo CODE >118:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
 64 intcodelo CODE >119:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
@@ -146,60 +146,60 @@ F4 intcodelo CODE >133:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
 FA intcodelo CODE >134:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
 104 intcodelo CODE >135:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
 128 intcodelo CODE >136:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-12A intcodelo CODE >138:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-12C intcodelo CODE >139:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-140 intcodelo CODE >141:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-142 intcodelo CODE >142:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-14A intcodelo CODE >143:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-14E intcodelo CODE >144:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+12A intcodelo CODE >139:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+12C intcodelo CODE >140:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+140 intcodelo CODE >142:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+142 intcodelo CODE >143:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+14A intcodelo CODE >144:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
 14E intcodelo CODE >145:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-152 intcodelo CODE >146:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-166 intcodelo CODE >147:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-16A intcodelo CODE >148:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-16C intcodelo CODE >149:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-16E intcodelo CODE >150:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-174 intcodelo CODE >151:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-176 intcodelo CODE >152:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-178 intcodelo CODE >153:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-17A intcodelo CODE >154:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-17C intcodelo CODE >155:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-17E intcodelo CODE >156:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-180 intcodelo CODE >157:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-182 intcodelo CODE >160:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-18A intcodelo CODE >161:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-196 intcodelo CODE >162:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-1AA intcodelo CODE >163:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-1AC intcodelo CODE >165:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-1CA intcodelo CODE >166:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-1D2 intcodelo CODE >167:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-1D8 intcodelo CODE >168:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-1E6 intcodelo CODE >169:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-1EC intcodelo CODE >170:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-1FA intcodelo CODE >171:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-214 intcodelo CODE >172:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-216 intcodelo CODE >173:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-218 intcodelo CODE >175:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-22E intcodelo CODE >176:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-236 intcodelo CODE >177:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-238 intcodelo CODE >178:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-23A intcodelo CODE >179:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-23C intcodelo CODE >180:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-23E intcodelo CODE >181:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-240 intcodelo CODE >182:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-242 intcodelo CODE >183:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-244 intcodelo CODE >184:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-246 intcodelo CODE >187:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-25A intcodelo CODE >188:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-25C intcodelo CODE >190:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-272 intcodelo CODE >191:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-27E intcodelo CODE >192:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-2A2 intcodelo CODE >191:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-2A6 intcodelo CODE >194:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-2BA intcodelo CODE >195:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-2BC intcodelo CODE >198:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-2BC intcodelo CODE >200:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-2BE intcodelo CODE >201:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-2C0 intcodelo CODE >204:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+14E intcodelo CODE >146:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+152 intcodelo CODE >147:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+166 intcodelo CODE >148:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+16A intcodelo CODE >149:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+16C intcodelo CODE >150:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+16E intcodelo CODE >151:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+174 intcodelo CODE >152:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+176 intcodelo CODE >153:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+178 intcodelo CODE >154:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+17A intcodelo CODE >155:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+17C intcodelo CODE >156:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+17E intcodelo CODE >157:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+180 intcodelo CODE >158:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+182 intcodelo CODE >161:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+18A intcodelo CODE >162:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+196 intcodelo CODE >163:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+1AA intcodelo CODE >164:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+1AC intcodelo CODE >166:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+1CA intcodelo CODE >167:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+1D2 intcodelo CODE >168:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+1D8 intcodelo CODE >169:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+1E6 intcodelo CODE >170:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+1EC intcodelo CODE >171:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+1FA intcodelo CODE >172:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+214 intcodelo CODE >173:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+216 intcodelo CODE >174:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+218 intcodelo CODE >176:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+22E intcodelo CODE >177:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+236 intcodelo CODE >178:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+238 intcodelo CODE >179:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+23A intcodelo CODE >180:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+23C intcodelo CODE >181:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+23E intcodelo CODE >182:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+240 intcodelo CODE >183:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+242 intcodelo CODE >184:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+244 intcodelo CODE >185:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+246 intcodelo CODE >188:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+25A intcodelo CODE >189:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+25C intcodelo CODE >191:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+272 intcodelo CODE >192:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+27E intcodelo CODE >193:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+2A2 intcodelo CODE >192:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+2A6 intcodelo CODE >195:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+2BA intcodelo CODE >196:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+2BC intcodelo CODE >199:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+2BC intcodelo CODE >201:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+2BE intcodelo CODE >202:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+2C0 intcodelo CODE >205:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
 8 intcode CODE >635:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
 8 intcode CODE >97:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
 636A text40 CODE >8:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwdiv.c
@@ -478,13 +478,13 @@ FA intcodelo CODE >134:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
 265C text36 CODE >517:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
 266E text36 CODE >519:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
 2672 text36 CODE >521:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-64BE text34 CODE >471:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-64BE text34 CODE >472:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-64C4 text34 CODE >473:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-64D4 text34 CODE >474:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-64DA text34 CODE >475:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-64EA text34 CODE >476:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-6510 text34 CODE >477:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+64BE text34 CODE >473:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+64BE text34 CODE >474:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+64C4 text34 CODE >475:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+64D4 text34 CODE >476:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+64DA text34 CODE >477:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+64EA text34 CODE >478:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+6510 text34 CODE >479:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
 66DA text33 CODE >207:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
 66DE text33 CODE >209:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
 66E2 text33 CODE >211:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
@@ -833,35 +833,35 @@ FDE text32 CODE >800:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANl
 5868 text30 CODE >286:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
 5884 text30 CODE >288:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
 588A text30 CODE >290:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-6452 text29 CODE >479:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-6452 text29 CODE >480:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-6456 text29 CODE >481:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-645A text29 CODE >483:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-645E text29 CODE >484:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-6462 text29 CODE >486:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-6466 text29 CODE >487:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-6468 text29 CODE >489:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-646A text29 CODE >490:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-648E text29 CODE >492:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-6490 text29 CODE >493:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-6492 text29 CODE >494:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-6494 text29 CODE >495:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-6496 text29 CODE >496:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-6498 text29 CODE >497:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-649A text29 CODE >498:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-649C text29 CODE >499:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-649E text29 CODE >500:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-64A2 text29 CODE >501:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-64A6 text29 CODE >502:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-64AA text29 CODE >503:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-64AE text29 CODE >504:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-64B0 text29 CODE >505:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-64B2 text29 CODE >506:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-64B4 text29 CODE >507:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-64B6 text29 CODE >508:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-64B8 text29 CODE >509:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-64BA text29 CODE >510:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-64BC text29 CODE >511:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+6452 text29 CODE >481:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+6452 text29 CODE >482:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+6456 text29 CODE >483:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+645A text29 CODE >485:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+645E text29 CODE >486:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+6462 text29 CODE >488:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+6466 text29 CODE >489:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+6468 text29 CODE >491:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+646A text29 CODE >492:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+648E text29 CODE >494:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+6490 text29 CODE >495:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+6492 text29 CODE >496:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+6494 text29 CODE >497:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+6496 text29 CODE >498:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+6498 text29 CODE >499:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+649A text29 CODE >500:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+649C text29 CODE >501:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+649E text29 CODE >502:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+64A2 text29 CODE >503:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+64A6 text29 CODE >504:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+64AA text29 CODE >505:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+64AE text29 CODE >506:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+64B0 text29 CODE >507:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+64B2 text29 CODE >508:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+64B4 text29 CODE >509:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+64B6 text29 CODE >510:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+64B8 text29 CODE >511:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+64BA text29 CODE >512:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+64BC text29 CODE >513:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
 660A text28 CODE >15:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\Umul16.c
 660A text28 CODE >37:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\Umul16.c
 661A text28 CODE >38:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\Umul16.c
@@ -1369,18 +1369,18 @@ FDE text32 CODE >800:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANl
 6058 text9 CODE >21:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\cos.c
 6084 text9 CODE >22:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\cos.c
 60E0 text9 CODE >23:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\cos.c
-2674 text8 CODE >458:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-2674 text8 CODE >459:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-2828 text8 CODE >460:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-2884 text8 CODE >461:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-28CE text8 CODE >462:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-292A text8 CODE >463:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-294E text8 CODE >464:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-29B8 text8 CODE >465:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-2A48 text8 CODE >466:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-2AC8 text8 CODE >467:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-2B5C text8 CODE >468:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-2BFC text8 CODE >469:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+2674 text8 CODE >460:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+2674 text8 CODE >461:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+2828 text8 CODE >462:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+2884 text8 CODE >463:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+28CE text8 CODE >464:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+292A text8 CODE >465:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+294E text8 CODE >466:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+29B8 text8 CODE >467:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+2A48 text8 CODE >468:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+2AC8 text8 CODE >469:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+2B5C text8 CODE >470:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+2BFC text8 CODE >471:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
 6640 text7 CODE >4:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\abs.c
 6640 text7 CODE >6:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\abs.c
 6646 text7 CODE >7:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\abs.c
@@ -1556,259 +1556,259 @@ FDE text32 CODE >800:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANl
 1FCA text5 CODE >517:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
 1FDE text5 CODE >519:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
 1FE2 text5 CODE >521:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-5BDC text4 CODE >398:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5BDC text4 CODE >399:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5BE0 text4 CODE >400:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5BEA text4 CODE >401:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5C18 text4 CODE >402:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5C1C text4 CODE >403:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5C22 text4 CODE >404:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5C2C text4 CODE >405:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5C36 text4 CODE >406:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5C64 text4 CODE >407:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5C6E text4 CODE >408:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5C74 text4 CODE >409:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5CA2 text4 CODE >410:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5CA4 text4 CODE >411:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5CD2 text4 CODE >413:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5CDA text4 CODE >414:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5CE0 text4 CODE >415:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5022 text3 CODE >419:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5022 text3 CODE >420:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-507E text3 CODE >421:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-50AA text3 CODE >422:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-50C2 text3 CODE >426:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-511C text3 CODE >427:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5140 text3 CODE >428:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5174 text3 CODE >429:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5198 text3 CODE >430:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-51F4 text3 CODE >431:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5210 text3 CODE >433:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-521C text3 CODE >434:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5220 text3 CODE >436:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5226 text3 CODE >438:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5256 text3 CODE >439:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5266 text3 CODE >440:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5272 text3 CODE >441:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5276 text3 CODE >443:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5286 text3 CODE >444:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-528C text3 CODE >445:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-528E text3 CODE >446:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5292 text3 CODE >448:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5294 text3 CODE >449:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5298 text3 CODE >450:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-529E text3 CODE >451:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-52A0 text3 CODE >452:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-52A4 text3 CODE >453:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3A58 text2 CODE >292:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3A58 text2 CODE >293:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3A5E text2 CODE >294:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3A60 text2 CODE >295:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3A6E text2 CODE >296:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3A92 text2 CODE >297:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3A96 text2 CODE >298:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3A9E text2 CODE >299:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3AA4 text2 CODE >301:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3AAE text2 CODE >302:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3ADC text2 CODE >294:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3AE6 text2 CODE >304:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3AEC text2 CODE >305:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3AEE text2 CODE >306:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3AF4 text2 CODE >307:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3B22 text2 CODE >309:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3B24 text2 CODE >310:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3B28 text2 CODE >311:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3B30 text2 CODE >312:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3B36 text2 CODE >313:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3B3C text2 CODE >314:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3B42 text2 CODE >315:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3B46 text2 CODE >316:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3B48 text2 CODE >309:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3B50 text2 CODE >319:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3B50 text2 CODE >320:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3B52 text2 CODE >322:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3B98 text2 CODE >323:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3B9C text2 CODE >324:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3BA4 text2 CODE >325:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3BAA text2 CODE >326:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3BB0 text2 CODE >327:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3BB6 text2 CODE >328:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3BBA text2 CODE >329:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3BC0 text2 CODE >331:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3BC6 text2 CODE >332:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3BCC text2 CODE >334:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3BD4 text2 CODE >335:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3BD6 text2 CODE >336:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3BDC text2 CODE >337:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3C9C text2 CODE >338:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3C9E text2 CODE >339:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3CCC text2 CODE >340:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3CD0 text2 CODE >341:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3CD4 text2 CODE >343:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3CDC text2 CODE >344:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3CE2 text2 CODE >345:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3CE8 text2 CODE >346:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3CEE text2 CODE >347:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3CF2 text2 CODE >348:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3CF8 text2 CODE >350:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3CFE text2 CODE >351:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3D04 text2 CODE >352:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3D0C text2 CODE >353:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3D0E text2 CODE >354:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3D14 text2 CODE >355:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3D30 text2 CODE >356:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3D32 text2 CODE >357:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3D60 text2 CODE >358:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3D64 text2 CODE >359:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3D68 text2 CODE >360:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3D70 text2 CODE >361:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3D76 text2 CODE >362:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3D78 text2 CODE >363:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3DBA text2 CODE >364:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3DE8 text2 CODE >365:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3DEC text2 CODE >366:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3DF0 text2 CODE >367:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3DF6 text2 CODE >368:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3DFC text2 CODE >369:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3E04 text2 CODE >370:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3E0A text2 CODE >371:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3E0E text2 CODE >372:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3E14 text2 CODE >373:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3E16 text2 CODE >374:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3E22 text2 CODE >375:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3E28 text2 CODE >376:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3E2E text2 CODE >377:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3E36 text2 CODE >378:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3E3C text2 CODE >379:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3E3E text2 CODE >380:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3E42 text2 CODE >381:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3E4E text2 CODE >383:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3E54 text2 CODE >384:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3E5A text2 CODE >385:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3E62 text2 CODE >386:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3E68 text2 CODE >387:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3E6A text2 CODE >388:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3E6E text2 CODE >389:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3E74 text2 CODE >390:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3E7A text2 CODE >391:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3E84 text2 CODE >392:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3EB2 text2 CODE >393:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3EC0 text2 CODE >394:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3EC2 text2 CODE >319:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-588C text1 CODE >250:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-588C text1 CODE >251:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-588E text1 CODE >252:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5892 text1 CODE >253:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-589E text1 CODE >254:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-58A2 text1 CODE >255:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-58AC text1 CODE >256:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-58DA text1 CODE >257:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-58DC text1 CODE >258:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-58EC text1 CODE >259:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-58EE text1 CODE >261:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-58F0 text1 CODE >262:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-58F2 text1 CODE >263:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-594E text1 CODE >265:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5968 text1 CODE >266:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-596A text1 CODE >267:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5974 text1 CODE >268:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-59A2 text1 CODE >270:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-59A6 text1 CODE >271:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-59B2 text1 CODE >272:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-59B4 text1 CODE >273:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-59BA text1 CODE >274:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-59E8 text1 CODE >275:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-59F8 text1 CODE >276:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-59FE text1 CODE >277:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5A00 text1 CODE >278:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5A0A text1 CODE >279:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5A38 text1 CODE >281:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5A3A text1 CODE >282:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5A3C text1 CODE >284:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5A3E text1 CODE >285:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5A40 text1 CODE >286:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5A42 text1 CODE >251:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5A42 text1 CODE >289:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-621C text0 CODE >206:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5BDC text4 CODE >400:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5BDC text4 CODE >401:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5BE0 text4 CODE >402:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5BEA text4 CODE >403:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5C18 text4 CODE >404:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5C1C text4 CODE >405:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5C22 text4 CODE >406:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5C2C text4 CODE >407:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5C36 text4 CODE >408:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5C64 text4 CODE >409:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5C6E text4 CODE >410:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5C74 text4 CODE >411:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5CA2 text4 CODE >412:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5CA4 text4 CODE >413:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5CD2 text4 CODE >415:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5CDA text4 CODE >416:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5CE0 text4 CODE >417:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5022 text3 CODE >421:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5022 text3 CODE >422:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+507E text3 CODE >423:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+50AA text3 CODE >424:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+50C2 text3 CODE >428:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+511C text3 CODE >429:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5140 text3 CODE >430:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5174 text3 CODE >431:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5198 text3 CODE >432:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+51F4 text3 CODE >433:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5210 text3 CODE >435:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+521C text3 CODE >436:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5220 text3 CODE >438:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5226 text3 CODE >440:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5256 text3 CODE >441:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5266 text3 CODE >442:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5272 text3 CODE >443:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5276 text3 CODE >445:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5286 text3 CODE >446:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+528C text3 CODE >447:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+528E text3 CODE >448:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5292 text3 CODE >450:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5294 text3 CODE >451:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5298 text3 CODE >452:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+529E text3 CODE >453:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+52A0 text3 CODE >454:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+52A4 text3 CODE >455:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3A58 text2 CODE >294:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3A58 text2 CODE >295:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3A5E text2 CODE >296:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3A60 text2 CODE >297:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3A6E text2 CODE >298:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3A92 text2 CODE >299:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3A96 text2 CODE >300:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3A9E text2 CODE >301:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3AA4 text2 CODE >303:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3AAE text2 CODE >304:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3ADC text2 CODE >296:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3AE6 text2 CODE >306:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3AEC text2 CODE >307:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3AEE text2 CODE >308:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3AF4 text2 CODE >309:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3B22 text2 CODE >311:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3B24 text2 CODE >312:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3B28 text2 CODE >313:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3B30 text2 CODE >314:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3B36 text2 CODE >315:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3B3C text2 CODE >316:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3B42 text2 CODE >317:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3B46 text2 CODE >318:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3B48 text2 CODE >311:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3B50 text2 CODE >321:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3B50 text2 CODE >322:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3B52 text2 CODE >324:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3B98 text2 CODE >325:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3B9C text2 CODE >326:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3BA4 text2 CODE >327:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3BAA text2 CODE >328:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3BB0 text2 CODE >329:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3BB6 text2 CODE >330:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3BBA text2 CODE >331:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3BC0 text2 CODE >333:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3BC6 text2 CODE >334:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3BCC text2 CODE >336:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3BD4 text2 CODE >337:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3BD6 text2 CODE >338:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3BDC text2 CODE >339:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3C9C text2 CODE >340:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3C9E text2 CODE >341:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3CCC text2 CODE >342:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3CD0 text2 CODE >343:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3CD4 text2 CODE >345:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3CDC text2 CODE >346:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3CE2 text2 CODE >347:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3CE8 text2 CODE >348:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3CEE text2 CODE >349:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3CF2 text2 CODE >350:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3CF8 text2 CODE >352:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3CFE text2 CODE >353:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3D04 text2 CODE >354:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3D0C text2 CODE >355:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3D0E text2 CODE >356:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3D14 text2 CODE >357:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3D30 text2 CODE >358:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3D32 text2 CODE >359:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3D60 text2 CODE >360:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3D64 text2 CODE >361:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3D68 text2 CODE >362:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3D70 text2 CODE >363:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3D76 text2 CODE >364:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3D78 text2 CODE >365:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3DBA text2 CODE >366:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3DE8 text2 CODE >367:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3DEC text2 CODE >368:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3DF0 text2 CODE >369:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3DF6 text2 CODE >370:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3DFC text2 CODE >371:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3E04 text2 CODE >372:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3E0A text2 CODE >373:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3E0E text2 CODE >374:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3E14 text2 CODE >375:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3E16 text2 CODE >376:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3E22 text2 CODE >377:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3E28 text2 CODE >378:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3E2E text2 CODE >379:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3E36 text2 CODE >380:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3E3C text2 CODE >381:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3E3E text2 CODE >382:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3E42 text2 CODE >383:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3E4E text2 CODE >385:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3E54 text2 CODE >386:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3E5A text2 CODE >387:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3E62 text2 CODE >388:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3E68 text2 CODE >389:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3E6A text2 CODE >390:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3E6E text2 CODE >391:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3E74 text2 CODE >392:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3E7A text2 CODE >393:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3E84 text2 CODE >394:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3EB2 text2 CODE >395:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3EC0 text2 CODE >396:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3EC2 text2 CODE >321:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+588C text1 CODE >252:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+588C text1 CODE >253:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+588E text1 CODE >254:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5892 text1 CODE >255:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+589E text1 CODE >256:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+58A2 text1 CODE >257:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+58AC text1 CODE >258:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+58DA text1 CODE >259:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+58DC text1 CODE >260:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+58EC text1 CODE >261:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+58EE text1 CODE >263:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+58F0 text1 CODE >264:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+58F2 text1 CODE >265:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+594E text1 CODE >267:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5968 text1 CODE >268:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+596A text1 CODE >269:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5974 text1 CODE >270:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+59A2 text1 CODE >272:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+59A6 text1 CODE >273:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+59B2 text1 CODE >274:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+59B4 text1 CODE >275:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+59BA text1 CODE >276:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+59E8 text1 CODE >277:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+59F8 text1 CODE >278:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+59FE text1 CODE >279:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5A00 text1 CODE >280:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5A0A text1 CODE >281:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5A38 text1 CODE >283:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5A3A text1 CODE >284:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5A3C text1 CODE >286:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5A3E text1 CODE >287:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5A40 text1 CODE >288:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5A42 text1 CODE >253:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5A42 text1 CODE >291:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
 621C text0 CODE >207:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-6222 text0 CODE >208:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-6228 text0 CODE >209:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-622E text0 CODE >210:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-6234 text0 CODE >211:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-623A text0 CODE >212:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-6240 text0 CODE >213:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-6246 text0 CODE >214:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-624C text0 CODE >215:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-624E text0 CODE >216:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-6252 text0 CODE >217:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-6254 text0 CODE >218:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-6256 text0 CODE >219:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-6258 text0 CODE >220:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-625A text0 CODE >221:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-625C text0 CODE >224:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-625E text0 CODE >225:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-6268 text0 CODE >226:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-6288 text0 CODE >227:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-62B6 text0 CODE >228:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-62C4 text0 CODE >224:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-62C8 text0 CODE >244:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-62CC text0 CODE >245:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-62D0 text0 CODE >246:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-62D4 text0 CODE >223:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-63E2 cinit CODE >1586:C:\Users\Simone\AppData\Local\Temp\s6ec.
-63E2 cinit CODE >1588:C:\Users\Simone\AppData\Local\Temp\s6ec.
-63E2 cinit CODE >1591:C:\Users\Simone\AppData\Local\Temp\s6ec.
-63E2 cinit CODE >1815:C:\Users\Simone\AppData\Local\Temp\s6ec.
-63E6 cinit CODE >1816:C:\Users\Simone\AppData\Local\Temp\s6ec.
-63E8 cinit CODE >1817:C:\Users\Simone\AppData\Local\Temp\s6ec.
-63E8 cinit CODE >1818:C:\Users\Simone\AppData\Local\Temp\s6ec.
-63EA cinit CODE >1819:C:\Users\Simone\AppData\Local\Temp\s6ec.
-63EC cinit CODE >1820:C:\Users\Simone\AppData\Local\Temp\s6ec.
-63EE cinit CODE >1823:C:\Users\Simone\AppData\Local\Temp\s6ec.
-63F2 cinit CODE >1824:C:\Users\Simone\AppData\Local\Temp\s6ec.
-63F4 cinit CODE >1825:C:\Users\Simone\AppData\Local\Temp\s6ec.
-63F4 cinit CODE >1826:C:\Users\Simone\AppData\Local\Temp\s6ec.
-63F6 cinit CODE >1827:C:\Users\Simone\AppData\Local\Temp\s6ec.
-63F8 cinit CODE >1828:C:\Users\Simone\AppData\Local\Temp\s6ec.
-63FA cinit CODE >1831:C:\Users\Simone\AppData\Local\Temp\s6ec.
-63FC cinit CODE >1832:C:\Users\Simone\AppData\Local\Temp\s6ec.
-63FE cinit CODE >1835:C:\Users\Simone\AppData\Local\Temp\s6ec.
-6402 cinit CODE >1836:C:\Users\Simone\AppData\Local\Temp\s6ec.
-6404 cinit CODE >1837:C:\Users\Simone\AppData\Local\Temp\s6ec.
-6404 cinit CODE >1838:C:\Users\Simone\AppData\Local\Temp\s6ec.
-6406 cinit CODE >1839:C:\Users\Simone\AppData\Local\Temp\s6ec.
-6408 cinit CODE >1840:C:\Users\Simone\AppData\Local\Temp\s6ec.
-640A cinit CODE >1845:C:\Users\Simone\AppData\Local\Temp\s6ec.
-640C cinit CODE >1846:C:\Users\Simone\AppData\Local\Temp\s6ec.
-640E cinit CODE >1847:C:\Users\Simone\AppData\Local\Temp\s6ec.
-6410 cinit CODE >1848:C:\Users\Simone\AppData\Local\Temp\s6ec.
-6412 cinit CODE >1849:C:\Users\Simone\AppData\Local\Temp\s6ec.
-6414 cinit CODE >1850:C:\Users\Simone\AppData\Local\Temp\s6ec.
-6416 cinit CODE >1851:C:\Users\Simone\AppData\Local\Temp\s6ec.
-641A cinit CODE >1852:C:\Users\Simone\AppData\Local\Temp\s6ec.
-641E cinit CODE >1853:C:\Users\Simone\AppData\Local\Temp\s6ec.
-641E cinit CODE >1854:C:\Users\Simone\AppData\Local\Temp\s6ec.
-6420 cinit CODE >1855:C:\Users\Simone\AppData\Local\Temp\s6ec.
-6424 cinit CODE >1856:C:\Users\Simone\AppData\Local\Temp\s6ec.
-6426 cinit CODE >1857:C:\Users\Simone\AppData\Local\Temp\s6ec.
-6428 cinit CODE >1858:C:\Users\Simone\AppData\Local\Temp\s6ec.
-642A cinit CODE >1862:C:\Users\Simone\AppData\Local\Temp\s6ec.
-642C cinit CODE >1863:C:\Users\Simone\AppData\Local\Temp\s6ec.
-642E cinit CODE >1864:C:\Users\Simone\AppData\Local\Temp\s6ec.
-6430 cinit CODE >1865:C:\Users\Simone\AppData\Local\Temp\s6ec.
-6432 cinit CODE >1866:C:\Users\Simone\AppData\Local\Temp\s6ec.
-6434 cinit CODE >1867:C:\Users\Simone\AppData\Local\Temp\s6ec.
-6436 cinit CODE >1868:C:\Users\Simone\AppData\Local\Temp\s6ec.
-6438 cinit CODE >1869:C:\Users\Simone\AppData\Local\Temp\s6ec.
-643C cinit CODE >1870:C:\Users\Simone\AppData\Local\Temp\s6ec.
-643E cinit CODE >1871:C:\Users\Simone\AppData\Local\Temp\s6ec.
-6442 cinit CODE >1872:C:\Users\Simone\AppData\Local\Temp\s6ec.
-6444 cinit CODE >1873:C:\Users\Simone\AppData\Local\Temp\s6ec.
-6448 cinit CODE >1879:C:\Users\Simone\AppData\Local\Temp\s6ec.
-6448 cinit CODE >1881:C:\Users\Simone\AppData\Local\Temp\s6ec.
-644A cinit CODE >1882:C:\Users\Simone\AppData\Local\Temp\s6ec.
-644C cinit CODE >1883:C:\Users\Simone\AppData\Local\Temp\s6ec.
-644E cinit CODE >1884:C:\Users\Simone\AppData\Local\Temp\s6ec.
+621C text0 CODE >208:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+6222 text0 CODE >209:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+6228 text0 CODE >210:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+622E text0 CODE >211:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+6234 text0 CODE >212:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+623A text0 CODE >213:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+6240 text0 CODE >214:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+6246 text0 CODE >215:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+624C text0 CODE >216:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+624E text0 CODE >217:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+6252 text0 CODE >218:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+6254 text0 CODE >219:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+6256 text0 CODE >220:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+6258 text0 CODE >221:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+625A text0 CODE >222:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+625C text0 CODE >225:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+625E text0 CODE >226:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+626C text0 CODE >227:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+6276 text0 CODE >228:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+6296 text0 CODE >229:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+62C4 text0 CODE >225:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+62C8 text0 CODE >246:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+62CC text0 CODE >247:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+62D0 text0 CODE >248:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+62D4 text0 CODE >224:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+63E2 cinit CODE >1586:C:\Users\Simone\AppData\Local\Temp\s2cs.
+63E2 cinit CODE >1588:C:\Users\Simone\AppData\Local\Temp\s2cs.
+63E2 cinit CODE >1591:C:\Users\Simone\AppData\Local\Temp\s2cs.
+63E2 cinit CODE >1815:C:\Users\Simone\AppData\Local\Temp\s2cs.
+63E6 cinit CODE >1816:C:\Users\Simone\AppData\Local\Temp\s2cs.
+63E8 cinit CODE >1817:C:\Users\Simone\AppData\Local\Temp\s2cs.
+63E8 cinit CODE >1818:C:\Users\Simone\AppData\Local\Temp\s2cs.
+63EA cinit CODE >1819:C:\Users\Simone\AppData\Local\Temp\s2cs.
+63EC cinit CODE >1820:C:\Users\Simone\AppData\Local\Temp\s2cs.
+63EE cinit CODE >1823:C:\Users\Simone\AppData\Local\Temp\s2cs.
+63F2 cinit CODE >1824:C:\Users\Simone\AppData\Local\Temp\s2cs.
+63F4 cinit CODE >1825:C:\Users\Simone\AppData\Local\Temp\s2cs.
+63F4 cinit CODE >1826:C:\Users\Simone\AppData\Local\Temp\s2cs.
+63F6 cinit CODE >1827:C:\Users\Simone\AppData\Local\Temp\s2cs.
+63F8 cinit CODE >1828:C:\Users\Simone\AppData\Local\Temp\s2cs.
+63FA cinit CODE >1831:C:\Users\Simone\AppData\Local\Temp\s2cs.
+63FC cinit CODE >1832:C:\Users\Simone\AppData\Local\Temp\s2cs.
+63FE cinit CODE >1835:C:\Users\Simone\AppData\Local\Temp\s2cs.
+6402 cinit CODE >1836:C:\Users\Simone\AppData\Local\Temp\s2cs.
+6404 cinit CODE >1837:C:\Users\Simone\AppData\Local\Temp\s2cs.
+6404 cinit CODE >1838:C:\Users\Simone\AppData\Local\Temp\s2cs.
+6406 cinit CODE >1839:C:\Users\Simone\AppData\Local\Temp\s2cs.
+6408 cinit CODE >1840:C:\Users\Simone\AppData\Local\Temp\s2cs.
+640A cinit CODE >1845:C:\Users\Simone\AppData\Local\Temp\s2cs.
+640C cinit CODE >1846:C:\Users\Simone\AppData\Local\Temp\s2cs.
+640E cinit CODE >1847:C:\Users\Simone\AppData\Local\Temp\s2cs.
+6410 cinit CODE >1848:C:\Users\Simone\AppData\Local\Temp\s2cs.
+6412 cinit CODE >1849:C:\Users\Simone\AppData\Local\Temp\s2cs.
+6414 cinit CODE >1850:C:\Users\Simone\AppData\Local\Temp\s2cs.
+6416 cinit CODE >1851:C:\Users\Simone\AppData\Local\Temp\s2cs.
+641A cinit CODE >1852:C:\Users\Simone\AppData\Local\Temp\s2cs.
+641E cinit CODE >1853:C:\Users\Simone\AppData\Local\Temp\s2cs.
+641E cinit CODE >1854:C:\Users\Simone\AppData\Local\Temp\s2cs.
+6420 cinit CODE >1855:C:\Users\Simone\AppData\Local\Temp\s2cs.
+6424 cinit CODE >1856:C:\Users\Simone\AppData\Local\Temp\s2cs.
+6426 cinit CODE >1857:C:\Users\Simone\AppData\Local\Temp\s2cs.
+6428 cinit CODE >1858:C:\Users\Simone\AppData\Local\Temp\s2cs.
+642A cinit CODE >1862:C:\Users\Simone\AppData\Local\Temp\s2cs.
+642C cinit CODE >1863:C:\Users\Simone\AppData\Local\Temp\s2cs.
+642E cinit CODE >1864:C:\Users\Simone\AppData\Local\Temp\s2cs.
+6430 cinit CODE >1865:C:\Users\Simone\AppData\Local\Temp\s2cs.
+6432 cinit CODE >1866:C:\Users\Simone\AppData\Local\Temp\s2cs.
+6434 cinit CODE >1867:C:\Users\Simone\AppData\Local\Temp\s2cs.
+6436 cinit CODE >1868:C:\Users\Simone\AppData\Local\Temp\s2cs.
+6438 cinit CODE >1869:C:\Users\Simone\AppData\Local\Temp\s2cs.
+643C cinit CODE >1870:C:\Users\Simone\AppData\Local\Temp\s2cs.
+643E cinit CODE >1871:C:\Users\Simone\AppData\Local\Temp\s2cs.
+6442 cinit CODE >1872:C:\Users\Simone\AppData\Local\Temp\s2cs.
+6444 cinit CODE >1873:C:\Users\Simone\AppData\Local\Temp\s2cs.
+6448 cinit CODE >1879:C:\Users\Simone\AppData\Local\Temp\s2cs.
+6448 cinit CODE >1881:C:\Users\Simone\AppData\Local\Temp\s2cs.
+644A cinit CODE >1882:C:\Users\Simone\AppData\Local\Temp\s2cs.
+644C cinit CODE >1883:C:\Users\Simone\AppData\Local\Temp\s2cs.
+644E cinit CODE >1884:C:\Users\Simone\AppData\Local\Temp\s2cs.
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -1821,841 +1821,841 @@ FDE text32 CODE >800:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANl
 # was defined in a psect then <psect> will be "-". File-name
 # is the name of the object file in which the symbol was defined.
 %SYMTAB
-_n 138 0 BANK1 1 bssBANK1 dist/default/production\parcheggio.X.production.obj
-_x DA 0 BANK0 1 bssBANK0 dist/default/production\parcheggio.X.production.obj
-_z 15 0 COMRAM 1 bssCOMRAM dist/default/production\parcheggio.X.production.obj
-__LdataBANK0 0 0 ABS 0 dataBANK0 dist/default/production\parcheggio.X.production.obj
-__LdataBANK1 0 0 ABS 0 dataBANK1 dist/default/production\parcheggio.X.production.obj
-CANSetMask@mask 77 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
-CANSetMask@tamp 81 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
-CANSetMask@type 7B 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
-ISR_Bassa@i 53 0 COMRAM 1 cstackCOMRAM dist/default/production\parcheggio.X.production.obj
-__Lmediumconst 0 0 MEDIUMCONST 0 mediumconst dist/default/production\parcheggio.X.production.obj
-__end_of_ISR_Bassa 308 0 CODE 0 intcodelo dist/default/production\parcheggio.X.production.obj
-__Hspace_0 30000E 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-__Hspace_1 2B0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-__Hspace_2 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_data_correction 163 0 BANK1 1 bssBANK1 dist/default/production\parcheggio.X.production.obj
-__CFG_IESO$OFF 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-CANSetMask@numBuffer 80 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
-__HidataBANK0 0 0 ABS 0 idataBANK0 dist/default/production\parcheggio.X.production.obj
-__HidataBANK1 0 0 ABS 0 idataBANK1 dist/default/production\parcheggio.X.production.obj
-__size_of_ISR_Bassa 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_RXM0EIDH F1A 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_RXM0EIDL F1B 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-frexp@eptr 7B 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
-_RXM0SIDH F18 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_RXM0SIDL F19 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_RXM1EIDH F1E 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_RXM1EIDL F1F 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_RXM1SIDH F1C 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_RXM1SIDL F1D 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_set_speed 25 0 COMRAM 1 bssCOMRAM dist/default/production\parcheggio.X.production.obj
-__Hibigdata 0 0 CODE 0 ibigdata dist/default/production\parcheggio.X.production.obj
-_RXB1DLCbits F55 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\Simone\AppData\Local\Temp\s6ec.obj
-__Heeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production\parcheggio.X.production.obj
-__CFG_MCLRE$ON 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_prima_sterzata 140 0 BANK1 1 bssBANK1 dist/default/production\parcheggio.X.production.obj
-__size_of_CANInitialize 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-?_abs 77 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
-?_cos 1B4 0 BANK1 1 cstackBANK1 dist/default/production\parcheggio.X.production.obj
-?_sin 19D 0 BANK1 1 cstackBANK1 dist/default/production\parcheggio.X.production.obj
-__end_of_park_search 5A4C 0 CODE 0 text1 dist/default/production\parcheggio.X.production.obj
-__Lsmallconst D00 0 SMALLCONST 0 smallconst dist/default/production\parcheggio.X.production.obj
-_LATA F89 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_LATB F8A 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_LATC F8B 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-___sp 0 0 STACK 2 stack C:\Users\Simone\AppData\Local\Temp\s6ec.obj
-_alfa 124 0 BANK1 1 bssBANK1 dist/default/production\parcheggio.X.production.obj
-_asin 4D10 0 CODE 0 text16 dist/default/production\parcheggio.X.production.obj
-_asus 2A 0 COMRAM 1 bssCOMRAM dist/default/production\parcheggio.X.production.obj
-_atan 52A6 0 CODE 0 text18 dist/default/production\parcheggio.X.production.obj
-_beta 128 0 BANK1 1 bssBANK1 dist/default/production\parcheggio.X.production.obj
-_data 153 0 BANK1 1 bssBANK1 dist/default/production\parcheggio.X.production.obj
-_fabs 655A 0 CODE 0 text19 dist/default/production\parcheggio.X.production.obj
-_main 621C 0 CODE 0 text0 dist/default/production\parcheggio.X.production.obj
-_sqrt 3ED0 0 CODE 0 text17 dist/default/production\parcheggio.X.production.obj
-abs@a 77 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
-btemp 56 0 COMRAM 1 temp dist/default/production\parcheggio.X.production.obj
-cos@f 1B4 0 BANK1 1 cstackBANK1 dist/default/production\parcheggio.X.production.obj
-sin@f 19D 0 BANK1 1 cstackBANK1 dist/default/production\parcheggio.X.production.obj
-sin@y 1A1 0 BANK1 1 cstackBANK1 dist/default/production\parcheggio.X.production.obj
-start 308 0 CODE 0 init C:\Users\Simone\AppData\Local\Temp\s6ec.obj
-___flmul@aexp 9D 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
-___flmul@bexp A2 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
-___flmul@prod A3 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
-___flmul@sign 9C 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
-___flmul@temp A7 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
-_ISR_Bassa 18 0 CODE 0 intcodelo dist/default/production\parcheggio.X.production.obj
-_CANisTxReady 6698 0 CODE 0 text6 dist/default/production\parcheggio.X.production.obj
-__size_of___fladd 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-__size_of___fldiv 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-__size_of___flmul 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-__size_of___flneg 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-__size_of___flsub 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-__size_of___fltol 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-__size_of_asin 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-__size_of_atan 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-__size_of_fabs 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-__size_of_main 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-__size_of_sqrt 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-__size_of___lwdiv 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_TXB1DLCbits F35 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-__end_of_CANSetMask 49F8 0 CODE 0 text31 dist/default/production\parcheggio.X.production.obj
-__HbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/production\parcheggio.X.production.obj
-?___wmul 77 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
-__size_of_can_interpreter 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-CANOperationMode@mode 77 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
-__LidataBANK0 0 0 ABS 0 idataBANK0 dist/default/production\parcheggio.X.production.obj
-__LidataBANK1 0 0 ABS 0 idataBANK1 dist/default/production\parcheggio.X.production.obj
-__size_ofi1_CANisTxReady 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_RXM1SIDLbits F1D 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-__Hpowerup 308 0 CODE 0 powerup dist/default/production\parcheggio.X.production.obj
-_RXB0DLCbits F65 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-__pbitbssCOMRAM 2A0 -24C COMRAM 1 bitbssCOMRAM dist/default/production\parcheggio.X.production.obj
-sin@x2 1A9 0 BANK1 1 cstackBANK1 dist/default/production\parcheggio.X.production.obj
-delay_s@value_s 7F 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
-sqrt@a C1 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
-sqrt@i 18C 0 BANK1 1 cstackBANK1 dist/default/production\parcheggio.X.production.obj
-sqrt@p 191 0 BANK1 1 cstackBANK1 dist/default/production\parcheggio.X.production.obj
-_distance E2 0 BANK0 1 bssBANK0 dist/default/production\parcheggio.X.production.obj
-_T0CONbits FD5 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-__end_of_CANInitialize 588C 0 CODE 0 text30 dist/default/production\parcheggio.X.production.obj
-__accesstop 60 0 ABS 0 - C:\Users\Simone\AppData\Local\Temp\s6ec.obj
-intlevel0 0 0 CODE 0 text C:\Users\Simone\AppData\Local\Temp\s6ec.obj
-intlevel1 0 0 CODE 0 text C:\Users\Simone\AppData\Local\Temp\s6ec.obj
-intlevel2 0 0 CODE 0 text C:\Users\Simone\AppData\Local\Temp\s6ec.obj
-intlevel3 0 0 CODE 0 text C:\Users\Simone\AppData\Local\Temp\s6ec.obj
-__LbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/production\parcheggio.X.production.obj
-_alignment_gap 11 0 COMRAM 1 bssCOMRAM dist/default/production\parcheggio.X.production.obj
-__LnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/production\parcheggio.X.production.obj
-sqrt@tfrac 18D 0 BANK1 1 cstackBANK1 dist/default/production\parcheggio.X.production.obj
-__CFG_EBTR0$OFF 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-__CFG_EBTR1$OFF 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-__CFG_EBTR2$OFF 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-__CFG_EBTR3$OFF 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_TXB0DLCbits F45 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-CANSetFilter@filter 77 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
-i1_CANsendMessage 1FE4 0 CODE 0 text36 dist/default/production\parcheggio.X.production.obj
-__size_of_ISR_Alta 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-__CFG_EBTRB$OFF 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-__size_of_matematica 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_MUX_select 100 0 BANK1 1 bssBANK1 dist/default/production\parcheggio.X.production.obj
-__Hifardata 0 0 CODE 0 ifardata dist/default/production\parcheggio.X.production.obj
-__size_of_CANisTxReady 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_old_data_correction 2AB -24C COMRAM 1 bitbssCOMRAM dist/default/production\parcheggio.X.production.obj
-__Hclrtext 0 0 ABS 0 clrtext dist/default/production\parcheggio.X.production.obj
-_COMSTATbits F74 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_delay_s 666C 0 CODE 0 text26 dist/default/production\parcheggio.X.production.obj
-__end_ofatan@coeff_a D19 0 SMALLCONST 0 smallconst dist/default/production\parcheggio.X.production.obj
-__end_ofatan@coeff_b D2D 0 SMALLCONST 0 smallconst dist/default/production\parcheggio.X.production.obj
-_right_speed 23 0 COMRAM 1 bssCOMRAM dist/default/production\parcheggio.X.production.obj
-_matematica$3746 1BC 0 BANK1 1 cstackBANK1 dist/default/production\parcheggio.X.production.obj
-_matematica$3747 1C0 0 BANK1 1 cstackBANK1 dist/default/production\parcheggio.X.production.obj
-_matematica$3748 1C4 0 BANK1 1 cstackBANK1 dist/default/production\parcheggio.X.production.obj
-_matematica$3749 1C8 0 BANK1 1 cstackBANK1 dist/default/production\parcheggio.X.production.obj
-_matematica$3750 1D4 0 BANK1 1 cstackBANK1 dist/default/production\parcheggio.X.production.obj
-_matematica$3751 1CC 0 BANK1 1 cstackBANK1 dist/default/production\parcheggio.X.production.obj
-_matematica$3752 1D0 0 BANK1 1 cstackBANK1 dist/default/production\parcheggio.X.production.obj
-i1CANsendMessage@identifier 2D 0 COMRAM 1 cstackCOMRAM dist/default/production\parcheggio.X.production.obj
-___wmul@multiplicand 79 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
-_request_sent 2AC -24C COMRAM 1 bitbssCOMRAM dist/default/production\parcheggio.X.production.obj
-_ADCON1 FC1 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-CANSetFilter@tamp 81 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
-CANSetFilter@type 7B 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
-___inthi_sp 0 0 STACK 2 stack C:\Users\Simone\AppData\Local\Temp\s6ec.obj
-___intlo_sp 0 0 STACK 2 stack C:\Users\Simone\AppData\Local\Temp\s6ec.obj
-_CANCON F6F 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-__Hintcode_body 0 0 ABS 0 intcode_body dist/default/production\parcheggio.X.production.obj
-__end_of___flge 5BDC 0 CODE 0 text24 dist/default/production\parcheggio.X.production.obj
-__end_of___wmul 6640 0 CODE 0 text28 dist/default/production\parcheggio.X.production.obj
-__end_of_CANisTxReady 66BC 0 CODE 0 text6 dist/default/production\parcheggio.X.production.obj
-_distance_wait 2A7 -24C COMRAM 1 bitbssCOMRAM dist/default/production\parcheggio.X.production.obj
-__Lintsave_regs 0 0 BIGRAM 1 intsave_regs dist/default/production\parcheggio.X.production.obj
-_Pminimo 120 0 BANK1 1 bssBANK1 dist/default/production\parcheggio.X.production.obj
-_TXB0DLC F45 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_TXB1DLC F35 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_TXB2DLC F25 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_data_brake 15B 0 BANK1 1 bssBANK1 dist/default/production\parcheggio.X.production.obj
-___fldiv@aexp 8F 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
-___fldiv@bexp 8E 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
-___fldiv@sign 83 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
-__Hmediumconst 0 0 MEDIUMCONST 0 mediumconst dist/default/production\parcheggio.X.production.obj
-_data_speed 16B 0 BANK1 1 bssBANK1 dist/default/production\parcheggio.X.production.obj
-__Hintcodelo 308 0 CODE 0 intcodelo dist/default/production\parcheggio.X.production.obj
-__end_of___fladd 35B2 0 CODE 0 text23 dist/default/production\parcheggio.X.production.obj
-__end_of___fldiv 465A 0 CODE 0 text25 dist/default/production\parcheggio.X.production.obj
-__end_of___flmul 3A58 0 CODE 0 text22 dist/default/production\parcheggio.X.production.obj
-__end_of___flneg 660A 0 CODE 0 text20 dist/default/production\parcheggio.X.production.obj
-__end_of___flsub 655A 0 CODE 0 text15 dist/default/production\parcheggio.X.production.obj
-__end_of___fltol 6058 0 CODE 0 text14 dist/default/production\parcheggio.X.production.obj
-CANInitialize@flags 89 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
-__end_of___lwdiv 63E2 0 CODE 0 text40 dist/default/production\parcheggio.X.production.obj
-delay_s@repeat_loop 80 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
-_spazio_parcheggio E6 0 BANK0 1 dataBANK0 dist/default/production\parcheggio.X.production.obj
-__size_of_CANsendMessage 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-__CFG_BOREN$BOHW 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-?_eval_poly BD 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
-_request_sent1 2AD -24C COMRAM 1 bitbssCOMRAM dist/default/production\parcheggio.X.production.obj
-_ISR_Alta 8 0 CODE 0 intcode dist/default/production\parcheggio.X.production.obj
-___lwdiv@quotient 65 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
-__size_of_floor 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-__size_of_frexp 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-___fladd@a AD 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
-___fladd@b A9 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
-___fldiv@a 7B 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
-___fldiv@b 77 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
-___flmul@a 94 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
-___flmul@b 90 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
-___flsub@a 199 0 BANK1 1 cstackBANK1 dist/default/production\parcheggio.X.production.obj
-___flsub@b 195 0 BANK1 1 cstackBANK1 dist/default/production\parcheggio.X.production.obj
-_steering_correction 2C 0 COMRAM 1 bssCOMRAM dist/default/production\parcheggio.X.production.obj
-_distance_received 2A5 -24C COMRAM 1 bitbssCOMRAM dist/default/production\parcheggio.X.production.obj
-__end_of_ISR_Alta 621C 0 CODE 0 intcode_body dist/default/production\parcheggio.X.production.obj
-_INTCON2bits FF1 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-i1CANsendMessage@dataLength 33 0 COMRAM 1 cstackCOMRAM dist/default/production\parcheggio.X.production.obj
-__Lintcodelo 18 0 CODE 0 intcodelo dist/default/production\parcheggio.X.production.obj
-_CANSetFilter D52 0 CODE 0 text32 dist/default/production\parcheggio.X.production.obj
-__CFG_FCMEN$OFF 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_park_routine 3A58 0 CODE 0 text2 dist/default/production\parcheggio.X.production.obj
-_TXB1SIDLbits F32 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-start_initialization 63E2 0 CODE 0 cinit dist/default/production\parcheggio.X.production.obj
-__size_of_park_search 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-__HnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/production\parcheggio.X.production.obj
-__end_ofi1_CANsendMessage 2674 0 CODE 0 text36 dist/default/production\parcheggio.X.production.obj
-__end_of_parallelo 52A6 0 CODE 0 text3 dist/default/production\parcheggio.X.production.obj
-_TRISBbits F93 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-CANInitialize@FilterConfig1 8F 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
-CANInitialize@FilterConfig2 90 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
-CANSetFilter@numBuffer 80 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
-__size_of_parallelo 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-___rparam_used 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_clock_counter_reference E0 0 BANK0 1 bssBANK0 dist/default/production\parcheggio.X.production.obj
-__size_ofi1_CANsendMessage 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_RXB0D0 F66 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_RXB0D1 F67 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_RXB0D2 F68 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_RXB0D3 F69 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_RXB0D4 F6A 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_RXB0D5 F6B 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_RXB0D6 F6C 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_RXB0D7 F6D 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_RXB1D0 F56 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_RXB1D1 F57 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_RXB1D2 F58 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_RXB1D3 F59 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_RXB1D4 F5A 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_RXB1D5 F5B 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_RXB1D6 F5C 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_RXB1D7 F5D 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-__CFG_WDTPS$32768 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-i1_CANisTxReady$2845 2D 0 COMRAM 1 cstackCOMRAM dist/default/production\parcheggio.X.production.obj
-__pcstackBANK0 60 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
-__pcstackBANK1 18B 0 BANK1 1 cstackBANK1 dist/default/production\parcheggio.X.production.obj
-_RXF4SIDLbits F11 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_IPR3bits FA5 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-CANInitialize@phaseSeg1 85 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
-CANInitialize@phaseSeg2 86 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
-_TXB0D0 F46 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_TXB0D1 F47 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_TXB0D2 F48 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_TXB0D3 F49 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_TXB0D4 F4A 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_TXB0D5 F4B 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_TXB0D6 F4C 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_TXB0D7 F4D 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_TXB1D0 F36 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_TXB1D1 F37 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_TXB1D2 F38 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_TXB1D3 F39 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_TXB1D4 F3A 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_TXB1D5 F3B 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_TXB1D6 F3C 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_TXB1D7 F3D 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_TXB2D0 F26 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_TXB2D1 F27 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_TXB2D2 F28 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_TXB2D3 F29 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_TXB2D4 F2A 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_TXB2D5 F2B 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_TXB2D6 F2C 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_TXB2D7 F2D 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-__size_of_CANSetMask 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_parallelo 5022 0 CODE 0 text3 dist/default/production\parcheggio.X.production.obj
-_configurazione 6452 0 CODE 0 text29 dist/default/production\parcheggio.X.production.obj
-_steering_correction_dir 2AF -24C COMRAM 1 bitbssCOMRAM dist/default/production\parcheggio.X.production.obj
-can_send@data_correction1 87 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
-__Hbank0 0 0 ABS 0 bank0 dist/default/production\parcheggio.X.production.obj
-__Hbank1 0 0 ABS 0 bank1 dist/default/production\parcheggio.X.production.obj
-__Hbank2 0 0 ABS 0 bank2 dist/default/production\parcheggio.X.production.obj
-__Hbank3 0 0 ABS 0 bank3 dist/default/production\parcheggio.X.production.obj
-__Hbank4 0 0 ABS 0 bank4 dist/default/production\parcheggio.X.production.obj
-__Hbank5 0 0 ABS 0 bank5 dist/default/production\parcheggio.X.production.obj
-__Hbank6 0 0 ABS 0 bank6 dist/default/production\parcheggio.X.production.obj
-__Hbank7 0 0 ABS 0 bank7 dist/default/production\parcheggio.X.production.obj
-__Hbank8 0 0 ABS 0 bank8 dist/default/production\parcheggio.X.production.obj
-__Hbank9 0 0 ABS 0 bank9 dist/default/production\parcheggio.X.production.obj
-__size_of_CANSetFilter 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-__Hcinit 0 0 ABS 0 cinit dist/default/production\parcheggio.X.production.obj
-__Hconst 0 0 CODE 0 const dist/default/production\parcheggio.X.production.obj
-__Hidata 0 0 CODE 0 idata dist/default/production\parcheggio.X.production.obj
-__Hidloc 200008 0 IDLOC 0 idloc dist/default/production\parcheggio.X.production.obj
-__size_of_park_routine 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-__Hnvbit 0 0 COMRAM 1 nvbit dist/default/production\parcheggio.X.production.obj
-__Hparam 0 0 BANK0 1 param0 dist/default/production\parcheggio.X.production.obj
-__Hrdata 0 0 COMRAM 1 rdata dist/default/production\parcheggio.X.production.obj
-__Hstack 0 0 STACK 2 stack dist/default/production\parcheggio.X.production.obj
-__Htext0 0 0 ABS 0 text0 dist/default/production\parcheggio.X.production.obj
-__Htext1 0 0 ABS 0 text1 dist/default/production\parcheggio.X.production.obj
-__Htext2 0 0 ABS 0 text2 dist/default/production\parcheggio.X.production.obj
-__Htext3 0 0 ABS 0 text3 dist/default/production\parcheggio.X.production.obj
-__Htext4 0 0 ABS 0 text4 dist/default/production\parcheggio.X.production.obj
-__Htext5 0 0 ABS 0 text5 dist/default/production\parcheggio.X.production.obj
-__Htext6 0 0 ABS 0 text6 dist/default/production\parcheggio.X.production.obj
-__Htext7 0 0 ABS 0 text7 dist/default/production\parcheggio.X.production.obj
-__Htext8 0 0 ABS 0 text8 dist/default/production\parcheggio.X.production.obj
-__Htext9 0 0 ABS 0 text9 dist/default/production\parcheggio.X.production.obj
-sin@coeff_a D2D 0 SMALLCONST 0 smallconst dist/default/production\parcheggio.X.production.obj
-sin@coeff_b D41 0 SMALLCONST 0 smallconst dist/default/production\parcheggio.X.production.obj
-___lwdiv@counter 64 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
-_old_alignment_gap 13C 0 BANK1 1 bssBANK1 dist/default/production\parcheggio.X.production.obj
-__Hbank10 0 0 ABS 0 bank10 dist/default/production\parcheggio.X.production.obj
-__Hbank11 0 0 ABS 0 bank11 dist/default/production\parcheggio.X.production.obj
-__Hbank12 0 0 ABS 0 bank12 dist/default/production\parcheggio.X.production.obj
-__size_of___xxtofl 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-__Hbigbss 0 0 BIGRAM 1 bigbss dist/default/production\parcheggio.X.production.obj
-__Hbigram 0 0 ABS 0 bigram dist/default/production\parcheggio.X.production.obj
-__smallconst D00 0 SMALLCONST 0 smallconst C:\Users\Simone\AppData\Local\Temp\s6ec.obj
-___xxtofl@arg D5 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
-___xxtofl@exp D4 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
-___xxtofl@val CB 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
-__Hcomram 0 0 ABS 0 comram dist/default/production\parcheggio.X.production.obj
-__Hconfig 30000E 0 CONFIG 0 config dist/default/production\parcheggio.X.production.obj
-__CFG_LPT1OSC$OFF 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-CANInitialize@BRP 88 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
-CANInitialize@SJW 87 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
-__Lbank0 0 0 ABS 0 bank0 dist/default/production\parcheggio.X.production.obj
-__Lbank1 0 0 ABS 0 bank1 dist/default/production\parcheggio.X.production.obj
-__Lbank2 0 0 ABS 0 bank2 dist/default/production\parcheggio.X.production.obj
-__Lbank3 0 0 ABS 0 bank3 dist/default/production\parcheggio.X.production.obj
-__Lbank4 0 0 ABS 0 bank4 dist/default/production\parcheggio.X.production.obj
-__Lbank5 0 0 ABS 0 bank5 dist/default/production\parcheggio.X.production.obj
-__Lbank6 0 0 ABS 0 bank6 dist/default/production\parcheggio.X.production.obj
-__Lbank7 0 0 ABS 0 bank7 dist/default/production\parcheggio.X.production.obj
-__Lbank8 0 0 ABS 0 bank8 dist/default/production\parcheggio.X.production.obj
-__Lbank9 0 0 ABS 0 bank9 dist/default/production\parcheggio.X.production.obj
-__Lcinit 0 0 ABS 0 cinit dist/default/production\parcheggio.X.production.obj
-__Lconst 0 0 CODE 0 const dist/default/production\parcheggio.X.production.obj
-__Lidata 0 0 CODE 0 idata dist/default/production\parcheggio.X.production.obj
-__Lidloc 200000 0 IDLOC 0 idloc dist/default/production\parcheggio.X.production.obj
-__Lnvbit 0 0 COMRAM 1 nvbit dist/default/production\parcheggio.X.production.obj
-__Lparam 0 0 BANK0 1 param0 dist/default/production\parcheggio.X.production.obj
-__Lrdata 0 0 COMRAM 1 rdata dist/default/production\parcheggio.X.production.obj
-__Lstack 0 0 STACK 2 stack dist/default/production\parcheggio.X.production.obj
-__Ltext0 0 0 ABS 0 text0 dist/default/production\parcheggio.X.production.obj
-__Ltext1 0 0 ABS 0 text1 dist/default/production\parcheggio.X.production.obj
-__Ltext2 0 0 ABS 0 text2 dist/default/production\parcheggio.X.production.obj
-__Ltext3 0 0 ABS 0 text3 dist/default/production\parcheggio.X.production.obj
-__Ltext4 0 0 ABS 0 text4 dist/default/production\parcheggio.X.production.obj
-__Ltext5 0 0 ABS 0 text5 dist/default/production\parcheggio.X.production.obj
-__Ltext6 0 0 ABS 0 text6 dist/default/production\parcheggio.X.production.obj
-__Ltext7 0 0 ABS 0 text7 dist/default/production\parcheggio.X.production.obj
-__Ltext8 0 0 ABS 0 text8 dist/default/production\parcheggio.X.production.obj
-__Ltext9 0 0 ABS 0 text9 dist/default/production\parcheggio.X.production.obj
-_RXF2SIDLbits F09 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-i1CANsendMessage@data 31 0 COMRAM 1 cstackCOMRAM dist/default/production\parcheggio.X.production.obj
-i1CANsendMessage@tamp 39 0 COMRAM 1 cstackCOMRAM dist/default/production\parcheggio.X.production.obj
-__Hfarbss 0 0 FARRAM 0 farbss dist/default/production\parcheggio.X.production.obj
-___flmul@grs 9E 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
-__Lintcode_body 0 0 ABS 0 intcode_body dist/default/production\parcheggio.X.production.obj
-_PORTBbits F81 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_INTCONbits FF2 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-delay_ms@value_ms 7D 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
-__Habs1 0 0 ABS 0 abs1 dist/default/production\parcheggio.X.production.obj
-__Hdata 0 0 ABS 0 data dist/default/production\parcheggio.X.production.obj
-__Hinit 308 0 CODE 0 init dist/default/production\parcheggio.X.production.obj
-__Hrbit 0 0 COMRAM 1 rbit dist/default/production\parcheggio.X.production.obj
-__Hrbss 0 0 COMRAM 1 rbss dist/default/production\parcheggio.X.production.obj
-__Htemp 57 0 COMRAM 1 temp dist/default/production\parcheggio.X.production.obj
-__Htext 0 0 ABS 0 text dist/default/production\parcheggio.X.production.obj
-__Labs1 0 0 ABS 0 abs1 dist/default/production\parcheggio.X.production.obj
-__Ldata 0 0 ABS 0 data dist/default/production\parcheggio.X.production.obj
-__Linit 308 0 CODE 0 init dist/default/production\parcheggio.X.production.obj
-__Lrbit 0 0 COMRAM 1 rbit dist/default/production\parcheggio.X.production.obj
-__Lrbss 0 0 COMRAM 1 rbss dist/default/production\parcheggio.X.production.obj
-__Ltemp 56 0 COMRAM 1 temp dist/default/production\parcheggio.X.production.obj
-__Ltext 0 0 ABS 0 text dist/default/production\parcheggio.X.production.obj
-__CFG_XINST$OFF 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-__end_of_CANSetFilter 1858 0 CODE 0 text32 dist/default/production\parcheggio.X.production.obj
-__end_of_park_routine 3ED0 0 CODE 0 text2 dist/default/production\parcheggio.X.production.obj
-___flge 5A4C 0 CODE 0 text24 dist/default/production\parcheggio.X.production.obj
-___wmul 660A 0 CODE 0 text28 dist/default/production\parcheggio.X.production.obj
-__LcstackBANK0 0 0 ABS 0 cstackBANK0 dist/default/production\parcheggio.X.production.obj
-__LcstackBANK1 0 0 ABS 0 cstackBANK1 dist/default/production\parcheggio.X.production.obj
-_RXB0SIDLbits F62 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-int$flags 56 0 COMRAM 1 temp dist/default/production\parcheggio.X.production.obj
-__HcstackCOMRAM 0 0 ABS 0 cstackCOMRAM dist/default/production\parcheggio.X.production.obj
-__Hintret 0 0 ABS 0 intret dist/default/production\parcheggio.X.production.obj
-__Hirdata 0 0 CODE 0 irdata dist/default/production\parcheggio.X.production.obj
-__S0 30000E 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-__S1 1EC 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-__S2 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_abs 6640 0 CODE 0 text7 dist/default/production\parcheggio.X.production.obj
-_asd 2A1 -24C COMRAM 1 bitbssCOMRAM dist/default/production\parcheggio.X.production.obj
-_cos 6058 0 CODE 0 text9 dist/default/production\parcheggio.X.production.obj
-_dir 2A3 -24C COMRAM 1 bitbssCOMRAM dist/default/production\parcheggio.X.production.obj
-_jjj 130 0 BANK1 1 bssBANK1 dist/default/production\parcheggio.X.production.obj
-_kkk 134 0 BANK1 1 bssBANK1 dist/default/production\parcheggio.X.production.obj
-_msg 144 0 BANK1 1 bssBANK1 dist/default/production\parcheggio.X.production.obj
-_sin 49F8 0 CODE 0 text10 dist/default/production\parcheggio.X.production.obj
-_CANisTxReady$2845 77 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
-_timerValue2 27 0 COMRAM 1 bssCOMRAM dist/default/production\parcheggio.X.production.obj
-__size_of_CANreceiveMessage 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-__end_of_configurazione 64BE 0 CODE 0 text29 dist/default/production\parcheggio.X.production.obj
-__CFG_PBADEN$OFF 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_distance_error 2A4 -24C COMRAM 1 bitbssCOMRAM dist/default/production\parcheggio.X.production.obj
-_data_test 17B 0 BANK1 1 bssBANK1 dist/default/production\parcheggio.X.production.obj
-eval_poly@res C9 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
-__Lbigdata 0 0 BIGRAM 1 bigdata dist/default/production\parcheggio.X.production.obj
-__Hnvrram 0 0 COMRAM 1 nvrram dist/default/production\parcheggio.X.production.obj
-_data_speed_rx 108 0 BANK1 1 bssBANK1 dist/default/production\parcheggio.X.production.obj
-_RXF0SIDLbits F01 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-___xxtofl 54F8 0 CODE 0 text13 dist/default/production\parcheggio.X.production.obj
-__end_of_abs 666C 0 CODE 0 text7 dist/default/production\parcheggio.X.production.obj
-__end_of_cos 613C 0 CODE 0 text9 dist/default/production\parcheggio.X.production.obj
-__end_of_sin 4D10 0 CODE 0 text10 dist/default/production\parcheggio.X.production.obj
-__Hparam0 0 0 BANK0 1 param0 dist/default/production\parcheggio.X.production.obj
-__end_ofsin@coeff_a D41 0 SMALLCONST 0 smallconst dist/default/production\parcheggio.X.production.obj
-__end_ofsin@coeff_b D51 0 SMALLCONST 0 smallconst dist/default/production\parcheggio.X.production.obj
-int_func 613C 0 CODE 0 intcode_body dist/default/production\parcheggio.X.production.obj
-_MUX_index 29 0 COMRAM 1 bssCOMRAM dist/default/production\parcheggio.X.production.obj
-_gianni 2B 0 COMRAM 1 bssCOMRAM dist/default/production\parcheggio.X.production.obj
-i1_CANisTxReady 66BC 0 CODE 0 text37 dist/default/production\parcheggio.X.production.obj
-__Lintentry 0 0 ABS 0 intentry dist/default/production\parcheggio.X.production.obj
-__Hramtop D00 0 RAM 0 ramtop dist/default/production\parcheggio.X.production.obj
-_asin$3753 1B0 0 BANK1 1 cstackBANK1 dist/default/production\parcheggio.X.production.obj
-_asin$3754 1A8 0 BANK1 1 cstackBANK1 dist/default/production\parcheggio.X.production.obj
-_asin$3755 1A4 0 BANK1 1 cstackBANK1 dist/default/production\parcheggio.X.production.obj
-__end_of___xxtofl 56C6 0 CODE 0 text13 dist/default/production\parcheggio.X.production.obj
-asin@sgn 1A0 0 BANK1 1 cstackBANK1 dist/default/production\parcheggio.X.production.obj
-__pdataBANK0 E6 0 BANK0 1 dataBANK0 dist/default/production\parcheggio.X.production.obj
-__pdataBANK1 1E4 0 BANK1 1 dataBANK1 dist/default/production\parcheggio.X.production.obj
-__activetblptr 3 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_new_distance 2AA -24C COMRAM 1 bitbssCOMRAM dist/default/production\parcheggio.X.production.obj
-_start_operation 2AE -24C COMRAM 1 bitbssCOMRAM dist/default/production\parcheggio.X.production.obj
-__Hstruct 0 0 COMRAM 1 struct dist/default/production\parcheggio.X.production.obj
-__size_of___flge 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-__size_of___wmul 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-__LbssBANK0 0 0 ABS 0 bssBANK0 dist/default/production\parcheggio.X.production.obj
-__LbssBANK1 0 0 ABS 0 bssBANK1 dist/default/production\parcheggio.X.production.obj
-sin@sgn 1AD 0 BANK1 1 cstackBANK1 dist/default/production\parcheggio.X.production.obj
-__Htext10 0 0 ABS 0 text10 dist/default/production\parcheggio.X.production.obj
-__Htext11 0 0 ABS 0 text11 dist/default/production\parcheggio.X.production.obj
-__Htext12 0 0 ABS 0 text12 dist/default/production\parcheggio.X.production.obj
-__Htext13 0 0 ABS 0 text13 dist/default/production\parcheggio.X.production.obj
-__Htext14 0 0 ABS 0 text14 dist/default/production\parcheggio.X.production.obj
-__Htext15 0 0 ABS 0 text15 dist/default/production\parcheggio.X.production.obj
-__Htext16 0 0 ABS 0 text16 dist/default/production\parcheggio.X.production.obj
-__Htext17 0 0 ABS 0 text17 dist/default/production\parcheggio.X.production.obj
-__Htext18 0 0 ABS 0 text18 dist/default/production\parcheggio.X.production.obj
-__Htext19 0 0 ABS 0 text19 dist/default/production\parcheggio.X.production.obj
-__Htext20 0 0 ABS 0 text20 dist/default/production\parcheggio.X.production.obj
-__Htext21 0 0 ABS 0 text21 dist/default/production\parcheggio.X.production.obj
-__Htext22 0 0 ABS 0 text22 dist/default/production\parcheggio.X.production.obj
-__Htext23 0 0 ABS 0 text23 dist/default/production\parcheggio.X.production.obj
-__Htext24 0 0 ABS 0 text24 dist/default/production\parcheggio.X.production.obj
-__Htext25 0 0 ABS 0 text25 dist/default/production\parcheggio.X.production.obj
-__Htext26 0 0 ABS 0 text26 dist/default/production\parcheggio.X.production.obj
-__Htext27 0 0 ABS 0 text27 dist/default/production\parcheggio.X.production.obj
-__Htext28 0 0 ABS 0 text28 dist/default/production\parcheggio.X.production.obj
-__Htext29 0 0 ABS 0 text29 dist/default/production\parcheggio.X.production.obj
-__Htext30 0 0 ABS 0 text30 dist/default/production\parcheggio.X.production.obj
-__Htext31 0 0 ABS 0 text31 dist/default/production\parcheggio.X.production.obj
-__Htext32 0 0 ABS 0 text32 dist/default/production\parcheggio.X.production.obj
-__Htext33 0 0 ABS 0 text33 dist/default/production\parcheggio.X.production.obj
-__Htext34 0 0 ABS 0 text34 dist/default/production\parcheggio.X.production.obj
-__Htext36 0 0 ABS 0 text36 dist/default/production\parcheggio.X.production.obj
-__Htext37 0 0 ABS 0 text37 dist/default/production\parcheggio.X.production.obj
-__Htext38 0 0 ABS 0 text38 dist/default/production\parcheggio.X.production.obj
-__Htext40 0 0 ABS 0 text40 dist/default/production\parcheggio.X.production.obj
-__CFG_BBSIZ$1024 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-CANsendMessage@identifier 77 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
-_PIE3bits FA3 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_distance_average 19 0 COMRAM 1 bssCOMRAM dist/default/production\parcheggio.X.production.obj
-floor@expon 193 0 BANK1 1 cstackBANK1 dist/default/production\parcheggio.X.production.obj
-atan@val_squared 194 0 BANK1 1 cstackBANK1 dist/default/production\parcheggio.X.production.obj
-___fladd@signs B9 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
-__ptext10 49F8 0 CODE 0 text10 dist/default/production\parcheggio.X.production.obj
-__ptext11 5D10 0 CODE 0 text11 dist/default/production\parcheggio.X.production.obj
-__ptext12 62D6 0 CODE 0 text12 dist/default/production\parcheggio.X.production.obj
-__ptext13 54F8 0 CODE 0 text13 dist/default/production\parcheggio.X.production.obj
-__ptext14 5F4C 0 CODE 0 text14 dist/default/production\parcheggio.X.production.obj
-__ptext15 6512 0 CODE 0 text15 dist/default/production\parcheggio.X.production.obj
-__ptext16 4D10 0 CODE 0 text16 dist/default/production\parcheggio.X.production.obj
-__ptext17 3ED0 0 CODE 0 text17 dist/default/production\parcheggio.X.production.obj
-__ptext18 52A6 0 CODE 0 text18 dist/default/production\parcheggio.X.production.obj
-__ptext19 655A 0 CODE 0 text19 dist/default/production\parcheggio.X.production.obj
-__ptext20 65D2 0 CODE 0 text20 dist/default/production\parcheggio.X.production.obj
-__ptext21 5E34 0 CODE 0 text21 dist/default/production\parcheggio.X.production.obj
-__ptext22 35B2 0 CODE 0 text22 dist/default/production\parcheggio.X.production.obj
-__ptext23 310A 0 CODE 0 text23 dist/default/production\parcheggio.X.production.obj
-__ptext24 5A4C 0 CODE 0 text24 dist/default/production\parcheggio.X.production.obj
-__ptext25 429A 0 CODE 0 text25 dist/default/production\parcheggio.X.production.obj
-__ptext26 666C 0 CODE 0 text26 dist/default/production\parcheggio.X.production.obj
-__ptext27 6598 0 CODE 0 text27 dist/default/production\parcheggio.X.production.obj
-__ptext28 660A 0 CODE 0 text28 dist/default/production\parcheggio.X.production.obj
-__ptext29 6452 0 CODE 0 text29 dist/default/production\parcheggio.X.production.obj
-__ptext30 56C6 0 CODE 0 text30 dist/default/production\parcheggio.X.production.obj
-__ptext31 465A 0 CODE 0 text31 dist/default/production\parcheggio.X.production.obj
-__ptext32 D52 0 CODE 0 text32 dist/default/production\parcheggio.X.production.obj
-__ptext33 66DA 0 CODE 0 text33 dist/default/production\parcheggio.X.production.obj
-__ptext34 64BE 0 CODE 0 text34 dist/default/production\parcheggio.X.production.obj
-__ptext36 1FE4 0 CODE 0 text36 dist/default/production\parcheggio.X.production.obj
-__ptext37 66BC 0 CODE 0 text37 dist/default/production\parcheggio.X.production.obj
-__ptext38 2BFE 0 CODE 0 text38 dist/default/production\parcheggio.X.production.obj
-__ptext40 636A 0 CODE 0 text40 dist/default/production\parcheggio.X.production.obj
-__size_of_can_send 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_pulse_time 21 0 COMRAM 1 bssCOMRAM dist/default/production\parcheggio.X.production.obj
-___fladd 310A 0 CODE 0 text23 dist/default/production\parcheggio.X.production.obj
-___fldiv 429A 0 CODE 0 text25 dist/default/production\parcheggio.X.production.obj
-___flmul 35B2 0 CODE 0 text22 dist/default/production\parcheggio.X.production.obj
-___flneg 65D2 0 CODE 0 text20 dist/default/production\parcheggio.X.production.obj
-___flsub 6512 0 CODE 0 text15 dist/default/production\parcheggio.X.production.obj
-___fltol 5F4C 0 CODE 0 text14 dist/default/production\parcheggio.X.production.obj
-_larghezza 1E4 0 BANK1 1 dataBANK1 dist/default/production\parcheggio.X.production.obj
-__pintcode_body 613C 0 CODE 0 intcode_body dist/default/production\parcheggio.X.production.obj
-___lwdiv 636A 0 CODE 0 text40 dist/default/production\parcheggio.X.production.obj
-__Lbank10 0 0 ABS 0 bank10 dist/default/production\parcheggio.X.production.obj
-__Lbank11 0 0 ABS 0 bank11 dist/default/production\parcheggio.X.production.obj
-__Lbank12 0 0 ABS 0 bank12 dist/default/production\parcheggio.X.production.obj
-__Lbigbss 0 0 BIGRAM 1 bigbss dist/default/production\parcheggio.X.production.obj
-__Lbigram 0 0 ABS 0 bigram dist/default/production\parcheggio.X.production.obj
-__CFG_BORV$3 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-__size_of_delay_s 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-?_asin D5 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
-?_atan D1 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
-?_fabs C1 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
-?_sqrt C1 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
-__Lcomram 0 0 ABS 0 comram dist/default/production\parcheggio.X.production.obj
-__Lconfig 300000 0 CONFIG 0 config dist/default/production\parcheggio.X.production.obj
-_RXB0CON F60 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_RXB0DLC F65 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_RXB1CON F50 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_RXB1DLC F55 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-ISR_Bassa@gigi 52 0 COMRAM 1 cstackCOMRAM dist/default/production\parcheggio.X.production.obj
-___wmul@multiplier 77 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
-_LATBbits F8A 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-___fldiv@grs 8A 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
-___fldiv@rem 84 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
-_raggio 1E8 0 BANK1 1 dataBANK1 dist/default/production\parcheggio.X.production.obj
-_RXM0SIDLbits F19 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_park_search 588C 0 CODE 0 text1 dist/default/production\parcheggio.X.production.obj
-__Lfarbss 0 0 FARRAM 0 farbss dist/default/production\parcheggio.X.production.obj
-___lwdiv@divisor 62 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
-__Lfardata 0 0 FARRAM 0 fardata dist/default/production\parcheggio.X.production.obj
-sqrt@exp 196 0 BANK1 1 cstackBANK1 dist/default/production\parcheggio.X.production.obj
-sqrt@grs 192 0 BANK1 1 cstackBANK1 dist/default/production\parcheggio.X.production.obj
-___fldiv@new_exp 88 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
-__end_ofi1_CANisTxReady 66DA 0 CODE 0 text37 dist/default/production\parcheggio.X.production.obj
-stackhi CFF 0 ABS 0 - C:\Users\Simone\AppData\Local\Temp\s6ec.obj
-stacklo 1EC 0 ABS 0 - C:\Users\Simone\AppData\Local\Temp\s6ec.obj
-__Lintcode 8 0 CODE 0 intcode dist/default/production\parcheggio.X.production.obj
-_park_routine$3744 1DC 0 BANK1 1 cstackBANK1 dist/default/production\parcheggio.X.production.obj
-_park_routine$3745 1E0 0 BANK1 1 cstackBANK1 dist/default/production\parcheggio.X.production.obj
-__Lintret 0 0 ABS 0 intret dist/default/production\parcheggio.X.production.obj
-__Lirdata 0 0 CODE 0 irdata dist/default/production\parcheggio.X.production.obj
-__end_of_eval_poly 5F4C 0 CODE 0 text21 dist/default/production\parcheggio.X.production.obj
-___fladd@grs BC 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
-__CFG_LVP$OFF 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-__size_of_eval_poly 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_emergency 2A8 -24C COMRAM 1 bitbssCOMRAM dist/default/production\parcheggio.X.production.obj
-CANsendMessage@flags 7E 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
-_delay_quartz_frequency_value E8 0 BANK0 1 dataBANK0 dist/default/production\parcheggio.X.production.obj
-floor@i 18F 0 BANK1 1 cstackBANK1 dist/default/production\parcheggio.X.production.obj
-floor@x 18B 0 BANK1 1 cstackBANK1 dist/default/production\parcheggio.X.production.obj
-__Lspace_0 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-__Lspace_1 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-__Lspace_2 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-__pbssCOMRAM 1 0 COMRAM 1 bssCOMRAM dist/default/production\parcheggio.X.production.obj
-__HbitbssCOMRAM 0 0 ABS 0 bitbssCOMRAM dist/default/production\parcheggio.X.production.obj
-__HcstackBANK0 0 0 ABS 0 cstackBANK0 dist/default/production\parcheggio.X.production.obj
-__HcstackBANK1 0 0 ABS 0 cstackBANK1 dist/default/production\parcheggio.X.production.obj
-___flge@ff1 C5 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
-___flge@ff2 C9 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
-_matematica 2674 0 CODE 0 text8 dist/default/production\parcheggio.X.production.obj
-CANInitialize@propSeg 8E 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
-_CANsendMessage 1858 0 CODE 0 text5 dist/default/production\parcheggio.X.production.obj
-_PIR3bits FA4 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-__Lend_init 308 0 CODE 0 end_init dist/default/production\parcheggio.X.production.obj
-_activation 2A0 -24C COMRAM 1 bitbssCOMRAM dist/default/production\parcheggio.X.production.obj
-CANsendMessage@dataLength 7D 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
-__size_of_delay_ms 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-__LcstackCOMRAM 0 0 ABS 0 cstackCOMRAM dist/default/production\parcheggio.X.production.obj
-___fltol@exp1 CA 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
-_TXB2CONbits F20 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-end_of_initialization 6448 0 CODE 0 cinit dist/default/production\parcheggio.X.production.obj
-__end_of_CANreceiveMessage 310A 0 CODE 0 text38 dist/default/production\parcheggio.X.production.obj
-atan@recip 193 0 BANK1 1 cstackBANK1 dist/default/production\parcheggio.X.production.obj
-_can_send 5BDC 0 CODE 0 text4 dist/default/production\parcheggio.X.production.obj
-__Lnvrram 0 0 COMRAM 1 nvrram dist/default/production\parcheggio.X.production.obj
-__Hintentry 0 0 ABS 0 intentry dist/default/production\parcheggio.X.production.obj
-_data_steering 173 0 BANK1 1 bssBANK1 dist/default/production\parcheggio.X.production.obj
-__CFG_STVREN$ON 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_RCONbits FD0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_avvicinamento 2A2 -24C COMRAM 1 bitbssCOMRAM dist/default/production\parcheggio.X.production.obj
-__CFG_OSC$HS 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_eval_poly 5E34 0 CODE 0 text21 dist/default/production\parcheggio.X.production.obj
-___lwdiv@dividend 60 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
-?___fladd A9 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
-?___fldiv 77 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
-?___flmul 90 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
-?___flneg BD 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
-?___flsub 195 0 BANK1 1 cstackBANK1 dist/default/production\parcheggio.X.production.obj
-?___fltol C1 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
-__Lparam0 0 0 BANK0 1 param0 dist/default/production\parcheggio.X.production.obj
-?___lwdiv 60 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
-__Hreset_vec 4 0 CODE 0 reset_vec dist/default/production\parcheggio.X.production.obj
-__HbssBANK0 0 0 ABS 0 bssBANK0 dist/default/production\parcheggio.X.production.obj
-__HbssBANK1 0 0 ABS 0 bssBANK1 dist/default/production\parcheggio.X.production.obj
-_RXB1CONbits F50 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-__end_of_can_send 5D10 0 CODE 0 text4 dist/default/production\parcheggio.X.production.obj
-__Lramtop D00 0 RAM 0 ramtop dist/default/production\parcheggio.X.production.obj
-_TXB2SIDLbits F22 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_BRGCON1 F70 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_BRGCON2 F71 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_BRGCON3 F72 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_TXB0EIDH F43 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_TXB0EIDL F44 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_TXB0SIDH F41 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_TXB0SIDL F42 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-__pcinit 63E2 0 CODE 0 cinit dist/default/production\parcheggio.X.production.obj
-_TXB1EIDH F33 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_TXB1EIDL F34 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_TXB1SIDH F31 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_TXB1SIDL F32 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_TXB2EIDH F23 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_TXB2EIDL F24 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_TXB2SIDH F21 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_TXB2SIDL F22 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-___flneg@f1 BD 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
-__ptext0 621C 0 CODE 0 text0 dist/default/production\parcheggio.X.production.obj
-__ptext1 588C 0 CODE 0 text1 dist/default/production\parcheggio.X.production.obj
-__ptext2 3A58 0 CODE 0 text2 dist/default/production\parcheggio.X.production.obj
-__ptext3 5022 0 CODE 0 text3 dist/default/production\parcheggio.X.production.obj
-__ptext4 5BDC 0 CODE 0 text4 dist/default/production\parcheggio.X.production.obj
-__ptext5 1858 0 CODE 0 text5 dist/default/production\parcheggio.X.production.obj
-__ptext6 6698 0 CODE 0 text6 dist/default/production\parcheggio.X.production.obj
-__ptext7 6640 0 CODE 0 text7 dist/default/production\parcheggio.X.production.obj
-__ptext8 2674 0 CODE 0 text8 dist/default/production\parcheggio.X.production.obj
-__ptext9 6058 0 CODE 0 text9 dist/default/production\parcheggio.X.production.obj
-__Lstruct 0 0 COMRAM 1 struct dist/default/production\parcheggio.X.production.obj
-atan@coeff_a D01 0 SMALLCONST 0 smallconst dist/default/production\parcheggio.X.production.obj
-atan@coeff_b D19 0 SMALLCONST 0 smallconst dist/default/production\parcheggio.X.production.obj
-__end_of_can_interpreter 6512 0 CODE 0 text34 dist/default/production\parcheggio.X.production.obj
-__Ltext10 0 0 ABS 0 text10 dist/default/production\parcheggio.X.production.obj
-__Ltext11 0 0 ABS 0 text11 dist/default/production\parcheggio.X.production.obj
-__Ltext12 0 0 ABS 0 text12 dist/default/production\parcheggio.X.production.obj
-__Ltext13 0 0 ABS 0 text13 dist/default/production\parcheggio.X.production.obj
-__Ltext14 0 0 ABS 0 text14 dist/default/production\parcheggio.X.production.obj
-__Ltext15 0 0 ABS 0 text15 dist/default/production\parcheggio.X.production.obj
-__Ltext16 0 0 ABS 0 text16 dist/default/production\parcheggio.X.production.obj
-__Ltext17 0 0 ABS 0 text17 dist/default/production\parcheggio.X.production.obj
-__Ltext18 0 0 ABS 0 text18 dist/default/production\parcheggio.X.production.obj
-__Ltext19 0 0 ABS 0 text19 dist/default/production\parcheggio.X.production.obj
-__Ltext20 0 0 ABS 0 text20 dist/default/production\parcheggio.X.production.obj
-__Ltext21 0 0 ABS 0 text21 dist/default/production\parcheggio.X.production.obj
-__Ltext22 0 0 ABS 0 text22 dist/default/production\parcheggio.X.production.obj
-__Ltext23 0 0 ABS 0 text23 dist/default/production\parcheggio.X.production.obj
-__Ltext24 0 0 ABS 0 text24 dist/default/production\parcheggio.X.production.obj
-__Ltext25 0 0 ABS 0 text25 dist/default/production\parcheggio.X.production.obj
-__Ltext26 0 0 ABS 0 text26 dist/default/production\parcheggio.X.production.obj
-__Ltext27 0 0 ABS 0 text27 dist/default/production\parcheggio.X.production.obj
-__Ltext28 0 0 ABS 0 text28 dist/default/production\parcheggio.X.production.obj
-__Ltext29 0 0 ABS 0 text29 dist/default/production\parcheggio.X.production.obj
-__Ltext30 0 0 ABS 0 text30 dist/default/production\parcheggio.X.production.obj
-__Ltext31 0 0 ABS 0 text31 dist/default/production\parcheggio.X.production.obj
-__Ltext32 0 0 ABS 0 text32 dist/default/production\parcheggio.X.production.obj
-__Ltext33 0 0 ABS 0 text33 dist/default/production\parcheggio.X.production.obj
-__Ltext34 0 0 ABS 0 text34 dist/default/production\parcheggio.X.production.obj
-__Ltext36 0 0 ABS 0 text36 dist/default/production\parcheggio.X.production.obj
-__Ltext37 0 0 ABS 0 text37 dist/default/production\parcheggio.X.production.obj
-__Ltext38 0 0 ABS 0 text38 dist/default/production\parcheggio.X.production.obj
-__Ltext40 0 0 ABS 0 text40 dist/default/production\parcheggio.X.production.obj
-__ramtop D00 0 RAM 0 ramtop C:\Users\Simone\AppData\Local\Temp\s6ec.obj
-atan@val 198 0 BANK1 1 cstackBANK1 dist/default/production\parcheggio.X.production.obj
-_CANOperationMode 66DA 0 CODE 0 text33 dist/default/production\parcheggio.X.production.obj
-__Lpowerup 308 0 CODE 0 powerup dist/default/production\parcheggio.X.production.obj
-?___xxtofl CB 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
-_sensor_distance_short 183 0 BANK1 1 bssBANK1 dist/default/production\parcheggio.X.production.obj
-__Leeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production\parcheggio.X.production.obj
-_TXB1CONbits F30 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-___fladd@aexp BA 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
-___fladd@bexp BB 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
-_TXERRCNT F76 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_BRGCON2bits F71 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_BRGCON3bits F72 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-___fltol@sign1 C9 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
-__psmallconst D00 0 SMALLCONST 0 smallconst dist/default/production\parcheggio.X.production.obj
-__end_of_delay_s 6698 0 CODE 0 text26 dist/default/production\parcheggio.X.production.obj
-_RXF5SIDLbits F15 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-__Lreset_vec 0 0 CODE 0 reset_vec dist/default/production\parcheggio.X.production.obj
-eval_poly@d C1 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
-eval_poly@n C3 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
-eval_poly@x BD 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
-_distance_set 110 0 BANK1 1 bssBANK1 dist/default/production\parcheggio.X.production.obj
-CANreceiveMessage@error 37 0 COMRAM 1 cstackCOMRAM dist/default/production\parcheggio.X.production.obj
-__end_of_CANsendMessage 1FE4 0 CODE 0 text5 dist/default/production\parcheggio.X.production.obj
-___fltol@f1 C1 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
-___param_bank 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_RXB0CONbits F60 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-__CFG_WDT$OFF 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-__Hbigdata 0 0 BIGRAM 1 bigdata dist/default/production\parcheggio.X.production.obj
-__end_of__initialization 6448 0 CODE 0 cinit dist/default/production\parcheggio.X.production.obj
-__CFG_WRT0$OFF 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-__CFG_WRT1$OFF 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-__CFG_WRT2$OFF 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_delay_ms 6598 0 CODE 0 text27 dist/default/production\parcheggio.X.production.obj
-__CFG_WRT3$OFF 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_distance_dx 1B 0 COMRAM 1 bssCOMRAM dist/default/production\parcheggio.X.production.obj
-_distance_sx 1D 0 COMRAM 1 bssCOMRAM dist/default/production\parcheggio.X.production.obj
-_CANInitialize 56C6 0 CODE 0 text30 dist/default/production\parcheggio.X.production.obj
-__end_of_matematica 2BFE 0 CODE 0 text8 dist/default/production\parcheggio.X.production.obj
-__CFG_WRTB$OFF 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-__Libigdata 0 0 CODE 0 ibigdata dist/default/production\parcheggio.X.production.obj
-__CFG_WRTC$OFF 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-__CFG_WRTD$OFF 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-frexp@value 77 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
-?_floor 18B 0 BANK1 1 cstackBANK1 dist/default/production\parcheggio.X.production.obj
-__pidataBANK0 66F8 0 CODE 0 idataBANK0 dist/default/production\parcheggio.X.production.obj
-__pidataBANK1 66F0 0 CODE 0 idataBANK1 dist/default/production\parcheggio.X.production.obj
-_TXB0SIDLbits F42 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-__Lclrtext 0 0 ABS 0 clrtext dist/default/production\parcheggio.X.production.obj
-__end_of_delay_ms 65D2 0 CODE 0 text27 dist/default/production\parcheggio.X.production.obj
-__CFG_PWRT$OFF 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-__pintcodelo 18 0 CODE 0 intcodelo dist/default/production\parcheggio.X.production.obj
-_TXB0CONbits F40 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-__pcstackCOMRAM 2D 0 COMRAM 1 cstackCOMRAM dist/default/production\parcheggio.X.production.obj
-_sensor_distance 1 0 COMRAM 1 bssCOMRAM dist/default/production\parcheggio.X.production.obj
-_sin$3757 1A5 0 BANK1 1 cstackBANK1 dist/default/production\parcheggio.X.production.obj
-__Hend_init 30C 0 CODE 0 end_init dist/default/production\parcheggio.X.production.obj
-_can_interpreter 64BE 0 CODE 0 text34 dist/default/production\parcheggio.X.production.obj
-CANreceiveMessage@tamp 38 0 COMRAM 1 cstackCOMRAM dist/default/production\parcheggio.X.production.obj
-_RXF3SIDLbits F0D 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-CANreceiveMessage@msg 2D 0 COMRAM 1 cstackCOMRAM dist/default/production\parcheggio.X.production.obj
-__end_of_asin 5022 0 CODE 0 text16 dist/default/production\parcheggio.X.production.obj
-__end_of_atan 54F8 0 CODE 0 text18 dist/default/production\parcheggio.X.production.obj
-__end_of_fabs 6598 0 CODE 0 text19 dist/default/production\parcheggio.X.production.obj
-__end_of_main 62D6 0 CODE 0 text0 dist/default/production\parcheggio.X.production.obj
-__end_of_sqrt 429A 0 CODE 0 text17 dist/default/production\parcheggio.X.production.obj
-__pintcode 8 0 CODE 0 intcode dist/default/production\parcheggio.X.production.obj
-i1CANsendMessage@flags 34 0 COMRAM 1 cstackCOMRAM dist/default/production\parcheggio.X.production.obj
-sqrt@frac 19C 0 BANK1 1 cstackBANK1 dist/default/production\parcheggio.X.production.obj
-sqrt@root 198 0 BANK1 1 cstackBANK1 dist/default/production\parcheggio.X.production.obj
-sqrt@sign 18B 0 BANK1 1 cstackBANK1 dist/default/production\parcheggio.X.production.obj
-_CANCONbits F6F 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_CANreceiveMessage 2BFE 0 CODE 0 text38 dist/default/production\parcheggio.X.production.obj
-_CANSTAT F6E 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-__end_of_floor 5E34 0 CODE 0 text11 dist/default/production\parcheggio.X.production.obj
-__end_of_frexp 636A 0 CODE 0 text12 dist/default/production\parcheggio.X.production.obj
-_PORTA F80 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_T0CON FD5 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_T3CON FB1 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_TMR0H FD7 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_TMR0L FD6 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_TMR3H FB3 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_TMR3L FB2 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_TRISA F92 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_TRISB F93 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_TRISC F94 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-__CFG_CP0$OFF 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-__CFG_CP1$OFF 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-__HRAM 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-__Hbss 0 0 RAM 1 bss dist/default/production\parcheggio.X.production.obj
-__Hram 0 0 ABS 0 ram dist/default/production\parcheggio.X.production.obj
-__Hsfr 0 0 ABS 0 sfr dist/default/production\parcheggio.X.production.obj
-__LRAM 1 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-__Lbss 0 0 RAM 1 bss dist/default/production\parcheggio.X.production.obj
-__Lram 0 0 ABS 0 ram dist/default/production\parcheggio.X.production.obj
-__Lsfr 0 0 ABS 0 sfr dist/default/production\parcheggio.X.production.obj
-__CFG_CP2$OFF 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-__CFG_CP3$OFF 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_bordo 12C 0 BANK1 1 bssBANK1 dist/default/production\parcheggio.X.production.obj
-_errno E4 0 BANK0 1 bssBANK0 dist/default/production\parcheggio.X.production.obj
-_RXB0EIDH F63 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_RXB0EIDL F64 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_first 2A9 -24C COMRAM 1 bitbssCOMRAM dist/default/production\parcheggio.X.production.obj
-_floor 5D10 0 CODE 0 text11 dist/default/production\parcheggio.X.production.obj
-_RXB0SIDH F61 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_RXB0SIDL F62 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_frexp 62D6 0 CODE 0 text12 dist/default/production\parcheggio.X.production.obj
-_RXB1EIDH F53 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_RXB1EIDL F54 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_RXB1SIDH F51 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_RXB1SIDL F52 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-__CFG_CPB$OFF 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-__CFG_CPD$OFF 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_RXB1SIDLbits F52 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_distance_received1 2A6 -24C COMRAM 1 bitbssCOMRAM dist/default/production\parcheggio.X.production.obj
-_CANSetMask 465A 0 CODE 0 text31 dist/default/production\parcheggio.X.production.obj
-__size_of_configurazione 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-__size_of_abs 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-__size_of_cos 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-__size_of_sin 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-__HdataBANK0 0 0 ABS 0 dataBANK0 dist/default/production\parcheggio.X.production.obj
-__HdataBANK1 0 0 ABS 0 dataBANK1 dist/default/production\parcheggio.X.production.obj
-__LbitbssCOMRAM 0 0 ABS 0 bitbssCOMRAM dist/default/production\parcheggio.X.production.obj
-asin@x D5 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
-asin@y 1AC 0 BANK1 1 cstackBANK1 dist/default/production\parcheggio.X.production.obj
-atan@f D1 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
-atan@x 18F 0 BANK1 1 cstackBANK1 dist/default/production\parcheggio.X.production.obj
-atan@y 18B 0 BANK1 1 cstackBANK1 dist/default/production\parcheggio.X.production.obj
-_sensor_distance_old 118 0 BANK1 1 bssBANK1 dist/default/production\parcheggio.X.production.obj
-__initialization 63E2 0 CODE 0 cinit dist/default/production\parcheggio.X.production.obj
-___xxtofl@sign D3 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
-__pbssBANK0 DA 0 BANK0 1 bssBANK0 dist/default/production\parcheggio.X.production.obj
-__pbssBANK1 100 0 BANK1 1 bssBANK1 dist/default/production\parcheggio.X.production.obj
-CANsendMessage@data 7B 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
-CANsendMessage@tamp 83 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
-_RXF0EIDH F02 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_RXF0EIDL F03 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_RXF0SIDH F00 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_RXF0SIDL F01 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_RXF1EIDH F06 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_RXF1EIDL F07 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_RXERRCNT F75 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_RXF1SIDH F04 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_RXF1SIDL F05 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_RXF2EIDH F0A 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_RXF2EIDL F0B 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_RXF2SIDH F08 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_RXF2SIDL F09 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_RXF3EIDH F0E 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_RXF3EIDL F0F 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_actual_speed DE 0 BANK0 1 bssBANK0 dist/default/production\parcheggio.X.production.obj
-_RXF3SIDH F0C 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_RXF3SIDL F0D 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_RXF4EIDH F12 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_RXF4EIDL F13 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_RXF4SIDH F10 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_RXF4SIDL F11 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_RXF5EIDH F16 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_RXF5EIDL F17 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_RXF5SIDH F14 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_RXF5SIDL F15 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-__Hfardata 0 0 FARRAM 0 fardata dist/default/production\parcheggio.X.production.obj
-___wmul@product 7B 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
-__Hsmallconst D52 0 SMALLCONST 0 smallconst dist/default/production\parcheggio.X.production.obj
-_cos$3756 1B8 0 BANK1 1 cstackBANK1 dist/default/production\parcheggio.X.production.obj
-__end_of_CANOperationMode 66F0 0 CODE 0 text33 dist/default/production\parcheggio.X.production.obj
-__Lifardata 0 0 CODE 0 ifardata dist/default/production\parcheggio.X.production.obj
-_left_speed 1F 0 COMRAM 1 bssCOMRAM dist/default/production\parcheggio.X.production.obj
-fabs@d C1 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
-__Hintsave_regs 0 0 BIGRAM 1 intsave_regs dist/default/production\parcheggio.X.production.obj
-__Hintcode 16 0 CODE 0 intcode dist/default/production\parcheggio.X.production.obj
-_TXB2DLCbits F25 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_RXF1SIDLbits F05 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-__size_of_CANOperationMode 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
+_n 138 0 BANK1 1 bssBANK1 dist/default/debug\parcheggio.X.debug.obj
+_x DA 0 BANK0 1 bssBANK0 dist/default/debug\parcheggio.X.debug.obj
+_z 15 0 COMRAM 1 bssCOMRAM dist/default/debug\parcheggio.X.debug.obj
+__LdataBANK0 0 0 ABS 0 dataBANK0 dist/default/debug\parcheggio.X.debug.obj
+__LdataBANK1 0 0 ABS 0 dataBANK1 dist/default/debug\parcheggio.X.debug.obj
+CANSetMask@mask 77 0 BANK0 1 cstackBANK0 dist/default/debug\parcheggio.X.debug.obj
+CANSetMask@tamp 81 0 BANK0 1 cstackBANK0 dist/default/debug\parcheggio.X.debug.obj
+CANSetMask@type 7B 0 BANK0 1 cstackBANK0 dist/default/debug\parcheggio.X.debug.obj
+ISR_Bassa@i 53 0 COMRAM 1 cstackCOMRAM dist/default/debug\parcheggio.X.debug.obj
+__Lmediumconst 0 0 MEDIUMCONST 0 mediumconst dist/default/debug\parcheggio.X.debug.obj
+__end_of_ISR_Bassa 308 0 CODE 0 intcodelo dist/default/debug\parcheggio.X.debug.obj
+__Hspace_0 30000E 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+__Hspace_1 2B0 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+__Hspace_2 0 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_data_correction 163 0 BANK1 1 bssBANK1 dist/default/debug\parcheggio.X.debug.obj
+__CFG_IESO$OFF 0 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+CANSetMask@numBuffer 80 0 BANK0 1 cstackBANK0 dist/default/debug\parcheggio.X.debug.obj
+__HidataBANK0 0 0 ABS 0 idataBANK0 dist/default/debug\parcheggio.X.debug.obj
+__HidataBANK1 0 0 ABS 0 idataBANK1 dist/default/debug\parcheggio.X.debug.obj
+__size_of_ISR_Bassa 0 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_RXM0EIDH F1A 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_RXM0EIDL F1B 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+frexp@eptr 7B 0 BANK0 1 cstackBANK0 dist/default/debug\parcheggio.X.debug.obj
+_RXM0SIDH F18 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_RXM0SIDL F19 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_RXM1EIDH F1E 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_RXM1EIDL F1F 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_RXM1SIDH F1C 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_RXM1SIDL F1D 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_set_speed 25 0 COMRAM 1 bssCOMRAM dist/default/debug\parcheggio.X.debug.obj
+__Hibigdata 0 0 CODE 0 ibigdata dist/default/debug\parcheggio.X.debug.obj
+_RXB1DLCbits F55 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\Simone\AppData\Local\Temp\s2cs.obj
+__Heeprom_data 0 0 EEDATA 0 eeprom_data dist/default/debug\parcheggio.X.debug.obj
+__CFG_MCLRE$ON 0 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_prima_sterzata 140 0 BANK1 1 bssBANK1 dist/default/debug\parcheggio.X.debug.obj
+__size_of_CANInitialize 0 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+?_abs 77 0 BANK0 1 cstackBANK0 dist/default/debug\parcheggio.X.debug.obj
+?_cos 1B4 0 BANK1 1 cstackBANK1 dist/default/debug\parcheggio.X.debug.obj
+?_sin 19D 0 BANK1 1 cstackBANK1 dist/default/debug\parcheggio.X.debug.obj
+__end_of_park_search 5A4C 0 CODE 0 text1 dist/default/debug\parcheggio.X.debug.obj
+__Lsmallconst D00 0 SMALLCONST 0 smallconst dist/default/debug\parcheggio.X.debug.obj
+_LATA F89 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_LATB F8A 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_LATC F8B 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+___sp 0 0 STACK 2 stack C:\Users\Simone\AppData\Local\Temp\s2cs.obj
+_alfa 124 0 BANK1 1 bssBANK1 dist/default/debug\parcheggio.X.debug.obj
+_asin 4D10 0 CODE 0 text16 dist/default/debug\parcheggio.X.debug.obj
+_asus 2A 0 COMRAM 1 bssCOMRAM dist/default/debug\parcheggio.X.debug.obj
+_atan 52A6 0 CODE 0 text18 dist/default/debug\parcheggio.X.debug.obj
+_beta 128 0 BANK1 1 bssBANK1 dist/default/debug\parcheggio.X.debug.obj
+_data 153 0 BANK1 1 bssBANK1 dist/default/debug\parcheggio.X.debug.obj
+_fabs 655A 0 CODE 0 text19 dist/default/debug\parcheggio.X.debug.obj
+_main 621C 0 CODE 0 text0 dist/default/debug\parcheggio.X.debug.obj
+_sqrt 3ED0 0 CODE 0 text17 dist/default/debug\parcheggio.X.debug.obj
+abs@a 77 0 BANK0 1 cstackBANK0 dist/default/debug\parcheggio.X.debug.obj
+btemp 56 0 COMRAM 1 temp dist/default/debug\parcheggio.X.debug.obj
+cos@f 1B4 0 BANK1 1 cstackBANK1 dist/default/debug\parcheggio.X.debug.obj
+sin@f 19D 0 BANK1 1 cstackBANK1 dist/default/debug\parcheggio.X.debug.obj
+sin@y 1A1 0 BANK1 1 cstackBANK1 dist/default/debug\parcheggio.X.debug.obj
+start 308 0 CODE 0 init C:\Users\Simone\AppData\Local\Temp\s2cs.obj
+___flmul@aexp 9D 0 BANK0 1 cstackBANK0 dist/default/debug\parcheggio.X.debug.obj
+___flmul@bexp A2 0 BANK0 1 cstackBANK0 dist/default/debug\parcheggio.X.debug.obj
+___flmul@prod A3 0 BANK0 1 cstackBANK0 dist/default/debug\parcheggio.X.debug.obj
+___flmul@sign 9C 0 BANK0 1 cstackBANK0 dist/default/debug\parcheggio.X.debug.obj
+___flmul@temp A7 0 BANK0 1 cstackBANK0 dist/default/debug\parcheggio.X.debug.obj
+_ISR_Bassa 18 0 CODE 0 intcodelo dist/default/debug\parcheggio.X.debug.obj
+_CANisTxReady 6698 0 CODE 0 text6 dist/default/debug\parcheggio.X.debug.obj
+__size_of___fladd 0 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+__size_of___fldiv 0 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+__size_of___flmul 0 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+__size_of___flneg 0 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+__size_of___flsub 0 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+__size_of___fltol 0 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+__size_of_asin 0 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+__size_of_atan 0 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+__size_of_fabs 0 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+__size_of_main 0 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+__size_of_sqrt 0 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+__size_of___lwdiv 0 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_TXB1DLCbits F35 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+__end_of_CANSetMask 49F8 0 CODE 0 text31 dist/default/debug\parcheggio.X.debug.obj
+__HbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/debug\parcheggio.X.debug.obj
+?___wmul 77 0 BANK0 1 cstackBANK0 dist/default/debug\parcheggio.X.debug.obj
+__size_of_can_interpreter 0 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+CANOperationMode@mode 77 0 BANK0 1 cstackBANK0 dist/default/debug\parcheggio.X.debug.obj
+__LidataBANK0 0 0 ABS 0 idataBANK0 dist/default/debug\parcheggio.X.debug.obj
+__LidataBANK1 0 0 ABS 0 idataBANK1 dist/default/debug\parcheggio.X.debug.obj
+__size_ofi1_CANisTxReady 0 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_RXM1SIDLbits F1D 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+__Hpowerup 308 0 CODE 0 powerup dist/default/debug\parcheggio.X.debug.obj
+_RXB0DLCbits F65 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+__pbitbssCOMRAM 2A0 -24C COMRAM 1 bitbssCOMRAM dist/default/debug\parcheggio.X.debug.obj
+sin@x2 1A9 0 BANK1 1 cstackBANK1 dist/default/debug\parcheggio.X.debug.obj
+delay_s@value_s 7F 0 BANK0 1 cstackBANK0 dist/default/debug\parcheggio.X.debug.obj
+sqrt@a C1 0 BANK0 1 cstackBANK0 dist/default/debug\parcheggio.X.debug.obj
+sqrt@i 18C 0 BANK1 1 cstackBANK1 dist/default/debug\parcheggio.X.debug.obj
+sqrt@p 191 0 BANK1 1 cstackBANK1 dist/default/debug\parcheggio.X.debug.obj
+_distance E2 0 BANK0 1 bssBANK0 dist/default/debug\parcheggio.X.debug.obj
+_T0CONbits FD5 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+__end_of_CANInitialize 588C 0 CODE 0 text30 dist/default/debug\parcheggio.X.debug.obj
+__accesstop 60 0 ABS 0 - C:\Users\Simone\AppData\Local\Temp\s2cs.obj
+intlevel0 0 0 CODE 0 text C:\Users\Simone\AppData\Local\Temp\s2cs.obj
+intlevel1 0 0 CODE 0 text C:\Users\Simone\AppData\Local\Temp\s2cs.obj
+intlevel2 0 0 CODE 0 text C:\Users\Simone\AppData\Local\Temp\s2cs.obj
+intlevel3 0 0 CODE 0 text C:\Users\Simone\AppData\Local\Temp\s2cs.obj
+__LbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/debug\parcheggio.X.debug.obj
+_alignment_gap 11 0 COMRAM 1 bssCOMRAM dist/default/debug\parcheggio.X.debug.obj
+__LnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/debug\parcheggio.X.debug.obj
+sqrt@tfrac 18D 0 BANK1 1 cstackBANK1 dist/default/debug\parcheggio.X.debug.obj
+__CFG_EBTR0$OFF 0 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+__CFG_EBTR1$OFF 0 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+__CFG_EBTR2$OFF 0 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+__CFG_EBTR3$OFF 0 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_TXB0DLCbits F45 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+CANSetFilter@filter 77 0 BANK0 1 cstackBANK0 dist/default/debug\parcheggio.X.debug.obj
+i1_CANsendMessage 1FE4 0 CODE 0 text36 dist/default/debug\parcheggio.X.debug.obj
+__size_of_ISR_Alta 0 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+__CFG_EBTRB$OFF 0 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+__size_of_matematica 0 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_MUX_select 100 0 BANK1 1 bssBANK1 dist/default/debug\parcheggio.X.debug.obj
+__Hifardata 0 0 CODE 0 ifardata dist/default/debug\parcheggio.X.debug.obj
+__size_of_CANisTxReady 0 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_old_data_correction 2AB -24C COMRAM 1 bitbssCOMRAM dist/default/debug\parcheggio.X.debug.obj
+__Hclrtext 0 0 ABS 0 clrtext dist/default/debug\parcheggio.X.debug.obj
+_COMSTATbits F74 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_delay_s 666C 0 CODE 0 text26 dist/default/debug\parcheggio.X.debug.obj
+__end_ofatan@coeff_a D19 0 SMALLCONST 0 smallconst dist/default/debug\parcheggio.X.debug.obj
+__end_ofatan@coeff_b D2D 0 SMALLCONST 0 smallconst dist/default/debug\parcheggio.X.debug.obj
+_right_speed 23 0 COMRAM 1 bssCOMRAM dist/default/debug\parcheggio.X.debug.obj
+_matematica$3746 1BC 0 BANK1 1 cstackBANK1 dist/default/debug\parcheggio.X.debug.obj
+_matematica$3747 1C0 0 BANK1 1 cstackBANK1 dist/default/debug\parcheggio.X.debug.obj
+_matematica$3748 1C4 0 BANK1 1 cstackBANK1 dist/default/debug\parcheggio.X.debug.obj
+_matematica$3749 1C8 0 BANK1 1 cstackBANK1 dist/default/debug\parcheggio.X.debug.obj
+_matematica$3750 1D4 0 BANK1 1 cstackBANK1 dist/default/debug\parcheggio.X.debug.obj
+_matematica$3751 1CC 0 BANK1 1 cstackBANK1 dist/default/debug\parcheggio.X.debug.obj
+_matematica$3752 1D0 0 BANK1 1 cstackBANK1 dist/default/debug\parcheggio.X.debug.obj
+i1CANsendMessage@identifier 2D 0 COMRAM 1 cstackCOMRAM dist/default/debug\parcheggio.X.debug.obj
+___wmul@multiplicand 79 0 BANK0 1 cstackBANK0 dist/default/debug\parcheggio.X.debug.obj
+_request_sent 2AC -24C COMRAM 1 bitbssCOMRAM dist/default/debug\parcheggio.X.debug.obj
+_ADCON1 FC1 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+CANSetFilter@tamp 81 0 BANK0 1 cstackBANK0 dist/default/debug\parcheggio.X.debug.obj
+CANSetFilter@type 7B 0 BANK0 1 cstackBANK0 dist/default/debug\parcheggio.X.debug.obj
+___inthi_sp 0 0 STACK 2 stack C:\Users\Simone\AppData\Local\Temp\s2cs.obj
+___intlo_sp 0 0 STACK 2 stack C:\Users\Simone\AppData\Local\Temp\s2cs.obj
+_CANCON F6F 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+__Hintcode_body 0 0 ABS 0 intcode_body dist/default/debug\parcheggio.X.debug.obj
+__end_of___flge 5BDC 0 CODE 0 text24 dist/default/debug\parcheggio.X.debug.obj
+__end_of___wmul 6640 0 CODE 0 text28 dist/default/debug\parcheggio.X.debug.obj
+__end_of_CANisTxReady 66BC 0 CODE 0 text6 dist/default/debug\parcheggio.X.debug.obj
+_distance_wait 2A7 -24C COMRAM 1 bitbssCOMRAM dist/default/debug\parcheggio.X.debug.obj
+__Lintsave_regs 0 0 BIGRAM 1 intsave_regs dist/default/debug\parcheggio.X.debug.obj
+_Pminimo 120 0 BANK1 1 bssBANK1 dist/default/debug\parcheggio.X.debug.obj
+_TXB0DLC F45 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_TXB1DLC F35 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_TXB2DLC F25 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_data_brake 15B 0 BANK1 1 bssBANK1 dist/default/debug\parcheggio.X.debug.obj
+___fldiv@aexp 8F 0 BANK0 1 cstackBANK0 dist/default/debug\parcheggio.X.debug.obj
+___fldiv@bexp 8E 0 BANK0 1 cstackBANK0 dist/default/debug\parcheggio.X.debug.obj
+___fldiv@sign 83 0 BANK0 1 cstackBANK0 dist/default/debug\parcheggio.X.debug.obj
+__Hmediumconst 0 0 MEDIUMCONST 0 mediumconst dist/default/debug\parcheggio.X.debug.obj
+_data_speed 16B 0 BANK1 1 bssBANK1 dist/default/debug\parcheggio.X.debug.obj
+__Hintcodelo 308 0 CODE 0 intcodelo dist/default/debug\parcheggio.X.debug.obj
+__end_of___fladd 35B2 0 CODE 0 text23 dist/default/debug\parcheggio.X.debug.obj
+__end_of___fldiv 465A 0 CODE 0 text25 dist/default/debug\parcheggio.X.debug.obj
+__end_of___flmul 3A58 0 CODE 0 text22 dist/default/debug\parcheggio.X.debug.obj
+__end_of___flneg 660A 0 CODE 0 text20 dist/default/debug\parcheggio.X.debug.obj
+__end_of___flsub 655A 0 CODE 0 text15 dist/default/debug\parcheggio.X.debug.obj
+__end_of___fltol 6058 0 CODE 0 text14 dist/default/debug\parcheggio.X.debug.obj
+CANInitialize@flags 89 0 BANK0 1 cstackBANK0 dist/default/debug\parcheggio.X.debug.obj
+__end_of___lwdiv 63E2 0 CODE 0 text40 dist/default/debug\parcheggio.X.debug.obj
+delay_s@repeat_loop 80 0 BANK0 1 cstackBANK0 dist/default/debug\parcheggio.X.debug.obj
+_spazio_parcheggio E6 0 BANK0 1 dataBANK0 dist/default/debug\parcheggio.X.debug.obj
+__size_of_CANsendMessage 0 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+__CFG_BOREN$BOHW 0 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+?_eval_poly BD 0 BANK0 1 cstackBANK0 dist/default/debug\parcheggio.X.debug.obj
+_request_sent1 2AD -24C COMRAM 1 bitbssCOMRAM dist/default/debug\parcheggio.X.debug.obj
+_ISR_Alta 8 0 CODE 0 intcode dist/default/debug\parcheggio.X.debug.obj
+___lwdiv@quotient 65 0 BANK0 1 cstackBANK0 dist/default/debug\parcheggio.X.debug.obj
+__size_of_floor 0 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+__size_of_frexp 0 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+___fladd@a AD 0 BANK0 1 cstackBANK0 dist/default/debug\parcheggio.X.debug.obj
+___fladd@b A9 0 BANK0 1 cstackBANK0 dist/default/debug\parcheggio.X.debug.obj
+___fldiv@a 7B 0 BANK0 1 cstackBANK0 dist/default/debug\parcheggio.X.debug.obj
+___fldiv@b 77 0 BANK0 1 cstackBANK0 dist/default/debug\parcheggio.X.debug.obj
+___flmul@a 94 0 BANK0 1 cstackBANK0 dist/default/debug\parcheggio.X.debug.obj
+___flmul@b 90 0 BANK0 1 cstackBANK0 dist/default/debug\parcheggio.X.debug.obj
+___flsub@a 199 0 BANK1 1 cstackBANK1 dist/default/debug\parcheggio.X.debug.obj
+___flsub@b 195 0 BANK1 1 cstackBANK1 dist/default/debug\parcheggio.X.debug.obj
+_steering_correction 2C 0 COMRAM 1 bssCOMRAM dist/default/debug\parcheggio.X.debug.obj
+_distance_received 2A5 -24C COMRAM 1 bitbssCOMRAM dist/default/debug\parcheggio.X.debug.obj
+__end_of_ISR_Alta 621C 0 CODE 0 intcode_body dist/default/debug\parcheggio.X.debug.obj
+_INTCON2bits FF1 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+i1CANsendMessage@dataLength 33 0 COMRAM 1 cstackCOMRAM dist/default/debug\parcheggio.X.debug.obj
+__Lintcodelo 18 0 CODE 0 intcodelo dist/default/debug\parcheggio.X.debug.obj
+_CANSetFilter D52 0 CODE 0 text32 dist/default/debug\parcheggio.X.debug.obj
+__CFG_FCMEN$OFF 0 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_park_routine 3A58 0 CODE 0 text2 dist/default/debug\parcheggio.X.debug.obj
+_TXB1SIDLbits F32 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+start_initialization 63E2 0 CODE 0 cinit dist/default/debug\parcheggio.X.debug.obj
+__size_of_park_search 0 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+__HnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/debug\parcheggio.X.debug.obj
+__end_ofi1_CANsendMessage 2674 0 CODE 0 text36 dist/default/debug\parcheggio.X.debug.obj
+__end_of_parallelo 52A6 0 CODE 0 text3 dist/default/debug\parcheggio.X.debug.obj
+_TRISBbits F93 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+CANInitialize@FilterConfig1 8F 0 BANK0 1 cstackBANK0 dist/default/debug\parcheggio.X.debug.obj
+CANInitialize@FilterConfig2 90 0 BANK0 1 cstackBANK0 dist/default/debug\parcheggio.X.debug.obj
+CANSetFilter@numBuffer 80 0 BANK0 1 cstackBANK0 dist/default/debug\parcheggio.X.debug.obj
+__size_of_parallelo 0 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+___rparam_used 0 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_clock_counter_reference E0 0 BANK0 1 bssBANK0 dist/default/debug\parcheggio.X.debug.obj
+__size_ofi1_CANsendMessage 0 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_RXB0D0 F66 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_RXB0D1 F67 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_RXB0D2 F68 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_RXB0D3 F69 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_RXB0D4 F6A 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_RXB0D5 F6B 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_RXB0D6 F6C 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_RXB0D7 F6D 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_RXB1D0 F56 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_RXB1D1 F57 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_RXB1D2 F58 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_RXB1D3 F59 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_RXB1D4 F5A 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_RXB1D5 F5B 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_RXB1D6 F5C 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_RXB1D7 F5D 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+__CFG_WDTPS$32768 0 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+i1_CANisTxReady$2845 2D 0 COMRAM 1 cstackCOMRAM dist/default/debug\parcheggio.X.debug.obj
+__pcstackBANK0 60 0 BANK0 1 cstackBANK0 dist/default/debug\parcheggio.X.debug.obj
+__pcstackBANK1 18B 0 BANK1 1 cstackBANK1 dist/default/debug\parcheggio.X.debug.obj
+_RXF4SIDLbits F11 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_IPR3bits FA5 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+CANInitialize@phaseSeg1 85 0 BANK0 1 cstackBANK0 dist/default/debug\parcheggio.X.debug.obj
+CANInitialize@phaseSeg2 86 0 BANK0 1 cstackBANK0 dist/default/debug\parcheggio.X.debug.obj
+_TXB0D0 F46 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_TXB0D1 F47 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_TXB0D2 F48 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_TXB0D3 F49 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_TXB0D4 F4A 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_TXB0D5 F4B 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_TXB0D6 F4C 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_TXB0D7 F4D 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_TXB1D0 F36 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_TXB1D1 F37 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_TXB1D2 F38 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_TXB1D3 F39 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_TXB1D4 F3A 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_TXB1D5 F3B 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_TXB1D6 F3C 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_TXB1D7 F3D 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_TXB2D0 F26 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_TXB2D1 F27 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_TXB2D2 F28 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_TXB2D3 F29 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_TXB2D4 F2A 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_TXB2D5 F2B 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_TXB2D6 F2C 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_TXB2D7 F2D 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+__size_of_CANSetMask 0 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_parallelo 5022 0 CODE 0 text3 dist/default/debug\parcheggio.X.debug.obj
+_configurazione 6452 0 CODE 0 text29 dist/default/debug\parcheggio.X.debug.obj
+_steering_correction_dir 2AF -24C COMRAM 1 bitbssCOMRAM dist/default/debug\parcheggio.X.debug.obj
+can_send@data_correction1 87 0 BANK0 1 cstackBANK0 dist/default/debug\parcheggio.X.debug.obj
+__Hbank0 0 0 ABS 0 bank0 dist/default/debug\parcheggio.X.debug.obj
+__Hbank1 0 0 ABS 0 bank1 dist/default/debug\parcheggio.X.debug.obj
+__Hbank2 0 0 ABS 0 bank2 dist/default/debug\parcheggio.X.debug.obj
+__Hbank3 0 0 ABS 0 bank3 dist/default/debug\parcheggio.X.debug.obj
+__Hbank4 0 0 ABS 0 bank4 dist/default/debug\parcheggio.X.debug.obj
+__Hbank5 0 0 ABS 0 bank5 dist/default/debug\parcheggio.X.debug.obj
+__Hbank6 0 0 ABS 0 bank6 dist/default/debug\parcheggio.X.debug.obj
+__Hbank7 0 0 ABS 0 bank7 dist/default/debug\parcheggio.X.debug.obj
+__Hbank8 0 0 ABS 0 bank8 dist/default/debug\parcheggio.X.debug.obj
+__Hbank9 0 0 ABS 0 bank9 dist/default/debug\parcheggio.X.debug.obj
+__size_of_CANSetFilter 0 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+__Hcinit 0 0 ABS 0 cinit dist/default/debug\parcheggio.X.debug.obj
+__Hconst 0 0 CODE 0 const dist/default/debug\parcheggio.X.debug.obj
+__Hidata 0 0 CODE 0 idata dist/default/debug\parcheggio.X.debug.obj
+__Hidloc 200008 0 IDLOC 0 idloc dist/default/debug\parcheggio.X.debug.obj
+__size_of_park_routine 0 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+__Hnvbit 0 0 COMRAM 1 nvbit dist/default/debug\parcheggio.X.debug.obj
+__Hparam 0 0 BANK0 1 param0 dist/default/debug\parcheggio.X.debug.obj
+__Hrdata 0 0 COMRAM 1 rdata dist/default/debug\parcheggio.X.debug.obj
+__Hstack 0 0 STACK 2 stack dist/default/debug\parcheggio.X.debug.obj
+__Htext0 0 0 ABS 0 text0 dist/default/debug\parcheggio.X.debug.obj
+__Htext1 0 0 ABS 0 text1 dist/default/debug\parcheggio.X.debug.obj
+__Htext2 0 0 ABS 0 text2 dist/default/debug\parcheggio.X.debug.obj
+__Htext3 0 0 ABS 0 text3 dist/default/debug\parcheggio.X.debug.obj
+__Htext4 0 0 ABS 0 text4 dist/default/debug\parcheggio.X.debug.obj
+__Htext5 0 0 ABS 0 text5 dist/default/debug\parcheggio.X.debug.obj
+__Htext6 0 0 ABS 0 text6 dist/default/debug\parcheggio.X.debug.obj
+__Htext7 0 0 ABS 0 text7 dist/default/debug\parcheggio.X.debug.obj
+__Htext8 0 0 ABS 0 text8 dist/default/debug\parcheggio.X.debug.obj
+__Htext9 0 0 ABS 0 text9 dist/default/debug\parcheggio.X.debug.obj
+sin@coeff_a D2D 0 SMALLCONST 0 smallconst dist/default/debug\parcheggio.X.debug.obj
+sin@coeff_b D41 0 SMALLCONST 0 smallconst dist/default/debug\parcheggio.X.debug.obj
+___lwdiv@counter 64 0 BANK0 1 cstackBANK0 dist/default/debug\parcheggio.X.debug.obj
+_old_alignment_gap 13C 0 BANK1 1 bssBANK1 dist/default/debug\parcheggio.X.debug.obj
+__Hbank10 0 0 ABS 0 bank10 dist/default/debug\parcheggio.X.debug.obj
+__Hbank11 0 0 ABS 0 bank11 dist/default/debug\parcheggio.X.debug.obj
+__Hbank12 0 0 ABS 0 bank12 dist/default/debug\parcheggio.X.debug.obj
+__size_of___xxtofl 0 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+__Hbigbss 0 0 BIGRAM 1 bigbss dist/default/debug\parcheggio.X.debug.obj
+__Hbigram 0 0 ABS 0 bigram dist/default/debug\parcheggio.X.debug.obj
+__smallconst D00 0 SMALLCONST 0 smallconst C:\Users\Simone\AppData\Local\Temp\s2cs.obj
+___xxtofl@arg D5 0 BANK0 1 cstackBANK0 dist/default/debug\parcheggio.X.debug.obj
+___xxtofl@exp D4 0 BANK0 1 cstackBANK0 dist/default/debug\parcheggio.X.debug.obj
+___xxtofl@val CB 0 BANK0 1 cstackBANK0 dist/default/debug\parcheggio.X.debug.obj
+__Hcomram 0 0 ABS 0 comram dist/default/debug\parcheggio.X.debug.obj
+__Hconfig 30000E 0 CONFIG 0 config dist/default/debug\parcheggio.X.debug.obj
+__CFG_LPT1OSC$OFF 0 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+CANInitialize@BRP 88 0 BANK0 1 cstackBANK0 dist/default/debug\parcheggio.X.debug.obj
+CANInitialize@SJW 87 0 BANK0 1 cstackBANK0 dist/default/debug\parcheggio.X.debug.obj
+__Lbank0 0 0 ABS 0 bank0 dist/default/debug\parcheggio.X.debug.obj
+__Lbank1 0 0 ABS 0 bank1 dist/default/debug\parcheggio.X.debug.obj
+__Lbank2 0 0 ABS 0 bank2 dist/default/debug\parcheggio.X.debug.obj
+__Lbank3 0 0 ABS 0 bank3 dist/default/debug\parcheggio.X.debug.obj
+__Lbank4 0 0 ABS 0 bank4 dist/default/debug\parcheggio.X.debug.obj
+__Lbank5 0 0 ABS 0 bank5 dist/default/debug\parcheggio.X.debug.obj
+__Lbank6 0 0 ABS 0 bank6 dist/default/debug\parcheggio.X.debug.obj
+__Lbank7 0 0 ABS 0 bank7 dist/default/debug\parcheggio.X.debug.obj
+__Lbank8 0 0 ABS 0 bank8 dist/default/debug\parcheggio.X.debug.obj
+__Lbank9 0 0 ABS 0 bank9 dist/default/debug\parcheggio.X.debug.obj
+__Lcinit 0 0 ABS 0 cinit dist/default/debug\parcheggio.X.debug.obj
+__Lconst 0 0 CODE 0 const dist/default/debug\parcheggio.X.debug.obj
+__Lidata 0 0 CODE 0 idata dist/default/debug\parcheggio.X.debug.obj
+__Lidloc 200000 0 IDLOC 0 idloc dist/default/debug\parcheggio.X.debug.obj
+__Lnvbit 0 0 COMRAM 1 nvbit dist/default/debug\parcheggio.X.debug.obj
+__Lparam 0 0 BANK0 1 param0 dist/default/debug\parcheggio.X.debug.obj
+__Lrdata 0 0 COMRAM 1 rdata dist/default/debug\parcheggio.X.debug.obj
+__Lstack 0 0 STACK 2 stack dist/default/debug\parcheggio.X.debug.obj
+__Ltext0 0 0 ABS 0 text0 dist/default/debug\parcheggio.X.debug.obj
+__Ltext1 0 0 ABS 0 text1 dist/default/debug\parcheggio.X.debug.obj
+__Ltext2 0 0 ABS 0 text2 dist/default/debug\parcheggio.X.debug.obj
+__Ltext3 0 0 ABS 0 text3 dist/default/debug\parcheggio.X.debug.obj
+__Ltext4 0 0 ABS 0 text4 dist/default/debug\parcheggio.X.debug.obj
+__Ltext5 0 0 ABS 0 text5 dist/default/debug\parcheggio.X.debug.obj
+__Ltext6 0 0 ABS 0 text6 dist/default/debug\parcheggio.X.debug.obj
+__Ltext7 0 0 ABS 0 text7 dist/default/debug\parcheggio.X.debug.obj
+__Ltext8 0 0 ABS 0 text8 dist/default/debug\parcheggio.X.debug.obj
+__Ltext9 0 0 ABS 0 text9 dist/default/debug\parcheggio.X.debug.obj
+_RXF2SIDLbits F09 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+i1CANsendMessage@data 31 0 COMRAM 1 cstackCOMRAM dist/default/debug\parcheggio.X.debug.obj
+i1CANsendMessage@tamp 39 0 COMRAM 1 cstackCOMRAM dist/default/debug\parcheggio.X.debug.obj
+__Hfarbss 0 0 FARRAM 0 farbss dist/default/debug\parcheggio.X.debug.obj
+___flmul@grs 9E 0 BANK0 1 cstackBANK0 dist/default/debug\parcheggio.X.debug.obj
+__Lintcode_body 0 0 ABS 0 intcode_body dist/default/debug\parcheggio.X.debug.obj
+_PORTBbits F81 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_INTCONbits FF2 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+delay_ms@value_ms 7D 0 BANK0 1 cstackBANK0 dist/default/debug\parcheggio.X.debug.obj
+__Habs1 0 0 ABS 0 abs1 dist/default/debug\parcheggio.X.debug.obj
+__Hdata 0 0 ABS 0 data dist/default/debug\parcheggio.X.debug.obj
+__Hinit 308 0 CODE 0 init dist/default/debug\parcheggio.X.debug.obj
+__Hrbit 0 0 COMRAM 1 rbit dist/default/debug\parcheggio.X.debug.obj
+__Hrbss 0 0 COMRAM 1 rbss dist/default/debug\parcheggio.X.debug.obj
+__Htemp 57 0 COMRAM 1 temp dist/default/debug\parcheggio.X.debug.obj
+__Htext 0 0 ABS 0 text dist/default/debug\parcheggio.X.debug.obj
+__Labs1 0 0 ABS 0 abs1 dist/default/debug\parcheggio.X.debug.obj
+__Ldata 0 0 ABS 0 data dist/default/debug\parcheggio.X.debug.obj
+__Linit 308 0 CODE 0 init dist/default/debug\parcheggio.X.debug.obj
+__Lrbit 0 0 COMRAM 1 rbit dist/default/debug\parcheggio.X.debug.obj
+__Lrbss 0 0 COMRAM 1 rbss dist/default/debug\parcheggio.X.debug.obj
+__Ltemp 56 0 COMRAM 1 temp dist/default/debug\parcheggio.X.debug.obj
+__Ltext 0 0 ABS 0 text dist/default/debug\parcheggio.X.debug.obj
+__CFG_XINST$OFF 0 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+__end_of_CANSetFilter 1858 0 CODE 0 text32 dist/default/debug\parcheggio.X.debug.obj
+__end_of_park_routine 3ED0 0 CODE 0 text2 dist/default/debug\parcheggio.X.debug.obj
+___flge 5A4C 0 CODE 0 text24 dist/default/debug\parcheggio.X.debug.obj
+___wmul 660A 0 CODE 0 text28 dist/default/debug\parcheggio.X.debug.obj
+__LcstackBANK0 0 0 ABS 0 cstackBANK0 dist/default/debug\parcheggio.X.debug.obj
+__LcstackBANK1 0 0 ABS 0 cstackBANK1 dist/default/debug\parcheggio.X.debug.obj
+_RXB0SIDLbits F62 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+int$flags 56 0 COMRAM 1 temp dist/default/debug\parcheggio.X.debug.obj
+__HcstackCOMRAM 0 0 ABS 0 cstackCOMRAM dist/default/debug\parcheggio.X.debug.obj
+__Hintret 0 0 ABS 0 intret dist/default/debug\parcheggio.X.debug.obj
+__Hirdata 0 0 CODE 0 irdata dist/default/debug\parcheggio.X.debug.obj
+__S0 30000E 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+__S1 1EC 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+__S2 0 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_abs 6640 0 CODE 0 text7 dist/default/debug\parcheggio.X.debug.obj
+_asd 2A1 -24C COMRAM 1 bitbssCOMRAM dist/default/debug\parcheggio.X.debug.obj
+_cos 6058 0 CODE 0 text9 dist/default/debug\parcheggio.X.debug.obj
+_dir 2A3 -24C COMRAM 1 bitbssCOMRAM dist/default/debug\parcheggio.X.debug.obj
+_jjj 130 0 BANK1 1 bssBANK1 dist/default/debug\parcheggio.X.debug.obj
+_kkk 134 0 BANK1 1 bssBANK1 dist/default/debug\parcheggio.X.debug.obj
+_msg 144 0 BANK1 1 bssBANK1 dist/default/debug\parcheggio.X.debug.obj
+_sin 49F8 0 CODE 0 text10 dist/default/debug\parcheggio.X.debug.obj
+_CANisTxReady$2845 77 0 BANK0 1 cstackBANK0 dist/default/debug\parcheggio.X.debug.obj
+_timerValue2 27 0 COMRAM 1 bssCOMRAM dist/default/debug\parcheggio.X.debug.obj
+__size_of_CANreceiveMessage 0 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+__end_of_configurazione 64BE 0 CODE 0 text29 dist/default/debug\parcheggio.X.debug.obj
+__CFG_PBADEN$OFF 0 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_distance_error 2A4 -24C COMRAM 1 bitbssCOMRAM dist/default/debug\parcheggio.X.debug.obj
+_data_test 17B 0 BANK1 1 bssBANK1 dist/default/debug\parcheggio.X.debug.obj
+eval_poly@res C9 0 BANK0 1 cstackBANK0 dist/default/debug\parcheggio.X.debug.obj
+__Lbigdata 0 0 BIGRAM 1 bigdata dist/default/debug\parcheggio.X.debug.obj
+__Hnvrram 0 0 COMRAM 1 nvrram dist/default/debug\parcheggio.X.debug.obj
+_data_speed_rx 108 0 BANK1 1 bssBANK1 dist/default/debug\parcheggio.X.debug.obj
+_RXF0SIDLbits F01 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+___xxtofl 54F8 0 CODE 0 text13 dist/default/debug\parcheggio.X.debug.obj
+__end_of_abs 666C 0 CODE 0 text7 dist/default/debug\parcheggio.X.debug.obj
+__end_of_cos 613C 0 CODE 0 text9 dist/default/debug\parcheggio.X.debug.obj
+__end_of_sin 4D10 0 CODE 0 text10 dist/default/debug\parcheggio.X.debug.obj
+__Hparam0 0 0 BANK0 1 param0 dist/default/debug\parcheggio.X.debug.obj
+__end_ofsin@coeff_a D41 0 SMALLCONST 0 smallconst dist/default/debug\parcheggio.X.debug.obj
+__end_ofsin@coeff_b D51 0 SMALLCONST 0 smallconst dist/default/debug\parcheggio.X.debug.obj
+int_func 613C 0 CODE 0 intcode_body dist/default/debug\parcheggio.X.debug.obj
+_MUX_index 29 0 COMRAM 1 bssCOMRAM dist/default/debug\parcheggio.X.debug.obj
+_gianni 2B 0 COMRAM 1 bssCOMRAM dist/default/debug\parcheggio.X.debug.obj
+i1_CANisTxReady 66BC 0 CODE 0 text37 dist/default/debug\parcheggio.X.debug.obj
+__Lintentry 0 0 ABS 0 intentry dist/default/debug\parcheggio.X.debug.obj
+__Hramtop D00 0 RAM 0 ramtop dist/default/debug\parcheggio.X.debug.obj
+_asin$3753 1B0 0 BANK1 1 cstackBANK1 dist/default/debug\parcheggio.X.debug.obj
+_asin$3754 1A8 0 BANK1 1 cstackBANK1 dist/default/debug\parcheggio.X.debug.obj
+_asin$3755 1A4 0 BANK1 1 cstackBANK1 dist/default/debug\parcheggio.X.debug.obj
+__end_of___xxtofl 56C6 0 CODE 0 text13 dist/default/debug\parcheggio.X.debug.obj
+asin@sgn 1A0 0 BANK1 1 cstackBANK1 dist/default/debug\parcheggio.X.debug.obj
+__pdataBANK0 E6 0 BANK0 1 dataBANK0 dist/default/debug\parcheggio.X.debug.obj
+__pdataBANK1 1E4 0 BANK1 1 dataBANK1 dist/default/debug\parcheggio.X.debug.obj
+__activetblptr 3 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_new_distance 2AA -24C COMRAM 1 bitbssCOMRAM dist/default/debug\parcheggio.X.debug.obj
+_start_operation 2AE -24C COMRAM 1 bitbssCOMRAM dist/default/debug\parcheggio.X.debug.obj
+__Hstruct 0 0 COMRAM 1 struct dist/default/debug\parcheggio.X.debug.obj
+__size_of___flge 0 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+__size_of___wmul 0 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+__LbssBANK0 0 0 ABS 0 bssBANK0 dist/default/debug\parcheggio.X.debug.obj
+__LbssBANK1 0 0 ABS 0 bssBANK1 dist/default/debug\parcheggio.X.debug.obj
+sin@sgn 1AD 0 BANK1 1 cstackBANK1 dist/default/debug\parcheggio.X.debug.obj
+__Htext10 0 0 ABS 0 text10 dist/default/debug\parcheggio.X.debug.obj
+__Htext11 0 0 ABS 0 text11 dist/default/debug\parcheggio.X.debug.obj
+__Htext12 0 0 ABS 0 text12 dist/default/debug\parcheggio.X.debug.obj
+__Htext13 0 0 ABS 0 text13 dist/default/debug\parcheggio.X.debug.obj
+__Htext14 0 0 ABS 0 text14 dist/default/debug\parcheggio.X.debug.obj
+__Htext15 0 0 ABS 0 text15 dist/default/debug\parcheggio.X.debug.obj
+__Htext16 0 0 ABS 0 text16 dist/default/debug\parcheggio.X.debug.obj
+__Htext17 0 0 ABS 0 text17 dist/default/debug\parcheggio.X.debug.obj
+__Htext18 0 0 ABS 0 text18 dist/default/debug\parcheggio.X.debug.obj
+__Htext19 0 0 ABS 0 text19 dist/default/debug\parcheggio.X.debug.obj
+__Htext20 0 0 ABS 0 text20 dist/default/debug\parcheggio.X.debug.obj
+__Htext21 0 0 ABS 0 text21 dist/default/debug\parcheggio.X.debug.obj
+__Htext22 0 0 ABS 0 text22 dist/default/debug\parcheggio.X.debug.obj
+__Htext23 0 0 ABS 0 text23 dist/default/debug\parcheggio.X.debug.obj
+__Htext24 0 0 ABS 0 text24 dist/default/debug\parcheggio.X.debug.obj
+__Htext25 0 0 ABS 0 text25 dist/default/debug\parcheggio.X.debug.obj
+__Htext26 0 0 ABS 0 text26 dist/default/debug\parcheggio.X.debug.obj
+__Htext27 0 0 ABS 0 text27 dist/default/debug\parcheggio.X.debug.obj
+__Htext28 0 0 ABS 0 text28 dist/default/debug\parcheggio.X.debug.obj
+__Htext29 0 0 ABS 0 text29 dist/default/debug\parcheggio.X.debug.obj
+__Htext30 0 0 ABS 0 text30 dist/default/debug\parcheggio.X.debug.obj
+__Htext31 0 0 ABS 0 text31 dist/default/debug\parcheggio.X.debug.obj
+__Htext32 0 0 ABS 0 text32 dist/default/debug\parcheggio.X.debug.obj
+__Htext33 0 0 ABS 0 text33 dist/default/debug\parcheggio.X.debug.obj
+__Htext34 0 0 ABS 0 text34 dist/default/debug\parcheggio.X.debug.obj
+__Htext36 0 0 ABS 0 text36 dist/default/debug\parcheggio.X.debug.obj
+__Htext37 0 0 ABS 0 text37 dist/default/debug\parcheggio.X.debug.obj
+__Htext38 0 0 ABS 0 text38 dist/default/debug\parcheggio.X.debug.obj
+__Htext40 0 0 ABS 0 text40 dist/default/debug\parcheggio.X.debug.obj
+__CFG_BBSIZ$1024 0 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+CANsendMessage@identifier 77 0 BANK0 1 cstackBANK0 dist/default/debug\parcheggio.X.debug.obj
+_PIE3bits FA3 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_distance_average 19 0 COMRAM 1 bssCOMRAM dist/default/debug\parcheggio.X.debug.obj
+floor@expon 193 0 BANK1 1 cstackBANK1 dist/default/debug\parcheggio.X.debug.obj
+atan@val_squared 194 0 BANK1 1 cstackBANK1 dist/default/debug\parcheggio.X.debug.obj
+___fladd@signs B9 0 BANK0 1 cstackBANK0 dist/default/debug\parcheggio.X.debug.obj
+__ptext10 49F8 0 CODE 0 text10 dist/default/debug\parcheggio.X.debug.obj
+__ptext11 5D10 0 CODE 0 text11 dist/default/debug\parcheggio.X.debug.obj
+__ptext12 62D6 0 CODE 0 text12 dist/default/debug\parcheggio.X.debug.obj
+__ptext13 54F8 0 CODE 0 text13 dist/default/debug\parcheggio.X.debug.obj
+__ptext14 5F4C 0 CODE 0 text14 dist/default/debug\parcheggio.X.debug.obj
+__ptext15 6512 0 CODE 0 text15 dist/default/debug\parcheggio.X.debug.obj
+__ptext16 4D10 0 CODE 0 text16 dist/default/debug\parcheggio.X.debug.obj
+__ptext17 3ED0 0 CODE 0 text17 dist/default/debug\parcheggio.X.debug.obj
+__ptext18 52A6 0 CODE 0 text18 dist/default/debug\parcheggio.X.debug.obj
+__ptext19 655A 0 CODE 0 text19 dist/default/debug\parcheggio.X.debug.obj
+__ptext20 65D2 0 CODE 0 text20 dist/default/debug\parcheggio.X.debug.obj
+__ptext21 5E34 0 CODE 0 text21 dist/default/debug\parcheggio.X.debug.obj
+__ptext22 35B2 0 CODE 0 text22 dist/default/debug\parcheggio.X.debug.obj
+__ptext23 310A 0 CODE 0 text23 dist/default/debug\parcheggio.X.debug.obj
+__ptext24 5A4C 0 CODE 0 text24 dist/default/debug\parcheggio.X.debug.obj
+__ptext25 429A 0 CODE 0 text25 dist/default/debug\parcheggio.X.debug.obj
+__ptext26 666C 0 CODE 0 text26 dist/default/debug\parcheggio.X.debug.obj
+__ptext27 6598 0 CODE 0 text27 dist/default/debug\parcheggio.X.debug.obj
+__ptext28 660A 0 CODE 0 text28 dist/default/debug\parcheggio.X.debug.obj
+__ptext29 6452 0 CODE 0 text29 dist/default/debug\parcheggio.X.debug.obj
+__ptext30 56C6 0 CODE 0 text30 dist/default/debug\parcheggio.X.debug.obj
+__ptext31 465A 0 CODE 0 text31 dist/default/debug\parcheggio.X.debug.obj
+__ptext32 D52 0 CODE 0 text32 dist/default/debug\parcheggio.X.debug.obj
+__ptext33 66DA 0 CODE 0 text33 dist/default/debug\parcheggio.X.debug.obj
+__ptext34 64BE 0 CODE 0 text34 dist/default/debug\parcheggio.X.debug.obj
+__ptext36 1FE4 0 CODE 0 text36 dist/default/debug\parcheggio.X.debug.obj
+__ptext37 66BC 0 CODE 0 text37 dist/default/debug\parcheggio.X.debug.obj
+__ptext38 2BFE 0 CODE 0 text38 dist/default/debug\parcheggio.X.debug.obj
+__ptext40 636A 0 CODE 0 text40 dist/default/debug\parcheggio.X.debug.obj
+__size_of_can_send 0 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_pulse_time 21 0 COMRAM 1 bssCOMRAM dist/default/debug\parcheggio.X.debug.obj
+___fladd 310A 0 CODE 0 text23 dist/default/debug\parcheggio.X.debug.obj
+___fldiv 429A 0 CODE 0 text25 dist/default/debug\parcheggio.X.debug.obj
+___flmul 35B2 0 CODE 0 text22 dist/default/debug\parcheggio.X.debug.obj
+___flneg 65D2 0 CODE 0 text20 dist/default/debug\parcheggio.X.debug.obj
+___flsub 6512 0 CODE 0 text15 dist/default/debug\parcheggio.X.debug.obj
+___fltol 5F4C 0 CODE 0 text14 dist/default/debug\parcheggio.X.debug.obj
+_larghezza 1E4 0 BANK1 1 dataBANK1 dist/default/debug\parcheggio.X.debug.obj
+__pintcode_body 613C 0 CODE 0 intcode_body dist/default/debug\parcheggio.X.debug.obj
+___lwdiv 636A 0 CODE 0 text40 dist/default/debug\parcheggio.X.debug.obj
+__Lbank10 0 0 ABS 0 bank10 dist/default/debug\parcheggio.X.debug.obj
+__Lbank11 0 0 ABS 0 bank11 dist/default/debug\parcheggio.X.debug.obj
+__Lbank12 0 0 ABS 0 bank12 dist/default/debug\parcheggio.X.debug.obj
+__Lbigbss 0 0 BIGRAM 1 bigbss dist/default/debug\parcheggio.X.debug.obj
+__Lbigram 0 0 ABS 0 bigram dist/default/debug\parcheggio.X.debug.obj
+__CFG_BORV$3 0 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+__size_of_delay_s 0 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+?_asin D5 0 BANK0 1 cstackBANK0 dist/default/debug\parcheggio.X.debug.obj
+?_atan D1 0 BANK0 1 cstackBANK0 dist/default/debug\parcheggio.X.debug.obj
+?_fabs C1 0 BANK0 1 cstackBANK0 dist/default/debug\parcheggio.X.debug.obj
+?_sqrt C1 0 BANK0 1 cstackBANK0 dist/default/debug\parcheggio.X.debug.obj
+__Lcomram 0 0 ABS 0 comram dist/default/debug\parcheggio.X.debug.obj
+__Lconfig 300000 0 CONFIG 0 config dist/default/debug\parcheggio.X.debug.obj
+_RXB0CON F60 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_RXB0DLC F65 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_RXB1CON F50 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_RXB1DLC F55 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+ISR_Bassa@gigi 52 0 COMRAM 1 cstackCOMRAM dist/default/debug\parcheggio.X.debug.obj
+___wmul@multiplier 77 0 BANK0 1 cstackBANK0 dist/default/debug\parcheggio.X.debug.obj
+_LATBbits F8A 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+___fldiv@grs 8A 0 BANK0 1 cstackBANK0 dist/default/debug\parcheggio.X.debug.obj
+___fldiv@rem 84 0 BANK0 1 cstackBANK0 dist/default/debug\parcheggio.X.debug.obj
+_raggio 1E8 0 BANK1 1 dataBANK1 dist/default/debug\parcheggio.X.debug.obj
+_RXM0SIDLbits F19 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_park_search 588C 0 CODE 0 text1 dist/default/debug\parcheggio.X.debug.obj
+__Lfarbss 0 0 FARRAM 0 farbss dist/default/debug\parcheggio.X.debug.obj
+___lwdiv@divisor 62 0 BANK0 1 cstackBANK0 dist/default/debug\parcheggio.X.debug.obj
+__Lfardata 0 0 FARRAM 0 fardata dist/default/debug\parcheggio.X.debug.obj
+sqrt@exp 196 0 BANK1 1 cstackBANK1 dist/default/debug\parcheggio.X.debug.obj
+sqrt@grs 192 0 BANK1 1 cstackBANK1 dist/default/debug\parcheggio.X.debug.obj
+___fldiv@new_exp 88 0 BANK0 1 cstackBANK0 dist/default/debug\parcheggio.X.debug.obj
+__end_ofi1_CANisTxReady 66DA 0 CODE 0 text37 dist/default/debug\parcheggio.X.debug.obj
+stackhi CFF 0 ABS 0 - C:\Users\Simone\AppData\Local\Temp\s2cs.obj
+stacklo 1EC 0 ABS 0 - C:\Users\Simone\AppData\Local\Temp\s2cs.obj
+__Lintcode 8 0 CODE 0 intcode dist/default/debug\parcheggio.X.debug.obj
+_park_routine$3744 1DC 0 BANK1 1 cstackBANK1 dist/default/debug\parcheggio.X.debug.obj
+_park_routine$3745 1E0 0 BANK1 1 cstackBANK1 dist/default/debug\parcheggio.X.debug.obj
+__Lintret 0 0 ABS 0 intret dist/default/debug\parcheggio.X.debug.obj
+__Lirdata 0 0 CODE 0 irdata dist/default/debug\parcheggio.X.debug.obj
+__end_of_eval_poly 5F4C 0 CODE 0 text21 dist/default/debug\parcheggio.X.debug.obj
+___fladd@grs BC 0 BANK0 1 cstackBANK0 dist/default/debug\parcheggio.X.debug.obj
+__CFG_LVP$OFF 0 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+__size_of_eval_poly 0 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_emergency 2A8 -24C COMRAM 1 bitbssCOMRAM dist/default/debug\parcheggio.X.debug.obj
+CANsendMessage@flags 7E 0 BANK0 1 cstackBANK0 dist/default/debug\parcheggio.X.debug.obj
+_delay_quartz_frequency_value E8 0 BANK0 1 dataBANK0 dist/default/debug\parcheggio.X.debug.obj
+floor@i 18F 0 BANK1 1 cstackBANK1 dist/default/debug\parcheggio.X.debug.obj
+floor@x 18B 0 BANK1 1 cstackBANK1 dist/default/debug\parcheggio.X.debug.obj
+__Lspace_0 0 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+__Lspace_1 0 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+__Lspace_2 0 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+__pbssCOMRAM 1 0 COMRAM 1 bssCOMRAM dist/default/debug\parcheggio.X.debug.obj
+__HbitbssCOMRAM 0 0 ABS 0 bitbssCOMRAM dist/default/debug\parcheggio.X.debug.obj
+__HcstackBANK0 0 0 ABS 0 cstackBANK0 dist/default/debug\parcheggio.X.debug.obj
+__HcstackBANK1 0 0 ABS 0 cstackBANK1 dist/default/debug\parcheggio.X.debug.obj
+___flge@ff1 C5 0 BANK0 1 cstackBANK0 dist/default/debug\parcheggio.X.debug.obj
+___flge@ff2 C9 0 BANK0 1 cstackBANK0 dist/default/debug\parcheggio.X.debug.obj
+_matematica 2674 0 CODE 0 text8 dist/default/debug\parcheggio.X.debug.obj
+CANInitialize@propSeg 8E 0 BANK0 1 cstackBANK0 dist/default/debug\parcheggio.X.debug.obj
+_CANsendMessage 1858 0 CODE 0 text5 dist/default/debug\parcheggio.X.debug.obj
+_PIR3bits FA4 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+__Lend_init 308 0 CODE 0 end_init dist/default/debug\parcheggio.X.debug.obj
+_activation 2A0 -24C COMRAM 1 bitbssCOMRAM dist/default/debug\parcheggio.X.debug.obj
+CANsendMessage@dataLength 7D 0 BANK0 1 cstackBANK0 dist/default/debug\parcheggio.X.debug.obj
+__size_of_delay_ms 0 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+__LcstackCOMRAM 0 0 ABS 0 cstackCOMRAM dist/default/debug\parcheggio.X.debug.obj
+___fltol@exp1 CA 0 BANK0 1 cstackBANK0 dist/default/debug\parcheggio.X.debug.obj
+_TXB2CONbits F20 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+end_of_initialization 6448 0 CODE 0 cinit dist/default/debug\parcheggio.X.debug.obj
+__end_of_CANreceiveMessage 310A 0 CODE 0 text38 dist/default/debug\parcheggio.X.debug.obj
+atan@recip 193 0 BANK1 1 cstackBANK1 dist/default/debug\parcheggio.X.debug.obj
+_can_send 5BDC 0 CODE 0 text4 dist/default/debug\parcheggio.X.debug.obj
+__Lnvrram 0 0 COMRAM 1 nvrram dist/default/debug\parcheggio.X.debug.obj
+__Hintentry 0 0 ABS 0 intentry dist/default/debug\parcheggio.X.debug.obj
+_data_steering 173 0 BANK1 1 bssBANK1 dist/default/debug\parcheggio.X.debug.obj
+__CFG_STVREN$ON 0 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_RCONbits FD0 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_avvicinamento 2A2 -24C COMRAM 1 bitbssCOMRAM dist/default/debug\parcheggio.X.debug.obj
+__CFG_OSC$HS 0 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_eval_poly 5E34 0 CODE 0 text21 dist/default/debug\parcheggio.X.debug.obj
+___lwdiv@dividend 60 0 BANK0 1 cstackBANK0 dist/default/debug\parcheggio.X.debug.obj
+?___fladd A9 0 BANK0 1 cstackBANK0 dist/default/debug\parcheggio.X.debug.obj
+?___fldiv 77 0 BANK0 1 cstackBANK0 dist/default/debug\parcheggio.X.debug.obj
+?___flmul 90 0 BANK0 1 cstackBANK0 dist/default/debug\parcheggio.X.debug.obj
+?___flneg BD 0 BANK0 1 cstackBANK0 dist/default/debug\parcheggio.X.debug.obj
+?___flsub 195 0 BANK1 1 cstackBANK1 dist/default/debug\parcheggio.X.debug.obj
+?___fltol C1 0 BANK0 1 cstackBANK0 dist/default/debug\parcheggio.X.debug.obj
+__Lparam0 0 0 BANK0 1 param0 dist/default/debug\parcheggio.X.debug.obj
+?___lwdiv 60 0 BANK0 1 cstackBANK0 dist/default/debug\parcheggio.X.debug.obj
+__Hreset_vec 4 0 CODE 0 reset_vec dist/default/debug\parcheggio.X.debug.obj
+__HbssBANK0 0 0 ABS 0 bssBANK0 dist/default/debug\parcheggio.X.debug.obj
+__HbssBANK1 0 0 ABS 0 bssBANK1 dist/default/debug\parcheggio.X.debug.obj
+_RXB1CONbits F50 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+__end_of_can_send 5D10 0 CODE 0 text4 dist/default/debug\parcheggio.X.debug.obj
+__Lramtop D00 0 RAM 0 ramtop dist/default/debug\parcheggio.X.debug.obj
+_TXB2SIDLbits F22 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_BRGCON1 F70 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_BRGCON2 F71 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_BRGCON3 F72 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_TXB0EIDH F43 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_TXB0EIDL F44 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_TXB0SIDH F41 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_TXB0SIDL F42 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+__pcinit 63E2 0 CODE 0 cinit dist/default/debug\parcheggio.X.debug.obj
+_TXB1EIDH F33 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_TXB1EIDL F34 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_TXB1SIDH F31 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_TXB1SIDL F32 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_TXB2EIDH F23 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_TXB2EIDL F24 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_TXB2SIDH F21 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_TXB2SIDL F22 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+___flneg@f1 BD 0 BANK0 1 cstackBANK0 dist/default/debug\parcheggio.X.debug.obj
+__ptext0 621C 0 CODE 0 text0 dist/default/debug\parcheggio.X.debug.obj
+__ptext1 588C 0 CODE 0 text1 dist/default/debug\parcheggio.X.debug.obj
+__ptext2 3A58 0 CODE 0 text2 dist/default/debug\parcheggio.X.debug.obj
+__ptext3 5022 0 CODE 0 text3 dist/default/debug\parcheggio.X.debug.obj
+__ptext4 5BDC 0 CODE 0 text4 dist/default/debug\parcheggio.X.debug.obj
+__ptext5 1858 0 CODE 0 text5 dist/default/debug\parcheggio.X.debug.obj
+__ptext6 6698 0 CODE 0 text6 dist/default/debug\parcheggio.X.debug.obj
+__ptext7 6640 0 CODE 0 text7 dist/default/debug\parcheggio.X.debug.obj
+__ptext8 2674 0 CODE 0 text8 dist/default/debug\parcheggio.X.debug.obj
+__ptext9 6058 0 CODE 0 text9 dist/default/debug\parcheggio.X.debug.obj
+__Lstruct 0 0 COMRAM 1 struct dist/default/debug\parcheggio.X.debug.obj
+atan@coeff_a D01 0 SMALLCONST 0 smallconst dist/default/debug\parcheggio.X.debug.obj
+atan@coeff_b D19 0 SMALLCONST 0 smallconst dist/default/debug\parcheggio.X.debug.obj
+__end_of_can_interpreter 6512 0 CODE 0 text34 dist/default/debug\parcheggio.X.debug.obj
+__Ltext10 0 0 ABS 0 text10 dist/default/debug\parcheggio.X.debug.obj
+__Ltext11 0 0 ABS 0 text11 dist/default/debug\parcheggio.X.debug.obj
+__Ltext12 0 0 ABS 0 text12 dist/default/debug\parcheggio.X.debug.obj
+__Ltext13 0 0 ABS 0 text13 dist/default/debug\parcheggio.X.debug.obj
+__Ltext14 0 0 ABS 0 text14 dist/default/debug\parcheggio.X.debug.obj
+__Ltext15 0 0 ABS 0 text15 dist/default/debug\parcheggio.X.debug.obj
+__Ltext16 0 0 ABS 0 text16 dist/default/debug\parcheggio.X.debug.obj
+__Ltext17 0 0 ABS 0 text17 dist/default/debug\parcheggio.X.debug.obj
+__Ltext18 0 0 ABS 0 text18 dist/default/debug\parcheggio.X.debug.obj
+__Ltext19 0 0 ABS 0 text19 dist/default/debug\parcheggio.X.debug.obj
+__Ltext20 0 0 ABS 0 text20 dist/default/debug\parcheggio.X.debug.obj
+__Ltext21 0 0 ABS 0 text21 dist/default/debug\parcheggio.X.debug.obj
+__Ltext22 0 0 ABS 0 text22 dist/default/debug\parcheggio.X.debug.obj
+__Ltext23 0 0 ABS 0 text23 dist/default/debug\parcheggio.X.debug.obj
+__Ltext24 0 0 ABS 0 text24 dist/default/debug\parcheggio.X.debug.obj
+__Ltext25 0 0 ABS 0 text25 dist/default/debug\parcheggio.X.debug.obj
+__Ltext26 0 0 ABS 0 text26 dist/default/debug\parcheggio.X.debug.obj
+__Ltext27 0 0 ABS 0 text27 dist/default/debug\parcheggio.X.debug.obj
+__Ltext28 0 0 ABS 0 text28 dist/default/debug\parcheggio.X.debug.obj
+__Ltext29 0 0 ABS 0 text29 dist/default/debug\parcheggio.X.debug.obj
+__Ltext30 0 0 ABS 0 text30 dist/default/debug\parcheggio.X.debug.obj
+__Ltext31 0 0 ABS 0 text31 dist/default/debug\parcheggio.X.debug.obj
+__Ltext32 0 0 ABS 0 text32 dist/default/debug\parcheggio.X.debug.obj
+__Ltext33 0 0 ABS 0 text33 dist/default/debug\parcheggio.X.debug.obj
+__Ltext34 0 0 ABS 0 text34 dist/default/debug\parcheggio.X.debug.obj
+__Ltext36 0 0 ABS 0 text36 dist/default/debug\parcheggio.X.debug.obj
+__Ltext37 0 0 ABS 0 text37 dist/default/debug\parcheggio.X.debug.obj
+__Ltext38 0 0 ABS 0 text38 dist/default/debug\parcheggio.X.debug.obj
+__Ltext40 0 0 ABS 0 text40 dist/default/debug\parcheggio.X.debug.obj
+__ramtop D00 0 RAM 0 ramtop C:\Users\Simone\AppData\Local\Temp\s2cs.obj
+atan@val 198 0 BANK1 1 cstackBANK1 dist/default/debug\parcheggio.X.debug.obj
+_CANOperationMode 66DA 0 CODE 0 text33 dist/default/debug\parcheggio.X.debug.obj
+__Lpowerup 308 0 CODE 0 powerup dist/default/debug\parcheggio.X.debug.obj
+?___xxtofl CB 0 BANK0 1 cstackBANK0 dist/default/debug\parcheggio.X.debug.obj
+_sensor_distance_short 183 0 BANK1 1 bssBANK1 dist/default/debug\parcheggio.X.debug.obj
+__Leeprom_data 0 0 EEDATA 0 eeprom_data dist/default/debug\parcheggio.X.debug.obj
+_TXB1CONbits F30 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+___fladd@aexp BA 0 BANK0 1 cstackBANK0 dist/default/debug\parcheggio.X.debug.obj
+___fladd@bexp BB 0 BANK0 1 cstackBANK0 dist/default/debug\parcheggio.X.debug.obj
+_TXERRCNT F76 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_BRGCON2bits F71 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_BRGCON3bits F72 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+___fltol@sign1 C9 0 BANK0 1 cstackBANK0 dist/default/debug\parcheggio.X.debug.obj
+__psmallconst D00 0 SMALLCONST 0 smallconst dist/default/debug\parcheggio.X.debug.obj
+__end_of_delay_s 6698 0 CODE 0 text26 dist/default/debug\parcheggio.X.debug.obj
+_RXF5SIDLbits F15 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+__Lreset_vec 0 0 CODE 0 reset_vec dist/default/debug\parcheggio.X.debug.obj
+eval_poly@d C1 0 BANK0 1 cstackBANK0 dist/default/debug\parcheggio.X.debug.obj
+eval_poly@n C3 0 BANK0 1 cstackBANK0 dist/default/debug\parcheggio.X.debug.obj
+eval_poly@x BD 0 BANK0 1 cstackBANK0 dist/default/debug\parcheggio.X.debug.obj
+_distance_set 110 0 BANK1 1 bssBANK1 dist/default/debug\parcheggio.X.debug.obj
+CANreceiveMessage@error 37 0 COMRAM 1 cstackCOMRAM dist/default/debug\parcheggio.X.debug.obj
+__end_of_CANsendMessage 1FE4 0 CODE 0 text5 dist/default/debug\parcheggio.X.debug.obj
+___fltol@f1 C1 0 BANK0 1 cstackBANK0 dist/default/debug\parcheggio.X.debug.obj
+___param_bank 0 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_RXB0CONbits F60 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+__CFG_WDT$OFF 0 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+__Hbigdata 0 0 BIGRAM 1 bigdata dist/default/debug\parcheggio.X.debug.obj
+__end_of__initialization 6448 0 CODE 0 cinit dist/default/debug\parcheggio.X.debug.obj
+__CFG_WRT0$OFF 0 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+__CFG_WRT1$OFF 0 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+__CFG_WRT2$OFF 0 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_delay_ms 6598 0 CODE 0 text27 dist/default/debug\parcheggio.X.debug.obj
+__CFG_WRT3$OFF 0 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_distance_dx 1B 0 COMRAM 1 bssCOMRAM dist/default/debug\parcheggio.X.debug.obj
+_distance_sx 1D 0 COMRAM 1 bssCOMRAM dist/default/debug\parcheggio.X.debug.obj
+_CANInitialize 56C6 0 CODE 0 text30 dist/default/debug\parcheggio.X.debug.obj
+__end_of_matematica 2BFE 0 CODE 0 text8 dist/default/debug\parcheggio.X.debug.obj
+__CFG_WRTB$OFF 0 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+__Libigdata 0 0 CODE 0 ibigdata dist/default/debug\parcheggio.X.debug.obj
+__CFG_WRTC$OFF 0 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+__CFG_WRTD$OFF 0 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+frexp@value 77 0 BANK0 1 cstackBANK0 dist/default/debug\parcheggio.X.debug.obj
+?_floor 18B 0 BANK1 1 cstackBANK1 dist/default/debug\parcheggio.X.debug.obj
+__pidataBANK0 66F8 0 CODE 0 idataBANK0 dist/default/debug\parcheggio.X.debug.obj
+__pidataBANK1 66F0 0 CODE 0 idataBANK1 dist/default/debug\parcheggio.X.debug.obj
+_TXB0SIDLbits F42 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+__Lclrtext 0 0 ABS 0 clrtext dist/default/debug\parcheggio.X.debug.obj
+__end_of_delay_ms 65D2 0 CODE 0 text27 dist/default/debug\parcheggio.X.debug.obj
+__CFG_PWRT$OFF 0 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+__pintcodelo 18 0 CODE 0 intcodelo dist/default/debug\parcheggio.X.debug.obj
+_TXB0CONbits F40 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+__pcstackCOMRAM 2D 0 COMRAM 1 cstackCOMRAM dist/default/debug\parcheggio.X.debug.obj
+_sensor_distance 1 0 COMRAM 1 bssCOMRAM dist/default/debug\parcheggio.X.debug.obj
+_sin$3757 1A5 0 BANK1 1 cstackBANK1 dist/default/debug\parcheggio.X.debug.obj
+__Hend_init 30C 0 CODE 0 end_init dist/default/debug\parcheggio.X.debug.obj
+_can_interpreter 64BE 0 CODE 0 text34 dist/default/debug\parcheggio.X.debug.obj
+CANreceiveMessage@tamp 38 0 COMRAM 1 cstackCOMRAM dist/default/debug\parcheggio.X.debug.obj
+_RXF3SIDLbits F0D 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+CANreceiveMessage@msg 2D 0 COMRAM 1 cstackCOMRAM dist/default/debug\parcheggio.X.debug.obj
+__end_of_asin 5022 0 CODE 0 text16 dist/default/debug\parcheggio.X.debug.obj
+__end_of_atan 54F8 0 CODE 0 text18 dist/default/debug\parcheggio.X.debug.obj
+__end_of_fabs 6598 0 CODE 0 text19 dist/default/debug\parcheggio.X.debug.obj
+__end_of_main 62D6 0 CODE 0 text0 dist/default/debug\parcheggio.X.debug.obj
+__end_of_sqrt 429A 0 CODE 0 text17 dist/default/debug\parcheggio.X.debug.obj
+__pintcode 8 0 CODE 0 intcode dist/default/debug\parcheggio.X.debug.obj
+i1CANsendMessage@flags 34 0 COMRAM 1 cstackCOMRAM dist/default/debug\parcheggio.X.debug.obj
+sqrt@frac 19C 0 BANK1 1 cstackBANK1 dist/default/debug\parcheggio.X.debug.obj
+sqrt@root 198 0 BANK1 1 cstackBANK1 dist/default/debug\parcheggio.X.debug.obj
+sqrt@sign 18B 0 BANK1 1 cstackBANK1 dist/default/debug\parcheggio.X.debug.obj
+_CANCONbits F6F 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_CANreceiveMessage 2BFE 0 CODE 0 text38 dist/default/debug\parcheggio.X.debug.obj
+_CANSTAT F6E 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+__end_of_floor 5E34 0 CODE 0 text11 dist/default/debug\parcheggio.X.debug.obj
+__end_of_frexp 636A 0 CODE 0 text12 dist/default/debug\parcheggio.X.debug.obj
+_PORTA F80 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_T0CON FD5 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_T3CON FB1 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_TMR0H FD7 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_TMR0L FD6 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_TMR3H FB3 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_TMR3L FB2 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_TRISA F92 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_TRISB F93 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_TRISC F94 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+__CFG_CP0$OFF 0 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+__CFG_CP1$OFF 0 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+__HRAM 0 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+__Hbss 0 0 RAM 1 bss dist/default/debug\parcheggio.X.debug.obj
+__Hram 0 0 ABS 0 ram dist/default/debug\parcheggio.X.debug.obj
+__Hsfr 0 0 ABS 0 sfr dist/default/debug\parcheggio.X.debug.obj
+__LRAM 1 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+__Lbss 0 0 RAM 1 bss dist/default/debug\parcheggio.X.debug.obj
+__Lram 0 0 ABS 0 ram dist/default/debug\parcheggio.X.debug.obj
+__Lsfr 0 0 ABS 0 sfr dist/default/debug\parcheggio.X.debug.obj
+__CFG_CP2$OFF 0 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+__CFG_CP3$OFF 0 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_bordo 12C 0 BANK1 1 bssBANK1 dist/default/debug\parcheggio.X.debug.obj
+_errno E4 0 BANK0 1 bssBANK0 dist/default/debug\parcheggio.X.debug.obj
+_RXB0EIDH F63 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_RXB0EIDL F64 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_first 2A9 -24C COMRAM 1 bitbssCOMRAM dist/default/debug\parcheggio.X.debug.obj
+_floor 5D10 0 CODE 0 text11 dist/default/debug\parcheggio.X.debug.obj
+_RXB0SIDH F61 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_RXB0SIDL F62 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_frexp 62D6 0 CODE 0 text12 dist/default/debug\parcheggio.X.debug.obj
+_RXB1EIDH F53 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_RXB1EIDL F54 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_RXB1SIDH F51 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_RXB1SIDL F52 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+__CFG_CPB$OFF 0 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+__CFG_CPD$OFF 0 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_RXB1SIDLbits F52 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_distance_received1 2A6 -24C COMRAM 1 bitbssCOMRAM dist/default/debug\parcheggio.X.debug.obj
+_CANSetMask 465A 0 CODE 0 text31 dist/default/debug\parcheggio.X.debug.obj
+__size_of_configurazione 0 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+__size_of_abs 0 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+__size_of_cos 0 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+__size_of_sin 0 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+__HdataBANK0 0 0 ABS 0 dataBANK0 dist/default/debug\parcheggio.X.debug.obj
+__HdataBANK1 0 0 ABS 0 dataBANK1 dist/default/debug\parcheggio.X.debug.obj
+__LbitbssCOMRAM 0 0 ABS 0 bitbssCOMRAM dist/default/debug\parcheggio.X.debug.obj
+asin@x D5 0 BANK0 1 cstackBANK0 dist/default/debug\parcheggio.X.debug.obj
+asin@y 1AC 0 BANK1 1 cstackBANK1 dist/default/debug\parcheggio.X.debug.obj
+atan@f D1 0 BANK0 1 cstackBANK0 dist/default/debug\parcheggio.X.debug.obj
+atan@x 18F 0 BANK1 1 cstackBANK1 dist/default/debug\parcheggio.X.debug.obj
+atan@y 18B 0 BANK1 1 cstackBANK1 dist/default/debug\parcheggio.X.debug.obj
+_sensor_distance_old 118 0 BANK1 1 bssBANK1 dist/default/debug\parcheggio.X.debug.obj
+__initialization 63E2 0 CODE 0 cinit dist/default/debug\parcheggio.X.debug.obj
+___xxtofl@sign D3 0 BANK0 1 cstackBANK0 dist/default/debug\parcheggio.X.debug.obj
+__pbssBANK0 DA 0 BANK0 1 bssBANK0 dist/default/debug\parcheggio.X.debug.obj
+__pbssBANK1 100 0 BANK1 1 bssBANK1 dist/default/debug\parcheggio.X.debug.obj
+CANsendMessage@data 7B 0 BANK0 1 cstackBANK0 dist/default/debug\parcheggio.X.debug.obj
+CANsendMessage@tamp 83 0 BANK0 1 cstackBANK0 dist/default/debug\parcheggio.X.debug.obj
+_RXF0EIDH F02 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_RXF0EIDL F03 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_RXF0SIDH F00 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_RXF0SIDL F01 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_RXF1EIDH F06 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_RXF1EIDL F07 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_RXERRCNT F75 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_RXF1SIDH F04 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_RXF1SIDL F05 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_RXF2EIDH F0A 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_RXF2EIDL F0B 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_RXF2SIDH F08 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_RXF2SIDL F09 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_RXF3EIDH F0E 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_RXF3EIDL F0F 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_actual_speed DE 0 BANK0 1 bssBANK0 dist/default/debug\parcheggio.X.debug.obj
+_RXF3SIDH F0C 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_RXF3SIDL F0D 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_RXF4EIDH F12 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_RXF4EIDL F13 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_RXF4SIDH F10 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_RXF4SIDL F11 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_RXF5EIDH F16 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_RXF5EIDL F17 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_RXF5SIDH F14 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_RXF5SIDL F15 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+__Hfardata 0 0 FARRAM 0 fardata dist/default/debug\parcheggio.X.debug.obj
+___wmul@product 7B 0 BANK0 1 cstackBANK0 dist/default/debug\parcheggio.X.debug.obj
+__Hsmallconst D52 0 SMALLCONST 0 smallconst dist/default/debug\parcheggio.X.debug.obj
+_cos$3756 1B8 0 BANK1 1 cstackBANK1 dist/default/debug\parcheggio.X.debug.obj
+__end_of_CANOperationMode 66F0 0 CODE 0 text33 dist/default/debug\parcheggio.X.debug.obj
+__Lifardata 0 0 CODE 0 ifardata dist/default/debug\parcheggio.X.debug.obj
+_left_speed 1F 0 COMRAM 1 bssCOMRAM dist/default/debug\parcheggio.X.debug.obj
+fabs@d C1 0 BANK0 1 cstackBANK0 dist/default/debug\parcheggio.X.debug.obj
+__Hintsave_regs 0 0 BIGRAM 1 intsave_regs dist/default/debug\parcheggio.X.debug.obj
+__Hintcode 16 0 CODE 0 intcode dist/default/debug\parcheggio.X.debug.obj
+_TXB2DLCbits F25 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+_RXF1SIDLbits F05 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
+__size_of_CANOperationMode 0 0 ABS 0 - dist/default/debug\parcheggio.X.debug.obj
 # %SPLITSTAB Section
 # This section enumerates all the psect splits performed by the assembler.
 # The beginning of the section is indicated by %SPLITSTAB.

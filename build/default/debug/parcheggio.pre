@@ -20145,6 +20145,7 @@ while (!CANisTxReady());
 CANsendMessage(0xAA, data, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
 asm("reset");
 }
+
 } else {
 sensor_distance_short[MUX_index] = 0;
 }
@@ -20232,12 +20233,12 @@ start_operation = 0;
 
 while (1) {
 while (activation != 1) {
+delay_ms(100);
 while (!CANisTxReady());
 PORTBbits.RB4 = ~PORTBbits.RB4;
 CANsendMessage(0xAA, sensor_distance_short, 8, CAN_CONFIG_STD_MSG & CAN_REMOTE_TX_FRAME & CAN_TX_PRIORITY_0);
-delay_ms(100);
 
-# 243
+# 245
 }
 park_search();
 can_interpreter();

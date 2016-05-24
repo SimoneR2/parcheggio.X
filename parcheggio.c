@@ -16,7 +16,7 @@
 #include <math.h>
 #define _XTAL_FREQ 16000000
 #define tolleranza 5
-#define soglia1 3
+#define soglia1 4
 #define soglia2 10
 void configurazione(void);
 void park_search(void);
@@ -123,24 +123,18 @@ __interrupt(low_priority) void ISR_Bassa(void) {
         if (distance_error == 1) {
             sensor_distance[MUX_index] = 5000;
         }
-        if (sensor_distance[MUX_index] < soglia2) {
+        if ((sensor_distance[MUX_index] < soglia2)&&(start_operation == 0)) {
             sensor_distance_short[0] = sensor_distance_short[0] | (0b00000001 << MUX_index);
 
-
-            sensor_distance_short[0] = ((sensor_distance_short[0]) < MUX_index) | 1;
         } else if ((sensor_distance[MUX_index] < soglia1)&&(start_operation == 1)&&(avvicinamento == 0)) {
-            if ((MUX_index == 0) || (MUX_index == 1)) {
-
-            } else {
+            
                 data[1] = 0;
                 data[0] = 4;
                 while (!CANisTxReady());
-                CANsendMessage(0xAA, data, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
+                CANsendMessage(PARK_ASSIST_STATE, data, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
                 RESET();
-            }
-
         } else {
-            sensor_distance_short[0] = sensor_distance_short[0] ^ (0b00000001 << MUX_index);
+            sensor_distance_short[0] = sensor_distance_short[0] & (~(0b00000001 << MUX_index));
         }
         MUX_index++;
         if (MUX_index == 8) {
@@ -261,8 +255,9 @@ void park_search(void) {
                 CANsendMessage(COUNT_START, data, 8, CAN_CONFIG_STD_MSG & CAN_REMOTE_TX_FRAME & CAN_TX_PRIORITY_0);
                 request_sent = 1;
                 alignment_gap = 0; //<==
-                LATBbits.LATB4 = 1;
+
             }
+            LATBbits.LATB4 = 1;
         } else {
             LATBbits.LATB4 = 0;
             alignment_gap = abs(sensor_distance[0] - sensor_distance[1]);
@@ -295,7 +290,11 @@ void park_search(void) {
 }
 
 void park_routine(void) {
+    
+    avvicinamento = 0;
     data_correction[0] = 0;
+    parallelo();
+    delay_ms(200);
     while ((asd == 1)&&(PORTBbits.RB5 == 1) && (activation == 1)) {
         delay_ms(200);
         PORTBbits.RB6 = ~PORTBbits.RB6;

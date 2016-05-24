@@ -11,54 +11,54 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\Simone\AppData\Local\Temp\s6ec.obj
+$C:\Users\Simone\AppData\Local\Temp\s5dc.obj
 idloc IDLOC 0 200000 200000 8 1
 reset_vec CODE 0 0 0 4 1
-end_init CODE 0 308 308 4 1
+end_init CODE 0 312 312 4 1
 config CONFIG 0 300000 300000 E 1
 $dist/default/production\parcheggio.X.production.obj
-intcodelo CODE 0 18 18 2F0 1
-cinit CODE 0 63E2 63E2 70 1
-intcode_body CODE 0 613C 613C E0 1
-text0 CODE 0 621C 621C BA 1
-text1 CODE 0 588C 588C 1C0 1
-text2 CODE 0 3A58 3A58 478 1
-text3 CODE 0 5022 5022 284 1
-text4 CODE 0 5BDC 5BDC 134 1
+intcodelo CODE 0 18 18 2FA 1
+cinit CODE 0 6404 6404 70 1
+intcode_body CODE 0 6150 6150 E0 1
+text0 CODE 0 6230 6230 C8 1
+text1 CODE 0 58A0 58A0 1C0 1
+text2 CODE 0 3A58 3A58 48C 1
+text3 CODE 0 5036 5036 284 1
+text4 CODE 0 5BF0 5BF0 134 1
 text5 CODE 0 1858 1858 78C 1
-text6 CODE 0 6698 6698 24 1
-text7 CODE 0 6640 6640 2C 1
+text6 CODE 0 66BA 66BA 24 1
+text7 CODE 0 6662 6662 2C 1
 text8 CODE 0 2674 2674 58A 1
-text9 CODE 0 6058 6058 E4 1
-text10 CODE 0 49F8 49F8 318 1
-text11 CODE 0 5D10 5D10 124 1
-text12 CODE 0 62D6 62D6 94 1
-text13 CODE 0 54F8 54F8 1CE 1
-text14 CODE 0 5F4C 5F4C 10C 1
-text15 CODE 0 6512 6512 48 1
-text16 CODE 0 4D10 4D10 312 1
-text17 CODE 0 3ED0 3ED0 3CA 1
-text18 CODE 0 52A6 52A6 252 1
-text19 CODE 0 655A 655A 3E 1
-text20 CODE 0 65D2 65D2 38 1
-text21 CODE 0 5E34 5E34 118 1
+text9 CODE 0 606C 606C E4 1
+text10 CODE 0 4A0C 4A0C 318 1
+text11 CODE 0 5D24 5D24 124 1
+text12 CODE 0 62F8 62F8 94 1
+text13 CODE 0 550C 550C 1CE 1
+text14 CODE 0 5F60 5F60 10C 1
+text15 CODE 0 6534 6534 48 1
+text16 CODE 0 4D24 4D24 312 1
+text17 CODE 0 3EE4 3EE4 3CA 1
+text18 CODE 0 52BA 52BA 252 1
+text19 CODE 0 657C 657C 3E 1
+text20 CODE 0 65F4 65F4 38 1
+text21 CODE 0 5E48 5E48 118 1
 text22 CODE 0 35B2 35B2 4A6 1
 text23 CODE 0 310A 310A 4A8 1
-text24 CODE 0 5A4C 5A4C 190 1
-text25 CODE 0 429A 429A 3C0 1
-text26 CODE 0 666C 666C 2C 1
-text27 CODE 0 6598 6598 3A 1
-text28 CODE 0 660A 660A 36 1
-text29 CODE 0 6452 6452 6C 1
-text30 CODE 0 56C6 56C6 1C6 1
-text31 CODE 0 465A 465A 39E 1
+text24 CODE 0 5A60 5A60 190 1
+text25 CODE 0 42AE 42AE 3C0 1
+text26 CODE 0 668E 668E 2C 1
+text27 CODE 0 65BA 65BA 3A 1
+text28 CODE 0 662C 662C 36 1
+text29 CODE 0 6474 6474 6C 1
+text30 CODE 0 56DA 56DA 1C6 1
+text31 CODE 0 466E 466E 39E 1
 text32 CODE 0 D52 D52 B06 1
-text33 CODE 0 66DA 66DA 16 1
-text34 CODE 0 64BE 64BE 54 1
+text33 CODE 0 66FC 66FC 16 1
+text34 CODE 0 64E0 64E0 54 1
 text36 CODE 0 1FE4 1FE4 690 1
-text37 CODE 0 66BC 66BC 1E 1
+text37 CODE 0 66DE 66DE 1E 1
 text38 CODE 0 2BFE 2BFE 50C 1
-text40 CODE 0 636A 636A 78 1
+text40 CODE 0 638C 638C 78 1
 cstackCOMRAM COMRAM 1 2D 2D 27 1
 cstackBANK0 BANK0 1 60 60 7A 1
 cstackBANK1 BANK1 1 18B 18B 59 1
@@ -68,8 +68,8 @@ bssBANK0 BANK0 1 DA DA C 1
 bssBANK1 BANK1 1 100 100 8B 1
 intcode CODE 0 8 8 E 1
 smallconst SMALLCONST 0 D00 D00 52 1
-idataBANK0 CODE 0 66F8 66F8 3 1
-idataBANK1 CODE 0 66F0 66F0 8 1
+idataBANK0 CODE 0 671A 671A 3 1
+idataBANK1 CODE 0 6712 6712 8 1
 dataBANK0 BANK0 1 E6 E6 3 1
 dataBANK1 BANK1 1 1E4 1E4 8 1
 bssCOMRAM COMRAM 1 1 1 2C 1
@@ -94,14 +94,14 @@ BANK8 800-8FF 1
 BANK9 900-9FF 1
 CONST 4-7 1
 CONST 16-17 1
-CONST 30C-CFF 1
-CONST 66FB-17FFF 1
+CONST 316-CFF 1
+CONST 671D-17FFF 1
 STACK 1EC-CFF 1
-SMALLCONST 66FB-17FFF 1
+SMALLCONST 671D-17FFF 1
 CODE 4-7 1
 CODE 16-17 1
-CODE 30C-CFF 1
-CODE 66FB-17FFF 1
+CODE 316-CFF 1
+CODE 671D-17FFF 1
 BANK10 A00-AFF 1
 BANK11 B00-BFF 1
 BANK12 C00-CFF 1
@@ -110,7 +110,7 @@ BIGRAM E9-FF 1
 BIGRAM 1EC-CFF 1
 COMRAM 57-5F 1
 EEDATA F00000-F003FF 1
-MEDIUMCONST 66FB-FFFF 1
+MEDIUMCONST 671D-FFFF 1
 MEDIUMCONST 10D00-17FFF 1
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
@@ -127,7 +127,7 @@ MEDIUMCONST 10D00-17FFF 1
 %LINETAB
 $dist/default/production\parcheggio.X.production.obj
 18 intcodelo CODE >115:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-18 intcodelo CODE >477:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+18 intcodelo CODE >481:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
 5E intcodelo CODE >117:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
 62 intcodelo CODE >118:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
 64 intcodelo CODE >119:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
@@ -138,103 +138,102 @@ $dist/default/production\parcheggio.X.production.obj
 74 intcodelo CODE >124:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
 8C intcodelo CODE >125:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
 8C intcodelo CODE >126:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-AA intcodelo CODE >127:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-BE intcodelo CODE >128:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-E2 intcodelo CODE >129:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-EE intcodelo CODE >132:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-F4 intcodelo CODE >133:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-FA intcodelo CODE >134:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-104 intcodelo CODE >135:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+AC intcodelo CODE >127:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+C8 intcodelo CODE >129:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+EC intcodelo CODE >131:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+F2 intcodelo CODE >132:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+F8 intcodelo CODE >133:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+102 intcodelo CODE >134:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+126 intcodelo CODE >135:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
 128 intcodelo CODE >136:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-12A intcodelo CODE >138:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-12C intcodelo CODE >139:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-140 intcodelo CODE >141:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-142 intcodelo CODE >142:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-14A intcodelo CODE >143:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-14E intcodelo CODE >144:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-14E intcodelo CODE >145:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-152 intcodelo CODE >146:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-166 intcodelo CODE >147:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-16A intcodelo CODE >148:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-16C intcodelo CODE >149:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-16E intcodelo CODE >150:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-174 intcodelo CODE >151:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-176 intcodelo CODE >152:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-178 intcodelo CODE >153:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-17A intcodelo CODE >154:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-17C intcodelo CODE >155:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-17E intcodelo CODE >156:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-180 intcodelo CODE >157:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-182 intcodelo CODE >160:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-18A intcodelo CODE >161:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-196 intcodelo CODE >162:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-1AA intcodelo CODE >163:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-1AC intcodelo CODE >165:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-1CA intcodelo CODE >166:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-1D2 intcodelo CODE >167:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-1D8 intcodelo CODE >168:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-1E6 intcodelo CODE >169:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-1EC intcodelo CODE >170:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-1FA intcodelo CODE >171:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-214 intcodelo CODE >172:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-216 intcodelo CODE >173:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-218 intcodelo CODE >175:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-22E intcodelo CODE >176:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-236 intcodelo CODE >177:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-238 intcodelo CODE >178:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-23A intcodelo CODE >179:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-23C intcodelo CODE >180:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-23E intcodelo CODE >181:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-240 intcodelo CODE >182:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-242 intcodelo CODE >183:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-244 intcodelo CODE >184:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-246 intcodelo CODE >187:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-25A intcodelo CODE >188:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-25C intcodelo CODE >190:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-272 intcodelo CODE >191:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-27E intcodelo CODE >192:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-2A2 intcodelo CODE >191:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-2A6 intcodelo CODE >194:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-2BA intcodelo CODE >195:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-2BC intcodelo CODE >198:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-2BC intcodelo CODE >200:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-2BE intcodelo CODE >201:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-2C0 intcodelo CODE >204:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+12A intcodelo CODE >137:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+14A intcodelo CODE >139:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+14C intcodelo CODE >140:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+154 intcodelo CODE >141:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+158 intcodelo CODE >142:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+158 intcodelo CODE >143:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+15C intcodelo CODE >144:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+170 intcodelo CODE >145:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+174 intcodelo CODE >146:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+176 intcodelo CODE >147:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+178 intcodelo CODE >148:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+17E intcodelo CODE >149:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+180 intcodelo CODE >150:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+182 intcodelo CODE >151:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+184 intcodelo CODE >152:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+186 intcodelo CODE >153:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+188 intcodelo CODE >154:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+18A intcodelo CODE >155:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+18C intcodelo CODE >158:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+194 intcodelo CODE >159:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+1A0 intcodelo CODE >160:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+1B4 intcodelo CODE >161:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+1B6 intcodelo CODE >163:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+1D4 intcodelo CODE >164:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+1DC intcodelo CODE >165:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+1E2 intcodelo CODE >166:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+1F0 intcodelo CODE >167:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+1F6 intcodelo CODE >168:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+204 intcodelo CODE >169:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+21E intcodelo CODE >170:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+220 intcodelo CODE >171:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+222 intcodelo CODE >173:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+238 intcodelo CODE >174:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+240 intcodelo CODE >175:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+242 intcodelo CODE >176:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+244 intcodelo CODE >177:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+246 intcodelo CODE >178:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+248 intcodelo CODE >179:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+24A intcodelo CODE >180:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+24C intcodelo CODE >181:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+24E intcodelo CODE >182:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+250 intcodelo CODE >185:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+264 intcodelo CODE >186:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+266 intcodelo CODE >188:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+27C intcodelo CODE >189:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+288 intcodelo CODE >190:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+2AC intcodelo CODE >189:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+2B0 intcodelo CODE >192:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+2C4 intcodelo CODE >193:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+2C6 intcodelo CODE >196:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+2C6 intcodelo CODE >198:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+2C8 intcodelo CODE >199:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+2CA intcodelo CODE >202:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
 8 intcode CODE >635:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
 8 intcode CODE >97:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-636A text40 CODE >8:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwdiv.c
-636A text40 CODE >14:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwdiv.c
-6374 text40 CODE >15:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwdiv.c
-6380 text40 CODE >16:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwdiv.c
-6386 text40 CODE >17:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwdiv.c
-6388 text40 CODE >18:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwdiv.c
-6390 text40 CODE >19:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwdiv.c
-6394 text40 CODE >17:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwdiv.c
-639A text40 CODE >22:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwdiv.c
-63A2 text40 CODE >23:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwdiv.c
-63B6 text40 CODE >24:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwdiv.c
-63C6 text40 CODE >25:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwdiv.c
-63CA text40 CODE >27:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwdiv.c
-63D2 text40 CODE >28:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwdiv.c
-63D8 text40 CODE >29:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwdiv.c
-63D8 text40 CODE >30:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwdiv.c
-63E0 text40 CODE >31:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwdiv.c
-613C intcode_body CODE >97:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-616C intcode_body CODE >98:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-6170 intcode_body CODE >99:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-6172 intcode_body CODE >100:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-6176 intcode_body CODE >101:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-617A intcode_body CODE >102:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-617C intcode_body CODE >103:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-617E intcode_body CODE >104:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-6182 intcode_body CODE >105:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-6186 intcode_body CODE >106:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-618C intcode_body CODE >107:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-619A intcode_body CODE >108:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-61AA intcode_body CODE >109:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-61DC intcode_body CODE >110:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-61DE intcode_body CODE >112:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-61E0 intcode_body CODE >113:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+638C text40 CODE >8:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwdiv.c
+638C text40 CODE >14:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwdiv.c
+6396 text40 CODE >15:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwdiv.c
+63A2 text40 CODE >16:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwdiv.c
+63A8 text40 CODE >17:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwdiv.c
+63AA text40 CODE >18:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwdiv.c
+63B2 text40 CODE >19:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwdiv.c
+63B6 text40 CODE >17:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwdiv.c
+63BC text40 CODE >22:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwdiv.c
+63C4 text40 CODE >23:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwdiv.c
+63D8 text40 CODE >24:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwdiv.c
+63E8 text40 CODE >25:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwdiv.c
+63EC text40 CODE >27:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwdiv.c
+63F4 text40 CODE >28:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwdiv.c
+63FA text40 CODE >29:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwdiv.c
+63FA text40 CODE >30:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwdiv.c
+6402 text40 CODE >31:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwdiv.c
+6150 intcode_body CODE >97:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+6180 intcode_body CODE >98:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+6184 intcode_body CODE >99:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+6186 intcode_body CODE >100:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+618A intcode_body CODE >101:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+618E intcode_body CODE >102:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+6190 intcode_body CODE >103:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+6192 intcode_body CODE >104:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+6196 intcode_body CODE >105:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+619A intcode_body CODE >106:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+61A0 intcode_body CODE >107:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+61AE intcode_body CODE >108:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+61BE intcode_body CODE >109:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+61F0 intcode_body CODE >110:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+61F2 intcode_body CODE >112:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+61F4 intcode_body CODE >113:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
 2BFE text38 CODE >529:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
 2BFE text38 CODE >532:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
 2C02 text38 CODE >534:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
@@ -308,8 +307,8 @@ FA intcodelo CODE >134:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
 30D4 text38 CODE >628:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
 3106 text38 CODE >631:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
 3108 text38 CODE >633:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-66BC text37 CODE >1155:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-66BC text37 CODE >1157:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+66DE text37 CODE >1155:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+66DE text37 CODE >1157:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
 1FE4 text36 CODE >295:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
 1FE4 text36 CODE >299:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
 1FEA text36 CODE >300:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
@@ -478,16 +477,16 @@ FA intcodelo CODE >134:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
 265C text36 CODE >517:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
 266E text36 CODE >519:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
 2672 text36 CODE >521:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-64BE text34 CODE >471:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-64BE text34 CODE >472:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-64C4 text34 CODE >473:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-64D4 text34 CODE >474:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-64DA text34 CODE >475:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-64EA text34 CODE >476:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-6510 text34 CODE >477:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-66DA text33 CODE >207:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-66DE text33 CODE >209:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-66E2 text33 CODE >211:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+64E0 text34 CODE >475:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+64E0 text34 CODE >476:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+64E6 text34 CODE >477:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+64F6 text34 CODE >478:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+64FC text34 CODE >479:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+650C text34 CODE >480:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+6532 text34 CODE >481:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+66FC text33 CODE >207:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+6700 text33 CODE >209:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+6704 text33 CODE >211:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
 D52 text32 CODE >749:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
 D56 text32 CODE >753:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
 D68 text32 CODE >755:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
@@ -717,263 +716,263 @@ FDE text32 CODE >800:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANl
 1810 text32 CODE >1074:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
 1844 text32 CODE >1075:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
 1852 text32 CODE >1076:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-465A text31 CODE >641:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-465E text31 CODE >644:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-466E text31 CODE >646:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-46A2 text31 CODE >647:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-46B0 text31 CODE >648:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-46B4 text31 CODE >650:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-46DC text31 CODE >651:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-470E text31 CODE >652:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-4712 text31 CODE >655:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-4724 text31 CODE >657:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-4758 text31 CODE >658:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-4766 text31 CODE >659:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-476A text31 CODE >661:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-4792 text31 CODE >662:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-47C4 text31 CODE >663:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-47C8 text31 CODE >666:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-47DA text31 CODE >668:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-47E8 text31 CODE >669:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-47EC text31 CODE >671:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-4814 text31 CODE >672:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-4844 text31 CODE >673:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-4848 text31 CODE >675:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-484E text31 CODE >676:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-4854 text31 CODE >677:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-4854 text31 CODE >678:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-4858 text31 CODE >680:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-485E text31 CODE >681:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-4864 text31 CODE >682:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-4864 text31 CODE >683:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-4868 text31 CODE >685:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-486E text31 CODE >686:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-4874 text31 CODE >687:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-4874 text31 CODE >688:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-4878 text31 CODE >690:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-487E text31 CODE >691:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-4884 text31 CODE >692:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-4884 text31 CODE >693:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-4888 text31 CODE >695:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-488E text31 CODE >696:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-4894 text31 CODE >697:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-4894 text31 CODE >698:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-4898 text31 CODE >700:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-48CC text31 CODE >701:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-48DA text31 CODE >702:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-48DE text31 CODE >705:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-48F2 text31 CODE >707:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-4900 text31 CODE >708:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-4904 text31 CODE >710:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-492C text31 CODE >711:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-495C text31 CODE >712:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-4960 text31 CODE >714:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-4966 text31 CODE >715:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-496C text31 CODE >716:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-496C text31 CODE >717:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-4970 text31 CODE >719:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-4976 text31 CODE >720:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-497C text31 CODE >721:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-497C text31 CODE >722:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-4980 text31 CODE >724:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-4986 text31 CODE >725:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-498C text31 CODE >726:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-498C text31 CODE >727:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-4990 text31 CODE >729:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-4996 text31 CODE >730:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-499C text31 CODE >731:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-499C text31 CODE >732:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-49A0 text31 CODE >734:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-49A6 text31 CODE >735:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-49AC text31 CODE >736:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-49AC text31 CODE >737:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-49B0 text31 CODE >739:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-49E4 text31 CODE >740:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-49F2 text31 CODE >741:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-56C6 text30 CODE >219:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-56CA text30 CODE >224:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-56D0 text30 CODE >226:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-56D4 text30 CODE >227:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-56D8 text30 CODE >228:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-56DC text30 CODE >230:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-56E8 text30 CODE >231:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-56EE text30 CODE >232:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-56F4 text30 CODE >234:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-56FA text30 CODE >235:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-5706 text30 CODE >236:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-570C text30 CODE >238:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-5710 text30 CODE >239:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-5712 text30 CODE >241:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-5716 text30 CODE >242:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-5718 text30 CODE >244:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-571E text30 CODE >246:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-5722 text30 CODE >247:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-5724 text30 CODE >252:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-572C text30 CODE >253:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-5736 text30 CODE >254:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-5738 text30 CODE >256:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-573C text30 CODE >260:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-575A text30 CODE >261:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-5778 text30 CODE >264:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-577A text30 CODE >267:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-5782 text30 CODE >271:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-5782 text30 CODE >272:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-5786 text30 CODE >273:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-578A text30 CODE >274:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-578C text30 CODE >275:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-578C text30 CODE >276:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-5790 text30 CODE >277:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-5796 text30 CODE >279:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-5798 text30 CODE >264:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-57DC text30 CODE >281:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-57F8 text30 CODE >282:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-5814 text30 CODE >283:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-5830 text30 CODE >284:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-584C text30 CODE >285:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-5868 text30 CODE >286:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-5884 text30 CODE >288:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-588A text30 CODE >290:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-6452 text29 CODE >479:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-6452 text29 CODE >480:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-6456 text29 CODE >481:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-645A text29 CODE >483:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-645E text29 CODE >484:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-6462 text29 CODE >486:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-6466 text29 CODE >487:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-6468 text29 CODE >489:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-646A text29 CODE >490:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-648E text29 CODE >492:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-6490 text29 CODE >493:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-6492 text29 CODE >494:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-6494 text29 CODE >495:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-6496 text29 CODE >496:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-6498 text29 CODE >497:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-649A text29 CODE >498:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-649C text29 CODE >499:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-649E text29 CODE >500:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-64A2 text29 CODE >501:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-64A6 text29 CODE >502:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-64AA text29 CODE >503:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-64AE text29 CODE >504:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-64B0 text29 CODE >505:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-64B2 text29 CODE >506:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-64B4 text29 CODE >507:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-64B6 text29 CODE >508:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-64B8 text29 CODE >509:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-64BA text29 CODE >510:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-64BC text29 CODE >511:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-660A text28 CODE >15:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\Umul16.c
-660A text28 CODE >37:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\Umul16.c
-661A text28 CODE >38:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\Umul16.c
-6628 text28 CODE >39:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\Umul16.c
-6636 text28 CODE >52:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\Umul16.c
-6598 text27 CODE >61:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/src\delay.c
-6598 text27 CODE >73:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/src\delay.c
-65B4 text27 CODE >75:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/src\delay.c
-65B6 text27 CODE >85:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/src\delay.c
-65BC text27 CODE >88:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/src\delay.c
-65C4 text27 CODE >75:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/src\delay.c
-65C4 text27 CODE >89:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/src\delay.c
-666C text26 CODE >102:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/src\delay.c
-6670 text26 CODE >106:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/src\delay.c
-6678 text26 CODE >107:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/src\delay.c
-6686 text26 CODE >106:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/src\delay.c
-429A text25 CODE >11:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
-429A text25 CODE >26:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
-42A4 text25 CODE >27:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
-42AE text25 CODE >28:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
-42B4 text25 CODE >29:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
-42B8 text25 CODE >33:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
-42C2 text25 CODE >35:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
-42CA text25 CODE >37:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
-42DC text25 CODE >40:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
-42E0 text25 CODE >42:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
-42E6 text25 CODE >46:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
-42F8 text25 CODE >49:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
-4302 text25 CODE >50:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
-430C text25 CODE >51:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
-4312 text25 CODE >52:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
-4316 text25 CODE >56:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
-4320 text25 CODE >58:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
-4328 text25 CODE >60:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
-433A text25 CODE >63:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
-433E text25 CODE >65:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
-4344 text25 CODE >69:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
-4356 text25 CODE >75:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
-436A text25 CODE >76:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
-437C text25 CODE >77:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
-4386 text25 CODE >78:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
-4398 text25 CODE >82:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
-43A2 text25 CODE >83:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
-43B4 text25 CODE >84:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
-43C6 text25 CODE >88:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
-4408 text25 CODE >91:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
-4418 text25 CODE >92:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
-442A text25 CODE >93:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
-443C text25 CODE >95:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
-4442 text25 CODE >96:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
-4444 text25 CODE >99:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
-444E text25 CODE >100:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
-445A text25 CODE >101:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
-4466 text25 CODE >102:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
-446C text25 CODE >103:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
-4470 text25 CODE >104:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
-4470 text25 CODE >105:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
-447C text25 CODE >111:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
-44A0 text25 CODE >114:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
-44A4 text25 CODE >115:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
-44C4 text25 CODE >117:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
-44C8 text25 CODE >96:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
-44C8 text25 CODE >118:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
-44D0 text25 CODE >121:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
-44E4 text25 CODE >122:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
-44E8 text25 CODE >126:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
-44EA text25 CODE >127:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
-44F6 text25 CODE >128:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
-44FC text25 CODE >129:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
-4500 text25 CODE >130:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
-4500 text25 CODE >131:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
-450C text25 CODE >132:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
-4514 text25 CODE >126:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
-451A text25 CODE >138:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
-4520 text25 CODE >139:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
-4526 text25 CODE >140:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
-4560 text25 CODE >141:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
-4562 text25 CODE >144:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
-4568 text25 CODE >145:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
-456E text25 CODE >148:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
-456E text25 CODE >149:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
-4578 text25 CODE >150:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
-4586 text25 CODE >151:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
-458C text25 CODE >152:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
-45B8 text25 CODE >153:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
-45BE text25 CODE >158:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
-45D2 text25 CODE >159:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
-45DA text25 CODE >160:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
-45EC text25 CODE >164:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
-4600 text25 CODE >165:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
-460A text25 CODE >166:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
-461C text25 CODE >168:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
-4622 text25 CODE >172:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
-4626 text25 CODE >174:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
-462C text25 CODE >175:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
-4630 text25 CODE >176:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
-4632 text25 CODE >179:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
-4636 text25 CODE >181:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
-4640 text25 CODE >182:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
-4648 text25 CODE >183:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
-5A4C text24 CODE >4:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\flge.c
-5A4C text24 CODE >7:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\flge.c
-5A88 text24 CODE >8:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\flge.c
-5A9A text24 CODE >9:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\flge.c
-5AD6 text24 CODE >10:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\flge.c
-5AE8 text24 CODE >12:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\flge.c
-5AEE text24 CODE >13:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\flge.c
-5B3A text24 CODE >14:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\flge.c
-5B40 text24 CODE >15:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\flge.c
-5B8C text24 CODE >16:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\flge.c
-5B9E text24 CODE >17:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\flge.c
-5BB0 text24 CODE >18:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\flge.c
+466E text31 CODE >641:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+4672 text31 CODE >644:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+4682 text31 CODE >646:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+46B6 text31 CODE >647:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+46C4 text31 CODE >648:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+46C8 text31 CODE >650:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+46F0 text31 CODE >651:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+4722 text31 CODE >652:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+4726 text31 CODE >655:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+4738 text31 CODE >657:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+476C text31 CODE >658:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+477A text31 CODE >659:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+477E text31 CODE >661:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+47A6 text31 CODE >662:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+47D8 text31 CODE >663:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+47DC text31 CODE >666:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+47EE text31 CODE >668:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+47FC text31 CODE >669:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+4800 text31 CODE >671:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+4828 text31 CODE >672:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+4858 text31 CODE >673:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+485C text31 CODE >675:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+4862 text31 CODE >676:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+4868 text31 CODE >677:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+4868 text31 CODE >678:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+486C text31 CODE >680:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+4872 text31 CODE >681:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+4878 text31 CODE >682:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+4878 text31 CODE >683:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+487C text31 CODE >685:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+4882 text31 CODE >686:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+4888 text31 CODE >687:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+4888 text31 CODE >688:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+488C text31 CODE >690:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+4892 text31 CODE >691:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+4898 text31 CODE >692:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+4898 text31 CODE >693:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+489C text31 CODE >695:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+48A2 text31 CODE >696:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+48A8 text31 CODE >697:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+48A8 text31 CODE >698:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+48AC text31 CODE >700:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+48E0 text31 CODE >701:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+48EE text31 CODE >702:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+48F2 text31 CODE >705:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+4906 text31 CODE >707:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+4914 text31 CODE >708:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+4918 text31 CODE >710:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+4940 text31 CODE >711:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+4970 text31 CODE >712:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+4974 text31 CODE >714:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+497A text31 CODE >715:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+4980 text31 CODE >716:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+4980 text31 CODE >717:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+4984 text31 CODE >719:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+498A text31 CODE >720:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+4990 text31 CODE >721:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+4990 text31 CODE >722:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+4994 text31 CODE >724:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+499A text31 CODE >725:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+49A0 text31 CODE >726:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+49A0 text31 CODE >727:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+49A4 text31 CODE >729:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+49AA text31 CODE >730:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+49B0 text31 CODE >731:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+49B0 text31 CODE >732:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+49B4 text31 CODE >734:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+49BA text31 CODE >735:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+49C0 text31 CODE >736:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+49C0 text31 CODE >737:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+49C4 text31 CODE >739:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+49F8 text31 CODE >740:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+4A06 text31 CODE >741:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+56DA text30 CODE >219:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+56DE text30 CODE >224:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+56E4 text30 CODE >226:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+56E8 text30 CODE >227:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+56EC text30 CODE >228:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+56F0 text30 CODE >230:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+56FC text30 CODE >231:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+5702 text30 CODE >232:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+5708 text30 CODE >234:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+570E text30 CODE >235:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+571A text30 CODE >236:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+5720 text30 CODE >238:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+5724 text30 CODE >239:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+5726 text30 CODE >241:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+572A text30 CODE >242:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+572C text30 CODE >244:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+5732 text30 CODE >246:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+5736 text30 CODE >247:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+5738 text30 CODE >252:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+5740 text30 CODE >253:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+574A text30 CODE >254:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+574C text30 CODE >256:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+5750 text30 CODE >260:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+576E text30 CODE >261:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+578C text30 CODE >264:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+578E text30 CODE >267:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+5796 text30 CODE >271:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+5796 text30 CODE >272:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+579A text30 CODE >273:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+579E text30 CODE >274:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+57A0 text30 CODE >275:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+57A0 text30 CODE >276:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+57A4 text30 CODE >277:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+57AA text30 CODE >279:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+57AC text30 CODE >264:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+57F0 text30 CODE >281:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+580C text30 CODE >282:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+5828 text30 CODE >283:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+5844 text30 CODE >284:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+5860 text30 CODE >285:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+587C text30 CODE >286:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+5898 text30 CODE >288:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+589E text30 CODE >290:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+6474 text29 CODE >483:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+6474 text29 CODE >484:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+6478 text29 CODE >485:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+647C text29 CODE >487:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+6480 text29 CODE >488:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+6484 text29 CODE >490:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+6488 text29 CODE >491:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+648A text29 CODE >493:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+648C text29 CODE >494:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+64B0 text29 CODE >496:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+64B2 text29 CODE >497:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+64B4 text29 CODE >498:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+64B6 text29 CODE >499:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+64B8 text29 CODE >500:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+64BA text29 CODE >501:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+64BC text29 CODE >502:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+64BE text29 CODE >503:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+64C0 text29 CODE >504:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+64C4 text29 CODE >505:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+64C8 text29 CODE >506:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+64CC text29 CODE >507:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+64D0 text29 CODE >508:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+64D2 text29 CODE >509:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+64D4 text29 CODE >510:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+64D6 text29 CODE >511:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+64D8 text29 CODE >512:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+64DA text29 CODE >513:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+64DC text29 CODE >514:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+64DE text29 CODE >515:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+662C text28 CODE >15:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\Umul16.c
+662C text28 CODE >37:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\Umul16.c
+663C text28 CODE >38:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\Umul16.c
+664A text28 CODE >39:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\Umul16.c
+6658 text28 CODE >52:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\Umul16.c
+65BA text27 CODE >61:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/src\delay.c
+65BA text27 CODE >73:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/src\delay.c
+65D6 text27 CODE >75:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/src\delay.c
+65D8 text27 CODE >85:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/src\delay.c
+65DE text27 CODE >88:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/src\delay.c
+65E6 text27 CODE >75:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/src\delay.c
+65E6 text27 CODE >89:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/src\delay.c
+668E text26 CODE >102:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/src\delay.c
+6692 text26 CODE >106:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/src\delay.c
+669A text26 CODE >107:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/src\delay.c
+66A8 text26 CODE >106:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/src\delay.c
+42AE text25 CODE >11:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
+42AE text25 CODE >26:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
+42B8 text25 CODE >27:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
+42C2 text25 CODE >28:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
+42C8 text25 CODE >29:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
+42CC text25 CODE >33:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
+42D6 text25 CODE >35:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
+42DE text25 CODE >37:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
+42F0 text25 CODE >40:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
+42F4 text25 CODE >42:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
+42FA text25 CODE >46:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
+430C text25 CODE >49:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
+4316 text25 CODE >50:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
+4320 text25 CODE >51:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
+4326 text25 CODE >52:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
+432A text25 CODE >56:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
+4334 text25 CODE >58:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
+433C text25 CODE >60:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
+434E text25 CODE >63:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
+4352 text25 CODE >65:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
+4358 text25 CODE >69:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
+436A text25 CODE >75:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
+437E text25 CODE >76:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
+4390 text25 CODE >77:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
+439A text25 CODE >78:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
+43AC text25 CODE >82:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
+43B6 text25 CODE >83:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
+43C8 text25 CODE >84:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
+43DA text25 CODE >88:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
+441C text25 CODE >91:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
+442C text25 CODE >92:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
+443E text25 CODE >93:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
+4450 text25 CODE >95:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
+4456 text25 CODE >96:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
+4458 text25 CODE >99:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
+4462 text25 CODE >100:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
+446E text25 CODE >101:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
+447A text25 CODE >102:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
+4480 text25 CODE >103:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
+4484 text25 CODE >104:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
+4484 text25 CODE >105:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
+4490 text25 CODE >111:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
+44B4 text25 CODE >114:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
+44B8 text25 CODE >115:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
+44D8 text25 CODE >117:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
+44DC text25 CODE >96:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
+44DC text25 CODE >118:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
+44E4 text25 CODE >121:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
+44F8 text25 CODE >122:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
+44FC text25 CODE >126:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
+44FE text25 CODE >127:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
+450A text25 CODE >128:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
+4510 text25 CODE >129:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
+4514 text25 CODE >130:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
+4514 text25 CODE >131:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
+4520 text25 CODE >132:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
+4528 text25 CODE >126:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
+452E text25 CODE >138:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
+4534 text25 CODE >139:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
+453A text25 CODE >140:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
+4574 text25 CODE >141:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
+4576 text25 CODE >144:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
+457C text25 CODE >145:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
+4582 text25 CODE >148:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
+4582 text25 CODE >149:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
+458C text25 CODE >150:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
+459A text25 CODE >151:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
+45A0 text25 CODE >152:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
+45CC text25 CODE >153:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
+45D2 text25 CODE >158:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
+45E6 text25 CODE >159:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
+45EE text25 CODE >160:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
+4600 text25 CODE >164:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
+4614 text25 CODE >165:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
+461E text25 CODE >166:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
+4630 text25 CODE >168:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
+4636 text25 CODE >172:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
+463A text25 CODE >174:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
+4640 text25 CODE >175:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
+4644 text25 CODE >176:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
+4646 text25 CODE >179:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
+464A text25 CODE >181:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
+4654 text25 CODE >182:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
+465C text25 CODE >183:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcdiv.c
+5A60 text24 CODE >4:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\flge.c
+5A60 text24 CODE >7:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\flge.c
+5A9C text24 CODE >8:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\flge.c
+5AAE text24 CODE >9:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\flge.c
+5AEA text24 CODE >10:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\flge.c
+5AFC text24 CODE >12:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\flge.c
+5B02 text24 CODE >13:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\flge.c
+5B4E text24 CODE >14:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\flge.c
+5B54 text24 CODE >15:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\flge.c
+5BA0 text24 CODE >16:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\flge.c
+5BB2 text24 CODE >17:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\flge.c
+5BC4 text24 CODE >18:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\flge.c
 310A text23 CODE >10:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcadd.c
 310A text23 CODE >21:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcadd.c
 3114 text23 CODE >22:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcadd.c
@@ -1176,218 +1175,218 @@ FDE text32 CODE >800:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANl
 3A34 text22 CODE >199:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcmul.c
 3A3E text22 CODE >201:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcmul.c
 3A46 text22 CODE >203:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcmul.c
-5E34 text21 CODE >4:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\evalpoly.c
-5E34 text21 CODE >8:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\evalpoly.c
-5E88 text21 CODE >9:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\evalpoly.c
-5E8A text21 CODE >10:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\evalpoly.c
-5F2E text21 CODE >9:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\evalpoly.c
-5F3A text21 CODE >11:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\evalpoly.c
-5F4A text21 CODE >12:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\evalpoly.c
-65D2 text20 CODE >15:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\flneg.c
-65D2 text20 CODE >17:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\flneg.c
-65E6 text20 CODE >18:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\flneg.c
-65F8 text20 CODE >19:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\flneg.c
-655A text19 CODE >4:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\fabs.c
-655A text19 CODE >6:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\fabs.c
-6560 text19 CODE >7:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\fabs.c
-6586 text19 CODE >8:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\fabs.c
-6596 text19 CODE >9:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\fabs.c
-52A6 text18 CODE >8:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\atan.c
-52A6 text18 CODE >30:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\atan.c
-52DE text18 CODE >31:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\atan.c
-52F2 text18 CODE >32:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\atan.c
-5330 text18 CODE >33:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\atan.c
-5366 text18 CODE >34:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\atan.c
-539A text18 CODE >35:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\atan.c
-53D4 text18 CODE >36:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\atan.c
-540E text18 CODE >37:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\atan.c
-5466 text18 CODE >38:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\atan.c
-5470 text18 CODE >39:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\atan.c
-54BA text18 CODE >40:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\atan.c
-3ED0 text17 CODE >9:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcsqrt.c
-3ED0 text17 CODE >20:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcsqrt.c
-3EDA text17 CODE >21:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcsqrt.c
-3EE4 text17 CODE >22:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcsqrt.c
-3EEA text17 CODE >23:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcsqrt.c
-3EEE text17 CODE >26:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcsqrt.c
-3EF6 text17 CODE >27:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcsqrt.c
-3F1E text17 CODE >30:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcsqrt.c
-3F2A text17 CODE >31:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcsqrt.c
-3F2E text17 CODE >34:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcsqrt.c
-3F3A text17 CODE >43:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcsqrt.c
-3F4C text17 CODE >49:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcsqrt.c
-3F58 text17 CODE >50:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcsqrt.c
-3F6C text17 CODE >54:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcsqrt.c
-3F76 text17 CODE >55:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcsqrt.c
-3F88 text17 CODE >57:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcsqrt.c
-3F92 text17 CODE >58:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcsqrt.c
-3F9C text17 CODE >59:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcsqrt.c
-3FAE text17 CODE >63:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcsqrt.c
-3FBA text17 CODE >64:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcsqrt.c
-3FCC text17 CODE >65:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcsqrt.c
-3FDE text17 CODE >69:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcsqrt.c
-3FE8 text17 CODE >70:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcsqrt.c
-3FF2 text17 CODE >71:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcsqrt.c
-3FFA text17 CODE >72:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcsqrt.c
-4004 text17 CODE >75:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcsqrt.c
-4026 text17 CODE >76:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcsqrt.c
-4038 text17 CODE >77:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcsqrt.c
-404A text17 CODE >80:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcsqrt.c
-4054 text17 CODE >81:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcsqrt.c
-4060 text17 CODE >84:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcsqrt.c
-4066 text17 CODE >85:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcsqrt.c
-4068 text17 CODE >87:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcsqrt.c
-4088 text17 CODE >90:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcsqrt.c
-40AC text17 CODE >93:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcsqrt.c
-40CC text17 CODE >96:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcsqrt.c
-40EC text17 CODE >97:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcsqrt.c
-40EE text17 CODE >100:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcsqrt.c
-4128 text17 CODE >104:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcsqrt.c
-4154 text17 CODE >107:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcsqrt.c
-4160 text17 CODE >109:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcsqrt.c
-4164 text17 CODE >85:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcsqrt.c
-416C text17 CODE >112:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcsqrt.c
-4198 text17 CODE >115:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcsqrt.c
-41C0 text17 CODE >116:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcsqrt.c
-41EC text17 CODE >117:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcsqrt.c
-420C text17 CODE >118:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcsqrt.c
-4212 text17 CODE >119:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcsqrt.c
-423E text17 CODE >120:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcsqrt.c
-4244 text17 CODE >124:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcsqrt.c
-426C text17 CODE >125:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcsqrt.c
-4270 text17 CODE >126:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcsqrt.c
-4276 text17 CODE >127:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcsqrt.c
-427A text17 CODE >129:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcsqrt.c
-4284 text17 CODE >130:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcsqrt.c
-4288 text17 CODE >131:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcsqrt.c
-4D10 text16 CODE >9:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\asin.c
-4D10 text16 CODE >14:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\asin.c
-4D50 text16 CODE >15:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\asin.c
-4D5A text16 CODE >16:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\asin.c
-4D6E text16 CODE >18:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\asin.c
-4D80 text16 CODE >19:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\asin.c
-4E02 text16 CODE >20:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\asin.c
-4E42 text16 CODE >21:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\asin.c
-4E9C text16 CODE >22:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\asin.c
-4EA2 text16 CODE >23:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\asin.c
-4F7E text16 CODE >24:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\asin.c
-6512 text15 CODE >245:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcadd.c
-6512 text15 CODE >248:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcadd.c
-6524 text15 CODE >249:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcadd.c
-5F4C text14 CODE >43:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\fltol.c
-5F4C text14 CODE >47:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\fltol.c
-5F5E text14 CODE >48:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\fltol.c
-5F72 text14 CODE >49:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\fltol.c
-5F9E text14 CODE >50:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\fltol.c
-5FA2 text14 CODE >51:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\fltol.c
-5FB4 text14 CODE >52:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\fltol.c
-5FBA text14 CODE >53:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\fltol.c
-5FC0 text14 CODE >54:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\fltol.c
-5FCC text14 CODE >55:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\fltol.c
-5FE0 text14 CODE >57:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\fltol.c
-5FEC text14 CODE >58:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\fltol.c
-5FF2 text14 CODE >59:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\fltol.c
-5FF4 text14 CODE >60:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\fltol.c
-5FFC text14 CODE >61:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\fltol.c
-6010 text14 CODE >63:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\fltol.c
-601C text14 CODE >64:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\fltol.c
-6020 text14 CODE >62:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\fltol.c
-602A text14 CODE >67:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\fltol.c
-6034 text14 CODE >68:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\fltol.c
-6046 text14 CODE >69:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\fltol.c
-54F8 text13 CODE >10:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\xxtofl.c
-54FC text13 CODE >15:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\xxtofl.c
-550C text13 CODE >16:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\xxtofl.c
-5540 text13 CODE >17:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\xxtofl.c
-5542 text13 CODE >18:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\xxtofl.c
-5542 text13 CODE >19:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\xxtofl.c
-5552 text13 CODE >21:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\xxtofl.c
-5566 text13 CODE >22:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\xxtofl.c
-557A text13 CODE >23:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\xxtofl.c
-5580 text13 CODE >24:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\xxtofl.c
-5582 text13 CODE >25:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\xxtofl.c
-5586 text13 CODE >26:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\xxtofl.c
-5592 text13 CODE >24:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\xxtofl.c
-55D0 text13 CODE >29:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\xxtofl.c
-55D4 text13 CODE >30:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\xxtofl.c
-55E2 text13 CODE >31:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\xxtofl.c
-55EE text13 CODE >28:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\xxtofl.c
-55EE text13 CODE >32:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\xxtofl.c
-562C text13 CODE >34:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\xxtofl.c
-5630 text13 CODE >35:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\xxtofl.c
-563C text13 CODE >33:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\xxtofl.c
-564A text13 CODE >37:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\xxtofl.c
-5650 text13 CODE >38:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\xxtofl.c
-5662 text13 CODE >39:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\xxtofl.c
-5668 text13 CODE >40:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\xxtofl.c
-56A0 text13 CODE >41:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\xxtofl.c
-56B0 text13 CODE >42:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\xxtofl.c
-56B4 text13 CODE >43:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\xxtofl.c
-62D6 text12 CODE >254:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\frexp.c
-62D6 text12 CODE >256:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\frexp.c
-62EA text12 CODE >257:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\frexp.c
-62FA text12 CODE >258:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\frexp.c
-62FC text12 CODE >261:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\frexp.c
-6320 text12 CODE >262:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\frexp.c
-6344 text12 CODE >263:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\frexp.c
-6354 text12 CODE >268:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\frexp.c
-6364 text12 CODE >269:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\frexp.c
-5D10 text11 CODE >13:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\floor.c
-5D10 text11 CODE >18:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\floor.c
-5D30 text11 CODE >19:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\floor.c
-5D36 text11 CODE >20:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\floor.c
-5D3C text11 CODE >21:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\floor.c
-5D50 text11 CODE >22:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\floor.c
-5D64 text11 CODE >24:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\floor.c
-5D74 text11 CODE >25:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\floor.c
-5D86 text11 CODE >26:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\floor.c
-5DC0 text11 CODE >27:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\floor.c
-5DEA text11 CODE >28:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\floor.c
-5E22 text11 CODE >29:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\floor.c
-5E32 text11 CODE >30:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\floor.c
-49F8 text10 CODE >13:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sin.c
-49F8 text10 CODE >37:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sin.c
-49FE text10 CODE >38:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sin.c
-4A04 text10 CODE >39:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sin.c
-4A28 text10 CODE >40:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sin.c
-4A2E text10 CODE >42:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sin.c
-4A64 text10 CODE >43:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sin.c
-4AAC text10 CODE >44:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sin.c
-4AE2 text10 CODE >45:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sin.c
-4B0E text10 CODE >46:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sin.c
-4B44 text10 CODE >47:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sin.c
-4B58 text10 CODE >49:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sin.c
-4B84 text10 CODE >50:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sin.c
-4BCE text10 CODE >51:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sin.c
-4C02 text10 CODE >52:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sin.c
-4C3C text10 CODE >53:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sin.c
-4CCE text10 CODE >54:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sin.c
-4CD8 text10 CODE >55:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sin.c
-4CFE text10 CODE >56:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sin.c
-4D0E text10 CODE >57:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sin.c
-6058 text9 CODE >13:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\cos.c
-6058 text9 CODE >21:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\cos.c
-6084 text9 CODE >22:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\cos.c
-60E0 text9 CODE >23:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\cos.c
-2674 text8 CODE >458:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-2674 text8 CODE >459:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-2828 text8 CODE >460:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-2884 text8 CODE >461:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-28CE text8 CODE >462:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-292A text8 CODE >463:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-294E text8 CODE >464:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-29B8 text8 CODE >465:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-2A48 text8 CODE >466:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-2AC8 text8 CODE >467:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-2B5C text8 CODE >468:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-2BFC text8 CODE >469:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-6640 text7 CODE >4:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\abs.c
-6640 text7 CODE >6:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\abs.c
-6646 text7 CODE >7:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\abs.c
-6662 text7 CODE >8:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\abs.c
-666A text7 CODE >9:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\abs.c
-6698 text6 CODE >1155:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-6698 text6 CODE >1157:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+5E48 text21 CODE >4:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\evalpoly.c
+5E48 text21 CODE >8:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\evalpoly.c
+5E9C text21 CODE >9:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\evalpoly.c
+5E9E text21 CODE >10:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\evalpoly.c
+5F42 text21 CODE >9:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\evalpoly.c
+5F4E text21 CODE >11:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\evalpoly.c
+5F5E text21 CODE >12:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\evalpoly.c
+65F4 text20 CODE >15:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\flneg.c
+65F4 text20 CODE >17:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\flneg.c
+6608 text20 CODE >18:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\flneg.c
+661A text20 CODE >19:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\flneg.c
+657C text19 CODE >4:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\fabs.c
+657C text19 CODE >6:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\fabs.c
+6582 text19 CODE >7:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\fabs.c
+65A8 text19 CODE >8:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\fabs.c
+65B8 text19 CODE >9:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\fabs.c
+52BA text18 CODE >8:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\atan.c
+52BA text18 CODE >30:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\atan.c
+52F2 text18 CODE >31:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\atan.c
+5306 text18 CODE >32:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\atan.c
+5344 text18 CODE >33:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\atan.c
+537A text18 CODE >34:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\atan.c
+53AE text18 CODE >35:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\atan.c
+53E8 text18 CODE >36:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\atan.c
+5422 text18 CODE >37:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\atan.c
+547A text18 CODE >38:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\atan.c
+5484 text18 CODE >39:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\atan.c
+54CE text18 CODE >40:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\atan.c
+3EE4 text17 CODE >9:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcsqrt.c
+3EE4 text17 CODE >20:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcsqrt.c
+3EEE text17 CODE >21:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcsqrt.c
+3EF8 text17 CODE >22:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcsqrt.c
+3EFE text17 CODE >23:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcsqrt.c
+3F02 text17 CODE >26:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcsqrt.c
+3F0A text17 CODE >27:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcsqrt.c
+3F32 text17 CODE >30:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcsqrt.c
+3F3E text17 CODE >31:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcsqrt.c
+3F42 text17 CODE >34:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcsqrt.c
+3F4E text17 CODE >43:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcsqrt.c
+3F60 text17 CODE >49:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcsqrt.c
+3F6C text17 CODE >50:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcsqrt.c
+3F80 text17 CODE >54:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcsqrt.c
+3F8A text17 CODE >55:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcsqrt.c
+3F9C text17 CODE >57:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcsqrt.c
+3FA6 text17 CODE >58:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcsqrt.c
+3FB0 text17 CODE >59:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcsqrt.c
+3FC2 text17 CODE >63:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcsqrt.c
+3FCE text17 CODE >64:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcsqrt.c
+3FE0 text17 CODE >65:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcsqrt.c
+3FF2 text17 CODE >69:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcsqrt.c
+3FFC text17 CODE >70:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcsqrt.c
+4006 text17 CODE >71:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcsqrt.c
+400E text17 CODE >72:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcsqrt.c
+4018 text17 CODE >75:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcsqrt.c
+403A text17 CODE >76:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcsqrt.c
+404C text17 CODE >77:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcsqrt.c
+405E text17 CODE >80:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcsqrt.c
+4068 text17 CODE >81:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcsqrt.c
+4074 text17 CODE >84:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcsqrt.c
+407A text17 CODE >85:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcsqrt.c
+407C text17 CODE >87:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcsqrt.c
+409C text17 CODE >90:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcsqrt.c
+40C0 text17 CODE >93:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcsqrt.c
+40E0 text17 CODE >96:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcsqrt.c
+4100 text17 CODE >97:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcsqrt.c
+4102 text17 CODE >100:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcsqrt.c
+413C text17 CODE >104:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcsqrt.c
+4168 text17 CODE >107:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcsqrt.c
+4174 text17 CODE >109:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcsqrt.c
+4178 text17 CODE >85:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcsqrt.c
+4180 text17 CODE >112:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcsqrt.c
+41AC text17 CODE >115:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcsqrt.c
+41D4 text17 CODE >116:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcsqrt.c
+4200 text17 CODE >117:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcsqrt.c
+4220 text17 CODE >118:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcsqrt.c
+4226 text17 CODE >119:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcsqrt.c
+4252 text17 CODE >120:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcsqrt.c
+4258 text17 CODE >124:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcsqrt.c
+4280 text17 CODE >125:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcsqrt.c
+4284 text17 CODE >126:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcsqrt.c
+428A text17 CODE >127:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcsqrt.c
+428E text17 CODE >129:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcsqrt.c
+4298 text17 CODE >130:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcsqrt.c
+429C text17 CODE >131:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcsqrt.c
+4D24 text16 CODE >9:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\asin.c
+4D24 text16 CODE >14:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\asin.c
+4D64 text16 CODE >15:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\asin.c
+4D6E text16 CODE >16:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\asin.c
+4D82 text16 CODE >18:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\asin.c
+4D94 text16 CODE >19:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\asin.c
+4E16 text16 CODE >20:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\asin.c
+4E56 text16 CODE >21:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\asin.c
+4EB0 text16 CODE >22:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\asin.c
+4EB6 text16 CODE >23:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\asin.c
+4F92 text16 CODE >24:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\asin.c
+6534 text15 CODE >245:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcadd.c
+6534 text15 CODE >248:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcadd.c
+6546 text15 CODE >249:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcadd.c
+5F60 text14 CODE >43:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\fltol.c
+5F60 text14 CODE >47:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\fltol.c
+5F72 text14 CODE >48:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\fltol.c
+5F86 text14 CODE >49:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\fltol.c
+5FB2 text14 CODE >50:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\fltol.c
+5FB6 text14 CODE >51:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\fltol.c
+5FC8 text14 CODE >52:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\fltol.c
+5FCE text14 CODE >53:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\fltol.c
+5FD4 text14 CODE >54:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\fltol.c
+5FE0 text14 CODE >55:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\fltol.c
+5FF4 text14 CODE >57:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\fltol.c
+6000 text14 CODE >58:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\fltol.c
+6006 text14 CODE >59:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\fltol.c
+6008 text14 CODE >60:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\fltol.c
+6010 text14 CODE >61:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\fltol.c
+6024 text14 CODE >63:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\fltol.c
+6030 text14 CODE >64:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\fltol.c
+6034 text14 CODE >62:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\fltol.c
+603E text14 CODE >67:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\fltol.c
+6048 text14 CODE >68:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\fltol.c
+605A text14 CODE >69:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\fltol.c
+550C text13 CODE >10:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\xxtofl.c
+5510 text13 CODE >15:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\xxtofl.c
+5520 text13 CODE >16:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\xxtofl.c
+5554 text13 CODE >17:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\xxtofl.c
+5556 text13 CODE >18:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\xxtofl.c
+5556 text13 CODE >19:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\xxtofl.c
+5566 text13 CODE >21:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\xxtofl.c
+557A text13 CODE >22:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\xxtofl.c
+558E text13 CODE >23:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\xxtofl.c
+5594 text13 CODE >24:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\xxtofl.c
+5596 text13 CODE >25:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\xxtofl.c
+559A text13 CODE >26:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\xxtofl.c
+55A6 text13 CODE >24:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\xxtofl.c
+55E4 text13 CODE >29:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\xxtofl.c
+55E8 text13 CODE >30:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\xxtofl.c
+55F6 text13 CODE >31:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\xxtofl.c
+5602 text13 CODE >28:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\xxtofl.c
+5602 text13 CODE >32:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\xxtofl.c
+5640 text13 CODE >34:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\xxtofl.c
+5644 text13 CODE >35:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\xxtofl.c
+5650 text13 CODE >33:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\xxtofl.c
+565E text13 CODE >37:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\xxtofl.c
+5664 text13 CODE >38:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\xxtofl.c
+5676 text13 CODE >39:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\xxtofl.c
+567C text13 CODE >40:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\xxtofl.c
+56B4 text13 CODE >41:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\xxtofl.c
+56C4 text13 CODE >42:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\xxtofl.c
+56C8 text13 CODE >43:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\xxtofl.c
+62F8 text12 CODE >254:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\frexp.c
+62F8 text12 CODE >256:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\frexp.c
+630C text12 CODE >257:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\frexp.c
+631C text12 CODE >258:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\frexp.c
+631E text12 CODE >261:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\frexp.c
+6342 text12 CODE >262:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\frexp.c
+6366 text12 CODE >263:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\frexp.c
+6376 text12 CODE >268:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\frexp.c
+6386 text12 CODE >269:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\frexp.c
+5D24 text11 CODE >13:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\floor.c
+5D24 text11 CODE >18:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\floor.c
+5D44 text11 CODE >19:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\floor.c
+5D4A text11 CODE >20:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\floor.c
+5D50 text11 CODE >21:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\floor.c
+5D64 text11 CODE >22:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\floor.c
+5D78 text11 CODE >24:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\floor.c
+5D88 text11 CODE >25:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\floor.c
+5D9A text11 CODE >26:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\floor.c
+5DD4 text11 CODE >27:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\floor.c
+5DFE text11 CODE >28:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\floor.c
+5E36 text11 CODE >29:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\floor.c
+5E46 text11 CODE >30:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\floor.c
+4A0C text10 CODE >13:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sin.c
+4A0C text10 CODE >37:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sin.c
+4A12 text10 CODE >38:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sin.c
+4A18 text10 CODE >39:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sin.c
+4A3C text10 CODE >40:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sin.c
+4A42 text10 CODE >42:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sin.c
+4A78 text10 CODE >43:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sin.c
+4AC0 text10 CODE >44:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sin.c
+4AF6 text10 CODE >45:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sin.c
+4B22 text10 CODE >46:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sin.c
+4B58 text10 CODE >47:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sin.c
+4B6C text10 CODE >49:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sin.c
+4B98 text10 CODE >50:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sin.c
+4BE2 text10 CODE >51:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sin.c
+4C16 text10 CODE >52:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sin.c
+4C50 text10 CODE >53:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sin.c
+4CE2 text10 CODE >54:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sin.c
+4CEC text10 CODE >55:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sin.c
+4D12 text10 CODE >56:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sin.c
+4D22 text10 CODE >57:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sin.c
+606C text9 CODE >13:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\cos.c
+606C text9 CODE >21:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\cos.c
+6098 text9 CODE >22:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\cos.c
+60F4 text9 CODE >23:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\cos.c
+2674 text8 CODE >462:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+2674 text8 CODE >463:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+2828 text8 CODE >464:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+2884 text8 CODE >465:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+28CE text8 CODE >466:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+292A text8 CODE >467:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+294E text8 CODE >468:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+29B8 text8 CODE >469:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+2A48 text8 CODE >470:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+2AC8 text8 CODE >471:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+2B5C text8 CODE >472:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+2BFC text8 CODE >473:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+6662 text7 CODE >4:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\abs.c
+6662 text7 CODE >6:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\abs.c
+6668 text7 CODE >7:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\abs.c
+6684 text7 CODE >8:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\abs.c
+668C text7 CODE >9:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\abs.c
+66BA text6 CODE >1155:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
+66BA text6 CODE >1157:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
 1858 text5 CODE >295:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
 1858 text5 CODE >299:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
 185E text5 CODE >300:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
@@ -1556,259 +1555,263 @@ FDE text32 CODE >800:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANl
 1FCA text5 CODE >517:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
 1FDE text5 CODE >519:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
 1FE2 text5 CODE >521:D:\Documenti/LaurTec_PIC_libraries_v_3.3.0 - Copia/inc\CANlib.h
-5BDC text4 CODE >398:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5BDC text4 CODE >399:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5BE0 text4 CODE >400:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5BEA text4 CODE >401:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5C18 text4 CODE >402:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5C1C text4 CODE >403:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5C22 text4 CODE >404:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5C2C text4 CODE >405:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5C36 text4 CODE >406:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5C64 text4 CODE >407:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5C6E text4 CODE >408:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5C74 text4 CODE >409:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5CA2 text4 CODE >410:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5CA4 text4 CODE >411:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5CD2 text4 CODE >413:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5CDA text4 CODE >414:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5CE0 text4 CODE >415:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5022 text3 CODE >419:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5022 text3 CODE >420:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-507E text3 CODE >421:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-50AA text3 CODE >422:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-50C2 text3 CODE >426:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-511C text3 CODE >427:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5140 text3 CODE >428:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5174 text3 CODE >429:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5198 text3 CODE >430:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-51F4 text3 CODE >431:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5210 text3 CODE >433:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-521C text3 CODE >434:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5220 text3 CODE >436:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5226 text3 CODE >438:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5256 text3 CODE >439:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5266 text3 CODE >440:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5272 text3 CODE >441:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5276 text3 CODE >443:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5286 text3 CODE >444:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-528C text3 CODE >445:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-528E text3 CODE >446:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5292 text3 CODE >448:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5294 text3 CODE >449:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5298 text3 CODE >450:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-529E text3 CODE >451:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-52A0 text3 CODE >452:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-52A4 text3 CODE >453:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5BF0 text4 CODE >402:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5BF0 text4 CODE >403:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5BF4 text4 CODE >404:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5BFE text4 CODE >405:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5C2C text4 CODE >406:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5C30 text4 CODE >407:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5C36 text4 CODE >408:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5C40 text4 CODE >409:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5C4A text4 CODE >410:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5C78 text4 CODE >411:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5C82 text4 CODE >412:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5C88 text4 CODE >413:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5CB6 text4 CODE >414:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5CB8 text4 CODE >415:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5CE6 text4 CODE >417:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5CEE text4 CODE >418:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5CF4 text4 CODE >419:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5036 text3 CODE >423:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5036 text3 CODE >424:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5092 text3 CODE >425:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+50BE text3 CODE >426:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+50D6 text3 CODE >430:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5130 text3 CODE >431:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5154 text3 CODE >432:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5188 text3 CODE >433:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+51AC text3 CODE >434:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5208 text3 CODE >435:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5224 text3 CODE >437:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5230 text3 CODE >438:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5234 text3 CODE >440:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+523A text3 CODE >442:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+526A text3 CODE >443:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+527A text3 CODE >444:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5286 text3 CODE >445:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+528A text3 CODE >447:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+529A text3 CODE >448:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+52A0 text3 CODE >449:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+52A2 text3 CODE >450:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+52A6 text3 CODE >452:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+52A8 text3 CODE >453:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+52AC text3 CODE >454:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+52B2 text3 CODE >455:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+52B4 text3 CODE >456:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+52B8 text3 CODE >457:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
 3A58 text2 CODE >292:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3A58 text2 CODE >293:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3A5E text2 CODE >294:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3A60 text2 CODE >295:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3A6E text2 CODE >296:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3A92 text2 CODE >297:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3A96 text2 CODE >298:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3A9E text2 CODE >299:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3AA4 text2 CODE >301:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3AAE text2 CODE >302:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3ADC text2 CODE >294:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3AE6 text2 CODE >304:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3AEC text2 CODE >305:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3AEE text2 CODE >306:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3AF4 text2 CODE >307:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3B22 text2 CODE >309:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3B24 text2 CODE >310:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3B28 text2 CODE >311:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3B30 text2 CODE >312:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3A58 text2 CODE >294:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3A5A text2 CODE >295:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3A60 text2 CODE >296:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3A64 text2 CODE >297:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3A72 text2 CODE >298:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3A74 text2 CODE >299:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3A82 text2 CODE >300:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3AA6 text2 CODE >301:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3AAA text2 CODE >302:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3AB2 text2 CODE >303:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3AB8 text2 CODE >305:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3AC2 text2 CODE >306:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3AF0 text2 CODE >298:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3AFA text2 CODE >308:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3B00 text2 CODE >309:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3B02 text2 CODE >310:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3B08 text2 CODE >311:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
 3B36 text2 CODE >313:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3B3C text2 CODE >314:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3B42 text2 CODE >315:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3B46 text2 CODE >316:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3B48 text2 CODE >309:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3B50 text2 CODE >319:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3B50 text2 CODE >320:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3B52 text2 CODE >322:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3B98 text2 CODE >323:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3B9C text2 CODE >324:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3BA4 text2 CODE >325:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3BAA text2 CODE >326:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3BB0 text2 CODE >327:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3BB6 text2 CODE >328:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3BBA text2 CODE >329:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3BC0 text2 CODE >331:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3BC6 text2 CODE >332:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3BCC text2 CODE >334:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3B38 text2 CODE >314:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3B3C text2 CODE >315:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3B44 text2 CODE >316:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3B4A text2 CODE >317:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3B50 text2 CODE >318:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3B56 text2 CODE >319:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3B5A text2 CODE >320:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3B5C text2 CODE >313:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3B64 text2 CODE >323:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3B64 text2 CODE >324:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3B66 text2 CODE >326:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3BAC text2 CODE >327:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3BB0 text2 CODE >328:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3BB8 text2 CODE >329:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3BBE text2 CODE >330:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3BC4 text2 CODE >331:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3BCA text2 CODE >332:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3BCE text2 CODE >333:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
 3BD4 text2 CODE >335:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3BD6 text2 CODE >336:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3BDC text2 CODE >337:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3C9C text2 CODE >338:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3C9E text2 CODE >339:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3CCC text2 CODE >340:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3CD0 text2 CODE >341:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3CD4 text2 CODE >343:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3CDC text2 CODE >344:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3CE2 text2 CODE >345:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3CE8 text2 CODE >346:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3CEE text2 CODE >347:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3CF2 text2 CODE >348:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3CF8 text2 CODE >350:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3CFE text2 CODE >351:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3D04 text2 CODE >352:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3D0C text2 CODE >353:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3D0E text2 CODE >354:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3D14 text2 CODE >355:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3D30 text2 CODE >356:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3D32 text2 CODE >357:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3D60 text2 CODE >358:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3D64 text2 CODE >359:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3D68 text2 CODE >360:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3D70 text2 CODE >361:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3D76 text2 CODE >362:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3BDA text2 CODE >336:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3BE0 text2 CODE >338:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3BE8 text2 CODE >339:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3BEA text2 CODE >340:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3BF0 text2 CODE >341:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3CB0 text2 CODE >342:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3CB2 text2 CODE >343:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3CE0 text2 CODE >344:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3CE4 text2 CODE >345:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3CE8 text2 CODE >347:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3CF0 text2 CODE >348:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3CF6 text2 CODE >349:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3CFC text2 CODE >350:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3D02 text2 CODE >351:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3D06 text2 CODE >352:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3D0C text2 CODE >354:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3D12 text2 CODE >355:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3D18 text2 CODE >356:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3D20 text2 CODE >357:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3D22 text2 CODE >358:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3D28 text2 CODE >359:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3D44 text2 CODE >360:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3D46 text2 CODE >361:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3D74 text2 CODE >362:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
 3D78 text2 CODE >363:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3DBA text2 CODE >364:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3DE8 text2 CODE >365:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3DEC text2 CODE >366:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3DF0 text2 CODE >367:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3DF6 text2 CODE >368:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3D7C text2 CODE >364:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3D84 text2 CODE >365:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3D8A text2 CODE >366:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3D8C text2 CODE >367:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3DCE text2 CODE >368:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
 3DFC text2 CODE >369:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3E04 text2 CODE >370:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3E0A text2 CODE >371:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3E0E text2 CODE >372:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3E14 text2 CODE >373:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3E16 text2 CODE >374:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3E22 text2 CODE >375:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3E28 text2 CODE >376:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3E2E text2 CODE >377:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3E36 text2 CODE >378:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3E3C text2 CODE >379:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3E3E text2 CODE >380:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3E00 text2 CODE >370:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3E04 text2 CODE >371:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3E0A text2 CODE >372:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3E10 text2 CODE >373:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3E18 text2 CODE >374:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3E1E text2 CODE >375:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3E22 text2 CODE >376:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3E28 text2 CODE >377:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3E2A text2 CODE >378:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3E36 text2 CODE >379:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3E3C text2 CODE >380:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
 3E42 text2 CODE >381:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3E4E text2 CODE >383:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3E54 text2 CODE >384:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3E5A text2 CODE >385:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3E62 text2 CODE >386:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3E68 text2 CODE >387:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3E6A text2 CODE >388:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3E4A text2 CODE >382:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3E50 text2 CODE >383:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3E52 text2 CODE >384:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3E56 text2 CODE >385:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3E62 text2 CODE >387:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3E68 text2 CODE >388:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
 3E6E text2 CODE >389:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3E74 text2 CODE >390:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3E7A text2 CODE >391:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3E84 text2 CODE >392:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3EB2 text2 CODE >393:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3EC0 text2 CODE >394:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-3EC2 text2 CODE >319:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-588C text1 CODE >250:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-588C text1 CODE >251:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-588E text1 CODE >252:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5892 text1 CODE >253:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-589E text1 CODE >254:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-58A2 text1 CODE >255:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-58AC text1 CODE >256:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-58DA text1 CODE >257:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-58DC text1 CODE >258:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-58EC text1 CODE >259:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-58EE text1 CODE >261:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-58F0 text1 CODE >262:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-58F2 text1 CODE >263:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-594E text1 CODE >265:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5968 text1 CODE >266:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-596A text1 CODE >267:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5974 text1 CODE >268:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-59A2 text1 CODE >270:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-59A6 text1 CODE >271:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-59B2 text1 CODE >272:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-59B4 text1 CODE >273:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-59BA text1 CODE >274:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-59E8 text1 CODE >275:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-59F8 text1 CODE >276:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-59FE text1 CODE >277:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5A00 text1 CODE >278:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5A0A text1 CODE >279:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5A38 text1 CODE >281:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5A3A text1 CODE >282:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5A3C text1 CODE >284:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5A3E text1 CODE >285:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5A40 text1 CODE >286:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5A42 text1 CODE >251:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-5A42 text1 CODE >289:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-621C text0 CODE >206:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-621C text0 CODE >207:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-6222 text0 CODE >208:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-6228 text0 CODE >209:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-622E text0 CODE >210:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-6234 text0 CODE >211:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-623A text0 CODE >212:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-6240 text0 CODE >213:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-6246 text0 CODE >214:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-624C text0 CODE >215:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-624E text0 CODE >216:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-6252 text0 CODE >217:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-6254 text0 CODE >218:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-6256 text0 CODE >219:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-6258 text0 CODE >220:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-625A text0 CODE >221:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-625C text0 CODE >224:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-625E text0 CODE >225:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-6268 text0 CODE >226:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-6288 text0 CODE >227:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-62B6 text0 CODE >228:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-62C4 text0 CODE >224:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-62C8 text0 CODE >244:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-62CC text0 CODE >245:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-62D0 text0 CODE >246:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-62D4 text0 CODE >223:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
-63E2 cinit CODE >1586:C:\Users\Simone\AppData\Local\Temp\s6ec.
-63E2 cinit CODE >1588:C:\Users\Simone\AppData\Local\Temp\s6ec.
-63E2 cinit CODE >1591:C:\Users\Simone\AppData\Local\Temp\s6ec.
-63E2 cinit CODE >1815:C:\Users\Simone\AppData\Local\Temp\s6ec.
-63E6 cinit CODE >1816:C:\Users\Simone\AppData\Local\Temp\s6ec.
-63E8 cinit CODE >1817:C:\Users\Simone\AppData\Local\Temp\s6ec.
-63E8 cinit CODE >1818:C:\Users\Simone\AppData\Local\Temp\s6ec.
-63EA cinit CODE >1819:C:\Users\Simone\AppData\Local\Temp\s6ec.
-63EC cinit CODE >1820:C:\Users\Simone\AppData\Local\Temp\s6ec.
-63EE cinit CODE >1823:C:\Users\Simone\AppData\Local\Temp\s6ec.
-63F2 cinit CODE >1824:C:\Users\Simone\AppData\Local\Temp\s6ec.
-63F4 cinit CODE >1825:C:\Users\Simone\AppData\Local\Temp\s6ec.
-63F4 cinit CODE >1826:C:\Users\Simone\AppData\Local\Temp\s6ec.
-63F6 cinit CODE >1827:C:\Users\Simone\AppData\Local\Temp\s6ec.
-63F8 cinit CODE >1828:C:\Users\Simone\AppData\Local\Temp\s6ec.
-63FA cinit CODE >1831:C:\Users\Simone\AppData\Local\Temp\s6ec.
-63FC cinit CODE >1832:C:\Users\Simone\AppData\Local\Temp\s6ec.
-63FE cinit CODE >1835:C:\Users\Simone\AppData\Local\Temp\s6ec.
-6402 cinit CODE >1836:C:\Users\Simone\AppData\Local\Temp\s6ec.
-6404 cinit CODE >1837:C:\Users\Simone\AppData\Local\Temp\s6ec.
-6404 cinit CODE >1838:C:\Users\Simone\AppData\Local\Temp\s6ec.
-6406 cinit CODE >1839:C:\Users\Simone\AppData\Local\Temp\s6ec.
-6408 cinit CODE >1840:C:\Users\Simone\AppData\Local\Temp\s6ec.
-640A cinit CODE >1845:C:\Users\Simone\AppData\Local\Temp\s6ec.
-640C cinit CODE >1846:C:\Users\Simone\AppData\Local\Temp\s6ec.
-640E cinit CODE >1847:C:\Users\Simone\AppData\Local\Temp\s6ec.
-6410 cinit CODE >1848:C:\Users\Simone\AppData\Local\Temp\s6ec.
-6412 cinit CODE >1849:C:\Users\Simone\AppData\Local\Temp\s6ec.
-6414 cinit CODE >1850:C:\Users\Simone\AppData\Local\Temp\s6ec.
-6416 cinit CODE >1851:C:\Users\Simone\AppData\Local\Temp\s6ec.
-641A cinit CODE >1852:C:\Users\Simone\AppData\Local\Temp\s6ec.
-641E cinit CODE >1853:C:\Users\Simone\AppData\Local\Temp\s6ec.
-641E cinit CODE >1854:C:\Users\Simone\AppData\Local\Temp\s6ec.
-6420 cinit CODE >1855:C:\Users\Simone\AppData\Local\Temp\s6ec.
-6424 cinit CODE >1856:C:\Users\Simone\AppData\Local\Temp\s6ec.
-6426 cinit CODE >1857:C:\Users\Simone\AppData\Local\Temp\s6ec.
-6428 cinit CODE >1858:C:\Users\Simone\AppData\Local\Temp\s6ec.
-642A cinit CODE >1862:C:\Users\Simone\AppData\Local\Temp\s6ec.
-642C cinit CODE >1863:C:\Users\Simone\AppData\Local\Temp\s6ec.
-642E cinit CODE >1864:C:\Users\Simone\AppData\Local\Temp\s6ec.
-6430 cinit CODE >1865:C:\Users\Simone\AppData\Local\Temp\s6ec.
-6432 cinit CODE >1866:C:\Users\Simone\AppData\Local\Temp\s6ec.
-6434 cinit CODE >1867:C:\Users\Simone\AppData\Local\Temp\s6ec.
-6436 cinit CODE >1868:C:\Users\Simone\AppData\Local\Temp\s6ec.
-6438 cinit CODE >1869:C:\Users\Simone\AppData\Local\Temp\s6ec.
-643C cinit CODE >1870:C:\Users\Simone\AppData\Local\Temp\s6ec.
-643E cinit CODE >1871:C:\Users\Simone\AppData\Local\Temp\s6ec.
-6442 cinit CODE >1872:C:\Users\Simone\AppData\Local\Temp\s6ec.
-6444 cinit CODE >1873:C:\Users\Simone\AppData\Local\Temp\s6ec.
-6448 cinit CODE >1879:C:\Users\Simone\AppData\Local\Temp\s6ec.
-6448 cinit CODE >1881:C:\Users\Simone\AppData\Local\Temp\s6ec.
-644A cinit CODE >1882:C:\Users\Simone\AppData\Local\Temp\s6ec.
-644C cinit CODE >1883:C:\Users\Simone\AppData\Local\Temp\s6ec.
-644E cinit CODE >1884:C:\Users\Simone\AppData\Local\Temp\s6ec.
+3E76 text2 CODE >390:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3E7C text2 CODE >391:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3E7E text2 CODE >392:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3E82 text2 CODE >393:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3E88 text2 CODE >394:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3E8E text2 CODE >395:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3E98 text2 CODE >396:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3EC6 text2 CODE >397:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3ED4 text2 CODE >398:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+3ED6 text2 CODE >323:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+58A0 text1 CODE >249:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+58A0 text1 CODE >250:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+58A2 text1 CODE >251:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+58A6 text1 CODE >252:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+58B2 text1 CODE >253:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+58B6 text1 CODE >254:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+58C0 text1 CODE >255:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+58EE text1 CODE >256:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+58F0 text1 CODE >257:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5900 text1 CODE >260:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5902 text1 CODE >261:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5904 text1 CODE >262:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5906 text1 CODE >263:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5962 text1 CODE >265:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+597C text1 CODE >266:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+597E text1 CODE >267:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5988 text1 CODE >268:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+59B6 text1 CODE >270:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+59BA text1 CODE >271:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+59C6 text1 CODE >272:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+59C8 text1 CODE >273:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+59CE text1 CODE >274:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+59FC text1 CODE >275:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5A0C text1 CODE >276:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5A12 text1 CODE >277:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5A14 text1 CODE >278:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5A1E text1 CODE >279:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5A4C text1 CODE >281:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5A4E text1 CODE >282:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5A50 text1 CODE >284:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5A52 text1 CODE >285:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5A54 text1 CODE >286:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5A56 text1 CODE >250:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+5A56 text1 CODE >289:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+6230 text0 CODE >204:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+6230 text0 CODE >205:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+6236 text0 CODE >206:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+623C text0 CODE >207:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+6242 text0 CODE >208:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+6248 text0 CODE >209:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+624E text0 CODE >210:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+6254 text0 CODE >211:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+625A text0 CODE >212:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+6260 text0 CODE >213:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+6262 text0 CODE >214:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+6266 text0 CODE >215:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+6268 text0 CODE >216:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+626A text0 CODE >217:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+626C text0 CODE >218:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+626E text0 CODE >219:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+6270 text0 CODE >220:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+627E text0 CODE >222:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+6280 text0 CODE >223:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+628E text0 CODE >224:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+6298 text0 CODE >225:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+62B8 text0 CODE >226:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+62E6 text0 CODE >222:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+62EA text0 CODE >243:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+62EE text0 CODE >244:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+62F2 text0 CODE >245:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+62F6 text0 CODE >221:D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+6404 cinit CODE >1586:C:\Users\Simone\AppData\Local\Temp\s5dc.
+6404 cinit CODE >1588:C:\Users\Simone\AppData\Local\Temp\s5dc.
+6404 cinit CODE >1591:C:\Users\Simone\AppData\Local\Temp\s5dc.
+6404 cinit CODE >1815:C:\Users\Simone\AppData\Local\Temp\s5dc.
+6408 cinit CODE >1816:C:\Users\Simone\AppData\Local\Temp\s5dc.
+640A cinit CODE >1817:C:\Users\Simone\AppData\Local\Temp\s5dc.
+640A cinit CODE >1818:C:\Users\Simone\AppData\Local\Temp\s5dc.
+640C cinit CODE >1819:C:\Users\Simone\AppData\Local\Temp\s5dc.
+640E cinit CODE >1820:C:\Users\Simone\AppData\Local\Temp\s5dc.
+6410 cinit CODE >1823:C:\Users\Simone\AppData\Local\Temp\s5dc.
+6414 cinit CODE >1824:C:\Users\Simone\AppData\Local\Temp\s5dc.
+6416 cinit CODE >1825:C:\Users\Simone\AppData\Local\Temp\s5dc.
+6416 cinit CODE >1826:C:\Users\Simone\AppData\Local\Temp\s5dc.
+6418 cinit CODE >1827:C:\Users\Simone\AppData\Local\Temp\s5dc.
+641A cinit CODE >1828:C:\Users\Simone\AppData\Local\Temp\s5dc.
+641C cinit CODE >1831:C:\Users\Simone\AppData\Local\Temp\s5dc.
+641E cinit CODE >1832:C:\Users\Simone\AppData\Local\Temp\s5dc.
+6420 cinit CODE >1835:C:\Users\Simone\AppData\Local\Temp\s5dc.
+6424 cinit CODE >1836:C:\Users\Simone\AppData\Local\Temp\s5dc.
+6426 cinit CODE >1837:C:\Users\Simone\AppData\Local\Temp\s5dc.
+6426 cinit CODE >1838:C:\Users\Simone\AppData\Local\Temp\s5dc.
+6428 cinit CODE >1839:C:\Users\Simone\AppData\Local\Temp\s5dc.
+642A cinit CODE >1840:C:\Users\Simone\AppData\Local\Temp\s5dc.
+642C cinit CODE >1845:C:\Users\Simone\AppData\Local\Temp\s5dc.
+642E cinit CODE >1846:C:\Users\Simone\AppData\Local\Temp\s5dc.
+6430 cinit CODE >1847:C:\Users\Simone\AppData\Local\Temp\s5dc.
+6432 cinit CODE >1848:C:\Users\Simone\AppData\Local\Temp\s5dc.
+6434 cinit CODE >1849:C:\Users\Simone\AppData\Local\Temp\s5dc.
+6436 cinit CODE >1850:C:\Users\Simone\AppData\Local\Temp\s5dc.
+6438 cinit CODE >1851:C:\Users\Simone\AppData\Local\Temp\s5dc.
+643C cinit CODE >1852:C:\Users\Simone\AppData\Local\Temp\s5dc.
+6440 cinit CODE >1853:C:\Users\Simone\AppData\Local\Temp\s5dc.
+6440 cinit CODE >1854:C:\Users\Simone\AppData\Local\Temp\s5dc.
+6442 cinit CODE >1855:C:\Users\Simone\AppData\Local\Temp\s5dc.
+6446 cinit CODE >1856:C:\Users\Simone\AppData\Local\Temp\s5dc.
+6448 cinit CODE >1857:C:\Users\Simone\AppData\Local\Temp\s5dc.
+644A cinit CODE >1858:C:\Users\Simone\AppData\Local\Temp\s5dc.
+644C cinit CODE >1862:C:\Users\Simone\AppData\Local\Temp\s5dc.
+644E cinit CODE >1863:C:\Users\Simone\AppData\Local\Temp\s5dc.
+6450 cinit CODE >1864:C:\Users\Simone\AppData\Local\Temp\s5dc.
+6452 cinit CODE >1865:C:\Users\Simone\AppData\Local\Temp\s5dc.
+6454 cinit CODE >1866:C:\Users\Simone\AppData\Local\Temp\s5dc.
+6456 cinit CODE >1867:C:\Users\Simone\AppData\Local\Temp\s5dc.
+6458 cinit CODE >1868:C:\Users\Simone\AppData\Local\Temp\s5dc.
+645A cinit CODE >1869:C:\Users\Simone\AppData\Local\Temp\s5dc.
+645E cinit CODE >1870:C:\Users\Simone\AppData\Local\Temp\s5dc.
+6460 cinit CODE >1871:C:\Users\Simone\AppData\Local\Temp\s5dc.
+6464 cinit CODE >1872:C:\Users\Simone\AppData\Local\Temp\s5dc.
+6466 cinit CODE >1873:C:\Users\Simone\AppData\Local\Temp\s5dc.
+646A cinit CODE >1879:C:\Users\Simone\AppData\Local\Temp\s5dc.
+646A cinit CODE >1881:C:\Users\Simone\AppData\Local\Temp\s5dc.
+646C cinit CODE >1882:C:\Users\Simone\AppData\Local\Temp\s5dc.
+646E cinit CODE >1883:C:\Users\Simone\AppData\Local\Temp\s5dc.
+6470 cinit CODE >1884:C:\Users\Simone\AppData\Local\Temp\s5dc.
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -1831,7 +1834,7 @@ CANSetMask@tamp 81 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.pr
 CANSetMask@type 7B 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
 ISR_Bassa@i 53 0 COMRAM 1 cstackCOMRAM dist/default/production\parcheggio.X.production.obj
 __Lmediumconst 0 0 MEDIUMCONST 0 mediumconst dist/default/production\parcheggio.X.production.obj
-__end_of_ISR_Bassa 308 0 CODE 0 intcodelo dist/default/production\parcheggio.X.production.obj
+__end_of_ISR_Bassa 312 0 CODE 0 intcodelo dist/default/production\parcheggio.X.production.obj
 __Hspace_0 30000E 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
 __Hspace_1 2B0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
 __Hspace_2 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
@@ -1853,7 +1856,7 @@ _RXM1SIDL F1D 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
 _set_speed 25 0 COMRAM 1 bssCOMRAM dist/default/production\parcheggio.X.production.obj
 __Hibigdata 0 0 CODE 0 ibigdata dist/default/production\parcheggio.X.production.obj
 _RXB1DLCbits F55 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\Simone\AppData\Local\Temp\s6ec.obj
+__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\Simone\AppData\Local\Temp\s5dc.obj
 __Heeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production\parcheggio.X.production.obj
 __CFG_MCLRE$ON 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
 _prima_sterzata 140 0 BANK1 1 bssBANK1 dist/default/production\parcheggio.X.production.obj
@@ -1861,34 +1864,34 @@ __size_of_CANInitialize 0 0 ABS 0 - dist/default/production\parcheggio.X.product
 ?_abs 77 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
 ?_cos 1B4 0 BANK1 1 cstackBANK1 dist/default/production\parcheggio.X.production.obj
 ?_sin 19D 0 BANK1 1 cstackBANK1 dist/default/production\parcheggio.X.production.obj
-__end_of_park_search 5A4C 0 CODE 0 text1 dist/default/production\parcheggio.X.production.obj
+__end_of_park_search 5A60 0 CODE 0 text1 dist/default/production\parcheggio.X.production.obj
 __Lsmallconst D00 0 SMALLCONST 0 smallconst dist/default/production\parcheggio.X.production.obj
 _LATA F89 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
 _LATB F8A 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
 _LATC F8B 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-___sp 0 0 STACK 2 stack C:\Users\Simone\AppData\Local\Temp\s6ec.obj
+___sp 0 0 STACK 2 stack C:\Users\Simone\AppData\Local\Temp\s5dc.obj
 _alfa 124 0 BANK1 1 bssBANK1 dist/default/production\parcheggio.X.production.obj
-_asin 4D10 0 CODE 0 text16 dist/default/production\parcheggio.X.production.obj
+_asin 4D24 0 CODE 0 text16 dist/default/production\parcheggio.X.production.obj
 _asus 2A 0 COMRAM 1 bssCOMRAM dist/default/production\parcheggio.X.production.obj
-_atan 52A6 0 CODE 0 text18 dist/default/production\parcheggio.X.production.obj
+_atan 52BA 0 CODE 0 text18 dist/default/production\parcheggio.X.production.obj
 _beta 128 0 BANK1 1 bssBANK1 dist/default/production\parcheggio.X.production.obj
 _data 153 0 BANK1 1 bssBANK1 dist/default/production\parcheggio.X.production.obj
-_fabs 655A 0 CODE 0 text19 dist/default/production\parcheggio.X.production.obj
-_main 621C 0 CODE 0 text0 dist/default/production\parcheggio.X.production.obj
-_sqrt 3ED0 0 CODE 0 text17 dist/default/production\parcheggio.X.production.obj
+_fabs 657C 0 CODE 0 text19 dist/default/production\parcheggio.X.production.obj
+_main 6230 0 CODE 0 text0 dist/default/production\parcheggio.X.production.obj
+_sqrt 3EE4 0 CODE 0 text17 dist/default/production\parcheggio.X.production.obj
 abs@a 77 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
 btemp 56 0 COMRAM 1 temp dist/default/production\parcheggio.X.production.obj
 cos@f 1B4 0 BANK1 1 cstackBANK1 dist/default/production\parcheggio.X.production.obj
 sin@f 19D 0 BANK1 1 cstackBANK1 dist/default/production\parcheggio.X.production.obj
 sin@y 1A1 0 BANK1 1 cstackBANK1 dist/default/production\parcheggio.X.production.obj
-start 308 0 CODE 0 init C:\Users\Simone\AppData\Local\Temp\s6ec.obj
+start 312 0 CODE 0 init C:\Users\Simone\AppData\Local\Temp\s5dc.obj
 ___flmul@aexp 9D 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
 ___flmul@bexp A2 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
 ___flmul@prod A3 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
 ___flmul@sign 9C 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
 ___flmul@temp A7 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
 _ISR_Bassa 18 0 CODE 0 intcodelo dist/default/production\parcheggio.X.production.obj
-_CANisTxReady 6698 0 CODE 0 text6 dist/default/production\parcheggio.X.production.obj
+_CANisTxReady 66BA 0 CODE 0 text6 dist/default/production\parcheggio.X.production.obj
 __size_of___fladd 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
 __size_of___fldiv 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
 __size_of___flmul 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
@@ -1902,7 +1905,7 @@ __size_of_main 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
 __size_of_sqrt 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
 __size_of___lwdiv 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
 _TXB1DLCbits F35 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-__end_of_CANSetMask 49F8 0 CODE 0 text31 dist/default/production\parcheggio.X.production.obj
+__end_of_CANSetMask 4A0C 0 CODE 0 text31 dist/default/production\parcheggio.X.production.obj
 __HbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/production\parcheggio.X.production.obj
 ?___wmul 77 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
 __size_of_can_interpreter 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
@@ -1911,7 +1914,7 @@ __LidataBANK0 0 0 ABS 0 idataBANK0 dist/default/production\parcheggio.X.producti
 __LidataBANK1 0 0 ABS 0 idataBANK1 dist/default/production\parcheggio.X.production.obj
 __size_ofi1_CANisTxReady 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
 _RXM1SIDLbits F1D 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-__Hpowerup 308 0 CODE 0 powerup dist/default/production\parcheggio.X.production.obj
+__Hpowerup 312 0 CODE 0 powerup dist/default/production\parcheggio.X.production.obj
 _RXB0DLCbits F65 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
 __pbitbssCOMRAM 2A0 -24C COMRAM 1 bitbssCOMRAM dist/default/production\parcheggio.X.production.obj
 sin@x2 1A9 0 BANK1 1 cstackBANK1 dist/default/production\parcheggio.X.production.obj
@@ -1921,12 +1924,12 @@ sqrt@i 18C 0 BANK1 1 cstackBANK1 dist/default/production\parcheggio.X.production
 sqrt@p 191 0 BANK1 1 cstackBANK1 dist/default/production\parcheggio.X.production.obj
 _distance E2 0 BANK0 1 bssBANK0 dist/default/production\parcheggio.X.production.obj
 _T0CONbits FD5 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-__end_of_CANInitialize 588C 0 CODE 0 text30 dist/default/production\parcheggio.X.production.obj
-__accesstop 60 0 ABS 0 - C:\Users\Simone\AppData\Local\Temp\s6ec.obj
-intlevel0 0 0 CODE 0 text C:\Users\Simone\AppData\Local\Temp\s6ec.obj
-intlevel1 0 0 CODE 0 text C:\Users\Simone\AppData\Local\Temp\s6ec.obj
-intlevel2 0 0 CODE 0 text C:\Users\Simone\AppData\Local\Temp\s6ec.obj
-intlevel3 0 0 CODE 0 text C:\Users\Simone\AppData\Local\Temp\s6ec.obj
+__end_of_CANInitialize 58A0 0 CODE 0 text30 dist/default/production\parcheggio.X.production.obj
+__accesstop 60 0 ABS 0 - C:\Users\Simone\AppData\Local\Temp\s5dc.obj
+intlevel0 0 0 CODE 0 text C:\Users\Simone\AppData\Local\Temp\s5dc.obj
+intlevel1 0 0 CODE 0 text C:\Users\Simone\AppData\Local\Temp\s5dc.obj
+intlevel2 0 0 CODE 0 text C:\Users\Simone\AppData\Local\Temp\s5dc.obj
+intlevel3 0 0 CODE 0 text C:\Users\Simone\AppData\Local\Temp\s5dc.obj
 __LbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/production\parcheggio.X.production.obj
 _alignment_gap 11 0 COMRAM 1 bssCOMRAM dist/default/production\parcheggio.X.production.obj
 __LnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/production\parcheggio.X.production.obj
@@ -1947,7 +1950,7 @@ __size_of_CANisTxReady 0 0 ABS 0 - dist/default/production\parcheggio.X.producti
 _old_data_correction 2AB -24C COMRAM 1 bitbssCOMRAM dist/default/production\parcheggio.X.production.obj
 __Hclrtext 0 0 ABS 0 clrtext dist/default/production\parcheggio.X.production.obj
 _COMSTATbits F74 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_delay_s 666C 0 CODE 0 text26 dist/default/production\parcheggio.X.production.obj
+_delay_s 668E 0 CODE 0 text26 dist/default/production\parcheggio.X.production.obj
 __end_ofatan@coeff_a D19 0 SMALLCONST 0 smallconst dist/default/production\parcheggio.X.production.obj
 __end_ofatan@coeff_b D2D 0 SMALLCONST 0 smallconst dist/default/production\parcheggio.X.production.obj
 _right_speed 23 0 COMRAM 1 bssCOMRAM dist/default/production\parcheggio.X.production.obj
@@ -1964,13 +1967,13 @@ _request_sent 2AC -24C COMRAM 1 bitbssCOMRAM dist/default/production\parcheggio.
 _ADCON1 FC1 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
 CANSetFilter@tamp 81 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
 CANSetFilter@type 7B 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
-___inthi_sp 0 0 STACK 2 stack C:\Users\Simone\AppData\Local\Temp\s6ec.obj
-___intlo_sp 0 0 STACK 2 stack C:\Users\Simone\AppData\Local\Temp\s6ec.obj
+___inthi_sp 0 0 STACK 2 stack C:\Users\Simone\AppData\Local\Temp\s5dc.obj
+___intlo_sp 0 0 STACK 2 stack C:\Users\Simone\AppData\Local\Temp\s5dc.obj
 _CANCON F6F 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
 __Hintcode_body 0 0 ABS 0 intcode_body dist/default/production\parcheggio.X.production.obj
-__end_of___flge 5BDC 0 CODE 0 text24 dist/default/production\parcheggio.X.production.obj
-__end_of___wmul 6640 0 CODE 0 text28 dist/default/production\parcheggio.X.production.obj
-__end_of_CANisTxReady 66BC 0 CODE 0 text6 dist/default/production\parcheggio.X.production.obj
+__end_of___flge 5BF0 0 CODE 0 text24 dist/default/production\parcheggio.X.production.obj
+__end_of___wmul 6662 0 CODE 0 text28 dist/default/production\parcheggio.X.production.obj
+__end_of_CANisTxReady 66DE 0 CODE 0 text6 dist/default/production\parcheggio.X.production.obj
 _distance_wait 2A7 -24C COMRAM 1 bitbssCOMRAM dist/default/production\parcheggio.X.production.obj
 __Lintsave_regs 0 0 BIGRAM 1 intsave_regs dist/default/production\parcheggio.X.production.obj
 _Pminimo 120 0 BANK1 1 bssBANK1 dist/default/production\parcheggio.X.production.obj
@@ -1983,15 +1986,15 @@ ___fldiv@bexp 8E 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.prod
 ___fldiv@sign 83 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
 __Hmediumconst 0 0 MEDIUMCONST 0 mediumconst dist/default/production\parcheggio.X.production.obj
 _data_speed 16B 0 BANK1 1 bssBANK1 dist/default/production\parcheggio.X.production.obj
-__Hintcodelo 308 0 CODE 0 intcodelo dist/default/production\parcheggio.X.production.obj
+__Hintcodelo 312 0 CODE 0 intcodelo dist/default/production\parcheggio.X.production.obj
 __end_of___fladd 35B2 0 CODE 0 text23 dist/default/production\parcheggio.X.production.obj
-__end_of___fldiv 465A 0 CODE 0 text25 dist/default/production\parcheggio.X.production.obj
+__end_of___fldiv 466E 0 CODE 0 text25 dist/default/production\parcheggio.X.production.obj
 __end_of___flmul 3A58 0 CODE 0 text22 dist/default/production\parcheggio.X.production.obj
-__end_of___flneg 660A 0 CODE 0 text20 dist/default/production\parcheggio.X.production.obj
-__end_of___flsub 655A 0 CODE 0 text15 dist/default/production\parcheggio.X.production.obj
-__end_of___fltol 6058 0 CODE 0 text14 dist/default/production\parcheggio.X.production.obj
+__end_of___flneg 662C 0 CODE 0 text20 dist/default/production\parcheggio.X.production.obj
+__end_of___flsub 657C 0 CODE 0 text15 dist/default/production\parcheggio.X.production.obj
+__end_of___fltol 606C 0 CODE 0 text14 dist/default/production\parcheggio.X.production.obj
 CANInitialize@flags 89 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
-__end_of___lwdiv 63E2 0 CODE 0 text40 dist/default/production\parcheggio.X.production.obj
+__end_of___lwdiv 6404 0 CODE 0 text40 dist/default/production\parcheggio.X.production.obj
 delay_s@repeat_loop 80 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
 _spazio_parcheggio E6 0 BANK0 1 dataBANK0 dist/default/production\parcheggio.X.production.obj
 __size_of_CANsendMessage 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
@@ -2012,7 +2015,7 @@ ___flsub@a 199 0 BANK1 1 cstackBANK1 dist/default/production\parcheggio.X.produc
 ___flsub@b 195 0 BANK1 1 cstackBANK1 dist/default/production\parcheggio.X.production.obj
 _steering_correction 2C 0 COMRAM 1 bssCOMRAM dist/default/production\parcheggio.X.production.obj
 _distance_received 2A5 -24C COMRAM 1 bitbssCOMRAM dist/default/production\parcheggio.X.production.obj
-__end_of_ISR_Alta 621C 0 CODE 0 intcode_body dist/default/production\parcheggio.X.production.obj
+__end_of_ISR_Alta 6230 0 CODE 0 intcode_body dist/default/production\parcheggio.X.production.obj
 _INTCON2bits FF1 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
 i1CANsendMessage@dataLength 33 0 COMRAM 1 cstackCOMRAM dist/default/production\parcheggio.X.production.obj
 __Lintcodelo 18 0 CODE 0 intcodelo dist/default/production\parcheggio.X.production.obj
@@ -2020,11 +2023,11 @@ _CANSetFilter D52 0 CODE 0 text32 dist/default/production\parcheggio.X.productio
 __CFG_FCMEN$OFF 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
 _park_routine 3A58 0 CODE 0 text2 dist/default/production\parcheggio.X.production.obj
 _TXB1SIDLbits F32 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-start_initialization 63E2 0 CODE 0 cinit dist/default/production\parcheggio.X.production.obj
+start_initialization 6404 0 CODE 0 cinit dist/default/production\parcheggio.X.production.obj
 __size_of_park_search 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
 __HnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/production\parcheggio.X.production.obj
 __end_ofi1_CANsendMessage 2674 0 CODE 0 text36 dist/default/production\parcheggio.X.production.obj
-__end_of_parallelo 52A6 0 CODE 0 text3 dist/default/production\parcheggio.X.production.obj
+__end_of_parallelo 52BA 0 CODE 0 text3 dist/default/production\parcheggio.X.production.obj
 _TRISBbits F93 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
 CANInitialize@FilterConfig1 8F 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
 CANInitialize@FilterConfig2 90 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
@@ -2082,8 +2085,8 @@ _TXB2D5 F2B 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
 _TXB2D6 F2C 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
 _TXB2D7 F2D 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
 __size_of_CANSetMask 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_parallelo 5022 0 CODE 0 text3 dist/default/production\parcheggio.X.production.obj
-_configurazione 6452 0 CODE 0 text29 dist/default/production\parcheggio.X.production.obj
+_parallelo 5036 0 CODE 0 text3 dist/default/production\parcheggio.X.production.obj
+_configurazione 6474 0 CODE 0 text29 dist/default/production\parcheggio.X.production.obj
 _steering_correction_dir 2AF -24C COMRAM 1 bitbssCOMRAM dist/default/production\parcheggio.X.production.obj
 can_send@data_correction1 87 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
 __Hbank0 0 0 ABS 0 bank0 dist/default/production\parcheggio.X.production.obj
@@ -2126,7 +2129,7 @@ __Hbank12 0 0 ABS 0 bank12 dist/default/production\parcheggio.X.production.obj
 __size_of___xxtofl 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
 __Hbigbss 0 0 BIGRAM 1 bigbss dist/default/production\parcheggio.X.production.obj
 __Hbigram 0 0 ABS 0 bigram dist/default/production\parcheggio.X.production.obj
-__smallconst D00 0 SMALLCONST 0 smallconst C:\Users\Simone\AppData\Local\Temp\s6ec.obj
+__smallconst D00 0 SMALLCONST 0 smallconst C:\Users\Simone\AppData\Local\Temp\s5dc.obj
 ___xxtofl@arg D5 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
 ___xxtofl@exp D4 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
 ___xxtofl@val CB 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
@@ -2174,23 +2177,23 @@ _INTCONbits FF2 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
 delay_ms@value_ms 7D 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
 __Habs1 0 0 ABS 0 abs1 dist/default/production\parcheggio.X.production.obj
 __Hdata 0 0 ABS 0 data dist/default/production\parcheggio.X.production.obj
-__Hinit 308 0 CODE 0 init dist/default/production\parcheggio.X.production.obj
+__Hinit 312 0 CODE 0 init dist/default/production\parcheggio.X.production.obj
 __Hrbit 0 0 COMRAM 1 rbit dist/default/production\parcheggio.X.production.obj
 __Hrbss 0 0 COMRAM 1 rbss dist/default/production\parcheggio.X.production.obj
 __Htemp 57 0 COMRAM 1 temp dist/default/production\parcheggio.X.production.obj
 __Htext 0 0 ABS 0 text dist/default/production\parcheggio.X.production.obj
 __Labs1 0 0 ABS 0 abs1 dist/default/production\parcheggio.X.production.obj
 __Ldata 0 0 ABS 0 data dist/default/production\parcheggio.X.production.obj
-__Linit 308 0 CODE 0 init dist/default/production\parcheggio.X.production.obj
+__Linit 312 0 CODE 0 init dist/default/production\parcheggio.X.production.obj
 __Lrbit 0 0 COMRAM 1 rbit dist/default/production\parcheggio.X.production.obj
 __Lrbss 0 0 COMRAM 1 rbss dist/default/production\parcheggio.X.production.obj
 __Ltemp 56 0 COMRAM 1 temp dist/default/production\parcheggio.X.production.obj
 __Ltext 0 0 ABS 0 text dist/default/production\parcheggio.X.production.obj
 __CFG_XINST$OFF 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
 __end_of_CANSetFilter 1858 0 CODE 0 text32 dist/default/production\parcheggio.X.production.obj
-__end_of_park_routine 3ED0 0 CODE 0 text2 dist/default/production\parcheggio.X.production.obj
-___flge 5A4C 0 CODE 0 text24 dist/default/production\parcheggio.X.production.obj
-___wmul 660A 0 CODE 0 text28 dist/default/production\parcheggio.X.production.obj
+__end_of_park_routine 3EE4 0 CODE 0 text2 dist/default/production\parcheggio.X.production.obj
+___flge 5A60 0 CODE 0 text24 dist/default/production\parcheggio.X.production.obj
+___wmul 662C 0 CODE 0 text28 dist/default/production\parcheggio.X.production.obj
 __LcstackBANK0 0 0 ABS 0 cstackBANK0 dist/default/production\parcheggio.X.production.obj
 __LcstackBANK1 0 0 ABS 0 cstackBANK1 dist/default/production\parcheggio.X.production.obj
 _RXB0SIDLbits F62 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
@@ -2201,18 +2204,18 @@ __Hirdata 0 0 CODE 0 irdata dist/default/production\parcheggio.X.production.obj
 __S0 30000E 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
 __S1 1EC 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
 __S2 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_abs 6640 0 CODE 0 text7 dist/default/production\parcheggio.X.production.obj
+_abs 6662 0 CODE 0 text7 dist/default/production\parcheggio.X.production.obj
 _asd 2A1 -24C COMRAM 1 bitbssCOMRAM dist/default/production\parcheggio.X.production.obj
-_cos 6058 0 CODE 0 text9 dist/default/production\parcheggio.X.production.obj
+_cos 606C 0 CODE 0 text9 dist/default/production\parcheggio.X.production.obj
 _dir 2A3 -24C COMRAM 1 bitbssCOMRAM dist/default/production\parcheggio.X.production.obj
 _jjj 130 0 BANK1 1 bssBANK1 dist/default/production\parcheggio.X.production.obj
 _kkk 134 0 BANK1 1 bssBANK1 dist/default/production\parcheggio.X.production.obj
 _msg 144 0 BANK1 1 bssBANK1 dist/default/production\parcheggio.X.production.obj
-_sin 49F8 0 CODE 0 text10 dist/default/production\parcheggio.X.production.obj
+_sin 4A0C 0 CODE 0 text10 dist/default/production\parcheggio.X.production.obj
 _CANisTxReady$2845 77 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
 _timerValue2 27 0 COMRAM 1 bssCOMRAM dist/default/production\parcheggio.X.production.obj
 __size_of_CANreceiveMessage 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-__end_of_configurazione 64BE 0 CODE 0 text29 dist/default/production\parcheggio.X.production.obj
+__end_of_configurazione 64E0 0 CODE 0 text29 dist/default/production\parcheggio.X.production.obj
 __CFG_PBADEN$OFF 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
 _distance_error 2A4 -24C COMRAM 1 bitbssCOMRAM dist/default/production\parcheggio.X.production.obj
 _data_test 17B 0 BANK1 1 bssBANK1 dist/default/production\parcheggio.X.production.obj
@@ -2221,23 +2224,23 @@ __Lbigdata 0 0 BIGRAM 1 bigdata dist/default/production\parcheggio.X.production.
 __Hnvrram 0 0 COMRAM 1 nvrram dist/default/production\parcheggio.X.production.obj
 _data_speed_rx 108 0 BANK1 1 bssBANK1 dist/default/production\parcheggio.X.production.obj
 _RXF0SIDLbits F01 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-___xxtofl 54F8 0 CODE 0 text13 dist/default/production\parcheggio.X.production.obj
-__end_of_abs 666C 0 CODE 0 text7 dist/default/production\parcheggio.X.production.obj
-__end_of_cos 613C 0 CODE 0 text9 dist/default/production\parcheggio.X.production.obj
-__end_of_sin 4D10 0 CODE 0 text10 dist/default/production\parcheggio.X.production.obj
+___xxtofl 550C 0 CODE 0 text13 dist/default/production\parcheggio.X.production.obj
+__end_of_abs 668E 0 CODE 0 text7 dist/default/production\parcheggio.X.production.obj
+__end_of_cos 6150 0 CODE 0 text9 dist/default/production\parcheggio.X.production.obj
+__end_of_sin 4D24 0 CODE 0 text10 dist/default/production\parcheggio.X.production.obj
 __Hparam0 0 0 BANK0 1 param0 dist/default/production\parcheggio.X.production.obj
 __end_ofsin@coeff_a D41 0 SMALLCONST 0 smallconst dist/default/production\parcheggio.X.production.obj
 __end_ofsin@coeff_b D51 0 SMALLCONST 0 smallconst dist/default/production\parcheggio.X.production.obj
-int_func 613C 0 CODE 0 intcode_body dist/default/production\parcheggio.X.production.obj
+int_func 6150 0 CODE 0 intcode_body dist/default/production\parcheggio.X.production.obj
 _MUX_index 29 0 COMRAM 1 bssCOMRAM dist/default/production\parcheggio.X.production.obj
 _gianni 2B 0 COMRAM 1 bssCOMRAM dist/default/production\parcheggio.X.production.obj
-i1_CANisTxReady 66BC 0 CODE 0 text37 dist/default/production\parcheggio.X.production.obj
+i1_CANisTxReady 66DE 0 CODE 0 text37 dist/default/production\parcheggio.X.production.obj
 __Lintentry 0 0 ABS 0 intentry dist/default/production\parcheggio.X.production.obj
 __Hramtop D00 0 RAM 0 ramtop dist/default/production\parcheggio.X.production.obj
 _asin$3753 1B0 0 BANK1 1 cstackBANK1 dist/default/production\parcheggio.X.production.obj
 _asin$3754 1A8 0 BANK1 1 cstackBANK1 dist/default/production\parcheggio.X.production.obj
 _asin$3755 1A4 0 BANK1 1 cstackBANK1 dist/default/production\parcheggio.X.production.obj
-__end_of___xxtofl 56C6 0 CODE 0 text13 dist/default/production\parcheggio.X.production.obj
+__end_of___xxtofl 56DA 0 CODE 0 text13 dist/default/production\parcheggio.X.production.obj
 asin@sgn 1A0 0 BANK1 1 cstackBANK1 dist/default/production\parcheggio.X.production.obj
 __pdataBANK0 E6 0 BANK0 1 dataBANK0 dist/default/production\parcheggio.X.production.obj
 __pdataBANK1 1E4 0 BANK1 1 dataBANK1 dist/default/production\parcheggio.X.production.obj
@@ -2286,46 +2289,46 @@ _distance_average 19 0 COMRAM 1 bssCOMRAM dist/default/production\parcheggio.X.p
 floor@expon 193 0 BANK1 1 cstackBANK1 dist/default/production\parcheggio.X.production.obj
 atan@val_squared 194 0 BANK1 1 cstackBANK1 dist/default/production\parcheggio.X.production.obj
 ___fladd@signs B9 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
-__ptext10 49F8 0 CODE 0 text10 dist/default/production\parcheggio.X.production.obj
-__ptext11 5D10 0 CODE 0 text11 dist/default/production\parcheggio.X.production.obj
-__ptext12 62D6 0 CODE 0 text12 dist/default/production\parcheggio.X.production.obj
-__ptext13 54F8 0 CODE 0 text13 dist/default/production\parcheggio.X.production.obj
-__ptext14 5F4C 0 CODE 0 text14 dist/default/production\parcheggio.X.production.obj
-__ptext15 6512 0 CODE 0 text15 dist/default/production\parcheggio.X.production.obj
-__ptext16 4D10 0 CODE 0 text16 dist/default/production\parcheggio.X.production.obj
-__ptext17 3ED0 0 CODE 0 text17 dist/default/production\parcheggio.X.production.obj
-__ptext18 52A6 0 CODE 0 text18 dist/default/production\parcheggio.X.production.obj
-__ptext19 655A 0 CODE 0 text19 dist/default/production\parcheggio.X.production.obj
-__ptext20 65D2 0 CODE 0 text20 dist/default/production\parcheggio.X.production.obj
-__ptext21 5E34 0 CODE 0 text21 dist/default/production\parcheggio.X.production.obj
+__ptext10 4A0C 0 CODE 0 text10 dist/default/production\parcheggio.X.production.obj
+__ptext11 5D24 0 CODE 0 text11 dist/default/production\parcheggio.X.production.obj
+__ptext12 62F8 0 CODE 0 text12 dist/default/production\parcheggio.X.production.obj
+__ptext13 550C 0 CODE 0 text13 dist/default/production\parcheggio.X.production.obj
+__ptext14 5F60 0 CODE 0 text14 dist/default/production\parcheggio.X.production.obj
+__ptext15 6534 0 CODE 0 text15 dist/default/production\parcheggio.X.production.obj
+__ptext16 4D24 0 CODE 0 text16 dist/default/production\parcheggio.X.production.obj
+__ptext17 3EE4 0 CODE 0 text17 dist/default/production\parcheggio.X.production.obj
+__ptext18 52BA 0 CODE 0 text18 dist/default/production\parcheggio.X.production.obj
+__ptext19 657C 0 CODE 0 text19 dist/default/production\parcheggio.X.production.obj
+__ptext20 65F4 0 CODE 0 text20 dist/default/production\parcheggio.X.production.obj
+__ptext21 5E48 0 CODE 0 text21 dist/default/production\parcheggio.X.production.obj
 __ptext22 35B2 0 CODE 0 text22 dist/default/production\parcheggio.X.production.obj
 __ptext23 310A 0 CODE 0 text23 dist/default/production\parcheggio.X.production.obj
-__ptext24 5A4C 0 CODE 0 text24 dist/default/production\parcheggio.X.production.obj
-__ptext25 429A 0 CODE 0 text25 dist/default/production\parcheggio.X.production.obj
-__ptext26 666C 0 CODE 0 text26 dist/default/production\parcheggio.X.production.obj
-__ptext27 6598 0 CODE 0 text27 dist/default/production\parcheggio.X.production.obj
-__ptext28 660A 0 CODE 0 text28 dist/default/production\parcheggio.X.production.obj
-__ptext29 6452 0 CODE 0 text29 dist/default/production\parcheggio.X.production.obj
-__ptext30 56C6 0 CODE 0 text30 dist/default/production\parcheggio.X.production.obj
-__ptext31 465A 0 CODE 0 text31 dist/default/production\parcheggio.X.production.obj
+__ptext24 5A60 0 CODE 0 text24 dist/default/production\parcheggio.X.production.obj
+__ptext25 42AE 0 CODE 0 text25 dist/default/production\parcheggio.X.production.obj
+__ptext26 668E 0 CODE 0 text26 dist/default/production\parcheggio.X.production.obj
+__ptext27 65BA 0 CODE 0 text27 dist/default/production\parcheggio.X.production.obj
+__ptext28 662C 0 CODE 0 text28 dist/default/production\parcheggio.X.production.obj
+__ptext29 6474 0 CODE 0 text29 dist/default/production\parcheggio.X.production.obj
+__ptext30 56DA 0 CODE 0 text30 dist/default/production\parcheggio.X.production.obj
+__ptext31 466E 0 CODE 0 text31 dist/default/production\parcheggio.X.production.obj
 __ptext32 D52 0 CODE 0 text32 dist/default/production\parcheggio.X.production.obj
-__ptext33 66DA 0 CODE 0 text33 dist/default/production\parcheggio.X.production.obj
-__ptext34 64BE 0 CODE 0 text34 dist/default/production\parcheggio.X.production.obj
+__ptext33 66FC 0 CODE 0 text33 dist/default/production\parcheggio.X.production.obj
+__ptext34 64E0 0 CODE 0 text34 dist/default/production\parcheggio.X.production.obj
 __ptext36 1FE4 0 CODE 0 text36 dist/default/production\parcheggio.X.production.obj
-__ptext37 66BC 0 CODE 0 text37 dist/default/production\parcheggio.X.production.obj
+__ptext37 66DE 0 CODE 0 text37 dist/default/production\parcheggio.X.production.obj
 __ptext38 2BFE 0 CODE 0 text38 dist/default/production\parcheggio.X.production.obj
-__ptext40 636A 0 CODE 0 text40 dist/default/production\parcheggio.X.production.obj
+__ptext40 638C 0 CODE 0 text40 dist/default/production\parcheggio.X.production.obj
 __size_of_can_send 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
 _pulse_time 21 0 COMRAM 1 bssCOMRAM dist/default/production\parcheggio.X.production.obj
 ___fladd 310A 0 CODE 0 text23 dist/default/production\parcheggio.X.production.obj
-___fldiv 429A 0 CODE 0 text25 dist/default/production\parcheggio.X.production.obj
+___fldiv 42AE 0 CODE 0 text25 dist/default/production\parcheggio.X.production.obj
 ___flmul 35B2 0 CODE 0 text22 dist/default/production\parcheggio.X.production.obj
-___flneg 65D2 0 CODE 0 text20 dist/default/production\parcheggio.X.production.obj
-___flsub 6512 0 CODE 0 text15 dist/default/production\parcheggio.X.production.obj
-___fltol 5F4C 0 CODE 0 text14 dist/default/production\parcheggio.X.production.obj
+___flneg 65F4 0 CODE 0 text20 dist/default/production\parcheggio.X.production.obj
+___flsub 6534 0 CODE 0 text15 dist/default/production\parcheggio.X.production.obj
+___fltol 5F60 0 CODE 0 text14 dist/default/production\parcheggio.X.production.obj
 _larghezza 1E4 0 BANK1 1 dataBANK1 dist/default/production\parcheggio.X.production.obj
-__pintcode_body 613C 0 CODE 0 intcode_body dist/default/production\parcheggio.X.production.obj
-___lwdiv 636A 0 CODE 0 text40 dist/default/production\parcheggio.X.production.obj
+__pintcode_body 6150 0 CODE 0 intcode_body dist/default/production\parcheggio.X.production.obj
+___lwdiv 638C 0 CODE 0 text40 dist/default/production\parcheggio.X.production.obj
 __Lbank10 0 0 ABS 0 bank10 dist/default/production\parcheggio.X.production.obj
 __Lbank11 0 0 ABS 0 bank11 dist/default/production\parcheggio.X.production.obj
 __Lbank12 0 0 ABS 0 bank12 dist/default/production\parcheggio.X.production.obj
@@ -2350,22 +2353,22 @@ ___fldiv@grs 8A 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.produ
 ___fldiv@rem 84 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
 _raggio 1E8 0 BANK1 1 dataBANK1 dist/default/production\parcheggio.X.production.obj
 _RXM0SIDLbits F19 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_park_search 588C 0 CODE 0 text1 dist/default/production\parcheggio.X.production.obj
+_park_search 58A0 0 CODE 0 text1 dist/default/production\parcheggio.X.production.obj
 __Lfarbss 0 0 FARRAM 0 farbss dist/default/production\parcheggio.X.production.obj
 ___lwdiv@divisor 62 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
 __Lfardata 0 0 FARRAM 0 fardata dist/default/production\parcheggio.X.production.obj
 sqrt@exp 196 0 BANK1 1 cstackBANK1 dist/default/production\parcheggio.X.production.obj
 sqrt@grs 192 0 BANK1 1 cstackBANK1 dist/default/production\parcheggio.X.production.obj
 ___fldiv@new_exp 88 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
-__end_ofi1_CANisTxReady 66DA 0 CODE 0 text37 dist/default/production\parcheggio.X.production.obj
-stackhi CFF 0 ABS 0 - C:\Users\Simone\AppData\Local\Temp\s6ec.obj
-stacklo 1EC 0 ABS 0 - C:\Users\Simone\AppData\Local\Temp\s6ec.obj
+__end_ofi1_CANisTxReady 66FC 0 CODE 0 text37 dist/default/production\parcheggio.X.production.obj
+stackhi CFF 0 ABS 0 - C:\Users\Simone\AppData\Local\Temp\s5dc.obj
+stacklo 1EC 0 ABS 0 - C:\Users\Simone\AppData\Local\Temp\s5dc.obj
 __Lintcode 8 0 CODE 0 intcode dist/default/production\parcheggio.X.production.obj
 _park_routine$3744 1DC 0 BANK1 1 cstackBANK1 dist/default/production\parcheggio.X.production.obj
 _park_routine$3745 1E0 0 BANK1 1 cstackBANK1 dist/default/production\parcheggio.X.production.obj
 __Lintret 0 0 ABS 0 intret dist/default/production\parcheggio.X.production.obj
 __Lirdata 0 0 CODE 0 irdata dist/default/production\parcheggio.X.production.obj
-__end_of_eval_poly 5F4C 0 CODE 0 text21 dist/default/production\parcheggio.X.production.obj
+__end_of_eval_poly 5F60 0 CODE 0 text21 dist/default/production\parcheggio.X.production.obj
 ___fladd@grs BC 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
 __CFG_LVP$OFF 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
 __size_of_eval_poly 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
@@ -2387,17 +2390,17 @@ _matematica 2674 0 CODE 0 text8 dist/default/production\parcheggio.X.production.
 CANInitialize@propSeg 8E 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
 _CANsendMessage 1858 0 CODE 0 text5 dist/default/production\parcheggio.X.production.obj
 _PIR3bits FA4 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-__Lend_init 308 0 CODE 0 end_init dist/default/production\parcheggio.X.production.obj
+__Lend_init 312 0 CODE 0 end_init dist/default/production\parcheggio.X.production.obj
 _activation 2A0 -24C COMRAM 1 bitbssCOMRAM dist/default/production\parcheggio.X.production.obj
 CANsendMessage@dataLength 7D 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
 __size_of_delay_ms 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
 __LcstackCOMRAM 0 0 ABS 0 cstackCOMRAM dist/default/production\parcheggio.X.production.obj
 ___fltol@exp1 CA 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
 _TXB2CONbits F20 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-end_of_initialization 6448 0 CODE 0 cinit dist/default/production\parcheggio.X.production.obj
+end_of_initialization 646A 0 CODE 0 cinit dist/default/production\parcheggio.X.production.obj
 __end_of_CANreceiveMessage 310A 0 CODE 0 text38 dist/default/production\parcheggio.X.production.obj
 atan@recip 193 0 BANK1 1 cstackBANK1 dist/default/production\parcheggio.X.production.obj
-_can_send 5BDC 0 CODE 0 text4 dist/default/production\parcheggio.X.production.obj
+_can_send 5BF0 0 CODE 0 text4 dist/default/production\parcheggio.X.production.obj
 __Lnvrram 0 0 COMRAM 1 nvrram dist/default/production\parcheggio.X.production.obj
 __Hintentry 0 0 ABS 0 intentry dist/default/production\parcheggio.X.production.obj
 _data_steering 173 0 BANK1 1 bssBANK1 dist/default/production\parcheggio.X.production.obj
@@ -2405,7 +2408,7 @@ __CFG_STVREN$ON 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
 _RCONbits FD0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
 _avvicinamento 2A2 -24C COMRAM 1 bitbssCOMRAM dist/default/production\parcheggio.X.production.obj
 __CFG_OSC$HS 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_eval_poly 5E34 0 CODE 0 text21 dist/default/production\parcheggio.X.production.obj
+_eval_poly 5E48 0 CODE 0 text21 dist/default/production\parcheggio.X.production.obj
 ___lwdiv@dividend 60 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
 ?___fladd A9 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
 ?___fldiv 77 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
@@ -2419,7 +2422,7 @@ __Hreset_vec 4 0 CODE 0 reset_vec dist/default/production\parcheggio.X.productio
 __HbssBANK0 0 0 ABS 0 bssBANK0 dist/default/production\parcheggio.X.production.obj
 __HbssBANK1 0 0 ABS 0 bssBANK1 dist/default/production\parcheggio.X.production.obj
 _RXB1CONbits F50 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-__end_of_can_send 5D10 0 CODE 0 text4 dist/default/production\parcheggio.X.production.obj
+__end_of_can_send 5D24 0 CODE 0 text4 dist/default/production\parcheggio.X.production.obj
 __Lramtop D00 0 RAM 0 ramtop dist/default/production\parcheggio.X.production.obj
 _TXB2SIDLbits F22 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
 _BRGCON1 F70 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
@@ -2429,7 +2432,7 @@ _TXB0EIDH F43 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
 _TXB0EIDL F44 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
 _TXB0SIDH F41 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
 _TXB0SIDL F42 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-__pcinit 63E2 0 CODE 0 cinit dist/default/production\parcheggio.X.production.obj
+__pcinit 6404 0 CODE 0 cinit dist/default/production\parcheggio.X.production.obj
 _TXB1EIDH F33 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
 _TXB1EIDL F34 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
 _TXB1SIDH F31 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
@@ -2439,20 +2442,20 @@ _TXB2EIDL F24 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
 _TXB2SIDH F21 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
 _TXB2SIDL F22 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
 ___flneg@f1 BD 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
-__ptext0 621C 0 CODE 0 text0 dist/default/production\parcheggio.X.production.obj
-__ptext1 588C 0 CODE 0 text1 dist/default/production\parcheggio.X.production.obj
+__ptext0 6230 0 CODE 0 text0 dist/default/production\parcheggio.X.production.obj
+__ptext1 58A0 0 CODE 0 text1 dist/default/production\parcheggio.X.production.obj
 __ptext2 3A58 0 CODE 0 text2 dist/default/production\parcheggio.X.production.obj
-__ptext3 5022 0 CODE 0 text3 dist/default/production\parcheggio.X.production.obj
-__ptext4 5BDC 0 CODE 0 text4 dist/default/production\parcheggio.X.production.obj
+__ptext3 5036 0 CODE 0 text3 dist/default/production\parcheggio.X.production.obj
+__ptext4 5BF0 0 CODE 0 text4 dist/default/production\parcheggio.X.production.obj
 __ptext5 1858 0 CODE 0 text5 dist/default/production\parcheggio.X.production.obj
-__ptext6 6698 0 CODE 0 text6 dist/default/production\parcheggio.X.production.obj
-__ptext7 6640 0 CODE 0 text7 dist/default/production\parcheggio.X.production.obj
+__ptext6 66BA 0 CODE 0 text6 dist/default/production\parcheggio.X.production.obj
+__ptext7 6662 0 CODE 0 text7 dist/default/production\parcheggio.X.production.obj
 __ptext8 2674 0 CODE 0 text8 dist/default/production\parcheggio.X.production.obj
-__ptext9 6058 0 CODE 0 text9 dist/default/production\parcheggio.X.production.obj
+__ptext9 606C 0 CODE 0 text9 dist/default/production\parcheggio.X.production.obj
 __Lstruct 0 0 COMRAM 1 struct dist/default/production\parcheggio.X.production.obj
 atan@coeff_a D01 0 SMALLCONST 0 smallconst dist/default/production\parcheggio.X.production.obj
 atan@coeff_b D19 0 SMALLCONST 0 smallconst dist/default/production\parcheggio.X.production.obj
-__end_of_can_interpreter 6512 0 CODE 0 text34 dist/default/production\parcheggio.X.production.obj
+__end_of_can_interpreter 6534 0 CODE 0 text34 dist/default/production\parcheggio.X.production.obj
 __Ltext10 0 0 ABS 0 text10 dist/default/production\parcheggio.X.production.obj
 __Ltext11 0 0 ABS 0 text11 dist/default/production\parcheggio.X.production.obj
 __Ltext12 0 0 ABS 0 text12 dist/default/production\parcheggio.X.production.obj
@@ -2482,10 +2485,10 @@ __Ltext36 0 0 ABS 0 text36 dist/default/production\parcheggio.X.production.obj
 __Ltext37 0 0 ABS 0 text37 dist/default/production\parcheggio.X.production.obj
 __Ltext38 0 0 ABS 0 text38 dist/default/production\parcheggio.X.production.obj
 __Ltext40 0 0 ABS 0 text40 dist/default/production\parcheggio.X.production.obj
-__ramtop D00 0 RAM 0 ramtop C:\Users\Simone\AppData\Local\Temp\s6ec.obj
+__ramtop D00 0 RAM 0 ramtop C:\Users\Simone\AppData\Local\Temp\s5dc.obj
 atan@val 198 0 BANK1 1 cstackBANK1 dist/default/production\parcheggio.X.production.obj
-_CANOperationMode 66DA 0 CODE 0 text33 dist/default/production\parcheggio.X.production.obj
-__Lpowerup 308 0 CODE 0 powerup dist/default/production\parcheggio.X.production.obj
+_CANOperationMode 66FC 0 CODE 0 text33 dist/default/production\parcheggio.X.production.obj
+__Lpowerup 312 0 CODE 0 powerup dist/default/production\parcheggio.X.production.obj
 ?___xxtofl CB 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
 _sensor_distance_short 183 0 BANK1 1 bssBANK1 dist/default/production\parcheggio.X.production.obj
 __Leeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production\parcheggio.X.production.obj
@@ -2497,7 +2500,7 @@ _BRGCON2bits F71 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
 _BRGCON3bits F72 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
 ___fltol@sign1 C9 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
 __psmallconst D00 0 SMALLCONST 0 smallconst dist/default/production\parcheggio.X.production.obj
-__end_of_delay_s 6698 0 CODE 0 text26 dist/default/production\parcheggio.X.production.obj
+__end_of_delay_s 66BA 0 CODE 0 text26 dist/default/production\parcheggio.X.production.obj
 _RXF5SIDLbits F15 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
 __Lreset_vec 0 0 CODE 0 reset_vec dist/default/production\parcheggio.X.production.obj
 eval_poly@d C1 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
@@ -2511,15 +2514,15 @@ ___param_bank 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
 _RXB0CONbits F60 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
 __CFG_WDT$OFF 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
 __Hbigdata 0 0 BIGRAM 1 bigdata dist/default/production\parcheggio.X.production.obj
-__end_of__initialization 6448 0 CODE 0 cinit dist/default/production\parcheggio.X.production.obj
+__end_of__initialization 646A 0 CODE 0 cinit dist/default/production\parcheggio.X.production.obj
 __CFG_WRT0$OFF 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
 __CFG_WRT1$OFF 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
 __CFG_WRT2$OFF 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_delay_ms 6598 0 CODE 0 text27 dist/default/production\parcheggio.X.production.obj
+_delay_ms 65BA 0 CODE 0 text27 dist/default/production\parcheggio.X.production.obj
 __CFG_WRT3$OFF 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
 _distance_dx 1B 0 COMRAM 1 bssCOMRAM dist/default/production\parcheggio.X.production.obj
 _distance_sx 1D 0 COMRAM 1 bssCOMRAM dist/default/production\parcheggio.X.production.obj
-_CANInitialize 56C6 0 CODE 0 text30 dist/default/production\parcheggio.X.production.obj
+_CANInitialize 56DA 0 CODE 0 text30 dist/default/production\parcheggio.X.production.obj
 __end_of_matematica 2BFE 0 CODE 0 text8 dist/default/production\parcheggio.X.production.obj
 __CFG_WRTB$OFF 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
 __Libigdata 0 0 CODE 0 ibigdata dist/default/production\parcheggio.X.production.obj
@@ -2527,27 +2530,27 @@ __CFG_WRTC$OFF 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
 __CFG_WRTD$OFF 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
 frexp@value 77 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
 ?_floor 18B 0 BANK1 1 cstackBANK1 dist/default/production\parcheggio.X.production.obj
-__pidataBANK0 66F8 0 CODE 0 idataBANK0 dist/default/production\parcheggio.X.production.obj
-__pidataBANK1 66F0 0 CODE 0 idataBANK1 dist/default/production\parcheggio.X.production.obj
+__pidataBANK0 671A 0 CODE 0 idataBANK0 dist/default/production\parcheggio.X.production.obj
+__pidataBANK1 6712 0 CODE 0 idataBANK1 dist/default/production\parcheggio.X.production.obj
 _TXB0SIDLbits F42 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
 __Lclrtext 0 0 ABS 0 clrtext dist/default/production\parcheggio.X.production.obj
-__end_of_delay_ms 65D2 0 CODE 0 text27 dist/default/production\parcheggio.X.production.obj
+__end_of_delay_ms 65F4 0 CODE 0 text27 dist/default/production\parcheggio.X.production.obj
 __CFG_PWRT$OFF 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
 __pintcodelo 18 0 CODE 0 intcodelo dist/default/production\parcheggio.X.production.obj
 _TXB0CONbits F40 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
 __pcstackCOMRAM 2D 0 COMRAM 1 cstackCOMRAM dist/default/production\parcheggio.X.production.obj
 _sensor_distance 1 0 COMRAM 1 bssCOMRAM dist/default/production\parcheggio.X.production.obj
 _sin$3757 1A5 0 BANK1 1 cstackBANK1 dist/default/production\parcheggio.X.production.obj
-__Hend_init 30C 0 CODE 0 end_init dist/default/production\parcheggio.X.production.obj
-_can_interpreter 64BE 0 CODE 0 text34 dist/default/production\parcheggio.X.production.obj
+__Hend_init 316 0 CODE 0 end_init dist/default/production\parcheggio.X.production.obj
+_can_interpreter 64E0 0 CODE 0 text34 dist/default/production\parcheggio.X.production.obj
 CANreceiveMessage@tamp 38 0 COMRAM 1 cstackCOMRAM dist/default/production\parcheggio.X.production.obj
 _RXF3SIDLbits F0D 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
 CANreceiveMessage@msg 2D 0 COMRAM 1 cstackCOMRAM dist/default/production\parcheggio.X.production.obj
-__end_of_asin 5022 0 CODE 0 text16 dist/default/production\parcheggio.X.production.obj
-__end_of_atan 54F8 0 CODE 0 text18 dist/default/production\parcheggio.X.production.obj
-__end_of_fabs 6598 0 CODE 0 text19 dist/default/production\parcheggio.X.production.obj
-__end_of_main 62D6 0 CODE 0 text0 dist/default/production\parcheggio.X.production.obj
-__end_of_sqrt 429A 0 CODE 0 text17 dist/default/production\parcheggio.X.production.obj
+__end_of_asin 5036 0 CODE 0 text16 dist/default/production\parcheggio.X.production.obj
+__end_of_atan 550C 0 CODE 0 text18 dist/default/production\parcheggio.X.production.obj
+__end_of_fabs 65BA 0 CODE 0 text19 dist/default/production\parcheggio.X.production.obj
+__end_of_main 62F8 0 CODE 0 text0 dist/default/production\parcheggio.X.production.obj
+__end_of_sqrt 42AE 0 CODE 0 text17 dist/default/production\parcheggio.X.production.obj
 __pintcode 8 0 CODE 0 intcode dist/default/production\parcheggio.X.production.obj
 i1CANsendMessage@flags 34 0 COMRAM 1 cstackCOMRAM dist/default/production\parcheggio.X.production.obj
 sqrt@frac 19C 0 BANK1 1 cstackBANK1 dist/default/production\parcheggio.X.production.obj
@@ -2556,8 +2559,8 @@ sqrt@sign 18B 0 BANK1 1 cstackBANK1 dist/default/production\parcheggio.X.product
 _CANCONbits F6F 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
 _CANreceiveMessage 2BFE 0 CODE 0 text38 dist/default/production\parcheggio.X.production.obj
 _CANSTAT F6E 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-__end_of_floor 5E34 0 CODE 0 text11 dist/default/production\parcheggio.X.production.obj
-__end_of_frexp 636A 0 CODE 0 text12 dist/default/production\parcheggio.X.production.obj
+__end_of_floor 5E48 0 CODE 0 text11 dist/default/production\parcheggio.X.production.obj
+__end_of_frexp 638C 0 CODE 0 text12 dist/default/production\parcheggio.X.production.obj
 _PORTA F80 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
 _T0CON FD5 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
 _T3CON FB1 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
@@ -2585,10 +2588,10 @@ _errno E4 0 BANK0 1 bssBANK0 dist/default/production\parcheggio.X.production.obj
 _RXB0EIDH F63 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
 _RXB0EIDL F64 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
 _first 2A9 -24C COMRAM 1 bitbssCOMRAM dist/default/production\parcheggio.X.production.obj
-_floor 5D10 0 CODE 0 text11 dist/default/production\parcheggio.X.production.obj
+_floor 5D24 0 CODE 0 text11 dist/default/production\parcheggio.X.production.obj
 _RXB0SIDH F61 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
 _RXB0SIDL F62 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-_frexp 62D6 0 CODE 0 text12 dist/default/production\parcheggio.X.production.obj
+_frexp 62F8 0 CODE 0 text12 dist/default/production\parcheggio.X.production.obj
 _RXB1EIDH F53 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
 _RXB1EIDL F54 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
 _RXB1SIDH F51 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
@@ -2597,7 +2600,7 @@ __CFG_CPB$OFF 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
 __CFG_CPD$OFF 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
 _RXB1SIDLbits F52 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
 _distance_received1 2A6 -24C COMRAM 1 bitbssCOMRAM dist/default/production\parcheggio.X.production.obj
-_CANSetMask 465A 0 CODE 0 text31 dist/default/production\parcheggio.X.production.obj
+_CANSetMask 466E 0 CODE 0 text31 dist/default/production\parcheggio.X.production.obj
 __size_of_configurazione 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
 __size_of_abs 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
 __size_of_cos 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
@@ -2611,7 +2614,7 @@ atan@f D1 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.
 atan@x 18F 0 BANK1 1 cstackBANK1 dist/default/production\parcheggio.X.production.obj
 atan@y 18B 0 BANK1 1 cstackBANK1 dist/default/production\parcheggio.X.production.obj
 _sensor_distance_old 118 0 BANK1 1 bssBANK1 dist/default/production\parcheggio.X.production.obj
-__initialization 63E2 0 CODE 0 cinit dist/default/production\parcheggio.X.production.obj
+__initialization 6404 0 CODE 0 cinit dist/default/production\parcheggio.X.production.obj
 ___xxtofl@sign D3 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
 __pbssBANK0 DA 0 BANK0 1 bssBANK0 dist/default/production\parcheggio.X.production.obj
 __pbssBANK1 100 0 BANK1 1 bssBANK1 dist/default/production\parcheggio.X.production.obj
@@ -2647,7 +2650,7 @@ __Hfardata 0 0 FARRAM 0 fardata dist/default/production\parcheggio.X.production.
 ___wmul@product 7B 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
 __Hsmallconst D52 0 SMALLCONST 0 smallconst dist/default/production\parcheggio.X.production.obj
 _cos$3756 1B8 0 BANK1 1 cstackBANK1 dist/default/production\parcheggio.X.production.obj
-__end_of_CANOperationMode 66F0 0 CODE 0 text33 dist/default/production\parcheggio.X.production.obj
+__end_of_CANOperationMode 6712 0 CODE 0 text33 dist/default/production\parcheggio.X.production.obj
 __Lifardata 0 0 CODE 0 ifardata dist/default/production\parcheggio.X.production.obj
 _left_speed 1F 0 COMRAM 1 bssCOMRAM dist/default/production\parcheggio.X.production.obj
 fabs@d C1 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
@@ -2680,9 +2683,9 @@ __size_of_CANOperationMode 0 0 ABS 0 - dist/default/production\parcheggio.X.prod
 # and size are in units of delta. The file address is in units of bytes.
 # All other numeric quantities are in decimal.
 %SEGMENTS
-intcodelo 0 18 18 2F4 1
+intcodelo 0 18 18 2FE 1
 idloc 0 200000 200000 8 1
-text32 0 D52 D52 59A9 1
+text32 0 D52 D52 59CB 1
 cstackBANK0 1 60 60 89 1
 reset_vec 0 0 0 4 1
 bssBANK1 1 100 100 EC 1

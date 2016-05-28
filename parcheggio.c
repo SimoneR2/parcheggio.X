@@ -20,7 +20,7 @@
 #define tolleranza 5
 #define soglia1 4
 #define soglia2 10
-#define diff_sensor 26
+#define diff_sensor 10
 
 //Subroutines declarations
 void configurations(void);
@@ -87,7 +87,7 @@ volatile unsigned char sensor_distance_short[8] = 0;
 unsigned char sensor_distance_old[8] = 0;
 
 //Variabili parcheggio
-float raggio = 65; //52
+float raggio = 60; //52
 float larghezza = 32;
 volatile float bordo = 0;
 float alfa = 0;
@@ -138,7 +138,7 @@ __interrupt(low_priority) void ISR_Bassa(void) {
             sensor_distance_short[0] = sensor_distance_short[0] | (0b00000001 << MUX_index);
         } else if ((sensor_distance[MUX_index] < soglia1)&&(start_operation == 1)&&(avvicinamento == 0)) {
             counter++;
-            if (counter > 5) {
+            if (counter > 3) {
                 if ((MUX_index == 0) || (MUX_index == 1) || (MUX_index == 2)) {//debug
                     data[1] = 0;
                     data[0] = 4;
@@ -213,9 +213,6 @@ __interrupt(low_priority) void ISR_Bassa(void) {
             for (unsigned char i = 0; i < 8; i++) {
                 data_speed_rx[i] = msg.data[i];
             }
-        }
-        if (msg.identifier == DISTANCE_SET) {
-            distance_wait = 0;
         }
         //[!!]----------------------------[!!]
 
@@ -350,10 +347,10 @@ void park_routine(void) {
         data_brake [0] = 3;
         data_brake [1] = 1;
         //while (distance_received1 == 0);
-        set_speed = 1000;
+        set_speed = 800;
         dir = 0; //indietro
         data_steering[0] = 90;
-        data_test[0] = ((50 + Pmin + tolleranza)-(n + 15));
+        data_test[0] = ((60 + Pmin + tolleranza)-(n + 15));
         asd = 1;
         CANsendMessage(DISTANCE_SET, data_test, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
         can_send();
@@ -439,9 +436,9 @@ void can_send(void) {
 
 void parallelo(void) {
     alignment_gap = abs(sensor_distance[0] - sensor_distance[1]);
-    if (alignment_gap < 20) {
+    if (alignment_gap < 30) {
         if ((sensor_distance[0] < 30) && (sensor_distance[1] < 30)) {
-            x = ((diff_sensor)*(diff_sensor) + (alignment_gap * alignment_gap));
+            x = (((diff_sensor)*(diff_sensor)) + ((alignment_gap * alignment_gap)));
             x = sqrt(x);
             z = alignment_gap / x;
             z = asin(z);

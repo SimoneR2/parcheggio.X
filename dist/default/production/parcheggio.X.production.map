@@ -3,19 +3,19 @@ Microchip MPLAB XC8 Compiler V1.35 ()
 Linker command line:
 
 --edf=C:\Program Files (x86)\Microchip\xc8\v1.35\dat\en_msgs.txt -cs \
-  -h+dist/default/debug\parcheggio.X.debug.sym \
-  --cmf=dist/default/debug\parcheggio.X.debug.cmf -z -Q18F2685 \
-  -oC:\Users\Simone\AppData\Local\Temp\s6uo.2 \
-  -Mdist/default/debug/parcheggio.X.debug.map -E1 -ver=XC8 --acfsm=1493 \
-  -ASTACK=01F0h-0cffh -pstack=STACK -ACODE=00h-017FFFh -ACONST=00h-017FFFh \
-  -ASMALLCONST=0D00h-0DFFhx371 -AMEDIUMCONST=0D00h-0FFFFh,010D00h-017FFFh \
-  -ACOMRAM=01h-05Fh -AABS1=00h-0CFFh -ABIGRAM=01h-0CFFh \
-  -ARAM=060h-0FFh,0100h-01FFhx12 -ABANK0=060h-0FFh -ABANK1=0100h-01FFh \
-  -ABANK2=0200h-02FFh -ABANK3=0300h-03FFh -ABANK4=0400h-04FFh \
-  -ABANK5=0500h-05FFh -ABANK6=0600h-06FFh -ABANK7=0700h-07FFh \
-  -ABANK8=0800h-08FFh -ABANK9=0900h-09FFh -ABANK10=0A00h-0AFFh \
-  -ABANK11=0B00h-0BFFh -ABANK12=0C00h-0CFFh \
-  -ASFR=0D00h-0DFFhx2,0F00h-0F5Fh,0F60h-0FFFh \
+  -h+dist/default/production\parcheggio.X.production.sym \
+  --cmf=dist/default/production\parcheggio.X.production.cmf -z -Q18F2685 \
+  -oC:\Users\Simone\AppData\Local\Temp\s7i4.2 \
+  -Mdist/default/production/parcheggio.X.production.map -E1 -ver=XC8 \
+  --acfsm=1493 -ASTACK=01F0h-0cffh -pstack=STACK -ACODE=00h-017FFFh \
+  -ACONST=00h-017FFFh -ASMALLCONST=0D00h-0DFFhx371 \
+  -AMEDIUMCONST=0D00h-0FFFFh,010D00h-017FFFh -ACOMRAM=01h-05Fh \
+  -AABS1=00h-0CFFh -ABIGRAM=01h-0CFFh -ARAM=060h-0FFh,0100h-01FFhx12 \
+  -ABANK0=060h-0FFh -ABANK1=0100h-01FFh -ABANK2=0200h-02FFh \
+  -ABANK3=0300h-03FFh -ABANK4=0400h-04FFh -ABANK5=0500h-05FFh \
+  -ABANK6=0600h-06FFh -ABANK7=0700h-07FFh -ABANK8=0800h-08FFh \
+  -ABANK9=0900h-09FFh -ABANK10=0A00h-0AFFh -ABANK11=0B00h-0BFFh \
+  -ABANK12=0C00h-0CFFh -ASFR=0D00h-0DFFhx2,0F00h-0F5Fh,0F60h-0FFFh \
   -preset_vec=00h,intcode=08h,intcodelo=018h,powerup,init,end_init \
   -pramtop=0D00h -psmallconst=SMALLCONST -pmediumconst=MEDIUMCONST \
   -pconst=CONST -AFARRAM=00h-00h -ACONFIG=0300000h-030000Dh -pconfig=CONFIG \
@@ -25,8 +25,8 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -pparam0=BANK0 \
-  C:\Users\Simone\AppData\Local\Temp\s6uo.obj \
-  dist/default/debug\parcheggio.X.debug.obj 
+  C:\Users\Simone\AppData\Local\Temp\s7i4.obj \
+  dist/default/production\parcheggio.X.production.obj 
 
 Object code version is 3.11
 
@@ -38,15 +38,15 @@ Call graph: (short form)
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\Simone\AppData\Local\Temp\s6uo.obj
-                end_init                            316      316        4        C       0
+C:\Users\Simone\AppData\Local\Temp\s7i4.obj
+                end_init                            332      332        4        C       0
                 reset_vec                             0        0        4        0       0
                 idloc                            200000   200000        8   200000       0
                 config                           300000   300000        E   300000       0
-dist/default/debug\parcheggio.X.debug.obj
-                intcodelo                            18       18      2FE        C       0
+dist/default/production\parcheggio.X.production.obj
+                intcodelo                            18       18      31A        C       0
                 intcode                               8        8        E        4       0
-                temp                                 54       54        1        1       1
+                temp                                 55       55        1        1       1
                 smallconst                          D00      D00       52      680       0
                 text40                             63C6     63C6       78      6A9       0
                 intcode_body                       6110     6110       E0      6A9       0
@@ -88,16 +88,16 @@ dist/default/debug\parcheggio.X.debug.obj
                 text2                              3A58     3A58      490      6A9       0
                 text1                              56C4     56C4      1C6      6A9       0
                 text0                              61F0     61F0       C6      6A9       0
-                cstackCOMRAM                         29       29       27        1       1
+                cstackCOMRAM                         2A       2A       27        1       1
                 cstackBANK0                          60       60       78       60       1
                 cstackBANK1                         18B      18B       5D      100       1
                 dataBANK1                           1E8      1E8        8      100       1
                 bssBANK1                            100      100       8B      100       1
                 dataBANK0                            E8       E8        1       60       1
                 bssBANK0                             D8       D8       10       60       1
-                dataCOMRAM                           52       52        2        1       1
-                bssCOMRAM                             1        1       28        1       1
-                bitbssCOMRAM                        280       50        F        1       1     8
+                dataCOMRAM                           53       53        2        1       1
+                bssCOMRAM                             1        1       29        1       1
+                bitbssCOMRAM                        288       51        F        1       1     8
                 cinit                              634A     634A       7C      6A9       0
                 idataBANK1                         66DA     66DA        8      6A9       0
                 idataBANK0                         66E4     66E4        1      6A9       0
@@ -107,8 +107,8 @@ TOTAL           Name                               Link     Load   Length     Sp
         CLASS   STACK          
 
         CLASS   CODE           
-                end_init                            316      316        4         0
-                intcodelo                            18       18      2FE         0
+                end_init                            332      332        4         0
+                intcodelo                            18       18      31A         0
                 intcode                               8        8        E         0
                 reset_vec                             0        0        4         0
                 text40                             63C6     63C6       78         0
@@ -164,11 +164,11 @@ TOTAL           Name                               Link     Load   Length     Sp
         CLASS   MEDIUMCONST    
 
         CLASS   COMRAM         
-                temp                                 54       54        1         1
-                cstackCOMRAM                         29       29       27         1
-                dataCOMRAM                           52       52        2         1
-                bssCOMRAM                             1        1       28         1
-                bitbssCOMRAM                        280       50        F         1
+                temp                                 55       55        1         1
+                cstackCOMRAM                         2A       2A       27         1
+                dataCOMRAM                           53       53        2         1
+                bssCOMRAM                             1        1       29         1
+                bitbssCOMRAM                        288       51        F         1
 
         CLASS   ABS1           
 
@@ -225,9 +225,9 @@ TOTAL           Name                               Link     Load   Length     Sp
 SEGMENTS        Name                           Load    Length   Top    Selector   Space  Class
 
                 reset_vec                      000000  000004  000004         0       0  CODE    
-                bssCOMRAM                      000001  000054  000055         1       1  COMRAM  
+                bssCOMRAM                      000001  000055  000056         1       1  COMRAM  
                 intcode                        000008  00000E  000016         4       0  CODE    
-                intcodelo                      000018  000302  00031A         C       0  CODE    
+                intcodelo                      000018  00031E  000336         C       0  CODE    
                 cstackBANK0                    000060  000089  0000E9        60       1  BANK0   
                 bssBANK1                       000100  0000F0  0001F0       100       1  BANK1   
                 smallconst                     000D00  000052  000D52       680       0  SMALLCON
@@ -252,17 +252,17 @@ UNUSED ADDRESS RANGES
         BANK7            000700-0007FF              100
         BANK8            000800-0008FF              100
         BANK9            000900-0009FF              100
-        BIGRAM           000055-00005F                B
+        BIGRAM           000056-00005F                A
                          0000E9-0000FF               17
                          0001F0-000CFF              B10
         CODE             000004-000007                4
                          000016-000017                2
-                         00031A-000CFF              9E6
+                         000336-000CFF              9CA
                          0066E5-017FFF            1191B
-        COMRAM           000055-00005F                B
+        COMRAM           000056-00005F                A
         CONST            000004-000007                4
                          000016-000017                2
-                         00031A-000CFF              9E6
+                         000336-000CFF              9CA
                          0066E5-017FFF            1191B
         EEDATA           F00000-F003FF              400
         MEDIUMCONST      0066E5-00FFFF             991B
@@ -310,16 +310,16 @@ CANSetMask@mask               cstackBANK0  000077
 CANSetMask@numBuffer          cstackBANK0  000080
 CANSetMask@tamp               cstackBANK0  000081
 CANSetMask@type               cstackBANK0  00007B
-CANreceiveMessage@error       cstackCOMRAM 000033
-CANreceiveMessage@msg         cstackCOMRAM 000029
-CANreceiveMessage@tamp        cstackCOMRAM 000034
+CANreceiveMessage@error       cstackCOMRAM 000034
+CANreceiveMessage@msg         cstackCOMRAM 00002A
+CANreceiveMessage@tamp        cstackCOMRAM 000035
 CANsendMessage@data           cstackBANK0  00007B
 CANsendMessage@dataLength     cstackBANK0  00007D
 CANsendMessage@flags          cstackBANK0  00007E
 CANsendMessage@identifier     cstackBANK0  000077
 CANsendMessage@tamp           cstackBANK0  000083
-ISR_Bassa@PORTA_temp          cstackCOMRAM 00004E
-ISR_Bassa@i                   cstackCOMRAM 00004F
+ISR_Bassa@PORTA_temp          cstackCOMRAM 00004F
+ISR_Bassa@i                   cstackCOMRAM 000050
 _ADCON1                       (abs)        000FC1
 _BRGCON1                      (abs)        000F70
 _BRGCON2                      (abs)        000F71
@@ -563,7 +563,7 @@ __HdataBANK0                  dataBANK0    000000
 __HdataBANK1                  dataBANK1    000000
 __HdataCOMRAM                 dataCOMRAM   000000
 __Heeprom_data                eeprom_data  000000
-__Hend_init                   end_init     00031A
+__Hend_init                   end_init     000336
 __Hfarbss                     farbss       000000
 __Hfardata                    fardata      000000
 __Hibigdata                   ibigdata     000000
@@ -573,10 +573,10 @@ __HidataBANK1                 idataBANK1   000000
 __HidataCOMRAM                idataCOMRAM  000000
 __Hidloc                      idloc        200008
 __Hifardata                   ifardata     000000
-__Hinit                       init         000316
+__Hinit                       init         000332
 __Hintcode                    intcode      000016
 __Hintcode_body               intcode_body 000000
-__Hintcodelo                  intcodelo    000316
+__Hintcodelo                  intcodelo    000332
 __Hintentry                   intentry     000000
 __Hintret                     intret       000000
 __Hintsave_regs               intsave_regs 000000
@@ -587,7 +587,7 @@ __Hnvbit                      nvbit        000000
 __Hnvrram                     nvrram       000000
 __Hparam                      param0       000000
 __Hparam0                     param0       000000
-__Hpowerup                    powerup      000316
+__Hpowerup                    powerup      000332
 __Hram                        ram          000000
 __Hramtop                     ramtop       000D00
 __Hrbit                       rbit         000000
@@ -597,11 +597,11 @@ __Hreset_vec                  reset_vec    000004
 __Hsfr                        sfr          000000
 __Hsmallconst                 smallconst   000D52
 __Hspace_0                    (abs)        30000E
-__Hspace_1                    (abs)        00028F
+__Hspace_1                    (abs)        000297
 __Hspace_2                    (abs)        000000
 __Hstack                      stack        000000
 __Hstruct                     struct       000000
-__Htemp                       temp         000055
+__Htemp                       temp         000056
 __Htext                       text         000000
 __Htext0                      text0        000000
 __Htext1                      text1        000000
@@ -678,7 +678,7 @@ __LdataBANK0                  dataBANK0    000000
 __LdataBANK1                  dataBANK1    000000
 __LdataCOMRAM                 dataCOMRAM   000000
 __Leeprom_data                eeprom_data  000000
-__Lend_init                   end_init     000316
+__Lend_init                   end_init     000332
 __Lfarbss                     farbss       000000
 __Lfardata                    fardata      000000
 __Libigdata                   ibigdata     000000
@@ -688,7 +688,7 @@ __LidataBANK1                 idataBANK1   000000
 __LidataCOMRAM                idataCOMRAM  000000
 __Lidloc                      idloc        200000
 __Lifardata                   ifardata     000000
-__Linit                       init         000316
+__Linit                       init         000332
 __Lintcode                    intcode      000008
 __Lintcode_body               intcode_body 000000
 __Lintcodelo                  intcodelo    000018
@@ -702,7 +702,7 @@ __Lnvbit                      nvbit        000000
 __Lnvrram                     nvrram       000000
 __Lparam                      param0       000000
 __Lparam0                     param0       000000
-__Lpowerup                    powerup      000316
+__Lpowerup                    powerup      000332
 __Lram                        ram          000000
 __Lramtop                     ramtop       000D00
 __Lrbit                       rbit         000000
@@ -716,7 +716,7 @@ __Lspace_1                    (abs)        000000
 __Lspace_2                    (abs)        000000
 __Lstack                      stack        000000
 __Lstruct                     struct       000000
-__Ltemp                       temp         000054
+__Ltemp                       temp         000055
 __Ltext                       text         000000
 __Ltext0                      text0        000000
 __Ltext1                      text1        000000
@@ -826,7 +826,7 @@ __end_of_CANisTxReady         text6        0066A6
 __end_of_CANreceiveMessage    text38       00310A
 __end_of_CANsendMessage       text5        001FE4
 __end_of_ISR_Alta             intcode_body 0061F0
-__end_of_ISR_Bassa            intcodelo    000316
+__end_of_ISR_Bassa            intcodelo    000332
 __end_of___fladd              text23       0035B2
 __end_of___fldiv              text25       004672
 __end_of___flge               text24       005BE0
@@ -866,17 +866,17 @@ __end_ofsin@coeff_a           smallconst   000D41
 __end_ofsin@coeff_b           smallconst   000D51
 __initialization              cinit        00634A
 __mediumconst                 mediumconst  000000
-__pbitbssCOMRAM               bitbssCOMRAM 000280
+__pbitbssCOMRAM               bitbssCOMRAM 000288
 __pbssBANK0                   bssBANK0     0000D8
 __pbssBANK1                   bssBANK1     000100
 __pbssCOMRAM                  bssCOMRAM    000001
 __pcinit                      cinit        00634A
 __pcstackBANK0                cstackBANK0  000060
 __pcstackBANK1                cstackBANK1  00018B
-__pcstackCOMRAM               cstackCOMRAM 000029
+__pcstackCOMRAM               cstackCOMRAM 00002A
 __pdataBANK0                  dataBANK0    0000E8
 __pdataBANK1                  dataBANK1    0001E8
-__pdataCOMRAM                 dataCOMRAM   000052
+__pdataCOMRAM                 dataCOMRAM   000053
 __pidataBANK0                 idataBANK0   0066E4
 __pidataBANK1                 idataBANK1   0066DA
 __pidataCOMRAM                idataCOMRAM  0066E2
@@ -967,17 +967,17 @@ __size_ofi1_CANisTxReady      (abs)        000000
 __size_ofi1_CANsendMessage    (abs)        000000
 __smallconst                  smallconst   000D00
 _abs                          text7        00662A
-_activation                   bitbssCOMRAM 000280
+_activation                   bitbssCOMRAM 000288
 _actual_speed                 bssCOMRAM    000015
 _alfa                         bssBANK1     00012C
 _alignment_gap                bssBANK0     0000D8
-_asd                          bitbssCOMRAM 000281
+_asd                          bitbssCOMRAM 000289
 _asin                         text16       004D28
-_asin$3751                    cstackBANK1  0001B4
-_asin$3752                    cstackBANK1  0001AC
-_asin$3753                    cstackBANK1  0001A8
+_asin$3752                    cstackBANK1  0001B4
+_asin$3753                    cstackBANK1  0001AC
+_asin$3754                    cstackBANK1  0001A8
 _atan                         text18       0052A4
-_avvicinamento                bitbssCOMRAM 000282
+_avvicinamento                bitbssCOMRAM 00028A
 _beta                         bssBANK1     000130
 _bordo                        bssBANK1     000134
 _can_interpreter              text34       0064AA
@@ -985,7 +985,8 @@ _can_send                     text4        005F28
 _clock_counter_reference      bssBANK0     0000E0
 _configurations               text29       00643E
 _cos                          text9        00602C
-_cos$3754                     cstackBANK1  0001BC
+_cos$3755                     cstackBANK1  0001BC
+_counter                      bssCOMRAM    000028
 _data                         bssBANK1     000153
 _data_brake                   bssBANK1     00015B
 _data_correction              bssBANK1     000163
@@ -996,60 +997,60 @@ _data_test                    bssBANK1     00017B
 _delay_ms                     text27       006582
 _delay_quartz_frequency_value dataBANK0    0000E8
 _delay_s                      text26       006656
-_dir                          bitbssCOMRAM 000283
+_dir                          bitbssCOMRAM 00028B
 _distance                     bssCOMRAM    000017
 _distance_average             bssBANK0     0000E2
 _distance_dx                  bssCOMRAM    000019
-_distance_error               bitbssCOMRAM 000284
-_distance_received            bitbssCOMRAM 000285
-_distance_received1           bitbssCOMRAM 000286
+_distance_error               bitbssCOMRAM 00028C
+_distance_received            bitbssCOMRAM 00028D
+_distance_received1           bitbssCOMRAM 00028E
 _distance_set                 bssBANK1     000110
 _distance_sx                  bssCOMRAM    00001B
-_distance_wait                bitbssCOMRAM 000287
+_distance_wait                bitbssCOMRAM 00028F
 _errno                        bssBANK0     0000E4
 _eval_poly                    text21       005D04
 _fabs                         text19       006544
-_first                        bitbssCOMRAM 000288
+_first                        bitbssCOMRAM 000290
 _floor                        text11       005BE0
 _frexp                        text12       0062B6
 _larghezza                    dataBANK1    0001E8
 _left_speed                   bssCOMRAM    00001D
 _main                         text0        0061F0
 _matematica                   text8        002674
-_matematica$3744              cstackBANK1  0001C0
-_matematica$3745              cstackBANK1  0001C4
-_matematica$3746              cstackBANK1  0001C8
-_matematica$3747              cstackBANK1  0001CC
-_matematica$3748              cstackBANK1  0001D8
-_matematica$3749              cstackBANK1  0001D0
-_matematica$3750              cstackBANK1  0001D4
+_matematica$3745              cstackBANK1  0001C0
+_matematica$3746              cstackBANK1  0001C4
+_matematica$3747              cstackBANK1  0001C8
+_matematica$3748              cstackBANK1  0001CC
+_matematica$3749              cstackBANK1  0001D8
+_matematica$3750              cstackBANK1  0001D0
+_matematica$3751              cstackBANK1  0001D4
 _msg                          bssBANK1     000144
 _n                            bssBANK1     000138
-_new_distance                 bitbssCOMRAM 000289
+_new_distance                 bitbssCOMRAM 000291
 _old_alignment_gap            bssBANK1     00013C
-_old_dir_correction           bitbssCOMRAM 00028A
+_old_dir_correction           bitbssCOMRAM 000292
 _parallelo                    text3        00503A
 _park_routine                 text2        003A58
-_park_routine$3742            cstackBANK1  0001E0
-_park_routine$3743            cstackBANK1  0001E4
+_park_routine$3743            cstackBANK1  0001E0
+_park_routine$3744            cstackBANK1  0001E4
 _park_search                  text1        0056C4
 _prima_sterzata               bssBANK1     000140
 _pulse_time                   bssCOMRAM    00001F
 _raggio                       dataBANK1    0001EC
-_request_sent                 bitbssCOMRAM 00028B
-_request_sent1                bitbssCOMRAM 00028C
+_request_sent                 bitbssCOMRAM 000293
+_request_sent1                bitbssCOMRAM 000294
 _right_speed                  bssCOMRAM    000021
 _sensor_distance              bssCOMRAM    000001
 _sensor_distance_old          bssBANK1     000118
 _sensor_distance_short        bssBANK1     000183
 _set_speed                    bssBANK0     0000E6
 _sin                          text10       004A10
-_sin$3755                     cstackBANK1  0001A7
-_spazio_parcheggio            dataCOMRAM   000052
+_sin$3756                     cstackBANK1  0001A7
+_spazio_parcheggio            dataCOMRAM   000053
 _sqrt                         text17       003EE8
-_start_operation              bitbssCOMRAM 00028D
-_steering_correction          bssCOMRAM    000028
-_steering_correction_dir      bitbssCOMRAM 00028E
+_start_operation              bitbssCOMRAM 000295
+_steering_correction          bssCOMRAM    000029
+_steering_correction_dir      bitbssCOMRAM 000296
 _timerValue2                  bssCOMRAM    000023
 _x                            bssCOMRAM    000011
 _z                            bssBANK0     0000DC
@@ -1065,7 +1066,7 @@ atan@val                      cstackBANK1  000198
 atan@val_squared              cstackBANK1  000194
 atan@x                        cstackBANK1  00018F
 atan@y                        cstackBANK1  00018B
-btemp                         temp         000054
+btemp                         temp         000055
 cos@f                         cstackBANK1  0001B8
 delay_ms@value_ms             cstackBANK0  00007D
 delay_s@repeat_loop           cstackBANK0  000080
@@ -1081,15 +1082,15 @@ floor@i                       cstackBANK1  000191
 floor@x                       cstackBANK0  0000D3
 frexp@eptr                    cstackBANK0  00007B
 frexp@value                   cstackBANK0  000077
-i1CANsendMessage@data         cstackCOMRAM 00002D
-i1CANsendMessage@dataLength   cstackCOMRAM 00002F
-i1CANsendMessage@flags        cstackCOMRAM 000030
-i1CANsendMessage@identifier   cstackCOMRAM 000029
-i1CANsendMessage@tamp         cstackCOMRAM 000035
+i1CANsendMessage@data         cstackCOMRAM 00002E
+i1CANsendMessage@dataLength   cstackCOMRAM 000030
+i1CANsendMessage@flags        cstackCOMRAM 000031
+i1CANsendMessage@identifier   cstackCOMRAM 00002A
+i1CANsendMessage@tamp         cstackCOMRAM 000036
 i1_CANisTxReady               text37       0066A6
-i1_CANisTxReady$2845          cstackCOMRAM 000029
+i1_CANisTxReady$2845          cstackCOMRAM 00002A
 i1_CANsendMessage             text36       001FE4
-int$flags                     temp         000054
+int$flags                     temp         000055
 int_func                      intcode_body 006110
 intlevel0                     text         000000
 intlevel1                     text         000000
@@ -1112,7 +1113,7 @@ sqrt@sign                     cstackBANK1  00018B
 sqrt@tfrac                    cstackBANK1  00018D
 stackhi                       (abs)        000CFF
 stacklo                       (abs)        0001F0
-start                         init         000316
+start                         init         000332
 start_initialization          cinit        00634A
 
 
@@ -1120,7 +1121,7 @@ FUNCTION INFORMATION:
 
  *************** function _main *****************
  Defined at:
-		line 221 in file "parcheggio.c"
+		line 227 in file "parcheggio.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1155,7 +1156,7 @@ Total ram usage:        1 bytes
 
  *************** function _park_search *****************
  Defined at:
-		line 270 in file "parcheggio.c"
+		line 260 in file "parcheggio.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1189,7 +1190,7 @@ Total ram usage:        2 bytes
 
  *************** function _park_routine *****************
  Defined at:
-		line 315 in file "parcheggio.c"
+		line 305 in file "parcheggio.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1229,7 +1230,7 @@ Total ram usage:       12 bytes
 
  *************** function _parallelo *****************
  Defined at:
-		line 450 in file "parcheggio.c"
+		line 440 in file "parcheggio.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1269,7 +1270,7 @@ Total ram usage:        2 bytes
 
  *************** function _can_send *****************
  Defined at:
-		line 427 in file "parcheggio.c"
+		line 417 in file "parcheggio.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1403,7 +1404,7 @@ Total ram usage:        4 bytes
 
  *************** function _matematica *****************
  Defined at:
-		line 478 in file "parcheggio.c"
+		line 468 in file "parcheggio.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -2148,7 +2149,7 @@ Total ram usage:        6 bytes
 
  *************** function _configurations *****************
  Defined at:
-		line 499 in file "parcheggio.c"
+		line 489 in file "parcheggio.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -2313,7 +2314,7 @@ Total ram usage:        1 bytes
 
  *************** function _can_interpreter *****************
  Defined at:
-		line 491 in file "parcheggio.c"
+		line 481 in file "parcheggio.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -2343,7 +2344,7 @@ Total ram usage:        4 bytes
 
  *************** function _ISR_Bassa *****************
  Defined at:
-		line 122 in file "parcheggio.c"
+		line 123 in file "parcheggio.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -2473,7 +2474,7 @@ Total ram usage:       12 bytes
 
  *************** function _ISR_Alta *****************
  Defined at:
-		line 104 in file "parcheggio.c"
+		line 105 in file "parcheggio.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -2656,7 +2657,7 @@ C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\abs.c
 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\abs.c estimated size: 45
 
 parcheggio.c
-		_ISR_Bassa     		CODE           	0018	0000	767
+		_ISR_Bassa     		CODE           	0018	0000	795
 		_main          		CODE           	61F0	0000	199
 		_configurations		CODE           	643E	0000	109
 		_can_send      		CODE           	5F28	0000	261
@@ -2667,7 +2668,7 @@ parcheggio.c
 		_park_search   		CODE           	56C4	0000	455
 		_matematica    		CODE           	2674	0000	1419
 
-parcheggio.c estimated size: 5320
+parcheggio.c estimated size: 5348
 
 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\flge.c
 		___flge        		CODE           	5A50	0000	401

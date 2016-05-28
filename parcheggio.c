@@ -20,7 +20,7 @@
 #define tolleranza 5
 #define soglia1 4
 #define soglia2 10
-#define diff_sensor 10
+#define diff_sensor 26
 
 //Subroutines declarations
 void configurations(void);
@@ -87,7 +87,7 @@ volatile unsigned char sensor_distance_short[8] = 0;
 unsigned char sensor_distance_old[8] = 0;
 
 //Variabili parcheggio
-float raggio = 70; //52
+float raggio = 65; //52
 float larghezza = 32;
 volatile float bordo = 0;
 float alfa = 0;
@@ -138,12 +138,14 @@ __interrupt(low_priority) void ISR_Bassa(void) {
             sensor_distance_short[0] = sensor_distance_short[0] | (0b00000001 << MUX_index);
         } else if ((sensor_distance[MUX_index] < soglia1)&&(start_operation == 1)&&(avvicinamento == 0)) {
             counter++;
-            if (counter > 10) {
-                data[1] = 0;
-                data[0] = 4;
-                while (!CANisTxReady());
-                CANsendMessage(PARK_ASSIST_STATE, data, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
-                RESET();
+            if (counter > 5) {
+                if ((MUX_index == 0) || (MUX_index == 1) || (MUX_index == 2)) {//debug
+                    data[1] = 0;
+                    data[0] = 4;
+                    while (!CANisTxReady());
+                    CANsendMessage(PARK_ASSIST_STATE, data, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
+                    RESET();
+                }//debug
             }
         } else {
             sensor_distance_short[0] = sensor_distance_short[0] & (~(0b00000001 << MUX_index));
@@ -211,9 +213,9 @@ __interrupt(low_priority) void ISR_Bassa(void) {
             for (unsigned char i = 0; i < 8; i++) {
                 data_speed_rx[i] = msg.data[i];
             }
-            if (msg.identifier == DISTANCE_SET) {
-                distance_wait = 0;
-            }
+        }
+        if (msg.identifier == DISTANCE_SET) {
+            distance_wait = 0;
         }
         //[!!]----------------------------[!!]
 

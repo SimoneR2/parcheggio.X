@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project>
-  <executable name="dist/default/debug\parcheggio.X.debug.hex">
+  <executable name="dist/default/production\parcheggio.X.production.hex">
     <memory name="program">
       <units>bytes</units>
       <length>98304</length>
-      <used>23801</used>
-      <free>74503</free>
+      <used>23829</used>
+      <free>74475</free>
     </memory>
     <memory name="data">
       <units>bytes</units>
       <length>3328</length>
-      <used>461</used>
-      <free>2867</free>
+      <used>462</used>
+      <free>2866</free>
     </memory>
   </executable>
 </project>

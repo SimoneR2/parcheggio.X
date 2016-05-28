@@ -140,25 +140,25 @@ CAN_RX_BUFFER_2_OVFL 2
 [v ___lmul __lmul `(ul  1 e 4 0 ]
 "10 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\xxtofl.c
 [v ___xxtofl __xxtofl `(d  1 e 4 0 ]
-"104 D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+"105 D:\Documenti\GitHub\parcheggio.X\parcheggio.c
 [v _ISR_Alta ISR_Alta `IIH(v  1 e 0 0 ]
-"122
+"123
 [v _ISR_Bassa ISR_Bassa `IIL(v  1 e 0 0 ]
-"221
+"227
 [v _main main `(v  1 e 0 0 ]
-"270
+"260
 [v _park_search park_search `(v  1 e 0 0 ]
-"315
+"305
 [v _park_routine park_routine `(v  1 e 0 0 ]
-"427
+"417
 [v _can_send can_send `(v  1 e 0 0 ]
-"450
+"440
 [v _parallelo parallelo `(v  1 e 0 0 ]
-"478
+"468
 [v _matematica matematica `(v  1 e 0 0 ]
-"491
+"481
 [v _can_interpreter can_interpreter `(v  1 e 0 0 ]
-"499
+"489
 [v _configurations configurations `(v  1 e 0 0 ]
 "49 C:/Users/Simone/Desktop/LaurTec_PIC_libraries_v_3.3.1/src\delay.c
 [v _delay_quartz_frequency_value delay_quartz_frequency_value `VEuc  1 e 1 0 ]
@@ -1441,69 +1441,71 @@ CAN_RX_BUFFER_2_OVFL 2
 "76
 [v _MUX_index MUX_index `VEuc  1 e 1 0 ]
 "77
-[v _MUX_select MUX_select `[8]uc  1 e 8 0 ]
+[v _MUX_select MUX_select `VE[8]uc  1 e 8 0 ]
 "78
-[v _pulse_time pulse_time `VEui  1 e 2 0 ]
+[v _counter counter `VEuc  1 e 1 0 ]
 "79
-[v _distance distance `VEui  1 e 2 0 ]
+[v _pulse_time pulse_time `VEui  1 e 2 0 ]
 "80
-[v _TMR3H_temp TMR3H_temp `VEuc  1 e 1 0 ]
+[v _distance distance `VEui  1 e 2 0 ]
 "81
-[v _TMR3L_temp TMR3L_temp `VEuc  1 e 1 0 ]
+[v _TMR3H_temp TMR3H_temp `VEuc  1 e 1 0 ]
 "82
+[v _TMR3L_temp TMR3L_temp `VEuc  1 e 1 0 ]
+"83
 [v _timerValue2 timerValue2 `VEui  1 e 2 0 ]
-"84
-[v _sensor_distance sensor_distance `VE[8]ui  1 e 16 0 ]
 "85
+[v _sensor_distance sensor_distance `VE[8]ui  1 e 16 0 ]
+"86
 [v _sensor_distance_short sensor_distance_short `VE[8]uc  1 e 8 0 ]
-"89
-[v _raggio raggio `f  1 e 4 0 ]
 "90
-[v _larghezza larghezza `f  1 e 4 0 ]
+[v _raggio raggio `f  1 e 4 0 ]
 "91
-[v _bordo bordo `VEf  1 e 4 0 ]
+[v _larghezza larghezza `f  1 e 4 0 ]
 "92
-[v _alfa alfa `f  1 e 4 0 ]
+[v _bordo bordo `VEf  1 e 4 0 ]
 "93
-[v _beta beta `f  1 e 4 0 ]
+[v _alfa alfa `f  1 e 4 0 ]
 "94
-[v _n n `f  1 e 4 0 ]
+[v _beta beta `f  1 e 4 0 ]
 "95
-[v _prima_sterzata prima_sterzata `f  1 e 4 0 ]
+[v _n n `f  1 e 4 0 ]
 "96
-[v _K_var K_var `f  1 e 4 0 ]
+[v _prima_sterzata prima_sterzata `f  1 e 4 0 ]
 "97
-[v _J_var J_var `f  1 e 4 0 ]
+[v _K_var K_var `f  1 e 4 0 ]
 "98
+[v _J_var J_var `f  1 e 4 0 ]
+"99
 [v _Pmin Pmin `f  1 e 4 0 ]
-"101
-[v _x x `f  1 e 4 0 ]
 "102
+[v _x x `f  1 e 4 0 ]
+"103
 [v _z z `f  1 e 4 0 ]
-"221
+"227
 [v _main main `(v  1 e 0 0 ]
 {
-"268
+"258
 } 0
-"270
+"260
 [v _park_search park_search `(v  1 e 0 0 ]
 {
-"313
+"303
 } 0
-"315
+"305
 [v _park_routine park_routine `(v  1 e 0 0 ]
 {
-"425
+"415
 } 0
-"450
+"440
 [v _parallelo parallelo `(v  1 e 0 0 ]
 {
-"476
+"466
 } 0
-"427
+"417
 [v _can_send can_send `(v  1 e 0 0 ]
 {
-"448
+"438
 } 0
 "294 C:/Users/Simone/Desktop/LaurTec_PIC_libraries_v_3.3.1/inc\CANlib.h
 [v _CANsendMessage CANsendMessage `(v  1 e 0 0 ]
@@ -1528,10 +1530,10 @@ CAN_RX_BUFFER_2_OVFL 2
 [v abs@a a `i  1 p 2 23 ]
 "9
 } 0
-"478 D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+"468 D:\Documenti\GitHub\parcheggio.X\parcheggio.c
 [v _matematica matematica `(v  1 e 0 0 ]
 {
-"489
+"479
 } 0
 "13 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\cos.c
 [v _cos cos `(d  1 e 4 0 ]
@@ -1621,11 +1623,11 @@ CAN_RX_BUFFER_2_OVFL 2
 {
 "14
 [v sqrt@frac frac `ul  1 a 4 17 ]
-[s S3349 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
+[s S3350 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
 "11
-[s S3354 . 4 `i 1 wordA 2 0 `i 1 wordB 2 2 ]
-[u S3357 . 4 `l 1 i 4 0 `d 1 f 4 0 `S3349 1 fAsBytes 4 0 `S3354 1 fAsWords 4 0 ]
-[v sqrt@root root `S3357  1 a 4 13 ]
+[s S3355 . 4 `i 1 wordA 2 0 `i 1 wordB 2 2 ]
+[u S3358 . 4 `l 1 i 4 0 `d 1 f 4 0 `S3350 1 fAsBytes 4 0 `S3355 1 fAsWords 4 0 ]
+[v sqrt@root root `S3358  1 a 4 13 ]
 "16
 [v sqrt@grs grs `ul  1 a 4 7 ]
 "15
@@ -1684,17 +1686,17 @@ CAN_RX_BUFFER_2_OVFL 2
 "8 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\sprcmul.c
 [v ___flmul __flmul `(d  1 e 4 0 ]
 {
-[s S3349 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
+[s S3350 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
 "13
-[s S3354 . 4 `i 1 wordA 2 0 `i 1 wordB 2 2 ]
-[u S3357 . 4 `l 1 i 4 0 `d 1 f 4 0 `S3349 1 fAsBytes 4 0 `S3354 1 fAsWords 4 0 ]
-[v ___flmul@prod prod `S3357  1 a 4 67 ]
+[s S3355 . 4 `i 1 wordA 2 0 `i 1 wordB 2 2 ]
+[u S3358 . 4 `l 1 i 4 0 `d 1 f 4 0 `S3350 1 fAsBytes 4 0 `S3355 1 fAsWords 4 0 ]
+[v ___flmul@prod prod `S3358  1 a 4 67 ]
 "12
 [v ___flmul@grs grs `ul  1 a 4 62 ]
-[s S3425 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
+[s S3426 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
 "14
-[u S3428 . 2 `i 1 i 2 0 `ui 1 n 2 0 `S3425 1 nAsBytes 2 0 ]
-[v ___flmul@temp temp `S3428  1 a 2 71 ]
+[u S3429 . 2 `i 1 i 2 0 `ui 1 n 2 0 `S3426 1 nAsBytes 2 0 ]
+[v ___flmul@temp temp `S3429  1 a 2 71 ]
 "10
 [v ___flmul@bexp bexp `uc  1 a 1 66 ]
 "11
@@ -1777,10 +1779,10 @@ CAN_RX_BUFFER_2_OVFL 2
 [v ___wmul@multiplicand multiplicand `ui  1 p 2 25 ]
 "53
 } 0
-"499 D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+"489 D:\Documenti\GitHub\parcheggio.X\parcheggio.c
 [v _configurations configurations `(v  1 e 0 0 ]
 {
-"538
+"528
 } 0
 "218 C:/Users/Simone/Desktop/LaurTec_PIC_libraries_v_3.3.1/inc\CANlib.h
 [v _CANInitialize CANInitialize `(v  1 e 0 0 ]
@@ -1838,19 +1840,19 @@ CAN_RX_BUFFER_2_OVFL 2
 [v CANOperationMode@mode mode `E16307  1 a 1 23 ]
 "211
 } 0
-"491 D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+"481 D:\Documenti\GitHub\parcheggio.X\parcheggio.c
 [v _can_interpreter can_interpreter `(v  1 e 0 0 ]
 {
-"497
+"487
 } 0
-"122
+"123
 [v _ISR_Bassa ISR_Bassa `IIL(v  1 e 0 0 ]
 {
-"207
+"213
 [v ISR_Bassa@i i `uc  1 a 1 38 ]
-"153
+"159
 [v ISR_Bassa@PORTA_temp PORTA_temp `uc  1 a 1 37 ]
-"219
+"225
 } 0
 "294 C:/Users/Simone/Desktop/LaurTec_PIC_libraries_v_3.3.1/inc\CANlib.h
 [v i1_CANsendMessage CANsendMessage `(v  1 e 0 0 ]
@@ -1879,10 +1881,10 @@ CAN_RX_BUFFER_2_OVFL 2
 [v CANreceiveMessage@msg msg `*.39S853  1 p 2 0 ]
 "634
 } 0
-"104 D:\Documenti\GitHub\parcheggio.X\parcheggio.c
+"105 D:\Documenti\GitHub\parcheggio.X\parcheggio.c
 [v _ISR_Alta ISR_Alta `IIH(v  1 e 0 0 ]
 {
-"120
+"121
 } 0
 "8 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwdiv.c
 [v ___lwdiv __lwdiv `(ui  1 e 2 0 ]

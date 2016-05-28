@@ -18771,3 +18771,1760 @@ extern __nonreentrant void _delay3(unsigned char);
 
 
 #pragma config EBTRB = OFF
+
+# 49 "C:/Users/Simone/Desktop/LaurTec_PIC_libraries_v_3.3.1/inc\CANlib.h"
+typedef unsigned char BYTE;
+
+
+typedef struct
+{
+unsigned long identifier;
+BYTE data[8];
+BYTE type;
+BYTE length;
+BYTE RTR;
+
+} CANmessage;
+
+# 67
+enum CAN_OP_MODE
+{
+CAN_OP_MODE_NORMAL = 0b00000000,
+CAN_OP_MODE_SLEEP = 0b00100000,
+CAN_OP_MODE_LOOP = 0b01000000,
+CAN_OP_MODE_LISTEN = 0b01100000,
+CAN_OP_MODE_CONFIG = 0b10000000
+};
+
+# 80
+enum CAN_CONFIG_FLAGS
+{
+CAN_CONFIG_DEFAULT = 0b11111111,
+
+CAN_CONFIG_PHSEG2_PRG_BIT = 0b00000001,
+CAN_CONFIG_PHSEG2_PRG_ON = 0b11111111,
+CAN_CONFIG_PHSEG2_PRG_OFF = 0b11111110,
+
+CAN_CONFIG_LINE_FILTER_BIT = 0b00000010,
+CAN_CONFIG_LINE_FILTER_ON = 0b11111111,
+CAN_CONFIG_LINE_FILTER_OFF = 0b11111101,
+
+CAN_CONFIG_SAMPLE_BIT = 0b00000100,
+CAN_CONFIG_SAMPLE_ONCE = 0b11111111,
+CAN_CONFIG_SAMPLE_THRICE = 0b11111011,
+
+CAN_CONFIG_MSG_TYPE_BIT = 0b00001000,
+CAN_CONFIG_STD_MSG = 0b11111111,
+CAN_CONFIG_XTD_MSG = 0b11110111,
+
+CAN_CONFIG_DBL_BUFFER_BIT = 0b00010000,
+CAN_CONFIG_DBL_BUFFER_ON = 0b11111111,
+CAN_CONFIG_DBL_BUFFER_OFF = 0b11101111,
+
+CAN_CONFIG_MSG_BITS = 0b01100000,
+CAN_CONFIG_ALL_MSG = 0b11111111,
+CAN_CONFIG_VALID_XTD_MSG = 0b11011111,
+CAN_CONFIG_VALID_STD_MSG = 0b10111111,
+CAN_CONFIG_ALL_VALID_MSG = 0b10011111
+};
+
+# 116
+enum CAN_TX_MSG_FLAGS
+{
+CAN_TX_PRIORITY_MASK= 0b00000011,
+CAN_TX_PRIORITY_0 = 0b11111100,
+CAN_TX_PRIORITY_1 = 0b11111101,
+CAN_TX_PRIORITY_2 = 0b11111110,
+CAN_TX_PRIORITY_3 = 0b11111111,
+
+CAN_TX_FRAME_MASK = 0b00001000,
+CAN_TX_STD_FRAME = 0b11110111,
+CAN_TX_XTD_FRAME = 0b11111111,
+
+CAN_TX_RTR_MASK = 0b01000000,
+CAN_REMOTE_TX_FRAME = 0b11111111,
+CAN_NORMAL_TX_FRAME = 0b10111111
+
+};
+
+# 138
+enum CAN_MASK
+{
+CAN_MASK_B1 = 1,
+CAN_MASK_B2 = 2,
+};
+
+# 148
+enum CAN_FILTER
+{
+CAN_FILTER_B1_F1,
+CAN_FILTER_B1_F2,
+CAN_FILTER_B2_F1,
+CAN_FILTER_B2_F2,
+CAN_FILTER_B2_F3,
+CAN_FILTER_B2_F4
+};
+
+# 162
+enum CAN_RX_ERRORS
+{
+CAN_RX_BUFFER_1_OVFL = 0b00000001,
+CAN_RX_BUFFER_2_OVFL = 0b00000010
+};
+
+# 173
+void CANOperationMode (enum CAN_OP_MODE mode);
+void CANInitialize (BYTE propSeg, BYTE phaseSeg1, BYTE phaseSeg2,BYTE SJW, BYTE BRP, enum CAN_CONFIG_FLAGS flags);
+
+void CANsendMessage (unsigned long identifier, BYTE *data, BYTE dataLength, enum CAN_TX_MSG_FLAGS flags);
+BYTE CANreceiveMessage (CANmessage *msg);
+
+void CANSetMask(enum CAN_MASK code, unsigned long val, enum CAN_CONFIG_FLAGS type);
+void CANSetFilter(enum CAN_FILTER code, unsigned long val, enum CAN_CONFIG_FLAGS type);
+
+BYTE CANisTxReady (void);
+BYTE CANisRxReady (void);
+
+BYTE CANisTXpassive (void);
+BYTE CANisRXpassive (void);
+BYTE CANisTXwarningON (void);
+BYTE CANisRXwarningON (void);
+BYTE CANgetTXerrorCount (void);
+BYTE CANgetRXerrorCount (void);
+
+BYTE CANisBusOFF (void);
+void CANAbortMessages (void);
+
+# 206
+void CANOperationMode (enum CAN_OP_MODE mode)
+{
+CANCON = mode;
+
+while((CANSTAT & 0b11100000) != mode );
+}
+
+# 218
+void CANInitialize (BYTE propSeg, BYTE phaseSeg1, BYTE phaseSeg2,BYTE SJW, BYTE BRP, enum CAN_CONFIG_FLAGS flags)
+{
+BYTE FilterConfig1;
+BYTE FilterConfig2;
+
+CANOperationMode(CAN_OP_MODE_CONFIG);
+
+BRGCON1 = 0x00;
+BRGCON2 = 0x00;
+BRGCON3 = 0x00;
+
+SJW= SJW << 6;
+BRGCON1 |= SJW;
+BRGCON1 |= BRP;
+
+BRGCON2 |= propSeg;
+phaseSeg1 = phaseSeg1 <<3;
+BRGCON2 |= phaseSeg1;
+
+if ( !(flags & CAN_CONFIG_SAMPLE_BIT) )
+BRGCON2bits.SAM= 1;
+
+if ( flags & CAN_CONFIG_PHSEG2_PRG_BIT )
+BRGCON2bits.SEG2PHTS = 1;
+
+BRGCON3 |= phaseSeg2;
+
+if ( flags & CAN_CONFIG_LINE_FILTER_BIT )
+BRGCON3bits.WAKFIL = 1;
+
+
+
+
+RXB0CON = flags & CAN_CONFIG_MSG_BITS;
+if ( (flags & CAN_CONFIG_DBL_BUFFER_BIT)== CAN_CONFIG_DBL_BUFFER_ON )
+RXB0CONbits.RXB0DBEN = 1;
+
+RXB1CON = RXB0CON;
+
+
+
+CANSetMask (CAN_MASK_B1, 0x00000000, CAN_CONFIG_XTD_MSG);
+CANSetMask (CAN_MASK_B2, 0x00000000, CAN_CONFIG_XTD_MSG);
+
+
+switch( (flags & CAN_CONFIG_MSG_BITS) | ~CAN_CONFIG_MSG_BITS )
+{
+case CAN_CONFIG_VALID_XTD_MSG:
+FilterConfig1 = CAN_CONFIG_XTD_MSG;
+FilterConfig2 = CAN_CONFIG_XTD_MSG;
+break;
+
+case CAN_CONFIG_VALID_STD_MSG:
+FilterConfig1 = CAN_CONFIG_STD_MSG;
+FilterConfig2 = CAN_CONFIG_STD_MSG;
+break;
+default:
+FilterConfig1 = CAN_CONFIG_STD_MSG;
+FilterConfig2 = CAN_CONFIG_XTD_MSG;
+break;
+}
+
+CANSetFilter(CAN_FILTER_B1_F1, 0, FilterConfig1);
+CANSetFilter(CAN_FILTER_B1_F2, 0, FilterConfig1);
+CANSetFilter(CAN_FILTER_B2_F1, 0, FilterConfig2);
+CANSetFilter(CAN_FILTER_B2_F2, 0, FilterConfig2);
+CANSetFilter(CAN_FILTER_B2_F3, 0, FilterConfig2);
+CANSetFilter(CAN_FILTER_B2_F4, 0, FilterConfig2);
+
+CANOperationMode(CAN_OP_MODE_NORMAL);
+
+}
+
+
+
+
+void CANsendMessage (unsigned long identifier, BYTE *data, BYTE dataLength, enum CAN_TX_MSG_FLAGS flags)
+{
+unsigned long tamp;
+
+if (TXB0CONbits.TXREQ == 0)
+{ TXB0DLC = dataLength;
+if (0b01000000 & flags)
+TXB0DLCbits.TXRTR = 0x01;
+else
+TXB0DLCbits.TXRTR = 0x00;
+
+if (CAN_TX_FRAME_MASK & flags)
+{
+
+tamp = identifier & 0x000000FF;
+TXB0EIDL = (unsigned char) tamp;
+
+tamp = identifier & 0x0000FF00;
+tamp = tamp >> 8;
+TXB0EIDH = (unsigned char) tamp;
+
+TXB0SIDL = 0x00;
+TXB0SIDLbits.EXIDE = 0x01;
+
+if (identifier & 0x00010000)
+TXB0SIDLbits.EID16 = 0x01;
+if (identifier & 0x00020000)
+TXB0SIDLbits.EID17 = 0x01;
+if (identifier & 0x00040000)
+TXB0SIDLbits.SID0 = 0x01;
+if (identifier & 0x00080000)
+TXB0SIDLbits.SID1 = 0x01;
+if (identifier & 0x00100000)
+TXB0SIDLbits.SID2 = 0x01;
+
+tamp = (identifier >> 21);
+tamp = tamp & 0x000000FF;
+TXB0SIDH = (unsigned char) tamp;
+}
+
+else
+
+{
+TXB0SIDLbits.EXIDE = 0x00;
+
+tamp = (identifier >> 3);
+tamp = tamp & 0x000000FF;
+TXB0SIDH = (unsigned char) tamp;
+
+tamp = identifier & 0x00000007;
+tamp = tamp << 5;
+TXB0SIDL = TXB0SIDL & 0b00011111;
+TXB0SIDL = (unsigned char) tamp;
+}
+
+if (0b00000001 & flags)
+TXB0CONbits.TXPRI0 = 0x01;
+else
+TXB0CONbits.TXPRI0 = 0x00;
+if (0b00000010 & flags)
+TXB0CONbits.TXPRI1 = 0x01;
+else
+TXB0CONbits.TXPRI1 = 0x00;
+
+TXB0D0 = data[0];
+TXB0D1 = data[1];
+TXB0D2 = data[2];
+TXB0D3 = data[3];
+TXB0D4 = data[4];
+TXB0D5 = data[5];
+TXB0D6 = data[6];
+TXB0D7 = data[7];
+
+TXB0CONbits.TXREQ = 0x01;
+return;
+}
+
+
+
+if (TXB1CONbits.TXREQ == 0)
+{ TXB1DLC = dataLength;
+
+if (0b01000000 & flags)
+TXB1DLCbits.TXRTR = 0x01;
+else
+TXB1DLCbits.TXRTR = 0x00;
+
+if (CAN_TX_FRAME_MASK & flags)
+{
+tamp = identifier & 0x000000FF;
+TXB1EIDL = (unsigned char) tamp;
+
+tamp = identifier & 0x0000FF00;
+tamp = tamp >> 8;
+TXB1EIDH = (unsigned char) tamp;
+
+TXB1SIDL = 0x00;
+TXB1SIDLbits.EXIDE = 0x01;
+
+if (identifier & 0x00010000)
+TXB1SIDLbits.EID16 = 0x01;
+if (identifier & 0x00020000)
+TXB1SIDLbits.EID17 = 0x01;
+if (identifier & 0x00040000)
+TXB1SIDLbits.SID0 = 0x01;
+if (identifier & 0x00080000)
+TXB1SIDLbits.SID1 = 0x01;
+if (identifier & 0x00100000)
+TXB1SIDLbits.SID2 = 0x01;
+
+tamp = (identifier >> 21);
+tamp = tamp & 0x000000FF;
+TXB1SIDH = (unsigned char) tamp;
+}
+
+else
+
+{
+TXB1SIDLbits.EXIDE = 0x00;
+
+tamp = (identifier >> 3);
+tamp = tamp & 0x000000FF;
+TXB1SIDH = (unsigned char) tamp;
+
+tamp = identifier & 0x00000007;
+tamp = tamp << 5;
+TXB1SIDL = TXB1SIDL & 0b00011111;
+TXB1SIDL = (unsigned char) tamp;
+}
+
+if (0b00000001 & flags)
+TXB1CONbits.TXPRI0 = 0x01;
+else
+TXB1CONbits.TXPRI0 = 0x00;
+if (0b00000010 & flags)
+TXB1CONbits.TXPRI1 = 0x01;
+else
+TXB1CONbits.TXPRI1 = 0x00;
+
+TXB1D0 = data[0];
+TXB1D1 = data[1];
+TXB1D2 = data[2];
+TXB1D3 = data[3];
+TXB1D4 = data[4];
+TXB1D5 = data[5];
+TXB1D6 = data[6];
+TXB1D7 = data[7];
+
+TXB1CONbits.TXREQ = 0x01;
+
+return;
+}
+
+
+
+if (TXB2CONbits.TXREQ == 0)
+{ TXB2DLC = dataLength;
+
+if (0b01000000 & flags)
+TXB2DLCbits.TXRTR = 0x01;
+else
+TXB2DLCbits.TXRTR = 0x00;
+
+if (CAN_TX_FRAME_MASK & flags)
+{
+tamp = identifier & 0x000000FF;
+TXB2EIDL = (unsigned char) tamp;
+
+tamp = identifier & 0x0000FF00;
+tamp = tamp >> 8;
+TXB2EIDH = (unsigned char) tamp;
+
+TXB2SIDL = 0x00;
+TXB2SIDLbits.EXIDE = 0x01;
+
+if (identifier & 0x00010000)
+TXB2SIDLbits.EID16 = 0x01;
+if (identifier & 0x00020000)
+TXB2SIDLbits.EID17 = 0x01;
+if (identifier & 0x00040000)
+TXB2SIDLbits.SID0 = 0x01;
+if (identifier & 0x00080000)
+TXB2SIDLbits.SID1 = 0x01;
+if (identifier & 0x00100000)
+TXB2SIDLbits.SID2 = 0x01;
+
+tamp = (identifier >> 21);
+tamp = tamp & 0x000000FF;
+TXB2SIDH = (unsigned char) tamp;
+}
+
+else
+
+{
+TXB2SIDLbits.EXIDE = 0x00;
+
+tamp = (identifier >> 3);
+tamp = tamp & 0x000000FF;
+TXB2SIDH = (unsigned char) tamp;
+
+tamp = identifier & 0x00000007;
+tamp = tamp << 5;
+TXB2SIDL = TXB2SIDL & 0b00011111;
+TXB2SIDL = (unsigned char) tamp;
+}
+
+if (0b00000001 & flags)
+TXB2CONbits.TXPRI0 = 0x01;
+else
+TXB2CONbits.TXPRI0 = 0x00;
+if (0b00000010 & flags)
+TXB2CONbits.TXPRI1 = 0x01;
+else
+TXB2CONbits.TXPRI1 = 0x00;
+
+TXB2D0 = data[0];
+TXB2D1 = data[1];
+TXB2D2 = data[2];
+TXB2D3 = data[3];
+TXB2D4 = data[4];
+TXB2D5 = data[5];
+TXB2D6 = data[6];
+TXB2D7 = data[7];
+
+TXB2CONbits.TXREQ = 0x01;
+
+return;
+}
+}
+
+# 528
+BYTE CANreceiveMessage (CANmessage *msg)
+{
+BYTE tamp;
+BYTE error = 0;
+
+if (COMSTATbits.RXB0OVFL == 0x01)
+error |= CAN_RX_BUFFER_1_OVFL;
+
+if (COMSTATbits.RXB1OVFL == 0x01)
+error |= CAN_RX_BUFFER_2_OVFL;
+
+
+if (RXB1CONbits.RXFUL ==0x01)
+{
+msg->identifier = 0;
+msg->data[0] =RXB1D0;
+msg->data[1] =RXB1D1;
+msg->data[2] =RXB1D2;
+msg->data[3] =RXB1D3;
+msg->data[4] =RXB1D4;
+msg->data[5] =RXB1D5;
+msg->data[6] =RXB1D6;
+msg->data[7] =RXB1D7;
+
+msg->RTR = RXB1DLCbits.RXRTR;
+
+msg->length = RXB1DLC & 0x0F;
+
+msg->type = RXB1SIDLbits.EXID;
+
+if (RXB1SIDLbits.EXID == 0)
+{
+msg->identifier = ((unsigned long)RXB1SIDH)<< 3;
+tamp = (RXB1SIDL >> 5 ) & 0x07;
+msg->identifier = msg->identifier + tamp;
+}
+else
+{
+msg->identifier = (unsigned long) RXB1EIDL;
+msg->identifier += ((unsigned long) RXB1EIDH) << 8;
+
+if (RXB1SIDLbits.EID16)
+msg->identifier |= 0x00010000;
+if (RXB1SIDLbits.EID17)
+msg->identifier |= 0x00020000;
+if (RXB1SIDLbits.SID0)
+msg->identifier |= 0x00040000;
+if (RXB1SIDLbits.SID1)
+msg->identifier |= 0x00080000;
+if (RXB1SIDLbits.SID2)
+msg->identifier |= 0x00100000;
+
+msg->identifier |= ((unsigned long) RXB1SIDH) << 21;
+}
+
+RXB1CONbits.RXFUL = 0x00;
+return (error);
+}
+
+if (RXB0CONbits.RXFUL ==0x01)
+{
+msg->identifier = 0;
+msg->data[0] =RXB0D0;
+msg->data[1] =RXB0D1;
+msg->data[2] =RXB0D2;
+msg->data[3] =RXB0D3;
+msg->data[4] =RXB0D4;
+msg->data[5] =RXB0D5;
+msg->data[6] =RXB0D6;
+msg->data[7] =RXB0D7;
+
+msg->RTR = RXB0DLCbits.RXRTR;
+
+msg->length = RXB0DLC & 0x0F;
+
+msg->type = RXB0SIDLbits.EXID;
+
+if (RXB0SIDLbits.EXID == 0)
+{
+msg->identifier = ((unsigned long)RXB0SIDH)<< 3;
+tamp = (RXB0SIDL >> 5 ) & 0x07;
+msg->identifier = msg->identifier + tamp;
+}
+else
+{
+msg->identifier = (unsigned long) RXB0EIDL;
+msg->identifier += ((unsigned long) RXB0EIDH) << 8;
+
+if (RXB0SIDLbits.EID16)
+msg->identifier |= 0x00010000;
+if (RXB0SIDLbits.EID17)
+msg->identifier |= 0x00020000;
+if (RXB0SIDLbits.SID0)
+msg->identifier |= 0x00040000;
+if (RXB0SIDLbits.SID1)
+msg->identifier |= 0x00080000;
+if (RXB0SIDLbits.SID2)
+msg->identifier |= 0x00100000;
+
+msg->identifier |= ((unsigned long) RXB0SIDH) << 21;
+
+}
+RXB0CONbits.RXFUL = 0x00;
+
+return (error);
+}
+}
+
+# 640
+void CANSetMask(enum CAN_MASK numBuffer, unsigned long mask, enum CAN_CONFIG_FLAGS type)
+{ unsigned long tamp;
+
+if ((numBuffer ==CAN_MASK_B1) && (type == CAN_CONFIG_STD_MSG))
+{
+tamp = (mask >> 3);
+tamp = tamp & 0x000000FF;
+RXM0SIDH = (unsigned char) tamp;
+
+tamp = mask & 0x00000007;
+tamp = tamp << 5;
+RXM0SIDL = (unsigned char) tamp;
+}
+
+if ((numBuffer ==CAN_MASK_B2) && (type == CAN_CONFIG_STD_MSG))
+{
+tamp = (mask >> 3);
+tamp = tamp & 0x000000FF;
+RXM1SIDH = (unsigned char) tamp;
+
+tamp = mask & 0x00000007;
+tamp = tamp << 5;
+RXM1SIDL = (unsigned char) tamp;
+}
+
+if ((numBuffer ==CAN_MASK_B1) && (type == CAN_CONFIG_XTD_MSG))
+{
+tamp = mask & 0x000000FF;
+RXM0EIDL = (unsigned char) tamp;
+
+tamp = mask & 0x0000FF00;
+tamp = tamp >> 8;
+RXM0EIDH = (unsigned char) tamp;
+
+if (mask & 0x00010000)
+RXM0SIDLbits.EID16 = 0x01;
+else
+RXM0SIDLbits.EID16 = 0x00;
+
+if (mask & 0x00020000)
+RXM0SIDLbits.EID17 = 0x01;
+else
+RXM0SIDLbits.EID17 = 0x00;
+
+if (mask & 0x00040000)
+RXM0SIDLbits.SID0 = 0x01;
+else
+RXM0SIDLbits.SID0 = 0x00;
+
+if (mask & 0x00080000)
+RXM0SIDLbits.SID1 = 0x01;
+else
+RXM0SIDLbits.SID1 = 0x00;
+
+if (mask & 0x00100000)
+RXM0SIDLbits.SID2 = 0x01 ;
+else
+RXM0SIDLbits.SID2 = 0x00 ;
+
+tamp = (mask >> 21);
+tamp = tamp & 0x000000FF;
+RXM0SIDH = (unsigned char) tamp;
+}
+
+if ((numBuffer ==CAN_MASK_B2) && (type == CAN_CONFIG_XTD_MSG))
+{
+tamp = mask & 0x000000FF;
+RXM1EIDL = (unsigned char) tamp;
+
+tamp = mask & 0x0000FF00;
+tamp = tamp >> 8;
+RXM1EIDH = (unsigned char) tamp;
+
+if (mask & 0x00010000)
+RXM1SIDLbits.EID16 = 0x01;
+else
+RXM1SIDLbits.EID16 = 0x00;
+
+if (mask & 0x00020000)
+RXM1SIDLbits.EID17 = 0x01;
+else
+RXM1SIDLbits.EID17 = 0x00;
+
+if (mask & 0x00040000)
+RXM1SIDLbits.SID0 = 0x01;
+else
+RXM1SIDLbits.SID0 = 0x00;
+
+if (mask & 0x00080000)
+RXM1SIDLbits.SID1 = 0x01;
+else
+RXM1SIDLbits.SID1 = 0x00;
+
+if (mask & 0x00100000)
+RXM1SIDLbits.SID2 = 0x01 ;
+else
+RXM1SIDLbits.SID2 = 0x00 ;
+
+tamp = (mask >> 21);
+tamp = tamp & 0x000000FF;
+RXM1SIDH = (unsigned char) tamp;
+}
+}
+
+# 748
+void CANSetFilter(enum CAN_FILTER numBuffer, unsigned long filter, enum CAN_CONFIG_FLAGS type)
+{
+unsigned long tamp;
+
+if ((numBuffer ==CAN_FILTER_B1_F1) && (type == CAN_CONFIG_STD_MSG))
+{
+RXF0SIDLbits.EXIDEN = 0x00;
+
+tamp = (filter >> 3);
+tamp = tamp & 0x000000FF;
+RXF0SIDH = (unsigned char) tamp;
+
+tamp = filter & 0x00000007;
+tamp = tamp << 5;
+RXF0SIDL = (unsigned char) tamp;
+}
+
+if ((numBuffer ==CAN_FILTER_B1_F2) && (type == CAN_CONFIG_STD_MSG))
+{
+RXF1SIDLbits.EXIDEN = 0x00;
+
+tamp = (filter >> 3);
+tamp = tamp & 0x000000FF;
+RXF1SIDH = (unsigned char) tamp;
+
+tamp = filter & 0x00000007;
+tamp = tamp << 5;
+RXF1SIDL = (unsigned char) tamp;
+}
+
+if ((numBuffer ==CAN_FILTER_B2_F1) && (type == CAN_CONFIG_STD_MSG))
+{
+RXF2SIDLbits.EXIDEN = 0x00;
+
+tamp = (filter >> 3);
+tamp = tamp & 0x000000FF;
+RXF2SIDH = (unsigned char) tamp;
+
+tamp = filter & 0x00000007;
+tamp = tamp << 5;
+RXF2SIDL = (unsigned char) tamp;
+}
+
+if ((numBuffer ==CAN_FILTER_B2_F2) && (type == CAN_CONFIG_STD_MSG))
+{
+RXF3SIDLbits.EXIDEN = 0x00;
+
+tamp = (filter >> 3);
+tamp = tamp & 0x000000FF;
+RXF3SIDH = (unsigned char) tamp;
+
+tamp = filter & 0x00000007;
+tamp = tamp << 5;
+RXF3SIDL = (unsigned char) tamp;
+}
+
+if ((numBuffer ==CAN_FILTER_B2_F3) && (type == CAN_CONFIG_STD_MSG))
+{
+RXF4SIDLbits.EXIDEN = 0x00;
+
+tamp = (filter >> 3);
+tamp = tamp & 0x000000FF;
+RXF4SIDH = (unsigned char) tamp;
+
+tamp = filter & 0x00000007;
+tamp = tamp << 5;
+RXF4SIDL = (unsigned char) tamp;
+}
+
+if ((numBuffer ==CAN_FILTER_B2_F4) && (type == CAN_CONFIG_STD_MSG))
+{
+RXF5SIDLbits.EXIDEN = 0x00;
+
+tamp = (filter >> 3);
+tamp = tamp & 0x000000FF;
+RXF5SIDH = (unsigned char) tamp;
+
+tamp = filter & 0x00000007;
+tamp = tamp << 5;
+RXF5SIDL = (unsigned char) tamp;
+}
+
+
+if ((numBuffer ==CAN_FILTER_B1_F1) && (type == CAN_CONFIG_XTD_MSG))
+{
+RXF0SIDLbits.EXIDEN = 0x01;
+
+tamp = filter & 0x000000FF;
+RXF0EIDL = (unsigned char) tamp;
+
+tamp = filter & 0x0000FF00;
+tamp = tamp >> 8;
+RXF0EIDH = (unsigned char) tamp;
+
+if (filter & 0x00010000)
+RXF0SIDLbits.EID16 = 0x01;
+else
+RXF0SIDLbits.EID16 = 0x00;
+
+if (filter & 0x00020000)
+RXF0SIDLbits.EID17 = 0x01;
+else
+RXF0SIDLbits.EID17 = 0x00;
+
+if (filter & 0x00040000)
+RXF0SIDLbits.SID0 = 0x01;
+else
+RXF0SIDLbits.SID0 = 0x00;
+
+if (filter & 0x00080000)
+RXF0SIDLbits.SID1 = 0x01;
+else
+RXF0SIDLbits.SID1 = 0x00;
+
+if (filter & 0x00100000)
+RXF0SIDLbits.SID2 = 0x01 ;
+else
+RXF0SIDLbits.SID2 = 0x00 ;
+
+tamp = (filter >> 21);
+tamp = tamp & 0x000000FF;
+RXF0SIDH = (unsigned char) tamp;
+}
+
+if ((numBuffer ==CAN_FILTER_B1_F2) && (type == CAN_CONFIG_XTD_MSG))
+{
+RXF1SIDLbits.EXIDEN = 0x01;
+
+tamp = filter & 0x000000FF;
+RXF1EIDL = (unsigned char) tamp;
+
+tamp = filter & 0x0000FF00;
+tamp = tamp >> 8;
+RXF1EIDH = (unsigned char) tamp;
+
+if (filter & 0x00010000)
+RXF1SIDLbits.EID16 = 0x01;
+else
+RXF1SIDLbits.EID16 = 0x00;
+
+if (filter & 0x00020000)
+RXF1SIDLbits.EID17 = 0x01;
+else
+RXF1SIDLbits.EID17 = 0x00;
+
+if (filter & 0x00040000)
+RXF1SIDLbits.SID0 = 0x01;
+else
+RXF1SIDLbits.SID0 = 0x00;
+
+if (filter & 0x00080000)
+RXF1SIDLbits.SID1 = 0x01;
+else
+RXF1SIDLbits.SID1 = 0x00;
+
+if (filter & 0x00100000)
+RXF1SIDLbits.SID2 = 0x01 ;
+else
+RXF1SIDLbits.SID2 = 0x00 ;
+
+tamp = (filter >> 21);
+tamp = tamp & 0x000000FF;
+RXF1SIDH = (unsigned char) tamp;
+}
+
+
+if ((numBuffer ==CAN_FILTER_B2_F1) && (type == CAN_CONFIG_XTD_MSG))
+{
+RXF2SIDLbits.EXIDEN = 0x01;
+
+tamp = filter & 0x000000FF;
+RXF2EIDL = (unsigned char) tamp;
+
+tamp = filter & 0x0000FF00;
+tamp = tamp >> 8;
+RXF2EIDH = (unsigned char) tamp;
+
+if (filter & 0x00010000)
+RXF2SIDLbits.EID16 = 0x01;
+else
+RXF2SIDLbits.EID16 = 0x00;
+
+if (filter & 0x00020000)
+RXF2SIDLbits.EID17 = 0x01;
+else
+RXF2SIDLbits.EID17 = 0x00;
+
+if (filter & 0x00040000)
+RXF2SIDLbits.SID0 = 0x01;
+else
+RXF2SIDLbits.SID0 = 0x00;
+
+if (filter & 0x00080000)
+RXF2SIDLbits.SID1 = 0x01;
+else
+RXF2SIDLbits.SID1 = 0x00;
+
+if (filter & 0x00100000)
+RXF2SIDLbits.SID2 = 0x01 ;
+else
+RXF2SIDLbits.SID2 = 0x00 ;
+
+tamp = (filter >> 21);
+tamp = tamp & 0x000000FF;
+RXF2SIDH = (unsigned char) tamp;
+}
+
+if ((numBuffer ==CAN_FILTER_B2_F2) && (type == CAN_CONFIG_XTD_MSG))
+{
+RXF3SIDLbits.EXIDEN = 0x01;
+
+tamp = filter & 0x000000FF;
+RXF3EIDL = (unsigned char) tamp;
+
+tamp = filter & 0x0000FF00;
+tamp = tamp >> 8;
+RXF3EIDH = (unsigned char) tamp;
+
+if (filter & 0x00010000)
+RXF3SIDLbits.EID16 = 0x01;
+else
+RXF3SIDLbits.EID16 = 0x00;
+
+if (filter & 0x00020000)
+RXF3SIDLbits.EID17 = 0x01;
+else
+RXF3SIDLbits.EID17 = 0x00;
+
+if (filter & 0x00040000)
+RXF3SIDLbits.SID0 = 0x01;
+else
+RXF3SIDLbits.SID0 = 0x00;
+
+if (filter & 0x00080000)
+RXF3SIDLbits.SID1 = 0x01;
+else
+RXF3SIDLbits.SID1 = 0x00;
+
+if (filter & 0x00100000)
+RXF3SIDLbits.SID2 = 0x01 ;
+else
+RXF3SIDLbits.SID2 = 0x00 ;
+
+tamp = (filter >> 21);
+tamp = tamp & 0x000000FF;
+RXF3SIDH = (unsigned char) tamp;
+}
+
+if ((numBuffer ==CAN_FILTER_B2_F3) && (type == CAN_CONFIG_XTD_MSG))
+{
+RXF4SIDLbits.EXIDEN = 0x01;
+
+tamp = filter & 0x000000FF;
+RXF4EIDL = (unsigned char) tamp;
+
+tamp = filter & 0x0000FF00;
+tamp = tamp >> 8;
+RXF4EIDH = (unsigned char) tamp;
+
+if (filter & 0x00010000)
+RXF4SIDLbits.EID16 = 0x01;
+else
+RXF4SIDLbits.EID16 = 0x00;
+
+if (filter & 0x00020000)
+RXF4SIDLbits.EID17 = 0x01;
+else
+RXF4SIDLbits.EID17 = 0x00;
+
+if (filter & 0x00040000)
+RXF4SIDLbits.SID0 = 0x01;
+else
+RXF4SIDLbits.SID0 = 0x00;
+
+if (filter & 0x00080000)
+RXF4SIDLbits.SID1 = 0x01;
+else
+RXF4SIDLbits.SID1 = 0x00;
+
+if (filter & 0x00100000)
+RXF4SIDLbits.SID2 = 0x01 ;
+else
+RXF4SIDLbits.SID2 = 0x00 ;
+
+tamp = (filter >> 21);
+tamp = tamp & 0x000000FF;
+RXF4SIDH = (unsigned char) tamp;
+}
+
+if ((numBuffer ==CAN_FILTER_B2_F4) && (type == CAN_CONFIG_XTD_MSG))
+{
+RXF5SIDLbits.EXIDEN = 0x01;
+
+tamp = filter & 0x000000FF;
+RXF5EIDL = (unsigned char) tamp;
+
+tamp = filter & 0x0000FF00;
+tamp = tamp >> 8;
+RXF5EIDH = (unsigned char) tamp;
+
+if (filter & 0x00010000)
+RXF5SIDLbits.EID16 = 0x01;
+else
+RXF5SIDLbits.EID16 = 0x00;
+
+if (filter & 0x00020000)
+RXF5SIDLbits.EID17 = 0x01;
+else
+RXF5SIDLbits.EID17 = 0x00;
+
+if (filter & 0x00040000)
+RXF5SIDLbits.SID0 = 0x01;
+else
+RXF5SIDLbits.SID0 = 0x00;
+
+if (filter & 0x00080000)
+RXF5SIDLbits.SID1 = 0x01;
+else
+RXF5SIDLbits.SID1 = 0x00;
+
+if (filter & 0x00100000)
+RXF5SIDLbits.SID2 = 0x01 ;
+else
+RXF5SIDLbits.SID2 = 0x00 ;
+
+tamp = (filter >> 21);
+tamp = tamp & 0x000000FF;
+RXF5SIDH = (unsigned char) tamp;
+}
+
+}
+
+# 1085
+void CANAbortMessages (void)
+{
+CANCONbits.ABAT = 1;
+}
+
+# 1094
+BYTE CANisBusOFF (void)
+{
+return (COMSTATbits.TXBO);
+}
+
+
+
+
+BYTE CANisTXpassive (void)
+{
+return (COMSTATbits.TXBP);
+}
+
+# 1111
+BYTE CANisRXpassive (void)
+{
+return (COMSTATbits.RXBP);
+}
+
+
+
+
+BYTE CANisTXwarningON (void)
+{
+return (COMSTATbits.TXWARN);
+}
+
+
+
+
+BYTE CANisRXwarningON (void)
+{
+return (COMSTATbits.RXWARN);
+}
+
+# 1136
+BYTE CANgetTXerrorCount (void)
+{
+return (TXERRCNT);
+}
+
+# 1145
+BYTE CANgetRXerrorCount (void)
+{
+return (RXERRCNT);
+}
+
+# 1154
+BYTE CANisTxReady (void)
+{
+return (!TXB0CONbits.TXREQ || !TXB1CONbits.TXREQ || !TXB2CONbits.TXREQ);
+}
+
+# 1163
+BYTE CANisRxReady (void)
+{
+return (RXB0CONbits.RXFUL || RXB1CONbits.RXFUL);
+}
+
+# 74 "C:/Users/Simone/Desktop/LaurTec_PIC_libraries_v_3.3.1/inc\delay.h"
+void delay_ms (unsigned int value_ms);
+
+# 88
+void delay_s (unsigned char value_s);
+
+# 102
+void delay_set_quartz (unsigned char frequency);
+
+# 49 "C:/Users/Simone/Desktop/LaurTec_PIC_libraries_v_3.3.1/src\delay.c"
+volatile unsigned char delay_quartz_frequency_value = 16;
+volatile unsigned int clock_counter_reference = 0;
+
+# 61
+void delay_ms (unsigned int value_ms) {
+
+# 73
+clock_counter_reference = value_ms * delay_quartz_frequency_value;
+
+while (clock_counter_reference) {
+
+# 85
+_delay(240);
+
+
+clock_counter_reference--;
+}
+
+# 96
+}
+
+# 102
+void delay_s (unsigned char value_s) {
+
+unsigned char repeat_loop;
+
+for (repeat_loop = 0; repeat_loop < value_s; repeat_loop++)
+delay_ms (1000);
+}
+
+# 115
+void delay_set_quartz (unsigned char frequency) {
+
+delay_quartz_frequency_value = frequency;
+
+}
+
+# 7 "C:\Program Files (x86)\Microchip\xc8\v1.35\include\stdarg.h"
+typedef void * va_list[1];
+
+#pragma intrinsic(__va_start)
+extern void * __va_start(void);
+
+#pragma intrinsic(__va_arg)
+extern void * __va_arg(void *, ...);
+
+# 43 "C:\Program Files (x86)\Microchip\xc8\v1.35\include\stdio.h"
+struct __prbuf
+{
+char * ptr;
+void (* func)(char);
+};
+
+# 25 "C:\Program Files (x86)\Microchip\xc8\v1.35\include\errno.h"
+extern int errno;
+
+# 12 "C:\Program Files (x86)\Microchip\xc8\v1.35\include\conio.h"
+extern void init_uart(void);
+
+extern char getch(void);
+extern char getche(void);
+extern void putch(char);
+extern void ungetch(char);
+
+extern __bit kbhit(void);
+
+# 23
+extern char * cgets(char *);
+extern void cputs(const char *);
+
+# 88 "C:\Program Files (x86)\Microchip\xc8\v1.35\include\stdio.h"
+extern int cprintf(char *, ...);
+#pragma printf_check(cprintf)
+
+
+
+extern int _doprnt(struct __prbuf *, const register char *, register va_list);
+
+
+# 180
+#pragma printf_check(vprintf) const
+#pragma printf_check(vsprintf) const
+
+extern char * gets(char *);
+extern int puts(const char *);
+extern int scanf(const char *, ...) __attribute__((unsupported("scanf() is not supported by this compiler")));
+extern int sscanf(const char *, const char *, ...) __attribute__((unsupported("sscanf() is not supported by this compiler")));
+extern int vprintf(const char *, va_list) __attribute__((unsupported("vprintf() is not supported by this compiler")));
+extern int vsprintf(char *, const char *, va_list) __attribute__((unsupported("vsprintf() is not supported by this compiler")));
+extern int vscanf(const char *, va_list ap) __attribute__((unsupported("vscanf() is not supported by this compiler")));
+extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupported("vsscanf() is not supported by this compiler")));
+
+#pragma printf_check(printf) const
+#pragma printf_check(sprintf) const
+extern int sprintf(char *, const char *, ...);
+extern int printf(const char *, ...);
+
+# 7 "C:\Program Files (x86)\Microchip\xc8\v1.35\include\stdlib.h"
+typedef unsigned short wchar_t;
+
+# 15
+typedef struct {
+int rem;
+int quot;
+} div_t;
+typedef struct {
+unsigned rem;
+unsigned quot;
+} udiv_t;
+typedef struct {
+long quot;
+long rem;
+} ldiv_t;
+typedef struct {
+unsigned long quot;
+unsigned long rem;
+} uldiv_t;
+
+# 53
+extern double atof(const char *);
+extern double strtod(const char *, const char **);
+extern int atoi(const char *);
+extern unsigned xtoi(const char *);
+extern long atol(const char *);
+extern long strtol(const char *, char **, int);
+
+extern int rand(void);
+extern void srand(unsigned int);
+extern void * calloc(size_t, size_t);
+extern div_t div(int numer, int denom);
+extern udiv_t udiv(unsigned numer, unsigned denom);
+extern ldiv_t ldiv(long numer, long denom);
+extern uldiv_t uldiv(unsigned long numer,unsigned long denom);
+extern unsigned long _lrotl(unsigned long value, unsigned int shift);
+extern unsigned long _lrotr(unsigned long value, unsigned int shift);
+extern unsigned int _rotl(unsigned int value, unsigned int shift);
+extern unsigned int _rotr(unsigned int value, unsigned int shift);
+
+
+
+
+extern void * malloc(size_t);
+extern void free(void *);
+extern void * realloc(void *, size_t);
+
+# 86
+extern int atexit(void (*)(void));
+extern char * getenv(const char *);
+extern char ** environ;
+extern int system(char *);
+extern void qsort(void *, size_t, size_t, int (*)(const void *, const void *));
+extern void * bsearch(const void *, void *, size_t, size_t, int(*)(const void *, const void *));
+extern int abs(int);
+extern long labs(long);
+
+extern char * itoa(char * buf, int val, int base);
+extern char * utoa(char * buf, unsigned val, int base);
+
+
+
+
+extern char * ltoa(char * buf, long val, int base);
+extern char * ultoa(char * buf, unsigned long val, int base);
+
+extern char * ftoa(float f, int * status);
+
+# 30 "C:\Program Files (x86)\Microchip\xc8\v1.35\include\math.h"
+extern double fabs(double);
+extern double floor(double);
+extern double ceil(double);
+extern double modf(double, double *);
+extern double sqrt(double);
+extern double atof(const char *);
+extern double sin(double) ;
+extern double cos(double) ;
+extern double tan(double) ;
+extern double asin(double) ;
+extern double acos(double) ;
+extern double atan(double);
+extern double atan2(double, double) ;
+extern double log(double);
+extern double log10(double);
+extern double pow(double, double) ;
+extern double exp(double) ;
+extern double sinh(double) ;
+extern double cosh(double) ;
+extern double tanh(double);
+extern double eval_poly(double, const double *, int);
+extern double frexp(double, int *);
+extern double ldexp(double, int);
+extern double fmod(double, double);
+extern double trunc(double);
+extern double round(double);
+
+# 26 "parcheggio.c"
+void configurations(void);
+void park_search(void);
+void park_routine(void);
+void can_send(void);
+void can_interpreter(void);
+void parallelo(void);
+void matematica(void);
+
+
+CANmessage msg;
+BYTE data [8] = 0;
+BYTE data_steering [8] = 0;
+BYTE data_speed [8] = 0;
+BYTE data_brake [8] = 0;
+BYTE data_speed_rx[8] = 0;
+BYTE distance_set [8] = 0;
+BYTE data_correction [8] = 0;
+
+
+bit dir = 0;
+volatile bit first = 0;
+volatile bit old_dir_correction = 0;
+volatile bit asd = 0;
+volatile bit avvicinamento = 0;
+volatile bit new_distance = 0;
+volatile bit distance_error = 0;
+volatile bit distance_wait = 0;
+volatile bit activation = 0;
+volatile bit request_sent = 0;
+volatile bit request_sent1 = 0;
+volatile bit distance_received = 0;
+volatile bit distance_received1 = 0;
+volatile bit start_operation = 0;
+volatile bit steering_correction_dir = 0;
+unsigned char data_test[8];
+unsigned char steering_correction = 0;
+unsigned int set_speed = 0;
+int spazio_parcheggio = 100;
+float alignment_gap = 0;
+float old_alignment_gap = 0;
+
+
+volatile unsigned int distance_dx = 0;
+volatile unsigned int distance_sx = 0;
+volatile unsigned int distance_average = 0;
+unsigned int right_speed = 0;
+unsigned int left_speed = 0;
+unsigned int actual_speed = 0;
+
+
+volatile unsigned char MUX_index = 0;
+unsigned char MUX_select[8] = 0;
+volatile unsigned int pulse_time = 0;
+volatile unsigned int distance = 0;
+volatile unsigned char TMR3H_temp = 0;
+volatile unsigned char TMR3L_temp = 0;
+volatile unsigned int timerValue2 = 0;
+
+volatile unsigned int sensor_distance[8] = 0;
+volatile unsigned char sensor_distance_short[8] = 0;
+unsigned char sensor_distance_old[8] = 0;
+
+
+float raggio = 70;
+float larghezza = 32;
+volatile float bordo = 0;
+float alfa = 0;
+float beta = 0;
+float n = 0;
+float prima_sterzata = 0;
+float K_var = 0;
+float J_var = 0;
+float Pmin = 0;
+
+
+float x = 0;
+float z = 0;
+
+__attribute__((interrupt("__high_priority"))) void ISR_Alta(void) {
+if (INTCON2bits.INTEDG0 == 1) {
+INTCON2bits.INTEDG0 = 0;
+TMR3H = 0;
+TMR3L = 0;
+distance_error = 0;
+} else {
+TMR3H_temp = TMR3H;
+TMR3L_temp = TMR3L;
+timerValue2 = TMR3H_temp;
+timerValue2 = ((timerValue2 << 8) | (TMR3L_temp));
+pulse_time = timerValue2 / 2;
+sensor_distance[MUX_index] = pulse_time / 58;
+INTCON2bits.INTEDG0 = 1;
+}
+INTCONbits.INT0IF = 0;
+}
+
+__attribute__((interrupt("__low_priority"))) void ISR_Bassa(void) {
+
+
+if (INTCONbits.TMR0IF == 1) {
+INTCONbits.INT0IE = 0;
+T0CONbits.TMR0ON = 0;
+TMR0H = 0x34;
+TMR0L = 0xE0;
+T0CONbits.TMR0ON = 1;
+
+if (distance_error == 1) {
+sensor_distance[MUX_index] = 5000;
+}
+
+if ((sensor_distance[MUX_index] < 10)&&(start_operation == 0)) {
+sensor_distance_short[0] = sensor_distance_short[0] | (0b00000001 << MUX_index);
+} else if ((sensor_distance[MUX_index] < 4)&&(start_operation == 1)&&(avvicinamento == 0)) {
+data[1] = 0;
+data[0] = 4;
+while (!CANisTxReady());
+CANsendMessage(0b00000001011, data, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
+asm("reset");
+} else {
+sensor_distance_short[0] = sensor_distance_short[0] & (~(0b00000001 << MUX_index));
+}
+
+MUX_index++;
+if (MUX_index == 8) {
+MUX_index = 0;
+}
+
+unsigned char PORTA_temp = 0;
+PORTA_temp = MUX_select[MUX_index];
+PORTA = PORTA_temp;
+
+TRISBbits.RB0 = 0;
+LATBbits.LATB0 = 1;
+_delay((unsigned long)((15)*(16000000/4000000.0)));
+distance_error = 1;
+LATBbits.LATB0 = 0;
+TRISBbits.RB0 = 1;
+INTCONbits.INT0IF = 0;
+INTCONbits.INT0IE = 1;
+INTCONbits.TMR0IF = 0;
+INTCON2bits.INTEDG0 = 1;
+}
+
+
+if ((PIR3bits.RXB0IF == 1) || (PIR3bits.RXB1IF == 1)) {
+CANreceiveMessage(&msg);
+
+if (msg.identifier == 0b00000001101) {
+asd = 0;
+}
+
+if ((msg.identifier == 0b00000000111) && (msg.RTR != 1)) {
+distance_average = 0;
+distance_dx = msg.data[1];
+distance_dx = ((distance_dx << 8) | msg.data[0]);
+distance_sx = msg.data[3];
+distance_sx = ((distance_sx << 8) | msg.data[2]);
+distance_average = (distance_sx + distance_dx) / 2;
+distance_received = 1;
+distance_received1 = 1;
+}
+
+if (msg.identifier == 0b00000001010) {
+if (msg.data[0] == 1) {
+activation = 1;
+PORTBbits.RB6 = 1;
+} else {
+activation = 0;
+PORTBbits.RB4 = 0;
+PORTBbits.RB5 = 0;
+PORTBbits.RB6 = 0;
+request_sent = 0;
+}
+}
+
+if (msg.identifier == 0b00000001100) {
+start_operation = 1;
+}
+
+
+if (msg.identifier == 0b00000000110) {
+for (unsigned char i = 0; i < 8; i++) {
+data_speed_rx[i] = msg.data[i];
+}
+if (msg.identifier == 0b00000001101) {
+distance_wait = 0;
+}
+}
+
+
+PIR3bits.RXB0IF = 0;
+PIR3bits.RXB1IF = 0;
+}
+}
+
+void main(void) {
+MUX_select[0] = 0b00000000;
+MUX_select[1] = 0b00000001;
+MUX_select[2] = 0b00000010;
+MUX_select[3] = 0b00000011;
+MUX_select[4] = 0b00000100;
+MUX_select[5] = 0b00000101;
+MUX_select[6] = 0b00000110;
+MUX_select[7] = 0b00000111;
+
+configurations();
+
+PORTBbits.RB4 = 0;
+PORTBbits.RB5 = 0;
+PORTBbits.RB6 = 0;
+
+request_sent = 0;
+start_operation = 0;
+delay_ms(500);
+
+while (1) {
+while (activation != 1) {
+delay_ms(100);
+while (!CANisTxReady());
+PORTBbits.RB4 = ~PORTBbits.RB4;
+CANsendMessage(0xAA, sensor_distance_short, 8, CAN_CONFIG_STD_MSG & CAN_REMOTE_TX_FRAME & CAN_TX_PRIORITY_0);
+
+# 262
+}
+
+park_search();
+can_interpreter();
+park_routine();
+}
+}
+
+void park_search(void) {
+while ((activation == 1) && (PORTBbits.RB5 == 0)) {
+parallelo();
+
+if (sensor_distance[0] > 50) {
+if (request_sent == 0) {
+while (!CANisTxReady());
+CANsendMessage(0b00000001000, data, 8, CAN_CONFIG_STD_MSG & CAN_REMOTE_TX_FRAME & CAN_TX_PRIORITY_0);
+request_sent = 1;
+alignment_gap = 0;
+}
+LATBbits.LATB4 = 1;
+} else {
+LATBbits.LATB4 = 0;
+alignment_gap = abs(sensor_distance[0] - sensor_distance[1]);
+}
+
+if ((sensor_distance[0] < 50) && (request_sent == 1)&&(sensor_distance[1] < 50)) {
+request_sent = 0;
+while (!CANisTxReady());
+CANsendMessage(0b00000000111, data, 8, CAN_CONFIG_STD_MSG & CAN_REMOTE_TX_FRAME & CAN_TX_PRIORITY_0);
+}
+
+if (distance_received == 1) {
+if (distance_average > 65) {
+PORTBbits.RB5 = 1;
+data[0] = 1;
+CANsendMessage(0b00000001011, data, 1, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
+if ((request_sent1 == 0)&&(sensor_distance[0] < 40)) {
+data_test[0] = 50;
+asd = 1;
+while (!CANisTxReady());
+CANsendMessage(0b00000001101, data_test, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
+
+distance_received1 = 0;
+request_sent1 = 1;
+}
+} else {
+distance_received = 0;
+PORTBbits.RB5 = 0;
+}
+}
+}
+}
+
+void park_routine(void) {
+avvicinamento = 0;
+data_correction[0] = 0;
+parallelo();
+
+while ((asd == 1)&&(PORTBbits.RB5 == 1) && (activation == 1)) {
+delay_ms(200);
+PORTBbits.RB6 = ~PORTBbits.RB6;
+parallelo();
+if (data_correction[0] > 30) {
+data_correction[0] = 0;
+}
+while (!CANisTxReady());
+CANsendMessage(0b00000001110, data_correction, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
+}
+
+if ((PORTBbits.RB5 == 1) && (activation == 1)) {
+PORTBbits.RB6 = 0;
+data[0] = 2;
+CANsendMessage(0b00000001011, data, 1, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
+}
+
+while ((start_operation != 1)&&(activation == 1)) {
+if (first == 0) {
+set_speed = 0;
+data_steering[0] = 90;
+data_brake [0] = 0;
+data_brake [1] = 1;
+can_send();
+first = 1;
+}
+}
+
+while ((PORTBbits.RB5 == 1) && (activation == 1)&&(start_operation == 1)) {
+LATBbits.LATB4 = 1;
+
+bordo = (sensor_distance[0] + sensor_distance[1]) / 2;
+matematica();
+set_speed = 0;
+data_steering[0] = 90;
+data_brake [0] = 0;
+data_brake [1] = 1;
+can_send();
+delay_s(1);
+
+data_brake [0] = 3;
+data_brake [1] = 1;
+
+set_speed = 1000;
+dir = 0;
+data_steering[0] = 90;
+data_test[0] = ((50 + Pmin + 5)-(n + 15));
+asd = 1;
+CANsendMessage(0b00000001101, data_test, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
+can_send();
+while (asd == 1);
+
+set_speed = 0;
+data_steering[0] = 90;
+data_brake [0] = 0;
+data_brake [1] = 1;
+can_send();
+delay_s(1);
+
+data_brake [0] = 3;
+data_brake [1] = 1;
+set_speed = 1000;
+dir = 0;
+data_steering[0] = 180;
+data_test[0] = prima_sterzata;
+asd = 1;
+CANsendMessage(0b00000001101, data_test, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
+can_send();
+while (asd == 1);
+set_speed = 1000;
+data_steering[0] = 0;
+asd = 1;
+data_test[0] = prima_sterzata + 9;
+CANsendMessage(0b00000001101, data_test, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
+can_send();
+while (asd == 1);
+data_brake [0] = 0;
+data_brake [1] = 1;
+set_speed = 0;
+data_steering[0] = 90;
+can_send();
+delay_s(1);
+avvicinamento = 1;
+if (sensor_distance [2] > 20) {
+data_brake [0] = 3;
+data_brake [1] = 1;
+set_speed = 500;
+data_steering[0] = 90;
+dir = 1;
+can_send();
+while (sensor_distance [2] > 20);
+}
+data_brake [0] = 0;
+data_brake [1] = 1;
+set_speed = 0;
+data_steering[0] = 90;
+dir = 0;
+can_send();
+delay_s(1);
+data[0] = 3;
+while (!CANisTxReady());
+CANsendMessage(0b00000001011, data, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
+delay_ms(100);
+asm("reset");
+}
+}
+
+void can_send(void) {
+if (start_operation == 1) {
+
+while (CANisTxReady() != 1);
+CANsendMessage(0b00000000101, data_steering, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
+
+
+data_speed[0] = set_speed;
+data_speed[1] = (set_speed >> 8);
+data_speed[2] = dir;
+while (CANisTxReady() != 1);
+CANsendMessage(0b00000000011, data_speed, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
+
+
+data_brake[1] = 0;
+while (CANisTxReady() != 1);
+CANsendMessage(0b00000000100, data_brake, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
+} else {
+while (CANisTxReady() != 1);
+CANsendMessage(0b00000001110, data_correction, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
+}
+}
+
+void parallelo(void) {
+alignment_gap = abs(sensor_distance[0] - sensor_distance[1]);
+if (alignment_gap < 20) {
+if ((sensor_distance[0] < 30) && (sensor_distance[1] < 30)) {
+x = ((10)*(10) + (alignment_gap * alignment_gap));
+x = sqrt(x);
+z = alignment_gap / x;
+z = asin(z);
+z = z / 3.14159265358979323846 * 180;
+data_correction[0] = z;
+
+if (sensor_distance[0] < sensor_distance[1]) {
+data_correction[1] = 0;
+} else {
+data_correction[1] = 1;
+}
+if ((old_alignment_gap != alignment_gap) || (old_dir_correction != data_correction[1])) {
+old_alignment_gap = alignment_gap;
+old_dir_correction = data_correction[1];
+can_send();
+}
+}
+} else {
+data_correction[0] = 0;
+can_send();
+}
+}
+
+void matematica(void) {
+alfa = asin(((2 * raggio)-(larghezza / 2) - (bordo + (larghezza / 2))) / (2 * raggio));
+alfa = alfa / 3.14159265358979323846 * 180;
+beta = 90 - alfa;
+alfa = (alfa * 3.14159265358979323846) / 180;
+n = cos(alfa);
+n = 2 * raggio *n;
+prima_sterzata = 2 * 3.14159265358979323846 * raggio * beta / 360;
+K_var = raggio + (2 * larghezza / 3);
+J_var = raggio - (2 * larghezza / 3);
+Pmin = K_var * cos(asin((J_var / K_var)));
+}
+
+void can_interpreter(void) {
+left_speed = data_speed_rx[1];
+left_speed = ((left_speed << 8) | (data_speed_rx[0]));
+right_speed = data_speed_rx[3];
+right_speed = ((right_speed << 8) | (data_speed_rx[2]));
+actual_speed = (right_speed + left_speed) / 2;
+}
+
+void configurations(void) {
+LATA = 0x00;
+TRISA = 0b11110000;
+LATB = 0x00;
+TRISB = 0b10001010;
+LATC = 0x00;
+TRISC = 0b11111111;
+
+ADCON1 = 0xFF;
+CANInitialize(4, 6, 5, 1, 3, CAN_CONFIG_LINE_FILTER_OFF & CAN_CONFIG_SAMPLE_ONCE & CAN_CONFIG_ALL_VALID_MSG & CAN_CONFIG_DBL_BUFFER_ON);
+
+
+RCONbits.IPEN = 1;
+IPR3bits.RXB1IP = 0;
+IPR3bits.RXB0IP = 0;
+INTCON2bits.TMR0IP = 0;
+
+
+PIR3bits.RXB1IF = 0;
+PIR3bits.RXB0IF = 0;
+INTCONbits.INT0IF = 0;
+INTCONbits.TMR0IF = 0;
+
+
+
+PIE3bits.RXB1IE = 1;
+PIE3bits.RXB0IE = 1;
+INTCONbits.TMR0IE = 1;
+INTCONbits.INT0IE = 0;
+
+
+T0CON = 0x80;
+TMR0H = 0x34;
+TMR0L = 0xE0;
+T3CON = 0x11;
+
+INTCON2bits.INTEDG0 = 1;
+INTCONbits.GIEL = 1;
+INTCONbits.GIEH = 1;
+}

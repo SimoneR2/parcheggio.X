@@ -20,6 +20,7 @@
 #define tolleranza 5
 #define soglia1 4
 #define soglia2 10
+#define diff_sensor 10
 
 //Subroutines declarations
 void configurations(void);
@@ -43,7 +44,7 @@ BYTE data_correction [8] = 0;
 //Program variables
 bit dir = 0;
 volatile bit first = 0; //invia solo una volta il dato
-volatile bit old_data_correction = 0;
+volatile bit old_dir_correction = 0;
 volatile bit asd = 0;
 volatile bit avvicinamento = 0;
 volatile bit new_distance = 0;
@@ -73,7 +74,8 @@ unsigned int actual_speed = 0;
 
 //variabili per ultrasuoni
 volatile unsigned char MUX_index = 0;
-unsigned char MUX_select[8] = 0;
+volatile unsigned char MUX_select[8] = 0;
+volatile unsigned char counter = 0;
 volatile unsigned int pulse_time = 0;
 volatile unsigned int distance = 0;
 volatile unsigned char TMR3H_temp = 0;
@@ -135,11 +137,14 @@ __interrupt(low_priority) void ISR_Bassa(void) {
         if ((sensor_distance[MUX_index] < soglia2)&&(start_operation == 0)) {
             sensor_distance_short[0] = sensor_distance_short[0] | (0b00000001 << MUX_index);
         } else if ((sensor_distance[MUX_index] < soglia1)&&(start_operation == 1)&&(avvicinamento == 0)) {
-            data[1] = 0;
-            data[0] = 4;
-            while (!CANisTxReady());
-            CANsendMessage(PARK_ASSIST_STATE, data, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
-            RESET();
+            counter++;
+            if (counter > 10) {
+                data[1] = 0;
+                data[0] = 4;
+                while (!CANisTxReady());
+                CANsendMessage(PARK_ASSIST_STATE, data, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
+                RESET();
+            }
         } else {
             sensor_distance_short[0] = sensor_distance_short[0] & (~(0b00000001 << MUX_index));
         }
@@ -242,24 +247,8 @@ void main(void) {
             delay_ms(100);
             while (!CANisTxReady());
             PORTBbits.RB4 = ~PORTBbits.RB4;
-            CANsendMessage(0xAA, sensor_distance_short, 8, CAN_CONFIG_STD_MSG & CAN_REMOTE_TX_FRAME & CAN_TX_PRIORITY_0); //SENSOR_DISTANCE
-
-            //            for (unsigned char i = 0; i < 8; i++) {
-            //                if (sensor_distance_old[i] == sensor_distance_short[i]) {
-            //                    new_distance = 0;
-            //                } else {
-            //                    new_distance = 1;
-            //                }
-            //            }
-            //            if (new_distance == 1) {
-            //                while (!CANisTxReady());
-            //                CANsendMessage(0xAA, sensor_distance_short, 8, CAN_CONFIG_STD_MSG & CAN_REMOTE_TX_FRAME & CAN_TX_PRIORITY_0); //SENSOR_DISTANCE
-            //            }
-            //            for (unsigned char i = 0; i < 8; i++) {
-            //                sensor_distance_old[i] = sensor_distance_short[i];
-            //            }
+            CANsendMessage(SENSOR_DISTANCE, sensor_distance_short, 8, CAN_CONFIG_STD_MSG & CAN_REMOTE_TX_FRAME & CAN_TX_PRIORITY_0); //SENSOR_DISTANCE
         }
-
         park_search();
         can_interpreter();
         park_routine();
@@ -315,13 +304,12 @@ void park_routine(void) {
     avvicinamento = 0;
     data_correction[0] = 0;
     parallelo();
-    delay_ms(200);
 
     while ((asd == 1)&&(PORTBbits.RB5 == 1) && (activation == 1)) {
         delay_ms(200);
         PORTBbits.RB6 = ~PORTBbits.RB6;
         parallelo();
-        if (data_correction[0] > 50) {
+        if (data_correction[0] > 30) {
             data_correction[0] = 0;
         }
         while (!CANisTxReady());
@@ -425,7 +413,7 @@ void park_routine(void) {
 }
 
 void can_send(void) {
-    if (PORTBbits.RB5 == 1) {
+    if (start_operation == 1) {
         //Steering
         while (CANisTxReady() != 1);
         CANsendMessage(STEERING_CHANGE, data_steering, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
@@ -444,12 +432,6 @@ void can_send(void) {
     } else {
         while (CANisTxReady() != 1);
         CANsendMessage(STEERING_CORRECTION, data_correction, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
-
-        unsigned char data_correction1[];
-        data_correction1[0] = data_correction[0];
-        data_correction1[1] = 0;
-        while (CANisTxReady() != 1);
-        CANsendMessage(0xAA, data_correction1, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
     }
 }
 
@@ -457,13 +439,8 @@ void parallelo(void) {
     alignment_gap = abs(sensor_distance[0] - sensor_distance[1]);
     if (alignment_gap < 20) {
         if ((sensor_distance[0] < 30) && (sensor_distance[1] < 30)) {
-            //alignment_gap =10; //debug qua c'è il problema che anche aligment gap deve essere con valore float, che è diverso da quello int o simili.
-            //se scrivo 8 infatti il simulatore mi da un valore tipo 10^-44.....devo scrivere 8.0 e allora lo prende.
-            //bisogna vedere cosa fa il programma nelle altre parti e che non faccia casini con il float che gira (oppure bisogna fare una conversione...ma non so come...).
-
-            //            x = ((100) + (alignment_gap * alignment_gap));
-            //            x = sqrt(x);
-
+            x = ((diff_sensor)*(diff_sensor) + (alignment_gap * alignment_gap));
+            x = sqrt(x);
             z = alignment_gap / x;
             z = asin(z);
             z = z / M_PI * 180; //trasformazione da radianti a gradi
@@ -474,24 +451,16 @@ void parallelo(void) {
             } else {
                 data_correction[1] = 1;
             }
-            if ((old_alignment_gap != alignment_gap) || (old_data_correction != data_correction[1])) {
+            if ((old_alignment_gap != alignment_gap) || (old_dir_correction != data_correction[1])) {
                 old_alignment_gap = alignment_gap;
-                old_data_correction = data_correction[1];
+                old_dir_correction = data_correction[1];
                 can_send();
             }
-        } else if (data_correction[0] != old_data_correction) {
-            data_correction[0] = 0;
-            old_data_correction = 0;
-            can_send();
         }
     } else {
-        if (old_data_correction != 0) {
-            data_correction[0] = 0;
-            old_data_correction = 0;
-            can_send();
-        }
+        data_correction[0] = 0;
+        can_send();
     }
-
 }
 
 void matematica(void) {

@@ -39,7 +39,7 @@ FINAL_IMAGE=dist/${CND_CONF}/${IMAGE_TYPE}/parcheggio.X.${IMAGE_TYPE}.${OUTPUT_S
 endif
 
 ifeq ($(COMPARE_BUILD), true)
-COMPARISON_BUILD=--mafrlcsj
+COMPARISON_BUILD=
 else
 COMPARISON_BUILD=
 endif

@@ -19,7 +19,7 @@
 #define _XTAL_FREQ 16000000
 #define tolleranza 5
 #define soglia1 4
-#define soglia2 10
+#define soglia2 15
 #define diff_sensor 10
 
 //Subroutines declarations
@@ -33,7 +33,7 @@ void matematica(void);
 
 //CANbus variables
 CANmessage msg;
-BYTE data [8] = 0;
+volatile BYTE data [8] = 0;
 BYTE data_steering [8] = 0;
 BYTE data_speed [8] = 0;
 BYTE data_brake [8] = 0;
@@ -87,7 +87,7 @@ volatile unsigned char sensor_distance_short[8] = 0;
 unsigned char sensor_distance_old[8] = 0;
 
 //Variabili parcheggio
-float raggio = 60; //52
+float raggio = 55; //52
 float larghezza = 32;
 volatile float bordo = 0;
 float alfa = 0;
@@ -135,20 +135,19 @@ __interrupt(low_priority) void ISR_Bassa(void) {
         }
 
         if ((sensor_distance[MUX_index] < soglia2)&&(start_operation == 0)) {
-            sensor_distance_short[0] = sensor_distance_short[0] | (0b00000001 << MUX_index);
+            sensor_distance_short[0] = (sensor_distance_short[0] | (0b00000001 << MUX_index));
         } else if ((sensor_distance[MUX_index] < soglia1)&&(start_operation == 1)&&(avvicinamento == 0)) {
-            counter++;
-            if (counter > 3) {
-                if ((MUX_index == 0) || (MUX_index == 1) || (MUX_index == 2)) {//debug
-                    data[1] = 0;
-                    data[0] = 4;
-                    while (!CANisTxReady());
-                    CANsendMessage(PARK_ASSIST_STATE, data, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
-                    RESET();
-                }//debug
+            if ((MUX_index == 0) || (MUX_index == 1) || (MUX_index == 5) || (MUX_index == 6) || (MUX_index == 7)) {//debug
+                counter++;
             }
+            if (counter > 0) {
+                data[0] = 4; //debug
+                CANsendMessage(PARK_ASSIST_STATE, data, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
+                delay_ms(100);
+                RESET();
+            }//debug
         } else {
-            sensor_distance_short[0] = sensor_distance_short[0] & (~(0b00000001 << MUX_index));
+            sensor_distance_short[0] = (sensor_distance_short[0] & (~(0b00000001 << MUX_index)));
         }
 
         MUX_index++;
@@ -167,9 +166,10 @@ __interrupt(low_priority) void ISR_Bassa(void) {
         LATBbits.LATB0 = 0; //azzera LATB
         TRISBbits.RB0 = 1;
         INTCONbits.INT0IF = 0;
+        INTCON2bits.INTEDG0 = 1; //interrupt fronte di salita
         INTCONbits.INT0IE = 1;
         INTCONbits.TMR0IF = 0;
-        INTCON2bits.INTEDG0 = 1; //interrupt fronte di salita
+
     }
 
     //INTERRUPT CANBUS
@@ -246,7 +246,7 @@ void main(void) {
             delay_ms(100);
             while (!CANisTxReady());
             PORTBbits.RB4 = ~PORTBbits.RB4;
-            CANsendMessage(SENSOR_DISTANCE, sensor_distance_short, 8, CAN_CONFIG_STD_MSG & CAN_REMOTE_TX_FRAME & CAN_TX_PRIORITY_0); //SENSOR_DISTANCE
+            CANsendMessage(SENSOR_DISTANCE, sensor_distance_short, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0); //SENSOR_DISTANCE
         }
         park_search();
         can_interpreter();
@@ -347,7 +347,7 @@ void park_routine(void) {
         data_brake [0] = 3;
         data_brake [1] = 1;
         //while (distance_received1 == 0);
-        set_speed = 800;
+        set_speed = 200;
         dir = 0; //indietro
         data_steering[0] = 90;
         data_test[0] = ((60 + Pmin + tolleranza)-(n + 15));
@@ -365,7 +365,7 @@ void park_routine(void) {
 
         data_brake [0] = 3;
         data_brake [1] = 1;
-        set_speed = 1000;
+        set_speed = 200;
         dir = 0;
         data_steering[0] = 180;
         data_test[0] = prima_sterzata;
@@ -373,7 +373,7 @@ void park_routine(void) {
         CANsendMessage(DISTANCE_SET, data_test, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
         can_send();
         while (asd == 1);
-        set_speed = 1000;
+        set_speed = 200;
         data_steering[0] = 0;
         asd = 1;
         data_test[0] = prima_sterzata + 9;
@@ -387,14 +387,14 @@ void park_routine(void) {
         can_send();
         delay_s(1);
         avvicinamento = 1;
-        if (sensor_distance [2] > 20) {
+        if (sensor_distance [6] > 20) {
             data_brake [0] = 3;
             data_brake [1] = 1;
-            set_speed = 500;
+            set_speed = 200;
             data_steering[0] = 90;
             dir = 1;
             can_send();
-            while (sensor_distance [2] > 20);
+            while (sensor_distance [6] > 20);
         }
         data_brake [0] = 0;
         data_brake [1] = 1;
@@ -403,7 +403,7 @@ void park_routine(void) {
         dir = 0;
         can_send();
         delay_s(1);
-        data[0] = 3;
+        data[0] = 3; //debug
         while (!CANisTxReady());
         CANsendMessage(PARK_ASSIST_STATE, data, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
         delay_ms(100);

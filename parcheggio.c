@@ -18,9 +18,9 @@
 
 #define _XTAL_FREQ 16000000
 #define tolleranza 5
-#define soglia1 4
-#define soglia2 15
-#define diff_sensor 10
+#define soglia1 10
+#define soglia2 250
+#define diff_sensor 6
 
 //Subroutines declarations
 void configurations(void);
@@ -43,6 +43,7 @@ BYTE data_correction [8] = 0;
 
 //Program variables
 bit dir = 0;
+volatile bit MUX_toggle = 0; //per la funzione di anti collisione
 volatile bit first = 0; //invia solo una volta il dato
 volatile bit old_dir_correction = 0;
 volatile bit asd = 0;
@@ -134,23 +135,32 @@ __interrupt(low_priority) void ISR_Bassa(void) {
             sensor_distance[MUX_index] = 5000;
         }
 
-        if ((sensor_distance[MUX_index] < soglia2)&&(start_operation == 0)) {
-            sensor_distance_short[0] = (sensor_distance_short[0] | (0b00000001 << MUX_index));
-        } else if ((sensor_distance[MUX_index] < soglia1)&&(start_operation == 1)&&(avvicinamento == 0)) {
-            if ((MUX_index == 0) || (MUX_index == 1) || (MUX_index == 5) || (MUX_index == 6) || (MUX_index == 7)) {//debug
-                counter++;
+        if ((sensor_distance[MUX_index] < soglia2)&&(start_operation == 0)&&((MUX_index == 3) || (MUX_index == 6))) {
+            if (MUX_index == 3) {
+                sensor_distance_short[1] = sensor_distance[3];
+            } else {
+                sensor_distance_short[0] = sensor_distance[6];
             }
-            if (counter > 0) {
+        } else {
+            sensor_distance_short[MUX_index] = 255;
+        }
+        if ((sensor_distance[MUX_index] < soglia1)&&(start_operation == 1)&&(avvicinamento == 0)) {
+            counter++;
+            if (counter > 1) {
                 data[0] = 4; //debug
                 CANsendMessage(PARK_ASSIST_STATE, data, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
                 delay_ms(100);
                 RESET();
             }//debug
-        } else {
-            sensor_distance_short[0] = (sensor_distance_short[0] & (~(0b00000001 << MUX_index)));
         }
 
         MUX_index++;
+        if (activation == 0) {
+            unsigned char MUX_index_collision [] = {3, 6};
+            MUX_toggle = ~MUX_toggle;
+            MUX_index = MUX_index_collision[MUX_toggle];
+        }
+
         if (MUX_index == 8) {
             MUX_index = 0;
         }
@@ -243,10 +253,10 @@ void main(void) {
 
     while (1) {
         while (activation != 1) {
-            delay_ms(100);
+            delay_ms(10);
             while (!CANisTxReady());
             PORTBbits.RB4 = ~PORTBbits.RB4;
-            CANsendMessage(SENSOR_DISTANCE, sensor_distance_short, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0); //SENSOR_DISTANCE
+            CANsendMessage(SENSOR_DISTANCE, sensor_distance_short, 2, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0); //SENSOR_DISTANCE
         }
         park_search();
         can_interpreter();
@@ -347,7 +357,7 @@ void park_routine(void) {
         data_brake [0] = 3;
         data_brake [1] = 1;
         //while (distance_received1 == 0);
-        set_speed = 200;
+        set_speed = 300;
         dir = 0; //indietro
         data_steering[0] = 90;
         data_test[0] = ((60 + Pmin + tolleranza)-(n + 15));
@@ -365,7 +375,7 @@ void park_routine(void) {
 
         data_brake [0] = 3;
         data_brake [1] = 1;
-        set_speed = 200;
+        set_speed = 300;
         dir = 0;
         data_steering[0] = 180;
         data_test[0] = prima_sterzata;
@@ -373,7 +383,7 @@ void park_routine(void) {
         CANsendMessage(DISTANCE_SET, data_test, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
         can_send();
         while (asd == 1);
-        set_speed = 200;
+        set_speed = 300;
         data_steering[0] = 0;
         asd = 1;
         data_test[0] = prima_sterzata + 9;
@@ -390,7 +400,7 @@ void park_routine(void) {
         if (sensor_distance [6] > 20) {
             data_brake [0] = 3;
             data_brake [1] = 1;
-            set_speed = 200;
+            set_speed = 300;
             data_steering[0] = 90;
             dir = 1;
             can_send();

@@ -147,25 +147,25 @@ CAN_RX_BUFFER_2_OVFL 2
 [v i1___wmul __wmul `(ui  1 e 2 0 ]
 "15 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\Umul32.c
 [v ___lmul __lmul `(ul  1 e 4 0 ]
-"105 C:\Users\simone\Documents\GitHub\parcheggio.X\parcheggio.c
+"106 C:\Users\simone\Documents\GitHub\parcheggio.X\parcheggio.c
 [v _ISR_Alta ISR_Alta `IIH(v  1 e 0 0 ]
-"123
+"124
 [v _ISR_Bassa ISR_Bassa `IIL(v  1 e 0 0 ]
-"224
+"234
 [v _main main `(v  1 e 0 0 ]
-"257
+"267
 [v _park_search park_search `(v  1 e 0 0 ]
-"302
+"312
 [v _park_routine park_routine `(v  1 e 0 0 ]
-"414
+"424
 [v _can_send can_send `(v  1 e 0 0 ]
-"437
+"447
 [v _parallelo parallelo `(v  1 e 0 0 ]
-"465
+"475
 [v _matematica matematica `(v  1 e 0 0 ]
-"478
+"488
 [v _can_interpreter can_interpreter `(v  1 e 0 0 ]
-"486
+"496
 [v _configurations configurations `(v  1 e 0 0 ]
 "49 C:\Users\simone/Desktop/LaurTec_PIC_libraries_v_3.3.1/src\delay.c
 [v _delay_quartz_frequency_value delay_quartz_frequency_value `VEuc  1 e 1 0 ]
@@ -1398,121 +1398,123 @@ CAN_RX_BUFFER_2_OVFL 2
 "45
 [v _dir dir `b  1 e 0 0 ]
 "46
-[v _first first `VEb  1 e 0 0 ]
+[v _MUX_toggle MUX_toggle `VEb  1 e 0 0 ]
 "47
-[v _old_dir_correction old_dir_correction `VEb  1 e 0 0 ]
+[v _first first `VEb  1 e 0 0 ]
 "48
-[v _asd asd `VEb  1 e 0 0 ]
+[v _old_dir_correction old_dir_correction `VEb  1 e 0 0 ]
 "49
-[v _avvicinamento avvicinamento `VEb  1 e 0 0 ]
+[v _asd asd `VEb  1 e 0 0 ]
 "50
-[v _new_distance new_distance `VEb  1 e 0 0 ]
+[v _avvicinamento avvicinamento `VEb  1 e 0 0 ]
 "51
-[v _distance_error distance_error `VEb  1 e 0 0 ]
+[v _new_distance new_distance `VEb  1 e 0 0 ]
 "52
-[v _distance_wait distance_wait `VEb  1 e 0 0 ]
+[v _distance_error distance_error `VEb  1 e 0 0 ]
 "53
-[v _activation activation `VEb  1 e 0 0 ]
+[v _distance_wait distance_wait `VEb  1 e 0 0 ]
 "54
-[v _request_sent request_sent `VEb  1 e 0 0 ]
+[v _activation activation `VEb  1 e 0 0 ]
 "55
-[v _request_sent1 request_sent1 `VEb  1 e 0 0 ]
+[v _request_sent request_sent `VEb  1 e 0 0 ]
 "56
-[v _distance_received distance_received `VEb  1 e 0 0 ]
+[v _request_sent1 request_sent1 `VEb  1 e 0 0 ]
 "57
-[v _distance_received1 distance_received1 `VEb  1 e 0 0 ]
+[v _distance_received distance_received `VEb  1 e 0 0 ]
 "58
-[v _start_operation start_operation `VEb  1 e 0 0 ]
+[v _distance_received1 distance_received1 `VEb  1 e 0 0 ]
 "59
-[v _steering_correction_dir steering_correction_dir `VEb  1 e 0 0 ]
+[v _start_operation start_operation `VEb  1 e 0 0 ]
 "60
+[v _steering_correction_dir steering_correction_dir `VEb  1 e 0 0 ]
+"61
 [v _data_test data_test `[8]uc  1 e 8 0 ]
-"62
+"63
 [v _set_speed set_speed `ui  1 e 2 0 ]
-"64
-[v _alignment_gap alignment_gap `f  1 e 4 0 ]
 "65
+[v _alignment_gap alignment_gap `f  1 e 4 0 ]
+"66
 [v _old_alignment_gap old_alignment_gap `f  1 e 4 0 ]
-"68
-[v _distance_dx distance_dx `VEui  1 e 2 0 ]
 "69
-[v _distance_sx distance_sx `VEui  1 e 2 0 ]
+[v _distance_dx distance_dx `VEui  1 e 2 0 ]
 "70
-[v _distance_average distance_average `VEui  1 e 2 0 ]
+[v _distance_sx distance_sx `VEui  1 e 2 0 ]
 "71
-[v _right_speed right_speed `ui  1 e 2 0 ]
+[v _distance_average distance_average `VEui  1 e 2 0 ]
 "72
-[v _left_speed left_speed `ui  1 e 2 0 ]
+[v _right_speed right_speed `ui  1 e 2 0 ]
 "73
+[v _left_speed left_speed `ui  1 e 2 0 ]
+"74
 [v _actual_speed actual_speed `ui  1 e 2 0 ]
-"76
-[v _MUX_index MUX_index `VEuc  1 e 1 0 ]
 "77
-[v _MUX_select MUX_select `VE[8]uc  1 e 8 0 ]
+[v _MUX_index MUX_index `VEuc  1 e 1 0 ]
 "78
-[v _counter counter `VEuc  1 e 1 0 ]
+[v _MUX_select MUX_select `VE[8]uc  1 e 8 0 ]
 "79
-[v _pulse_time pulse_time `VEui  1 e 2 0 ]
+[v _counter counter `VEuc  1 e 1 0 ]
 "80
-[v _distance distance `VEui  1 e 2 0 ]
+[v _pulse_time pulse_time `VEui  1 e 2 0 ]
 "81
-[v _TMR3H_temp TMR3H_temp `VEuc  1 e 1 0 ]
+[v _distance distance `VEui  1 e 2 0 ]
 "82
-[v _TMR3L_temp TMR3L_temp `VEuc  1 e 1 0 ]
+[v _TMR3H_temp TMR3H_temp `VEuc  1 e 1 0 ]
 "83
+[v _TMR3L_temp TMR3L_temp `VEuc  1 e 1 0 ]
+"84
 [v _timerValue2 timerValue2 `VEui  1 e 2 0 ]
-"85
-[v _sensor_distance sensor_distance `VE[8]ui  1 e 16 0 ]
 "86
+[v _sensor_distance sensor_distance `VE[8]ui  1 e 16 0 ]
+"87
 [v _sensor_distance_short sensor_distance_short `VE[8]uc  1 e 8 0 ]
-"90
-[v _raggio raggio `f  1 e 4 0 ]
 "91
-[v _larghezza larghezza `f  1 e 4 0 ]
+[v _raggio raggio `f  1 e 4 0 ]
 "92
-[v _bordo bordo `VEf  1 e 4 0 ]
+[v _larghezza larghezza `f  1 e 4 0 ]
 "93
-[v _alfa alfa `f  1 e 4 0 ]
+[v _bordo bordo `VEf  1 e 4 0 ]
 "94
-[v _beta beta `f  1 e 4 0 ]
+[v _alfa alfa `f  1 e 4 0 ]
 "95
-[v _n n `f  1 e 4 0 ]
+[v _beta beta `f  1 e 4 0 ]
 "96
-[v _prima_sterzata prima_sterzata `f  1 e 4 0 ]
+[v _n n `f  1 e 4 0 ]
 "97
-[v _K_var K_var `f  1 e 4 0 ]
+[v _prima_sterzata prima_sterzata `f  1 e 4 0 ]
 "98
-[v _J_var J_var `f  1 e 4 0 ]
+[v _K_var K_var `f  1 e 4 0 ]
 "99
+[v _J_var J_var `f  1 e 4 0 ]
+"100
 [v _Pmin Pmin `f  1 e 4 0 ]
-"102
-[v _x x `f  1 e 4 0 ]
 "103
+[v _x x `f  1 e 4 0 ]
+"104
 [v _z z `f  1 e 4 0 ]
-"224
+"234
 [v _main main `(v  1 e 0 0 ]
 {
-"255
+"265
 } 0
-"257
+"267
 [v _park_search park_search `(v  1 e 0 0 ]
 {
-"300
+"310
 } 0
-"302
+"312
 [v _park_routine park_routine `(v  1 e 0 0 ]
 {
-"412
+"422
 } 0
-"437
+"447
 [v _parallelo parallelo `(v  1 e 0 0 ]
 {
-"463
+"473
 } 0
-"414
+"424
 [v _can_send can_send `(v  1 e 0 0 ]
 {
-"435
+"445
 } 0
 "294 C:\Users\simone/Desktop/LaurTec_PIC_libraries_v_3.3.1/inc\CANlib.h
 [v _CANsendMessage CANsendMessage `(v  1 e 0 0 ]
@@ -1546,10 +1548,10 @@ CAN_RX_BUFFER_2_OVFL 2
 [v ___awtofl@c c `i  1 p 2 33 ]
 "42
 } 0
-"465 C:\Users\simone\Documents\GitHub\parcheggio.X\parcheggio.c
+"475 C:\Users\simone\Documents\GitHub\parcheggio.X\parcheggio.c
 [v _matematica matematica `(v  1 e 0 0 ]
 {
-"476
+"486
 } 0
 "13 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\cos.c
 [v _cos cos `(d  1 e 4 0 ]
@@ -1772,10 +1774,10 @@ CAN_RX_BUFFER_2_OVFL 2
 [v ___flpack@sign sign `uc  1 p 1 28 ]
 "87
 } 0
-"486 C:\Users\simone\Documents\GitHub\parcheggio.X\parcheggio.c
+"496 C:\Users\simone\Documents\GitHub\parcheggio.X\parcheggio.c
 [v _configurations configurations `(v  1 e 0 0 ]
 {
-"525
+"535
 } 0
 "218 C:\Users\simone/Desktop/LaurTec_PIC_libraries_v_3.3.1/inc\CANlib.h
 [v _CANInitialize CANInitialize `(v  1 e 0 0 ]
@@ -1833,19 +1835,23 @@ CAN_RX_BUFFER_2_OVFL 2
 [v CANOperationMode@mode mode `E16348  1 a 1 23 ]
 "211
 } 0
-"478 C:\Users\simone\Documents\GitHub\parcheggio.X\parcheggio.c
+"488 C:\Users\simone\Documents\GitHub\parcheggio.X\parcheggio.c
 [v _can_interpreter can_interpreter `(v  1 e 0 0 ]
 {
-"484
+"494
 } 0
-"123
+"124
 [v _ISR_Bassa ISR_Bassa `IIL(v  1 e 0 0 ]
 {
-"213
-[v ISR_Bassa@i i `uc  1 a 1 38 ]
+"223
+[v ISR_Bassa@i i `uc  1 a 1 40 ]
+"159
+[v ISR_Bassa@MUX_index_collision MUX_index_collision `[2]uc  1 a 2 37 ]
+"168
+[v ISR_Bassa@PORTA_temp PORTA_temp `uc  1 a 1 39 ]
 "158
-[v ISR_Bassa@PORTA_temp PORTA_temp `uc  1 a 1 37 ]
-"222
+[v ISR_Bassa@F16872 F16872 `[2]uc  1 s 2 F16872 ]
+"232
 } 0
 "61 C:\Users\simone/Desktop/LaurTec_PIC_libraries_v_3.3.1/src\delay.c
 [v i1_delay_ms delay_ms `(v  1 e 0 0 ]
@@ -1883,10 +1889,10 @@ CAN_RX_BUFFER_2_OVFL 2
 [v CANreceiveMessage@msg msg `*.39S853  1 p 2 0 ]
 "634
 } 0
-"105 C:\Users\simone\Documents\GitHub\parcheggio.X\parcheggio.c
+"106 C:\Users\simone\Documents\GitHub\parcheggio.X\parcheggio.c
 [v _ISR_Alta ISR_Alta `IIH(v  1 e 0 0 ]
 {
-"121
+"122
 } 0
 "8 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\lwdiv.c
 [v ___lwdiv __lwdiv `(ui  1 e 2 0 ]

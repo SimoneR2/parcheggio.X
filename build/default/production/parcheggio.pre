@@ -20097,6 +20097,7 @@ BYTE data_correction [8] = 0;
 
 
 bit dir = 0;
+volatile bit MUX_toggle = 0;
 volatile bit first = 0;
 volatile bit old_dir_correction = 0;
 volatile bit asd = 0;
@@ -20188,23 +20189,32 @@ if (distance_error == 1) {
 sensor_distance[MUX_index] = 5000;
 }
 
-if ((sensor_distance[MUX_index] < 15)&&(start_operation == 0)) {
-sensor_distance_short[0] = (sensor_distance_short[0] | (0b00000001 << MUX_index));
-} else if ((sensor_distance[MUX_index] < 4)&&(start_operation == 1)&&(avvicinamento == 0)) {
-if ((MUX_index == 0) || (MUX_index == 1) || (MUX_index == 5) || (MUX_index == 6) || (MUX_index == 7)) {
-counter++;
+if ((sensor_distance[MUX_index] < 250)&&(start_operation == 0)&&((MUX_index == 3) || (MUX_index == 6))) {
+if (MUX_index == 3) {
+sensor_distance_short[1] = sensor_distance[3];
+} else {
+sensor_distance_short[0] = sensor_distance[6];
 }
-if (counter > 0) {
+} else {
+sensor_distance_short[MUX_index] = 255;
+}
+if ((sensor_distance[MUX_index] < 10)&&(start_operation == 1)&&(avvicinamento == 0)) {
+counter++;
+if (counter > 1) {
 data[0] = 4;
 CANsendMessage(0b00000001101, data, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
 delay_ms(100);
 asm("reset");
 }
-} else {
-sensor_distance_short[0] = (sensor_distance_short[0] & (~(0b00000001 << MUX_index)));
 }
 
 MUX_index++;
+if (activation == 0) {
+unsigned char MUX_index_collision [] = {3, 6};
+MUX_toggle = ~MUX_toggle;
+MUX_index = MUX_index_collision[MUX_toggle];
+}
+
 if (MUX_index == 8) {
 MUX_index = 0;
 }
@@ -20297,10 +20307,10 @@ delay_ms(500);
 
 while (1) {
 while (activation != 1) {
-delay_ms(100);
+delay_ms(10);
 while (!CANisTxReady());
 PORTBbits.RB4 = ~PORTBbits.RB4;
-CANsendMessage(0b00000010001, sensor_distance_short, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
+CANsendMessage(0b00000010001, sensor_distance_short, 2, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
 }
 park_search();
 can_interpreter();
@@ -20401,7 +20411,7 @@ delay_s(1);
 data_brake [0] = 3;
 data_brake [1] = 1;
 
-set_speed = 200;
+set_speed = 300;
 dir = 0;
 data_steering[0] = 90;
 data_test[0] = ((60 + Pmin + 5)-(n + 15));
@@ -20419,7 +20429,7 @@ delay_s(1);
 
 data_brake [0] = 3;
 data_brake [1] = 1;
-set_speed = 200;
+set_speed = 300;
 dir = 0;
 data_steering[0] = 180;
 data_test[0] = prima_sterzata;
@@ -20427,7 +20437,7 @@ asd = 1;
 CANsendMessage(0b00000001111, data_test, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
 can_send();
 while (asd == 1);
-set_speed = 200;
+set_speed = 300;
 data_steering[0] = 0;
 asd = 1;
 data_test[0] = prima_sterzata + 9;
@@ -20444,7 +20454,7 @@ avvicinamento = 1;
 if (sensor_distance [6] > 20) {
 data_brake [0] = 3;
 data_brake [1] = 1;
-set_speed = 200;
+set_speed = 300;
 data_steering[0] = 90;
 dir = 1;
 can_send();
@@ -20492,7 +20502,7 @@ void parallelo(void) {
 alignment_gap = abs(sensor_distance[0] - sensor_distance[1]);
 if (alignment_gap < 30) {
 if ((sensor_distance[0] < 30) && (sensor_distance[1] < 30)) {
-x = (((10)*(10)) + ((alignment_gap * alignment_gap)));
+x = (((6)*(6)) + ((alignment_gap * alignment_gap)));
 x = sqrt(x);
 z = alignment_gap / x;
 z = asin(z);

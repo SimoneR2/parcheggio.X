@@ -2,7 +2,7 @@
  build/default/production/parcheggio.p1:  \
  parcheggio.c  \
 idCan.h  \
-../../../Desktop/LaurTec_PIC_libraries_v_3.3.1/inc/delay.h  \
+../LaurTec_PIC_libraries_v_3.3.0/inc/delay.h  \
+../LaurTec_PIC_libraries_v_3.3.0/inc/CANlib.h  \
 pic_config.h  \
-../../../Desktop/LaurTec_PIC_libraries_v_3.3.1/inc/CANlib.h  \
-../../../Desktop/LaurTec_PIC_libraries_v_3.3.1/src/delay.c 
+../LaurTec_PIC_libraries_v_3.3.0/src/delay.c 

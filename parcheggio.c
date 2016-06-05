@@ -27,22 +27,21 @@ void configurations(void);
 void park_search(void);
 void park_routine(void);
 void can_send(void);
-void can_interpreter(void);
 void parallelo(void);
 void matematica(void);
 
 //CANbus variables
 CANmessage msg;
 volatile BYTE data [8] = 0;
-BYTE data_steering [8] = 0;
-BYTE data_speed [8] = 0;
-BYTE data_brake [8] = 0;
-BYTE data_speed_rx[8] = 0;
-BYTE distance_set [8] = 0;
-BYTE data_correction [8] = 0;
+volatile BYTE data_steering [8] = 0;
+volatile BYTE data_speed [8] = 0;
+volatile BYTE data_brake [8] = 0;
+volatile BYTE data_speed_rx[8] = 0;
+volatile BYTE distance_set [8] = 0;
+volatile BYTE data_correction [8] = 0;
 
 //Program variables
-bit dir = 0;
+volatile bit dir = 0;
 volatile bit MUX_toggle = 0; //per la funzione di anti collisione
 volatile bit first = 0; //invia solo una volta il dato
 volatile bit old_dir_correction = 0;
@@ -58,20 +57,19 @@ volatile bit distance_received = 0;
 volatile bit distance_received1 = 0;
 volatile bit start_operation = 0;
 volatile bit steering_correction_dir = 0;
-unsigned char data_test[8];
-unsigned char steering_correction = 0;
-unsigned int set_speed = 0;
-int spazio_parcheggio = 100;
-float alignment_gap = 0;
-float old_alignment_gap = 0;
+volatile unsigned char data_test[8];
+volatile unsigned char steering_correction = 0;
+volatile unsigned int set_speed = 0;
+volatile float alignment_gap = 0;
+volatile float old_alignment_gap = 0;
 
 //variabili da abs
 volatile unsigned int distance_dx = 0; //distanza percorsa dx(da abs)
 volatile unsigned int distance_sx = 0; //distanza percorsa sx(da abs)
 volatile unsigned int distance_average = 0; //media distanza
-unsigned int right_speed = 0;
-unsigned int left_speed = 0;
-unsigned int actual_speed = 0;
+volatile unsigned int right_speed = 0;
+volatile unsigned int left_speed = 0;
+volatile unsigned int actual_speed = 0;
 
 //variabili per ultrasuoni
 volatile unsigned char MUX_index = 0;
@@ -84,24 +82,24 @@ volatile unsigned char TMR3L_temp = 0;
 volatile unsigned int timerValue2 = 0;
 
 volatile unsigned int sensor_distance[8] = 0;
+volatile unsigned char sensor_distance_old[8] = 0;
 volatile unsigned char sensor_distance_short[8] = 0;
-unsigned char sensor_distance_old[8] = 0;
 
 //Variabili parcheggio
-float raggio = 45; //52
-float larghezza = 32;
+volatile float raggio = 45; //52
+volatile float larghezza = 32;
 volatile float bordo = 0;
-float alfa = 0;
-float beta = 0;
-float n = 0;
-float prima_sterzata = 0;
-float K_var = 0;
-float J_var = 0;
-float Pmin = 0;
+volatile float alfa = 0;
+volatile float beta = 0;
+volatile float n = 0;
+volatile float prima_sterzata = 0;
+volatile float K_var = 0;
+volatile float J_var = 0;
+volatile float Pmin = 0;
 
 //[??]
-float x = 0; //DEBUG
-float z = 0; //DEBUG
+volatile float x = 0; //DEBUG
+volatile float z = 0; //DEBUG
 
 __interrupt(high_priority) void ISR_Alta(void) {
     if (INTCON2bits.INTEDG0 == 1) {
@@ -258,14 +256,22 @@ void main(void) {
             PORTBbits.RB4 = ~PORTBbits.RB4;
             CANsendMessage(SENSOR_DISTANCE, sensor_distance_short, 2, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0); //SENSOR_DISTANCE
         }
+
         park_search();
-        can_interpreter();
+
+        left_speed = data_speed_rx[1];
+        left_speed = ((left_speed << 8) | (data_speed_rx[0]));
+        right_speed = data_speed_rx[3];
+        right_speed = ((right_speed << 8) | (data_speed_rx[2]));
+        actual_speed = (right_speed + left_speed) / 2;
+
         park_routine();
     }
 }
 
 void park_search(void) {
     while ((activation == 1) && (PORTBbits.RB5 == 0)) {
+
         parallelo();
 
         if (sensor_distance[0] > 50) {
@@ -312,6 +318,7 @@ void park_search(void) {
 void park_routine(void) {
     avvicinamento = 0;
     data_correction[0] = 0;
+
     parallelo();
 
     while ((asd == 1)&&(PORTBbits.RB5 == 1) && (activation == 1)) {
@@ -347,11 +354,13 @@ void park_routine(void) {
         //CANsendMessage(COUNT_STOP, data, 8, CAN_CONFIG_STD_MSG & CAN_REMOTE_TX_FRAME & CAN_TX_PRIORITY_0);
         bordo = (sensor_distance[0] + sensor_distance[1]) / 2;
         matematica();
+
         set_speed = 0;
         data_steering[0] = 90;
         data_brake [0] = 0;
         data_brake [1] = 1;
         can_send();
+
         delay_s(1);
 
         data_brake [0] = 3;
@@ -364,6 +373,7 @@ void park_routine(void) {
         asd = 1;
         CANsendMessage(DISTANCE_SET, data_test, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
         can_send();
+
         while (asd == 1);
 
         set_speed = 0;
@@ -371,6 +381,7 @@ void park_routine(void) {
         data_brake [0] = 0;
         data_brake [1] = 1;
         can_send();
+
         delay_s(1);
 
         data_brake [0] = 3;
@@ -382,20 +393,26 @@ void park_routine(void) {
         asd = 1;
         CANsendMessage(DISTANCE_SET, data_test, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
         can_send();
+
         while (asd == 1);
+
         set_speed = 300;
         data_steering[0] = 0;
         asd = 1;
         data_test[0] = prima_sterzata + 9;
         CANsendMessage(DISTANCE_SET, data_test, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
         can_send();
+
         while (asd == 1);
+
         data_brake [0] = 0;
         data_brake [1] = 1;
         set_speed = 0;
         data_steering[0] = 90;
         can_send();
+
         delay_s(1);
+
         avvicinamento = 1;
         if (sensor_distance [6] > 20) {
             data_brake [0] = 3;
@@ -412,7 +429,9 @@ void park_routine(void) {
         data_steering[0] = 90;
         dir = 0;
         can_send();
+
         delay_s(1);
+
         data[0] = 3; //debug
         while (!CANisTxReady());
         CANsendMessage(PARK_ASSIST_STATE, data, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
@@ -483,14 +502,6 @@ void matematica(void) {
     K_var = raggio + (2 * larghezza / 3);
     J_var = raggio - (2 * larghezza / 3);
     Pmin = K_var * cos(asin((J_var / K_var)));
-}
-
-void can_interpreter(void) {
-    left_speed = data_speed_rx[1];
-    left_speed = ((left_speed << 8) | (data_speed_rx[0]));
-    right_speed = data_speed_rx[3];
-    right_speed = ((right_speed << 8) | (data_speed_rx[2]));
-    actual_speed = (right_speed + left_speed) / 2;
 }
 
 void configurations(void) {

@@ -32,7 +32,7 @@
         <targetPluginBoard></targetPluginBoard>
         <platformTool>Simulator</platformTool>
         <languageToolchain>XC8</languageToolchain>
-        <languageToolchainVersion>1.37</languageToolchainVersion>
+        <languageToolchainVersion>1.34</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <compileType>
@@ -61,7 +61,7 @@
         <property key="asmlist" value="true"/>
         <property key="define-macros" value=""/>
         <property key="extra-include-directories"
-                  value="..\LaurTec_PIC_libraries_v_3.3.0\inc;..\LaurTec_PIC_libraries_v_3.3.0\src"/>
+                  value="..\..\..\Desktop\LaurTec_PIC_libraries_v_3.3.1\inc;..\..\..\Desktop\LaurTec_PIC_libraries_v_3.3.1\src"/>
         <property key="identifier-length" value="255"/>
         <property key="operation-mode" value="free"/>
         <property key="opt-xc8-compiler-strict_ansi" value="false"/>
@@ -80,7 +80,7 @@
         <property key="use-cci" value="true"/>
         <property key="use-iar" value="false"/>
         <property key="verbose" value="false"/>
-        <property key="warning-level" value="0"/>
+        <property key="warning-level" value="-3"/>
         <property key="what-to-do" value="ignore"/>
       </HI-TECH-COMP>
       <HI-TECH-LINK>

@@ -872,9 +872,9 @@ cstackBANK0 60 E7 BANK0 60 1
 bssBANK1 100 1F7 BANK1 100 1
 text35 D52 5E28 CODE D52 0
 %locals
-dist/default/production\parcheggio.X.production.obj
+dist/default/debug\parcheggio.X.debug.obj
 C:\Program Files (x86)\Microchip\xc8\v1.34\include\pic18f2685.h
-C:\Users\simone\AppData\Local\Temp\s584.
+C:\Users\simone\AppData\Local\Temp\s5io.
 1604 5A20 0 CODE 0
 1606 5A20 0 CODE 0
 1609 5A20 0 CODE 0

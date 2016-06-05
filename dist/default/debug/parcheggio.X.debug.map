@@ -3,10 +3,10 @@ Microchip MPLAB XC8 Compiler V1.34 ()
 Linker command line:
 
 -W-3 --edf=C:\Program Files (x86)\Microchip\xc8\v1.34\dat\en_msgs.txt -cs \
-  -h+dist/default/production\parcheggio.X.production.sym \
-  --cmf=dist/default/production\parcheggio.X.production.cmf -z -Q18F2685 \
-  -oC:\Users\simone\AppData\Local\Temp\s584.6 \
-  -Mdist/default/production/parcheggio.X.production.map -E1 -ver=XC8 \
+  -h+dist/default/debug\parcheggio.X.debug.sym \
+  --cmf=dist/default/debug\parcheggio.X.debug.cmf -z -Q18F2685 \
+  -oC:\Users\simone\AppData\Local\Temp\s5io.6 \
+  -Mdist/default/debug/parcheggio.X.debug.map -E1 -ver=XC8 \
   -ASTACK=01F8h-0cffh -pstack=STACK -ACODE=00h-017FFFh -ACONST=00h-017FFFh \
   -ASMALLCONST=0D00h-0DFFhx371 -AMEDIUMCONST=0D00h-0FFFFh,010D00h-017FFFh \
   -ACOMRAM=01h-05Fh -AABS1=00h-0CFFh -ABIGRAM=01h-0CFFh \
@@ -25,8 +25,8 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -pparam0=BANK0 \
-  C:\Users\simone\AppData\Local\Temp\s584.obj \
-  dist/default/production\parcheggio.X.production.obj 
+  C:\Users\simone\AppData\Local\Temp\s5io.obj \
+  dist/default/debug\parcheggio.X.debug.obj 
 
 Object code version is 3.11
 
@@ -38,12 +38,12 @@ Call graph: (short form)
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\simone\AppData\Local\Temp\s584.obj
+C:\Users\simone\AppData\Local\Temp\s5io.obj
                 end_init                            348      348        4        C       0
                 reset_vec                             0        0        4        0       0
                 idloc                            200000   200000        8   200000       0
                 config                           300000   300000        E   300000       0
-dist/default/production\parcheggio.X.production.obj
+dist/default/debug\parcheggio.X.debug.obj
                 intcodelo                            18       18      330        C       0
                 intcode                               8        8       10        4       0
                 smallconst                          D00      D00       52      680       0

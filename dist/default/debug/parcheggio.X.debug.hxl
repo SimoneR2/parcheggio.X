@@ -7,7 +7,7 @@
   200008h - 2FFFFFh
   30000Eh - 30003Fh
   
- dist/default/production\parcheggio.X.production.hex ranges:
+ dist/default/debug\parcheggio.X.debug.hex ranges:
   0h - 3h
   8h - 34Bh
   D00h - 5E29h
@@ -25,7 +25,7 @@
   T = Trailing code
   & = Find & replace opcode
   X = Find & delete opcode
-  1 = dist/default/production\parcheggio.X.production.hex
+  1 = dist/default/debug\parcheggio.X.debug.hex
 00000000: 1111----11111111111111111111111111111111111111111111111111111111
 00000040: 1111111111111111111111111111111111111111111111111111111111111111
 00000080: 1111111111111111111111111111111111111111111111111111111111111111

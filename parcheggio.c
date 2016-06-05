@@ -88,7 +88,7 @@ volatile unsigned char sensor_distance_short[8] = 0;
 unsigned char sensor_distance_old[8] = 0;
 
 //Variabili parcheggio
-float raggio = 55; //52
+float raggio = 45; //52
 float larghezza = 32;
 volatile float bordo = 0;
 float alfa = 0;

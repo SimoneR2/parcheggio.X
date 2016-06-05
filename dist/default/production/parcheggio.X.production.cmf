@@ -11,7 +11,7 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\simone\AppData\Local\Temp\s1nc.obj
+$C:\Users\simone\AppData\Local\Temp\s3mo.obj
 idloc IDLOC 0 200000 200000 8 1
 reset_vec CODE 0 0 0 4 1
 end_init CODE 0 33C 33C 4 1
@@ -1468,68 +1468,68 @@ FE4 text35 CODE >799:C:\Users\simone/Desktop/LaurTec_PIC_libraries_v_3.3.1/inc\C
 59A4 text44 CODE >29:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\lwdiv.c
 59A4 text44 CODE >30:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\lwdiv.c
 59AC text44 CODE >31:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\lwdiv.c
-59AE cinit CODE >1606:C:\Users\simone\AppData\Local\Temp\s1nc.
-59AE cinit CODE >1608:C:\Users\simone\AppData\Local\Temp\s1nc.
-59AE cinit CODE >1611:C:\Users\simone\AppData\Local\Temp\s1nc.
-59AE cinit CODE >1846:C:\Users\simone\AppData\Local\Temp\s1nc.
-59B2 cinit CODE >1847:C:\Users\simone\AppData\Local\Temp\s1nc.
-59B4 cinit CODE >1848:C:\Users\simone\AppData\Local\Temp\s1nc.
-59B4 cinit CODE >1849:C:\Users\simone\AppData\Local\Temp\s1nc.
-59B6 cinit CODE >1850:C:\Users\simone\AppData\Local\Temp\s1nc.
-59B8 cinit CODE >1851:C:\Users\simone\AppData\Local\Temp\s1nc.
-59BA cinit CODE >1854:C:\Users\simone\AppData\Local\Temp\s1nc.
-59BE cinit CODE >1855:C:\Users\simone\AppData\Local\Temp\s1nc.
-59C0 cinit CODE >1856:C:\Users\simone\AppData\Local\Temp\s1nc.
-59C0 cinit CODE >1857:C:\Users\simone\AppData\Local\Temp\s1nc.
-59C2 cinit CODE >1858:C:\Users\simone\AppData\Local\Temp\s1nc.
-59C4 cinit CODE >1859:C:\Users\simone\AppData\Local\Temp\s1nc.
-59C6 cinit CODE >1862:C:\Users\simone\AppData\Local\Temp\s1nc.
-59C8 cinit CODE >1863:C:\Users\simone\AppData\Local\Temp\s1nc.
-59CA cinit CODE >1866:C:\Users\simone\AppData\Local\Temp\s1nc.
-59CE cinit CODE >1867:C:\Users\simone\AppData\Local\Temp\s1nc.
-59D0 cinit CODE >1868:C:\Users\simone\AppData\Local\Temp\s1nc.
-59D0 cinit CODE >1869:C:\Users\simone\AppData\Local\Temp\s1nc.
-59D2 cinit CODE >1870:C:\Users\simone\AppData\Local\Temp\s1nc.
-59D4 cinit CODE >1871:C:\Users\simone\AppData\Local\Temp\s1nc.
-59D6 cinit CODE >1876:C:\Users\simone\AppData\Local\Temp\s1nc.
-59D8 cinit CODE >1877:C:\Users\simone\AppData\Local\Temp\s1nc.
-59DA cinit CODE >1878:C:\Users\simone\AppData\Local\Temp\s1nc.
-59DC cinit CODE >1879:C:\Users\simone\AppData\Local\Temp\s1nc.
-59DE cinit CODE >1880:C:\Users\simone\AppData\Local\Temp\s1nc.
-59E0 cinit CODE >1881:C:\Users\simone\AppData\Local\Temp\s1nc.
-59E2 cinit CODE >1882:C:\Users\simone\AppData\Local\Temp\s1nc.
-59E6 cinit CODE >1883:C:\Users\simone\AppData\Local\Temp\s1nc.
-59EA cinit CODE >1884:C:\Users\simone\AppData\Local\Temp\s1nc.
-59EA cinit CODE >1885:C:\Users\simone\AppData\Local\Temp\s1nc.
-59EC cinit CODE >1886:C:\Users\simone\AppData\Local\Temp\s1nc.
-59F0 cinit CODE >1887:C:\Users\simone\AppData\Local\Temp\s1nc.
-59F2 cinit CODE >1888:C:\Users\simone\AppData\Local\Temp\s1nc.
-59F4 cinit CODE >1889:C:\Users\simone\AppData\Local\Temp\s1nc.
-59F6 cinit CODE >1893:C:\Users\simone\AppData\Local\Temp\s1nc.
-59F8 cinit CODE >1894:C:\Users\simone\AppData\Local\Temp\s1nc.
-59FA cinit CODE >1895:C:\Users\simone\AppData\Local\Temp\s1nc.
-59FC cinit CODE >1896:C:\Users\simone\AppData\Local\Temp\s1nc.
-59FE cinit CODE >1897:C:\Users\simone\AppData\Local\Temp\s1nc.
-5A00 cinit CODE >1898:C:\Users\simone\AppData\Local\Temp\s1nc.
-5A02 cinit CODE >1899:C:\Users\simone\AppData\Local\Temp\s1nc.
-5A04 cinit CODE >1900:C:\Users\simone\AppData\Local\Temp\s1nc.
-5A08 cinit CODE >1904:C:\Users\simone\AppData\Local\Temp\s1nc.
-5A0A cinit CODE >1905:C:\Users\simone\AppData\Local\Temp\s1nc.
-5A0C cinit CODE >1906:C:\Users\simone\AppData\Local\Temp\s1nc.
-5A0E cinit CODE >1907:C:\Users\simone\AppData\Local\Temp\s1nc.
-5A10 cinit CODE >1908:C:\Users\simone\AppData\Local\Temp\s1nc.
-5A12 cinit CODE >1909:C:\Users\simone\AppData\Local\Temp\s1nc.
-5A14 cinit CODE >1910:C:\Users\simone\AppData\Local\Temp\s1nc.
-5A18 cinit CODE >1911:C:\Users\simone\AppData\Local\Temp\s1nc.
-5A1C cinit CODE >1912:C:\Users\simone\AppData\Local\Temp\s1nc.
-5A1C cinit CODE >1913:C:\Users\simone\AppData\Local\Temp\s1nc.
-5A1E cinit CODE >1914:C:\Users\simone\AppData\Local\Temp\s1nc.
-5A22 cinit CODE >1915:C:\Users\simone\AppData\Local\Temp\s1nc.
-5A24 cinit CODE >1916:C:\Users\simone\AppData\Local\Temp\s1nc.
-5A26 cinit CODE >1917:C:\Users\simone\AppData\Local\Temp\s1nc.
-5A28 cinit CODE >1923:C:\Users\simone\AppData\Local\Temp\s1nc.
-5A28 cinit CODE >1924:C:\Users\simone\AppData\Local\Temp\s1nc.
-5A2A cinit CODE >1925:C:\Users\simone\AppData\Local\Temp\s1nc.
+59AE cinit CODE >1606:C:\Users\simone\AppData\Local\Temp\s3mo.
+59AE cinit CODE >1608:C:\Users\simone\AppData\Local\Temp\s3mo.
+59AE cinit CODE >1611:C:\Users\simone\AppData\Local\Temp\s3mo.
+59AE cinit CODE >1846:C:\Users\simone\AppData\Local\Temp\s3mo.
+59B2 cinit CODE >1847:C:\Users\simone\AppData\Local\Temp\s3mo.
+59B4 cinit CODE >1848:C:\Users\simone\AppData\Local\Temp\s3mo.
+59B4 cinit CODE >1849:C:\Users\simone\AppData\Local\Temp\s3mo.
+59B6 cinit CODE >1850:C:\Users\simone\AppData\Local\Temp\s3mo.
+59B8 cinit CODE >1851:C:\Users\simone\AppData\Local\Temp\s3mo.
+59BA cinit CODE >1854:C:\Users\simone\AppData\Local\Temp\s3mo.
+59BE cinit CODE >1855:C:\Users\simone\AppData\Local\Temp\s3mo.
+59C0 cinit CODE >1856:C:\Users\simone\AppData\Local\Temp\s3mo.
+59C0 cinit CODE >1857:C:\Users\simone\AppData\Local\Temp\s3mo.
+59C2 cinit CODE >1858:C:\Users\simone\AppData\Local\Temp\s3mo.
+59C4 cinit CODE >1859:C:\Users\simone\AppData\Local\Temp\s3mo.
+59C6 cinit CODE >1862:C:\Users\simone\AppData\Local\Temp\s3mo.
+59C8 cinit CODE >1863:C:\Users\simone\AppData\Local\Temp\s3mo.
+59CA cinit CODE >1866:C:\Users\simone\AppData\Local\Temp\s3mo.
+59CE cinit CODE >1867:C:\Users\simone\AppData\Local\Temp\s3mo.
+59D0 cinit CODE >1868:C:\Users\simone\AppData\Local\Temp\s3mo.
+59D0 cinit CODE >1869:C:\Users\simone\AppData\Local\Temp\s3mo.
+59D2 cinit CODE >1870:C:\Users\simone\AppData\Local\Temp\s3mo.
+59D4 cinit CODE >1871:C:\Users\simone\AppData\Local\Temp\s3mo.
+59D6 cinit CODE >1876:C:\Users\simone\AppData\Local\Temp\s3mo.
+59D8 cinit CODE >1877:C:\Users\simone\AppData\Local\Temp\s3mo.
+59DA cinit CODE >1878:C:\Users\simone\AppData\Local\Temp\s3mo.
+59DC cinit CODE >1879:C:\Users\simone\AppData\Local\Temp\s3mo.
+59DE cinit CODE >1880:C:\Users\simone\AppData\Local\Temp\s3mo.
+59E0 cinit CODE >1881:C:\Users\simone\AppData\Local\Temp\s3mo.
+59E2 cinit CODE >1882:C:\Users\simone\AppData\Local\Temp\s3mo.
+59E6 cinit CODE >1883:C:\Users\simone\AppData\Local\Temp\s3mo.
+59EA cinit CODE >1884:C:\Users\simone\AppData\Local\Temp\s3mo.
+59EA cinit CODE >1885:C:\Users\simone\AppData\Local\Temp\s3mo.
+59EC cinit CODE >1886:C:\Users\simone\AppData\Local\Temp\s3mo.
+59F0 cinit CODE >1887:C:\Users\simone\AppData\Local\Temp\s3mo.
+59F2 cinit CODE >1888:C:\Users\simone\AppData\Local\Temp\s3mo.
+59F4 cinit CODE >1889:C:\Users\simone\AppData\Local\Temp\s3mo.
+59F6 cinit CODE >1893:C:\Users\simone\AppData\Local\Temp\s3mo.
+59F8 cinit CODE >1894:C:\Users\simone\AppData\Local\Temp\s3mo.
+59FA cinit CODE >1895:C:\Users\simone\AppData\Local\Temp\s3mo.
+59FC cinit CODE >1896:C:\Users\simone\AppData\Local\Temp\s3mo.
+59FE cinit CODE >1897:C:\Users\simone\AppData\Local\Temp\s3mo.
+5A00 cinit CODE >1898:C:\Users\simone\AppData\Local\Temp\s3mo.
+5A02 cinit CODE >1899:C:\Users\simone\AppData\Local\Temp\s3mo.
+5A04 cinit CODE >1900:C:\Users\simone\AppData\Local\Temp\s3mo.
+5A08 cinit CODE >1904:C:\Users\simone\AppData\Local\Temp\s3mo.
+5A0A cinit CODE >1905:C:\Users\simone\AppData\Local\Temp\s3mo.
+5A0C cinit CODE >1906:C:\Users\simone\AppData\Local\Temp\s3mo.
+5A0E cinit CODE >1907:C:\Users\simone\AppData\Local\Temp\s3mo.
+5A10 cinit CODE >1908:C:\Users\simone\AppData\Local\Temp\s3mo.
+5A12 cinit CODE >1909:C:\Users\simone\AppData\Local\Temp\s3mo.
+5A14 cinit CODE >1910:C:\Users\simone\AppData\Local\Temp\s3mo.
+5A18 cinit CODE >1911:C:\Users\simone\AppData\Local\Temp\s3mo.
+5A1C cinit CODE >1912:C:\Users\simone\AppData\Local\Temp\s3mo.
+5A1C cinit CODE >1913:C:\Users\simone\AppData\Local\Temp\s3mo.
+5A1E cinit CODE >1914:C:\Users\simone\AppData\Local\Temp\s3mo.
+5A22 cinit CODE >1915:C:\Users\simone\AppData\Local\Temp\s3mo.
+5A24 cinit CODE >1916:C:\Users\simone\AppData\Local\Temp\s3mo.
+5A26 cinit CODE >1917:C:\Users\simone\AppData\Local\Temp\s3mo.
+5A28 cinit CODE >1923:C:\Users\simone\AppData\Local\Temp\s3mo.
+5A28 cinit CODE >1924:C:\Users\simone\AppData\Local\Temp\s3mo.
+5A2A cinit CODE >1925:C:\Users\simone\AppData\Local\Temp\s3mo.
 5A2E text32 CODE >496:C:\Users\simone\Documents\GitHub\parcheggio.X\parcheggio.c
 5A2E text32 CODE >497:C:\Users\simone\Documents\GitHub\parcheggio.X\parcheggio.c
 5A32 text32 CODE >498:C:\Users\simone\Documents\GitHub\parcheggio.X\parcheggio.c
@@ -1687,7 +1687,7 @@ _RXM1SIDL F1D 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
 _set_speed E5 0 BANK0 1 bssBANK0 dist/default/production\parcheggio.X.production.obj
 __Hibigdata 0 0 CODE 0 ibigdata dist/default/production\parcheggio.X.production.obj
 _RXB1DLCbits F55 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
-__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\simone\AppData\Local\Temp\s1nc.obj
+__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\simone\AppData\Local\Temp\s3mo.obj
 __Heeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production\parcheggio.X.production.obj
 __CFG_MCLRE$ON 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
 _prima_sterzata 138 0 BANK1 1 bssBANK1 dist/default/production\parcheggio.X.production.obj
@@ -1701,7 +1701,7 @@ _LATA F89 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
 _LATB F8A 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
 _LATC F8B 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
 _Pmin 120 0 BANK1 1 bssBANK1 dist/default/production\parcheggio.X.production.obj
-___sp 0 0 STACK 2 stack C:\Users\simone\AppData\Local\Temp\s1nc.obj
+___sp 0 0 STACK 2 stack C:\Users\simone\AppData\Local\Temp\s3mo.obj
 _alfa 124 0 BANK1 1 bssBANK1 dist/default/production\parcheggio.X.production.obj
 _asin 39A0 0 CODE 0 text16 dist/default/production\parcheggio.X.production.obj
 _atan 44A8 0 CODE 0 text19 dist/default/production\parcheggio.X.production.obj
@@ -1714,7 +1714,7 @@ abs@a 77 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.o
 cos@f 1BC 0 BANK1 1 cstackBANK1 dist/default/production\parcheggio.X.production.obj
 sin@f D1 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
 sin@y 18B 0 BANK1 1 cstackBANK1 dist/default/production\parcheggio.X.production.obj
-start 33C 0 CODE 0 init C:\Users\simone\AppData\Local\Temp\s1nc.obj
+start 33C 0 CODE 0 init C:\Users\simone\AppData\Local\Temp\s3mo.obj
 ___flmul@cntr 9D 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
 ___flmul@sign 9E 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
 _ISR_Bassa 18 0 CODE 0 intcodelo dist/default/production\parcheggio.X.production.obj
@@ -1754,11 +1754,11 @@ _distance 140 0 BANK1 1 bssBANK1 dist/default/production\parcheggio.X.production
 _T0CONbits FD5 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
 __end_of_CANInitialize 4AF4 0 CODE 0 text33 dist/default/production\parcheggio.X.production.obj
 __HdataCOMRAM 0 0 ABS 0 dataCOMRAM dist/default/production\parcheggio.X.production.obj
-__accesstop 60 0 ABS 0 - C:\Users\simone\AppData\Local\Temp\s1nc.obj
-intlevel0 0 0 CODE 0 text C:\Users\simone\AppData\Local\Temp\s1nc.obj
-intlevel1 0 0 CODE 0 text C:\Users\simone\AppData\Local\Temp\s1nc.obj
-intlevel2 0 0 CODE 0 text C:\Users\simone\AppData\Local\Temp\s1nc.obj
-intlevel3 0 0 CODE 0 text C:\Users\simone\AppData\Local\Temp\s1nc.obj
+__accesstop 60 0 ABS 0 - C:\Users\simone\AppData\Local\Temp\s3mo.obj
+intlevel0 0 0 CODE 0 text C:\Users\simone\AppData\Local\Temp\s3mo.obj
+intlevel1 0 0 CODE 0 text C:\Users\simone\AppData\Local\Temp\s3mo.obj
+intlevel2 0 0 CODE 0 text C:\Users\simone\AppData\Local\Temp\s3mo.obj
+intlevel3 0 0 CODE 0 text C:\Users\simone\AppData\Local\Temp\s3mo.obj
 __LbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/production\parcheggio.X.production.obj
 _alignment_gap D7 0 BANK0 1 bssBANK0 dist/default/production\parcheggio.X.production.obj
 __LnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/production\parcheggio.X.production.obj
@@ -1796,8 +1796,8 @@ _request_sent 2A4 -245 COMRAM 1 bitbssCOMRAM dist/default/production\parcheggio.
 _ADCON1 FC1 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
 CANSetFilter@tamp 81 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
 CANSetFilter@type 7B 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
-___inthi_sp 0 0 STACK 2 stack C:\Users\simone\AppData\Local\Temp\s1nc.obj
-___intlo_sp 0 0 STACK 2 stack C:\Users\simone\AppData\Local\Temp\s1nc.obj
+___inthi_sp 0 0 STACK 2 stack C:\Users\simone\AppData\Local\Temp\s3mo.obj
+___intlo_sp 0 0 STACK 2 stack C:\Users\simone\AppData\Local\Temp\s3mo.obj
 __size_of___altofl 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
 __LdataCOMRAM 0 0 ABS 0 dataCOMRAM dist/default/production\parcheggio.X.production.obj
 __size_of___awtofl 0 0 ABS 0 - dist/default/production\parcheggio.X.production.obj
@@ -1965,7 +1965,7 @@ __Hbank11 0 0 ABS 0 bank11 dist/default/production\parcheggio.X.production.obj
 __Hbank12 0 0 ABS 0 bank12 dist/default/production\parcheggio.X.production.obj
 __Hbigbss 0 0 BIGRAM 1 bigbss dist/default/production\parcheggio.X.production.obj
 __Hbigram 0 0 ABS 0 bigram dist/default/production\parcheggio.X.production.obj
-__smallconst D00 0 SMALLCONST 0 smallconst C:\Users\simone\AppData\Local\Temp\s1nc.obj
+__smallconst D00 0 SMALLCONST 0 smallconst C:\Users\simone\AppData\Local\Temp\s3mo.obj
 __end_ofi1_delay_ms 5D16 0 CODE 0 text39 dist/default/production\parcheggio.X.production.obj
 __Hcomram 0 0 ABS 0 comram dist/default/production\parcheggio.X.production.obj
 __Hconfig 30000E 0 CONFIG 0 config dist/default/production\parcheggio.X.production.obj
@@ -2208,8 +2208,8 @@ ___lwdiv@divisor 62 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.p
 __Lfardata 0 0 FARRAM 0 fardata dist/default/production\parcheggio.X.production.obj
 ISR_Bassa@MUX_index_collision 4F 0 COMRAM 1 cstackCOMRAM dist/default/production\parcheggio.X.production.obj
 ___lwtofl@c 81 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
-stackhi CFF 0 ABS 0 - C:\Users\simone\AppData\Local\Temp\s1nc.obj
-stacklo 1F4 0 ABS 0 - C:\Users\simone\AppData\Local\Temp\s1nc.obj
+stackhi CFF 0 ABS 0 - C:\Users\simone\AppData\Local\Temp\s3mo.obj
+stacklo 1F4 0 ABS 0 - C:\Users\simone\AppData\Local\Temp\s3mo.obj
 __Lintcode 8 0 CODE 0 intcode dist/default/production\parcheggio.X.production.obj
 ___fldiv@f1 81 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
 ___fldiv@f2 85 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
@@ -2345,7 +2345,7 @@ __Ltext41 0 0 ABS 0 text41 dist/default/production\parcheggio.X.production.obj
 __Ltext42 0 0 ABS 0 text42 dist/default/production\parcheggio.X.production.obj
 __Ltext44 0 0 ABS 0 text44 dist/default/production\parcheggio.X.production.obj
 ___altofl@sign BD 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
-__ramtop D00 0 RAM 0 ramtop C:\Users\simone\AppData\Local\Temp\s1nc.obj
+__ramtop D00 0 RAM 0 ramtop C:\Users\simone\AppData\Local\Temp\s3mo.obj
 atan@val D0 0 BANK0 1 cstackBANK0 dist/default/production\parcheggio.X.production.obj
 _CANOperationMode 5DF0 0 CODE 0 text36 dist/default/production\parcheggio.X.production.obj
 __Lpowerup 33C 0 CODE 0 powerup dist/default/production\parcheggio.X.production.obj

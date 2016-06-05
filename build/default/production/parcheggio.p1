@@ -19071,9 +19071,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 "91
 [v _raggio `f ~T0 @X0 1 e ]
 [i _raggio
--> -> 55 `i `f
+-> -> 45 `i `f
 ]
-[; ;parcheggio.c: 91: float raggio = 55;
+[; ;parcheggio.c: 91: float raggio = 45;
 "92
 [v _larghezza `f ~T0 @X0 1 e ]
 [i _larghezza

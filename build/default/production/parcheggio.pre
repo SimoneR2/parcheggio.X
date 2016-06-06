@@ -20132,8 +20132,8 @@ volatile unsigned char sensor_distance_old[8] = 0;
 volatile unsigned char sensor_distance_short[8] = 0;
 
 
-volatile float raggio = 56;
-volatile float larghezza = 32;
+volatile float raggio = 70;
+volatile float larghezza = 33;
 volatile float bordo = 0;
 volatile float alfa = 0;
 volatile float beta = 0;
@@ -20197,7 +20197,7 @@ sensor_distance_short[0] = sensor_distance[6];
 } else {
 sensor_distance_short[MUX_index] = 255;
 }
-if ((sensor_distance[MUX_index] < 10)&&(start_operation == 1)&&(avvicinamento == 0)&&((MUX_index!=0)||(MUX_index!=1))) {
+if ((sensor_distance[MUX_index] < 10)&&(start_operation == 1)&&(avvicinamento == 0)&&((MUX_index != 0) || (MUX_index != 1))) {
 counter++;
 if (counter > 0) {
 data[0] = 4;
@@ -20237,6 +20237,7 @@ INTCONbits.TMR0IF = 0;
 
 
 if ((PIR3bits.RXB0IF == 1) || (PIR3bits.RXB1IF == 1)) {
+if (CANisRxReady()) {
 CANreceiveMessage(&msg);
 
 if (msg.identifier == 0b00000001111) {
@@ -20281,6 +20282,7 @@ data_speed_rx[i] = msg.data[i];
 
 PIR3bits.RXB0IF = 0;
 PIR3bits.RXB1IF = 0;
+}
 }
 }
 
@@ -20407,7 +20409,7 @@ first = 1;
 while ((PORTBbits.RB5 == 1) && (activation == 1)&&(start_operation == 1)) {
 LATBbits.LATB4 = 1;
 
-bordo = (sensor_distance[1]/ 2);
+bordo = ((sensor_distance[1] + sensor_distance[0]) / 2);
 matematica();
 
 set_speed = 0;
@@ -20424,7 +20426,7 @@ data_brake [1] = 1;
 set_speed = 300;
 dir = 0;
 data_steering[0] = 90;
-data_test[0] = ((60 + Pmin + 5)-(n + 15));
+data_test[0] = ((60 + Pmin + 6)-(n + 15));
 asd = 1;
 while (!CANisTxReady());
 CANsendMessage(0b00000001111, data_test, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
@@ -20449,6 +20451,8 @@ data_test[0] = prima_sterzata;
 asd = 1;
 while (!CANisTxReady());
 CANsendMessage(0b00000001111, data_test, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
+while (!CANisTxReady());
+CANsendMessage(0xAA, data_test, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
 can_send();
 
 while (asd == 1);
@@ -20456,7 +20460,7 @@ while (asd == 1);
 set_speed = 300;
 data_steering[0] = 0;
 asd = 1;
-data_test[0] = prima_sterzata + 9;
+data_test[0] = prima_sterzata + 10;
 while (!CANisTxReady());
 CANsendMessage(0b00000001111, data_test, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
 can_send();

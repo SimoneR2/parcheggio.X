@@ -17,7 +17,7 @@
 #include <math.h>
 
 #define _XTAL_FREQ 16000000
-#define tolleranza 5
+#define tolleranza 6
 #define soglia1 10
 #define soglia2 250
 #define diff_sensor 6
@@ -80,8 +80,8 @@ volatile unsigned char sensor_distance_old[8] = 0;
 volatile unsigned char sensor_distance_short[8] = 0;
 
 //Variabili parcheggio
-volatile float raggio = 56; //52
-volatile float larghezza = 32;
+volatile float raggio = 70; //52
+volatile float larghezza = 33;
 volatile float bordo = 0;
 volatile float alfa = 0;
 volatile float beta = 0;
@@ -145,7 +145,7 @@ __interrupt(low_priority) void ISR_Bassa(void) {
         } else {
             sensor_distance_short[MUX_index] = 255;
         }
-        if ((sensor_distance[MUX_index] < soglia1)&&(start_operation == 1)&&(avvicinamento == 0)&&((MUX_index!=0)||(MUX_index!=1))) {
+        if ((sensor_distance[MUX_index] < soglia1)&&(start_operation == 1)&&(avvicinamento == 0)&&((MUX_index != 0) || (MUX_index != 1))) {
             counter++;
             if (counter > 0) {
                 data[0] = 4; //debug
@@ -185,50 +185,52 @@ __interrupt(low_priority) void ISR_Bassa(void) {
 
     //INTERRUPT CANBUS
     if ((PIR3bits.RXB0IF == 1) || (PIR3bits.RXB1IF == 1)) {
-        CANreceiveMessage(&msg);
+        if (CANisRxReady()) {
+            CANreceiveMessage(&msg);
 
-        if (msg.identifier == DISTANCE_SET) {
-            asd = 0;
-        }
-
-        if ((msg.identifier == COUNT_STOP) && (msg.RTR != 1)) {
-            distance_average = 0;
-            distance_dx = msg.data[1];
-            distance_dx = ((distance_dx << 8) | msg.data[0]);
-            distance_sx = msg.data[3];
-            distance_sx = ((distance_sx << 8) | msg.data[2]);
-            distance_average = (distance_sx + distance_dx) / 2;
-            distance_received = 1;
-            distance_received1 = 1;
-        }
-
-        if (msg.identifier == PARK_ASSIST_ENABLE) {
-            if (msg.data[0] == 1) {
-                activation = 1;
-                PORTBbits.RB6 = 1;
-            } else {
-                activation = 0;
-                PORTBbits.RB4 = 0;
-                PORTBbits.RB5 = 0;
-                PORTBbits.RB6 = 0;
-                request_sent = 0;
+            if (msg.identifier == DISTANCE_SET) {
+                asd = 0;
             }
-        }
 
-        if (msg.identifier == PARK_ASSIST_BEGIN) {
-            start_operation = 1;
-        }
-
-        //[!!]--------- ERRORE!? ----------[!!]
-        if (msg.identifier == ACTUAL_SPEED) {
-            for (unsigned char i = 0; i < 8; i++) {
-                data_speed_rx[i] = msg.data[i];
+            if ((msg.identifier == COUNT_STOP) && (msg.RTR != 1)) {
+                distance_average = 0;
+                distance_dx = msg.data[1];
+                distance_dx = ((distance_dx << 8) | msg.data[0]);
+                distance_sx = msg.data[3];
+                distance_sx = ((distance_sx << 8) | msg.data[2]);
+                distance_average = (distance_sx + distance_dx) / 2;
+                distance_received = 1;
+                distance_received1 = 1;
             }
-        }
-        //[!!]----------------------------[!!]
 
-        PIR3bits.RXB0IF = 0;
-        PIR3bits.RXB1IF = 0;
+            if (msg.identifier == PARK_ASSIST_ENABLE) {
+                if (msg.data[0] == 1) {
+                    activation = 1;
+                    PORTBbits.RB6 = 1;
+                } else {
+                    activation = 0;
+                    PORTBbits.RB4 = 0;
+                    PORTBbits.RB5 = 0;
+                    PORTBbits.RB6 = 0;
+                    request_sent = 0;
+                }
+            }
+
+            if (msg.identifier == PARK_ASSIST_BEGIN) {
+                start_operation = 1;
+            }
+
+            //[!!]--------- ERRORE!? ----------[!!]
+            if (msg.identifier == ACTUAL_SPEED) {
+                for (unsigned char i = 0; i < 8; i++) {
+                    data_speed_rx[i] = msg.data[i];
+                }
+            }
+            //[!!]----------------------------[!!]
+
+            PIR3bits.RXB0IF = 0;
+            PIR3bits.RXB1IF = 0;
+        }
     }
 }
 
@@ -355,7 +357,7 @@ void park_routine(void) {
     while ((PORTBbits.RB5 == 1) && (activation == 1)&&(start_operation == 1)) {
         LATBbits.LATB4 = 1;
         //CANsendMessage(COUNT_STOP, data, 8, CAN_CONFIG_STD_MSG & CAN_REMOTE_TX_FRAME & CAN_TX_PRIORITY_0);
-        bordo = (sensor_distance[1]/ 2);
+        bordo = ((sensor_distance[1] + sensor_distance[0]) / 2);
         matematica();
 
         set_speed = 0;
@@ -397,6 +399,8 @@ void park_routine(void) {
         asd = 1;
         while (!CANisTxReady());
         CANsendMessage(DISTANCE_SET, data_test, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
+        while (!CANisTxReady());
+        CANsendMessage(0xAA, data_test, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
         can_send();
 
         while (asd == 1);
@@ -404,7 +408,7 @@ void park_routine(void) {
         set_speed = 300;
         data_steering[0] = 0;
         asd = 1;
-        data_test[0] = prima_sterzata + 9;
+        data_test[0] = prima_sterzata + 10;
         while (!CANisTxReady());
         CANsendMessage(DISTANCE_SET, data_test, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
         can_send();

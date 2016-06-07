@@ -18,7 +18,7 @@
 
 #define _XTAL_FREQ 16000000
 #define tolleranza 6
-#define soglia1 10
+#define soglia1 5
 #define soglia2 250
 #define diff_sensor 6
 
@@ -61,9 +61,6 @@ volatile float old_alignment_gap = 0;
 volatile unsigned int distance_dx = 0; //distanza percorsa dx(da abs)
 volatile unsigned int distance_sx = 0; //distanza percorsa sx(da abs)
 volatile unsigned int distance_average = 0; //media distanza
-volatile unsigned int right_speed = 0;
-volatile unsigned int left_speed = 0;
-volatile unsigned int actual_speed = 0;
 
 //variabili per ultrasuoni
 volatile unsigned char MUX_index = 0;
@@ -80,22 +77,21 @@ volatile unsigned char sensor_distance_old[8] = 0;
 volatile unsigned char sensor_distance_short[8] = 0;
 
 //Variabili parcheggio
-volatile float raggio = 70; //52
-volatile float larghezza = 33;
-volatile float bordo = 0;
-volatile float alfa = 0;
-volatile float beta = 0;
-volatile float n = 0;
-volatile float prima_sterzata = 0;
-volatile float K_var = 0;
-volatile float J_var = 0;
-volatile float Pmin = 0;
+
+float bordo = 0;
+float alfa = 0;
+float beta = 0;
+float n = 0;
+float prima_sterzata = 0;
+float K_var = 0;
+float J_var = 0;
+float Pmin = 0;
 
 //[??]
 volatile float x = 0; //DEBUG
 volatile float z = 0; //DEBUG
 
-
+volatile unsigned char counter_distance = 0;
 //Subroutines declarations
 void configurations(void);
 void park_search(void);
@@ -133,7 +129,7 @@ __interrupt(low_priority) void ISR_Bassa(void) {
         T0CONbits.TMR0ON = 1;
 
         if (distance_error == 1) {
-            sensor_distance[MUX_index] = 5000;
+            sensor_distance[MUX_index] = 3000;
         }
 
         if ((sensor_distance[MUX_index] < soglia2)&&(start_operation == 0)&&((MUX_index == 3) || (MUX_index == 6))) {
@@ -143,14 +139,20 @@ __interrupt(low_priority) void ISR_Bassa(void) {
                 sensor_distance_short[0] = sensor_distance[6];
             }
         } else {
-            sensor_distance_short[MUX_index] = 255;
+            sensor_distance_short[MUX_index] = 254;
         }
         if ((sensor_distance[MUX_index] < soglia1)&&(start_operation == 1)&&(avvicinamento == 0)&&((MUX_index != 0) || (MUX_index != 1))) {
             counter++;
             if (counter > 0) {
+                set_speed = 0;
+                data_steering[0] = 90;
+                data_brake [0] = 0;
+                data_brake [1] = 1;
+                can_send();
+                delay_ms(100);
                 data[0] = 4; //debug
                 CANsendMessage(PARK_ASSIST_STATE, data, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
-                delay_ms(20);
+                delay_ms(30);
                 RESET();
             }//debug
         }
@@ -185,7 +187,7 @@ __interrupt(low_priority) void ISR_Bassa(void) {
 
     //INTERRUPT CANBUS
     if ((PIR3bits.RXB0IF == 1) || (PIR3bits.RXB1IF == 1)) {
-        if (CANisRxReady()) {
+        if (CANisRxReady() == 1) {
             CANreceiveMessage(&msg);
 
             if (msg.identifier == DISTANCE_SET) {
@@ -221,11 +223,7 @@ __interrupt(low_priority) void ISR_Bassa(void) {
             }
 
             //[!!]--------- ERRORE!? ----------[!!]
-            if (msg.identifier == ACTUAL_SPEED) {
-                for (unsigned char i = 0; i < 8; i++) {
-                    data_speed_rx[i] = msg.data[i];
-                }
-            }
+
             //[!!]----------------------------[!!]
 
             PIR3bits.RXB0IF = 0;
@@ -263,28 +261,19 @@ void main(void) {
         }
 
         park_search();
-
-        left_speed = data_speed_rx[1];
-        left_speed = ((left_speed << 8) | (data_speed_rx[0]));
-        right_speed = data_speed_rx[3];
-        right_speed = ((right_speed << 8) | (data_speed_rx[2]));
-        actual_speed = (right_speed + left_speed) / 2;
-
         park_routine();
     }
 }
 
 void park_search(void) {
     while ((activation == 1) && (PORTBbits.RB5 == 0)) {
-
         parallelo();
-
         if (sensor_distance[0] > 50) {
             if (request_sent == 0) {
                 while (!CANisTxReady());
                 CANsendMessage(COUNT_START, data, 8, CAN_CONFIG_STD_MSG & CAN_REMOTE_TX_FRAME & CAN_TX_PRIORITY_0);
                 request_sent = 1;
-                alignment_gap = 0; //<==
+                //alignment_gap = 0; //<==
             }
             LATBbits.LATB4 = 1;
         } else {
@@ -293,9 +282,12 @@ void park_search(void) {
         }
 
         if ((sensor_distance[0] < 50) && (request_sent == 1)&&(sensor_distance[1] < 50)) { //VALORE RANDOM!!!!
-            request_sent = 0;
-            while (!CANisTxReady());
-            CANsendMessage(COUNT_STOP, data, 8, CAN_CONFIG_STD_MSG & CAN_REMOTE_TX_FRAME & CAN_TX_PRIORITY_0);
+            counter_distance++;
+            if (counter_distance > 1) {
+                request_sent = 0;
+                while (!CANisTxReady());
+                CANsendMessage(COUNT_STOP, data, 8, CAN_CONFIG_STD_MSG & CAN_REMOTE_TX_FRAME & CAN_TX_PRIORITY_0);
+            }
         }
 
         if (distance_received == 1) {
@@ -358,7 +350,21 @@ void park_routine(void) {
         LATBbits.LATB4 = 1;
         //CANsendMessage(COUNT_STOP, data, 8, CAN_CONFIG_STD_MSG & CAN_REMOTE_TX_FRAME & CAN_TX_PRIORITY_0);
         bordo = ((sensor_distance[1] + sensor_distance[0]) / 2);
-        matematica();
+        delay_ms(100); //debug
+        bordo = bordo + ((sensor_distance[1] + sensor_distance[0]) / 2); //debug
+        bordo = bordo/2;//debug
+        const float raggio = 56; //52
+        const float larghezza = 33;
+        alfa = asin(((2 * raggio)-(larghezza / 2) - (bordo + (larghezza / 2))) / (2 * raggio));
+        alfa = alfa / M_PI * 180;
+        beta = 90 - alfa;
+        alfa = (alfa * M_PI) / 180;
+        n = cos(alfa);
+        n = 2 * raggio *n;
+        prima_sterzata = 2 * M_PI * raggio * (beta / 360);
+        K_var = raggio + (2 * larghezza / 3);
+        J_var = raggio - (2 * larghezza / 3);
+        Pmin = K_var * cos(asin((J_var / K_var)));
 
         set_speed = 0;
         data_steering[0] = 90;
@@ -395,24 +401,28 @@ void park_routine(void) {
         set_speed = 300;
         dir = 0;
         data_steering[0] = 180;
-        data_test[0] = prima_sterzata;
+        data_test[0] = prima_sterzata - 10;
         asd = 1;
         while (!CANisTxReady());
-        CANsendMessage(DISTANCE_SET, data_test, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
+        CANsendMessage(DISTANCE_SET, data_test, 1, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
         while (!CANisTxReady());
-        CANsendMessage(0xAA, data_test, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
+        CANsendMessage(0xAA, data_test, 2, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
         can_send();
 
         while (asd == 1);
 
-        set_speed = 300;
+        set_speed = 0;
         data_steering[0] = 0;
+        data_brake[0] = 1;
         asd = 1;
-        data_test[0] = prima_sterzata + 10;
+        data_test[0] = prima_sterzata + 3;
         while (!CANisTxReady());
         CANsendMessage(DISTANCE_SET, data_test, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
         can_send();
-
+        delay_s(1);
+        set_speed = 200;
+        data_brake[0] = 3;
+        can_send();
         while (asd == 1);
 
         data_brake [0] = 0;
@@ -502,13 +512,15 @@ void parallelo(void) {
 }
 
 void matematica(void) {
+    const float raggio = 56; //52
+    const float larghezza = 33;
     alfa = asin(((2 * raggio)-(larghezza / 2) - (bordo + (larghezza / 2))) / (2 * raggio));
     alfa = alfa / M_PI * 180;
     beta = 90 - alfa;
     alfa = (alfa * M_PI) / 180;
     n = cos(alfa);
     n = 2 * raggio *n;
-    prima_sterzata = 2 * M_PI * raggio * beta / 360;
+    prima_sterzata = 2 * M_PI * raggio * (beta / 360);
     K_var = raggio + (2 * larghezza / 3);
     J_var = raggio - (2 * larghezza / 3);
     Pmin = K_var * cos(asin((J_var / K_var)));

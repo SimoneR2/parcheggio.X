@@ -1,3 +1,9 @@
+/*
+ * file contenente tutti gli ID dei messaggi can bus
+ */
+
+// Versione 31/05/16
+
 #define EMERGENCY                0b00000000001
 #define ECU_STATE_ABS            0b00000000010
 #define ECU_STATE_EPS            0b00000000011

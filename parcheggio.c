@@ -139,7 +139,7 @@ __interrupt(low_priority) void ISR_Bassa(void) {
                 sensor_distance_short[0] = sensor_distance[6];
             }
         } else {
-            sensor_distance_short[MUX_index] = 254;
+            sensor_distance_short[MUX_index] = 255;
         }
         if ((sensor_distance[MUX_index] < soglia1)&&(start_operation == 1)&&(avvicinamento == 0)&&((MUX_index != 0) || (MUX_index != 1))) {
             counter++;
@@ -210,11 +210,7 @@ __interrupt(low_priority) void ISR_Bassa(void) {
                     activation = 1;
                     PORTBbits.RB6 = 1;
                 } else {
-                    activation = 0;
-                    PORTBbits.RB4 = 0;
-                    PORTBbits.RB5 = 0;
-                    PORTBbits.RB6 = 0;
-                    request_sent = 0;
+                    RESET();
                 }
             }
 
@@ -352,7 +348,7 @@ void park_routine(void) {
         bordo = ((sensor_distance[1] + sensor_distance[0]) / 2);
         delay_ms(100); //debug
         bordo = bordo + ((sensor_distance[1] + sensor_distance[0]) / 2); //debug
-        bordo = bordo/2;//debug
+        bordo = bordo / 2; //debug
         const float raggio = 56; //52
         const float larghezza = 33;
         alfa = asin(((2 * raggio)-(larghezza / 2) - (bordo + (larghezza / 2))) / (2 * raggio));
@@ -415,7 +411,7 @@ void park_routine(void) {
         data_steering[0] = 0;
         data_brake[0] = 1;
         asd = 1;
-        data_test[0] = prima_sterzata + 3;
+        data_test[0] = prima_sterzata - 1;
         while (!CANisTxReady());
         CANsendMessage(DISTANCE_SET, data_test, 8, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
         can_send();

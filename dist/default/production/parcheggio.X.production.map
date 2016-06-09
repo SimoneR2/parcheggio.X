@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=C:\Program Files (x86)\Microchip\xc8\v1.34\dat\en_msgs.txt -cs \
   -h+dist/default/production\parcheggio.X.production.sym \
   --cmf=dist/default/production\parcheggio.X.production.cmf -z -Q18F2685 \
-  -oC:\Users\simone\AppData\Local\Temp\s4ac.6 \
+  -oC:\Users\simone\AppData\Local\Temp\s47k.6 \
   -Mdist/default/production/parcheggio.X.production.map -E1 -ver=XC8 \
   -ASTACK=01E4h-0cffh -pstack=STACK -ACODE=00h-017FFFh -ACONST=00h-017FFFh \
   -ASMALLCONST=0D00h-0DFFhx371 -AMEDIUMCONST=0D00h-0FFFFh,010D00h-017FFFh \
@@ -25,7 +25,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -pparam0=BANK0 \
-  C:\Users\simone\AppData\Local\Temp\s4ac.obj \
+  C:\Users\simone\AppData\Local\Temp\s47k.obj \
   dist/default/production\parcheggio.X.production.obj 
 
 Object code version is 3.11
@@ -38,13 +38,13 @@ Call graph: (short form)
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\simone\AppData\Local\Temp\s4ac.obj
-                end_init                            328      328        4        C       0
+C:\Users\simone\AppData\Local\Temp\s47k.obj
+                end_init                            320      320        4        C       0
                 reset_vec                             0        0        4        0       0
                 idloc                            200000   200000        8   200000       0
                 config                           300000   300000        E   300000       0
 dist/default/production\parcheggio.X.production.obj
-                intcodelo                            18       18      310        C       0
+                intcodelo                            18       18      308        C       0
                 intcode                               8        8       10        4       0
                 smallconst                          D00      D00       52      680       0
                 text45                             5B50     5B50       82      6A9       0
@@ -109,8 +109,8 @@ TOTAL           Name                               Link     Load   Length     Sp
         CLASS   STACK          
 
         CLASS   CODE           
-                end_init                            328      328        4         0
-                intcodelo                            18       18      310         0
+                end_init                            320      320        4         0
+                intcodelo                            18       18      308         0
                 intcode                               8        8       10         0
                 reset_vec                             0        0        4         0
                 text45                             5B50     5B50       82         0
@@ -231,7 +231,7 @@ SEGMENTS        Name                           Load    Length   Top    Selector 
                 reset_vec                      000000  000004  000004         0       0  CODE    
                 bssCOMRAM                      000001  000057  000058         1       1  COMRAM  
                 intcode                        000008  000010  000018         4       0  CODE    
-                intcodelo                      000018  000314  00032C         C       0  CODE    
+                intcodelo                      000018  00030C  000324         C       0  CODE    
                 cstackBANK0                    000060  000089  0000E9        60       1  BANK0   
                 bssBANK1                       000100  0000E4  0001E4       100       1  BANK1   
                 smallconst                     000D00  000052  000D52       680       0  SMALLCON
@@ -260,11 +260,11 @@ UNUSED ADDRESS RANGES
                          0000E9-0000FF               17
                          0001E4-000CFF              B1C
         CODE             000004-000007                4
-                         00032C-000CFF              9D4
+                         000324-000CFF              9DC
                          005FEB-017FFF            12015
         COMRAM           000058-00005F                8
         CONST            000004-000007                4
-                         00032C-000CFF              9D4
+                         000324-000CFF              9DC
                          005FEB-017FFF            12015
         EEDATA           F00000-F003FF              400
         MEDIUMCONST      005FEB-00FFFF             A015
@@ -572,7 +572,7 @@ __Hdata                       data         000000
 __HdataBANK0                  dataBANK0    000000
 __HdataCOMRAM                 dataCOMRAM   000000
 __Heeprom_data                eeprom_data  000000
-__Hend_init                   end_init     00032C
+__Hend_init                   end_init     000324
 __Hfarbss                     farbss       000000
 __Hfardata                    fardata      000000
 __Hibigdata                   ibigdata     000000
@@ -581,10 +581,10 @@ __HidataBANK0                 idataBANK0   000000
 __HidataCOMRAM                idataCOMRAM  000000
 __Hidloc                      idloc        200008
 __Hifardata                   ifardata     000000
-__Hinit                       init         000328
+__Hinit                       init         000320
 __Hintcode                    intcode      000018
 __Hintcode_body               intcode_body 000000
-__Hintcodelo                  intcodelo    000328
+__Hintcodelo                  intcodelo    000320
 __Hintentry                   intentry     000000
 __Hintret                     intret       000000
 __Hintsave_regs               intsave_regs 000000
@@ -595,7 +595,7 @@ __Hnvbit                      nvbit        000000
 __Hnvrram                     nvrram       000000
 __Hparam                      param0       000000
 __Hparam0                     param0       000000
-__Hpowerup                    powerup      000328
+__Hpowerup                    powerup      000320
 __Hram                        ram          000000
 __Hramtop                     ramtop       000D00
 __Hrbit                       rbit         000000
@@ -690,7 +690,7 @@ __Ldata                       data         000000
 __LdataBANK0                  dataBANK0    000000
 __LdataCOMRAM                 dataCOMRAM   000000
 __Leeprom_data                eeprom_data  000000
-__Lend_init                   end_init     000328
+__Lend_init                   end_init     000320
 __Lfarbss                     farbss       000000
 __Lfardata                    fardata      000000
 __Libigdata                   ibigdata     000000
@@ -699,7 +699,7 @@ __LidataBANK0                 idataBANK0   000000
 __LidataCOMRAM                idataCOMRAM  000000
 __Lidloc                      idloc        200000
 __Lifardata                   ifardata     000000
-__Linit                       init         000328
+__Linit                       init         000320
 __Lintcode                    intcode      000008
 __Lintcode_body               intcode_body 000000
 __Lintcodelo                  intcodelo    000018
@@ -713,7 +713,7 @@ __Lnvbit                      nvbit        000000
 __Lnvrram                     nvrram       000000
 __Lparam                      param0       000000
 __Lparam0                     param0       000000
-__Lpowerup                    powerup      000328
+__Lpowerup                    powerup      000320
 __Lram                        ram          000000
 __Lramtop                     ramtop       000D00
 __Lrbit                       rbit         000000
@@ -845,7 +845,7 @@ __end_of_CANisTxReady         text6        005F98
 __end_of_CANreceiveMessage    text42       00373C
 __end_of_CANsendMessage       text5        002B6A
 __end_of_ISR_Alta             intcode_body 005A10
-__end_of_ISR_Bassa            intcodelo    000328
+__end_of_ISR_Bassa            intcodelo    000320
 __end_of___altofl             text22       005D4E
 __end_of___awtofl             text12       005D9A
 __end_of___fladd              text26       004392
@@ -1140,7 +1140,7 @@ sqrt@y                        cstackBANK0  0000D1
 sqrt@z                        cstackBANK1  00018B
 stackhi                       (abs)        000CFF
 stacklo                       (abs)        0001E4
-start                         init         000328
+start                         init         000320
 start_initialization          cinit        005C9E
 
 
@@ -1148,7 +1148,7 @@ FUNCTION INFORMATION:
 
  *************** function _main *****************
  Defined at:
-		line 235 in file "parcheggio.c"
+		line 231 in file "parcheggio.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1182,7 +1182,7 @@ Total ram usage:        0 bytes
 
  *************** function _park_search *****************
  Defined at:
-		line 268 in file "parcheggio.c"
+		line 264 in file "parcheggio.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1216,7 +1216,7 @@ Total ram usage:        2 bytes
 
  *************** function _park_routine *****************
  Defined at:
-		line 315 in file "parcheggio.c"
+		line 311 in file "parcheggio.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1260,7 +1260,7 @@ Total ram usage:       40 bytes
 
  *************** function _parallelo *****************
  Defined at:
-		line 486 in file "parcheggio.c"
+		line 482 in file "parcheggio.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1300,7 +1300,7 @@ Total ram usage:        2 bytes
 
  *************** function _can_send *****************
  Defined at:
-		line 463 in file "parcheggio.c"
+		line 459 in file "parcheggio.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -2238,7 +2238,7 @@ Total ram usage:       10 bytes
 
  *************** function _configurations *****************
  Defined at:
-		line 529 in file "parcheggio.c"
+		line 525 in file "parcheggio.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -2499,7 +2499,7 @@ Total ram usage:        6 bytes
 
  *************** function i1_can_send *****************
  Defined at:
-		line 463 in file "parcheggio.c"
+		line 459 in file "parcheggio.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -2864,7 +2864,7 @@ C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\altofl.c
 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\altofl.c estimated size: 89
 
 parcheggio.c
-		_ISR_Bassa     		CODE           	0018	0000	785
+		_ISR_Bassa     		CODE           	0018	0000	777
 		_main          		CODE           	5A10	0000	173
 		_configurations		CODE           	5BD2	0000	109
 		_can_send      		CODE           	5562	0000	271
@@ -2873,7 +2873,7 @@ parcheggio.c
 		_parallelo     		CODE           	45E8	0000	597
 		_park_search   		CODE           	4C32	0000	449
 
-parcheggio.c estimated size: 5516
+parcheggio.c estimated size: 5508
 
 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\Umul16.c
 		___wmul        		CODE           	5E4E	0000	57

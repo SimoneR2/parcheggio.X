@@ -154,18 +154,18 @@ CAN_RX_BUFFER_2_OVFL 2
 [v _ISR_Alta ISR_Alta `IIH(v  1 e 0 0 ]
 "121
 [v _ISR_Bassa ISR_Bassa `IIL(v  1 e 0 0 ]
-"235
+"231
 [v _main main `(v  1 e 0 0 ]
-"268
+"264
 [v _park_search park_search `(v  1 e 0 0 ]
-"315
+"311
 [v _park_routine park_routine `(v  1 e 0 0 ]
-"463
+"459
 [v _can_send can_send `(v  1 e 0 0 ]
 [v i1_can_send can_send `(v  1 e 0 0 ]
-"486
+"482
 [v _parallelo parallelo `(v  1 e 0 0 ]
-"529
+"525
 [v _configurations configurations `(v  1 e 0 0 ]
 "49 C:\Users\simone/Desktop/LaurTec_PIC_libraries_v_3.3.1/src\delay.c
 [v _delay_quartz_frequency_value delay_quartz_frequency_value `VEuc  1 e 1 0 ]
@@ -1468,55 +1468,55 @@ CAN_RX_BUFFER_2_OVFL 2
 "77
 [v _sensor_distance_short sensor_distance_short `VE[8]uc  1 e 8 0 ]
 "81
-[v _bordo bordo `VEf  1 e 4 0 ]
+[v _bordo bordo `f  1 e 4 0 ]
 "82
-[v _alfa alfa `VEf  1 e 4 0 ]
+[v _alfa alfa `f  1 e 4 0 ]
 "83
-[v _beta beta `VEf  1 e 4 0 ]
+[v _beta beta `f  1 e 4 0 ]
 "84
-[v _n n `VEf  1 e 4 0 ]
+[v _n n `f  1 e 4 0 ]
 "85
-[v _prima_sterzata prima_sterzata `VEf  1 e 4 0 ]
+[v _prima_sterzata prima_sterzata `f  1 e 4 0 ]
 "86
-[v _K_var K_var `VEf  1 e 4 0 ]
+[v _K_var K_var `f  1 e 4 0 ]
 "87
-[v _J_var J_var `VEf  1 e 4 0 ]
+[v _J_var J_var `f  1 e 4 0 ]
 "88
-[v _Pmin Pmin `VEf  1 e 4 0 ]
+[v _Pmin Pmin `f  1 e 4 0 ]
 "91
 [v _x x `VEf  1 e 4 0 ]
 "92
 [v _z z `VEf  1 e 4 0 ]
 "94
 [v _counter_distance counter_distance `VEuc  1 e 1 0 ]
-"235
+"231
 [v _main main `(v  1 e 0 0 ]
 {
-"266
+"262
 } 0
-"268
+"264
 [v _park_search park_search `(v  1 e 0 0 ]
 {
-"313
+"309
 } 0
-"315
+"311
 [v _park_routine park_routine `(v  1 e 0 0 ]
 {
-"356
+"352
 [v park_routine@raggio raggio `Cf  1 a 4 93 ]
-"357
+"353
 [v park_routine@larghezza larghezza `Cf  1 a 4 89 ]
-"461
+"457
 } 0
-"486
+"482
 [v _parallelo parallelo `(v  1 e 0 0 ]
 {
-"512
+"508
 } 0
-"463
+"459
 [v _can_send can_send `(v  1 e 0 0 ]
 {
-"484
+"480
 } 0
 "294 C:\Users\simone/Desktop/LaurTec_PIC_libraries_v_3.3.1/inc\CANlib.h
 [v _CANsendMessage CANsendMessage `(v  1 e 0 0 ]
@@ -1771,10 +1771,10 @@ CAN_RX_BUFFER_2_OVFL 2
 [v ___flpack@sign sign `uc  1 p 1 28 ]
 "87
 } 0
-"529 C:\Users\simone\Documents\GitHub\parcheggio.X\parcheggio.c
+"525 C:\Users\simone\Documents\GitHub\parcheggio.X\parcheggio.c
 [v _configurations configurations `(v  1 e 0 0 ]
 {
-"568
+"564
 } 0
 "218 C:\Users\simone/Desktop/LaurTec_PIC_libraries_v_3.3.1/inc\CANlib.h
 [v _CANInitialize CANInitialize `(v  1 e 0 0 ]
@@ -1841,7 +1841,7 @@ CAN_RX_BUFFER_2_OVFL 2
 [v ISR_Bassa@PORTA_temp PORTA_temp `uc  1 a 1 39 ]
 "161
 [v ISR_Bassa@F16865 F16865 `[2]uc  1 s 2 F16865 ]
-"233
+"229
 } 0
 "61 C:\Users\simone/Desktop/LaurTec_PIC_libraries_v_3.3.1/src\delay.c
 [v i1_delay_ms delay_ms `(v  1 e 0 0 ]
@@ -1857,10 +1857,10 @@ CAN_RX_BUFFER_2_OVFL 2
 [v i1___wmul@multiplicand multiplicand `ui  1 p 2 2 ]
 "53
 } 0
-"463 C:\Users\simone\Documents\GitHub\parcheggio.X\parcheggio.c
+"459 C:\Users\simone\Documents\GitHub\parcheggio.X\parcheggio.c
 [v i1_can_send can_send `(v  1 e 0 0 ]
 {
-"484
+"480
 } 0
 "294 C:\Users\simone/Desktop/LaurTec_PIC_libraries_v_3.3.1/inc\CANlib.h
 [v i1_CANsendMessage CANsendMessage `(v  1 e 0 0 ]

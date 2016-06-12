@@ -138,10 +138,9 @@ __interrupt(low_priority) void ISR_Bassa(void) {
             } else {
                 sensor_distance_short[0] = sensor_distance[6];
             }
-        } else if (MUX_index == 3){
+        } else if (MUX_index == 3) {
             sensor_distance_short[3] = 255;
-        }
-        else if (MUX_index == 6){
+        } else if (MUX_index == 6) {
             sensor_distance_short[6] = 255;
         }
         if ((sensor_distance[MUX_index] < soglia1)&&(start_operation == 1)&&(avvicinamento == 0)&&((MUX_index != 0) || (MUX_index != 1))) {
@@ -411,15 +410,15 @@ void park_routine(void) {
 
         while (asd == 1);
 
-//        set_speed = 0;
+        set_speed = 0;
         data_steering[0] = 0;
-//        data_brake[0] = 1;
+        data_brake[0] = 1;
         asd = 1;
         data_test[0] = prima_sterzata - 1;
         while (!CANisTxReady());
         CANsendMessage(DISTANCE_SET, data_test, 1, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
-//        can_send();
-//        delay_s(1);
+        can_send();
+        delay_ms(400);
         set_speed = 200;
         data_brake[0] = 3;
         can_send();

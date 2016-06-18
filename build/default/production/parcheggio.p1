@@ -20087,9 +20087,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;parcheggio.c: 416: asd = 1;
 "416
 [e = _asd -> -> 1 `i `b ]
-[; ;parcheggio.c: 417: data_test[0] = prima_sterzata - 1;
+[; ;parcheggio.c: 417: data_test[0] = prima_sterzata+3;
 "417
-[e = *U + &U _data_test * -> -> -> 0 `i `ui `ux -> -> # *U &U _data_test `ui `ux -> - _prima_sterzata -> -> 1 `i `f `uc ]
+[e = *U + &U _data_test * -> -> -> 0 `i `ui `ux -> -> # *U &U _data_test `ui `ux -> + _prima_sterzata -> -> 3 `i `f `uc ]
 [; ;parcheggio.c: 418: while (!CANisTxReady());
 "418
 [e $U 2396  ]

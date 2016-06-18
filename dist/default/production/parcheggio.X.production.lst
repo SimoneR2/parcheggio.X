@@ -1,7 +1,7 @@
 
 
 Microchip Technology PIC18 LITE Macro Assembler V1.34 build -361300703 
-                                                                                               Sun Jun 12 22:16:14 2016
+                                                                                               Sat Jun 18 15:33:31 2016
 
 Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
      1                           	processor	18F2685
@@ -3540,15 +3540,15 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
   3492  001716  8456               	bsf	_asd/(0+8),_asd& (0+7),c	;volatile
   3493                           
   3494                           ; BSR set to: 1
-  3495                           ;parcheggio.c: 417: data_test[0] = prima_sterzata - 1;
+  3495                           ;parcheggio.c: 417: data_test[0] = prima_sterzata+3;
   3496  001718  0E00               	movlw	0
   3497  00171A  0100               	movlb	0	; () banked
   3498  00171C  6FA3               	movwf	___fladd@f2& (0+255),b
   3499  00171E  0E00               	movlw	0
   3500  001720  6FA4               	movwf	(___fladd@f2+1)& (0+255),b
-  3501  001722  0E80               	movlw	128
+  3501  001722  0E40               	movlw	64
   3502  001724  6FA5               	movwf	(___fladd@f2+2)& (0+255),b
-  3503  001726  0EBF               	movlw	191
+  3503  001726  0E40               	movlw	64
   3504  001728  6FA6               	movwf	(___fladd@f2+3)& (0+255),b
   3505  00172A  C13C  F09F         	movff	_prima_sterzata,___fladd@f1
   3506  00172E  C13D  F0A0         	movff	_prima_sterzata+1,___fladd@f1+1
@@ -21262,7 +21262,7 @@ CODE                 0      0       0       0        0.0%
 
 
 Microchip Technology PIC18 Macro Assembler V1.34 build -361300703 
-Symbol Table                                                                                   Sun Jun 12 22:16:14 2016
+Symbol Table                                                                                   Sat Jun 18 15:33:31 2016
 
                ___altofl@sign 00BD                             _n 0138                             _x 0015  
                            _z 00DD                  ___fldiv@cntr 009C          __end_of_CANSetFilter 23D2  

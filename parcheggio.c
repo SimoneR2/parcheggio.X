@@ -414,7 +414,7 @@ void park_routine(void) {
         data_steering[0] = 0;
         data_brake[0] = 1;
         asd = 1;
-        data_test[0] = prima_sterzata - 1;
+        data_test[0] = prima_sterzata+3;
         while (!CANisTxReady());
         CANsendMessage(DISTANCE_SET, data_test, 1, CAN_CONFIG_STD_MSG & CAN_NORMAL_TX_FRAME & CAN_TX_PRIORITY_0);
         can_send();
